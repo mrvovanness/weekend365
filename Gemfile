@@ -15,6 +15,7 @@ end
 
 group :default do
   gem 'active_decorator'
+  gem 'newrelic_rpm'
   gem 'slim-rails'
   gem 'rails-assets-bootstrap-sass-official'
   gem 'rails-assets-fontawesome'
