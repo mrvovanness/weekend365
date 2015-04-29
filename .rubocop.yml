@@ -1,0 +1,15 @@
+AllCops:
+  Exclude:
+    - 'vendor/**/*'
+    - 'bin/*'
+    - 'config/**/*'
+    - 'Gemfile'
+    - 'Guardfile'
+    - 'db/**/*'
+    - 'spec/spec_helper.rb'
+    - 'spec/turnip_helper.rb'
+  RunRailsCops: true
+  DisplayCopNames: true
+
+Style/Documentation:
+  Enabled: false

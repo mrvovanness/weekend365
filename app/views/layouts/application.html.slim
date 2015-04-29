@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title
+      | sss
+    = stylesheet_link_tag    'application', media: 'all'
+    = csrf_meta_tags
+  body
+    nav.navbar.navbar-default.navbar-fixed-top
+      .container
+        .container-header
+          a.navbar-brand
+            | sss
+
+    .container
+      = yield
+
+    = javascript_include_tag 'application'

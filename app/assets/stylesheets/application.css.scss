@@ -1,0 +1,12 @@
+/*
+ *= require_tree .
+ *= require fontawesome
+ *= require_self
+ */
+
+$icon-font-path: "bootstrap-sass-official/";
+
+@import "bootstrap-sass-official/bootstrap-sprockets";
+@import "bootstrap-sass-official/bootstrap";
+
+body { padding-top: 70px; }
