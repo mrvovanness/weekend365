@@ -1,0 +1,55 @@
+#
+# This file configures the New Relic Agent.  New Relic monitors Ruby, Java,
+# .NET, PHP, Python and Node applications with deep visibility and low
+# overhead.  For more information, visit www.newrelic.com.
+#
+# Generated April 29, 2015
+#
+# This configuration file is custom generated for app36360730@heroku.com
+
+common: &default_settings
+  license_key: '<%= ENV["NEW_RELIC_LICENSE_KEY"] %>'
+
+  app_name: SSS
+  monitor_mode: true
+  developer_mode: false
+  log_level: info
+
+  browser_monitoring:
+      auto_instrument: true
+
+  audit_log:
+    enabled: false
+
+  capture_params: false
+
+  transaction_tracer:
+    enabled: true
+    transaction_threshold: apdex_f
+    record_sql: obfuscated
+    stack_trace_threshold: 0.500
+
+  error_collector:
+    enabled: true
+    ignore_errors: "ActionController::RoutingError,Sinatra::NotFound"
+
+development:
+  <<: *default_settings
+  monitor_mode: true
+  app_name: SSS (Development)
+  developer_mode: true
+
+test:
+  <<: *default_settings
+  monitor_mode: false
+
+production:
+  <<: *default_settings
+  monitor_mode: true
+  app_name: SSS (Production)
+
+staging:
+  <<: *default_settings
+  monitor_mode: true
+  app_name: SSS (Staging)
+
