@@ -15,4 +15,4 @@ build:
 
     - script:
         name: rspec
-        code: bundle exec rspec
+        code: bundle exec rspec -r turnip/rspec
