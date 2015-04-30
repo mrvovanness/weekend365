@@ -2,17 +2,21 @@ box: wercker/rvm
 build:
   steps:
     - rvm-use:
-      version: 2.2.2
+        version: 2.2.2
 
     - bundle-install
 
     - script:
-      name: echo ruby information
-      code: |
-        echo "ruby version $(ruby --version) running"
-        echo "from location $(which ruby)"
-        echo -p "gem list: $(gem list)"
+        name: echo ruby information
+        code: |
+          echo "ruby version $(ruby --version) running"
+          echo "from location $(which ruby)"
+          echo -p "gem list: $(gem list)"
 
     - script:
-      name: rspec
-      code: bundle exec rspec
+        name: rspec
+        code: bundle exec rspec -r turnip/rspec
+
+    - script:
+        name: rubocop
+        code: bundle exec rubocop
