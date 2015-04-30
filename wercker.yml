@@ -16,3 +16,7 @@ build:
     - script:
         name: rspec
         code: bundle exec rspec -r turnip/rspec
+
+    - script:
+        name: rubocop
+        code: bundle exec rubocop
