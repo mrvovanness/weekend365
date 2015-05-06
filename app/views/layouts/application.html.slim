@@ -1,8 +1,8 @@
 doctype html
 html
   head
-    title
-      | sss
+    title = full_title(yield(:title))
+
     = stylesheet_link_tag    'application', media: 'all'
     = csrf_meta_tags
   body
