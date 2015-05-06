@@ -1,5 +1,6 @@
-Feature: Displaying company list
+Feature: List of companies page
 
-  Scenario: Display "Add a new Company" button
-    When I access companies page
-    Then it displays "Add a new Company" link
+  Scenario: Move to new company page
+    Given I am on the list of companies page
+    When I click "Add a new Company" link
+    Then I see the new company page
