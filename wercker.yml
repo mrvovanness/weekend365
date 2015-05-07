@@ -20,3 +20,9 @@ build:
     - script:
         name: rubocop
         code: bundle exec rubocop
+
+    - heroku-deploy
+
+    - script:
+        name: Update database
+        code: heroku run:detached rake db:migrate --app $APP_NAME
