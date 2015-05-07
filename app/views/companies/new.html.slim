@@ -1,3 +1,4 @@
 - content_for :title, 'New company'
 
-p New company form is under construction
+= simple_form_for @company, wrapper: :horizontal_form, html: {class: 'form-horizontal'} do |f|
+  = f.input :name
