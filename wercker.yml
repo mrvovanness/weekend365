@@ -21,6 +21,8 @@ build:
         name: rubocop
         code: bundle exec rubocop
 
+deploy:
+  steps:
     - heroku-deploy
 
     - script:
