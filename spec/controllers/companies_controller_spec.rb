@@ -10,4 +10,12 @@ RSpec.describe CompaniesController, type: :controller do
       expect(assigns(:company)).to eq(new_company)
     end
   end
+
+  describe 'POST #create' do
+    subject { post :create }
+
+    it 'redirects to the companies index' do
+      expect(subject).to redirect_to(companies_url)
+    end
+  end
 end

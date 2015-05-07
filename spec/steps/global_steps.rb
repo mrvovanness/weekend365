@@ -9,3 +9,11 @@ end
 step 'I click :text link' do |text|
   click_link text
 end
+
+step 'I click :button_name button' do |button_name|
+  click_button button_name
+end
+
+step 'I fill in :input_name with :value' do |input_name, value|
+  fill_in input_name, with: value
+end
