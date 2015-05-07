@@ -1,4 +1,4 @@
-step 'it should display :content' do |content|
+step 'I see :content' do |content|
   expect(page).to have_content(content)
 end
 

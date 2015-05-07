@@ -12,7 +12,12 @@ RSpec.describe CompaniesController, type: :controller do
   end
 
   describe 'POST #create' do
-    subject { post :create }
+    subject { post :create, company: { name: 'Foo' } }
+
+    it 'sets a flash[:info] message' do
+      subject
+      expect(flash[:info]).to eq('Company was successfully created.')
+    end
 
     it 'redirects to the companies index' do
       expect(subject).to redirect_to(companies_url)

@@ -5,3 +5,4 @@ Feature: Company create page
     When I fill in "company[name]" with "Test Company"
     And I click "Create Company" button
     Then I see the list of companies page
+    And I see "Company was successfully created."
