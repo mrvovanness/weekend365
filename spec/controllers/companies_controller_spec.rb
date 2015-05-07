@@ -1,6 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe CompaniesController, type: :controller do
+  let(:company) { mock_model(Company) }
+
   describe 'GET #new' do
     it 'assigns @company with new company object' do
       new_company = Company.new
@@ -12,15 +14,34 @@ RSpec.describe CompaniesController, type: :controller do
   end
 
   describe 'POST #create' do
+    before { allow(Company).to receive(:new).and_return(company) }
+
     subject { post :create, company: { name: 'Foo' } }
 
-    it 'sets a flash[:info] message' do
-      subject
-      expect(flash[:info]).to eq('Company was successfully created.')
+    context 'when the company saves successfully' do
+      before { allow(company).to receive(:save).and_return(true) }
+
+      it 'sets a flash[:info] message' do
+        subject
+        expect(flash[:info]).to eq('Company was successfully created.')
+      end
+
+      it 'redirects to the companies index' do
+        expect(subject).to redirect_to(companies_url)
+      end
     end
 
-    it 'redirects to the companies index' do
-      expect(subject).to redirect_to(companies_url)
+    context 'when the company fails to save' do
+      before { allow(company).to receive(:save).and_return(false) }
+
+      it 'assigns @company' do
+        subject
+        expect(assigns(:company)).to eq(company)
+      end
+
+      it 're-renders the "new" template' do
+        expect(subject).to render_template(:new)
+      end
     end
   end
 end
