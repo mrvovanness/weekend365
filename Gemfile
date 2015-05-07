@@ -45,6 +45,7 @@ group :development, :test do
   gem 'pry-coolline'
   gem 'pry-rails'
   gem 'quiet_assets'
+  gem 'rspec-activemodel-mocks'
   gem 'rspec-rails'
   gem 'spring-commands-rspec'
   gem 'sqlite3'

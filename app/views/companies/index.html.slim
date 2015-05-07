@@ -1,5 +1,8 @@
 - content_for :title, 'Companies'
 
+- flash.each do |type, msg|
+  div class="alert alert-#{type}" = msg
+
 = link_to 'Add a new Company', new_company_path, {class: 'btn btn-success'}
 
 p list of companies is under construction
