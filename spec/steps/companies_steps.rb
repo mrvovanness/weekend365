@@ -3,5 +3,5 @@ step 'I am on the list of companies page' do
 end
 
 step 'I see the new company page' do
-  expect(page).to have_title('New company | SSS')
+  expect(page).to have_title('New company')
 end
