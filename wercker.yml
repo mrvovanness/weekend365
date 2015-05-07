@@ -24,7 +24,7 @@ build:
 deploy:
   steps:
     - heroku-deploy:
-      install-toolbelt: true
+        install-toolbelt: true
 
     - script:
         name: Update database
