@@ -2,6 +2,16 @@ require 'rails_helper'
 
 RSpec.describe CompaniesController, type: :controller do
   let(:company) { mock_model(Company) }
+  let(:companies) { [company] }
+
+  describe 'GET #index' do
+    it 'assigns @companies with all company objects' do
+      allow(Company).to receive(:all).and_return(companies)
+
+      get :index
+      expect(assigns(:companies)).to eq(companies)
+    end
+  end
 
   describe 'GET #new' do
     it 'assigns @company with new company object' do

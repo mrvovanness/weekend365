@@ -5,4 +5,11 @@
 
 = link_to 'Add a new Company', new_company_path, {class: 'btn btn-success'}
 
-p list of companies is under construction
+table.table
+  thead
+    tr
+      th Name
+  tbody
+    - @companies.each do |company|
+      tr
+        td = company.name
