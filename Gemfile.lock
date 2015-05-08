@@ -88,6 +88,7 @@ GEM
     factory_girl_rails (4.5.0)
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
+    ffaker (2.0.0)
     ffi (1.9.8)
     formatador (0.2.5)
     gherkin (2.12.2)
@@ -320,6 +321,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_rewinder
   factory_girl_rails
+  ffaker
   guard
   guard-rspec
   guard-rubocop

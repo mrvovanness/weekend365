@@ -18,6 +18,7 @@ end
 
 group :default do
   gem 'active_decorator'
+  gem 'ffaker'
   gem 'newrelic_rpm'
   gem 'simple_form'
   gem 'slim-rails'
