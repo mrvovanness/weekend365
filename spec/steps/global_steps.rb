@@ -1,3 +1,9 @@
+step 'the following companies exist:' do |table|
+  table.hashes.each do |hash|
+    FactoryGirl.create(:company, name: hash['Name'])
+  end
+end
+
 step 'I see :content' do |content|
   expect(page).to have_content(content)
 end
