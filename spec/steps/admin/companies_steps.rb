@@ -1,5 +1,5 @@
 step 'I am on the list of companies page' do
-  visit '/companies'
+  visit '/admin/companies'
 end
 
 step 'I see :count record of companies' do |count|
