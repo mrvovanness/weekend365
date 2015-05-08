@@ -9,16 +9,19 @@
   .col-md-6
     = link_to 'Delete', employees_path, {class: 'btn btn-danger pull-right'}
 
+
 table.table
   thead 
     tr
       th Name
       th Department
+      th
 
   tbody
     - @employees.each do |employee|
       tr
         td = employee.name
         td = employee.department
+        td = check_box_tag 'employee_ids[]', employee.id
 
 
