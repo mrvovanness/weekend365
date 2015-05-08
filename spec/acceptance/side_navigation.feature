@@ -1,10 +1,5 @@
 Feature: Side navigation
 
-  Scenario: Displaying navigation links
-    Given I am on the dashboard page
-    Then I see "Dashboard" link
-    And I see "Employees" link
-
   Scenario: Moving to dashboard page
     Given I am on the employees page
     When I click "Dashboard" link
