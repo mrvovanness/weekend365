@@ -12,13 +12,6 @@ html
           a.navbar-brand = base_title
 
     .container
-      .row
-        .col-md-3
-          ul.nav.nav-pills.nav-stacked
-            = nav_link 'Dashboard', root_path
-            = nav_link 'Employees', employees_path
-
-        .col-md-9
-          = yield
+      = yield
 
     = javascript_include_tag 'application'
