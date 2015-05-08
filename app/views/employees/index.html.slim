@@ -1,13 +1,19 @@
 - content_for :title, 'Employees'
 
 .row
-  .col-md-6
+  .col-md-8
     .btn-group
       = link_to 'Add a new Employee', employees_path, {class: 'btn btn-success'}
       = link_to 'Add by File', employees_path, {class: 'btn btn-success'}
 
-  .col-md-6
-    = link_to 'Delete', employees_path, {class: 'btn btn-danger pull-right'}
+    = link_to 'Delete', employees_path, {class: 'btn btn-danger'}
+
+  .col-md-4
+    .input-group
+      input.form-control type='text' placeholder='Search for...'
+      span.input-group-btn
+        button.btn.btn-default
+          span.glyphicon.glyphicon-search
 
 .row
   .col-md-12
