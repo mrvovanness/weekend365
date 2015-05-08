@@ -12,6 +12,15 @@ html
           a.navbar-brand = base_title
 
     .container
-      = yield
+      .row
+        .col-md-3
+          ul.nav.nav-pills.nav-stacked
+            li.active
+              = link_to 'Dashboard', root_path
+            li
+              = link_to 'Employees', root_path
+
+        .col-md-9
+          = yield
 
     = javascript_include_tag 'application'
