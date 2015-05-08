@@ -1,5 +1,5 @@
 module Admin
-  class CompaniesController < ApplicationController
+  class CompaniesController < Admin::ApplicationController
     def index
       @companies = Company.all
     end
