@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CompaniesController, type: :controller do
+RSpec.describe Admin::CompaniesController, type: :controller do
   let(:company) { mock_model(Company) }
   let(:companies) { [company] }
 
@@ -36,7 +36,7 @@ RSpec.describe CompaniesController, type: :controller do
       end
 
       it 'redirects to the companies index' do
-        expect(subject).to redirect_to(companies_url)
+        expect(subject).to redirect_to(admin_companies_url)
       end
     end
 

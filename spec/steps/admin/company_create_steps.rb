@@ -1,5 +1,5 @@
 step 'I am on the company create page' do
-  visit '/companies/new'
+  visit '/admin/companies/new'
 end
 
 step 'I see the company name entry form' do
