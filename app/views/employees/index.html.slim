@@ -1,5 +1,14 @@
 - content_for :title, 'Employees'
 
+.row
+  .col-md-6
+    .btn-group
+      = link_to 'Add a new Employee', employees_path, {class: 'btn btn-success'}
+      = link_to 'Add by File', employees_path, {class: 'btn btn-success'}
+
+  .col-md-6
+    = link_to 'Delete', employees_path, {class: 'btn btn-danger pull-right'}
+
 table.table
   thead 
     tr
