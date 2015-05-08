@@ -25,7 +25,7 @@ deploy:
   steps:
     - heroku-deploy:
         install-toolbelt: true
-        key-name: heroku
+        key-name: HEROKU_PRIVATE_KEY
 
     - script:
         name: Update database
