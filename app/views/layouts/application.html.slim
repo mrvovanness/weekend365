@@ -14,9 +14,9 @@ html
         .collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
             li
-              a href="#" GET STARTED
+              = link_to 'GET STARTED', new_user_registration_path
             li
-              a href="#" LOGIN
+              = link_to 'LOGIN', new_user_session_path
 
     .container
       .row
