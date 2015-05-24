@@ -13,12 +13,18 @@ html
 
     .container
       .row
-        .col-md-3
-          ul.nav.nav-pills.nav-stacked
-            = nav_link 'Dashboard', root_path
-            = nav_link 'Employees', employees_path
+        - if user_signed_in?
+          .col-md-3
+            ul.nav.nav-pills.nav-stacked
+              = nav_link 'Dashboard', root_path
+              = nav_link 'Employees', employees_path
 
-        .col-md-9
-          = yield
+          .col-md-9
+            = yield
+
+        - else
+          .col-md-12
+            = yield
+
 
     = javascript_include_tag 'application'
