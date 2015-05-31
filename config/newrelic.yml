@@ -10,7 +10,7 @@
 common: &default_settings
   license_key: '<%= ENV["NEW_RELIC_LICENSE_KEY"] %>'
 
-  app_name: SSS
+  app_name: Weekend
   monitor_mode: true
   developer_mode: false
   log_level: info
@@ -36,7 +36,7 @@ common: &default_settings
 development:
   <<: *default_settings
   monitor_mode: true
-  app_name: SSS (Development)
+  app_name: Weekend (Development)
   developer_mode: true
 
 test:
@@ -46,10 +46,10 @@ test:
 production:
   <<: *default_settings
   monitor_mode: true
-  app_name: SSS (Production)
+  app_name: Weekend (Production)
 
 staging:
   <<: *default_settings
   monitor_mode: true
-  app_name: SSS (Staging)
+  app_name: Weekend (Staging)
 
