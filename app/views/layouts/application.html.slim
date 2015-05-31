@@ -13,10 +13,15 @@ html
 
         .collapse.navbar-collapse
           ul.nav.navbar-nav.navbar-right
-            li
-              = link_to 'GET STARTED', new_user_registration_path
-            li
-              = link_to 'LOGIN', new_user_session_path
+            - unless user_signed_in?
+              li
+                = link_to 'GET STARTED', new_user_registration_path
+              li
+                = link_to 'LOGIN', new_user_session_path
+
+            - else
+              li
+                = link_to 'LOG OUT', destroy_user_session_path
 
     .container
       .row
