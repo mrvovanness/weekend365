@@ -1,0 +1,16 @@
+nav.navbar.navbar-default.navbar-fixed-top
+  .container
+    .container-header
+      a.navbar-brand = base_title
+
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        - unless user_signed_in?
+          li
+            = link_to 'GET STARTED', new_user_registration_path
+          li
+            = link_to 'LOGIN', new_user_session_path
+
+        - else
+          li
+            = link_to 'LOG OUT', destroy_user_session_path

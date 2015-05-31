@@ -6,39 +6,11 @@ html
     = stylesheet_link_tag    'application', media: 'all'
     = csrf_meta_tags
   body
-    nav.navbar.navbar-default.navbar-fixed-top
-      .container
-        .container-header
-          a.navbar-brand = base_title
-
-        .collapse.navbar-collapse
-          ul.nav.navbar-nav.navbar-right
-            - unless user_signed_in?
-              li
-                = link_to 'GET STARTED', new_user_registration_path
-              li
-                = link_to 'LOGIN', new_user_session_path
-
-            - else
-              li
-                = link_to 'LOG OUT', destroy_user_session_path
+    = render 'layouts/header'
 
     .container
       = render 'layouts/messages'
 
-      .row
-        - if user_signed_in?
-          .col-md-3
-            ul.nav.nav-pills.nav-stacked
-              = nav_link 'Dashboard', root_path
-              = nav_link 'Employees', employees_path
-
-          .col-md-9
-            = yield
-
-        - else
-          .col-md-12
-            = yield
-
+      = yield
 
     = javascript_include_tag 'application'
