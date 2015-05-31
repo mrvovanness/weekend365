@@ -24,6 +24,8 @@ html
                 = link_to 'LOG OUT', destroy_user_session_path
 
     .container
+      = render 'layouts/messages'
+
       .row
         - if user_signed_in?
           .col-md-3
