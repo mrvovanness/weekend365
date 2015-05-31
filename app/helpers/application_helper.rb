@@ -1,7 +1,7 @@
 module ApplicationHelper
   # Return application title
   def base_title
-    'SSS'
+    'Weekend'
   end
 
   # Return full page title which includes individual page title
