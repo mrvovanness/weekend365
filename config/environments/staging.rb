@@ -13,7 +13,7 @@ Rails.application.configure do
   config.log_formatter = ::Logger::Formatter.new
   config.active_record.dump_schema_after_migration = false
 
-  ActionMailer::Base.smtp_settings = {
+  config.action_mailer.smtp_settings = {
     address: 'smtp.sendgrid.net',
     port: '587',
     authentication: :plain,
@@ -22,4 +22,5 @@ Rails.application.configure do
     domain: 'heroku.com',
     enable_starttls_auto: true
   }
+  config.action_mailer.default_url_options = { host: 'heroku.com' }
 end
