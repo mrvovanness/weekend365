@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: 365weekend_development
+  username: postgres
+  password: password
+  encoding: utf8
+  host: localhost
