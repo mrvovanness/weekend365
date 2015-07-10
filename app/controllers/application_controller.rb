@@ -5,6 +5,10 @@ class ApplicationController < ActionController::Base
   
   # Don't access admin panel for usual user
   def authenticate_admin_user!
+<<<<<<< HEAD
     redirect_to root_path unless current_user.has_role? :admin
+=======
+    redirect_to root_path unless user_signed_in? && current_user.has_role?(:admin)
+>>>>>>> new_admin_panel
   end
 end
