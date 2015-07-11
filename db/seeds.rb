@@ -1,5 +1,5 @@
-require 'nokogiri'
-require 'open-uri'
+# require 'nokogiri'
+# require 'open-uri'
 
 # Create admin user
 puts 'creating user'
