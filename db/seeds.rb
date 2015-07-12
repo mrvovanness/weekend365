@@ -1,6 +1,3 @@
-# require 'nokogiri'
-# require 'open-uri'
-
 # Create admin user
 puts 'creating user'
 user = User.new
@@ -9,7 +6,5 @@ user.password = 'bigsecret'
 user.skip_confirmation!
 user.save
 user.add_role :admin
-puts "User admin? - #{user.has_role? :admin}"
-
-# Create companies
-
+user.company = Company.create! name: 'Coca-Cola', field: 'foods'
+puts "User admin? - #{user.has_role? :admin}, with company #{user.company.name}"

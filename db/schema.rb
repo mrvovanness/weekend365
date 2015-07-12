@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710074136) do
+ActiveRecord::Schema.define(version: 20150711175723) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,9 +33,19 @@ ActiveRecord::Schema.define(version: 20150710074136) do
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.string   "field"
+    t.text     "office_address"
+    t.string   "country"
+    t.text     "description"
+    t.string   "website"
+    t.integer  "employees_number"
+    t.integer  "employees_registered"
+    t.integer  "user_id"
   end
+
+  add_index "companies", ["user_id"], name: "index_companies_on_user_id", using: :btree
 
   create_table "employees", force: :cascade do |t|
     t.string   "name"

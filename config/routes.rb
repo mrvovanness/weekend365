@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  root 'pages#index'
+  root 'companies#show'
 
   resources :employees
+  resources :companies, only: [:show, :edit, :update]
 end

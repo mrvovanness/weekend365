@@ -3,6 +3,6 @@ FactoryGirl.define do
     email 'ex@mail.com'
     password 'bigsecret'
     password_confirmation { password }
-    confirmed_at Time.now
+    confirmed_at Time.zone.now
   end
 end

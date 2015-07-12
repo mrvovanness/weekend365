@@ -1,0 +1,6 @@
+.row
+  .col-xs-9
+    h3 Company name: #{ @company.name }
+  .col-xs-3
+    h3
+      = link_to 'Edit company profile', edit_company_path(@company)

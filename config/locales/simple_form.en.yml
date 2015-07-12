@@ -7,3 +7,13 @@ en:
       mark: '*'
     error_notification:
       default_message: "Please review the problems below:"
+    labels:
+      company:
+        name: 'Country Name'
+        field: 'Company Field'
+        office_address: 'Office Address'
+        country: 'Country'
+        description: 'Company Description'
+        website: 'Website'
+        employees_number: 'Employees Number'
+        employees_registered: 'Employees Registered'

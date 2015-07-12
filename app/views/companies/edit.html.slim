@@ -1,0 +1,49 @@
+= simple_form_for @company, html: { class: 'form-horizontal' },
+  defaults: { input_html: { class: 'form-control' } } do |f|
+  .form-group
+    .col-xs-3.col-xs-offset-9
+      = f.button :submit
+
+  .form-group
+    = f.label :name, class: 'col-xs-2'
+    .col-xs-7
+      =f.input_field :name, disabled: true
+
+  .form-group
+    = f.label :field, class: 'col-xs-2'
+    .col-xs-7
+      =f.input_field :field, autofocus: true
+
+  .form-group
+    = f.label :office_address, class: 'col-xs-2'
+    .col-xs-7
+      =f.input_field :office_address
+
+  .form-group
+    = f.label :country, class: 'col-xs-2'
+    .col-xs-7
+      =f.input_field :country
+
+  .form-group
+    = f.label :description, class: 'col-xs-2'
+    .col-xs-7
+      =f.input_field :description
+
+  .form-group
+    = f.label :website, class: 'col-xs-2'
+    .col-xs-7
+      =f.input_field :website
+
+  .form-group
+    = f.label :employees_number, class: 'col-xs-2'
+    .col-xs-7
+      =f.input_field :employees_number
+
+  .form-group
+    = f.label :employees_registered, class: 'col-xs-2'
+    .col-xs-7
+      = f.input_field :employees_registered
+  .form-group
+    .col-xs-3.col-xs-offset-9
+      = f.button :submit
+

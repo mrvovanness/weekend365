@@ -17,6 +17,7 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'responders'
 end
 
 group :default do
@@ -25,6 +26,7 @@ group :default do
   gem 'ffaker'
   gem 'newrelic_rpm'
   gem 'simple_form'
+  gem 'country_select'
   gem 'slim-rails'
   gem 'rails-assets-bootstrap-sass-official'
   gem 'rails-assets-fontawesome'
