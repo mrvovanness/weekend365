@@ -5,6 +5,7 @@ class CompaniesController < ApplicationController
   respond_to :html
 
   def show
+    @employees = @company.employees.all
   end
 
   def edit
