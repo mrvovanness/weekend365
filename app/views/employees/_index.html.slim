@@ -1,19 +1,16 @@
-h1 Listing employees
+table.table.table-stripped
+  tr
+    th Name
+    th Department
+    th Position
+    th 
 
-table
-  thead
+  - employees.each do |employee|
     tr
-      th
-      th
-      th
-
-  tbody
-    - @employees.each do |employee|
-      tr
-        td = link_to 'Show', employee
-        td = link_to 'Edit', edit_employee_path(employee)
-        td = link_to 'Destroy', employee, data: {:confirm => 'Are you sure?'}, :method => :delete
-
+      td = employee.name
+      td = employee.department
+      td = employee.position
+      td
 br
 
 = link_to 'New Employee', new_employee_path
