@@ -2,8 +2,15 @@
   .col-xs-9
     h3 Company name: #{ @company.name }
   .col-xs-3
-    h3
-      = link_to 'Edit company profile', edit_company_path(@company)
+    = link_to 'Edit company profile',
+      edit_company_path(@company),
+      class: 'btn btn-default'
+
+.row
+  .col-xs-6
+    = link_to 'Add a New Employee',
+      new_employee_path,
+      class: 'btn btn-default'
+
 = render 'employees/index', employees: @employees
 
-  

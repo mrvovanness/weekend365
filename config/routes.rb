@@ -6,5 +6,5 @@ Rails.application.routes.draw do
   root 'companies#show'
 
   resources :companies, only: [:show, :edit, :update]
-  resources :employees
+  resources :employees, except: [:index]
 end

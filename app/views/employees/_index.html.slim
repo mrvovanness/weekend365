@@ -3,14 +3,15 @@ table.table.table-stripped
     th Name
     th Department
     th Position
-    th 
+    th Select box
 
   - employees.each do |employee|
     tr
-      td = employee.name
+      td = link_to employee.name,
+        edit_employee_path(employee)
       td = employee.department
       td = employee.position
-      td
+      td = check_box_tag 'employee_ids[]', employee.id
 br
 
 = link_to 'New Employee', new_employee_path

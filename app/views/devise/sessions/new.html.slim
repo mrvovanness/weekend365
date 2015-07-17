@@ -5,8 +5,10 @@ h2
 = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   = f.error_notification
 
-  = f.input :email, required: false, autofocus: true
-  = f.input :password, required: false
+  = f.input :email, required: false, autofocus: true,
+    input_html: { value: 'weekend365@mail.com'}
+  = f.input :password, required: false,
+    input_html: { value: 'bigsecret' }
   = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
 
   .form-actions
