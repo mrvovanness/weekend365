@@ -11,13 +11,12 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'activeadmin', github: 'activeadmin'
 gem 'rolify'
-gem 'rollbar'
+gem 'responders'
 
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'responders'
 end
 
 group :default do
@@ -46,6 +45,8 @@ group :development, :test do
   gem 'guard'
   gem 'guard-rubocop'
   gem 'guard-rspec'
+  gem 'guard-livereload'
+  gem 'rack-livereload'
   gem 'hirb'
   gem 'hirb-unicode'
   gem 'pry-byebug'
@@ -68,5 +69,6 @@ end
 
 group :production do
   gem 'pg'
+  gem 'rollbar'
   gem 'rails_12factor'
 end

@@ -6,5 +6,9 @@ user.password = 'bigsecret'
 user.skip_confirmation!
 user.save
 user.add_role :admin
-user.company = Company.create! name: 'Coca-Cola', field: 'foods'
+
+user.company = Company.find_or_create! (name: 'Coca-Cola') do |company|
+  field: 'foods'
+end
+
 puts "User admin? - #{user.has_role? :admin}, with company #{user.company.name}"
