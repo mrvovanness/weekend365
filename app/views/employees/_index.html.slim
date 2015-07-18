@@ -4,14 +4,17 @@ table.table.table-stripped
     th Department
     th Position
     th Select box
+    = form_tag add_to_survey_employees_path,
+      id: 'add-to-survey-form', method: :patch do
+      = submit_tag 'Add Selected to Survey',
+        id: 'add-to-survey-submit',
+        style: 'display: none;'
 
-  - employees.each do |employee|
-    tr
-      td = link_to employee.name,
-        edit_employee_path(employee)
-      td = employee.department
-      td = employee.position
-      td = check_box_tag 'employee_ids[]', employee.id
-br
-
-= link_to 'New Employee', new_employee_path
+      - employees.each do |employee|
+        tr
+          td = link_to employee.name,
+               edit_employee_path(employee)
+          td = employee.department
+          td = employee.position
+          td = check_box_tag 'employee_ids[]',
+               employee.id, false, class: 'downloadable'

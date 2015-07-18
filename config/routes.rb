@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   root 'companies#show'
 
   resources :companies, only: [:show, :edit, :update]
-  resources :employees, except: [:index]
+
+  resources :employees, except: [:index] do
+    patch 'add_to_survey', on: :collection
+  end
+
 end
