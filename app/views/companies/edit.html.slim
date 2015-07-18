@@ -12,8 +12,7 @@
   .form-group
     = f.label :field, class: 'col-xs-2'
     .col-xs-7
-      = f.input_field :field, autofocus: true
-
+      = f.select :field, @options
   .form-group
     = f.label :office_address, class: 'col-xs-2'
     .col-xs-7

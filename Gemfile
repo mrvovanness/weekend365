@@ -37,6 +37,7 @@ group :development do
   gem 'bullet'
   gem 'html2slim'
   gem 'meta_request'
+  gem 'interactive_editor'
 end
 
 group :development, :test do

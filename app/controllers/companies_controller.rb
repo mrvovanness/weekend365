@@ -9,6 +9,11 @@ class CompaniesController < ApplicationController
   end
 
   def edit
+    file = File.open('app/views/companies/fields_list.txt')
+    @options = []
+    file.each do |line|
+      @options << line
+    end
   end
 
   def update
