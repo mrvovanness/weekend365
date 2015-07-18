@@ -9,11 +9,6 @@ class CompaniesController < ApplicationController
   end
 
   def edit
-    file = File.open('app/views/companies/fields_list.txt')
-    @options = []
-    file.each do |line|
-      @options << line
-    end
   end
 
   def update
@@ -28,7 +23,7 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:name, :field, :office_address,
+    params.require(:company).permit(:name, :company_field_id, :office_address,
                                     :country, :description, :website,
                                     :employees_number, :employees_registered)
   end

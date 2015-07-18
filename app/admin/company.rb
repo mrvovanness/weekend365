@@ -2,7 +2,6 @@ ActiveAdmin.register Company do
   index do
     selectable_column
     column :name
-    column :field
     actions
   end
 
@@ -10,7 +9,7 @@ ActiveAdmin.register Company do
     inputs 'Details' do
       f.input :user, as: :select, collection: User.pluck(:email, :id)
       f.input :name
-      f.input :field
+      f.input :company_field
       f.input :description
       f.input :website
       f.input :employees_number
@@ -20,7 +19,7 @@ ActiveAdmin.register Company do
       actions
     end
   end
-  permit_params :user_id, :name, :field, :office_address, :country,
+  permit_params :user_id, :name, :company_field_id, :office_address, :country,
     :description, :website, :employees_number, :employees_registered
 
 end

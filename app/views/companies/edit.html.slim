@@ -7,12 +7,12 @@
   .form-group
     = f.label :name, class: 'col-xs-2'
     .col-xs-7
-      = f.input_field :name, disabled: true
+      = f.input_field :name
 
   .form-group
     = f.label :field, class: 'col-xs-2'
     .col-xs-7
-      = f.select :field, @options
+      = f.association :company_field, label: false
   .form-group
     = f.label :office_address, class: 'col-xs-2'
     .col-xs-7
@@ -42,6 +42,7 @@
     = f.label :employees_registered, class: 'col-xs-2'
     .col-xs-7
       = f.input_field :employees_registered
+
   .form-group
     .col-xs-3.col-xs-offset-9
       = f.button :submit

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150718022427) do
+ActiveRecord::Schema.define(version: 20150718032007) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,7 +35,6 @@ ActiveRecord::Schema.define(version: 20150718022427) do
     t.string   "name"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
-    t.string   "field"
     t.text     "office_address"
     t.string   "country"
     t.text     "description"
@@ -43,8 +42,10 @@ ActiveRecord::Schema.define(version: 20150718022427) do
     t.integer  "employees_number"
     t.integer  "employees_registered"
     t.integer  "user_id"
+    t.integer  "company_field_id"
   end
 
+  add_index "companies", ["company_field_id"], name: "index_companies_on_company_field_id", using: :btree
   add_index "companies", ["user_id"], name: "index_companies_on_user_id", using: :btree
 
   create_table "company_fields", force: :cascade do |t|
