@@ -56,6 +56,8 @@ group :development, :test do
   gem 'quiet_assets'
   gem 'rspec-activemodel-mocks'
   gem 'rspec-rails'
+  gem 'poltergeist'
+  gem 'phantomjs', require: 'phantomjs/poltergeist'
   gem 'spring-commands-rspec'
   gem 'sqlite3'
   gem 'turnip'
@@ -63,7 +65,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'database_rewinder'
   gem 'webmock'
   gem 'vcr'
 end

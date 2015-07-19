@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :employee do
     name FFaker::Name.name
-    email FFaker::Internet.email
+    sequence(:email, 10) { |n| "ex_#{n}@mail.com" }
     company
   end
 

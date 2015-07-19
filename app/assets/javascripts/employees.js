@@ -1,6 +1,6 @@
 $(document).on('ready page:load', function() {
-  $('.downloadable').click(function() {
-    check_count = $('.downloadable:checked').size();
+  $('.bulk_actors').click(function() {
+    check_count = $('.bulk_actors:checked').size();
     if (check_count > 0) {
       $('#add-to-survey-submit').show();
     } else {

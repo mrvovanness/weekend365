@@ -3,5 +3,15 @@ FactoryGirl.define do
     name FFaker::Company.name
     user
     company_field
+
+    factory :company_with_employees do
+      transient do
+        employees_count 5
+      end
+
+      after(:create) do |company, evaluator|
+        create_list(:employee, evaluator.employees_count, company: company)
+      end
+    end
   end
 end

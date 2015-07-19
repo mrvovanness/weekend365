@@ -16,5 +16,6 @@ table.table.table-stripped
                edit_employee_path(employee)
           td = employee.department
           td = employee.position
-          td = check_box_tag 'employee_ids[]',
-               employee.id, false, class: 'downloadable'
+          td = check_box_tag 'employee_ids[]', employee.id, false,
+               id: "employee-#{employee.id}",
+               class: 'bulk_actors'
