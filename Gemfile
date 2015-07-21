@@ -59,6 +59,7 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'poltergeist'
   gem 'phantomjs', require: 'phantomjs/poltergeist'
+  gem 'selenium-webdriver'
   gem 'spring-commands-rspec'
   gem 'sqlite3'
   gem 'turnip'

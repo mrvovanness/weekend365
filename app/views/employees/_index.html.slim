@@ -12,7 +12,7 @@ table.table.table-stripped
          = select_tag 'query',
          options_from_collection_for_select(Employee.pluck(:position).uniq, 'to_s', 'to_s'),
          include_blank: 'Position', id: 'position_select'
-         = submit_tag 'search'
+         = submit_tag 'search', id: 'submit-position'
 
     th Add to survey
 

@@ -13,5 +13,6 @@ describe Company do
     check("employee-#{company.employees.last.id}")
     click_on 'Add Selected to Survey'
     expect(page).to have_content('Employees were successfully added to survey')
+    expect(page).to have_content('Added')
   end
 end
