@@ -12,6 +12,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'activeadmin', github: 'activeadmin'
 gem 'rolify'
 gem 'responders'
+gem 'pg_search'
 
 group :development, :test do
   gem 'byebug'

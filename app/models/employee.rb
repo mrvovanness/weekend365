@@ -5,4 +5,7 @@ class Employee < ActiveRecord::Base
   validates :email, format: { with: /\A[^@]+@[^@]+\z/ }
 
   belongs_to :company
+
+  include PgSearch
+  pg_search_scope :search, against: [:name, :department, :position]
 end

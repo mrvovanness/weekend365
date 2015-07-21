@@ -5,7 +5,11 @@ class CompaniesController < ApplicationController
   respond_to :html
 
   def show
-    @employees = @company.employees.all
+    if params[:query].present?
+      @employees = Employee.search(params[:query])
+    else
+      @employees = @company.employees.all
+    end
   end
 
   def edit

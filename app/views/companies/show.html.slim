@@ -7,10 +7,15 @@
       class: 'btn btn-default'
 
 .row
-  .col-xs-6
+  .col-xs-9
     = link_to 'Add a New Employee',
       new_employee_path,
       class: 'btn btn-default'
+  .col-xs-3
+    = form_tag root_path, method: :get do
+      = text_field_tag :query, params[:query],
+        placeholder: 'search',
+        class: 'form-control'
 
 = render 'employees/index', employees: @employees
 

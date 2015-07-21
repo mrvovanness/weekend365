@@ -1,9 +1,21 @@
 table.table.table-stripped
   tr
     th Name
-    th Department
-    th Position
-    th Select box
+
+    th = form_tag root_path, method: :get do
+         = select_tag 'query',
+         options_from_collection_for_select(Employee.pluck(:department).uniq, 'to_s', 'to_s'),
+         include_blank: 'Department', id: 'department_select'
+         = submit_tag 'search'
+
+    th = form_tag root_path, method: :get do
+         = select_tag 'query',
+         options_from_collection_for_select(Employee.pluck(:position).uniq, 'to_s', 'to_s'),
+         include_blank: 'Position', id: 'position_select'
+         = submit_tag 'search'
+
+    th Add to survey
+
     = form_tag add_to_survey_employees_path,
       id: 'add-to-survey-form', method: :patch do
       = submit_tag 'Add Selected to Survey',
@@ -16,6 +28,10 @@ table.table.table-stripped
                edit_employee_path(employee)
           td = employee.department
           td = employee.position
-          td = check_box_tag 'employee_ids[]', employee.id, false,
+          td
+            - if employee.selected_to_survey
+              'Added
+            - else
+               = check_box_tag 'employee_ids[]', employee.id, false,
                id: "employee-#{employee.id}",
                class: 'bulk_actors'

@@ -10,5 +10,4 @@ Rails.application.routes.draw do
   resources :employees, except: [:index] do
     patch 'add_to_survey', on: :collection
   end
-
 end
