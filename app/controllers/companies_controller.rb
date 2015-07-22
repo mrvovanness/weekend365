@@ -6,9 +6,9 @@ class CompaniesController < ApplicationController
 
   def show
     if params[:query].present?
-      @employees = Employee.search(params[:query])
+      @employees = Employee.paginate(page: params[:page]).search(params[:query])
     else
-      @employees = @company.employees.all
+      @employees = @company.employees.paginate(page: params[:page]).all
     end
   end
 

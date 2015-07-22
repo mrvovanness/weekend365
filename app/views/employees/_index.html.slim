@@ -35,3 +35,4 @@ table.table.table-stripped
                = check_box_tag 'employee_ids[]', employee.id, false,
                id: "employee-#{employee.id}",
                class: 'bulk_actors'
+= will_paginate employees

@@ -8,4 +8,6 @@ class Employee < ActiveRecord::Base
 
   include PgSearch
   pg_search_scope :search, against: [:name, :department, :position]
+
+  self.per_page = 15
 end
