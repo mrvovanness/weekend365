@@ -12,12 +12,18 @@ class Employee < ActiveRecord::Base
   self.per_page = 15
 
   def self.to_csv
-    attributes = %w(id name department position company_id)
+    attributes = %w(name email department position)
     CSV.generate(headers: true) do |csv|
       csv << attributes
       all.each do |user|
         csv << user.attributes.values_at(*attributes)
       end
+    end
+  end
+
+  def self.import(file, company)
+    CSV.foreach(file.path, headers: true) do |row|
+      company.employees.find_or_create_by!(row.to_hash)
     end
   end
 end

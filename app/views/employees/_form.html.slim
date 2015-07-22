@@ -28,3 +28,8 @@
     .col-xs-3.col-xs-offset-9
       = f.button :submit
 
+= form_tag import_employees_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag 'Import csv file'
+
+

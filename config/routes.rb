@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resources :companies, only: [:show, :edit, :update]
 
   resources :employees, except: [:index] do
-    patch 'add_to_survey', on: :collection
+    collection do
+      patch 'add_to_survey'
+      post 'import'
+    end
   end
+
 end

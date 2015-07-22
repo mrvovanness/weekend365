@@ -27,6 +27,11 @@ class EmployeesController < ApplicationController
     respond_with @employee, location: -> { root_path }
   end
 
+  def import
+    @company.employees.import(params[:file], @company)
+    respond_with @employee, location: -> { root_path }
+  end
+
   private
 
   def set_company
