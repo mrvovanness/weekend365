@@ -2,19 +2,23 @@ table.table.table-stripped
   tr
     th Name
 
-    th = form_tag root_path, method: :get do
+    th
+      = form_tag root_path, method: :get do
          = select_tag 'query',
          options_from_collection_for_select(Employee.pluck(:department).uniq, 'to_s', 'to_s'),
          include_blank: 'Department', id: 'department_select'
          = submit_tag 'search'
 
-    th = form_tag root_path, method: :get do
+    th
+      = form_tag root_path, method: :get do
          = select_tag 'query',
          options_from_collection_for_select(Employee.pluck(:position).uniq, 'to_s', 'to_s'),
          include_blank: 'Position', id: 'position_select'
          = submit_tag 'search', id: 'submit-position'
 
-    th Add to survey
+    th
+      = check_box_tag 'select_all', nil
+      = label_tag 'select all'
 
     = form_tag add_to_survey_employees_path,
       id: 'add-to-survey-form', method: :patch do
