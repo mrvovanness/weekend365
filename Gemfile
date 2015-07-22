@@ -30,7 +30,6 @@ group :default do
   gem 'slim-rails'
   gem 'rails-assets-bootstrap-sass-official'
   gem 'rails-assets-fontawesome'
-  gem 'will_paginate'
 end
 
 group :development do

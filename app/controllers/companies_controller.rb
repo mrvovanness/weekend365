@@ -3,7 +3,7 @@ class CompaniesController < ApplicationController
   before_action :set_company
 
   def show
-    all_employees = @company.employees.paginate(page: params[:page])
+    all_employees = @company.employees.page(params[:page]).per(15)
     if params[:query].present?
       @employees = all_employees.search(params[:query])
     else
