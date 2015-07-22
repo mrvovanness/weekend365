@@ -10,4 +10,14 @@ class Employee < ActiveRecord::Base
   pg_search_scope :search, against: [:name, :department, :position]
 
   self.per_page = 15
+
+  def self.to_csv
+    attributes = %w(id name department position company_id)
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+      all.each do |user|
+        csv << user.attributes.values_at(*attributes)
+      end
+    end
+  end
 end
