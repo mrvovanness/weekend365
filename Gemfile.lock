@@ -17,7 +17,6 @@ GIT
       sass-rails
 
 GEM
-  remote: https://rails-assets.org/
   remote: https://rubygems.org/
   specs:
     actionmailer (4.2.1)
@@ -458,6 +457,7 @@ DEPENDENCIES
   rails-assets-bootstrap-sass-official
   rails-assets-fontawesome
   rails_12factor
+  ransack
   responders
   rolify
   rollbar

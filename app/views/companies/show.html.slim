@@ -7,7 +7,7 @@
       class: 'btn btn-default'
 
 .row
-  .col-xs-9
+  .col-xs-7
     = link_to 'Add a New Employee',
       new_employee_path,
       class: 'btn btn-default'
@@ -15,11 +15,15 @@
     = link_to '+ Upload csv file',
       company_path(@company, format: :csv),
       class: 'btn btn-default'
-  .col-xs-3
-    = form_tag root_path, method: :get do
-      = text_field_tag :query, params[:query],
-        placeholder: 'search',
+  .col-xs-5
+    = search_form_for @search,
+      url: root_path,
+      class: 'form form-inline',
+      method: :get do |f|
+      = f.text_field :name_or_department_or_position_cont,
+        placeholder: 'full search',
         class: 'form-control'
+      = f.submit id: 'full-search-submit', class: 'btn btn-default'
 
-= render 'employees/index', employees: @employees
-
+= render 'employees/index', employees: @employees,
+  company: @company, search: @search

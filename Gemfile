@@ -1,4 +1,3 @@
-source 'https://rails-assets.org'
 source 'https://rubygems.org'
 
 ruby '2.2.2'
@@ -13,24 +12,17 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'rolify'
 gem 'responders'
 gem 'pg_search'
-
-group :development, :test do
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-end
-
-group :default do
-  gem 'active_decorator'
-  gem 'devise'
-  gem 'ffaker'
-  gem 'newrelic_rpm'
-  gem 'simple_form'
-  gem 'country_select'
-  gem 'slim-rails'
-  gem 'rails-assets-bootstrap-sass-official'
-  gem 'rails-assets-fontawesome'
-end
+gem 'active_decorator'
+gem 'devise'
+gem 'ffaker'
+gem 'newrelic_rpm'
+gem 'simple_form'
+gem 'country_select'
+gem 'slim-rails'
+gem 'rails-assets-bootstrap-sass-official'
+gem 'rails-assets-fontawesome'
+gem 'rollbar'
+gem 'ransack'
 
 group :development do
   gem 'better_errors'
@@ -42,6 +34,9 @@ group :development do
 end
 
 group :development, :test do
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
   gem 'awesome_print', require: 'ap'
   gem 'factory_girl_rails'
   gem 'guard'
@@ -73,6 +68,5 @@ end
 
 group :production do
   gem 'pg'
-  gem 'rollbar'
   gem 'rails_12factor'
 end

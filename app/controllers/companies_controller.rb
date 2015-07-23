@@ -3,12 +3,9 @@ class CompaniesController < ApplicationController
   before_action :set_company
 
   def show
-    all_employees = @company.employees.page(params[:page]).per(15)
-    if params[:query].present?
-      @employees = all_employees.search(params[:query])
-    else
-      @employees = all_employees
-    end
+    @search = @company.employees.ransack(params[:q])
+    @employees = @search.result(distinct: true).page(params[:page]).per(15)
+
     respond_to do |format|
       format.html
       format.csv { send_data Employee.all.to_csv,

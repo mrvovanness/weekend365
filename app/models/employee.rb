@@ -6,8 +6,14 @@ class Employee < ActiveRecord::Base
 
   belongs_to :company
 
+  scope :selected, lambda { |department, position|
+    where(['department = ? and position = ?',
+      department, position]) 
+  }
   include PgSearch
-  pg_search_scope :search, against: [:name, :department, :position]
+  pg_search_scope :global_search,
+                  against: [:name, :department, :position],
+                  order_within_rank: "employees.name ASC"
 
   def self.to_csv
     attributes = %w(name email department position)
