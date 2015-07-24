@@ -17,4 +17,6 @@ Rails.application.routes.draw do
 
   resources :surveys
 
+  get 'dashboard' => 'dashboard#index'
+
 end

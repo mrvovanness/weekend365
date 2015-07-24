@@ -22,6 +22,7 @@ gem 'rails-assets-bootstrap-sass-official'
 gem 'rails-assets-fontawesome'
 gem 'rollbar'
 gem 'ransack'
+gem 'angularjs-rails'
 
 group :development do
   gem 'better_errors'

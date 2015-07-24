@@ -8,7 +8,7 @@ nav.navbar.navbar-default.navbar-fixed-top
 
         - if user_signed_in?
           li
-            = link_to 'COMPANY', company_path(@company)
+            = link_to 'COMPANY', root_path
           li
             = link_to 'LOG OUT', destroy_user_session_path
           li
