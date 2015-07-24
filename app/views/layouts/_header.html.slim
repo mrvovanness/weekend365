@@ -8,9 +8,11 @@ nav.navbar.navbar-default.navbar-fixed-top
 
         - if user_signed_in?
           li
-            = link_to 'COMPANY', @company
+            = link_to 'COMPANY', company_path(@company)
           li
             = link_to 'LOG OUT', destroy_user_session_path
+          li
+            = link_to 'SURVEYS', surveys_path
 
             - if current_user.has_role? :admin
               li

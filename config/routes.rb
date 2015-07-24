@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   ActiveAdmin.routes(self)
 
   devise_for :users
@@ -13,5 +14,7 @@ Rails.application.routes.draw do
       post 'import'
     end
   end
+
+  resources :surveys
 
 end

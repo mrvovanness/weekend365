@@ -3,4 +3,5 @@ class Company < ActiveRecord::Base
   belongs_to :user
   belongs_to :company_field
   has_many :employees
+  has_many :surveys
 end
