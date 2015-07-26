@@ -1,11 +1,11 @@
-$(document).on('ready page:load', function() {
+$(document).ready(function () {
 
   $('#select_all').click(function() {
     if(this.checked) {
       $('.bulk_actors').each(function() {
         this.checked = true;
       });
-    } else { 
+    } else {
       $('.bulk_actors').each(function() {
         this.checked = false;
       });
