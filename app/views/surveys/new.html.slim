@@ -1,0 +1,10 @@
+= simple_form_for @survey do |f|
+  = f.input :title
+  = f.input :repeat, inline_label: 'Repeat?'
+  = f.input :start_on, wrapper_html: { class: 'form-inline' }
+  = f.input :frequency, collection: 1..12,
+    label: 'Repeat every(weeks)',
+    include_blank: false,
+    wrapper_html: { class: 'form-inline' }
+  = f.input :next_delivery, as: :weekday, label: 'Repeats on'
+  = f.input :finish_on, wrapper_html: { class: 'form-inline' }

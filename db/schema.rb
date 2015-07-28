@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724081740) do
+ActiveRecord::Schema.define(version: 20150728141715) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -79,13 +79,17 @@ ActiveRecord::Schema.define(version: 20150724081740) do
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
 
   create_table "surveys", force: :cascade do |t|
-    t.integer "company_id"
-    t.string  "title"
-    t.string  "state"
-    t.integer "number_of_responses", default: 0
-    t.boolean "alarm",               default: false
-    t.date    "start_date"
-    t.string  "frequency"
+    t.integer  "company_id"
+    t.string   "title"
+    t.string   "state"
+    t.integer  "number_of_responses", default: 0
+    t.boolean  "alarm",               default: false
+    t.string   "frequency"
+    t.boolean  "repeat",                              null: false
+    t.datetime "start_on"
+    t.datetime "finish_on"
+    t.integer  "delivery_day"
+    t.datetime "next_delivery"
   end
 
   add_index "surveys", ["company_id"], name: "index_surveys_on_company_id", using: :btree

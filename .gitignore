@@ -72,3 +72,4 @@ crashlytics-build.properties
 tags
 .ruby-gemset
 .ruby-version
+up.sh

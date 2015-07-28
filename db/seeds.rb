@@ -7,8 +7,6 @@ user.skip_confirmation!
 user.save
 user.add_role :admin
 
-user.company = Company.find_or_create! (name: 'Coca-Cola') do |company|
-  field: 'foods'
-end
+user.company = Company.find_or_create_by!(name: 'Coca-Cola')
 
 puts "User admin? - #{user.has_role? :admin}, with company #{user.company.name}"
