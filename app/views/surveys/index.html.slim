@@ -1,19 +1,15 @@
 table.table.table-stripped
   tr
     th Title
-    th Status
-    th Number of Responses
-    th Alarm
     th Start Date
-    th Frequency
-    th Edit
+    th Start Time
+    th Finish on
+    th Number of repeats
 
   - @surveys.each do |survey|
     tr
       td = survey.title
-      td = survey.state
-      td = survey.number_of_responses
-      td = survey.alarm
       td = survey.start_on
-      td = survey.frequency
-      td = link_to 'edit', disable: true
+      td = survey.start_at.strftime('%I:%M%P') if survey.start_at.present?
+      td = survey.finish_on
+      td = survey.number_of_repeats

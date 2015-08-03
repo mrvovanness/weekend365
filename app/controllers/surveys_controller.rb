@@ -19,7 +19,8 @@ class SurveysController < ApplicationController
 
   def survey_params
     params.require(:survey).permit(
-      :title, :status, :alarm, :start_on, :frequency, :repeat)
+      :title, :start_on, :start_at,
+      :finish_on, :number_of_repeats, :repeat)
   end
 
   def set_company

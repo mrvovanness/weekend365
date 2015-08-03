@@ -1,9 +1,9 @@
 - content_for :title, 'Dashboard'
 p Dashboard is under construction.
-div.container-fluid ng-app='weekEnd'
-  div.panel.panel-success
-    div.panel-heading
-      h1 ng-if="name" Hello, {{name}}
-    div.panel-body
+.container-fluid ng-app='weekEnd'
+  .panel.panel-success
+    .panel-heading
+    .panel-body ng-controller='FormController as form'
       form.form-inline
-        input.form-control ng-model="name"
+        h1 preview{{form.survey.title}}
+        input.form-control ng-model="form.survey.title"

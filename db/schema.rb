@@ -84,12 +84,12 @@ ActiveRecord::Schema.define(version: 20150728141715) do
     t.string   "state"
     t.integer  "number_of_responses", default: 0
     t.boolean  "alarm",               default: false
-    t.string   "frequency"
-    t.boolean  "repeat",                              null: false
-    t.datetime "start_on"
-    t.datetime "finish_on"
-    t.integer  "delivery_day"
-    t.datetime "next_delivery"
+    t.boolean  "repeat"
+    t.date     "start_on"
+    t.time     "start_at"
+    t.date     "finish_on"
+    t.integer  "number_of_repeats"
+    t.datetime "next_delivery_at"
   end
 
   add_index "surveys", ["company_id"], name: "index_surveys_on_company_id", using: :btree
