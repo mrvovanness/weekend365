@@ -1,15 +1,25 @@
+= link_to 'Add a New Survey', new_survey_path, class: 'btn btn-default'
 table.table.table-stripped
   tr
     th Title
     th Start Date
     th Start Time
+    th Repeat?
     th Finish on
-    th Number of repeats
+    th Repeat every(weeks)
+    th Message
+    th Send to
+    th Question title
 
   - @surveys.each do |survey|
     tr
       td = survey.title
       td = survey.start_on
       td = survey.start_at.strftime('%I:%M%P') if survey.start_at.present?
+      td = survey.repeat
       td = survey.finish_on
       td = survey.number_of_repeats
+      td = survey.message
+      td = survey.employees.map(&:email).join(', ')
+      td = survey.questions.first.title if survey.questions.first.present?
+      td = link_to 'edit', edit_survey_path(survey)

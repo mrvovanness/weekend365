@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150728141715) do
+ActiveRecord::Schema.define(version: 20150804045733) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -67,6 +67,23 @@ ActiveRecord::Schema.define(version: 20150728141715) do
 
   add_index "employees", ["company_id"], name: "index_employees_on_company_id", using: :btree
 
+  create_table "employees_surveys", id: false, force: :cascade do |t|
+    t.integer "employee_id"
+    t.integer "survey_id"
+  end
+
+  add_index "employees_surveys", ["employee_id"], name: "index_employees_surveys_on_employee_id", using: :btree
+  add_index "employees_surveys", ["survey_id"], name: "index_employees_surveys_on_survey_id", using: :btree
+
+  create_table "questions", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "survey_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "questions", ["survey_id"], name: "index_questions_on_survey_id", using: :btree
+
   create_table "roles", force: :cascade do |t|
     t.string   "name"
     t.integer  "resource_id"
@@ -90,6 +107,7 @@ ActiveRecord::Schema.define(version: 20150728141715) do
     t.date     "finish_on"
     t.integer  "number_of_repeats"
     t.datetime "next_delivery_at"
+    t.text     "message"
   end
 
   add_index "surveys", ["company_id"], name: "index_surveys_on_company_id", using: :btree

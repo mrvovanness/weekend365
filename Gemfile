@@ -20,9 +20,10 @@ gem 'country_select'
 gem 'slim-rails'
 gem 'rails-assets-bootstrap-sass-official'
 gem 'rails-assets-fontawesome'
+gem 'jquery-timepicker-rails'
+gem 'select2-rails'
 gem 'rollbar'
 gem 'ransack'
-gem 'jquery-timepicker-rails'
 
 group :development do
   gem 'better_errors'

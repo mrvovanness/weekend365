@@ -1,5 +1,6 @@
 //= require jquery
+//= require jquery_ujs
 //= require_tree .
-//= require angular
 //= require jquery-ui/datepicker
 //= require jquery.timepicker
+//= require select2

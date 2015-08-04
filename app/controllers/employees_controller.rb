@@ -1,6 +1,12 @@
 class EmployeesController < ApplicationController
-
   before_action :authenticate_user!, :set_company
+
+  def index
+    @employees = @company.employees.order(:name)
+    respond_to do |format|
+      format.json { render json: @employees.where('name LIKE ?', "%#{ params[:q] }%") }
+    end
+  end
 
   def new
     @employee = @company.employees.build

@@ -5,6 +5,7 @@ class Employee < ActiveRecord::Base
   validates :email, format: { with: /\A[^@]+@[^@]+\z/ }
 
   belongs_to :company
+  has_and_belongs_to_many :surveys
 
   def self.to_csv
     attributes = %w(name email department position)

@@ -2,23 +2,31 @@
   .panel.panel-heading
   .panel-body ng-controller='FormController as form'
   = simple_form_for @survey do |f|
-    = f.input :title, input_html: { 'ng-model' => 'form.survey.title' }
+    = f.input :title
 
     = f.input :start_on, as: :string,
-      wrapper_html: { class: 'form-inline' },
-      input_html: { 'ng-model' => 'form.survey.start_on_date' }
+      wrapper_html: { class: 'form-inline' }
 
     = f.input :start_at, as: :string, wrapper_html: { class: 'form-inline' }
 
-    = f.input :repeat, inline_label: 'Repeat?',
-      input_html: { 'ng-model' => 'form.survey.repeat' }
+    = f.input :repeat, inline_label: 'Repeat?'
 
     = f.input :finish_on, as: :string, wrapper_html: { class: 'form-inline' }
-    = f.submit
-    p
-      | Title: {{form.survey.title}}
-      br
-      | Repeat: {{form.survey.repeat}}
-      br
-      | Start on: {{form.survey.start_on_date}}
 
+    = f.input :number_of_repeats, collection: 1..12,
+      label: 'repeat_every(weeks)',
+      wrapper_html: { class: 'form-inline' },
+      include_blank: false,
+      default: 1
+
+    = f.input :message, label: 'Message to employee'
+
+    = f.input :employee_ids, collection: @survey.company.employees.order(:name),
+      label: 'Send to',
+      input_html: { multiple: true },
+      include_blank: false
+
+    = f.simple_fields_for :questions do |q|
+      = q.input :title, label: 'Question Title'
+
+    = f.submit

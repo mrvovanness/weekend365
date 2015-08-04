@@ -1,0 +1,5 @@
+= render 'form', survey: @survey
+=link_to 'Delete', survey_path(@survey),
+  method: 'DELETE',
+  data: { confirm: 'Are you sure?'},
+  class: 'btn btn-default'

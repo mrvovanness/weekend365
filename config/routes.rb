@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :companies, only: [:show, :edit, :update]
 
-  resources :employees, except: [:index] do
+  resources :employees do
     collection do
       patch 'add_to_survey'
       post 'import'
