@@ -24,6 +24,8 @@ gem 'jquery-timepicker-rails'
 gem 'select2-rails'
 gem 'rollbar'
 gem 'ransack'
+gem 'resque', require: 'resque/server'
+gem 'resque-scheduler'
 
 group :development do
   gem 'better_errors'
@@ -32,6 +34,7 @@ group :development do
   gem 'html2slim'
   gem 'meta_request'
   gem 'interactive_editor'
+  gem 'letter_opener'
 end
 
 group :development, :test do
