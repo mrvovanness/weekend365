@@ -12,8 +12,19 @@
 
   = f.input :finish_on, as: :string, wrapper_html: { class: 'form-inline' }
 
+  = f.input :repeat_mode,
+    collection: [['weeks', 'w'], ['days', 'd']],
+    include_blank: false,
+    default: 1,
+    wrapper_html: { class: 'form-inline' }
+
+  = f.input :repeat_every, collection: 1..12,
+    label: 'repeat_every(weeks/days)',
+    wrapper_html: { class: 'form-inline' },
+    include_blank: false,
+    default: 1
+
   = f.input :number_of_repeats, collection: 1..12,
-    label: 'repeat_every(weeks)',
     wrapper_html: { class: 'form-inline' },
     include_blank: false,
     default: 1

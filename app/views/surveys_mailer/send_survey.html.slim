@@ -4,3 +4,5 @@ html
     meta content='text/html; charset=UTF-8'
   body
     h1 Welcome to weekend365
+    p = @survey.message
+    p Question: #{ @survey.questions.first.title }

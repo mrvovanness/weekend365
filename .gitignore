@@ -73,3 +73,5 @@ tags
 .ruby-gemset
 .ruby-version
 up.sh
+up-with-bg.sh
+dump.rdb

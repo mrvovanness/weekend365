@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804045733) do
+ActiveRecord::Schema.define(version: 20150806110758) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -108,6 +108,8 @@ ActiveRecord::Schema.define(version: 20150804045733) do
     t.integer  "number_of_repeats"
     t.datetime "next_delivery_at"
     t.text     "message"
+    t.integer  "repeat_every"
+    t.string   "repeat_mode"
   end
 
   add_index "surveys", ["company_id"], name: "index_surveys_on_company_id", using: :btree

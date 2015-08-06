@@ -4,9 +4,10 @@ table.table.table-stripped
     th Title
     th Start Date
     th Start Time
-    th Repeat?
+    th Repeat mode
     th Finish on
     th Repeat every(weeks)
+    th Number_of repeats
     th Message
     th Send to
     th Question title
@@ -16,8 +17,9 @@ table.table.table-stripped
       td = survey.title
       td = survey.start_on
       td = survey.start_at.strftime('%I:%M%P') if survey.start_at.present?
-      td = survey.repeat
+      td = survey.repeat_mode
       td = survey.finish_on
+      td = survey.repeat_every
       td = survey.number_of_repeats
       td = survey.message
       td = survey.employees.map(&:email).join(', ')
