@@ -1,4 +1,12 @@
 Rails.application.configure do
+  config.action_mailer.default_url_options = { host: 'https://weekend365.com/' }
+  config.action_mailer.default_options = { from: 'development@pweekend365.com' }
+  config.action_mailer.smtp_settings = {
+    address: ENV['smtp_address'],
+    port: ENV['smtp_port'],
+    user_name: ENV['smtp_username'],
+    password: ENV['smtp_password']
+  }
   config.cache_classes = true
   config.eager_load = true
   config.consider_all_requests_local       = false

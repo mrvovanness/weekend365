@@ -75,3 +75,4 @@ tags
 up.sh
 up-with-bg.sh
 dump.rdb
+.env
