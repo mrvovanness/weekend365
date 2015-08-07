@@ -35,6 +35,7 @@ group :development do
   gem 'meta_request'
   gem 'interactive_editor'
   gem 'letter_opener'
+  gem 'capistrano-rails'
 end
 
 group :development, :test do
