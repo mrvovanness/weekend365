@@ -3,7 +3,7 @@
 #lock '3.1.0'
 
 set :application, "weeekend365"
-set :repo_url, "git@gitlab.com:webgradus/#{fetch(:application)}.git"
+set :repo_url, "git@bitbucket.org:team-kadore/sss.git"
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
@@ -18,8 +18,8 @@ set :rails_env, "production"
 # set :user, "root"
 # set :use_sudo, false
 
-set :linked_files, %w{config/database.yml config/secrets.yml} # Rails 4.1 uses secrets.yml file
-set :linked_dirs, %w{log tmp/pids tmp/sockets public/spree}
+set :linked_files, %w{config/database.yml} # Rails 4.1 uses secrets.yml file
+set :linked_dirs, %w{log tmp/pids tmp/sockets}
 
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 set :keep_releases, 5
