@@ -8,7 +8,7 @@ server '185.22.62.34', user: 'root', roles: [:web]
 set :ssh_options, {
   keys: %w(/home/dev/.ssh/id_rsa),
   auth_methods: %w(publickey),
-  forward_agent: false
+  forward_agent: true
 }
 # server 'example.com', user: 'deploy', roles: %w{app web}, other_property: :other_value
 # server 'db.example.com', user: 'deploy', roles: %w{db}

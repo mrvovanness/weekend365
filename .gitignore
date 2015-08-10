@@ -76,3 +76,6 @@ up.sh
 up-with-bg.sh
 dump.rdb
 .env
+
+# Ignore application configuration
+/config/application.yml

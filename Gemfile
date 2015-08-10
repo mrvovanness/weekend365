@@ -26,6 +26,8 @@ gem 'rollbar'
 gem 'ransack'
 gem 'resque', require: 'resque/server'
 gem 'resque-scheduler'
+gem 'puma'
+gem 'figaro'
 
 group :development do
   gem 'better_errors'
