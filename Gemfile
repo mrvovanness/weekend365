@@ -27,10 +27,10 @@ gem 'rollbar'
 gem 'ransack'
 gem 'resque', require: 'resque/server'
 gem 'resque-scheduler'
-gem 'puma'
 gem 'figaro'
 gem "foreman"
 gem "foreman-export-initscript", :github => "webgradus/foreman-export-initscript"
+gem 'unicorn'
 
 group :development do
   gem 'better_errors'
