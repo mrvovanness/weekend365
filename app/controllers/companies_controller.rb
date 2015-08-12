@@ -18,7 +18,7 @@ class CompaniesController < ApplicationController
 
   def update
     @company.update(company_params)
-    respond_with @company
+    respond_with @company, location: -> { company_path }
   end
 
   private
