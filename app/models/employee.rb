@@ -1,8 +1,8 @@
 class Employee < ActiveRecord::Base
   validates :name, :email, presence: true
   validates :email, uniqueness: true
-  # Как вариант использовать https://github.com/kaize/validates и тогда просто "email: true"
-  validates :email, format: { with: /\A[^@]+@[^@]+\z/ }
+  # Gem 'validate'
+  validates :email, email: true
 
   belongs_to :company
   has_and_belongs_to_many :surveys

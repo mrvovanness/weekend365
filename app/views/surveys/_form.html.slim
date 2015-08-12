@@ -1,45 +1,53 @@
 .panel.panel-heading
 .panel-body
-= simple_form_for survey do |f|
-  = f.input :title
+  = simple_form_for survey do |f|
+    = f.input :title
 
-  = f.input :start_on, as: :string,
-    wrapper_html: { class: 'form-inline' }
+    = f.input :start_on, as: :string,
+      wrapper_html: { class: 'form-inline' }
 
-  = f.input :start_at, as: :string, wrapper_html: { class: 'form-inline' }
-  = f.error :start_at
+    = f.input :start_at, as: :string,
+      wrapper_html: { class: 'form-inline' },
+      label: 'start at(UTC)'
+    = f.error :start_at
 
-  = f.input :repeat, inline_label: 'Repeat?'
+    .well
+      = f.input :number_of_repeats, collection: 1..12,
+        wrapper_html: { class: 'form-inline' },
+        include_blank: false,
+        default: 1
 
-  = f.input :finish_on, as: :string, wrapper_html: { class: 'form-inline' }
-  = f.error :finish_on
+      u OR
+      br
 
-  = f.input :repeat_mode,
-    collection: [['weeks', 'w'], ['days', 'd']],
-    include_blank: false,
-    default: 1,
-    wrapper_html: { class: 'form-inline' }
+      = f.input :finish_on, as: :string,
+        wrapper_html: { class: 'form-inline' },
+        disabled: true
+      = f.error :finish_on
+      i If you specify 'finish on' number of repeats will be calculated automatically
 
-  = f.input :repeat_every, collection: 1..12,
-    label: 'repeat_every(weeks/days)',
-    wrapper_html: { class: 'form-inline' },
-    include_blank: false,
-    default: 1
 
-  = f.input :number_of_repeats, collection: 1..12,
-    wrapper_html: { class: 'form-inline' },
-    include_blank: false,
-    default: 1
+    = f.input :repeat_mode,
+      collection: [['weeks', 'w'], ['days', 'd']],
+      include_blank: false,
+      default: 1,
+      wrapper_html: { class: 'form-inline' }
 
-  = f.input :message, label: 'Message to employee'
+    = f.input :repeat_every, collection: 1..12,
+      label: 'repeat_every(weeks/days)',
+      wrapper_html: { class: 'form-inline' },
+      include_blank: false,
+      default: 1
 
-  = f.input :employee_ids, collection: survey.company.employees.order(:name),
-    label: 'Send to',
-    input_html: { multiple: true },
-    include_blank: false
+    = f.input :message, label: 'Message to employee'
 
-  = f.simple_fields_for :questions do |q|
-    = q.input :id, as: :hidden unless q.object.new_record?
-    = q.input :title, label: 'Question Title' 
+    = f.input :employee_ids, collection: survey.company.employees.order(:name),
+      label: 'Send to',
+      input_html: { multiple: true },
+      include_blank: false
 
-  = f.submit
+    = f.simple_fields_for :questions do |q|
+      = q.input :id, as: :hidden unless q.object.new_record?
+      = q.input :title, label: 'Question Title' 
+
+    = f.submit
