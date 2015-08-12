@@ -2,4 +2,4 @@
 
 web: bundle exec unicorn_rails -Dc config/unicorn.rb -E production
 worker: bundle exec rake environment resque:work
-scheduler: bundle exec rake resque:scheduler
+scheduler: RAILS_ENV=production bundle exec rake resque:scheduler
