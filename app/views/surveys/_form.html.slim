@@ -7,10 +7,12 @@
     wrapper_html: { class: 'form-inline' }
 
   = f.input :start_at, as: :string, wrapper_html: { class: 'form-inline' }
+  = f.error :start_at
 
   = f.input :repeat, inline_label: 'Repeat?'
 
   = f.input :finish_on, as: :string, wrapper_html: { class: 'form-inline' }
+  = f.error :finish_on
 
   = f.input :repeat_mode,
     collection: [['weeks', 'w'], ['days', 'd']],

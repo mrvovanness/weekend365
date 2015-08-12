@@ -1,5 +1,6 @@
 class Survey < ActiveRecord::Base
-  validates :title, presence: true
+  validates :title, :start_on, :start_at, :finish_on, presence: true
+  validate :start_in_future?, :finish_after_start?
   belongs_to :company
   has_and_belongs_to_many :employees
   has_many :questions
@@ -8,8 +9,23 @@ class Survey < ActiveRecord::Base
 
   after_save :schedule_send_emails
 
+  def start_in_future?
+    if start_at.present? &&
+        start_on.present? &&
+        join_date_time(self) <= DateTime.now + 3.minutes
+      errors.add(:start_on, "can't be in the past")
+      errors.add(:start_at, "can't be in the past or within 3 minutes from now")
+    end
+  end
+
+  def finish_after_start?
+    if finish_on.present? && finish_on <= join_date_time(self)
+      errors.add(:finish_on, "can't be before start")
+    end
+  end
+
   def schedule_send_emails
-    start_date = (start_on.to_s + ' ' + start_at.to_s).to_datetime
+    start_date = join_date_time(self)
     name = "send_emails_for_survey_#{id}"
     config = {}
     config[:class] = 'SendEmailsJob'
@@ -20,4 +36,9 @@ class Survey < ActiveRecord::Base
     config[:queue] = 'send_emails'
     Resque.set_schedule(name, config)
   end
+
+  def join_date_time(survey)
+    (survey.start_on.to_s + ' ' + survey.start_at.to_s).to_datetime
+  end
+
 end
