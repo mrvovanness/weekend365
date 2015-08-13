@@ -26,7 +26,7 @@ gem 'select2-rails'
 gem 'rollbar'
 gem 'ransack'
 gem 'resque', require: 'resque/server'
-gem 'resque-scheduler'
+gem 'resque-scheduler', require: 'resque/scheduler/server'
 gem 'figaro'
 gem "foreman"
 gem "foreman-export-initscript", :github => "webgradus/foreman-export-initscript"
