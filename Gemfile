@@ -73,6 +73,7 @@ group :development, :test do
 end
 
 group :test do
+  gem 'resque_spec'
   gem 'capybara'
   gem 'webmock'
   gem 'vcr'

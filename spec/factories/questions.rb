@@ -1,8 +1,8 @@
 FactoryGirl.define do
   factory :question do
-    title "MyString"
-survey_id 1
-survey_id "MyString"
+    title 'What is your mood?'
+    survey
+    
   end
 
 end

@@ -350,6 +350,11 @@ GEM
       redis (~> 3.0)
       resque (~> 1.25)
       rufus-scheduler (~> 3.0)
+    resque_spec (0.16.0)
+      resque (>= 1.19.0)
+      rspec-core (>= 3.0.0)
+      rspec-expectations (>= 3.0.0)
+      rspec-mocks (>= 3.0.0)
     rolify (4.1.1)
     rollbar (2.1.1)
     rspec (3.3.0)
@@ -533,6 +538,7 @@ DEPENDENCIES
   responders
   resque
   resque-scheduler
+  resque_spec
   rolify
   rollbar
   rspec-activemodel-mocks

@@ -9,6 +9,7 @@ class Survey < ActiveRecord::Base
 
   before_save :reset_counter
   after_save :schedule_send_emails
+  after_destroy :delete_schedule
 
   def start_in_future?
     if start_at.present? &&
@@ -44,6 +45,10 @@ class Survey < ActiveRecord::Base
 
   def join_date_time(survey)
     (survey.start_on.to_s + ' ' + survey.start_at.to_s).to_datetime
+  end
+
+  def delete_schedule
+    Resque.remove_schedule("send_emails_for_survey_#{id}")
   end
 
 end
