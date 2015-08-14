@@ -4,6 +4,8 @@ class Survey < ActiveRecord::Base
   belongs_to :company
   has_and_belongs_to_many :employees
   has_many :questions, dependent: :destroy
+  has_many :answers, through: :questions
+  has_many :scaled_questions
 
   accepts_nested_attributes_for :questions, allow_destroy: true
 
