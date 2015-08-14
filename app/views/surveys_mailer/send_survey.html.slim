@@ -6,3 +6,7 @@ html
     h1 Welcome to weekend365
     p = @survey.message
     p Question: #{ @survey.questions.first.title }
+    - (1..10).each do |mark|
+      = link_to mark.to_s, answers_url(token: @token,
+        question_id: @survey.questions.first.id,
+        mark: mark)

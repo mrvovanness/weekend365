@@ -1,11 +1,18 @@
 class AnswersController < ApplicationController
 
   def add_answer
-    if params[:question_id].nil? && params[:mark].nil?
-      redirect_to root_path and return
+    case
+    when params[:token].present?
+      token = Token.find_by(name: params[:token])
+      if token.nil? || token.expired
+        redirect_to root_path
+      else
+        @question = Question.find(params[:question_id])
+        @question.answers.create(mark: params[:mark])
+        token.update(expired: true)
+      end
+    when params[:token].nil?
+      redirect_to root_path
     end
-
-    @question = Question.find(params[:question_id])
-    @question.answers.create(mark: params[:mark])
   end
 end
