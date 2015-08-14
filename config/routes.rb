@@ -20,4 +20,6 @@ Rails.application.routes.draw do
   get 'dashboard' => 'dashboard#index'
   mount Resque::Server, at: '/resque'
 
+  # route for handling email links
+  get 'answers' => 'answers#add_answer'
 end
