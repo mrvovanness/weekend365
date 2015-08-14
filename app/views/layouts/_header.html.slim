@@ -10,6 +10,8 @@ nav.navbar.navbar-default.navbar-fixed-top
           li
             = link_to 'COMPANY', root_path
           li
+            = link_to 'DASHBOARD', dashboard_path
+          li
             = link_to 'LOG OUT', destroy_user_session_path
           li
             = link_to 'SURVEYS', surveys_path
@@ -23,4 +25,3 @@ nav.navbar.navbar-default.navbar-fixed-top
             = link_to 'GET STARTED', new_user_registration_path
           li
             = link_to 'LOGIN', new_user_session_path
-
