@@ -1,0 +1,2 @@
+class ScaledQuestion < Question
+end

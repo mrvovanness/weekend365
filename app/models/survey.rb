@@ -3,7 +3,7 @@ class Survey < ActiveRecord::Base
   validate :start_in_future?, :finish_after_start?
   belongs_to :company
   has_and_belongs_to_many :employees
-  has_many :questions
+  has_many :questions, dependent: :destroy
 
   accepts_nested_attributes_for :questions, allow_destroy: true
 
