@@ -32,6 +32,7 @@ gem "foreman"
 gem "foreman-export-initscript", :github => "webgradus/foreman-export-initscript"
 gem 'unicorn'
 gem 'validates'
+gem 'chronic'
 
 group :development do
   gem 'better_errors'

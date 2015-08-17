@@ -16,9 +16,6 @@ module Sss
     # Use the responders controller from the responders gem
     config.app_generators.scaffold_controller :responders_controller
 
-    
-    config.time_zone = 'Tokyo'
-
     I18n.enforce_available_locales = true
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :en

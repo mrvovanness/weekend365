@@ -37,7 +37,7 @@ class Survey < ActiveRecord::Base
     name = "send_emails_for_survey_#{id}"
     config = {}
     config[:every] = ["#{repeat_every}#{repeat_mode}",
-                     {first_at: start_date, times: number_of_repeats}]
+                      { next_time: start_date.in_time_zone('Tokyo') }]
     config[:class] = 'SendEmailsJob'
     config[:queue] = 'send_emails'
     config[:persist] = true
