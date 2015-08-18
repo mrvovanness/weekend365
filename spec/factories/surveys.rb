@@ -1,8 +1,7 @@
 FactoryGirl.define do
   factory :survey do
     title 'Your first survey'
-    start_on Date.today + 1.day
-    start_at Time.now + 1.hour
+    start_at DateTime.now + 1.hour
     number_of_repeats 2
     repeat_mode 'd'
     repeat_every 3

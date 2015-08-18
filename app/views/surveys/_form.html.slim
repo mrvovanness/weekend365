@@ -3,13 +3,11 @@
   = simple_form_for survey do |f|
     = f.input :title
 
-    = f.input :start_on, as: :string,
-      wrapper_html: { class: 'form-inline' }
-
-    = f.input :start_at, as: :string,
-      wrapper_html: { class: 'form-inline' },
-      label: 'start at(UTC)'
-    = f.error :start_at
+    .col-md-6
+      = f.input :start_at, as: :string,
+        wrapper_html: { class: 'form-inline' },
+        label: 'start at(Tokyo time)'
+      = f.error :start_at
 
     .well
       = f.input :number_of_repeats, collection: 1..12,

@@ -21,8 +21,9 @@ gem 'country_select'
 gem 'slim-rails'
 gem 'rails-assets-bootstrap-sass-official'
 gem 'rails-assets-fontawesome'
-gem 'jquery-timepicker-rails'
 gem 'select2-rails'
+gem 'momentjs-rails'
+gem 'bootstrap3-datetimepicker-rails'
 gem 'rollbar'
 gem 'ransack'
 gem 'resque', require: 'resque/server'
@@ -71,6 +72,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'sqlite3'
   gem 'turnip'
+  gem 'timecop'
 end
 
 group :test do

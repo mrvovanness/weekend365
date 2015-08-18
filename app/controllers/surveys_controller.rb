@@ -35,7 +35,7 @@ class SurveysController < ApplicationController
 
   def survey_params
     params.require(:survey).permit(
-      :title, :start_on, :start_at, :finish_on,
+      :title, :start_on, :start_at, :finish_on, :time_zone,
       :number_of_repeats, :repeat_every, :repeat_mode, :message,
       :employee_ids => [], questions_attributes: [:id, :title, :type])
   end

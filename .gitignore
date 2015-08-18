@@ -79,3 +79,4 @@ dump.rdb
 
 # Ignore application configuration
 /config/application.yml
+run_schedule_in_future.rb

@@ -4,9 +4,9 @@ table.table.table-stripped
     th Survey Title
     th Question title
     th Message to employee
-    th Start Date
-    th Time of delivery
+    th Start at
     th Number of repeats
+    th Next delivery at
     th Status
     th Finish on
     th Repeat mode
@@ -17,9 +17,9 @@ table.table.table-stripped
       td = survey.title
       td = survey.questions.first.title if survey.questions.first.present?
       td = survey.message
-      td = survey.start_on
-      td = survey.start_at.strftime('%I:%M%P') if survey.start_at.present?
+      td = survey.start_at
       td = survey.number_of_repeats
+      td = survey.next_delivery_at
       td
         - if survey.counter == survey.number_of_repeats
           | completed, sent #{survey.counter} times
