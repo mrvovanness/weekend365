@@ -12,6 +12,9 @@ FactoryGirl.define do
     factory :survey_with_id
     id 1
 
+    factory :survey_with_finish_on
+    finish_on Date.today + 1.year
+
     factory :survey_with_questions do
       transient do
         questions_count 1
