@@ -10,6 +10,9 @@ class Survey < ActiveRecord::Base
   accepts_nested_attributes_for :questions, allow_destroy: true
 
   before_save :reset_counter, :set_next_delivery
+  before_save :calculate_number_of_repeats,
+    if: Proc.new { |survey| survey.finish_on.present? }
+
   after_save :add_schedule
   after_destroy :delete_schedule
 
@@ -34,6 +37,11 @@ class Survey < ActiveRecord::Base
     self.next_delivery_at = start_at
   end
 
+  def calculate_number_of_repeats
+    calculation = RepeatsCalculator.new(self)
+    self.number_of_repeats = calculation.result
+  end
+
   def add_schedule
     schedule = SchedulesConfigurator.new(self)
     schedule.add_to_scheduler
@@ -45,5 +53,13 @@ class Survey < ActiveRecord::Base
 
   def completed?
     number_of_repeats == counter
+  end
+
+  def daily?
+    repeat_mode == 'd'
+  end
+
+  def weekly?
+    repeat_mode == 'w'
   end
 end

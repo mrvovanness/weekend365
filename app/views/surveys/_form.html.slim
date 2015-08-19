@@ -17,12 +17,11 @@
 
       u OR
       br
-
-      = f.input :finish_on, as: :string,
-        wrapper_html: { class: 'form-inline' },
-        disabled: true
-      = f.error :finish_on
-      i If you specify 'finish on' number of repeats will be calculated automatically
+      .col-md-6
+        = f.input :finish_on, as: :string,
+          wrapper_html: { class: 'form-inline' }
+        = f.error :finish_on
+        i If you specify 'finish on' number of repeats will be calculated automatically
 
 
     = f.input :repeat_mode,

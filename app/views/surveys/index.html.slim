@@ -27,9 +27,9 @@ table.table.table-stripped
           | not completed, sent #{survey.counter} times
       td = survey.finish_on
       td
-        - if survey.completed?
+        - if survey.daily?
           | send every #{survey.repeat_every} day(s)
-        - elsif survey.repeat_mode == 'w'
+        - elsif survey.weekly?
           | send every #{survey.repeat_every} week(s)
       td = survey.employees.map(&:email).join(', ')
       td = link_to 'edit', edit_survey_path(survey)
