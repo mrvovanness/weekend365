@@ -19,7 +19,7 @@ table.table.table-stripped
       td = survey.message
       td = survey.start_at
       td = survey.number_of_repeats
-      td = survey.next_delivery_at
+      td = survey.completed? ? 'no next delivery' : survey.next_delivery_at
       td
         - if survey.counter == survey.number_of_repeats
           | completed, sent #{survey.counter} times
@@ -27,7 +27,7 @@ table.table.table-stripped
           | not completed, sent #{survey.counter} times
       td = survey.finish_on
       td
-        - if survey.repeat_mode == 'd'
+        - if survey.completed?
           | send every #{survey.repeat_every} day(s)
         - elsif survey.repeat_mode == 'w'
           | send every #{survey.repeat_every} week(s)

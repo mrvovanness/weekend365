@@ -42,4 +42,8 @@ class Survey < ActiveRecord::Base
   def delete_schedule
     Resque.remove_schedule("send_emails_for_survey_#{id}")
   end
+
+  def completed?
+    number_of_repeats == counter
+  end
 end
