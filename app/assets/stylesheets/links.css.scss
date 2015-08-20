@@ -1,0 +1,118 @@
+a{text-decoration:none; color:#fcb331;}
+a:hover{text-decoration:underline;}
+
+#header .links{
+	padding:0;
+	margin:0;
+	list-style:none;
+	text-transform:uppercase;
+	float:left;
+	letter-spacing:2px;
+	font:14px/22px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
+}
+#header .links.alignright{
+	float:right;
+	padding:0 24px 0 0 ;
+}
+.links li{
+	position:relative;
+	float:left;
+	margin:0 0 0 60px;
+}
+.links.alignright li:first-child,
+.links li:first-child{margin:0;}
+.links a{
+	position:relative;
+	padding:18px 16px 13px 36px;
+	margin:-18px -16px -13px -36px;
+}
+.links a:hover{
+	text-decoration:none;
+	color:#fcb331;
+}
+.links > li > a:after{
+	content:'';
+	position: absolute;
+}
+.links > li:hover > a,
+.links > li > a:hover{
+	background:#526262;
+}
+.links .company a{
+	padding-left:16px;
+	margin-left:-16px;
+}
+.links .dashboards a:after{
+	background:image-url("sprite") no-repeat 0 -71px;
+	width:20px;
+	height:15px;
+	top:19px;
+	left:7px;
+}
+.links .surveys a:after{
+	background:image-url("sprite") no-repeat -105px -69px;
+	width:12px;
+	height:14px;
+	left: 18px;
+	top: 19px;
+}
+.links .username a:after{
+	background:image-url("sprite") no-repeat -45px -71px;
+	width:12px;
+	height:12px;
+	left:14px;
+	top: 20px;
+}
+.links .lang a:after{
+	background:image-url("sprite") no-repeat -27px -71px;
+	width:13px;
+	height:14px;
+	left: 13px;
+	top: 20px;
+}
+.links .drop{
+	position:absolute;
+	top:100%;
+	left: -17px;
+	padding: 7px 0 0;
+	line-height:15px;
+	display:none;
+}
+.links li:hover .drop{display:block;}
+.links.alignright .drop ul li,
+.links .drop ul li{margin:0 0 3px;}
+.links ul{
+	padding:11px 25px 9px;
+	margin:0;
+	width:100px;
+	list-style:none;
+	font-size:14px;
+	color:#fcb331;
+	background:#0d8690;
+	text-transform:none;
+	position:relative;
+}
+.links ul:after{
+	content:'';
+	position: absolute;
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 8px 0 0 18px;
+	border-color: transparent transparent transparent #0d8690;
+	left:0;
+	top:-8px;
+}
+.links.alignright ul li,
+.links ul li{
+	float:none;
+	margin:0;
+}
+.links ul li a{
+	display:block;
+	padding:0 15px 0 5px;
+	margin:0 -15px 0 -5px;
+}
+.links ul li a:hover{
+	background:#285b5f;
+}

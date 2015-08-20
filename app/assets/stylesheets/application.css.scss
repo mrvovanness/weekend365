@@ -6,7 +6,7 @@
  *= require select2-bootstrap
  */
 
-$icon-font-path: "bootstrap-sass-official/";
+/*$icon-font-path: "bootstrap-sass-official/";
 
 @import "bootstrap-sass-official/bootstrap-sprockets";
 @import "bootstrap-sass-official/bootstrap";
@@ -40,4 +40,70 @@ body { padding-top: 70px; }
   border-color: #d6e9c6;
   color: #468847;
   text-align: left;
+}
+*/
+body.inner{background:#fff;}
+
+.wrapper-holder{
+	position:relative;
+	width:100%;
+	height:100%;
+}
+
+#wrapper{
+	margin:0 auto ;
+	display:table;
+	height:100%;
+	overflow:hidden;
+	width:100%;
+	padding:0 0 45px;
+}
+
+.w1{
+	width:100%;
+  display:table-row;
+}
+
+.main{
+	background:image-url("bg-section01.png");
+	padding:0 33px 9999px 33px;
+	width:838px;
+	margin:0 auto -9999px;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
+
+#header{
+	background:#343838;
+	padding:15px 9999px 11px;
+	margin:0 -9999px;
+}
+
+.clearfix:after{
+	content:'';
+	display:block;
+	clear:both;
+}
+
+#header{
+	background:#343838;
+	padding:15px 9999px 11px;
+	margin:0 -9999px;
+}
+#header .logo{
+	float:left;
+	margin:0 36px 0 0;
+}
+#header .links{
+	padding:0;
+	margin:0;
+	list-style:none;
+	text-transform:uppercase;
+	float:left;
+	letter-spacing:2px;
+	font:14px/22px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
+}
+#header .links.alignright{
+	float:right;
+	padding:0 24px 0 0 ;
 }

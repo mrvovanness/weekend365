@@ -18,5 +18,4 @@ namespace :resque do
   end
 
   task :scheduler => :setup_schedule
-  task 'jobs:work' => 'resque:work'
 end
