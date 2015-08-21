@@ -1,44 +1,44 @@
 @font-face {
 	font-family: 'freightsans_mediumscregular';
-	src: url('freightsans_mediumsc-webfont.eot');
-	src: url('freightsans_mediumsc-webfont.eot?#iefix') format('embedded-opentype'),
-	url('../fonts/freightsans_mediumsc-webfont.woff2') format('woff2'),
-	url('../fonts/freightsans_mediumsc-webfont.woff') format('woff'),
-	url('../fonts/freightsans_mediumsc-webfont.ttf') format('truetype'),
-	url('../fonts/freightsans_mediumsc-webfont.svg#freightsans_mediumscregular') format('svg');
+	src: font-url('freightsans_mediumsc-webfont.eot');
+	src: font-url('freightsans_mediumsc-webfont.eot?#iefix') format('embedded-opentype'),
+	font-url('freightsans_mediumsc-webfont.woff2') format('woff2'),
+	font-url('freightsans_mediumsc-webfont.woff') format('woff'),
+	font-url('freightsans_mediumsc-webfont.ttf') format('truetype'),
+	font-url('freightsans_mediumsc-webfont.svg#freightsans_mediumscregular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'freightsans_mediumregular';
-	src: url('../fonts/freightsans_medium-webfont.eot');
-	src: url('../fonts/freightsans_medium-webfont.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/freightsans_medium-webfont.woff2') format('woff2'),
-		url('../fonts/freightsans_medium-webfont.woff') format('woff'),
-		url('../fonts/freightsans_medium-webfont.ttf') format('truetype'),
-		url('../fonts/freightsans_medium-webfont.svg#freightsans_mediumregular') format('svg');
+	src: font-url('freightsans_medium-webfont.eot');
+	src: font-url('freightsans_medium-webfont.eot?#iefix') format('embedded-opentype'),
+		font-url('freightsans_medium-webfont.woff2') format('woff2'),
+		font-url('freightsans_medium-webfont.woff') format('woff'),
+		font-url('freightsans_medium-webfont.ttf') format('truetype'),
+		font-url('freightsans_medium-webfont.svg#freightsans_mediumregular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'freightsans_bookscregular';
-	src: url('../fonts/freightsans_booksc1-webfont.eot');
-	src: url('../fonts/freightsans_booksc1-webfont.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/freightsans_booksc1-webfont.woff2') format('woff2'),
-		url('../fonts/freightsans_booksc1-webfont.woff') format('woff'),
-		url('../fonts/freightsans_booksc1-webfont.ttf') format('truetype'),
-		url('../fonts/freightsans_booksc1-webfont.svg#freightsans_bookscregular') format('svg');
+	src: font-url('freightsans_booksc1-webfont.eot');
+	src: font-url('freightsans_booksc1-webfont.eot?#iefix') format('embedded-opentype'),
+		font-url('freightsans_booksc1-webfont.woff2') format('woff2'),
+		font-url('freightsans_booksc1-webfont.woff') format('woff'),
+		font-url('freightsans_booksc1-webfont.ttf') format('truetype'),
+		font-url('freightsans_booksc1-webfont.svg#freightsans_bookscregular') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'freightsans_lightitalicRg';
-	src: url('../fonts/freightsans_lightitalic1-webfont.eot');
-	src: url('../fonts/freightsans_lightitalic1-webfont.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/freightsans_lightitalic1-webfont.woff2') format('woff2'),
-		url('../fonts/freightsans_lightitalic1-webfont.woff') format('woff'),
-		url('../fonts/freightsans_lightitalic1-webfont.ttf') format('truetype'),
-		url('../fonts/freightsans_lightitalic1-webfont.svg#freightsans_lightitalicRg') format('svg');
+	src: font-url('freightsans_lightitalic1-webfont.eot');
+	src: font-url('freightsans_lightitalic1-webfont.eot?#iefix') format('embedded-opentype'),
+		font-url('freightsans_lightitalic1-webfont.woff2') format('woff2'),
+		font-url('freightsans_lightitalic1-webfont.woff') format('woff'),
+		font-url('freightsans_lightitalic1-webfont.ttf') format('truetype'),
+		font-url('freightsans_lightitalic1-webfont.svg#freightsans_lightitalicRg') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
