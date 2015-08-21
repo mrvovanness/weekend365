@@ -7,16 +7,12 @@
       company_path(company, format: :csv),
       class: 'link-upload'
     .add-holder
-      = form_tag add_to_survey_employees_path,
-        id: 'add-to-survey-form',
-        method: :patch do
-        fieldset
-        = link_to 'Add selected<br>to survey'.html_safe, '#',
-          class: 'link-add',
-          id: 'add-to-survey-submit',
-          style: 'display: none;'
-        = submit_tag 'Add selected to survey',
-          class: 'link-add'
+      = link_to 'Add selected<br>to survey'.html_safe, '#',
+        class: 'link-add',
+        id: 'add-to-survey-submit',
+        style: 'display: none;'
+      = submit_tag 'Add selected to survey',
+        class: 'link-add'
     .all-holder
       = label_tag 'select_all', 'Select all'
       = check_box_tag 'select_all', nil, false, class: 'checkable'
@@ -36,19 +32,23 @@
             { include_blank: 'Position(any)' },
             { class: 'checkable sel04' }
           = f.submit id: 'combine-search-submit'
-    - employees.each do |employee|
-      .row
-        .col.col01
-          span.title = employee.name
-        .col.col02
-          span = employee.department
-        .col.col03
-          span = employee.position
-          - if employee.selected_to_survey
-            span.added Added
-          - else
-             = check_box_tag 'employee_ids[]', employee.id, false,
-             id: "employee-#{employee.id}",
-             class: 'bulk_actors checkable'
+
+    = form_tag add_to_survey_employees_path,
+      id: 'add-to-survey-form',
+      method: :patch do
+      - employees.each do |employee|
+        .row
+          .col.col01
+            span.title = employee.name
+          .col.col02
+            span = employee.department
+          .col.col03
+            span = employee.position
+            - if employee.selected_to_survey
+              span.added Added
+            - else
+               = check_box_tag 'employee_ids[]', employee.id, false,
+               id: "employee-#{employee.id}",
+               class: 'bulk_actors checkable'
   .bottom-panel
     = paginate employees

@@ -20,7 +20,8 @@ header#header.clearfix
       = link_to 'MENU', '#'
       .drop
         ul
+          li = link_to 'Edit company', edit_company_path(current_user.company) if current_user
           li = link_to 'Log out', destroy_user_session_path
           - if current_user && current_user.has_role?(:admin)
             li
-              = link_to 'ADMIN', admin_companies_path
+              = link_to 'Admin', admin_companies_path
