@@ -1,38 +1,54 @@
-table.table.table-stripped
-  tr
-    th = sort_link search, :name, 'Name'
-    th
-      = search_form_for search, url: root_path do |f|
-        = f.select :department_eq,
-          options_for_select(company.employees.pluck(:department).uniq),
-          include_blank: 'Deparment(any)'
-        th
+.filter-form
+  .panel.clearfix
+    = link_to 'Add a New Employee',
+      new_employee_path,
+      class: 'link-add-new'
+    = link_to 'Download CSV File',
+      company_path(company, format: :csv),
+      class: 'link-upload'
+    .add-holder
+      = form_tag add_to_survey_employees_path,
+        id: 'add-to-survey-form',
+        method: :patch do
+        fieldset
+        = link_to 'Add selected<br>to survey'.html_safe, '#',
+          class: 'link-add',
+          id: 'add-to-survey-submit',
+          style: 'display: none;'
+        = submit_tag 'Add selected to survey',
+          class: 'link-add'
+    .all-holder
+      = label_tag 'select_all', 'Select all'
+      = check_box_tag 'select_all', nil, false, class: 'checkable'
+  .filter-area
+    = search_form_for search, url: root_path do |f|
+      .sort-panel.clearfix
+        .col.col01
+          = sort_link search, :name, 'BY NAME'
+        .col.col02
+          = f.select :department_eq,
+            options_for_select(company.employees.pluck(:department).uniq),
+            { include_blank: 'Deparment(any)' },
+            { class: 'checkable sel04' }
+        .col.col03
           = f.select :position_eq,
             options_for_select(company.employees.pluck(:position).uniq),
-            include_blank: 'Position(any)'
-
-          = f.submit id: 'combine-search-submit' 
-    th
-      = check_box_tag 'select_all', nil
-      = label_tag 'select all'
-
-    = form_tag add_to_survey_employees_path,
-      id: 'add-to-survey-form', method: :patch do
-      = submit_tag 'Add Selected to Survey',
-        id: 'add-to-survey-submit',
-        style: 'display: none;'
-
-      - employees.each do |employee|
-        tr
-          td = link_to employee.name,
-               edit_employee_path(employee)
-          td = employee.department
-          td = employee.position
-          td
-            - if employee.selected_to_survey
-              'Added
-            - else
-               = check_box_tag 'employee_ids[]', employee.id, false,
-               id: "employee-#{employee.id}",
-               class: 'bulk_actors'
-= paginate employees
+            { include_blank: 'Position(any)' },
+            { class: 'checkable sel04' }
+          = f.submit id: 'combine-search-submit'
+    - employees.each do |employee|
+      .row
+        .col.col01
+          span.title = employee.name
+        .col.col02
+          span = employee.department
+        .col.col03
+          span = employee.position
+          - if employee.selected_to_survey
+            span.added Added
+          - else
+             = check_box_tag 'employee_ids[]', employee.id, false,
+             id: "employee-#{employee.id}",
+             class: 'bulk_actors checkable'
+  .bottom-panel
+    = paginate employees

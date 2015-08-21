@@ -1,29 +1,13 @@
-.row
-  .col-xs-9
-    h3 Company name: #{ @company.name }
-  .col-xs-3
-    = link_to 'Edit company profile',
-      edit_company_path(@company),
-      class: 'btn btn-default'
-
-.row
-  .col-xs-7
-    = link_to 'Add a New Employee',
-      new_employee_path,
-      class: 'btn btn-default'
-
-    = link_to '+ Upload csv file',
-      company_path(@company, format: :csv),
-      class: 'btn btn-default'
-  .col-xs-5
+#main
+  .inform-panel.clearfix
+    h1.company-name company name #{ link_to @company.name, edit_company_path(@company) }
     = search_form_for @search,
       url: root_path,
-      class: 'form form-inline',
+      class: 'search-form',
       method: :get do |f|
-      = f.text_field :name_or_department_or_position_cont,
-        placeholder: 'full search',
-        class: 'form-control'
-      = f.submit id: 'full-search-submit', class: 'btn btn-default'
+      fieldset
+        = f.submit
+        = f.text_field :name_or_department_or_position_cont
 
-= render 'employees/index', employees: @employees,
-  company: @company, search: @search
+  = render 'employees/index', employees: @employees,
+    company: @company, search: @search
