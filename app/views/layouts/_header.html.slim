@@ -1,6 +1,6 @@
 header#header.clearfix
   = link_to root_path do
-    = image_tag('logo03', alt: 'weekend', width: '106', height: '19', class: 'logo')
+    = image_tag('logo03.png', alt: 'weekend', width: '106', height: '19', class: 'logo')
   ul.links
     li.company
       = link_to 'COMPANY', company_path(current_user.company) if user_signed_in?

@@ -29,7 +29,8 @@
             options_for_select(company.employees.pluck(:position).uniq),
             { include_blank: 'Position(any)' },
             { class: 'checkable sel04' }
-          = f.submit id: 'combine-search-submit'
+          = f.submit id: 'combine-search-submit',
+            class: 'search'
 
     = form_tag add_to_survey_employees_path,
       id: 'add-to-survey-form',

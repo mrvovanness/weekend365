@@ -23,6 +23,7 @@ Rails.application.configure do
     Bullet.console = true
     Bullet.rails_logger = true
   end
-  config.assets.digest = true
+  config.assets.digest = false
+  config.assets.compile = true
   config.assets.raise_runtime_errors = true
 end
