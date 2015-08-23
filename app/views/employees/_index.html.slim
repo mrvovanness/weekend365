@@ -38,7 +38,7 @@
       - employees.each do |employee|
         .row
           .col.col01
-            span.title = employee.name
+            span.title = link_to employee.name, edit_employee_path(employee)
           .col.col02
             span = employee.department
           .col.col03
