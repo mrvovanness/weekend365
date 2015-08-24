@@ -1,52 +1,94 @@
-.panel.panel-heading
-.panel-body
-  = simple_form_for survey do |f|
-    = f.input :title
-
-    .col-md-6
-      = f.input :start_at, as: :string,
-        wrapper_html: { class: 'form-inline' },
-        label: 'start at(Tokyo time)'
-      = f.error :start_at
-
-    .well
-      = f.input :number_of_repeats, collection: 1..12,
-        wrapper_html: { class: 'form-inline' },
-        include_blank: false,
-        default: 1
-
-      u OR
-      br
-      .col-md-6
+= simple_form_for survey,
+  html: { class: 'info-form inner' } do |f|
+  fieldset
+    = f.label :title, class: 'heading'
+    .row
+      = f.input_field :title, class: 'style05'
+    span.heading SURVEY PERIOD:
+    .block
+      .row-holder.clearfix
+        = f.radio_button :repeat, false,
+          class: 'radio checkable'
+        = f.label :repeat, 'Once'
+      .block-frame
+        = f.input :start_at, as: :string,
+          label: 'start at(Tokyo time)',
+          label_html: { class: 'style01' }
+        = f.error :start_at
+    .block
+      .row-holder.clearfix
+        = f.radio_button :repeat, true,
+          class: 'radio checkable'
+        = f.label :repeat, 'Repeat'
+      .block-frame
+        = f.input :repeat_mode,
+          collection: [['weeks', 'w'], ['days', 'd']],
+          input_html: { class: 'selectable' },
+          label_html: { class: 'style01' },
+          include_blank: false,
+          default: 1
+        br
+        = f.input :repeat_every, collection: 1..12,
+          label: 'repeat every(weeks/days)',
+          input_html: { class: 'selectable' },
+          label_html: { class: 'style01' },
+          include_blank: false,
+          default: 1
+        br
+        = f.input :number_of_repeats, collection: 1..12,
+          input_html: { class: 'selectable' },
+          label_html: { class: 'style01' },
+          include_blank: false,
+          default: 1
+        br
         = f.input :finish_on, as: :string,
-          wrapper_html: { class: 'form-inline' }
+          label_html: { class: 'style01' },
+          hint: "If you specify 'finish on' number of"\
+            " repeats will be<br>calculated automatically".html_safe
         = f.error :finish_on
-        i If you specify 'finish on' number of repeats will be calculated automatically
+        br
+        br
 
-
-    = f.input :repeat_mode,
-      collection: [['weeks', 'w'], ['days', 'd']],
-      include_blank: false,
-      default: 1,
-      wrapper_html: { class: 'form-inline' }
-
-    = f.input :repeat_every, collection: 1..12,
-      label: 'repeat_every(weeks/days)',
-      wrapper_html: { class: 'form-inline' },
-      include_blank: false,
-      default: 1
-
-    = f.input :message, label: 'Message to employee'
+      = f.input :message,
+        label: 'Message to employee',
+        label_html: { class: 'style01' },
+        wrapper_html: { class: 'row' },
+        input_html: { class: 'style01' }
 
     = f.input :employee_ids, collection: survey.company.employees.order(:name),
       label: 'Send to',
-      input_html: { multiple: true },
+      label_html: { class: 'style01' },
+      wrapper_html: { class: 'row' },
+      input_html: { multiple: true, class: 'style01' },
       include_blank: false
-
-    = f.simple_fields_for :questions do |q|
-      = q.input :id, as: :hidden unless q.object.new_record?
-      = q.input :type, collection: ['ScaledQuestion'],
-        include_blank: false
-      = q.input :title, label: 'Question Title'
-
-    = f.submit
+    = link_to 'clear all', '#',
+      id: 'reset-btn'
+    br
+    br
+  .box.style01
+    .block-info
+      .panel
+        span.heading Question for survey
+      br
+      = f.simple_fields_for :questions do |q|
+        = q.input :id, as: :hidden unless q.object.new_record?
+        = q.input :title,
+          label: 'Question',
+          label_html: { class: 'style01' },
+          wrapper_html: { class: 'row' },
+          input_html: { class: 'question-title' }
+        = q.input :type, collection: ['ScaledQuestion'],
+          label_html: { class: 'style01' },
+          wrapper_html: { class: 'row' },
+          input_html: { class: 'style01 selectable' },
+          include_blank: false
+    .clearfix
+      fieldset
+        ul.days
+          - (1..10).each do |n|
+            li
+              = label_tag n.to_s
+              = check_box_tag n.to_s, nil, nil, class: 'checkable'
+  .btns-holder.clearfix
+    .btns
+      = f.submit class: 'btn-save'

@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 
 ruby '2.2.2'
 
@@ -19,11 +18,8 @@ gem 'newrelic_rpm'
 gem 'simple_form'
 gem 'country_select'
 gem 'slim-rails'
-gem 'rails-assets-bootstrap-sass-official'
-gem 'rails-assets-fontawesome'
 gem 'select2-rails'
 gem 'momentjs-rails'
-gem 'bootstrap3-datetimepicker-rails'
 gem 'rollbar'
 gem 'ransack'
 gem 'resque', require: 'resque/server'

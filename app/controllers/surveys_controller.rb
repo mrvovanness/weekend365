@@ -7,6 +7,7 @@ class SurveysController < ApplicationController
   end
 
   def new
+    @search = @company.surveys.ransack(params[:q])
     @survey = @company.surveys.build
     @survey.questions.build
   end

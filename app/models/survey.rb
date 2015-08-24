@@ -19,7 +19,7 @@ class Survey < ActiveRecord::Base
   def start_in_future?
     if start_at.present? &&
         start_at <= DateTime.now + 2.minutes
-      errors.add(:start_at, "can't be in the past or within 3 minutes from now")
+      errors.add(:start_at, "can't be in the past or right now")
     end
   end
 

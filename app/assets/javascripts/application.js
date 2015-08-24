@@ -3,5 +3,5 @@
 //= require_tree .
 //= require select2
 //= require moment
-//= require bootstrap-datetimepicker
+//= require jquery.datetimepicker.js
 //= require jquery.formstyler.js

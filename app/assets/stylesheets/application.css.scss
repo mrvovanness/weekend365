@@ -1,17 +1,12 @@
 /*
  *= require_tree .
- *= require fontawesome
  *= require_self
  *= require select2
  *= require select2-bootstrap
+ *= require jquery.datetimepicker.css
  */
 
-/*$icon-font-path: "bootstrap-sass-official/";
-
-@import "bootstrap-sass-official/bootstrap-sprockets";
-@import "bootstrap-sass-official/bootstrap";
-@import "bootstrap-datetimepicker";
-
+/*
 body { padding-top: 70px; }
 
 .alert-error {
