@@ -14,6 +14,7 @@ class CompaniesController < ApplicationController
   end
 
   def edit
+    @search = @company.employees.ransack(params[:q])
   end
 
   def update
@@ -28,8 +29,9 @@ class CompaniesController < ApplicationController
   end
 
   def company_params
-    params.require(:company).permit(:name, :company_field_id, :office_address,
-                                    :country, :description, :website,
-                                    :employees_number, :employees_registered)
+    params.require(:company).permit(
+      :name, :company_field_id, :office_address,
+      :country, :description, :website,
+      :employees_number, :employees_registered)
   end
 end

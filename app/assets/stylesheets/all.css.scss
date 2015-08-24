@@ -115,10 +115,10 @@ p{margin:0 0 10px;}
 	padding:234px 33px 9999px 33px;
 	width:838px;
 	margin:0 auto -9999px;
-	background:image-url("bg-section");
+	background:image-url("bg-section01.png");
 }
 .main{
-	background:image-url("bg-section");
+	background:image-url("bg-section01.png")!important;
 	padding:0 33px 9999px 33px;
 	width:838px;
 	margin:0 auto -9999px;
@@ -153,7 +153,7 @@ p{margin:0 0 10px;}
 	position: absolute;
 	width:27px;
 	height:28px;
-	background:image-url("sprite") no-repeat ;
+	background:image-url("sprite.png") no-repeat ;
 	top:2px;
 	left:3px;
 }
@@ -178,7 +178,7 @@ p{margin:0 0 10px;}
 	position: absolute;
 	width:15px;
 	height:15px;
-	background:image-url("sprite") no-repeat 0 -46px;
+	background:image-url("sprite.png") no-repeat 0 -46px;
 	left:2px;
 	top:1px;
 }
@@ -295,28 +295,28 @@ p{margin:0 0 10px;}
 	margin-left:-16px;
 }
 .links .dashboards a:after{
-	background:image-url("sprite") no-repeat 0 -71px;
+	background:image-url("sprite.png") no-repeat 0 -71px;
 	width:20px;
 	height:15px;
 	top:19px;
 	left:7px;
 }
 .links .surveys a:after{
-	background:image-url("sprite") no-repeat -105px -69px;
+	background:image-url("sprite.png") no-repeat -105px -69px;
 	width:12px;
 	height:14px;
 	left: 18px;
 	top: 19px;
 }
 .links .username a:after{
-	background:image-url("sprite") no-repeat -45px -71px;
+	background:image-url("sprite.png") no-repeat -45px -71px;
 	width:12px;
 	height:12px;
 	left:14px;
 	top: 20px;
 }
 .links .lang a:after{
-	background:image-url("sprite") no-repeat -27px -71px;
+	background:image-url("sprite.png") no-repeat -27px -71px;
 	width:13px;
 	height:14px;
 	left: 13px;
@@ -387,7 +387,7 @@ p{margin:0 0 10px;}
 	position: absolute;
 	width:34px;
 	height:35px;
-	background:image-url("sprite") no-repeat -185px 0;
+	background:image-url("sprite.png") no-repeat -185px 0;
 	top:0;
 	left:0;
 }
@@ -401,7 +401,7 @@ p{margin:0 0 10px;}
 	position: absolute;
 	width:32px;
 	height:33px;
-	background:image-url("sprite") no-repeat -89px 0;
+	background:image-url("sprite.png") no-repeat -89px 0;
 	top:2px;
 	left:0;
 }
@@ -424,7 +424,7 @@ input[type="submit"].search,
 .search-form input[type="submit"]{
 	float:left;
 	border:none;
-	background:image-url("sprite") no-repeat 0 -98px;
+	background:image-url("sprite.png") no-repeat 0 -98px;
 	width:21px;
 	height:21px;
 	padding:0;
@@ -486,7 +486,7 @@ input[type="submit"].search,
 	position: absolute;
 	width:16px;
 	height:14px;
-	background:image-url("sprite") no-repeat 0 -126px;
+	background:image-url("sprite.png") no-repeat 0 -126px;
 	top:50%;
 	margin-top:-7px;
 	left:-22px;
@@ -503,7 +503,7 @@ input[type="submit"].search,
 	display:block;
 	text-indent:-9999px;
 	overflow:hidden;
-	background:image-url("sprite") no-repeat -93px -39px;
+	background:image-url("sprite.png") no-repeat -93px -39px;
 	width:24px;
 	height:20px;
 	margin:2px 0 0;
@@ -626,7 +626,7 @@ input[type="submit"].search,
 	height:26px;
 	top:3px;
 	left:3px;
-	background:image-url("sprite") no-repeat -32px -39px;
+	background:image-url("sprite.png") no-repeat -32px -39px;
 }
 .info-form{padding:59px 0 0;}
 .info-form .btn-holder{padding:59px 0 22px;}
@@ -652,7 +652,7 @@ input[type="submit"].search,
 	position: absolute;
 	width:28px;
 	height:29px;
-	background:image-url("sprite") no-repeat -120px -95px;
+	background:image-url("sprite.png") no-repeat -120px -95px;
 	top:0;
 	left:0;
 }
@@ -755,7 +755,7 @@ input[type="submit"].search,
 	position: absolute;
 	width:31px;
 	height:33px;
-	background:image-url("sprite") no-repeat 0 -150px;
+	background:image-url("sprite.png") no-repeat 0 -150px;
 	top:0;
 	left:0;
 }
@@ -796,7 +796,7 @@ input[type="submit"].search,
 	position: absolute;
 	width:30px;
 	height:29px;
-	background:image-url("sprite") no-repeat -37px -150px;
+	background:image-url("sprite.png") no-repeat -37px -150px;
 	top:5px;
 	left:7px;
 }
@@ -808,9 +808,9 @@ input[type="submit"].search,
 .filter-form .add-holder .link-add{
 	margin:0;
 	border-radius:9px;
-	background:#0d8690 image-url("sprite") no-repeat 5px -405px;
+	background:#0d8690 image-url("sprite.png") no-repeat 5px -405px;
 }
-.filter-form .add-holder:hover a.link-add{background:#285b5f image-url("sprite") no-repeat 5px -405px;}
+.filter-form .add-holder:hover a.link-add{background:#285b5f image-url("sprite.png") no-repeat 5px -405px;}
 .add-holder input[type="submit"].link-add{
 	width:178px;
 	height:38px;
@@ -880,6 +880,7 @@ input[type="submit"].search,
 	text-transform:none;
 	color:#343838;
 }
+.filter-area .row .title a{color:#343838}
 .filter-area .row.warning{
 	background:#f05555;
 	color:#fff;
@@ -1075,7 +1076,7 @@ input[type="submit"].search,
 	position: absolute;
 	width:24px;
 	height:25px;
-	background:image-url("sprite") no-repeat 0 -247px;
+	background:image-url("sprite.png") no-repeat 0 -247px;
 	left:5px;
 	top:5px;
 }
@@ -1139,7 +1140,7 @@ input[type="submit"].search,
 	position: absolute;
 	width:28px;
 	height:29px;
-	background:image-url("sprite") no-repeat -28px -247px;
+	background:image-url("sprite.png") no-repeat -28px -247px;
 	top:5px;
 	left:12px;
 }
@@ -1188,7 +1189,7 @@ input[type="submit"].search,
 	height:26px;
 	top:3px;
 	left:5px;
-	background:image-url("sprite") no-repeat -67px -247px;
+	background:image-url("sprite.png") no-repeat -67px -247px;
 }
 .jq-selectbox.sel02{width:102px;}
 .jq-selectbox.sel02 .jq-selectbox__select{
@@ -1250,7 +1251,7 @@ input[type="submit"].search,
 	margin:0 auto;
 	text-indent:-9999px;
 	overflow:hidden;
-	background:image-url("sprite") no-repeat -17px -276px;
+	background:image-url("sprite.png") no-repeat -17px -276px;
 	width:18px;
 	height:22px;
 }
@@ -1258,7 +1259,7 @@ input[type="submit"].search,
 .filter-area .btn-edit{
 	text-indent:-9999px;
 	overflow:hidden;
-	background:image-url("sprite") no-repeat -42px -279px;
+	background:image-url("sprite.png") no-repeat -42px -279px;
 	width:34px;
 	height:31px;
 	margin:0 auto;
@@ -1269,7 +1270,7 @@ input[type="submit"].search,
 .filter-area .btn-notify{
 	text-indent:-9999px;
 	overflow:hidden;
-	background:image-url("sprite") no-repeat -94px -279px;
+	background:image-url("sprite.png") no-repeat -94px -279px;
 	width:34px;
 	height:31px;
 	margin:0 auto;
@@ -1279,7 +1280,7 @@ input[type="submit"].search,
 .filter-area .btn-results{
 	text-indent:-9999px;
 	overflow:hidden;
-	background:image-url("sprite") no-repeat -149px -279px;
+	background:image-url("sprite.png") no-repeat -149px -279px;
 	width:34px;
 	height:31px;
 	margin:0 auto;
@@ -1394,7 +1395,7 @@ input[type="submit"].search,
 	position: absolute;
 	width:41px;
 	height:43px;
-	background:image-url("sprite") no-repeat -193px -281px;
+	background:image-url("sprite.png") no-repeat -193px -281px;
 	left:18px;
 	top:14px;
 }
@@ -1435,7 +1436,7 @@ input[type="submit"].search,
 	position: absolute;
 	width:28px;
 	height:29px;
-	background:image-url("sprite") no-repeat 0 -318px;
+	background:image-url("sprite.png") no-repeat 0 -318px;
 	top:5px;
 	left:5px;
 }
@@ -1504,7 +1505,7 @@ input[type="submit"].search,
 	position: absolute;
 	width:28px;
 	height:29px;
-	background:image-url("sprite") no-repeat -185px -99px;
+	background:image-url("sprite.png") no-repeat -185px -99px;
 	top:3px;
 	left:8px;
 }
@@ -1638,7 +1639,7 @@ input[type="submit"].search,
 	cursor: pointer;
 	margin:0 auto;
 	overflow:visible !important;
-	background:image-url("sprite") no-repeat -75px -69px;
+	background:image-url("sprite.png") no-repeat -75px -69px;
 }
 .jq-checkbox.checkable{
 	width:22px;
@@ -1650,7 +1651,7 @@ input[type="submit"].search,
 	width: 26px;
 	height: 20px;
 	margin:-5px 0 0;
-	background:image-url("sprite") no-repeat -32px -99px;
+	background:image-url("sprite.png") no-repeat -32px -99px;
 }
 .jq-checkbox.focused {
 	border: 1px solid #08C;
@@ -1662,7 +1663,7 @@ input[type="submit"].search,
 .jq-radio {
 	width:16px;
 	height:16px;
-	background:image-url("sprite") no-repeat 0 -225px;
+	background:image-url("sprite.png") no-repeat 0 -225px;
 	cursor: pointer;
 	margin:0 6px 0 0;
 }
@@ -1697,7 +1698,7 @@ input[type="submit"].search,
 	position:relative;
 }
 .jq-selectbox.sel04:after{
-	background: rgba(0, 0, 0, 0) image-url("sprite") no-repeat scroll 0 -126px;
+	background: rgba(0, 0, 0, 0) image-url("sprite.png") no-repeat scroll 0 -126px;
 	content: "";
 	height: 14px;
 	left: -22px;
@@ -1755,7 +1756,7 @@ input[type="submit"].search,
 	top: 9px;
 	width: 19px;
 	height:19px;
-	background:image-url("sprite") no-repeat -77px -100px;
+	background:image-url("sprite.png") no-repeat -77px -100px;
 }
 .jq-selectbox:hover .jq-selectbox__trigger-arrow {
 	opacity: 1;

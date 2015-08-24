@@ -1,2 +1,2 @@
 jQuery ->
-  $('.checkable').styler()
+  $('.checkable, .selectable').styler()
