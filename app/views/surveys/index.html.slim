@@ -1,35 +1,63 @@
-= link_to 'Add a New Survey', new_survey_path, class: 'btn btn-default'
-table.table.table-stripped
-  tr
-    th Survey Title
-    th Question title
-    th Message to employee
-    th Start at
-    th Number of repeats
-    th Next delivery at
-    th Status
-    th Finish on
-    th Repeat mode
-    th Send to
+#main
+  .inform-panel.clearfix
+    h1.company-name survey selection
+    = search_form_for @search,
+      url: surveys_path,
+      class: 'search-form',
+      method: :get do |f|
+      fieldset
+        = f.submit
+        = f.text_field :title_cont
+  .filter-form
+    fieldset
+      .panel.clearfix
+        = link_to 'Add a New Survey',
+          new_survey_path,
+          class: 'link-add-new survey'
+        ul.colors
+          li.black: a
+          li.grey: a
+          li.orange: a
+          li.red: a
+          li.green: a
+      .filter-area.slyle01
+        fieldset
 
-  - @surveys.each do |survey|
-    tr
-      td = survey.title
-      td = survey.questions.first.title if survey.questions.first.present?
-      td = survey.message
-      td = survey.start_at
-      td = survey.number_of_repeats
-      td = survey.completed? ? 'no next delivery' : survey.next_delivery_at
-      td
-        - if survey.counter == survey.number_of_repeats
-          | completed, sent #{survey.counter} times
-        - else
-          | not completed, sent #{survey.counter} times
-      td = survey.finish_on
-      td
-        - if survey.daily?
-          | send every #{survey.repeat_every} day(s)
-        - elsif survey.weekly?
-          | send every #{survey.repeat_every} week(s)
-      td = survey.employees.map(&:email).join(', ')
-      td = link_to 'edit', edit_survey_path(survey)
+          table
+            thead: tr
+              th.col1 Title
+              th Status
+              th Number of responses
+              th Alarm
+              th Start date
+              th Frequency
+              th Edit
+              th Notify
+              th Results
+            tbody
+              - @surveys.each do |survey|
+                tr
+                  td.col1 = survey.title
+                  td
+                    - if survey.counter == survey.number_of_repeats
+                      | completed, sent #{survey.counter} times
+                    - else
+                      | collecting, sent #{survey.counter} times
+                  td = survey.number_of_responses
+                  td: span.alarm alarm
+                  td = survey.start_at.strftime('%b.%dth/%Y')
+                  td
+                    - if survey.daily?
+                      | every #{survey.repeat_every} day(s) #{survey.start_at.strftime('at %I:%M%P')}
+                    - elsif survey.weekly?
+                      | every #{survey.repeat_every} week(s) #{survey.start_at.strftime('at %I:%M%P')}
+                  td
+                    = link_to 'edit',
+                      edit_survey_path(survey),
+                      class: 'btn-edit'
+                  td
+                    = link_to 'notify', '#',
+                      class: 'btn-notify'
+                  td
+                    = link_to 'results', '#',
+                      class: 'btn-results'

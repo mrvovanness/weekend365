@@ -2,7 +2,8 @@ class SurveysController < ApplicationController
   before_action :set_company, :authenticate_user!
 
   def index
-    @surveys = @company.surveys.includes(:employees)
+    @search = @company.surveys.ransack(params[:q])
+    @surveys = @search.result(distinct: true)
   end
 
   def new
