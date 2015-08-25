@@ -1,5 +1,6 @@
 class SurveysController < ApplicationController
-  before_action :set_company, :authenticate_user!
+  before_action :authenticate_user!, :set_company
+  before_action :set_survey, except: [:index, :new, :create]
 
   def index
     @search = @company.surveys.ransack(params[:q])
@@ -7,30 +8,29 @@ class SurveysController < ApplicationController
   end
 
   def new
-    @search = @company.surveys.ransack(params[:q])
     @survey = @company.surveys.build
     @survey.questions.build
   end
 
   def edit
-    @survey = @company.surveys.find(params[:id])
   end
 
   def create
     @survey = @company.surveys.create(survey_params)
-    respond_with @survey
+    respond_with @survey, location: -> { preview_survey_path(@survey) }
   end
 
   def update
-    @survey = @company.surveys.find(params[:id])
     @survey.update(survey_params)
     respond_with @survey
   end
 
   def destroy
-    @survey = @company.surveys.find(params[:id])
     @survey.destroy
     respond_with @survey
+  end
+
+  def preview
   end
 
   private
@@ -46,4 +46,7 @@ class SurveysController < ApplicationController
     @company = current_user.company
   end
 
+  def set_survey
+    @survey = @company.surveys.find(params[:id])
+  end
 end

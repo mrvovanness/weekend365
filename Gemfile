@@ -18,7 +18,6 @@ gem 'newrelic_rpm'
 gem 'simple_form'
 gem 'country_select'
 gem 'slim-rails'
-gem 'select2-rails'
 gem 'momentjs-rails'
 gem 'rollbar'
 gem 'ransack'
@@ -29,6 +28,8 @@ gem "foreman"
 gem "foreman-export-initscript", :github => "webgradus/foreman-export-initscript"
 gem 'unicorn'
 gem 'validates'
+gem 'active_model_serializers'
+gem 'squeel'
 
 group :development do
   gem 'better_errors'

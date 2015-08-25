@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
-//= require select2
+//= require select2.full
 //= require moment
 //= require jquery.datetimepicker.js
 //= require jquery.formstyler.js
+//= require_tree .

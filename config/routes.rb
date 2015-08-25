@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   ActiveAdmin.routes(self)
-
   devise_for :users
 
   root 'companies#show'
@@ -15,7 +14,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :surveys
+  resources :surveys do
+    get 'preview', on: :member
+  end
 
   get 'dashboard' => 'dashboard#index'
   mount Resque::Server, at: '/resque'

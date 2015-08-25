@@ -58,8 +58,7 @@
     = f.input :employee_ids, collection: survey.company.employees.order(:name),
       label: 'Send to',
       label_html: { class: 'style01' },
-      wrapper_html: { class: 'row' },
-      input_html: { multiple: true, class: 'style01' },
+      input_html: { multiple: true },
       include_blank: false
     = link_to 'clear all', '#',
       id: 'reset-btn'

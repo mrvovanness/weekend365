@@ -3,8 +3,9 @@ class EmployeesController < ApplicationController
   respond_to :json, only: :index
 
   def index
-    @employees = @company.employees.order(:name)
-    respond_with @employees.where('name LIKE ?', "%#{ params[:q] }%")
+    @search = @company.employees.ransack(params[:q])
+    @employees = @search.result(distinct: true).order(:name)
+    respond_with @employees
   end
 
   def new

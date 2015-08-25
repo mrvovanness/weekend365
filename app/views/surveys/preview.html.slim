@@ -1,0 +1,34 @@
+#main
+  .inform-panel.style01.clearfix
+    h1 = link_to 'new survey confirmation', '#'
+  .info-box.color
+    span.heading
+      | Survey ##{@survey.id}:“#{ @survey.title }”
+    span.info
+      | set up successfully!
+    p Now take your time to <a href='#'>read our blog</a> and get<br>updates on the new trends in Employee Engagement
+  .recommend-area
+    .block-info.clearfix
+      .panel
+        span.heading
+          | Survey ##{ @survey.id }: #{ @survey.title }
+      .btns
+        = link_to 'Edit',
+          edit_survey_path(@survey),
+          class: 'btn-edit'
+
+        = link_to 'Undo',
+          survey_path(@survey),
+          method: :delete,
+          data: { confirm: 'You are about to delete this survey' },
+          class: 'btn-undo'
+      .send-block.clearfix
+        = simple_form_for @survey,
+          data: { type: :json, remote: true } do |f|
+          = f.input :employee_ids, as: :hidden,
+            collection: @survey.company.employees.order(:name),
+            label: 'Send to',
+            label_html: { class: 'style01' },
+            wrapper_html: { class: 'row' },
+            input_html: { multiple: true, class: 'style01' },
+            include_blank: false
