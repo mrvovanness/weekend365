@@ -1,5 +1,9 @@
-= render 'form', survey: @survey
-=link_to 'Delete', survey_path(@survey),
-  method: 'DELETE',
-  data: { confirm: 'Are you sure?'},
-  class: 'btn btn-default'
+#main
+  .inform-panel.clearfix
+    h1 = link_to 'Edit survey', '#'
+  = render 'form', survey: @survey
+  .btns-holder.clearfix
+    = link_to 'Delete', survey_path(@survey),
+      method: 'DELETE',
+      data: { confirm: 'Are you sure?' },
+      class: 'btn-save'
