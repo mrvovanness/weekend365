@@ -129,6 +129,7 @@ p{margin:0 0 10px;}
 .home.inner #main{padding-top:66px;}
 .btns{text-align:center;}
 .btns .holder{margin:0 0 53px;}
+input[type="submit"].btn-login,
 .btns .btn{
 	display:inline-block;
 	vertical-align:top;
@@ -144,6 +145,15 @@ p{margin:0 0 10px;}
 	letter-spacing:1px;
 	text-align:center;
 }
+.login-form input[type="submit"]{
+	height: 32px;
+	line-height: 30px;
+	padding: 0 0 0 30px;
+	width: 112px;
+	border:none;
+	margin:0 auto 20px;
+	display:block;
+}
 .btns .btn:hover{
 	text-decoration:none;
 	background:#ad3114;
@@ -157,9 +167,13 @@ p{margin:0 0 10px;}
 	top:2px;
 	left:3px;
 }
-.btns .btn-login{background:#fcaf17;}
+input[type="submit"].btn-login,
+.btns .btn-login{
+  background:#fcaf17 image-url('sprite.png') no-repeat 3px -619px;
+}
+
 .btns .btn-login:after{
-	background-position:-44px 0;
+	display: none;
 }
 .btn-about{
 	display:block;
@@ -217,7 +231,9 @@ p{margin:0 0 10px;}
 	margin:0 auto 20px;
 	display:block;
 }
-.login-form .btn-login:hover{background:#bb5b07;}
+.btns .btn-login:hover{
+  background:#bb5b07 image-url('sprite.png') no-repeat 3px -619px;
+}
 .login-holder{
 	padding-top:6px;
 	padding-bottom:28px;
@@ -604,7 +620,7 @@ input[type="submit"].search,
 	height:260px;
 }
 .info-form .btn-save{
-	background:#f26522 image-url("sprite.png") no-repeat 3px -502px;
+	background:#f26522 image-url("sprite.png") no-repeat 3px -503px;
 	border-radius:9px;
 	position:relative;
 	color:#fff;
@@ -1180,6 +1196,14 @@ input[type="submit"].search,
 	margin:0 0 0 10px;
 	//width:45px;
 }
+input[type="submit"].btn-save{
+	border:none;
+	height: 32px;
+	padding: 0 0 0 20px;
+	width: 108px;
+  background: #f26522 image-url("sprite.png") no-repeat scroll 3px -503px;
+}
+input[type="submit"].btn-save:hover{background: #ad3114 url("../images/sprite.png") no-repeat scroll 3px -503px;}
 .btn-save{background:#f26522;}
 .btn-save:hover{
 	text-decoration:none;
@@ -1385,11 +1409,19 @@ input[type="submit"].search,
 .users a{color:#383c3c;}
 .send-block .link-clear{
 	float:right;
-	margin:0 5px 0 0;
-	color:#0d8690;
+	margin:0;
+	color:#fff;
+	background:#f26522;
+	border:none;
+	//border-radius:13px;
 	letter-spacing:2px;
-	font:14px/16px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
+  font:14px/16px  'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
 }
+.form-group label{
+	float:left;
+	margin:7px 5px 0 0;
+}
+.send-block .link-clear:hover{background:#ad3114;}
 .time-holder{
 	margin:0 auto 63px;
 	width:480px;

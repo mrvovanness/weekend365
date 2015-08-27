@@ -59,6 +59,7 @@
     = f.input :employee_ids,
       collection: survey.company.employees.order(:name),
       label: 'Send to',
+      wrapper_html: { class: 'size01'},
       label_html: { class: 'style01' },
       input_html: { multiple: true },
       include_blank: false
@@ -90,4 +91,4 @@
               = check_box_tag n.to_s, nil, nil, class: 'checkable'
   .btns-holder.clearfix
     .btns
-      = f.submit class: 'btn-save'
+      = f.submit 'Save', class: 'btn-save'

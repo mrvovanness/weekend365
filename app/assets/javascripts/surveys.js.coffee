@@ -16,8 +16,8 @@ jQuery ->
     return name + department + position
 
   $('#survey_employee_ids').select2
+    tags: true
     closeOnSelect: false
-    width: '530px'
     placeholder: 'Search by name, department, position ...'
     allowClear: true
     delay: 500
@@ -31,3 +31,9 @@ jQuery ->
           results: $.map data.employees, (obj) ->
             return { id: obj.id, text: joinValues(obj) } }
 
+  # workaround of issue https://github.com/select2/select2/issues/3632
+  $('.select2').on 'select2:unselect', ->
+    console.log('hello')
+    setTimeout ( ->
+     $('.select2').select2 'close'
+    ), 100

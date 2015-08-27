@@ -22,20 +22,20 @@
           method: :delete,
           data: { confirm: 'You are about to delete this survey' },
           class: 'btn-undo'
-      .send-block.clearfix
-        = simple_form_for @survey,
-          url: update_employees_survey_path(@survey),
-          data: { type: :json, remote: true, method: :patch } do |f|
-          = f.input :employee_ids,
-            collection: @survey.company.employees.order(:name),
-            label: "Send to (#{@survey.employees.count}):",
-            label_html: { class: 'style01' },
-            wrapper_html: { class: 'row' },
-            input_html: { multiple: true, class: 'style01' },
-            include_blank: false
-          br
-          = f.hidden_field :skip_callback, value: true
-          = f.submit 'Update employees', class: 'link-clear'
+    .send-block.clearfix
+      = simple_form_for @survey,
+        url: update_employees_survey_path(@survey),
+        data: { type: :json, remote: true, method: :patch } do |f|
+        = f.input :employee_ids,
+          collection: @survey.company.employees.order(:name),
+          label: "Send to (#{@survey.employees.count}):",
+          label_html: { class: 'style01' },
+          wrapper_html: { class: 'row' },
+          input_html: { multiple: true, class: 'style01' },
+          include_blank: false
+        br
+        = f.hidden_field :skip_callback, value: true
+        = f.submit 'Update employees', class: 'link-clear'
   .time-holder
     span.heading Frequency, date and Time
     span.date Every #{@survey.repeat_every}
