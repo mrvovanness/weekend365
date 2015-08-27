@@ -2,7 +2,7 @@
   .inform-panel.clearfix
     h1 company details
     = search_form_for @search,
-      url: root_path,
+      url: company_path(@company),
       class: 'search-form',
       method: :get do |f|
       fieldset

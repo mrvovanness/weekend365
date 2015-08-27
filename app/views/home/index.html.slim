@@ -1,2 +1,11 @@
-h1 Home#index
-p Find me in app/views/home/index.html.slim
+= link_to '#' do
+  = image_tag 'logo.png',
+    size: '460x118',
+    alt: 'weekend Work happy, manage happier',
+    class: 'logo'
+.btns
+  .holder
+    = render 'pages/shared'
+  = link_to 'about',
+    about_path,
+    class: 'btn-about'

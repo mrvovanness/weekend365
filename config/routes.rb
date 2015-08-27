@@ -1,13 +1,9 @@
 Rails.application.routes.draw do
 
-  get 'home/index'
-
-  get 'home/about_us'
-
   ActiveAdmin.routes(self)
   devise_for :users
 
-  root 'companies#show'
+  root 'home#index'
 
   resources :companies, only: [:show, :edit, :update]
 
@@ -26,10 +22,9 @@ Rails.application.routes.draw do
   end
 
   get 'dashboard' => 'dashboard#index'
-  mount Resque::Server, at: '/resque'
+  get 'about' => 'pages#about'
+  mount Resque::Server, at: '/background'
 
   # route for handling email links
   get 'answers' => 'answers#add_answer'
-
-  get 'about' => 'home#about_us'
 end

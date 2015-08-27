@@ -15,7 +15,7 @@
       = label_tag 'select_all', 'Select all'
       = check_box_tag 'select_all', nil, false, class: 'checkable'
   .filter-area
-    = search_form_for search, url: root_path do |f|
+    = search_form_for search, url: company_path(company) do |f|
       .sort-panel.clearfix
         .col.col01
           = sort_link search, :name, 'BY NAME'

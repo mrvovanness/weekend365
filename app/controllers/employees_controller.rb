@@ -41,7 +41,7 @@ class EmployeesController < ApplicationController
   private
 
   def redirect_to_company
-   respond_with @employee, location: -> { root_path }
+    respond_with @employee, location: -> { company_path(@company) }
   end
 
   def set_company
