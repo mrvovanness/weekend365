@@ -1,11 +1,27 @@
-= devise_error_messages!
-
 h2
   | Sign up
-= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+= simple_form_for resource,
+  as: resource_name,
+  url: registration_path(resource_name),
+  html: { class: 'login-form' } do |f|
+  fieldset
 
-  = f.input :email, required: true, autofocus: true
-  = f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable)
+    = f.input :email,
+      required: true,
+      autofocus: true,
+      input_html: { id: 'id-field' }
+    = f.error :email
+    = f.input :password,
+      required: true,
+      hint: ("#{@minimum_password_length} characters minimum" if @validatable)
+    = f.error :password
 
-  .form-actions
-    = f.button :submit, "Sign up"
+    .login-holder
+      = f.submit "Sign up", class: 'btn btn-login'
+span.heading HAVE AN ACCOUNT ALREADY?
+.frame
+  = link_to 'SIGN IN',
+    new_user_session_path,
+    class: 'btn btn-sign'
+  = link_to 'about', '#',
+    class: 'btn-about'

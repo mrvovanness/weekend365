@@ -12,7 +12,7 @@ SimpleForm.setup do |config|
     b.optional :readonly
     b.use :label, class: 'control-label'
 
-    b.use :input, class: 'form-control'
+    b.use :input
     b.use :hint,  wrap_with: { tag: 'p', class: 'help-block' }
   end
 

@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title = full_title(yield(:title))
+
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  body.home.inner
+    .wrapper-holder
+      #wrapper
+        .w1
+          #main
+            = link_to root_path do
+              = image_tag 'logo02.png',
+                size: '290x69',
+                alt: 'weekend Work happy, manage happier',
+                class: 'logo'
+            .btns
+              = yield
+        = render 'layouts/footer'
