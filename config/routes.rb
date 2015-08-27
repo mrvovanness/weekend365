@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'home/index'
+
+  get 'home/about_us'
+
   ActiveAdmin.routes(self)
   devise_for :users
 
@@ -26,4 +30,6 @@ Rails.application.routes.draw do
 
   # route for handling email links
   get 'answers' => 'answers#add_answer'
+
+  get 'about' => 'home#about_us'
 end

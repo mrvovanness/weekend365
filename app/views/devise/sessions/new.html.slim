@@ -1,24 +1,26 @@
-h2
-  | Sign in
-= simple_form_for resource,
-  as: resource_name,
-  url: session_path(resource_name),
-  html: { class: 'login-form' } do |f|
-  fieldset
-    = f.input :email,
-      autofocus: true,
-      input_html: { value: 'weekend365@mail.com', id: 'id-field'}
-    = f.input :password,
-      input_html: { value: 'bigsecret' }
-    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
+.btns
+  h2
+    | Sign in
+  = simple_form_for resource,
+    as: resource_name,
+    url: session_path(resource_name),
+    html: { class: 'login-form' } do |f|
+    fieldset
+      = f.input :email,
+        autofocus: true,
+        input_html: { value: 'weekend365@mail.com', id: 'id-field'}
+      = f.input :password,
+        input_html: { value: 'bigsecret' }
+      = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
 
-    .login-holder
-      = f.submit "Login", class: 'btn btn-login'
-      /= link_to "Forgot your password?", new_password_path(resource_name)
-span.heading DON’T HAVE AN ACCOUNT YET?
-.frame
-  = link_to 'SIGN UP',
-    new_user_registration_path,
-    class: 'btn btn-sign'
-  = link_to 'about', '#',
-    class: 'btn-about'
+      .login-holder
+        = f.submit "Login", class: 'btn btn-login'
+        /= link_to "Forgot your password?", new_password_path(resource_name)
+  span.heading DON’T HAVE AN ACCOUNT YET?
+  .frame
+    = link_to 'SIGN UP',
+      new_user_registration_path,
+      class: 'btn btn-sign'
+    = link_to 'about',
+      about_path,
+      class: 'btn-about'
