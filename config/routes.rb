@@ -15,7 +15,10 @@ Rails.application.routes.draw do
   end
 
   resources :surveys do
-    get 'preview', on: :member
+    member do
+      get 'preview'
+      patch 'update_employees'
+    end
   end
 
   get 'dashboard' => 'dashboard#index'

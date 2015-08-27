@@ -603,7 +603,7 @@ input[type="submit"].search,
 	height:260px;
 }
 .info-form .btn-save{
-	background:#f26522;
+	background:#f26522 image-url("sprite.png") no-repeat 3px -502px;
 	border-radius:9px;
 	position:relative;
 	color:#fff;
@@ -617,16 +617,7 @@ input[type="submit"].search,
 }
 .info-form .btn-save:hover{
 	text-decoration:none;
-	background:#ad3114;
-}
-.info-form .btn-save:after{
-	content:'';
-	position: absolute;
-	width:26px;
-	height:26px;
-	top:3px;
-	left:3px;
-	background:image-url("sprite.png") no-repeat -32px -39px;
+	background:#ad3114 image-url('sprite.png') no-repeat 3px -502px;
 }
 .info-form{padding:59px 0 0;}
 .info-form .btn-holder{padding:59px 0 22px;}
@@ -836,7 +827,7 @@ input[type="submit"].search,
 .filter-form .link-add:after{background-position:-108px -150px;}
 .filter-form .panel .all-holder{
 	float:right;
-	padding:23px 52px 0 0;
+	padding:23px 1px 0 0;
 }
 .filter-form .panel .all-holder .jq-checkbox{margin-top:-5px;}
 .filter-form .panel .all-holder label{
@@ -947,7 +938,10 @@ input[type="submit"].search,
   width: 570px;
 }
 .info-form.inner{padding:14px 0 0 100px;}
-.info-form input[type="text"].style05{width:445px;}
+.info-form input[type="text"].style05{
+	width:542px;
+	padding:7px 13px 5px 13px;
+}
 .info-form.inner .row{margin:0 0 31px;}
 .info-form .row-holder{
 	padding:0 0 0 49px;
@@ -1183,7 +1177,7 @@ input[type="submit"].search,
 	padding:9px 20px 7px 46px;
 	background:#0d8690;
 	margin:0 0 0 10px;
-	width:45px;
+	//width:45px;
 }
 .btn-save{background:#f26522;}
 .btn-save:hover{

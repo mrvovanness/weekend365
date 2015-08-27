@@ -4,6 +4,7 @@
     = f.label :title, class: 'heading'
     .row
       = f.input_field :title, class: 'style05'
+      = f.submit 'Save', class: 'btn-save'
     span.heading SURVEY PERIOD:
     .block
       .row-holder.clearfix
@@ -55,13 +56,12 @@
         wrapper_html: { class: 'row' },
         input_html: { class: 'style01' }
 
-    = f.input :employee_ids, collection: survey.company.employees.order(:name),
+    = f.input :employee_ids,
+      collection: survey.company.employees.order(:name),
       label: 'Send to',
       label_html: { class: 'style01' },
       input_html: { multiple: true },
       include_blank: false
-    = link_to 'clear all', '#',
-      id: 'reset-btn'
     br
     br
   .box.style01

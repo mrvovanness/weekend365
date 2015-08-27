@@ -9,12 +9,21 @@ class Survey < ActiveRecord::Base
 
   accepts_nested_attributes_for :questions, allow_destroy: true
 
-  before_save :reset_counter, :set_next_delivery
-  before_save :calculate_number_of_repeats,
-    if: Proc.new { |survey| survey.finish_on.present? }
+  before_save :reset_counter, :set_next_delivery,
+    unless: :skip_callback?
 
-  after_save :add_schedule
+  before_save :calculate_number_of_repeats,
+    if: Proc.new { |survey| survey.finish_on.present? },
+    unless: :skip_callback?
+
+  after_save :add_schedule, unless: :skip_callback?
   after_destroy :delete_schedule
+
+  attr_accessor :skip_callback
+
+  def skip_callback?
+    skip_callback
+  end
 
   def start_in_future?
     if start_at.present? &&

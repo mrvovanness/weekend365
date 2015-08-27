@@ -1,6 +1,6 @@
 #main
   .inform-panel.style01.clearfix
-    h1 = link_to 'new survey confirmation', '#'
+    h1 = link_to 'survey confirmation', '#'
   .info-box.color
     span.heading
       | Survey ##{@survey.id}:“#{ @survey.title }”
@@ -24,11 +24,30 @@
           class: 'btn-undo'
       .send-block.clearfix
         = simple_form_for @survey,
-          data: { type: :json, remote: true } do |f|
-          = f.input :employee_ids, as: :hidden,
+          url: update_employees_survey_path(@survey),
+          data: { type: :json, remote: true, method: :patch } do |f|
+          = f.input :employee_ids,
             collection: @survey.company.employees.order(:name),
-            label: 'Send to',
+            label: "Send to (#{@survey.employees.count}):",
             label_html: { class: 'style01' },
             wrapper_html: { class: 'row' },
             input_html: { multiple: true, class: 'style01' },
             include_blank: false
+          br
+          = f.hidden_field :skip_callback, value: true
+          = f.submit 'Update employees', class: 'link-clear'
+  .time-holder
+    span.heading Frequency, date and Time
+    span.date Every #{@survey.repeat_every}
+      #{@survey.weekly? ? 'week' : 'day' }
+      at #{@survey.start_at.strftime('%I:%M%P')}
+      from #{@survey.start_at.strftime('%b %dth %Y')},
+      repeat #{@survey.number_of_repeats} times
+  .btns.style01
+    = link_to 'Back to Dashboard',
+      dashboard_path,
+      class: 'btn-dashboard'
+    = link_to 'Blog', '#', class: 'btn-blog'
+    = link_to 'Create new Survey',
+      new_survey_path,
+      class: 'btn-create'
