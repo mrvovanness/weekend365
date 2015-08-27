@@ -5,6 +5,7 @@ describe Employee do
 
   before do
     login('ex@mail.com', 'bigsecret')
+    visit company_path(employee.company)
   end
 
   it 'Edit success' do

@@ -6,7 +6,7 @@
       class: 'search-form',
       method: :get do |f|
       fieldset
-        = f.submit
+        = f.submit id: 'full-search-submit'
         = f.text_field :name_or_department_or_position_cont
 
   = render 'employees/index', employees: @employees,

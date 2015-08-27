@@ -1,13 +1,6 @@
 #main
   .inform-panel.clearfix
     h1 company details
-    = search_form_for @search,
-      url: company_path(@company),
-      class: 'search-form',
-      method: :get do |f|
-      fieldset
-        = f.submit
-        = f.text_field :name_or_department_or_position_cont
 
     = simple_form_for @company,
       html: { class: 'info-form' } do |f|

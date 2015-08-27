@@ -5,7 +5,7 @@ describe Company do
 
   before do
     login('ex@mail.com', 'bigsecret')
-    visit root_path
+    visit company_path(company)
   end
 
   it 'search in departments' do

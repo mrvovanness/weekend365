@@ -16,7 +16,9 @@ RSpec.configure do |config|
 end
 
 Capybara.javascript_driver = :poltergeist
-
+Capybara.configure do |config|
+  config.ignore_hidden_elements = false
+end
 # Use shared connection with transactional fixtures
 # Alternatively you can use_transactional_fixtures = false and use database cleaners
 # http://blog.plataformatec.com.br/2011/12/three-tips-to-improve-the-performance-of-your-test-suite/
