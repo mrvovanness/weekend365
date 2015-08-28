@@ -15,7 +15,7 @@ jQuery ->
     position = obj.position
     return name + department + position
 
-  $('#survey_employee_ids').select2
+  $('#company_survey_employee_ids').select2
     tags: true
     closeOnSelect: false
     placeholder: 'Search by name, department, position ...'

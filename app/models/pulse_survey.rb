@@ -1,0 +1,2 @@
+class PulseSurvey < OfferedSurvey
+end
