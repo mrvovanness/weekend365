@@ -37,3 +37,14 @@ jQuery ->
     setTimeout ( ->
      $('.select2').select2 'close'
     ), 100
+
+  $('#dialog').dialog
+    autoOpen: false
+    modal: true
+    draggable: false
+    resizable: false
+    width: 500
+  $('.link-add-new').click (e) ->
+    e.preventDefault()
+    $('#dialog').dialog 'open'
+     
