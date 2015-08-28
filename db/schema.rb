@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150828192350) do
+ActiveRecord::Schema.define(version: 20150828201955) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,15 +30,6 @@ ActiveRecord::Schema.define(version: 20150828192350) do
   add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
-
-  create_table "answers", force: :cascade do |t|
-    t.integer  "mark"
-    t.integer  "question_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "answers", ["question_id"], name: "index_answers_on_question_id", using: :btree
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -112,15 +103,19 @@ ActiveRecord::Schema.define(version: 20150828192350) do
 
   add_index "employees", ["company_id"], name: "index_employees_on_company_id", using: :btree
 
+  create_table "offered_answers", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "value"
+    t.string   "type"
+  end
+
   create_table "offered_questions", force: :cascade do |t|
     t.string   "title"
-    t.integer  "survey_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "type"
   end
-
-  add_index "offered_questions", ["survey_id"], name: "index_offered_questions_on_survey_id", using: :btree
 
   create_table "offered_surveys", force: :cascade do |t|
     t.string   "title"
@@ -139,6 +134,18 @@ ActiveRecord::Schema.define(version: 20150828192350) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
+
+  create_table "sqa_assignments", force: :cascade do |t|
+    t.integer  "offered_survey_id"
+    t.integer  "offered_question_id"
+    t.integer  "offered_answer_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "sqa_assignments", ["offered_answer_id"], name: "index_sqa_assignments_on_offered_answer_id", using: :btree
+  add_index "sqa_assignments", ["offered_question_id"], name: "index_sqa_assignments_on_offered_question_id", using: :btree
+  add_index "sqa_assignments", ["offered_survey_id"], name: "index_sqa_assignments_on_offered_survey_id", using: :btree
 
   create_table "tokens", force: :cascade do |t|
     t.string   "name"
