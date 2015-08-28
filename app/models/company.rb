@@ -3,5 +3,5 @@ class Company < ActiveRecord::Base
   belongs_to :user
   belongs_to :company_field
   has_many :employees, dependent: :destroy
-  has_many :surveys, dependent: :destroy
+  has_many :company_surveys, dependent: :destroy
 end

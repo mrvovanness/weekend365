@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150817153029) do
+ActiveRecord::Schema.define(version: 20150828171711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -63,6 +63,26 @@ ActiveRecord::Schema.define(version: 20150817153029) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "company_surveys", force: :cascade do |t|
+    t.integer  "company_id"
+    t.string   "title"
+    t.string   "state"
+    t.integer  "number_of_responses", default: 0
+    t.boolean  "alarm",               default: false
+    t.boolean  "repeat"
+    t.date     "start_on"
+    t.date     "finish_on"
+    t.integer  "number_of_repeats"
+    t.datetime "next_delivery_at"
+    t.text     "message"
+    t.integer  "repeat_every"
+    t.string   "repeat_mode"
+    t.integer  "counter",             default: 0
+    t.datetime "start_at"
+  end
+
+  add_index "company_surveys", ["company_id"], name: "index_company_surveys_on_company_id", using: :btree
+
   create_table "employees", force: :cascade do |t|
     t.string   "name"
     t.string   "department"
@@ -104,26 +124,6 @@ ActiveRecord::Schema.define(version: 20150817153029) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id", using: :btree
   add_index "roles", ["name"], name: "index_roles_on_name", using: :btree
-
-  create_table "surveys", force: :cascade do |t|
-    t.integer  "company_id"
-    t.string   "title"
-    t.string   "state"
-    t.integer  "number_of_responses", default: 0
-    t.boolean  "alarm",               default: false
-    t.boolean  "repeat"
-    t.date     "start_on"
-    t.date     "finish_on"
-    t.integer  "number_of_repeats"
-    t.datetime "next_delivery_at"
-    t.text     "message"
-    t.integer  "repeat_every"
-    t.string   "repeat_mode"
-    t.integer  "counter",             default: 0
-    t.datetime "start_at"
-  end
-
-  add_index "surveys", ["company_id"], name: "index_surveys_on_company_id", using: :btree
 
   create_table "tokens", force: :cascade do |t|
     t.string   "name"

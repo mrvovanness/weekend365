@@ -5,7 +5,7 @@ class Employee < ActiveRecord::Base
   validates :email, email: true
 
   belongs_to :company
-  has_and_belongs_to_many :surveys
+  has_and_belongs_to_many :company_surveys
 
   def self.to_csv
     attributes = %w(name email department position)

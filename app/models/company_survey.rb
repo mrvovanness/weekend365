@@ -1,4 +1,4 @@
-class Survey < ActiveRecord::Base
+class CompanySurvey < ActiveRecord::Base
   validates :title, :start_at, :message, presence: true
   validate :start_in_future?, :finish_after_start?
   belongs_to :company

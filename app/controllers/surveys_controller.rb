@@ -4,12 +4,12 @@ class SurveysController < ApplicationController
   respond_to :json, only: :update_employees
 
   def index
-    @search = @company.surveys.ransack(params[:q])
+    @search = @company.company_surveys.ransack(params[:q])
     @surveys = @search.result(distinct: true)
   end
 
   def new
-    @survey = @company.surveys.build
+    @survey = @company.company_surveys.build
     @survey.questions.build
   end
 
@@ -17,7 +17,7 @@ class SurveysController < ApplicationController
   end
 
   def create
-    @survey = @company.surveys.create(survey_params)
+    @survey = @company.company_surveys.create(survey_params)
     respond_with @survey, location: -> { preview_survey_path(@survey) }
   end
 
@@ -38,6 +38,7 @@ class SurveysController < ApplicationController
     @survey.update_attributes(survey_params)
     respond_with @survey.employees.count
   end
+
   private
 
   def survey_params
@@ -53,6 +54,6 @@ class SurveysController < ApplicationController
   end
 
   def set_survey
-    @survey = @company.surveys.find(params[:id])
+    @survey = @company.company_surveys.find(params[:id])
   end
 end
