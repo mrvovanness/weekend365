@@ -1,2 +1,2 @@
-class ScaledQuestion < Question
+class ScaledQuestion < OfferedQuestion
 end

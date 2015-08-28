@@ -3,11 +3,7 @@ class CompanySurvey < ActiveRecord::Base
   validate :start_in_future?, :finish_after_start?
   belongs_to :company
   has_and_belongs_to_many :employees
-  has_many :questions, dependent: :destroy
-  has_many :answers, through: :questions
-  has_many :scaled_questions
-
-  accepts_nested_attributes_for :questions, allow_destroy: true
+  has_and_belongs_to_many :offered_questions
 
   before_save :reset_counter, :set_next_delivery,
     unless: :skip_callback?

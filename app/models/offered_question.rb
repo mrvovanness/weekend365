@@ -1,5 +1,5 @@
-class Question < ActiveRecord::Base
+class OfferedQuestion < ActiveRecord::Base
   validates :title, :type, presence: true
-  belongs_to :survey
+  has_and_belongs_to_many :company_surveys
   has_many :answers, dependent: :destroy
 end

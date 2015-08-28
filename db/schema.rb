@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150828182135) do
+ActiveRecord::Schema.define(version: 20150828190212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -91,6 +91,14 @@ ActiveRecord::Schema.define(version: 20150828182135) do
   add_index "company_surveys_employees", ["company_survey_id"], name: "index_company_surveys_employees_on_company_survey_id", using: :btree
   add_index "company_surveys_employees", ["employee_id"], name: "index_company_surveys_employees_on_employee_id", using: :btree
 
+  create_table "company_surveys_offered_questions", id: false, force: :cascade do |t|
+    t.integer "company_survey_id"
+    t.integer "offered_question_id"
+  end
+
+  add_index "company_surveys_offered_questions", ["company_survey_id"], name: "index_company_surveys_offered_questions_on_company_survey_id", using: :btree
+  add_index "company_surveys_offered_questions", ["offered_question_id"], name: "index_company_surveys_offered_questions_on_offered_question_id", using: :btree
+
   create_table "employees", force: :cascade do |t|
     t.string   "name"
     t.string   "department"
@@ -104,7 +112,7 @@ ActiveRecord::Schema.define(version: 20150828182135) do
 
   add_index "employees", ["company_id"], name: "index_employees_on_company_id", using: :btree
 
-  create_table "questions", force: :cascade do |t|
+  create_table "offered_questions", force: :cascade do |t|
     t.string   "title"
     t.integer  "survey_id"
     t.datetime "created_at", null: false
@@ -112,7 +120,7 @@ ActiveRecord::Schema.define(version: 20150828182135) do
     t.string   "type"
   end
 
-  add_index "questions", ["survey_id"], name: "index_questions_on_survey_id", using: :btree
+  add_index "offered_questions", ["survey_id"], name: "index_offered_questions_on_survey_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"
