@@ -10,7 +10,7 @@ class SurveysController < ApplicationController
 
   def new
     @survey = @company.company_surveys.build
-    @offered_survey = OfferedSurvey.find_by(type: params[:survey_type])
+    @offered_surveys = OfferedSurvey.where(type: params[:survey_type])
   end
 
   def edit

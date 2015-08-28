@@ -65,19 +65,19 @@
       include_blank: false
     br
     br
-  = offered_survey.offered_questions.each do |question|
-  .box.style01
-    .block-info
-      .panel
-        span.heading = question.title
-      br
-    .clearfix
-      fieldset
-        ul.days
-          - question.answers.each do |answer|
-            li
-              = label_tag answer
-              = check_box_tag answer, nil, nil, class: 'checkable'
+  - offered_surveys.last.offered_questions.each do |question|
+    .box.style01
+      .block-info
+        .panel
+          span.heading = question.title
+        br
+      .clearfix
+        fieldset
+          ul.days
+            - question.offered_answers.each do |answer|
+              li
+                = label_tag answer.value
+                = check_box_tag answer.value, nil, nil, class: 'checkable'
   .btns-holder.clearfix
     .btns
       = f.submit 'Save', class: 'btn-save'

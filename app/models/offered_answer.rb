@@ -1,3 +1,3 @@
 class OfferedAnswer < ActiveRecord::Base
-  validates :value, :type, presence: true
+  validates :value, presence: true
 end
