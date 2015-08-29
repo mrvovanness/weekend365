@@ -9,10 +9,9 @@ class SurveysController < ApplicationController
   end
 
   def new
-    offered_survey = OfferedSurvey.find_by(type: offered_survey_query)
-    @offered_questions = offered_survey.offered_questions
+    @offered_survey = OfferedSurvey.find_by(type: offered_survey_query)
+    @offered_questions = @offered_survey.offered_questions
       .includes(:offered_answers).uniq
-
     @survey = @company.company_surveys.build
   end
 
@@ -46,10 +45,10 @@ class SurveysController < ApplicationController
 
   def survey_params
     params.require(:survey).permit(
-      :title, :start_on, :start_at, :finish_on, :time_zone,
+      :title, :start_at, :finish_on,
       :number_of_repeats, :repeat_every,
       :repeat_mode, :message, :skip_callback,
-      :employee_ids => [], questions_attributes: [:id, :title, :type])
+      :employee_ids => [], :offered_questions => [])
   end
 
   def offered_survey_query

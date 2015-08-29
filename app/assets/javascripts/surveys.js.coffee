@@ -1,4 +1,6 @@
 jQuery ->
+
+  # Dinamically add/remove email recepients and respond with number of recipients
   $('.edit_survey').on 'ajax:complete', (e, data, status, xhr) ->
     message = JSON.parse(data.responseText)
     $('.control-label', this).html('Send to ' + '(' + message.employees_count + '):')
@@ -15,6 +17,7 @@ jQuery ->
     position = obj.position
     return name + department + position
 
+  # Search via ajax in 'send to' form field
   $('#company_survey_employee_ids').select2
     tags: true
     closeOnSelect: false
@@ -31,7 +34,7 @@ jQuery ->
           results: $.map data.employees, (obj) ->
             return { id: obj.id, text: joinValues(obj) } }
 
-  # workaround of issue https://github.com/select2/select2/issues/3632
+  # workaround of issue https://github.com/select2/select2/issues/3632(not work for me)
   $('.select2').on 'select2:unselect', ->
     console.log('hello')
     setTimeout ( ->
@@ -47,4 +50,9 @@ jQuery ->
   $('.link-add-new').click (e) ->
     e.preventDefault()
     $('#dialog').dialog 'open'
-     
+
+  $('.btn-delete').click (e) ->
+    e.preventDefault()
+    if $('.btn-delete').length > 1
+      $(this).closest('.box').fadeOut 'slow', ->
+        $(this).remove()

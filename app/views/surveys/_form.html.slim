@@ -3,7 +3,10 @@
   fieldset
     = f.label :title, class: 'heading'
     .row
-      = f.input_field :title, class: 'style05'
+      = f.input_field :title,
+        class: 'style05',
+        value: "#{@offered_survey.title} for company #{@company.name}",
+        autofocus: true
       = f.submit 'Save', class: 'btn-save'
     span.heading SURVEY PERIOD:
     .block
@@ -65,20 +68,7 @@
       include_blank: false
     br
     br
-  - offered_questions.each do |question|
-    .box.style01
-      .block-info
-        .panel
-          span.heading = question.title
-        br
-      .clearfix
-        fieldset
-          ul.days
-            - question.offered_answers.each do |answer|
-              li
-                = label_tag answer.value
-                = check_box_tag answer.value, nil, nil, class: 'checkable'
-    br
+    = render 'offered_questions', questions: offered_questions, f: f
   .btns-holder.clearfix
     .btns
       = f.submit 'Save', class: 'btn-save'
