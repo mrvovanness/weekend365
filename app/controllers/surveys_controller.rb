@@ -9,8 +9,11 @@ class SurveysController < ApplicationController
   end
 
   def new
+    offered_survey = OfferedSurvey.find_by(type: offered_survey_query)
+    @offered_questions = offered_survey.offered_questions
+      .includes(:offered_answers).uniq
+
     @survey = @company.company_surveys.build
-    @offered_surveys = OfferedSurvey.where(type: params[:survey_type])
   end
 
   def edit
@@ -47,6 +50,15 @@ class SurveysController < ApplicationController
       :number_of_repeats, :repeat_every,
       :repeat_mode, :message, :skip_callback,
       :employee_ids => [], questions_attributes: [:id, :title, :type])
+  end
+
+  def offered_survey_query
+    query = params[:survey_type]
+    if query == 'PulseSurvey'
+      query
+    else
+      redirect_to surveys_path and return
+    end
   end
 
   def set_company

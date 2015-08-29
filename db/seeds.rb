@@ -1,22 +1,40 @@
-#create default pulse survey
+#create default pulse survey with questions and offered answers
+
 survey = PulseSurvey.find_or_create_by(title: 'Job Satisfaction')
 
-survey.offered_questions.find_or_create_by(
-  title: 'Overall, how satisfied are you with your job?',
-  type: 'ScaledQuestion'
+question1 = ScaledQuestion.find_or_create_by(
+ title: 'Overall, how satisfied are you with your job?'
 )
 
-survey.offered_questions.find_or_create_by(
-  title: 'How do you evaluate your department\'s management?',
-  type: 'ScaledQuestion'
+question2 = ScaledQuestion.find_or_create_by(
+ title: "How do you evaluate your department's management"
 )
 
-ScaledQuestion.all.each do |question|
-  (1..10).each do |n|
-    question.offered_answers.find_or_create_by(value: n.to_s)
-  end
+question3 = ScaledQuestion.find_or_create_by(
+ title: 'Assess your mood right now'
+)
+
+(1..10).each do |n|
+  answer = ScaledAnswer.find_or_create_by(value: n.to_s)
+  SqaAssignment.find_or_create_by(
+    offered_survey: survey,
+    offered_question: question1,
+    offered_answer: answer
+  )
+  SqaAssignment.find_or_create_by(
+    offered_survey: survey,
+    offered_question: question2,
+    offered_answer: answer
+  )
+  SqaAssignment.find_or_create_by(
+    offered_survey: survey,
+    offered_question: question3,
+    offered_answer: answer
+  )
 end
-puts OfferedSurvey.count
-puts OfferedQuestion.count
-puts OfferedAnswer.count
 
+
+puts "surveys: #{OfferedSurvey.count}"
+puts "questions: #{OfferedQuestion.count}"
+puts "answers: #{OfferedAnswer.count}"
+puts "sqa assignments: #{SqaAssignment.count}"

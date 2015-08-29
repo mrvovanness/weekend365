@@ -65,7 +65,7 @@
       include_blank: false
     br
     br
-  - offered_surveys.last.offered_questions.each do |question|
+  - offered_questions.each do |question|
     .box.style01
       .block-info
         .panel
@@ -78,6 +78,7 @@
               li
                 = label_tag answer.value
                 = check_box_tag answer.value, nil, nil, class: 'checkable'
+    br
   .btns-holder.clearfix
     .btns
       = f.submit 'Save', class: 'btn-save'
