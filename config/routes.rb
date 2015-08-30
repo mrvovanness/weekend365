@@ -29,5 +29,5 @@ Rails.application.routes.draw do
   mount Resque::Server, at: '/background'
 
   # route for handling email links
-  get 'answers' => 'answers#add_answer'
+  get 'results' => 'results#add_result'
 end

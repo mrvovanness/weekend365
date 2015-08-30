@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150828201955) do
+ActiveRecord::Schema.define(version: 20150830182653) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(version: 20150828201955) do
   add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+
+  create_table "answers", force: :cascade do |t|
+    t.integer  "result_id"
+    t.integer  "offered_answer_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
+
+  add_index "answers", ["offered_answer_id"], name: "index_answers_on_offered_answer_id", using: :btree
+  add_index "answers", ["result_id"], name: "index_answers_on_result_id", using: :btree
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"
@@ -123,6 +133,18 @@ ActiveRecord::Schema.define(version: 20150828201955) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  create_table "results", force: :cascade do |t|
+    t.integer  "employee_id"
+    t.integer  "offered_question_id"
+    t.integer  "offered_survey_id"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  add_index "results", ["employee_id"], name: "index_results_on_employee_id", using: :btree
+  add_index "results", ["offered_question_id"], name: "index_results_on_offered_question_id", using: :btree
+  add_index "results", ["offered_survey_id"], name: "index_results_on_offered_survey_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"

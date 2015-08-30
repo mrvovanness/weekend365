@@ -4,7 +4,7 @@ class SendEmailsJob
   def self.perform(survey_id)
     survey = CompanySurvey.includes(:offered_questions).find(survey_id)
     survey.employees.find_each do |employee|
-      SurveysMailer.send_survey(survey, employee.email).deliver_now
+      SurveysMailer.send_survey(survey, employee).deliver_now
     end
 
     survey.update_column(:counter, survey.counter += 1)

@@ -5,8 +5,9 @@ html
   body
     h1 Welcome to weekend365
     p = @survey.message
-    p Question: #{ @survey.questions.first.title }
-    - (1..10).each do |mark|
-      = link_to mark.to_s, answers_url(token: @token,
-        question_id: @survey.questions.first.id,
-        mark: mark)
+    p Question: #{ @survey.offered_questions.first.title }
+    - @survey.offered_questions.first.offered_answers.each do |answer|
+      = link_to answer.value, results_url(token: @token,
+        employee_id: @employee.id,
+        offered_question_id: @survey.offered_questions.first.id,
+        offered_answer_id: answer.id)
