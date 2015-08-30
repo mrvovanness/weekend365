@@ -5,7 +5,7 @@
     .row
       = f.input_field :title,
         class: 'style05',
-        value: "#{@offered_survey.title} for company #{@company.name}",
+        value: survey.title ? nil : "#{@offered_survey.title} for company #{@company.name}",
         autofocus: true
       = f.submit 'Save', class: 'btn-save'
     span.heading SURVEY PERIOD:

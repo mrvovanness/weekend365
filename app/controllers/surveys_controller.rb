@@ -12,7 +12,7 @@ class SurveysController < ApplicationController
     @offered_survey = OfferedSurvey.find_by(type: offered_survey_query)
     @offered_questions = @offered_survey.offered_questions
       .includes(:offered_answers).uniq
-    @survey = @company.company_surveys.build
+    @survey = @company.company_surveys.build(offered_questions: @offered_questions)
   end
 
   def edit
@@ -44,7 +44,7 @@ class SurveysController < ApplicationController
   private
 
   def survey_params
-    params.require(:survey).permit(
+    params.require(:company_survey).permit(
       :title, :start_at, :finish_on,
       :number_of_repeats, :repeat_every,
       :repeat_mode, :message, :skip_callback,

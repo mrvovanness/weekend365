@@ -5,10 +5,10 @@ jQuery ->
     message = JSON.parse(data.responseText)
     $('.control-label', this).html('Send to ' + '(' + message.employees_count + '):')
 
-  $('#survey_start_at').datetimepicker
+  $('#company_survey_start_at').datetimepicker
     format: 'Y-M-d H:i'
 
-  $('#survey_finish_on').datetimepicker
+  $('#company_survey_finish_on').datetimepicker
     format: 'Y-M-d'
 
   joinValues = (obj) ->

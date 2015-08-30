@@ -1,14 +1,1 @@
 h1 Dashboard
-- @surveys.each do |survey|
-  .well
-    h3 Survey ##{survey.id}: #{survey.title}
-    .text-right
-      | start on: #{survey.start_on}
-  .well
-    h1 Score
-    b Number of responses: #{survey.answers.count}
-    br
-    -if survey.answers.present?
-      b
-        'average mark:
-        = survey.answers.pluck(:mark).inject{ |sum, mark| sum + mark }/survey.answers.count
