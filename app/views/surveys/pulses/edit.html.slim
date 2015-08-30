@@ -1,9 +1,9 @@
 #main
   .inform-panel.clearfix
     h1 = link_to 'Edit survey', '#'
-  = render 'form', survey: @survey
+  = render 'form', survey: @survey, offered_questions: @offered_questions
   .btns-holder.clearfix
-    = link_to 'Delete', survey_path(@survey),
+    = link_to 'Delete', surveys_pulse_path(@survey),
       method: 'DELETE',
       data: { confirm: 'Are you sure?' },
       class: 'btn-save'

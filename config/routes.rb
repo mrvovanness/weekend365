@@ -14,10 +14,13 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :surveys do
-    member do
-      get 'preview'
-      patch 'update_employees'
+  get 'surveys' => 'surveys/pulses#index'
+  namespace :surveys do
+    resources :pulses, except: :index do
+      member do
+        get 'preview'
+        patch 'update_employees'
+      end
     end
   end
 

@@ -1,7 +1,7 @@
 jQuery ->
 
   # Dinamically add/remove email recepients and respond with number of recipients
-  $('.edit_survey').on 'ajax:complete', (e, data, status, xhr) ->
+  $('.edit_company_survey').on 'ajax:complete', (e, data, status, xhr) ->
     message = JSON.parse(data.responseText)
     $('.control-label', this).html('Send to ' + '(' + message.employees_count + '):')
 
@@ -47,7 +47,7 @@ jQuery ->
     draggable: false
     resizable: false
     width: 500
-  $('.link-add-new').click (e) ->
+  $('.link-add-new, .btn-create').click (e) ->
     e.preventDefault()
     $('#dialog').dialog 'open'
 

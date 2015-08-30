@@ -1,11 +1,11 @@
-span.heading Choose which questions send for answering through email
+span.heading Choose one question to send for answering through email
 
 - questions.each do |question|
   .box.style01
     .block-info
       .panel
         span.heading = question.title
-        = check_box_tag 'company_survey[offered_question_ids][]',
+        = radio_button_tag 'company_survey[offered_question_ids][]',
           question.id, nil,
           class: 'checkable',
           checked: true

@@ -1,4 +1,4 @@
-class SurveysController < ApplicationController
+class Surveys::PulsesController < ApplicationController
   before_action :authenticate_user!, :set_company
   before_action :set_survey, except: [:index, :new, :create]
   respond_to :json, only: :update_employees
@@ -9,28 +9,33 @@ class SurveysController < ApplicationController
   end
 
   def new
-    @offered_survey = OfferedSurvey.find_by(type: offered_survey_query)
-    @offered_questions = @offered_survey.offered_questions
-      .includes(:offered_answers).uniq
-    @survey = @company.company_surveys.build(offered_questions: @offered_questions)
+    load_offered_survey
+    @survey = @company.company_surveys.build
   end
 
   def edit
+    load_offered_survey
   end
 
   def create
     @survey = @company.company_surveys.create(survey_params)
-    respond_with @survey, location: -> { preview_survey_path(@survey) }
+    if @survey.save
+      respond_with @survey,
+        location: -> { preview_surveys_pulse_path(@survey) }
+    else
+      load_offered_survey
+      respond_with @survey
+    end
   end
 
   def update
     @survey.update(survey_params)
-    respond_with @survey, location: -> { preview_survey_path(@survey) }
+    respond_with @survey, location: -> { preview_surveys_pulse_path(@survey) }
   end
 
   def destroy
     @survey.destroy
-    respond_with @survey
+    respond_with @survey, location: -> { surveys_path }
   end
 
   def preview
@@ -48,16 +53,7 @@ class SurveysController < ApplicationController
       :title, :start_at, :finish_on,
       :number_of_repeats, :repeat_every,
       :repeat_mode, :message, :skip_callback,
-      :employee_ids => [], :offered_questions => [])
-  end
-
-  def offered_survey_query
-    query = params[:survey_type]
-    if query == 'PulseSurvey'
-      query
-    else
-      redirect_to surveys_path and return
-    end
+      :employee_ids => [], :offered_question_ids => [])
   end
 
   def set_company
@@ -66,5 +62,11 @@ class SurveysController < ApplicationController
 
   def set_survey
     @survey = @company.company_surveys.find(params[:id])
+  end
+
+  def load_offered_survey
+    @offered_survey = PulseSurvey.first
+    @offered_questions = @offered_survey.offered_questions
+      .includes(:offered_answers).uniq
   end
 end

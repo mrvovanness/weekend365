@@ -1,13 +1,14 @@
-= simple_form_for survey, url: surveys_path,
+= simple_form_for survey,
+  url: survey.new_record? ? surveys_pulses_path : surveys_pulse_path(survey),
   html: { class: 'info-form inner' } do |f|
   fieldset
+    = hidden_field_tag :type, @offered_survey.class.name
     = f.label :title, class: 'heading'
     .row
       = f.input_field :title,
         class: 'style05',
-        value: survey.title ? nil : "#{@offered_survey.title} for company #{@company.name}",
+        value: survey.title ? survey.title : "#{@offered_survey.title} for company #{@company.name}",
         autofocus: true
-      = f.submit 'Save', class: 'btn-save'
     span.heading SURVEY PERIOD:
     .block
       .row-holder.clearfix
@@ -68,7 +69,11 @@
       include_blank: false
     br
     br
-    = render 'offered_questions', questions: offered_questions, f: f
+    = render 'offered_questions',
+      questions: offered_questions,
+      survey: survey,
+      f: f
+
   .btns-holder.clearfix
     .btns
       = f.submit 'Save', class: 'btn-save'

@@ -3,7 +3,7 @@
     h1 = link_to 'survey confirmation', '#'
   .info-box.color
     span.heading
-      | Survey ##{@survey.id}:“#{ @survey.title }”
+      | Survey ##{@survey.id}: “#{@survey.title}”
     span.info
       | set up successfully!
     p Now take your time to <a href='#'>read our blog</a> and get<br>updates on the new trends in Employee Engagement
@@ -11,20 +11,20 @@
     .block-info.clearfix
       .panel
         span.heading
-          | Survey ##{ @survey.id }: #{ @survey.title }
+          | Question: #{@survey.offered_questions.first.title}
       .btns
         = link_to 'Edit',
-          edit_survey_path(@survey),
+          edit_surveys_pulse_path(@survey),
           class: 'btn-edit'
 
         = link_to 'Undo',
-          survey_path(@survey),
+          surveys_pulse_path(@survey),
           method: :delete,
           data: { confirm: 'You are about to delete this survey' },
           class: 'btn-undo'
     .send-block.clearfix
       = simple_form_for @survey,
-        url: update_employees_survey_path(@survey),
+        url: update_employees_surveys_pulse_path(@survey),
         data: { type: :json, remote: true, method: :patch } do |f|
         = f.input :employee_ids,
           collection: @survey.company.employees.order(:name),
@@ -48,6 +48,6 @@
       dashboard_path,
       class: 'btn-dashboard'
     = link_to 'Blog', '#', class: 'btn-blog'
-    = link_to 'Create new Survey',
-      new_survey_path,
+    = link_to 'Create new Survey', '#',
       class: 'btn-create'
+    = render 'dialog'
