@@ -57,7 +57,8 @@
                       edit_surveys_pulse_path(survey),
                       class: 'btn-edit'
                   td
-                    = link_to 'notify', '#',
+                    = link_to 'notify',
+                      preview_surveys_pulse_path(survey),
                       class: 'btn-notify'
                   td
                     = link_to 'results', '#',

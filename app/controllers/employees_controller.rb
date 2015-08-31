@@ -28,8 +28,9 @@ class EmployeesController < ApplicationController
   end
 
   def add_to_survey
-    @employees = @company.employees.where(id: params[:employee_ids])
-    @employees.update_all(selected_to_survey: true)
+    survey = CompanySurvey.find(params[:id])
+    employees = @company.employees.where(id: params[:employee_ids])
+    survey.employees << employees
     redirect_to_company
   end
 

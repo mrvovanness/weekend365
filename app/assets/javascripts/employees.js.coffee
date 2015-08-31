@@ -10,12 +10,8 @@ jQuery ->
         $(this).removeClass 'checked'
         $('input', this).prop 'checked', false
 
-  $('.bulk_actors, #select_all-styler').click ->
-    check_count = $('.checked').size()
-    if check_count > 0
-      $('#add-to-survey-submit').fadeIn 'slow'
-    else
-      $('#add-to-survey-submit').fadeOut 'slow'
+  $('#add-to-survey-submit').click (e) ->
+    e.preventDefault()
 
-  $('.link-add').click ->
-    $('#add-to-survey-form').submit()
+  #$('.link-add').click ->
+  #$('#add-to-survey-form').submit()

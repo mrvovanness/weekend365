@@ -9,8 +9,7 @@
     .add-holder
       = link_to 'Add selected<br>to survey'.html_safe, '#',
         class: 'link-add',
-        id: 'add-to-survey-submit',
-        style: 'display: none;'
+        id: 'add-to-survey-submit'
     .all-holder
       = label_tag 'select_all', 'Select all'
       = check_box_tag 'select_all', nil, false, class: 'checkable'
