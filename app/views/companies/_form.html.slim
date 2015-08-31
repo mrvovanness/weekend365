@@ -1,0 +1,42 @@
+= simple_form_for @company,
+  html: { class: 'info-form' } do |f|
+  fieldset
+    .row
+      .label-holder
+        = f.label :name
+      = f.input_field :name
+    .row
+      .label-holder
+        = f.label :company_field
+      = f.association :company_field,
+        label: false,
+        input_html: { class: 'selectable' }
+    .row
+      .label-holder
+        = f.label :country
+      = f.input_field :country,
+        class: 'selectable'
+    .row
+      .label-holder
+        = f.label :office_address
+      = f.input_field :office_address
+    .row
+      .label-holder
+        = f.label :description
+      = f.input_field :description
+    .row
+      .label-holder
+        = f.label :website
+      = f.input_field :website
+    .row
+      .label-holder
+        = f.label :employees_number
+      = f.input_field :employees_number,
+        type: 'text'
+    .row
+      .label-holder
+        = f.label :employees_registered
+      = f.input_field :employees_registered,
+        type: 'text'
+    .row.btn-holder
+      = f.button :submit, 'Save', class: 'btn-save'

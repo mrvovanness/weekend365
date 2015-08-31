@@ -19,18 +19,16 @@ class Surveys::PulsesController < ApplicationController
 
   def create
     @survey = @company.company_surveys.create(survey_params)
-    if @survey.save
-      respond_with @survey,
-        location: -> { preview_surveys_pulse_path(@survey) }
-    else
-      load_offered_survey
-      respond_with @survey
-    end
+    load_offered_survey if @survey.errors.present?
+    respond_with @survey,
+      location: -> { preview_surveys_pulse_path(@survey) }
   end
 
   def update
     @survey.update(survey_params)
-    respond_with @survey, location: -> { preview_surveys_pulse_path(@survey) }
+    load_offered_survey if @survey.errors.present?
+    respond_with @survey,
+      location: -> { preview_surveys_pulse_path(@survey) }
   end
 
   def destroy

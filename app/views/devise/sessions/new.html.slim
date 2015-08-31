@@ -8,9 +8,8 @@
     fieldset
       = f.input :email,
         autofocus: true,
-        input_html: { value: 'weekend365@mail.com', id: 'id-field'}
-      = f.input :password,
-        input_html: { value: 'bigsecret' }
+        input_html: { id: 'id-field'}
+      = f.input :password
       = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
 
       .login-holder

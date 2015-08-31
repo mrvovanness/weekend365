@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_company
+  before_action :set_company, except: [:new, :create]
 
   def show
     @search = @company.employees.ransack(params[:q])
@@ -13,13 +13,29 @@ class CompaniesController < ApplicationController
     end
   end
 
+  def new
+    redirect_to :back and return if current_user.company.present?
+    @company = current_user.build_company
+    render layout: 'home'
+  end
+
   def edit
     @search = @company.employees.ransack(params[:q])
   end
 
+  def create
+    @company = current_user.create_company(company_params)
+    if @company.save
+      respond_with @company,
+        location: -> { company_path(@company) }
+    else
+      render :new, layout: 'home'
+    end
+  end
+
   def update
     @company.update(company_params)
-    respond_with @company, location: -> { company_path }
+    respond_with @company, location: -> { company_path(@company) }
   end
 
   private

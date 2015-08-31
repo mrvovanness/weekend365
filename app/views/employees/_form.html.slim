@@ -1,35 +1,29 @@
-= simple_form_for employee, html: { class: 'form-horizontal' },
-  defaults: { input_html: { class: 'form-control' } } do |f|
-  .form-group
-    .col-xs-3.col-xs-offset-9
-      = f.button :submit
-
-  .form-group
-    = f.label :name, class: 'col-xs-2'
-    .col-xs-7
+= simple_form_for employee,
+  html: { class: 'info-form' } do |f|
+  fieldset
+    .row
+      .label-holder
+        = f.label :name
       = f.input_field :name
-
-  .form-group
-    = f.label :department, class: 'col-xs-2'
-    .col-xs-7
+      = f.error :name
+    .row
+      .label-holder
+        = f.label :department
       = f.input_field :department
-
-  .form-group
-    = f.label :position, class: 'col-xs-2'
-    .col-xs-7
+    .row
+      .label-holder
+        = f.label :position
       = f.input_field :position
-
-  .form-group
-    = f.label :email, class: 'col-xs-2'
-    .col-xs-7
-      = f.input_field :email
-
-  .form-group
-    .col-xs-3.col-xs-offset-9
-      = f.button :submit
+    .row
+      .label-holder
+        = f.label :email
+      = f.input_field :email, type: 'text'
+    .row.btn-holder
+      = f.button :submit, 'Save', class: 'btn-save'
 
 = form_tag import_employees_path, multipart: true do
   = file_field_tag :file
+  br
   = submit_tag 'Import csv file'
 
 

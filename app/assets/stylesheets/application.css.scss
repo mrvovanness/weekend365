@@ -37,3 +37,12 @@ body { padding-top: 70px; }
   text-align: left;
 }
 */
+.alert {
+  padding: 15px;
+  border: 1px solid transparent;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  background-color: rgba(202, 192, 184, 0.99);
+  z-index: 1;
+}

@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :companies, only: [:show, :edit, :update]
+  resources :companies, except: :index
 
   resources :employees do
     collection do

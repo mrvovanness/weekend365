@@ -3,7 +3,7 @@ header#header.clearfix
     = image_tag('logo03.png', alt: 'weekend', width: '106', height: '19', class: 'logo')
   ul.links
     li.company
-      = link_to 'COMPANY', company_path(current_user.company) if user_signed_in?
+      = link_to 'COMPANY', company_path(current_user.company) if user_signed_in? && current_user.company
     li.dashboards
       = link_to 'DASHBOARD', dashboard_path
     li.surveys
@@ -20,7 +20,7 @@ header#header.clearfix
       = link_to 'MENU', '#'
       .drop
         ul
-          li = link_to 'Edit company', edit_company_path(current_user.company) if current_user
+          li = link_to 'Edit company', edit_company_path(current_user.company) if current_user.company
           li = link_to 'Log out', destroy_user_session_path
           - if current_user && current_user.has_role?(:admin)
             li

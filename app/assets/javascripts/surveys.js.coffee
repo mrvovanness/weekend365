@@ -47,7 +47,7 @@ jQuery ->
     draggable: false
     resizable: false
     width: 500
-  $('.link-add-new, .btn-create').click (e) ->
+  $('#add-survey-btn, .btn-create').click (e) ->
     e.preventDefault()
     $('#dialog').dialog 'open'
 
