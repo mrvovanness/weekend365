@@ -1,0 +1,16 @@
+class SignupsController < ApplicationController
+  layout 'devise'
+  def new
+    @signup = Signup.new
+  end
+
+  def create
+    @signup = Signup.new(params[:signup])
+    if @signup.save
+      sign_in @signup.user
+      redirect_to dashboard_path
+    else
+      render :new
+    end
+  end
+end

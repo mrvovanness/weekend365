@@ -1,0 +1,32 @@
+.btns
+  h2
+    | Sign up
+  = simple_form_for @signup,
+    url: signups_path,
+    html: { class: 'login-form' } do |f|
+    fieldset
+
+      = f.input :email,
+        required: true,
+        autofocus: true,
+        input_html: { id: 'id-field' }
+      = f.error :email
+      = f.input :name
+      = f.error :name
+      = f.input :password, placeholder: '8 characters minimum'
+      = f.error :password
+      = f.input :company_name
+      = f.error :company_name
+      = f.input :country,
+        input_html: { class: 'selectable' }
+      = f.error :country
+      .login-holder
+        = f.submit "Sign up", class: 'btn btn-sign'
+  span.heading HAVE AN ACCOUNT ALREADY?
+  .frame
+    = link_to 'LOGIN',
+      new_user_session_path,
+      class: 'btn btn-login'
+    = link_to 'about',
+      about_path,
+      class: 'btn-about'

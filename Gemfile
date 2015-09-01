@@ -30,6 +30,7 @@ gem 'foreman-export-initscript', github: 'webgradus/foreman-export-initscript'
 gem 'unicorn'
 gem 'validates'
 gem 'active_model_serializers'
+gem 'virtus'
 
 group :development do
   gem 'better_errors'
