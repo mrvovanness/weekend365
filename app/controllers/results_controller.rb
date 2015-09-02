@@ -1,5 +1,5 @@
 class ResultsController < ApplicationController
-
+  layout 'home'
   def add_result
     case
     when params[:token].present?
