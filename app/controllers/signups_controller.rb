@@ -7,8 +7,7 @@ class SignupsController < ApplicationController
   def create
     @signup = Signup.new(params[:signup])
     if @signup.save
-      sign_in @signup.user
-      redirect_to dashboard_path
+      redirect_to root_path
     else
       render :new
     end

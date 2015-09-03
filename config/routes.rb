@@ -32,4 +32,5 @@ Rails.application.routes.draw do
 
   # route for handling email links
   get 'results' => 'results#add_result'
+
 end

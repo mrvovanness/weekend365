@@ -35,7 +35,7 @@
                       <td width="20" bgcolor="#444747"></td>
                       <td>
                         <%= link_to root_url do %>
-                          <%= image_url('logo.png', size: '106x19', alt: 'WEEKEND', border: '0', style: 'vertical-align:top;') %>
+                          <img src="<%= image_url('logo-mail.png') %>" width="106" height="19" alt="weekend365" border="0" style="vertical-align:top;"/>
                         <% end %>
                       </td>
                       <td style="font:23px Arial, Helvetica, sans-serif; line-height:25px; padding:0 20px 0 0; color:#ffffff; text-align:right;"><%= @survey.company.name %></td>
@@ -75,7 +75,7 @@
                               <table width="100%" cellpadding="0" cellspacing="0" bgcolor="#f19926" style="border-radius:8px;">
                                 <tr>
                                   <td style="padding:4px 0 4px 7px;">
-                                    <img src="ico01.png" width="27" height="28" alt="image description" border="0" style="vertical-align:top;"/>
+                                    <img src="<%= image_url('ico01.png') %>" width="27" height="28" alt="image description" border="0" style="vertical-align:top;"/>
                                   </td>
                                   <td style="font:21px Arial, Helvetica, sans-serif; line-height:25px; margin:0 0 15px; padding:0 20px; color:#ffffff;" ><%= @survey.offered_questions.first.title %></td>
                                 </tr>
@@ -90,14 +90,8 @@
 														<table  cellpadding="0" cellspacing="0" style="text-align:center;">
 															<tr>
                                 <% @survey.offered_questions.first.offered_answers.each do |answer| %>
-                                  <td valign="top" background="bg01.png" style="font:30px Arial, Helvetica, sans-serif; line-height:60px; font-weight:bold; color:#343838; text-align:center; background:url(bg01.png) no-repeat;">
-                                    <%= link_to answer.value, results_url(
-                                      token: @token,
-                                      employee_id: @employee.id,
-                                      offered_question_id: @survey.offered_questions.first.id,
-                                      offered_answer_id: answer.id),
-                                      background: 'bg01.png',
-                                      slyle: 'font:30px Arial, Helvetica, sans-serif; line-height:60px; font-weight:bold; color:#343838; text-align:center; background:url(bg01.png) no-repeat;' %>
+                                  <td valign="top" background="bg01.png" style="font:30px Arial, Helvetica, sans-serif; line-height:60px; font-weight:bold; color:#343838; text-align:center; background:url(<%= image_url('bg01.png') %>) no-repeat;">
+                                    <a href="<%= results_url(token: @token, employee_id: @employee.id, offered_question_id: @survey.offered_questions.first.id, offered_answer_id: answer.id) %>" style="background:url(<%= image_url('bg01.png') %>) no-repeat; color:#343838; text-decoration:none; width:60px; height:60px; display:inline-block; vertical-align:top;"><%= answer.value %></a>
                                   </td>
                                   <td width="11"></td>
                                 <% end %>
@@ -109,7 +103,7 @@
 													<td height="12"></td>
 												</tr>
 												<tr>
-													<td align="center"><img src="img01.jpg" width="614" height="61" alt="image description" border="0" style="vertical-align:top;"/></td>
+                          <td align="center"><img src="<%= image_url('img01.jpg') %>" width="614" height="61" alt="image description" border="0" style="vertical-align:top;"/></td>
 												</tr>
 												<tr>
 													<td height="45"></td>
