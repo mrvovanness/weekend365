@@ -1,6 +1,5 @@
 class Employee < ActiveRecord::Base
   validates :name, :email, presence: true
-  validates :email, uniqueness: true
   # Gem 'validate'
   validates :email, email: true
 

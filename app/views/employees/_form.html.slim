@@ -18,6 +18,7 @@
       .label-holder
         = f.label :email
       = f.input_field :email, type: 'text'
+      = f.error :email
     .row.btn-holder
       = f.button :submit, 'Save', class: 'btn-save'
 
