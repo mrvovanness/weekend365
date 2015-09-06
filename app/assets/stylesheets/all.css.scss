@@ -1902,7 +1902,11 @@ input[type="submit"].btn-save:hover{background: #ad3114 url("../images/sprite.pn
 .jq-selectbox li.option {
 	padding-left: 25px;
 }
-
+.block-info .box.inner1 .info-holder {
+  float: left;
+  width: 80px;
+  margin: 0 10px 0 0;
+}
 ::-webkit-input-placeholder {color:#6d6e70;}
 :-moz-placeholder {color:#6d6e70;}
 ::-moz-placeholder {

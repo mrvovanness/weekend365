@@ -1,7 +1,8 @@
 class CompanySurvey < ActiveRecord::Base
   validates :title, :start_at, :message, presence: true
-  validate :start_in_future?, :finish_after_start?
+  validate :start_in_future?, :finish_after_start?, unless: :skip_callback?
   belongs_to :company
+  has_many :results
   has_and_belongs_to_many :employees
   has_and_belongs_to_many :offered_questions
 
@@ -66,5 +67,9 @@ class CompanySurvey < ActiveRecord::Base
 
   def weekly?
     repeat_mode == 'w'
+  end
+
+  def get_statistics
+    StatisticsService.new(self)
   end
 end

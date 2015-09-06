@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150901082523) do
+ActiveRecord::Schema.define(version: 20150906071206) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -116,7 +116,7 @@ ActiveRecord::Schema.define(version: 20150901082523) do
   create_table "offered_answers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "value"
+    t.integer  "value"
     t.string   "type"
   end
 
@@ -137,14 +137,14 @@ ActiveRecord::Schema.define(version: 20150901082523) do
   create_table "results", force: :cascade do |t|
     t.integer  "employee_id"
     t.integer  "offered_question_id"
-    t.integer  "offered_survey_id"
+    t.integer  "company_survey_id"
     t.datetime "created_at",          null: false
     t.datetime "updated_at",          null: false
   end
 
+  add_index "results", ["company_survey_id"], name: "index_results_on_company_survey_id", using: :btree
   add_index "results", ["employee_id"], name: "index_results_on_employee_id", using: :btree
   add_index "results", ["offered_question_id"], name: "index_results_on_offered_question_id", using: :btree
-  add_index "results", ["offered_survey_id"], name: "index_results_on_offered_survey_id", using: :btree
 
   create_table "roles", force: :cascade do |t|
     t.string   "name"

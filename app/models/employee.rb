@@ -3,6 +3,7 @@ class Employee < ActiveRecord::Base
   # Gem 'validate'
   validates :email, email: true
 
+  has_many :results
   belongs_to :company
   has_and_belongs_to_many :company_surveys
 

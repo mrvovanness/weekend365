@@ -1,1 +1,30 @@
-h1 Dashboard
+#main
+  h1.inner Dashboard
+  - @surveys.each do |survey|
+    .block-info
+      .panel
+        span.heading
+          = survey.title
+      .box.inner1
+        .holder
+          span.info your score
+          .frame
+            - if survey.get_statistics.average > 9.0
+              span.current-icon.good icon
+            - elsif survey.get_statistics.average > 5.0
+              span.current-icon.normal icon
+            - else
+              span.current-icon.bad icon
+            span.value
+              = survey.get_statistics.average
+          .icons.icons-small
+            - (4..9).each do |n|
+              li = image_tag("icon0#{n}.png", size: '29x29', alt: 'emoji')
+        .info-holder
+          span.info Country
+          span.value
+            = survey.get_statistics.average_by_country
+          span.info Industry
+          span.value
+            = survey.get_statistics.average_by_industry
+        .graph-holder
