@@ -6,4 +6,8 @@ class DashboardController < ApplicationController
       .order(start_at: :desc)
     @top_survey = @surveys.first
   end
+
+  def show
+    @survey = current_user.company.company_surveys.find(params[:id])
+  end
 end

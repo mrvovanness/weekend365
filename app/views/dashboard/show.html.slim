@@ -1,0 +1,43 @@
+#main
+  .inform-panel.clearfix
+    h1.results Survey results
+    = link_to '<< back to surveys list',
+      surveys_path,
+      class: 'link-back'
+  .block-info
+    .panel
+      span.heading
+        | SURVEY ##{ @survey.id }: #{ @survey.title }
+  .panel-holder
+    .time-holder
+      span.heading Frequency, date and Time
+      span.date Every #{@survey.repeat_every}
+        #{@survey.weekly? ? 'week' : 'day' }
+        at #{@survey.start_at.strftime('%I:%M%P')}
+        from #{@survey.start_at.strftime('%b %dth %Y')}
+    .btns
+      = link_to 'Edit Survey',
+        edit_surveys_pulse_path(@survey),
+        class: 'btn-edit'
+      = link_to 'Download raw data', '#',
+        class: 'btn-download'
+  .columns.clearfix
+    .column
+      .box.inner
+        .frame.clearfix
+          - if @survey.get_statistics.average > 9.0
+            span.current-icon.good icon
+          - elsif @survey.get_statistics.average > 5.0
+            span.current-icon.normal icon
+          - else
+            span.current-icon.bad icon
+          span.value = @survey.get_statistics.average
+          .info-holder
+            span.info score
+            - if @survey.get_statistics.average > 9.0
+              span.inform very good!
+            - elsif @survey.get_statistics.average > 5.0
+              span.inform not bad!
+            - else
+              span.inform needs improvement!
+
