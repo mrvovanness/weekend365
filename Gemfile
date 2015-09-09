@@ -31,6 +31,8 @@ gem 'unicorn'
 gem 'validates'
 gem 'active_model_serializers'
 gem 'virtus'
+gem 'chartkick'
+gem 'groupdate'
 
 group :development do
   gem 'better_errors'

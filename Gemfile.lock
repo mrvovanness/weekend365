@@ -109,6 +109,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    chartkick (1.4.1)
     childprocess (0.5.6)
       ffi (~> 1.0, >= 1.0.11)
     cliver (0.3.2)
@@ -173,6 +174,8 @@ GEM
     git-version-bump (0.15.1)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    groupdate (2.4.0)
+      activesupport (>= 3)
     guard (2.13.0)
       formatador (>= 0.2.4)
       listen (>= 2.7, <= 4.0)
@@ -513,6 +516,7 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capybara
+  chartkick
   coffee-rails (~> 4.1.0)
   country_select
   devise
@@ -521,6 +525,7 @@ DEPENDENCIES
   figaro
   foreman
   foreman-export-initscript!
+  groupdate
   guard
   guard-livereload
   guard-rspec
