@@ -3,5 +3,7 @@ class DashboardController < ApplicationController
 
   def index
     @surveys = current_user.company.company_surveys
+      .order(start_at: :desc)
+    @top_survey = @surveys.first
   end
 end
