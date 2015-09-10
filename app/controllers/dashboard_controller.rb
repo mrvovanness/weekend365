@@ -3,11 +3,12 @@ class DashboardController < ApplicationController
 
   def index
     @surveys = current_user.company.company_surveys
-      .order(start_at: :desc)
+      .order(start_at: :desc).decorate
     @top_survey = @surveys.first
   end
 
   def show
-    @survey = current_user.company.company_surveys.find(params[:id])
+    @survey = current_user.company
+      .company_surveys.find(params[:id]).decorate
   end
 end

@@ -5,12 +5,7 @@
   .holder
     span.info your score
     .frame
-      - if survey.get_statistics.average > 9.0
-        span.current-icon.good icon
-      - elsif survey.get_statistics.average > 5.0
-        span.current-icon.normal icon
-      - else
-        span.current-icon.bad icon
+      = render 'emoji_choosing', survey: survey
       span.value
         = survey.get_statistics.average
     .icons.icons-small

@@ -1,0 +1,6 @@
+- if survey.get_statistics.average > 9.0
+  span.current-icon.good icon
+- elsif survey.get_statistics.average > 5.0
+  span.current-icon.normal icon
+- else
+  span.current-icon.bad icon

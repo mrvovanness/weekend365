@@ -1,7 +1,8 @@
 #main
   h1.inner Dashboard
   .block-info
-    = render 'survey_result', survey: @top_survey if @top_survey.present?
+    = render 'survey_result',
+      survey: @top_survey if @top_survey.present?
   .block-info
     .panel
       span.heading Latest Surveys
@@ -23,12 +24,7 @@
                   td.col1 = survey.title
                   td = survey.get_statistics.count
                   td = survey.start_at.strftime('%b.%dth/%Y')
-                  td
-                    - if survey.daily?
-                      | every #{survey.repeat_every} day(s) #{survey.start_at.strftime('at %I:%M%P')}
-                    - elsif survey.weekly?
-                      | every #{survey.repeat_every} week(s) on #{ survey.start_at.strftime('%A')}
-                      | #{survey.start_at.strftime(' at %I:%M%P')}
+                  td = survey.frequency_overview
                   td = survey.get_statistics.latest_reply
                   td
                     = link_to 'preview',
