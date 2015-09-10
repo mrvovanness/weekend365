@@ -47,4 +47,14 @@ class StatisticsService
   def all_companies_of_one_industry
     Company.where(company_field: @survey.company.company_field)
   end
+
+  def latest_reply
+    begin
+      Answer.where(result: @survey.results)
+        .order(created_at: :desc).first
+        .created_at.strftime('%b.%dth/%Y at %H:%M')
+    rescue
+      'none'
+    end
+  end
 end
