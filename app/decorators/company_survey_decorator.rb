@@ -15,9 +15,11 @@ class CompanySurveyDecorator < Draper::Decorator
   def frequency_overview
     if daily?
       "every #{repeat_every} day(s)"\
-      "#{survey.start_at.strftime('at %I:%M%P')}"
+      "#{start_at.strftime('at %I:%M%P')}"
     elsif weekly?
       "every #{repeat_every} week(s)"\
       "on #{start_at.strftime('%A')}"\
       "#{start_at.strftime(' at %I:%M%P')}"
     end
+  end
+end
