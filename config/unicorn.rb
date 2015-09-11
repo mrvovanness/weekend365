@@ -8,7 +8,7 @@
 #
 # See http://unicorn.bogomips.org/Unicorn/Configurator.html for complete
 # documentation.
-app_name = "weeekend365"
+app_name = "weekend365"
 deploy_to = "/opt/#{app_name}"
 
 
