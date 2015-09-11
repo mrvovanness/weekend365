@@ -1,0 +1,50 @@
+#main
+  .inform-panel.clearfix
+    h1.results Survey results
+    <br><br>
+    = link_to '<< back to surveys list',
+      surveys_path,
+      class: 'link-back'
+  .block-info
+    .panel
+      span.heading
+        = @survey.header
+  .panel-holder
+    .time-holder
+      span.heading Frequency, date and Time
+      span.date
+        = @survey.schedule_overview
+    .btns
+      = link_to 'Edit Survey',
+        edit_surveys_pulse_path(@survey),
+        class: 'btn-edit'
+      = link_to 'Download raw data', '#',
+        class: 'btn-download'
+  .columns.clearfix
+    .column
+      .box.inner
+        .frame.clearfix
+          = render 'emoji_choosing', survey: @survey
+          span.value = @survey.get_statistics.average
+          .info-holder
+            span.info score
+            = render 'phrase_choosing', survey: @survey
+      .graph-holder
+        = line_chart @survey.get_charts.number_of_responses,
+          library: { title: 'Number of responses daily' }
+      .graph-holder
+        = pie_chart @survey.get_charts.distribution,
+          library: { title: 'Answers distribution' }
+      .graph-holder
+        = column_chart @survey.get_charts.number_of_responses,
+          library: { title: 'Number of responses daily' }
+    .column
+      .graph-holder
+        = line_chart @survey.get_charts.average,
+          library: { title: 'your average score daily' }
+      .graph-holder
+        = line_chart @survey.get_charts.average_by_country,
+          library: { title: 'Average score in your country daily' }
+      .graph-holder
+        = line_chart @survey.get_charts.average_by_industry,
+          library: { title: 'Average score in your industry daily' }

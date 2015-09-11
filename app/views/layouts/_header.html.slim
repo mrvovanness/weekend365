@@ -5,7 +5,7 @@ header#header.clearfix
     li.company
       = link_to 'COMPANY', company_path(current_user.company) if user_signed_in? && current_user.company
     li.dashboards
-      = link_to 'DASHBOARD', dashboard_path
+      = link_to 'DASHBOARD', dashboard_index_path
     li.surveys
       = link_to 'SURVEYS', surveys_path
   ul.links.alignright

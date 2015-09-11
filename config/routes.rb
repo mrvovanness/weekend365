@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'dashboard' => 'dashboard#index'
+  resources :dashboard, only: [:index, :show]
   get 'about' => 'pages#about'
   mount Resque::Server, at: '/background'
 

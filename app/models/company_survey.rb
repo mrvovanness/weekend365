@@ -72,4 +72,8 @@ class CompanySurvey < ActiveRecord::Base
   def get_statistics
     StatisticsService.new(self)
   end
+
+  def get_charts
+    ChartsService.new(self)
+  end
 end
