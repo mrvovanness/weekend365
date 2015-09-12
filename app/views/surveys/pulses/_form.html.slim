@@ -33,18 +33,19 @@
           include_blank: false,
           default: 1
         br
-        = f.input :repeat_every, collection: 1..12,
+        = f.input :repeat_every,
           label: 'repeat every(weeks/days)',
-          input_html: { class: 'selectable' },
+          input_html: { class: 'selectable', min: 1, max: 365 },
           label_html: { class: 'style01' },
-          include_blank: false,
-          default: 1
+          placeholder: 'max 365'
+        = f.error :repeat_every
         br
         = f.input :number_of_repeats,
           input_html: { class: 'selectable', min: '2', max: '1000' },
           label_html: { class: 'style01' },
           placeholder: 'max 1000'
-        <br><br><br>
+        = f.error :number_of_repeats
+        br
         = f.input :finish_on, as: :string,
           label_html: { class: 'style01' },
           hint: "If you specify 'finish on' number of"\
