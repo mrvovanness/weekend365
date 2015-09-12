@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe Survey do
-  let!(:survey) { build(:survey) }
+describe CompanySurvey do
+  let!(:survey) { build(:company_survey) }
   after(:each) do
     Resque.remove_schedule("send_emails_for_survey_#{survey.id}")
   end
