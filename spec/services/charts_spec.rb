@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe RepeatsCalculator do
+describe ChartsService do
   let!(:survey) { build(:survey_with_finish_on) }
 
   it 'calculate one time per 2 weeks' do
