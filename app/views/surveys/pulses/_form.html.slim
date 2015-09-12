@@ -40,12 +40,11 @@
           include_blank: false,
           default: 1
         br
-        = f.input :number_of_repeats, collection: 1..12,
-          input_html: { class: 'selectable' },
+        = f.input :number_of_repeats,
+          input_html: { class: 'selectable', min: '2', max: '1000' },
           label_html: { class: 'style01' },
-          include_blank: false,
-          default: 1
-        br
+          placeholder: 'max 1000'
+        <br><br><br>
         = f.input :finish_on, as: :string,
           label_html: { class: 'style01' },
           hint: "If you specify 'finish on' number of"\
