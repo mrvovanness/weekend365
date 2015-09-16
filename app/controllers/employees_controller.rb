@@ -1,5 +1,6 @@
 class EmployeesController < ApplicationController
   before_action :authenticate_user!, :set_company
+  before_action :set_employee, only: [:edit, :update, :destroy]
   respond_to :json, only: :index
 
   def index
@@ -13,7 +14,6 @@ class EmployeesController < ApplicationController
   end
 
   def edit
-    @employee = @company.employees.find(params[:id])
   end
 
   def create
@@ -22,8 +22,12 @@ class EmployeesController < ApplicationController
   end
 
   def update
-    @employee = @company.employees.find(params[:id])
     @employee.update(employee_params)
+    redirect_to_company
+  end
+
+  def destroy
+    @employee.destroy
     redirect_to_company
   end
 
@@ -49,7 +53,13 @@ class EmployeesController < ApplicationController
     @company = current_user.company
   end
 
+  def set_employee
+    @employee = @company.employees.find(params[:id])
+  end
+
   def employee_params
-    params.require(:employee).permit(:name, :department, :position, :email)
+    params.require(:employee).permit(
+      :name, :department, :position,
+      :email, :gender, :birthday, :country)
   end
 end

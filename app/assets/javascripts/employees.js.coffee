@@ -15,3 +15,6 @@ jQuery ->
 
   #$('.link-add').click ->
   #$('#add-to-survey-form').submit()
+
+  $('#employee_birthday').datetimepicker
+    format: 'Y-M-d'

@@ -7,12 +7,12 @@
       company_path(company, format: :csv),
       class: 'link-upload'
     .add-holder
-      = link_to 'Add selected<br>to survey'.html_safe, '#',
+      /= link_to 'Add selected<br>to survey'.html_safe, '#',
         class: 'link-add',
         id: 'add-to-survey-submit'
     .all-holder
-      = label_tag 'select_all', 'Select all'
-      = check_box_tag 'select_all', nil, false, class: 'checkable'
+      /= label_tag 'select_all', 'Select all'
+      /= check_box_tag 'select_all', nil, false, class: 'checkable'
   .filter-area
     = search_form_for search, url: company_path(company) do |f|
       .sort-panel.clearfix
@@ -42,10 +42,7 @@
             span = employee.department
           .col.col03
             span = employee.position
-            - if employee.selected_to_survey
-              span.added Added
-            - else
-               = check_box_tag 'employee_ids[]', employee.id, false,
+             /= check_box_tag 'employee_ids[]', employee.id, false,
                id: "employee-#{employee.id}",
                class: 'bulk_actors checkable'
   .bottom-panel
