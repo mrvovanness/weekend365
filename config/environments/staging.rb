@@ -17,7 +17,7 @@ Rails.application.configure do
     address: ENV['smtp_address'],
     port: ENV['smtp_port'],
     user_name: ENV['smtp_username'],
-    password: ENV['smtp_password']
+    password: ENV['smtp_password'],
     authentication: :plain,
     domain: 'staging.365weekend.com',
     enable_starttls_auto: true
