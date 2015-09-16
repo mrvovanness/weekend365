@@ -16,12 +16,6 @@
           class: 'link-add-new survey',
           id: 'add-survey-btn'
         = render 'dialog'
-        ul.colors
-          li.black: a
-          li.grey: a
-          li.orange: a
-          li.red: a
-          li.green: a
       .filter-area.slyle01
         fieldset
 
@@ -40,19 +34,11 @@
               - @surveys.each do |survey|
                 tr
                   td.col1 = survey.title
-                  td
-                    - if survey.counter == survey.number_of_repeats
-                      | completed, sent #{survey.counter} times
-                    - else
-                      | collecting, sent #{survey.counter} times
+                  td = survey.status
                   td = survey.number_of_responses
                   td: span.alarm alarm
                   td = survey.start_at.strftime('%b.%dth/%Y')
-                  td
-                    - if survey.daily?
-                      | every #{survey.repeat_every} day(s) #{survey.start_at.strftime('at %I:%M%P')}
-                    - elsif survey.weekly?
-                      | every #{survey.repeat_every} week(s) #{survey.start_at.strftime('at %I:%M%P')}
+                  td = survey.frequency_overview
                   td
                     = link_to 'edit',
                       edit_surveys_pulse_path(survey),

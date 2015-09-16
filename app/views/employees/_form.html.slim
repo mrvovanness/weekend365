@@ -1,3 +1,9 @@
+= form_tag import_employees_path, multipart: true do
+  span.file-wrapper
+    = file_field_tag :file, id: 'employees-list'
+  br
+  = submit_tag 'Import csv file', id: 'btn-import'
+
 = simple_form_for employee,
   html: { class: 'info-form' } do |f|
   fieldset
@@ -19,12 +25,28 @@
         = f.label :email
       = f.input_field :email, type: 'text'
       = f.error :email
+    .row
+      .label-holder
+        = f.label :gender
+      = f.input_field :gender,
+        collection: [:male, :female],
+        class: 'selectable'
+    .row
+      .label-holder
+        = f.label :birthday
+      = f.input_field :birthday, as: :string,
+        class: 'selectable'
+    .row
+      .label-holder
+        = f.label :country
+      = f.input_field :country, 
+        class: 'selectable'
     .row.btn-holder
-      = f.button :submit, 'Save', class: 'btn-save'
+      = link_to 'Delete',
+        employee_path(employee),
+        id: 'delete-employee',
+        method: :delete,
+        data: { confirm: 'Are you sure?' }\
+        unless employee.new_record?
 
-= form_tag import_employees_path, multipart: true do
-  = file_field_tag :file
-  br
-  = submit_tag 'Import csv file'
-
-
+      = f.submit 'Save', class: 'btn-save'
