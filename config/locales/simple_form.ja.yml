@@ -1,0 +1,19 @@
+ja:
+  simple_form:
+    "yes": 'はい'
+    "no": 'いいえ'
+    required:
+      text: 'required'
+      mark: '*'
+    error_notification:
+      default_message: "エラーがあります。確認してください。"
+    labels:
+      company:
+        name: 'Company Name'
+        field: 'Company Field'
+        office_address: 'Office Address'
+        country: 'Country'
+        description: 'Company Description'
+        website: 'Website'
+        employees_number: 'Employees Number'
+        employees_registered: 'Employees Registered'
