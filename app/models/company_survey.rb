@@ -1,6 +1,14 @@
 class CompanySurvey < ActiveRecord::Base
   validates :title, :start_at, :message, presence: true
-  validate :start_in_future?, :finish_after_start?, unless: :skip_callback?
+
+  validates :repeat_every, numericality: {
+    only_integer: true, greater_than: 0, less_than: 366 }
+  validates :number_of_repeats, numericality: {
+    only_integer: true, greater_than: 1, less_than: 1001 }
+
+  validate :start_in_future?, :finish_after_start?,
+    unless: :skip_callback?
+
   belongs_to :company
   has_many :results
   has_and_belongs_to_many :employees

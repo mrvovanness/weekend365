@@ -14,11 +14,11 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   config.action_mailer.smtp_settings = {
-    address: 'smtp.sendgrid.net',
-    port: '587',
+    address: ENV['smtp_address'],
+    port: ENV['smtp_port'],
+    user_name: ENV['smtp_username'],
+    password: ENV['smtp_password'],
     authentication: :plain,
-    user_name: ENV['SENDGRID_USERNAME'],
-    password: ENV['SENDGRID_PASSWORD'],
     domain: 'staging.365weekend.com',
     enable_starttls_auto: true
   }

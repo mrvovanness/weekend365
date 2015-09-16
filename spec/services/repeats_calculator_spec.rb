@@ -14,6 +14,6 @@ describe RepeatsCalculator do
     survey.repeat_mode = 'd'
     survey.repeat_every = 2
     survey.start_at = DateTime.now
-    expect(RepeatsCalculator.new(survey).result).to eq(182)
+    expect(RepeatsCalculator.new(survey).result).to eq(183)
   end
 end
