@@ -1,0 +1,72 @@
+en:
+  simple_form:
+    "yes": 'Yes'
+    "no": 'No'
+    required:
+      text: 'required'
+      mark: '*'
+    error_notification:
+      default_message: "Please review the problems below:"
+    buttons:
+      password:
+        submit: "Change my password"
+      registration:
+        edit:
+          submit: "Update"
+        new:
+          submit: "Sign up"
+      session:
+        new:
+          submit: "Login"
+      unlock:
+        new:
+          submit: "Resend unlock instructions"
+      employees:
+        submit: "Save"
+      signups:
+        new:
+          submit: "Sign up"
+      surveys:
+        form:
+          submit: "Save"
+        preview:
+          submit: "Update employees"
+    hints:
+      registration:
+        current_password: "we need your current password to confirm your changes"
+        password: "leave it blank if you don't want to change it"
+        password_length: "%{chars_minimum} characters minimum"
+      surveys:
+        finish_on: "If you specify 'finish on' number of repeats will be<br>calculated automatically"
+    labels:
+      company:
+        country: 'Country'
+        description: 'Company Description'
+        employees_number: 'Employees Number'
+        employees_registered: 'Employees Registered'
+        field: 'Company Field'
+        name: 'Company Name'
+        office_address: 'Office Address'
+        website: 'Website'
+      password:
+        confirmation: "Confirm your new password"
+        new_password: "New password"
+      surveys:
+        employee_ids: "Send to"
+        message: "Message to employee"
+        once: "Once"
+        repeat: "Repeat"
+        repeat_every: "Repeat every(weeks/days)"
+        send_to: "Send to (%{employees_count}):"
+        start_at: "start at (Tokyo time)"
+    placeholders:
+      signups:
+        password: "8 characters minimum"
+      surveys:
+        repeat_every: "max 365"
+        number_of_repeats: "max 1000"
+    surveys:
+      title: "%{survey_title} for company %{company_name}"
+  buttons:
+    employees:
+      import_csv: "Import csv file"

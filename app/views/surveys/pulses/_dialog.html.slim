@@ -1,10 +1,10 @@
-#dialog title='Choose type of Survey'
+#dialog title=t("surveys.dialog.title")
   = link_to 'Pulse Survey', new_surveys_pulse_path
   br
-  i One question, answer through email, short spans of time<br><br>
-  = link_to 'Employee Engagement', '#'
+  i #{t("surveys.dialog.rules_message")}<br><br>
+  = link_to t("helpers.links.employee_engagement"), '#'
   br
-  i Deep questionnaire in a separate page<br><br>
-  = link_to 'On Board Survey', '#'
+  i #{t("surveys.dialog.questionnaire_message")}<br><br>
+  = link_to t("helpers.links.onboard_survey"), '#'
   br
-  i Deep questionnaire in a separate page<br><br>
+  i #{t("surveys.dialog.questionnaire_message")}<br><br>

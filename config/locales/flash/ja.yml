@@ -12,3 +12,9 @@ ja:
         alert: '%{resource_name} は削除できません'
       close:
         notice: '%{resource_name} を閉鎖しました'
+    employees:
+      add_to_survey:
+        notice: 'Employees were successfully added to survey'
+      import:
+        notice: 'Employees were successfully imported'
+      

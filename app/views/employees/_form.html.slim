@@ -2,7 +2,7 @@
   span.file-wrapper
     = file_field_tag :file, id: 'employees-list'
   br
-  = submit_tag 'Import csv file', id: 'btn-import'
+  = submit_tag t("buttons.employees.import_csv"), id: 'btn-import'
 
 = simple_form_for employee,
   html: { class: 'info-form' } do |f|
@@ -42,11 +42,11 @@
       = f.input_field :country, 
         class: 'selectable'
     .row.btn-holder
-      = link_to 'Delete',
+      = link_to t("helpers.links.destroy"),
         employee_path(employee),
         id: 'delete-employee',
         method: :delete,
-        data: { confirm: 'Are you sure?' }\
+        data: { confirm: t("helpers.links.confirm") }\
         unless employee.new_record?
 
-      = f.submit 'Save', class: 'btn-save'
+      = f.submit t("simple_form.buttons.employees.submit"), class: 'btn-save'

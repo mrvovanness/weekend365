@@ -1,0 +1,134 @@
+en:
+  companies:
+    new:
+      company_creation: "Please create your company"
+    show:
+      name: "Company name"
+  dashboard:
+    index:
+      title: "Dashboard"
+      latest_surveys: "Latest Surveys"
+      heads:
+        title: "Title"
+        num_of_responses: "Number of responses"
+        start_date: "Start Date"
+        frequency: "Frequency"
+        latest_reply: "Latest Reply"
+        preview: "Preview"
+        results: "Results"
+    show:
+      title: "Survey results"
+      params_header: "Frequency, Date and Time"
+      score: "score"
+      chart_titles:
+        num_of_responses: "Number of responses daily"
+        answers_distribution: "Answers distribution"
+        average_score: "Your average score daily"
+        country_average_score: "Average score in your country daily"
+        industry_average_score: "Average score in your industry daily"
+    phrase:
+      good: "very good!"
+      normal: "not bad!"
+      bad: "needs improvement!"
+    survey_result:
+      score: "your score"
+      country: "Country"
+      industry: "Industry"
+      you: "You"
+  devise:
+    mailer:
+      confirmation:
+        welcome: "Welcome"
+        message: "You can confirm your account email through the link below"
+      reset_password:
+        greeting: "Hello"
+        reset_password_message: "Someone has requested a link to change your password. You can do this through the link below."
+        ignore_message: "If you didn't request this, please ignore this email."
+        password_save_message: "Your password won't change until you access the link above and create a new one."
+      unlock_account:
+        greeting: "Hello"
+        lock_message: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
+        link_message: "Click the link below to unlock your account"
+    passwords:
+      edit:
+        title: "Change your password"
+    registrations:
+      edit:
+        title: "Edit"
+        waiting_confirmation_message: "Currently waiting confirmation for"
+        cancel_account: "Cancel my account"
+        unhappy_message: "Unhappy?"
+      new:
+        title: "Sign up"
+        account_message: "HAVE AN ACCOUNT ALREADY?"
+    sessions:
+      new:
+        title: "Sign in"
+        account_message: "DON’T HAVE AN ACCOUNT YET?"
+    unlocks:
+      new:
+        title: "Resend unlock instructions"
+  employees:
+    new:
+      title: "Add new employee"
+    index:
+      by_name: "BY NAME"
+      any_department: "Department (any)"
+      any_position: "Position (any)"
+  pages:
+    about:
+      title: "ABOUT US"
+  results:
+    add_result:
+      title: "Thanks for answer!"
+  signups:
+    new:
+      title: "Sign up"
+      account_message: "HAVE AN ACCOUNT ALREADY?"
+  surveys:
+    dialog:
+      title: "Choose type of Survey"
+      rules_message: "One question, answer through email, short spans of time"
+      questionnaire_message: "Deep questionnaire in a separate page"
+    edit:
+      title: "Edit survey"
+    form:
+      days: "days"
+      survey_period: "SURVEY PERIOD:"
+      weeks: "weeks"
+    index:
+      title: "survey selection"
+      headers:
+        title: "Title"
+        status: "Status"
+        num_of_responses: "Number of responses"
+        alarm: "Alarm"
+        start_date: "Start date"
+        frequency: "Frequency"
+        edit: "Edit"
+        notify: "Notify"
+        results: "Results"
+    new:
+      title: "create new survey"
+    preview:
+      title: "survey confirmation"
+      at: "at"
+      day: "day"
+      delete_confirmation: "You are about to delete this survey"
+      every: "Every"
+      from: "from"
+      params_header: "Frequency, Date and Time"
+      question: "Question:"
+      repeat: "repeat"
+      survey: "Survey"
+      success_message: "set up successfully!"
+      times: "times"
+      week: "week"
+      take_your_time: "Now take your time to"
+      read_our_blog: "read our blog"
+      and_get: "and get"
+      updates_on_the_new_trends: "updates on the new trends in Employee Engagement"
+  survey_mailers:
+    send_survey:
+      title: "Welcome to weekend"
+      question: "Question:"

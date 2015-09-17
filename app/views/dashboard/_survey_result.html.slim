@@ -3,7 +3,7 @@
     = survey.title
 .box.inner1
   .holder
-    span.info your score
+    span.info = t("dashboard.survey_result.score")
     .frame
       = render 'emoji_choosing', survey: survey
       span.value
@@ -12,15 +12,15 @@
       - (4..9).each do |n|
         li = image_tag("icon0#{n}.png", size: '29x29', alt: 'emoji')
   .info-holder
-    span.info Country
+    span.info = t("dashboard.survey_result.country")
     span.value
       = survey.get_statistics.average_by_country
-    span.info Industry
+    span.info = t("dashboard.survey_result.industry")
     span.value
       = survey.get_statistics.average_by_industry
   .graph-holder
     = line_chart [\
-      { name: 'You', data: survey.get_charts.average },
-      { name: 'Industry', data: survey.get_charts.average_by_industry },
-      { name: 'Country', data: survey.get_charts.average_by_country }\
+      { name: t("dashboard.survey_result.you"), data: survey.get_charts.average },
+      { name: t("dashboard.survey_result.industry"), data: survey.get_charts.average_by_industry },
+      { name: t("dashboard.survey_result.country"), data: survey.get_charts.average_by_country }\
     ], library: { legend: { position: 'top' }, curveType: 'function' }

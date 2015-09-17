@@ -1,9 +1,9 @@
 .filter-form
   .panel.clearfix
-    = link_to 'Add a New Employee',
+    = link_to t("helpers.links.add_employee"),
       new_employee_path,
       class: 'link-add-new'
-    = link_to 'Download CSV File',
+    = link_to t("helpers.links.download_csv"),
       company_path(company, format: :csv),
       class: 'link-upload'
     .add-holder
@@ -17,16 +17,16 @@
     = search_form_for search, url: company_path(company) do |f|
       .sort-panel.clearfix
         .col.col01
-          = sort_link search, :name, 'BY NAME'
+          = sort_link search, :name, t("employees.index.by_name")
         .col.col02
           = f.select :department_eq,
             options_for_select(company.employees.pluck(:department).uniq),
-            { include_blank: 'Deparment(any)' },
+            { include_blank: t("employees.index.any_department") },
             { class: 'checkable sel04' }
         .col.col03
           = f.select :position_eq,
             options_for_select(company.employees.pluck(:position).uniq),
-            { include_blank: 'Position(any)' },
+            { include_blank: t("employees.index.any_position") },
             { class: 'checkable sel04' }
           = f.submit id: 'combine-search-submit',
             class: 'search'
