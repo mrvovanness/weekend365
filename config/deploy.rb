@@ -2,7 +2,7 @@
 # !!!config valid only for Capistrano 3.1!!!
 #lock '3.1.0'
 
-set :application, "weeekend365"
+set :application, "weekend365"
 set :repo_url, "git@bitbucket.org:mrvovanness/weekend365"
 
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
