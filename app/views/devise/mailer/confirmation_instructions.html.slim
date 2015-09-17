@@ -1,8 +1,8 @@
 p
-  | #{t("devise.mailer.confirmation.welcome")}
+  | #{t('devise.mailer.confirmation.welcome')}
   = @email
   | !
 p
-  | #{t("devise.mailer.confirmation.message")}:
+  | #{t('devise.mailer.confirmation.message')}:
 p
-  = link_to t("helpers.links.confirm_account"), confirmation_url(@resource, confirmation_token: @token)
+  = link_to t('helpers.links.confirm_account'), confirmation_url(@resource, confirmation_token: @token)

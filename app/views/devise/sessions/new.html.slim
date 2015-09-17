@@ -1,6 +1,5 @@
 .btns
-  h2
-    | #{t("devise.sessions.new.title")}
+  h2 = t('devise.sessions.new.title')
   = simple_form_for resource,
     as: resource_name,
     url: session_path(resource_name),
@@ -13,13 +12,13 @@
       = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
 
       .login-holder
-        = f.submit t("simple_form.buttons.session.new.submit"), class: 'btn btn-login'
+        = f.submit t('simple_form.buttons.session.new.submit'), class: 'btn btn-login'
         /= link_to "Forgot your password?", new_password_path(resource_name)
-  span.heading = t("devise.sessions.new.account_message")
+  span.heading = t('devise.sessions.new.account_message')
   .frame
-    = link_to t("helpers.links.sign_up"),
+    = link_to t('helpers.links.sign_up'),
       new_signup_path,
       class: 'btn btn-sign'
-    = link_to t("helpers.links.about"),
+    = link_to t('helpers.links.about'),
       about_path,
       class: 'btn-about'

@@ -1,6 +1,5 @@
 .btns
-  h2
-    | #{t("signups.new.title")}
+  h2 = t('signups.new.title')
   = simple_form_for @signup,
     url: signups_path,
     html: { class: 'login-form' } do |f|
@@ -13,7 +12,7 @@
       = f.error :email
       = f.input :name
       = f.error :name
-      = f.input :password, placeholder: t("simple_form.placeholders.signups.password")
+      = f.input :password, placeholder: t('simple_form.placeholders.signups.password')
       = f.error :password
       = f.input :company_name
       = f.error :company_name
@@ -21,12 +20,12 @@
         input_html: { class: 'selectable' }
       = f.error :country
       .login-holder
-        = f.submit t("simple_form.buttons.signups.new.submit"), class: 'btn btn-sign'
-  span.heading = t("signups.new.account_message")
+        = f.submit t('simple_form.buttons.signups.new.submit'), class: 'btn btn-sign'
+  span.heading = t('signups.new.account_message')
   .frame
-    = link_to t("helpers.links.login"),
+    = link_to t('helpers.links.login'),
       new_user_session_path,
       class: 'btn btn-login'
-    = link_to t("helpers.links.about"),
+    = link_to t('helpers.links.about'),
       about_path,
       class: 'btn-about'

@@ -7,61 +7,61 @@
     .row
       = f.input_field :title,
         class: 'style05',
-        value: survey.title ? survey.title : t("simple_form.surveys.title", survey_title: @offered_survey.title, company_name: @company.name),
+        value: survey.title ? survey.title : t('simple_form.surveys.title', survey_title: @offered_survey.title, company_name: @company.name),
         autofocus: true
-    span.heading = t("surveys.from.survey_period")
+    span.heading = t('surveys.from.survey_period')
     .block
       .row-holder.clearfix
         = f.radio_button :repeat, false,
           class: 'radio checkable'
-        = f.label :repeat, t("simple_form.labels.surveys.once")
+        = f.label :repeat, t('simple_form.labels.surveys.once')
       .block-frame
         = f.input :start_at, as: :string,
-          label: t("simple_form.labels.surveys.start_at"),
+          label: t('simple_form.labels.surveys.start_at'),
           label_html: { class: 'style01' }
         = f.error :start_at
     .block
       .row-holder.clearfix
         = f.radio_button :repeat, true,
           class: 'radio checkable'
-        = f.label :repeat, t("simple_form.labels.surveys.repeat")
+        = f.label :repeat, t('simple_form.labels.surveys.repeat')
       .block-frame
         = f.input :repeat_mode,
-          collection: [[t("surveys.form.weeks"), 'w'], [t("surveys.form.days"), 'd']],
+          collection: [[t('surveys.form.weeks'), 'w'], [t('surveys.form.days'), 'd']],
           input_html: { class: 'selectable' },
           label_html: { class: 'style01' },
           include_blank: false,
           default: 1
         br
         = f.input :repeat_every,
-          label: t("simple_form.labels.surveys.repeat_every"),
+          label: t('simple_form.labels.surveys.repeat_every'),
           input_html: { class: 'selectable', min: 1, max: 365 },
           label_html: { class: 'style01' },
-          placeholder: t("simple_form.placeholders.surveys.repeat_every")
+          placeholder: t('simple_form.placeholders.surveys.repeat_every')
         = f.error :repeat_every
         br
         = f.input :number_of_repeats,
           input_html: { class: 'selectable', min: '2', max: '1000' },
           label_html: { class: 'style01' },
-          placeholder: t("simple_form.placeholders.surveys.number_of_repeats")
+          placeholder: t('simple_form.placeholders.surveys.number_of_repeats')
         = f.error :number_of_repeats
         br
         = f.input :finish_on, as: :string,
           label_html: { class: 'style01' },
-          hint: t("simple_form.hints.surveys.finish_on").html_safe
+          hint: t('simple_form.hints.surveys.finish_on').html_safe
         = f.error :finish_on
         br
         br
 
       = f.input :message,
-        label: t("simple_form.labels.surveys.message"),
+        label: t('simple_form.labels.surveys.message'),
         label_html: { class: 'style01' },
         wrapper_html: { class: 'row' },
         input_html: { class: 'style01' }
 
     = f.input :employee_ids,
       collection: survey.company.employees.order(:name),
-      label: t("simple_form.labels.surveys.employee_ids"),
+      label: t('simple_form.labels.surveys.employee_ids'),
       wrapper_html: { class: 'size01'},
       label_html: { class: 'style01' },
       input_html: { multiple: true },
@@ -75,4 +75,4 @@
 
   .btns-holder.clearfix
     .btns
-      = f.submit t("simple_form.buttons.surveys.form.submit"), class: 'btn-save'
+      = f.submit t('simple_form.buttons.surveys.form.submit'), class: 'btn-save'

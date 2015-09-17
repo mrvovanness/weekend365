@@ -118,7 +118,7 @@ en:
       every: "Every"
       from: "from"
       params_header: "Frequency, Date and Time"
-      question: "Question:"
+      question: "Question: #%{question_title}"
       repeat: "repeat"
       survey: "Survey"
       success_message: "set up successfully!"
@@ -132,3 +132,13 @@ en:
     send_survey:
       title: "Welcome to weekend"
       question: "Question:"
+  decorators:
+    company_survey:
+      header: "SURVEY #%{id}: %{title}"
+      completed_status: "completed, sent %{counter} times"
+      uncompleted_status: "collecting, sent %{counter} times"
+      schedule: "Every %{repeat_every} %{repeat_period} at %{start_at} from %{start_from}"
+      day: "day"
+      week: "week"
+      daily_frequency: "every %{repeat_every} day(s) at %{start_at}"
+      weekly_frequency: "every %{repeat_every} week(s) on %{weekday} at %{daytime}"

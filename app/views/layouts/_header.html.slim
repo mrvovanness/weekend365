@@ -1,27 +1,27 @@
 header#header.clearfix
   = link_to root_path do
-    = image_tag('logo03.png', alt: 'weekend', width: '106', height: '19', class: 'logo')
+    = image_tag('logo03.png', alt: 'weekend', size: '106x19', class: 'logo')
   ul.links
     li.company
-      = link_to t("upperbar.company"), company_path(current_user.company) if user_signed_in? && current_user.company
+      = link_to t('upperbar.company'), company_path(current_user.company) if user_signed_in? && current_user.company
     li.dashboards
-      = link_to t("upperbar.dashboard"), dashboard_index_path
+      = link_to t('upperbar.dashboard'), dashboard_index_path
     li.surveys
-      = link_to t("upperbar.surveys"), surveys_path
+      = link_to t('upperbar.surveys'), surveys_path
   ul.links.alignright
     li.lang
-      = link_to t("upperbar.languages.english"), '#'
+      = link_to t('upperbar.languages.english'), '#'
       .drop
         ul
-          li = link_to t("upperbar.languages.japanese"), '#'
-          li = link_to t("upperbar.languages.portuguese"), '#'
+          li = link_to t('upperbar.languages.japanese'), '#'
+          li = link_to t('upperbar.languages.portuguese'), '#'
 
     li.username
-      = link_to t("upperbar.menu.title"), '#'
+      = link_to t('upperbar.menu.title'), '#'
       .drop
         ul
-          li = link_to t("upperbar.menu.edit_company"), edit_company_path(current_user.company) if current_user.company
-          li = link_to t("upperbar.menu.log_out"), destroy_user_session_path
+          li = link_to t('upperbar.menu.edit_company'), edit_company_path(current_user.company) if current_user.company
+          li = link_to t('upperbar.menu.log_out'), destroy_user_session_path
           - if current_user && current_user.has_role?(:admin)
             li
-              = link_to t("upperbar.menu.admin"), admin_companies_path
+              = link_to t('upperbar.menu.admin'), admin_companies_path

@@ -1,6 +1,6 @@
 #main
   .inform-panel.clearfix
-    h1.company-name = t("surveys.index.title")
+    h1.company-name = t('surveys.index.title')
     = search_form_for @search,
       url: surveys_path,
       class: 'search-form',
@@ -11,7 +11,7 @@
   .filter-form
     fieldset
       .panel.clearfix
-        = link_to t("helpers.links.add_survey"),
+        = link_to t('helpers.links.add_survey'),
           new_surveys_pulse_path,
           class: 'link-add-new survey',
           id: 'add-survey-btn'
@@ -21,15 +21,15 @@
 
           table
             thead: tr
-              th.col1 = t("surveys.index.headers.title")
-              th = t("surveys.index.headers.status")
-              th = t("surveys.index.headers.num_of_responses")
-              th = t("surveys.index.headers.alarm")
-              th = t("surveys.index.headers.start_date")
-              th = t("surveys.index.headers.frequency")
-              th = t("surveys.index.headers.edit")
-              th = t("surveys.index.headers.notify")
-              th = t("surveys.index.headers.results")
+              th.col1 = t('surveys.index.headers.title')
+              th = t('surveys.index.headers.status')
+              th = t('surveys.index.headers.num_of_responses')
+              th = t('surveys.index.headers.alarm')
+              th = t('surveys.index.headers.start_date')
+              th = t('surveys.index.headers.frequency')
+              th = t('surveys.index.headers.edit')
+              th = t('surveys.index.headers.notify')
+              th = t('surveys.index.headers.results')
             tbody
               - @surveys.each do |survey|
                 tr
@@ -40,13 +40,13 @@
                   td = survey.start_at.strftime('%b.%dth/%Y')
                   td = survey.frequency_overview
                   td
-                    = link_to t("helpers.links.edit"),
+                    = link_to t('helpers.links.edit'),
                       edit_surveys_pulse_path(survey),
                       class: 'btn-edit'
                   td
-                    = link_to t("helpers.links.notify"),
+                    = link_to t('helpers.links.notify'),
                       preview_surveys_pulse_path(survey),
                       class: 'btn-notify'
                   td
-                    = link_to t("helpers.links.results"), '#',
+                    = link_to t('helpers.links.results'), '#',
                       class: 'btn-results'
