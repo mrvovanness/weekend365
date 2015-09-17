@@ -5,6 +5,14 @@ class CompanySurveyDecorator < Draper::Decorator
     "SURVEY ##{id}: #{title}"
   end
 
+  def status
+    if counter == number_of_repeats
+      "completed, sent #{counter} times"
+    else
+      "collecting, sent #{counter} times"
+    end
+  end
+
   def schedule_overview
     "Every #{repeat_every}
     #{weekly? ? 'week' : 'day' }

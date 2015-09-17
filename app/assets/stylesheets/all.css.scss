@@ -600,6 +600,7 @@ input[type="submit"].search,
 	font:18px/25px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
 }
 .info-form textarea,
+.info-form input[type=number],
 .info-form input[type=text]{
 	float:left;
 	background:#fff;
@@ -976,6 +977,7 @@ input[type="submit"].search,
 	display:block;
 }
 .info-form .block-frame{padding:0 0 0 175px;}
+.info-form .block-frame input[type="number"],
 .info-form .block-frame input[type="text"]{
 	float:none;
 	display:block;
@@ -1202,6 +1204,9 @@ input[type="submit"].btn-save{
 	padding: 0 0 0 20px;
 	width: 108px;
   background: #f26522 image-url("sprite.png") no-repeat scroll 3px -503px;
+}
+a#delete-employee {
+  margin-left: 60px;
 }
 input[type="submit"].btn-save:hover{background: #ad3114 url("../images/sprite.png") no-repeat scroll 3px -503px;}
 .btn-save{background:#f26522;}

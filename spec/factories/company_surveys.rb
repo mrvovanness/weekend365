@@ -1,5 +1,5 @@
 FactoryGirl.define do
-  factory :survey do
+  factory :company_survey do
     title 'Your first survey'
     start_at DateTime.now + 1.hour
     next_delivery_at DateTime.now + 1.hour
@@ -24,5 +24,9 @@ FactoryGirl.define do
         create_list(:question, evaluator.questions_count, survey: survey)
       end
     end
+
+    factory :survey_with_results do
+    end
+       
   end
 end
