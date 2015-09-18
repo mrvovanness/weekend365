@@ -1,23 +1,23 @@
 #main
-  h1.inner Dashboard
+  h1.inner = t('dashboard.index.title')
   .block-info
     = render 'survey_result',
       survey: @top_survey if @top_survey.present?
   .block-info
     .panel
-      span.heading Latest Surveys
+      span.heading = t('dashboard.index.latest_surveys')
     .filter-form
       fieldset
         .filter-area.style02
           table
             thead: tr
-              th.col1 Title
-              th Number of responses
-              th Start Date
-              th Frequency
-              th Latest Reply
-              th Preview
-              th Results
+              th.col1 = t('dashboard.index.heads.title')
+              th = t('dashboard.index.heads.num_of_responses')
+              th = t('dashboard.index.heads.start_date')
+              th = t('dashboard.index.heads.frequency')
+              th = t('dashboard.index.heads.latest_reply')
+              th = t('dashboard.index.heads.preview')
+              th = t('dashboard.index.heads.results')
             tbody
               - @surveys.each do |survey|
                 tr
@@ -27,9 +27,9 @@
                   td = survey.frequency_overview
                   td = survey.get_statistics.latest_reply
                   td
-                    = link_to 'preview',
+                    = link_to t('helpers.links.preview'),
                       preview_surveys_pulse_path(survey),
                       class: 'btn-notify'
                   td
-                    = link_to 'results', dashboard_path(survey),
+                    = link_to t('helpers.links.results'), dashboard_path(survey),
                       class: 'btn-results'

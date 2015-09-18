@@ -2,32 +2,45 @@ class CompanySurveyDecorator < Draper::Decorator
   delegate_all
 
   def header
-    "SURVEY ##{id}: #{title}"
+    I18n.t('decorators.company_survey.header', id: id, title: title)
   end
 
   def status
     if counter == number_of_repeats
-      "completed, sent #{counter} times"
+      I18n.t('decorators.company_survey.completed_status',
+             counter: counter)
     else
-      "collecting, sent #{counter} times"
+      I18n.t('decorators.company_survey.uncompleted_status',
+             counter: counter)
     end
   end
 
   def schedule_overview
-    "Every #{repeat_every}
-    #{weekly? ? 'week' : 'day' }
-    at #{start_at.strftime('%I:%M%P')}
-    from #{start_at.strftime('%b %dth %Y')}"
+    period = if weekly?
+               I18n.t('decorators.company_survey.week')
+             else
+               I18n.t('decorators.company_survey.day')
+             end
+    I18n.t('decorators.company_survey.schedule', repeat_every: repeat_every,
+      repeat_period: period, start_at: start_at.strftime('%I:%M%P'),
+      start_from: start_at.strftime('%b %dth %Y'))
   end
 
   def frequency_overview
     if daily?
-      "every #{repeat_every} day(s)"\
-      "#{start_at.strftime('at %I:%M%P')}"
+      I18n.t('decorators.company_survey.daily_frequency',
+        repeat_every: repeat_every, start_at: start_at.strftime('%I:%M%P'))
     elsif weekly?
-      "every #{repeat_every} week(s)"\
-      "on #{start_at.strftime('%A')}"\
-      "#{start_at.strftime(' at %I:%M%P')}"
+      I18n.t('decorators.company_survey.weekly_frequency',
+        repeat_every: repeat_every, weekday: start_at.strftime('%A'),
+        daytime: start_at.strftime('%I:%M%P'))
     end
+  end
+
+  def repeat_times
+    [I18n.t('surveys.preview.repeat'),
+     number_of_repeats,
+     I18n.t('surveys.preview.times')
+    ].join(' ')
   end
 end

@@ -1,6 +1,6 @@
 - if survey.get_statistics.average > 9.0
-  span.inform very good!
+  span.inform = t('dashboard.phrase.good')
 - elsif survey.get_statistics.average > 5.0
-  span.inform not bad!
+  span.inform = t('dashboard.phrase.normal')
 - else
-  span.inform needs improvement!
+  span.inform = t('dashboard.phrase.bad')}
