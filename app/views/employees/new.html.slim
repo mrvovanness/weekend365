@@ -1,4 +1,12 @@
 #main
   .inform-panel.clearfix
     h1 = t('employees.new.title')
-    = render 'form', employee: @employee
+  h3 = t('employees.new.import_description')
+  = form_tag import_employees_path,
+    multipart: true do
+    .csv-uploader.btn
+      span.btn-choosing = t('employees.new.choose_btn')
+      = file_field_tag :file, class: 'upload'
+      = submit_tag t('buttons.employees.import_csv'),
+        class: 'btn-import'
+= render 'form', employee: @employee

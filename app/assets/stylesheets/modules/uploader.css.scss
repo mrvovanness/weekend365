@@ -1,0 +1,25 @@
+.csv-uploader {
+  position: relative;
+  margin: 0px 66px;
+
+  input.upload {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+  }
+
+  .btn-import {
+    float: right;
+    margin-right: 125px;
+  }
+
+  .btn-choosing {
+    border: 2px outset buttonface;
+    padding: 2px 6px 3px;
+  }
+}

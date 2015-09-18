@@ -71,6 +71,10 @@ en:
   employees:
     new:
       title: "Add new employee"
+      import_description: 'You can import csv file with the list of employees'
+      choose_btn: 'Choose a csv file from your computer'
+    edit:
+      title: "Edit this employee"
     index:
       by_name: "BY NAME"
       any_department: "Department (any)"
