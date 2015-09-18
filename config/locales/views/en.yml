@@ -95,6 +95,7 @@ en:
       title: "Choose type of Survey"
       rules_message: "One question, answer through email, short spans of time"
       questionnaire_message: "Deep questionnaire in a separate page"
+      coming_soon: " (coming soon)"
     edit:
       title: "Edit survey"
     form:
