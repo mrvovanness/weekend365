@@ -3,9 +3,9 @@ html
   head
     meta content='text/html; charset=UTF-8'
   body
-    h1 Welcome to weekend365
+    h1 = t('survey_mailers.send_survey.title')
     p = @survey.message
-    p Question: #{ @survey.offered_questions.first.title }
+    p #{t('survey_mailers.send_survey.question')} #{ @survey.offered_questions.first.title }
     - @survey.offered_questions.first.offered_answers.each do |answer|
       = link_to answer.value, results_url(token: @token,
         employee_id: @employee.id,

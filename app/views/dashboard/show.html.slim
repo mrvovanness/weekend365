@@ -1,8 +1,8 @@
 #main
   .inform-panel.clearfix
-    h1.results Survey results
+    h1.results = t('dashboard.show.title')
     <br><br>
-    = link_to '<< back to surveys list',
+    = link_to t('helpers.links.back_to_surveys'),
       surveys_path,
       class: 'link-back'
   .block-info
@@ -11,14 +11,14 @@
         = @survey.header
   .panel-holder
     .time-holder
-      span.heading Frequency, date and Time
+      span.heading = t('dashboard.show.params_header')
       span.date
         = @survey.schedule_overview
     .btns
-      = link_to 'Edit Survey',
+      = link_to t('helpers.titles.edit', model: 'Survey'),
         edit_surveys_pulse_path(@survey),
         class: 'btn-edit'
-      = link_to 'Download raw data', '#',
+      = link_to t('helpers.links.download_data'), '#',
         class: 'btn-download'
   .columns.clearfix
     .column
@@ -27,24 +27,24 @@
           = render 'emoji_choosing', survey: @survey
           span.value = @survey.get_statistics.average
           .info-holder
-            span.info score
+            span.info = t('dashboard.show.score')
             = render 'phrase_choosing', survey: @survey
       .graph-holder
         = line_chart @survey.get_charts.number_of_responses,
-          library: { title: 'Number of responses daily' }
+          library: { title: t('dashboard.show.chart_titles.num_of_responses') }
       .graph-holder
         = pie_chart @survey.get_charts.distribution,
-          library: { title: 'Answers distribution' }
+          library: { title: t('dashboard.show.chart_titles.answers_distribution') }
       .graph-holder
         = column_chart @survey.get_charts.number_of_responses,
-          library: { title: 'Number of responses daily' }
+          library: { title: t('dashboard.show.chart_titles.num_of_responses') }
     .column
       .graph-holder
         = line_chart @survey.get_charts.average,
-          library: { title: 'your average score daily' }
+          library: { title: t('dashboard.show.chart_titles.average_score') }
       .graph-holder
         = line_chart @survey.get_charts.average_by_country,
-          library: { title: 'Average score in your country daily' }
+          library: { title: t('dashboard.show.chart_titles.country_average_score') }
       .graph-holder
         = line_chart @survey.get_charts.average_by_industry,
-          library: { title: 'Average score in your industry daily' }
+          library: { title: t('dashboard.show.chart_titles.industry_average_score') }

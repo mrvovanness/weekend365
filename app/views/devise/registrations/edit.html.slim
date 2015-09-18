@@ -1,5 +1,4 @@
-h2
-  | Edit 
+h2 = t('devise.registrations.edit.title')
   = resource_name.to_s.humanize
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
   = f.error_notification
@@ -7,16 +6,14 @@ h2
     = f.input :email, required: true, autofocus: true
     - if devise_mapping.confirmable? && resource.pending_reconfirmation?
       p
-        | Currently waiting confirmation for: 
+        | #{t('devise.registrations.edit.waiting_confirmation_message')}: 
         = resource.unconfirmed_email
-    = f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false
+    = f.input :password, autocomplete: 'off', hint: t('simple_form.hints.registration.password'), required: false
     = f.input :password_confirmation, required: false
-    = f.input :current_password, hint: "we need your current password to confirm your changes", required: true
+    = f.input :current_password, hint: t('simple_form.hints.registration.current_password'), required: true
   .form-actions
-    = f.button :submit, "Update"
-h3
-  | Cancel my account
-p
-  | Unhappy? 
-  = link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete
-= link_to "Back", :back
+    = f.button :submit, t('simple_form.buttons.registration.edit.submit')
+h3 = t('devise.registrations.edit.cancel_account')
+p = t('devise.registrations.edit.unhappy_message')
+  = link_to t('helpers.links.cancel_account'), registration_path(resource_name), data: { confirm: t('helpers.links.confirm') }, method: :delete
+= link_to t('helpers.links.back'), :back
