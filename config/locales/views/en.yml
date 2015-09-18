@@ -79,6 +79,7 @@ en:
       by_name: "BY NAME"
       any_department: "Department (any)"
       any_position: "Position (any)"
+      delete_selected: "Delete<br>selected"
   pages:
     about:
       title: "ABOUT US"

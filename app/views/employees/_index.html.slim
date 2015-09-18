@@ -7,12 +7,12 @@
       company_path(company, format: :csv),
       class: 'link-upload'
     .add-holder
-      /= link_to 'Add selected<br>to survey'.html_safe, '#',
+      = link_to t('employees.index.delete_selected').html_safe, '#',
         class: 'link-add',
-        id: 'add-to-survey-submit'
+        id: 'destroy-selected-submit'
     .all-holder
-      /= label_tag 'select_all', 'Select all'
-      /= check_box_tag 'select_all', nil, false, class: 'checkable'
+      = label_tag 'select_all', 'Select all'
+      = check_box_tag 'select_all', nil, false, class: 'checkable'
   .filter-area
     = search_form_for search, url: company_path(company) do |f|
       .sort-panel.clearfix
@@ -31,8 +31,8 @@
           = f.submit id: 'combine-search-submit',
             class: 'search'
 
-    = form_tag add_to_survey_employees_path,
-      id: 'add-to-survey-form',
+    = form_tag destroy_selected_employees_path,
+      id: 'destroy-selected-form',
       method: :patch do
       - employees.each do |employee|
         .row
@@ -42,8 +42,8 @@
             span = employee.department
           .col.col03
             span = employee.position
-             /= check_box_tag 'employee_ids[]', employee.id, false,
-               id: 'employee-#{employee.id}',
-               class: 'bulk_actors checkable'
+            = check_box_tag 'employee_ids[]', employee.id, false,
+              id: 'employee-#{employee.id}',
+              class: 'bulk_actors checkable'
   .bottom-panel
     = paginate employees
