@@ -4,6 +4,6 @@
   = render 'form', survey: @survey, offered_questions: @offered_questions
   .btns-holder.clearfix
     = link_to t('helpers.links.destroy'), surveys_pulse_path(@survey),
-      method: 'DELETE',
+      method: :delete,
       data: { confirm: t('helpers.links.confirm') },
       class: 'btn-save'

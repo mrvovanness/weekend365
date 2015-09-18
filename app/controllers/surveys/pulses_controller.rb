@@ -59,7 +59,7 @@ class Surveys::PulsesController < ApplicationController
   end
 
   def set_survey
-    @survey = @company.company_surveys.find(params[:id])
+    @survey = @company.company_surveys.find(params[:id]).decorate
   end
 
   def load_offered_survey

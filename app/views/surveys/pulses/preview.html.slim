@@ -2,18 +2,19 @@
   .inform-panel.style01.clearfix
     h1 = link_to t('surveys.preview.title'), '#'
   .info-box.color
-    span.heading
-      | #{t('surveys.preview.survey')} ##{@survey.id}: “#{@survey.title}”
+    span.heading = @survey.header
     span.info = t('surveys.preview.success_message')
-    p 
-      | #{t('surveys.preview.take_your_time')} 
-      | <a href='#'>#{t('surveys.preview.read_our_blog')}</a> 
+    p
+      '#{t('surveys.preview.take_your_time')}
+      '<a href='#'>#{t('surveys.preview.read_our_blog')}</a>
       | #{t('surveys.preview.and_get')}<br>
       | #{t('surveys.preview.updates_on_the_new_trends')}
   .recommend-area
     .block-info.clearfix
       .panel
-        span.heading = t('surveys.preview.question', question_title: @survey.offered_questions.first.title)
+        span.heading = t('surveys.preview.question',
+                          question_title: @survey.offered_questions.first.title)
+
       .btns
         = link_to t('helpers.links.edit'),
           edit_surveys_pulse_path(@survey),
@@ -24,27 +25,28 @@
           method: :delete,
           data: { confirm: t('surveys.preview.delete_confirmation') },
           class: 'btn-undo'
+
     .send-block.clearfix
       = simple_form_for @survey,
         url: update_employees_surveys_pulse_path(@survey),
         data: { type: :json, remote: true, method: :patch } do |f|
         = f.input :employee_ids,
           collection: @survey.company.employees.order(:name),
-          label: t('simple_form.labels.surveys.send_to', employees_count: @survey.employees.count),
+          label: t('simple_form.labels.surveys.send_to',
+                    employees_count: @survey.employees.count),
           label_html: { class: 'style01' },
           wrapper_html: { class: 'row' },
           input_html: { multiple: true, class: 'style01' },
           include_blank: false
         br
         = f.hidden_field :skip_callback, value: true
-        = f.submit t('simple_form.buttons.surveys.preview.submit'), class: 'link-clear'
+        = f.submit t('simple_form.buttons.surveys.preview.submit'),
+          class: 'link-clear'
+
   .time-holder
     span.heading = t('surveys.preview.params_header')
-    span.date #{t('surveys.preview.every')} #{@survey.repeat_every}
-      #{@survey.weekly? ? t('surveys.preview.week') : t('surveys.preview.day') }
-      #{t('surveys.preview.at')} #{@survey.start_at.strftime('%I:%M%P')}
-      #{t('surveys.preview.from')} #{@survey.start_at.strftime('%b %dth %Y')},
-      #{t('surveys.preview.repeat')} #{@survey.number_of_repeats} #{t('surveys.preview.times')}
+    span.date = [@survey.frequency_overview, @survey.repeat_times].join(' ')
+
   .btns.style01
     = link_to t('helpers.links.back_to_dashboard'),
       dashboard_index_path,
