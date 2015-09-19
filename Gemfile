@@ -34,6 +34,7 @@ gem 'virtus'
 gem 'chartkick'
 gem 'groupdate'
 gem 'draper'
+gem 'globalize', '~> 5.0.0'
 
 group :development do
   gem 'better_errors'

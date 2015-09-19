@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150915065141) do
+ActiveRecord::Schema.define(version: 20150919090515) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -124,6 +124,17 @@ ActiveRecord::Schema.define(version: 20150915065141) do
     t.integer  "value"
     t.string   "type"
   end
+
+  create_table "offered_question_translations", force: :cascade do |t|
+    t.integer  "offered_question_id", null: false
+    t.string   "locale",              null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "title"
+  end
+
+  add_index "offered_question_translations", ["locale"], name: "index_offered_question_translations_on_locale", using: :btree
+  add_index "offered_question_translations", ["offered_question_id"], name: "index_offered_question_translations_on_offered_question_id", using: :btree
 
   create_table "offered_questions", force: :cascade do |t|
     t.string   "title"

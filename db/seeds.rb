@@ -7,15 +7,21 @@ question1 = ScaledQuestion.find_or_create_by(
 )
 
 question2 = ScaledQuestion.find_or_create_by(
- title: "How do you evaluate your department's management"
+ title: "How do you evaluate your department's management?"
 )
 
 question3 = ScaledQuestion.find_or_create_by(
  title: 'Assess your mood right now'
 )
 
+I18n.locale = :ja
+
+question1.update_attribute(:title, 'put translation here')
+question2.update_attribute(:title, 'put translation here')
+question3.update_attribute(:title, 'put translation here')
+
 (1..10).each do |n|
-  answer = ScaledAnswer.find_or_create_by(value: n.to_s)
+  answer = ScaledAnswer.find_or_create_by(value: n)
   SqaAssignment.find_or_create_by(
     offered_survey: survey,
     offered_question: question1,
@@ -32,7 +38,6 @@ question3 = ScaledQuestion.find_or_create_by(
     offered_answer: answer
   )
 end
-
 
 puts "surveys: #{OfferedSurvey.count}"
 puts "questions: #{OfferedQuestion.count}"
