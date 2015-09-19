@@ -10,11 +10,11 @@ jQuery ->
         $(this).removeClass 'checked'
         $('input', this).prop 'checked', false
 
-  $('#add-to-survey-submit').click (e) ->
+  $('#destroy-selected-submit').click (e) ->
     e.preventDefault()
-
-  #$('.link-add').click ->
-  #$('#add-to-survey-form').submit()
+    if $('.bulk_actors:checked').length > 0
+      $('.link-add').click ->
+      $('#destroy-selected-form').submit()
 
   $('#employee_birthday').datetimepicker
     format: 'Y-M-d'

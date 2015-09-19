@@ -71,10 +71,14 @@ ja:
   employees:
     new:
       title: "Add new employee"
+      import_description: 'You can import csv file with the list of employees'
+    edit:
+      title: "Edit this employee"
     index:
       by_name: "BY NAME"
       any_department: "Department (any)"
       any_position: "Position (any)"
+      delete_selected: "Delete<br>selected"
   pages:
     about:
       title: "ABOUT US"
@@ -90,6 +94,7 @@ ja:
       title: "Choose type of Survey"
       rules_message: "One question, answer through email, short spans of time"
       questionnaire_message: "Deep questionnaire in a separate page"
+      coming_soon: " (coming soon)"
     edit:
       title: "Edit survey"
     form:

@@ -99,7 +99,6 @@ p{margin:0 0 10px;}
 	height:100%;
 	overflow:hidden;
 	width:100%;
-	padding:0 0 45px;
 }
 .w1{
 	width:100%;
@@ -819,9 +818,9 @@ input[type="submit"].search,
 .filter-form .add-holder .link-add{
 	margin:0;
 	border-radius:9px;
-	background:#0d8690 image-url("sprite.png") no-repeat 5px -405px;
+	background:#0d8690;
 }
-.filter-form .add-holder:hover a.link-add{background:#285b5f image-url("sprite.png") no-repeat 5px -405px;}
+.filter-form .add-holder:hover a.link-add{background:#285b5f;}
 .add-holder input[type="submit"].link-add{
 	width:178px;
 	height:38px;

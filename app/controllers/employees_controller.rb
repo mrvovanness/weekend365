@@ -31,11 +31,9 @@ class EmployeesController < ApplicationController
     redirect_to_company
   end
 
-  def add_to_survey
-    survey = CompanySurvey.find(params[:id])
-    employees = @company.employees.where(id: params[:employee_ids])
-    survey.employees << employees
-    redirect_to_company
+  def destroy_selected
+    Employee.destroy(params[:employee_ids])
+    redirect_to :back
   end
 
   def import

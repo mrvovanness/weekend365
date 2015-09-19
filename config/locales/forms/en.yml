@@ -69,4 +69,4 @@ en:
       title: "%{survey_title} for company %{company_name}"
   buttons:
     employees:
-      import_csv: "Import csv file"
+      import_csv: "Upload csv file"
