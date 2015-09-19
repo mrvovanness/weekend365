@@ -1,6 +1,6 @@
 Rails.application.configure do
-  config.action_controller.asset_host = 'http://185.22.62.34:4057'
-  config.action_mailer.default_url_options = { host: 'http://185.22.62.34:4057' }
+  config.action_controller.asset_host = 'http://54.152.108.154/'
+  config.action_mailer.default_url_options = { host: 'http://54.152.108.154' }
   config.action_mailer.default_options = { from: 'development@weekend365.com' }
   config.action_mailer.smtp_settings = {
     address: ENV['smtp_address'],
