@@ -608,10 +608,9 @@ input[type="submit"].search,
 	font-size:13px;
 	line-height:15px;
 	width:247px;
-	padding:7px 50px 5px 73px;
+  padding: 7px 115px 5px 10px;
 	color:#343838;
 	font:18px/25px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
-	text-transform:uppercase;
 	letter-spacing:2px;
 }
 .info-form textarea{
@@ -631,6 +630,9 @@ input[type="submit"].search,
 	line-height:22px;
 	margin: 3px 18px 0 0;
 	letter-spacing:1px;
+}
+.btn-holder .btn-save {
+  margin-right: 190px;
 }
 .info-form .btn-save:hover{
 	text-decoration:none;
@@ -1114,7 +1116,7 @@ input[type="submit"].search,
 	border:1px solid #454949;
 	padding:2px 10px 8px;
 	border-radius:13px;
-  margin: 0 140px 0px 0px;
+  width: 540px;
 }
 .box.style01 .days{float:left;}
 .box.style01 .days label{
@@ -1184,7 +1186,7 @@ input[type="submit"].search,
 	float:right;
 	font:15px/16px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
 	letter-spacing:2px;
-	text-transform:uppercase;
+  margin-right: 150px;
 }
 .btn-send,
 .btn-save{
@@ -1207,7 +1209,10 @@ input[type="submit"].btn-save{
 a#delete-employee {
   margin-left: 60px;
 }
-input[type="submit"].btn-save:hover{background: #ad3114 url("../images/sprite.png") no-repeat scroll 3px -503px;}
+a#delete-survey {
+  margin-right: 30px;
+}
+input[type="submit"].btn-save:hover{background: #ad3114 image-url("sprite.png") no-repeat scroll 3px -503px;}
 .btn-save{background:#f26522;}
 .btn-save:hover{
 	text-decoration:none;
@@ -1730,12 +1735,11 @@ input[type="submit"].btn-save:hover{background: #ad3114 url("../images/sprite.pn
 .jq-selectbox__select {
 	height: 38px;
 	border:1px solid #6d6e70;
-	padding:0 45px 0 72px;
+	padding:0 5px 0 5px;
 	color:#6d6e70;
 	background:#fff;
 	border-radius:8px;
 	font:18px/38px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
-	text-transform:uppercase;
 }
 .jq-selectbox.sel04{
 	width:180px;

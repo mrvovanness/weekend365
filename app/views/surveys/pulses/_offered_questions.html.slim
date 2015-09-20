@@ -2,11 +2,8 @@
   .block-info
     .panel
       span.heading = questions.first.title
-      = radio_button_tag 'company_survey[offered_question_ids][]',
-        questions.first.id, nil,
-        class: 'checkable',
-        checked: true
-    br
+      = f.input :offered_question_ids, as: :hidden,
+        input_html: { value: questions.first.id, multiple: true }
   .clearfix
     fieldset
       ul.days
@@ -15,6 +12,3 @@
             = label_tag answer.value
             = check_box_tag answer.value, nil, nil, class: 'checkable',
               disabled: true
-      .btns
-        = link_to t('helpers.links.destroy'), '#',
-          class: 'btn-delete'
