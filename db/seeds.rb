@@ -16,9 +16,16 @@ question3 = ScaledQuestion.find_or_create_by(
 
 I18n.locale = :ja
 
-question1.update_attribute(:title, 'put translation here')
+question1.update_attribute(:title, 'あなたは今の仕事を総合的にみて、どの程度満足していますか？')
 question2.update_attribute(:title, 'put translation here')
 question3.update_attribute(:title, 'put translation here')
+
+I18n.locale = :pt
+
+question1.update_attribute(:title, 'Levando tudo em consideração, o quão satisfeito você está no trabalho?')
+question2.update_attribute(:title, 'put translation here')
+question3.update_attribute(:title, 'put translation here')
+
 
 (1..10).each do |n|
   answer = ScaledAnswer.find_or_create_by(value: n)

@@ -60,36 +60,36 @@ en:
         unhappy_message: "Unhappy?"
       new:
         title: "Sign up"
-        account_message: "HAVE AN ACCOUNT ALREADY?"
+        account_message: "Have an account already?"
     sessions:
       new:
         title: "Sign in"
-        account_message: "DON’T HAVE AN ACCOUNT YET?"
+        account_message: "Don't have an account yet?"
     unlocks:
       new:
         title: "Resend unlock instructions"
   employees:
     new:
       title: "Add new employee"
-      import_description: 'You can import csv file with the list of employees'
+      import_description: 'You can import csv file with a list of employees'
       choose_btn: 'Choose a csv file from your computer'
     edit:
-      title: "Edit this employee"
+      title: "Edit Employee"
     index:
-      by_name: "BY NAME"
+      by_name: "By name"
       any_department: "Department (any)"
       any_position: "Position (any)"
-      delete_selected: "Delete<br>selected"
+      delete_selected: "Delete"
   pages:
     about:
-      title: "ABOUT US"
+      title: "About us"
   results:
     add_result:
-      title: "Thanks for answer!"
+      title: "Thanks for your answer!"
   signups:
     new:
       title: "Sign up"
-      account_message: "HAVE AN ACCOUNT ALREADY?"
+      account_message: "Have an account already?"
   surveys:
     dialog:
       title: "Choose type of Survey"
@@ -100,7 +100,7 @@ en:
       title: "Edit survey"
     form:
       days: "days"
-      survey_period: "SURVEY PERIOD:"
+      survey_period: "Survey period:"
       weeks: "weeks"
     index:
       title: "survey selection"
@@ -140,7 +140,7 @@ en:
       question: "Question:"
   decorators:
     company_survey:
-      header: "SURVEY #%{id}: %{title}"
+      header: "Survey #%{id}: %{title}"
       completed_status: "completed, sent %{counter} times"
       uncompleted_status: "collecting, sent %{counter} times"
       schedule: "Every %{repeat_every} %{repeat_period} at %{start_at} from %{start_from}"

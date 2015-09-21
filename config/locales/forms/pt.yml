@@ -1,0 +1,72 @@
+en:
+  simple_form:
+    "yes": 'Sim'
+    "no": 'Não'
+    required:
+      text: 'necessário'
+      mark: '*'
+    error_notification:
+      default_message: "Por favor, revise os problemas abaixo:"
+    buttons:
+      password:
+        submit: "Alterar a minha senha"
+      registration:
+        edit:
+          submit: "Atualizar"
+        new:
+          submit: "Cadastre-se"
+      session:
+        new:
+          submit: "Login"
+      unlock:
+        new:
+          submit: "Re-envie instruções para desbloqueio"
+      employees:
+        submit: "Salvar"
+      signups:
+        new:
+          submit: "Cadastre-se"
+      surveys:
+        form:
+          submit: "Salvar"
+        preview:
+          submit: "Atualizar colaboradores"
+    hints:
+      registration:
+        current_password: "precisamos da sua senha atual para confirmar as alterações."
+        password: "deixe em branco se não deseja alterar"
+        password_length: " mínimo de %{chars_minimum} caracteres"
+      surveys:
+        finish_on: "Caso você especificar 'terminar em' o número de repetições<br>será calculado automaticamente"
+    labels:
+      company:
+        country: 'Pais'
+        description: 'Descrição da Empresa'
+        employees_number: 'Número de Colaboradores'
+        employees_registered: 'Colaboradores Registrados'
+        field: 'Indústria'
+        name: 'Nome da Empresa'
+        office_address: 'Endereço do escritório'
+        website: 'Website'
+      password:
+        confirmation: "Confirme sua nova senha"
+        new_password: "Nova Senha"
+      surveys:
+        employee_ids: "Enviar para"
+        message: "Mensagem para os Colaboradores"
+        once: "Uma Vez"
+        repeat: "Repetir"
+        repeat_every: "Repetir toda (semana/dia)"
+        send_to: "Enviar para (%{employees_count}):"
+        start_at: "Começar em (horário de Brasília)"
+    placeholders:
+      signups:
+        password: "mínimo de 8 caracteres"
+      surveys:
+        repeat_every: "max 365"
+        number_of_repeats: "max 1000"
+    surveys:
+      title: "%{survey_title} para %{company_name}"
+  buttons:
+    employees:
+      import_csv: "Upload arquivo csv"

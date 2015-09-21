@@ -1,82 +1,82 @@
 ja:
-  simple_form:
+simple_form:
     "yes": 'はい'
     "no": 'いいえ'
     required:
-      text: 'required'
+      text: '必須'
       mark: '*'
     error_notification:
-      default_message: "エラーがあります。確認してください。"
+      default_message: "下のエラーをご確認ください:"
     labels:
       company:
-        name: 'Company Name'
-        field: 'Company Field'
-        office_address: 'Office Address'
-        country: 'Country'
-        description: 'Company Description'
-        website: 'Website'
-        employees_number: 'Employees Number'
-        employees_registered: 'Employees Registered'
+        name: '会社名'
+        field: '業務'
+        office_address: 'オフィス住所'
+        country: '国'
+        description: '会社説明'
+        website: 'サイト'
+        employees_number: '社員数'
+        employees_registered: '登録数'
     buttons:
       password:
-        submit: "Change my password"
+        submit: "パスワードの変更"
       registration:
         edit:
-          submit: "Update"
+          submit: "更新"
         new:
-          submit: "Sign up"
+          submit: "サインアップ"
       session:
         new:
-          submit: "Login"
+          submit: "ログイン"
       unlock:
         new:
-          submit: "Resend unlock instructions"
+          submit: "アンロック案内をもう一回送る。"
       employees:
-        submit: "Save"
+        submit: "保存"
       signups:
         new:
-          submit: "Sign up"
+          submit: "サインアップ"
       surveys:
         form:
-          submit: "Save"
+          submit: "保存"
         preview:
-          submit: "Update employees"
+          submit: "社員の更新"
     hints:
       registration:
-        current_password: "we need your current password to confirm your changes"
-        password: "leave it blank if you don't want to change it"
-        password_length: "%{chars_minimum} characters minimum"
+        current_password: "変更の確認のために現在のパスワードを書いてください。"
+        password: "更新したくないであれば空白のママ"
+        password_length: "%{chars_minimum} 文字の最小"
       surveys:
-        finish_on: "If you specify 'finish on' number of repeats will be<br>calculated automatically"
+        finish_on: "【この日まで】を決めるとリピート数が自動で計算されます。"
     labels:
       company:
-        country: 'Country'
-        description: 'Company Description'
-        employees_number: 'Employees Number'
-        employees_registered: 'Employees Registered'
-        field: 'Company Field'
-        name: 'Company Name'
-        office_address: 'Office Address'
-        website: 'Website'
+        country: '国'
+        description: '会社説明'
+        employees_number: '社員数'
+        employees_registered: '登録数'
+        field: '業務'
+        name: '会社名'
+        office_address: 'オフィス住所'
+        website: 'サイト'
       password:
-        confirmation: "Confirm your new password"
-        new_password: "New password"
+        confirmation: "新のパスワードをご確認ください。"
+        new_password: "新のパスワード"
       surveys:
-        employee_ids: "Send to"
-        message: "Message to employee"
-        once: "Once"
-        repeat: "Repeat"
-        repeat_every: "Repeat every(weeks/days)"
-        send_to: "Send to (%{employees_count}):"
-        start_at: "start at (Tokyo time)"
+        employee_ids: "宛先"
+        message: "社員にメッセージ"
+        once: "１回"
+        repeat: "複数回"
+        repeat_every: "リピート(週/日)"
+        send_to: "宛先 (%{employees_count}):"
+        start_at: "始まる (東京の時間)"
     placeholders:
       signups:
-        password: "8 characters minimum"
+        password: "文字の最小 8 桁"
       surveys:
-        repeat_every: "max 365"
-        number_of_repeats: "max 1000"
+        repeat_every: "最大 365"
+        number_of_repeats: "最大 1000"
     surveys:
-      title: "%{survey_title} for company %{company_name}"
+      title: "%{survey_title} %{company_name}"
   buttons:
     employees:
-      import_csv: "Import csv file"
+      import_csv: "csvファイルインポート"

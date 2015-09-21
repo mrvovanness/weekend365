@@ -1,0 +1,60 @@
+# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
+
+en:
+  devise:
+    confirmations:
+      confirmed: "Seu email foi confirmado com sucesso."
+      send_instructions: "Dentro de alguns minutos você receberá um email com instruçôes de como verificar o seu email."
+      send_paranoid_instructions: "Se o seu email existe no nosso banco de dados, Dentro de alguns minutos você receberá um email com instruçôes de como verificar o seu email."
+    failure:
+      already_authenticated: "Você já está logado."
+      inactive: "Sua conta não foi ativada ainda."
+      invalid: "Senha ou %{authentication_keys} inválido."
+      locked: "Sua conta está bloqueada."
+      last_attempt: "Você tem uma última chance antes de sua conta ser bloqueada."
+      not_found_in_database: "Senha ou %{authentication_keys} inválido."
+      timeout: "Sua sessão expirou. Por favor, faça novamente o login para continuar."
+      unauthenticated: "Você precisa de fazer o login ou o cadastro antes de continuar."
+      unconfirmed: "Você precisa confirmar o seu email antes de continuar."
+    mailer:
+      confirmation_instructions:
+        subject: "Instruções para confirmação"
+      reset_password_instructions:
+        subject: "Instruções para criar uma nova senha"
+      unlock_instructions:
+        subject: "Intruções para desbloqueio"
+    omniauth_callbacks:
+      failure: "Não foi possível fazer a autenticação pelo %{kind} por causa de \"%{reason}\"."
+      success: "Conta autenticada com sucesso pelo %{kind}."
+    passwords:
+      no_token: "Você não pode acessar essa página sem ter vindo do email para a criação de nova senha. Se você veio desse email, por favor confirme que você usou a URL inteira."
+      send_instructions: "Você receberá um email com instruçôes de como renovar a sua senha em alguns minutos."
+      send_paranoid_instructions: "Se o seu email existir no nosso banco de dados, você receberá umm link para recuperação de senha por email em alguns minutos."
+      updated: "Sua senha foi alterada com sucesso. Você está logado."
+      updated_not_active: "Sua senha foi alterada com sucesso."
+    registrations:
+      destroyed: "Tchau! Sua conta foi cancelada. Esperamos ver você novamente em breve."
+      signed_up: "Bem Vindo! Você foi cadastrado com sucesso."
+      signed_up_but_inactive: "Você foi cadastrado com sucesso. Entretanto, não conseguimos logar você pois sua conta ainda não foi autenticada."
+      signed_up_but_locked: "Você foi cadastrado com sucesso. Entretanto, não conseguimos logar você pois sua conta está bloqueada."
+      signed_up_but_unconfirmed: "Uma mensagem com um link de confirmação foi enviada para o seu email. Por favor, clique no link para ativar a sua conta."
+      update_needs_confirmation: "Sua conta foi atualizada com sucesso. Porém, nós temos que verificar o seu novo email. Por favor, confira o seu email e clique no link de confirmação para vericar seu email."
+      updated: "Sua conta foi atualizada com sucesso."
+    sessions:
+      signed_in: "Você foi logado com sucesso."
+      signed_out: "Você foi desconectado com sucesso."
+      already_signed_out: "Você está desconectado."
+    unlocks:
+      send_instructions: "Você receberá um email com instruções de como desbloquear sua conta em alguns minutos."
+      send_paranoid_instructions: "Se a sua conta existir no nosso sistema, Você receberá um email com instruções de como desbloquear sua conta em alguns minutos."
+      unlocked: "Sua conta foi desbloqueada com sucesso. Por favor tente fazer o login."
+  errors:
+    messages:
+      already_confirmed: "Sua conta já foi confirmada. Por favor, tente fazer o login"
+      confirmation_period_expired: "precisa ser confirmada até %{period}, por favor, faça um novo pedido"
+      expired: "o período expirou, por favor, faça um novo pedido"
+      not_found: "não foi achada"
+      not_locked: "não foi bloqueada"
+      not_saved:
+        one: "1 erro não permitiu %{resource} ser salvo:"
+        other: "%{count} erros não permitiram %{resource} serem salvos:"

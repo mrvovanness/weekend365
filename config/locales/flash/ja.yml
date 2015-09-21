@@ -2,19 +2,18 @@ ja:
   flash:
     actions:
       create:
-        notice: '%{resource_name} を作成しました'
-        alert: '%{resource_name} の作成に失敗しました'
+        notice: '%{resource_name} を追加しました。'
+        alert: '%{resource_name} の追加に失敗しました。'
       update:
-        notice: '%{resource_name} を更新しました'
-        alert: '%{resource_name} を更新できませんでした'
+        notice: '%{resource_name} を更新しました。'
+        alert: '%{resource_name} を更新できませんでした。'
       destroy:
-        notice: '%{resource_name} を削除しました'
-        alert: '%{resource_name} は削除できません'
+        notice: '%{resource_name} を削除しました。'
+        alert: '%{resource_name} は削除できません。'
       close:
-        notice: '%{resource_name} を閉鎖しました'
+        notice: '%{resource_name} を閉鎖しました。'
     employees:
       add_to_survey:
-        notice: 'Employees were successfully added to survey'
+        notice: '新しい社員をサーベイに追加完了しました。'
       import:
-        notice: 'Employees were successfully imported'
-      
+        notice: '社員のインポートを完了しました。'

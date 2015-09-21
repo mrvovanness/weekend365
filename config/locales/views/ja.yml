@@ -1,139 +1,139 @@
 ja:
   companies:
     new:
-      company_creation: "Please create your company"
+      company_creation: "会社の情報を入力してください"
     show:
-      name: "Company name"
+      name: "会社名"
   dashboard:
     index:
-      title: "Dashboard"
-      latest_surveys: "Latest Surveys"
+      title: "ダッシュボード"
+      latest_surveys: "最新のサーベイ"
       heads:
-        title: "Title"
-        num_of_responses: "Number of responses"
-        start_date: "Start Date"
-        frequency: "Frequency"
-        latest_reply: "Latest Reply"
-        preview: "Preview"
-        results: "Results"
+        title: "タイトル"
+        num_of_responses: "答えの数"
+        start_date: "始めた日"
+        frequency: "回数"
+        latest_reply: "最終の返事"
+        preview: "プレビュー"
+        results: "結果"
     show:
-      title: "Survey results"
-      params_header: "Frequency, Date and Time"
-      score: "score"
+      title: "サーベイ結果"
+      params_header: "回数、日付、時間"
+      score: "スコア"
       chart_titles:
-        num_of_responses: "Number of responses daily"
-        answers_distribution: "Answers distribution"
-        average_score: "Your average score daily"
-        country_average_score: "Average score in your country daily"
-        industry_average_score: "Average score in your industry daily"
+        num_of_responses: "回答の数　日"
+        answers_distribution: "回答の割合"
+        average_score: "平均のスコア　日"
+        country_average_score: "国の平均のスコア　日"
+        industry_average_score: "業界の平均のスコア　日"
     phrase:
-      good: "very good!"
-      normal: "not bad!"
-      bad: "needs improvement!"
+      good: "とてもいい!"
+      normal: "わるくないね!"
+      bad: "まだまだですね!"
     survey_result:
-      score: "your score"
-      country: "Country"
-      industry: "Industry"
-      you: "You"
+      score: "あなたのスコア"
+      country: "国"
+      industry: "業界"
+      you: "あなた"
   devise:
     mailer:
       confirmation:
-        welcome: "Welcome"
-        message: "You can confirm your account email through the link below"
+        welcome: "ようこそ"
+        message: "下のリンクでメールを確認してアカウントを承認してください。"
       reset_password:
-        greeting: "Hello"
-        reset_password_message: "Someone has requested a link to change your password. You can do this through the link below."
-        ignore_message: "If you didn't request this, please ignore this email."
-        password_save_message: "Your password won't change until you access the link above and create a new one."
+        greeting: "こんにちは"
+        reset_password_message: "パスワードの変更のリンクが依頼されています。下のリンクからパスワードの変更を行ってください。"
+        ignore_message: "このメールを依頼されていないであれば、このメールを無視してください。"
+        password_save_message: "上のリンクにクリックして新のパスワードを作成しない限りパスワードの変更が行っていません。"
       unlock_account:
-        greeting: "Hello"
-        lock_message: "Your account has been locked due to an excessive number of unsuccessful sign in attempts."
-        link_message: "Click the link below to unlock your account"
+        greeting: "こんにちは"
+        lock_message: "ログインの試行に失敗回数が多すぎるためアカウントがロックされました。"
+        link_message: "下のリンクをクリックしてアカウントをアンロックしてください。"
     passwords:
       edit:
-        title: "Change your password"
+        title: "パスワードを変更"
     registrations:
       edit:
-        title: "Edit"
-        waiting_confirmation_message: "Currently waiting confirmation for"
-        cancel_account: "Cancel my account"
-        unhappy_message: "Unhappy?"
+        title: "編集"
+        waiting_confirmation_message: "確認をお待ち状態"
+        cancel_account: "アカウントを削除します。"
+        unhappy_message: "不満がありますか?"
       new:
-        title: "Sign up"
-        account_message: "HAVE AN ACCOUNT ALREADY?"
+        title: "サインアップ"
+        account_message: "アカウントをもうすでに持っていますか?"
     sessions:
       new:
-        title: "Sign in"
-        account_message: "DON’T HAVE AN ACCOUNT YET?"
+        title: "ログイン"
+        account_message: "アカウントをまだ持っていませんか?"
     unlocks:
       new:
-        title: "Resend unlock instructions"
+        title: "アンロックの説明の案内をメールにもう一回送る"
   employees:
     new:
-      title: "Add new employee"
-      import_description: 'You can import csv file with the list of employees'
+      title: "社員を追加"
+      import_description: '社員のリストをcsvファイルでアップロードができます'
     edit:
-      title: "Edit this employee"
+      title: "社員を編集"
     index:
-      by_name: "BY NAME"
-      any_department: "Department (any)"
-      any_position: "Position (any)"
-      delete_selected: "Delete<br>selected"
+      by_name: "名前"
+      any_department: "部署 「すべて」"
+      any_position: "役職 「すべて」"
+      delete_selected: "削除"
   pages:
     about:
-      title: "ABOUT US"
+      title: "Weekendについて"
   results:
     add_result:
-      title: "Thanks for answer!"
+      title: "ご回答ありがとうございます!"
   signups:
     new:
-      title: "Sign up"
-      account_message: "HAVE AN ACCOUNT ALREADY?"
+      title: "サインアップ"
+      account_message: "アカウントをもうすでに持っていますか?"
   surveys:
     dialog:
-      title: "Choose type of Survey"
-      rules_message: "One question, answer through email, short spans of time"
-      questionnaire_message: "Deep questionnaire in a separate page"
-      coming_soon: " (coming soon)"
+      title: "サーベイの種類を選択"
+      rules_message: "一つの質問、メールの上で回答、短い期間複数回"
+      questionnaire_message: "複数質問でサーベイ専用なページで回答"
+      coming_soon: "(coming soon)"
     edit:
-      title: "Edit survey"
+      title: "サーベイ編集"
     form:
-      days: "days"
-      survey_period: "SURVEY PERIOD:"
-      weeks: "weeks"
+      days: "日"
+      survey_period: "サーベイ期間:"
+      weeks: "週"
     index:
-      title: "survey selection"
+      title: "サーベイリスト"
       headers:
-        title: "Title"
-        status: "Status"
-        num_of_responses: "Number of responses"
-        alarm: "Alarm"
-        start_date: "Start date"
-        frequency: "Frequency"
-        edit: "Edit"
-        notify: "Notify"
-        results: "Results"
+        title: "タイトル"
+        status: "ステータス"
+        num_of_responses: "回答数"
+        alarm: "アラーム"
+        start_date: "始まった日"
+        frequency: "回数"
+        edit: "編集"
+        notify: "通知"
+        results: "結果"
     new:
-      title: "create new survey"
+      title: "新規サーベイを作成"
     preview:
-      title: "survey confirmation"
-      at: "at"
-      day: "day"
-      delete_confirmation: "You are about to delete this survey"
-      every: "Every"
-      from: "from"
-      params_header: "Frequency, Date and Time"
-      question: "Question:"
-      repeat: "repeat"
-      survey: "Survey"
-      success_message: "set up successfully!"
-      times: "times"
-      week: "week"
-      take_your_time: "Now take your time to"
-      read_our_blog: "read our blog"
-      and_get: "and get"
-      updates_on_the_new_trends: "updates on the new trends in Employee Engagement"
+      title: "サーベイ確認"
+      at: "時間"
+      day: "日"
+      delete_confirmation: "このサーベイを削除しますか？"
+      every: "毎"
+      from: "から"
+      params_header: "回数、日付、時間"
+      question: "質問:"
+      repeat: "リピート"
+      survey: "サーベイ"
+      success_message: "セットアップ完了!"
+      times: "回数"
+      week: "週"
+      take_your_time: "回答を待っている間に"
+      read_our_blog: "ブログに入って"
+      and_get: ""
+      updates_on_the_new_trends: "社員のエンゲージについての最新のトレンドを読んでください"
   survey_mailers:
     send_survey:
-      title: "Welcome to weekend"
-      question: "Question:"
+      title: "Weekendへよこそう"
+      question: "質問:"

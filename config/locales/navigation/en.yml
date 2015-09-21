@@ -49,8 +49,8 @@ en:
     dashboard: "DASHBOARD"
     languages:
       english: "English"
-      japanese: "Japanese"
-      portuguese: "Portuguese"
+      japanese: "日本語"
+      portuguese: "Português"
     menu:
       title: "MENU"
       admin: "Admin"

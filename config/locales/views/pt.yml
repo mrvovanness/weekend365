@@ -1,0 +1,150 @@
+en:
+  companies:
+    new:
+      company_creation: "Por favor, adicione a sua Empresa"
+    show:
+      name: "Nome da Empresa"
+  dashboard:
+    index:
+      title: "Dashboard"
+      latest_surveys: "Pesquisas Recentes"
+      heads:
+        title: "Título"
+        num_of_responses: "Número de Respostas"
+        start_date: "Início"
+        frequency: "Frequencia"
+        latest_reply: "Resposta Recente"
+        preview: "Preview"
+        results: "Resultados"
+    show:
+      title: "Resultados da Pesquisa"
+      params_header: "Frequencia, Dia e Hora"
+      score: "Nota"
+      chart_titles:
+        num_of_responses: "Número de respostas diárias"
+        answers_distribution: "Distribuição das Respostas"
+        average_score: "Sua nota média, dia"
+        country_average_score: "Nota média no seu país, dia"
+        industry_average_score: "Nota média na sua Indústria, dia"
+    phrase:
+      good: "Muito Bom!"
+      normal: "Ótimo!"
+      bad: "Ainda não está bom."
+    survey_result:
+      score: "sua nota"
+      country: "País"
+      industry: "Indústria"
+      you: "Sua Empresa"
+  devise:
+    mailer:
+      confirmation:
+        welcome: "Bem-Vindo!"
+        message: "Você pode confirmar seu email e sua conta no link abaixo."
+      reset_password:
+        greeting: "Olá"
+        reset_password_message: "Alguém pediu um link para alterar a sua senha. Você pode alterar a sua senha no link abaixo."
+        ignore_message: "Se voçe não pediu por esse email, simplesmente ignore."
+        password_save_message: "Sua senha não será alterada até que você acesse o link acima e crie uma nova senha."
+      unlock_account:
+        greeting: "Olá"
+        lock_message: "Sua conta foi bloqueada devido à muitas tentativas de login sem êxito."
+        link_message: "Clique no link abaixo para desbloquear a sua conta."
+    passwords:
+      edit:
+        title: "Troque a sua senha."
+    registrations:
+      edit:
+        title: "Editar"
+        waiting_confirmation_message: "Aguardando a confirmação para"
+        cancel_account: "Cancelar minha conta"
+        unhappy_message: "Insatisfeito? Conte-nos o porque."
+      new:
+        title: "Cadastre-se"
+        account_message: "Já tem uma conta?"
+    sessions:
+      new:
+        title: "Login"
+        account_message: "Não possui uma conta ainda?"
+    unlocks:
+      new:
+        title: "Re-enviar instruções para desbloqueio"
+  employees:
+    new:
+      title: "Adicionar novo Colaborador"
+      import_description: 'Você pode adicionar vários funcionários de uma vez através de um arquivo em csv.'
+      choose_btn: 'Escolha um arquivo csv no seu computador'
+    edit:
+      title: "Editar Colaborador"
+    index:
+      by_name: "Nome"
+      any_department: "Departmento (todos)"
+      any_position: "Posição (todos)"
+      delete_selected: "Deletar"
+  pages:
+    about:
+      title: "Sobre nós"
+  results:
+    add_result:
+      title: "Muito Obrigado pela sua resposta!"
+  signups:
+    new:
+      title: "Cadastro"
+      account_message: "Já possui uma conta?"
+  surveys:
+    dialog:
+      title: "Escolha um tipo de pesquisa"
+      rules_message: "Uma pergunta, resposta dentro do email, curtos períodos de tempo"
+      questionnaire_message: "Várias perguntas, página específica para pesquisa"
+      coming_soon: " (em breve)"
+    edit:
+      title: "Editar a Pesquisa"
+    form:
+      days: "dias"
+      survey_period: "Período:"
+      weeks: "semanas"
+    index:
+      title: "escolha da pesquisa"
+      headers:
+        title: "Título"
+        status: "Status"
+        num_of_responses: "Número de Respostas"
+        alarm: "Alarme"
+        start_date: "Início"
+        frequency: "Frequencia"
+        edit: "Editar"
+        notify: "Notificar"
+        results: "Resultados"
+    new:
+      title: "Criar nova pesquisa"
+    preview:
+      title: "Confirmar pesquisa"
+      at: "em"
+      day: "dia"
+      delete_confirmation: "Você está prestes a deletar essa pesquisa"
+      every: "Toda"
+      from: "para"
+      params_header: "Frequencia, Dia e Hora"
+      question: "Pergunta: #%{question_title}"
+      repeat: "repetir"
+      survey: "Pesquisa"
+      success_message: "pesquisa montada com sucesso"
+      times: "vezes"
+      week: "semana"
+      take_your_time: "Aproveite o seu tempo"
+      read_our_blog: "leia o nosso blog"
+      and_get: "e fique atento"
+      updates_on_the_new_trends: "aos novos trends em relação ao Engajamento do Colaborador"
+  survey_mailers:
+    send_survey:
+      title: "Bem Vindo à Weekend"
+      question: "Pergunta:"
+  decorators:
+    company_survey:
+      header: "Pesquisa #%{id}: %{title}"
+      completed_status: "Concluída, enviada %{counter} vezes"
+      uncompleted_status: "recebendo, enviada %{counter} vezes"
+      schedule: "Toda %{repeat_every} %{repeat_period} às %{start_at} de %{start_from}"
+      day: "dia"
+      week: "semana"
+      daily_frequency: "todo %{repeat_every} dia(s) às %{start_at}"
+      weekly_frequency: "toda %{repeat_every} semana às(aos) %{weekday} às %{daytime}"
