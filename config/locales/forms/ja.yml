@@ -1,5 +1,5 @@
 ja:
-simple_form:
+  simple_form:
     "yes": 'はい'
     "no": 'いいえ'
     required:
