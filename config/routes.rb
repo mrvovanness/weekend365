@@ -33,4 +33,7 @@ Rails.application.routes.draw do
   # route for handling email links
   get 'results' => 'results#add_result'
 
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: '/letter_opener'
+  end
 end
