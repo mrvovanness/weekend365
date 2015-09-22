@@ -2,8 +2,6 @@ pt:
   companies:
     new:
       company_creation: "Por favor, adicione a sua Empresa"
-    show:
-      name: "Nome da Empresa"
   dashboard:
     index:
       title: "Dashboard"
@@ -112,7 +110,7 @@ pt:
         start_date: "Início"
         frequency: "Frequencia"
         edit: "Editar"
-        notify: "Notificar"
+        preview: "Preview"
         results: "Resultados"
     new:
       title: "Criar nova pesquisa"

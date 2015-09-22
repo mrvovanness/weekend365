@@ -17,3 +17,7 @@ ja:
         notice: '新しい社員をサーベイに追加完了しました。'
       import:
         notice: '社員のインポートを完了しました。'
+    signups:
+      create:
+        notice: 'Your account was successfully created. Please, check your e-mail box for confirmation.'
+        alert: 'Account could not be created.'

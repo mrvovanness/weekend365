@@ -2,8 +2,6 @@ en:
   companies:
     new:
       company_creation: "Please create your company"
-    show:
-      name: "Company name"
   dashboard:
     index:
       title: "Dashboard"
@@ -112,7 +110,7 @@ en:
         start_date: "Start date"
         frequency: "Frequency"
         edit: "Edit"
-        notify: "Notify"
+        preview: "Preview"
         results: "Results"
     new:
       title: "create new survey"
