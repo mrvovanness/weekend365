@@ -1,6 +1,6 @@
 #main
   .inform-panel.clearfix
-    h1.company-name #{ @company.name }
+    h1.company-name = @company.name
     = search_form_for @search,
       url: company_path(@company),
       class: 'search-form',

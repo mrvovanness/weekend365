@@ -6,10 +6,7 @@ class SignupsController < ApplicationController
 
   def create
     @signup = Signup.new(params[:signup])
-    if @signup.save
-      respond_with @signup, location: -> { root_path }
-    else
-      render :new
-    end
+    @signup.save
+    respond_with @signup, location: -> { root_path }
   end
 end
