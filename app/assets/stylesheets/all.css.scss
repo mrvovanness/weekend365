@@ -170,8 +170,15 @@ input[type="submit"].btn-login,
 .btns .btn-login{
   background:#fcaf17 image-url('sprite.png') no-repeat 3px -619px;
 }
+input[type="submit"].btn-sign,
+.btns .btn-sign{
+  background: #f26522 image-url('sprite.png') no-repeat 3px -566px;
+}
 
 .btns .btn-login:after{
+	display: none;
+}
+.btns .btn-sign:after{
 	display: none;
 }
 .btn-about{
@@ -232,6 +239,9 @@ input[type="submit"].btn-login,
 }
 .btns .btn-login:hover{
   background:#bb5b07 image-url('sprite.png') no-repeat 3px -619px;
+}
+.btns .btn-sign:hover{
+  background: #ad3114 image-url('sprite.png') no-repeat 3px -566px;
 }
 .login-holder{
 	padding-top:6px;
