@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 ruby '2.2.2'
 
 gem 'rails', '4.2.1'
+gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -44,6 +45,7 @@ group :development do
   gem 'meta_request'
   gem 'interactive_editor'
   gem 'letter_opener'
+  gem 'letter_opener_web'
   gem 'capistrano-rails'
   gem 'capistrano-bundler'
 end
@@ -71,7 +73,6 @@ group :development, :test do
   gem 'phantomjs', require: 'phantomjs/poltergeist'
   gem 'selenium-webdriver'
   gem 'spring-commands-rspec'
-  gem 'sqlite3'
   gem 'turnip'
   gem 'timecop'
 end
@@ -84,6 +85,5 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end

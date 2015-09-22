@@ -8,7 +8,7 @@ Rails.application.configure do
   config.action_controller.perform_caching = false
   config.action_controller.asset_host = 'http://localhost:3000'
 
-  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.delivery_method = ENV['USER'] == 'vagrant' ? :letter_opener_web : :letter_opener
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
   config.action_mailer.default_options = { from: 'development@mail.com', to: 'ex@mail.com' }
   config.action_mailer.raise_delivery_errors = true

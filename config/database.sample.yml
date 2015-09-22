@@ -1,7 +1,12 @@
-development:
+default: &default
   adapter: postgresql
-  database: 365weekend_development
-  username: postgres
-  password: password
-  encoding: utf8
-  host: localhost
+  encoding: unicode
+  pool: 5
+  username: vagrant
+
+development:
+  <<: *default
+  database: weekend_development
+test:
+  <<: *default
+  database: weekend_test
