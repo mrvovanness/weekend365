@@ -17,4 +17,5 @@ jQuery ->
       $('#destroy-selected-form').submit()
 
   $('#employee_birthday').datetimepicker
+    timepicker: false,
     format: 'Y-M-d'

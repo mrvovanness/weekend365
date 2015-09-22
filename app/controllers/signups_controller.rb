@@ -7,7 +7,7 @@ class SignupsController < ApplicationController
   def create
     @signup = Signup.new(params[:signup])
     if @signup.save
-      redirect_to root_path
+      respond_with @signup, location: -> { root_path }
     else
       render :new
     end

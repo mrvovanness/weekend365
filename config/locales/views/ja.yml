@@ -2,8 +2,6 @@ ja:
   companies:
     new:
       company_creation: "会社の情報を入力してください"
-    show:
-      name: "会社名"
   dashboard:
     index:
       title: "ダッシュボード"
@@ -111,7 +109,7 @@ ja:
         start_date: "始まった日"
         frequency: "回数"
         edit: "編集"
-        notify: "通知"
+        preview: "プレビュー"
         results: "結果"
     new:
       title: "新規サーベイを作成"

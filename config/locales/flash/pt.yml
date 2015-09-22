@@ -15,3 +15,7 @@ en:
         notice: 'Os colaboradores foram adicionados a pesquisa com sucesso.'
       import:
         notice: 'Os colaboradores foram importados com sucesso.'
+    signups:
+      create:
+        notice: 'Your account was successfully created. Please, check your e-mail box for confirmation.'
+        alert: 'Account could not be created.'

@@ -27,7 +27,7 @@
               th = t('surveys.index.headers.start_date')
               th = t('surveys.index.headers.frequency')
               th = t('surveys.index.headers.edit')
-              th = t('surveys.index.headers.notify')
+              th = t('surveys.index.headers.preview')
               th = t('surveys.index.headers.results')
             tbody
               - @surveys.each do |survey|
@@ -46,5 +46,6 @@
                       preview_surveys_pulse_path(survey),
                       class: 'btn-notify'
                   td
-                    = link_to t('helpers.links.results'), '#',
+                    = link_to t('helpers.links.results'),
+                      dashboard_path(survey),
                       class: 'btn-results'
