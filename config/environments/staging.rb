@@ -1,4 +1,5 @@
 Rails.application.configure do
+  config.action_controller.asset_host = 'http://dev.weekendcult.com/'
   config.cache_classes = true
   config.eager_load = true
   config.consider_all_requests_local       = false
@@ -19,8 +20,9 @@ Rails.application.configure do
     user_name: ENV['smtp_username'],
     password: ENV['smtp_password'],
     authentication: :plain,
-    domain: 'staging.365weekend.com',
+    domain: 'dev.weekendcult.com',
     enable_starttls_auto: true
   }
-  config.action_mailer.default_url_options = { host: 'staging.365weekend.com' }
+  config.action_mailer.default_url_options = { host: 'dev.weekendcult.com' }
+  config.action_mailer.default_options = { from: 'no-reply@weekendcult.com' }
 end
