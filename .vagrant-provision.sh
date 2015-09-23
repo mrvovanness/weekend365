@@ -88,19 +88,27 @@ echo "--> bundle install in the project"
 su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle"
 echo "--> bundle install finished."
 
-# Setup the database + seed data + sample data
+# Add vagrant user to database
 PG_HBA="/etc/postgresql/9.3/main/pg_hba.conf"
-if grep -q +rails_app/db_setup .provisioning-progress; then
-  echo "--> database already setup and seeds present"
+if grep -q +rails_app/db_user .provisioning-progress; then
+  echo "--> db user already present"
 else
-  echo "--> setup the database + seed data + sample data"
-  ln -svf /vagrant/config/database.sample.yml /vagrant/config/database.yml
+  echo "--> create db user"
   echo "host    all             all             all                     md5" >> "$PG_HBA"
   # Restart to load new pg_hba.conf
   service postgresql restart
-
-  # Create vagrant user for db
   sudo -u postgres psql --command "create role vagrant with password '1111' login createdb;"
+  su vagrant -c "echo +rails_app/db_user >> /home/vagrant/.provisioning-progress"
+  echo "--> rails_app/db_user finished"
+fi
+
+# Create seed + sample data in database
+if grep -q +rails_app/db_setup .provisioning-progress; then
+  echo "--> database already setup and seeds present"
+else
+  echo "--> setup db + seed data"
+  ln -svf /vagrant/config/database.sample.yml /vagrant/config/database.yml
+  ln -svf /vagrant/.vagrant-skel/application.yml /vagrant/config/application.yml
   su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:setup;"
   su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:seed:company_fields;"
   su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:seed:admin;"
