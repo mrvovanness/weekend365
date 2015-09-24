@@ -812,6 +812,7 @@ input[type="submit"].search,
 	background:#285b5f;
 }
 .filter-form a.link-delete{
+<<<<<<< HEAD
     position:relative;
     float:left;
     font-size:18px;
@@ -821,6 +822,17 @@ input[type="submit"].search,
 }
 .filter-form .link-delete:hover{
     color:#285b5f;
+=======
+    position: relative;
+    float: left;
+    font-size: 18px;
+	margin: 0 0 0 8px;
+	padding:13px 10px 12px 2px;
+    color: #0d8690;
+}
+.filter-form .link-delete:hover{
+    color: #285b5f;
+>>>>>>> a787784849b90814a85e44bf21c5710b2fb7502a
 }
 .filter-form .link-add:after,
 .filter-form .link-upload:after,
