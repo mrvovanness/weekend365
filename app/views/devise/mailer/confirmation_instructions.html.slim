@@ -1,6 +1,5 @@
-p = t('devise.mailer.confirmation.welcome')
-  = @email
-  | !
+p 
+  | #{t('devise.mailer.confirmation.welcome')} #{@email}!
 p
   | #{t('devise.mailer.confirmation.message')}:
 p
