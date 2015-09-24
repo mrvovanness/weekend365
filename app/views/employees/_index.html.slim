@@ -6,10 +6,9 @@
     = link_to t('helpers.links.download_csv'),
       company_path(company, format: :csv),
       class: 'link-upload'
-    .add-holder
-      = link_to t('employees.index.delete_selected').html_safe, '#',
-        class: 'link-add',
-        id: 'destroy-selected-submit'
+    = link_to t('employees.index.delete_selected').html_safe, '#',
+      class: 'link-delete',
+      id: 'destroy-selected-submit'
     .all-holder
       = label_tag 'select_all', 'Select all'
       = check_box_tag 'select_all', nil, false, class: 'checkable'
