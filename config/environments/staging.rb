@@ -23,6 +23,7 @@ Rails.application.configure do
     domain: 'dev.weekendcult.com',
     enable_starttls_auto: true
   }
+  config.action_mailer.asset_host = config.action_controller.asset_host
   config.action_mailer.default_url_options = { host: 'dev.weekendcult.com' }
   config.action_mailer.default_options = { from: 'no-reply@weekendcult.com' }
 end
