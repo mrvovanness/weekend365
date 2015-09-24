@@ -7,16 +7,6 @@ ja:
       mark: '*'
     error_notification:
       default_message: "下のエラーをご確認ください:"
-    labels:
-      company:
-        name: '会社名'
-        field: '業務'
-        office_address: 'オフィス住所'
-        country: '国'
-        description: '会社説明'
-        website: 'サイト'
-        employees_number: '社員数'
-        employees_registered: '登録数'
     buttons:
       password:
         submit: "パスワードの変更"

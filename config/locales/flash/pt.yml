@@ -10,6 +10,8 @@ pt:
       destroy:
         notice: '%{resource_name} foi deletado com sucesso.'
         alert: '%{resource_name} não pode ser deletado.'
+      close:
+        notice: '%{resource_name} foi fechado com sucesso.'
     employees:
       add_to_survey:
         notice: 'Os colaboradores foram adicionados a pesquisa com sucesso.'
