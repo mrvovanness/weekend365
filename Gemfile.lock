@@ -204,6 +204,7 @@ GEM
     hpricot (0.8.6)
     html2slim (0.2.0)
       hpricot
+    http_accept_language (2.0.5)
     http_parser.rb (0.6.0)
     i18n (0.7.0)
     i18n_data (0.7.0)
@@ -527,6 +528,7 @@ DEPENDENCIES
   hirb
   hirb-unicode
   html2slim
+  http_accept_language
   interactive_editor
   jbuilder (~> 2.0)
   jquery-ui-rails

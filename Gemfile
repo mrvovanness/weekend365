@@ -36,6 +36,7 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'draper'
 gem 'globalize', '~> 5.0.0'
+gem 'http_accept_language'
 
 group :development do
   gem 'better_errors'

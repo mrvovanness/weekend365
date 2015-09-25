@@ -78,6 +78,7 @@ pt:
       any_department: "Departmento (todos)"
       any_position: "Posição (todos)"
       delete_selected: "Deletar"
+      select_all: "Select all"
   pages:
     about:
       title: "Sobre nós"

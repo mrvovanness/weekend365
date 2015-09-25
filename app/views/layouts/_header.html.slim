@@ -10,11 +10,13 @@ header#header.clearfix
       = link_to t('upperbar.surveys'), surveys_path
   ul.links.alignright
     li.lang
-      = link_to t('upperbar.languages.english'), '#'
+      = link_to params.merge(locale: current_user.locale, only_path: true) do
+        = t("upperbar.languages.#{current_user.locale}")
       .drop
         ul
-          li = link_to t('upperbar.languages.japanese'), '#'
-          li = link_to t('upperbar.languages.portuguese'), '#'
+          - I18n.available_locales.each do |locale|
+            li = link_to params.merge(locale: locale, only_path: true) do
+              = t("upperbar.languages.#{locale}")
 
     li.username
       = link_to t('upperbar.menu.title'), '#'
