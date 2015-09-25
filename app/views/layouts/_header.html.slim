@@ -15,9 +15,9 @@ header#header.clearfix
       .drop
         ul
           - I18n.available_locales.each do |locale|
-            - unless locale == I18n.locale
-              li = link_to params.merge(locale: locale, only_path: true) do
-                = t("upperbar.languages.#{locale}")
+            - next if locale == I18n.locale
+            li = link_to params.merge(locale: locale, only_path: true) do
+              = t("upperbar.languages.#{locale}")
 
     li.username
       = link_to t('upperbar.menu.title'), '#'
