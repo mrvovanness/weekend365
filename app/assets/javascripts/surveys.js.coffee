@@ -5,12 +5,21 @@ jQuery ->
     message = JSON.parse(data.responseText)
     $('.control-label', this).html('Send to ' + '(' + message.employees_count + '):')
 
-  $('#company_survey_start_at').datetimepicker
-    format: 'Y-M-d H:i'
+  $('#company_survey_start_on').datetimepicker
+    format: 'Y-m-d'
+    timepicker: false
+    minDate: 0
+
+  $('#company_survey_time').datetimepicker
+    format: 'H:i'
+    datepicker: false
 
   $('#company_survey_finish_on').datetimepicker
-    format: 'Y-M-d'
+    format: 'Y-m-d'
+    timepicker: false
+    minDate: '+1970/01/03'
 
+  # just helper for ajax response
   joinValues = (obj) ->
     name = obj.name + ' - '
     department = obj.department + ' - '
@@ -34,25 +43,29 @@ jQuery ->
           results: $.map data.employees, (obj) ->
             return { id: obj.id, text: joinValues(obj) } }
 
-  # workaround of issue https://github.com/select2/select2/issues/3632(not work for me)
-  $('.select2').on 'select2:unselect', ->
-    console.log('hello')
-    setTimeout ( ->
-     $('.select2').select2 'close'
-    ), 100
-
+  # Modal window
   $('#dialog').dialog
     autoOpen: false
     modal: true
     draggable: false
     resizable: false
     width: 500
+
   $('#add-survey-btn, .btn-create').click (e) ->
     e.preventDefault()
     $('#dialog').dialog 'open'
 
-  $('.btn-delete').click (e) ->
-    e.preventDefault()
-    if $('.btn-delete').length > 1
-      $(this).closest('.box').fadeOut 'slow', ->
-        $(this).remove()
+  # Calculate number of repeats
+  calculateRepeats = ->
+    finishOn = new Date $('#company_survey_finish_on').val()
+    startOn = new Date $('#company_survey_start_on').val()
+    repeatEvery = $('#company_survey_repeat_every').val()
+    repeatMode = $('#company_survey_repeat_mode').val()
+    daysInterval = if repeatMode == 'w' then repeatEvery * 7 else repeatEvery
+
+    diff = (finishOn - startOn)/(1000*60*60*24)/daysInterval
+    result = if diff < 2 then 2 else diff
+    numberOfRepeats = Math.floor(result)
+    $('#company_survey_number_of_repeats').val(numberOfRepeats)
+  
+  $('.schedule-setter').on 'change', calculateRepeats

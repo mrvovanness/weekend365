@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 20150925035640) do
     t.integer  "number_of_responses", default: 0
     t.boolean  "alarm",               default: false
     t.boolean  "repeat"
-    t.date     "start_on"
     t.date     "finish_on"
     t.integer  "number_of_repeats"
     t.datetime "next_delivery_at"

@@ -133,5 +133,5 @@ su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exe
 
 # Run Rails and background
 ln -svf /vagrant/.vagrant-skel/application.yml /vagrant/config/application.yml
-su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec foreman start;"
+# su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec foreman start;"
 echo "Rails started"

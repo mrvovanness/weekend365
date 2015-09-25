@@ -28,4 +28,6 @@ Rails.application.configure do
   config.assets.digest = false
   config.assets.compile = true
   config.assets.raise_runtime_errors = true
+  # ip for console inside vagrant
+  config.web_console.whitelisted_ips << '10.0.2.2'
 end

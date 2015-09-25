@@ -36,8 +36,8 @@ ja:
         current_password: "変更の確認のために現在のパスワードを書いてください。"
         password: "更新したくないであれば空白のママ"
         password_length: "%{chars_minimum} 文字の最小"
-      surveys:
-        finish_on: "【この日まで】を決めるとリピート数が自動で計算されます。"
+      company_survey:
+        number_of_repeats: "min 2, max 1000"
     labels:
       company:
         country: '国'
@@ -62,9 +62,8 @@ ja:
     placeholders:
       signups:
         password: "文字の最小 8 桁"
-      surveys:
-        repeat_every: "最大 365"
-        number_of_repeats: "最大 1000"
+      company_survey:
+        number_of_repeats: "calculating..."
     surveys:
       title: "%{survey_title} %{company_name}"
   buttons:
