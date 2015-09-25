@@ -48,9 +48,9 @@ pt:
     company: "EMPRESA"
     dashboard: "DASHBOARD"
     languages:
-      english: "English"
-      japanese: "日本語"
-      portuguese: "Português"
+      en: "English"
+      ja: "日本語"
+      pt: "Português"
     menu:
       title: "MENU"
       admin: "Admin"

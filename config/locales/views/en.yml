@@ -78,6 +78,7 @@ en:
       any_department: "Department (any)"
       any_position: "Position (any)"
       delete_selected: "Delete selected"
+      select_all: "Select all"
   pages:
     about:
       title: "About us"

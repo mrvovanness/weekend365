@@ -10,7 +10,7 @@
       class: 'link-delete',
       id: 'destroy-selected-submit'
     .all-holder
-      = label_tag 'select_all', 'Select all'
+      = label_tag 'select_all', t('employees.index.select_all')
       = check_box_tag 'select_all', nil, false, class: 'checkable'
   .filter-area
     = search_form_for search, url: company_path(company) do |f|
