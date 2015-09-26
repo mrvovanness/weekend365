@@ -34,6 +34,7 @@
           collection: [[t('surveys.form.weeks'), 'w'],
           [t('surveys.form.days'), 'd']],
           input_html: { class: 'selectable' },
+          label: t('simple_form.labels.surveys.repeat_mode'),
           label_html: { class: 'style01' },
           include_blank: false,
           default: 1
@@ -47,11 +48,13 @@
         br
         = f.input :number_of_repeats,
           input_html: { class: 'selectable', min: '2', max: '1000' },
+          label: t('simple_form.labels.surveys.number_of_repeats'),
           label_html: { class: 'style01' },
           placeholder: t('simple_form.placeholders.surveys.number_of_repeats')
         = f.error :number_of_repeats
         br
         = f.input :finish_on, as: :string,
+          label: t('simple_form.labels.surveys.finish_on'),
           label_html: { class: 'style01' },
           hint: t('simple_form.hints.surveys.finish_on').html_safe
         = f.error :finish_on

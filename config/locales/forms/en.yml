@@ -39,18 +39,22 @@ en:
       surveys:
         finish_on: "If you specify 'finish on' number of repeats will be<br>calculated automatically"
     labels:
+      defaults:
+        title: "Title"
       company:
         country: 'Country'
         description: 'Company Description'
         employees_number: 'Employees Number'
         employees_registered: 'Employees Registered'
-        field: 'Company Field'
+        company_field: 'Company Field'
         name: 'Company Name'
         office_address: 'Office Address'
         website: 'Website'
       password:
         confirmation: "Confirm your new password"
         new_password: "New password"
+      survey:
+        title: "Title"
       surveys:
         employee_ids: "Send to"
         message: "Message to employee"
@@ -59,6 +63,9 @@ en:
         repeat_every: "Repeat every(weeks/days)"
         send_to: "Send to (%{employees_count}):"
         start_at: "start at (Tokyo time)"
+        repeat_mode: "Repeat mode"
+        number_of_repeats: "Number of repeats"
+        finish_on: "Finish on"
     placeholders:
       signups:
         password: "8 characters minimum"
