@@ -19,5 +19,5 @@ ja:
         notice: '社員のインポートを完了しました。'
     signups:
       create:
-        notice: 'Your account was successfully created. Please, check your e-mail box for confirmation.'
-        alert: 'Account could not be created.'
+        notice: 'アカウントの作成が完了しました。登録したメールを確認してください。'
+        alert: 'アカウントの作成できませんでした。'
