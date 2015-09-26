@@ -10,6 +10,8 @@ pt:
       destroy:
         notice: '%{resource_name} foi deletado com sucesso.'
         alert: '%{resource_name} não pode ser deletado.'
+      close:
+        notice: '%{resource_name} foi fechado com sucesso.'
     employees:
       add_to_survey:
         notice: 'Os colaboradores foram adicionados a pesquisa com sucesso.'
@@ -17,5 +19,5 @@ pt:
         notice: 'Os colaboradores foram importados com sucesso.'
     signups:
       create:
-        notice: 'Your account was successfully created. Please, check your e-mail box for confirmation.'
-        alert: 'Account could not be created.'
+        notice: 'Sua conta foi criada com sucesso. Confira sua caixa de email e siga as instruções para confirmar.'
+        alert: 'Sua conta não pode ser criada.'

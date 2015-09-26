@@ -114,10 +114,10 @@ p{margin:0 0 10px;}
 	padding:234px 33px 9999px 33px;
 	width:838px;
 	margin:0 auto -9999px;
-	background:image-url("bg-section01.png");
+	background: #f2f2f2;
 }
 .main{
-	background:image-url("bg-section01.png")!important;
+	background:#f2f2f2 !important;
 	padding:0 33px 9999px 33px;
 	width:838px;
 	margin:0 auto -9999px;
@@ -1663,6 +1663,7 @@ input[type="submit"].btn-save:hover{background: #ad3114 image-url("sprite.png") 
 .footer-holder{
 	padding:42px 0;
 	width:800px;
+	height:140px;
 	margin:0 auto;
 	position:relative;
 }
@@ -1711,6 +1712,32 @@ input[type="submit"].btn-save:hover{background: #ad3114 image-url("sprite.png") 
 	color:#343838;
 }
 #footer p{margin:0;}
+
+.footer-info-link{
+	text-align:left;
+	width: 250px;
+	font:16px/22px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
+	position: relative;
+	left: 100px;
+}
+.footer-sns-link{
+	text-align:left;
+	width: 250px;
+	font:16px/22px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
+	position: relative;
+	top: -84px;
+	left: 300px;
+}
+.footer-contact-link{
+	text-align:left;
+	width: 250px;
+	font:16px/22px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
+	position: relative;
+	top: -185px;
+	left: 500px;
+}
+
+
 .jq-checkbox {
 	width: 18px;
 	height: 18px;
