@@ -10,7 +10,7 @@ class Surveys::PulsesController < ApplicationController
 
   def new
     load_offered_survey
-    @survey = @company.company_surveys.build
+    @survey = @company.company_surveys.build.decorate
   end
 
   def edit
@@ -18,7 +18,7 @@ class Surveys::PulsesController < ApplicationController
   end
 
   def create
-    @survey = @company.company_surveys.create(survey_params)
+    @survey = @company.company_surveys.create(survey_params).decorate
     load_offered_survey if @survey.errors.present?
     respond_with @survey,
       location: -> { preview_surveys_pulse_path(@survey) }
@@ -40,7 +40,7 @@ class Surveys::PulsesController < ApplicationController
   end
 
   def update_employees
-    @survey.update_attributes(survey_params)
+    @survey.update_attributes!(survey_params)
     respond_with @survey.employees.count
   end
 
@@ -48,7 +48,7 @@ class Surveys::PulsesController < ApplicationController
 
   def survey_params
     params.require(:company_survey).permit(
-      :title, :start_at, :finish_on,
+      :title, :start_on, :time, :finish_on,
       :number_of_repeats, :repeat_every,
       :repeat_mode, :message, :skip_callback,
       :employee_ids => [], :offered_question_ids => [])

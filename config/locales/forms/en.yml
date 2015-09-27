@@ -36,8 +36,8 @@ en:
         current_password: "we need your current password to confirm your changes"
         password: "leave it blank if you don't want to change it"
         password_length: "%{chars_minimum} characters minimum"
-      surveys:
-        finish_on: "If you specify 'finish on' number of repeats will be<br>calculated automatically"
+      company_survey:
+        number_of_repeats: "min 2, max 1000"
     labels:
       company:
         country: 'Country'
@@ -56,15 +56,15 @@ en:
         message: "Message to employee"
         once: "Once"
         repeat: "Repeat"
-        repeat_every: "Repeat every(weeks/days)"
+        repeat_every: "Repeat every"
         send_to: "Send to (%{employees_count}):"
         start_at: "start at (Tokyo time)"
+        number_of_repeats: 'Number of email sendings'
     placeholders:
       signups:
         password: "8 characters minimum"
-      surveys:
-        repeat_every: "max 365"
-        number_of_repeats: "max 1000"
+      company_survey:
+        number_of_repeats: "calculating..."
     surveys:
       title: "%{survey_title} for %{company_name}"
   buttons:

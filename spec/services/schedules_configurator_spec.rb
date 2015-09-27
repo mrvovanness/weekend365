@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe SchedulesConfigurator do
-  let!(:survey) { build(:survey_with_id) }
+  let!(:survey) { create(:survey_with_id) }
   after(:each) do
     Resque.remove_schedule("send_emails_for_survey_#{survey.id}")
   end
@@ -19,8 +19,8 @@ describe SchedulesConfigurator do
 
   context 'updating schedule within job' do
     before do
-      survey.save
       survey.counter = 1
+      survey.time = nil
       SchedulesConfigurator.new(survey).add_to_scheduler
     end
     it "calculate new delivery date if counter not equal zero" do

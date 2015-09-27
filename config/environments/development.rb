@@ -1,6 +1,6 @@
 Rails.application.configure do
 
-  # Add Rack::LiveReload to the bottom of the middleware stack with the default options.
+  # Add Rack::LiveReload to the bottom of the middleware stack
   config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
   config.cache_classes = false
   config.eager_load = false
@@ -28,4 +28,6 @@ Rails.application.configure do
   config.assets.digest = false
   config.assets.compile = true
   config.assets.raise_runtime_errors = true
+  # ip for console inside vagrant
+  config.web_console.whitelisted_ips << '10.0.2.2'
 end

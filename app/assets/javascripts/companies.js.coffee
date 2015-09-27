@@ -1,2 +1,0 @@
-jQuery ->
-  $('.checkable, .selectable').styler()
