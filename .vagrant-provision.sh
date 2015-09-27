@@ -131,7 +131,9 @@ fi
 # Run migrations
 su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:migrate;"
 
-# Run Rails and background
-ln -svf /vagrant/.vagrant-skel/application.yml /vagrant/config/application.yml
-# su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec foreman start;"
-echo "Rails started"
+# Run Guard Rails and background
+if [ -f /vagrant/tmp/pids/server.pid ]; then
+  rm /vagrant/tmp/pids/server.pid
+fi
+su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec foreman start;"
+echo "Rails finished"

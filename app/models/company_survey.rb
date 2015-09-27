@@ -1,22 +1,22 @@
 class CompanySurvey < ActiveRecord::Base
-  ##validates :title, :start_on, :time, :message, presence: true
+  validates :title, :start_on, :time, :message, presence: true,
+    unless: :skip_callback?
 
-  ##validates :repeat_every, numericality: {
-  #  only_integer: true, greater_than: 0, less_than: 366 }
-  ##validates :number_of_repeats, numericality: {
-  #  only_integer: true, greater_than: 1, less_than: 1001 }
+  validates :repeat_every, numericality: {
+    only_integer: true, greater_than: 0, less_than: 366 }
 
-  ##validate :start_in_future?, :finish_after_start?,
-  #  unless: :skip_callback?
+  validates :number_of_repeats, numericality: {
+    only_integer: true, greater_than: 1, less_than: 1001 }
 
-  before_save :reset_counter, :join_date_time, :set_next_delivery,
-    unless: :started?
+  before_save :write_start_at,
+    unless: :started? || :skip_callback
 
-  #after_save :add_schedule, unless: :skip_callback?
-  #after_destroy :delete_schedule
+  after_save :add_schedule,
+    unless: :skip_callback?
 
-  attr_accessor :skip_callback
-  attr_writer :time, :start_on
+  after_destroy :delete_schedule
+
+  attr_accessor :skip_callback, :time, :start_on
 
   belongs_to :company
   has_many :results
@@ -27,32 +27,11 @@ class CompanySurvey < ActiveRecord::Base
     skip_callback
   end
 
-  def start_in_future?
-    if start_at.present? &&
-        start_at <= DateTime.now + 2.minutes
-      errors.add(:start_at, "can't be in the past or right now")
-    end
-  end
-
-  def finish_after_start?
-    if finish_on && start_at && finish_on <= start_at
-      errors.add(:finish_on, "can't be before start")
-    end
-  end
-
-  def reset_counter
-    self.counter = 0
-  end
-
-  def join_date_time
+  def write_start_at
     date = Date.parse(self.start_on)
-    time = Time.new(self.time)
-    self.start_at = DateTime.new(date.year, date.month, date.day,
-                                 time.hour, time.min, time.sec)
-  end
-
-  def set_next_delivery
-    self.next_delivery_at = start_at
+    time = Time.parse(self.time)
+    self.start_at = Time.zone.local(date.year, date.month, date.day,
+                                    time.hour, time.min, time.sec)
   end
 
   def add_schedule
@@ -62,6 +41,10 @@ class CompanySurvey < ActiveRecord::Base
 
   def delete_schedule
     Resque.remove_schedule("send_emails_for_survey_#{id}")
+  end
+
+  def started?
+    counter > 0
   end
 
   def completed?
@@ -74,10 +57,6 @@ class CompanySurvey < ActiveRecord::Base
 
   def weekly?
     repeat_mode == 'w'
-  end
-
-  def started?
-    counter > 0
   end
 
   def get_statistics

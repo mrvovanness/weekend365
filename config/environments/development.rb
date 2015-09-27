@@ -1,6 +1,6 @@
 Rails.application.configure do
 
-  # Add Rack::LiveReload to the bottom of the middleware stack with the default options.
+  # Add Rack::LiveReload to the bottom of the middleware stack
   config.middleware.insert_after ActionDispatch::Static, Rack::LiveReload
   config.cache_classes = false
   config.eager_load = false

@@ -5,10 +5,10 @@ jQuery ->
     message = JSON.parse(data.responseText)
     $('.control-label', this).html('Send to ' + '(' + message.employees_count + '):')
 
-  $('#company_survey_start_on').datetimepicker
+  $('.survey_start_on').datetimepicker
     format: 'Y-m-d'
     timepicker: false
-    minDate: 0
+    minDate: '+1970/01/02'
 
   $('#company_survey_time').datetimepicker
     format: 'H:i'
@@ -68,4 +68,5 @@ jQuery ->
     numberOfRepeats = Math.floor(result)
     $('#company_survey_number_of_repeats').val(numberOfRepeats)
   
+  $(document).ready calculateRepeats
   $('.schedule-setter').on 'change', calculateRepeats

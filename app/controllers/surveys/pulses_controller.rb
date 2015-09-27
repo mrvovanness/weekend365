@@ -40,7 +40,7 @@ class Surveys::PulsesController < ApplicationController
   end
 
   def update_employees
-    @survey.update_attributes(survey_params)
+    @survey.update_attributes!(survey_params)
     respond_with @survey.employees.count
   end
 

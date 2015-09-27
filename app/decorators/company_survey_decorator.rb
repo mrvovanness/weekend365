@@ -45,18 +45,32 @@ class CompanySurveyDecorator < Draper::Decorator
   end
 
   def set_time
-    if start_at.present
-    start_at.strftime('%H:%M')
+    if errors.present?
+      self.time
+    elsif start_at.present?
+      start_at.strftime('%H:%M')
     else
-      Time.current('%H:00')
+      Time.current.strftime('%H:00')
     end
   end
 
   def set_start_on
-    if start_at.present?
+    if errors.present?
+      self.start_on
+    elsif start_at.present?
       start_at.strftime('%Y-%m-%d')
     else
-      Date.today.strftime('%Y-%m-%d')
+      date = Date.today + 1.day
+      date.strftime('%Y-%m-%d')
+    end
+  end
+
+  def set_finish_on
+    if finish_on.present?
+      finish_on.strftime('%Y-%m-%d')
+    else
+      date = Date.today + 3.months
+      date.strftime('%Y-%m-%d')
     end
   end
 end

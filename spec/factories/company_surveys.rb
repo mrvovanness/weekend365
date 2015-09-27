@@ -8,6 +8,8 @@ FactoryGirl.define do
     repeat_every 3
     message 'Hello'
     counter 0
+    start_on Date.today.strftime('%Y-%m-%d')
+    time Time.current.strftime('%H:%M')
 
     factory :survey_with_id
     id 1
