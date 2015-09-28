@@ -39,9 +39,19 @@ class CompanySurveyDecorator < Draper::Decorator
 
   def repeat_times
     [I18n.t('surveys.preview.repeat'),
-     number_of_repeats,
-     I18n.t('surveys.preview.times')
+      number_of_repeats,
+      I18n.t('surveys.preview.times')
     ].join(' ')
+  end
+
+  def set_title(offered_survey, company)
+    if title.present?
+      title
+    else
+      I18n.t('simple_form.placeholders.company_survey.title',
+        survey_title: offered_survey.title,
+        company_name: company.name)
+    end
   end
 
   def set_time
@@ -71,6 +81,12 @@ class CompanySurveyDecorator < Draper::Decorator
     else
       date = Date.today + 3.months
       date.strftime('%Y-%m-%d')
+    end
+  end
+
+  def set_hint_for_start_on
+    if started?
+      I18n.t('simple_form.hints.company_survey.start_on_opt')
     end
   end
 end

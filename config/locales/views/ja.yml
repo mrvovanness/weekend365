@@ -70,6 +70,7 @@ ja:
     new:
       title: "社員を追加"
       import_description: '社員のリストをcsvファイルでアップロードができます'
+      choose_btn: 'choose button - translate'
     edit:
       title: "社員を編集"
     index:
@@ -77,7 +78,7 @@ ja:
       any_department: "部署 「すべて」"
       any_position: "役職 「すべて」"
       delete_selected: "削除"
-      select_all: "Select all"
+      select_all: "Select all-translate"
   pages:
     about:
       title: "Weekendについて"

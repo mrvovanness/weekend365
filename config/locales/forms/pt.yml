@@ -1,4 +1,13 @@
 pt:
+  helpers:
+    submit:
+      company_survey:
+        create: "Save"
+        update: "Change"
+      employee:
+        submit: "Salvar"
+      company:
+        update: "Salvar"
   simple_form:
     "yes": 'Sim'
     "no": 'Não'
@@ -21,14 +30,10 @@ pt:
       unlock:
         new:
           submit: "Re-envie instruções para desbloqueio"
-      employees:
-        submit: "Salvar"
       signups:
         new:
           submit: "Cadastre-se"
       surveys:
-        form:
-          submit: "Salvar"
         preview:
           submit: "Atualizar colaboradores"
     hints:
@@ -38,6 +43,7 @@ pt:
         password_length: " mínimo de %{chars_minimum} caracteres"
       company_survey:
         number_of_repeats: "min 2, max 1000"
+        start_on_opt: "Already started -translate"
     labels:
       defaults:
         title: "Título"
@@ -53,24 +59,32 @@ pt:
       password:
         confirmation: "Confirme sua nova senha"
         new_password: "Nova Senha"
-      surveys:
-        employee_ids: "Enviar para"
+      company_survey:
+        start_on: "Começar em (horário de Brasília)"
+        time: "Time-translate to Brazil"
+        repeat_every: "Repetir toda"
+        finish_on: "Finish on-translate to Brazil"
+        number_of_repeats: "Number of repeats-translate to Brazil"
         message: "Mensagem para os Colaboradores"
+        employee_ids: "Enviar para"
         once: "Uma Vez"
         repeat: "Repetir"
-        repeat_every: "Repetir toda (semana/dia)"
         send_to: "Enviar para (%{employees_count}):"
-        start_at: "Começar em (horário de Brasília)"
-        repeat_mode: "Repeat mode"
-        number_of_repeats: "Number of repeats"
-        finish_on: "Finish on"
+      employee:
+        name: "Name - translate"
+        department: "translate"
+        position: "translate"
+        email: "translate"
+        gender: "translate"
+        birthday: "translate"
+        country: "translate"
     placeholders:
       signups:
         password: "mínimo de 8 caracteres"
       company_survey:
         number_of_repeats: "calculating..."
-    surveys:
-      title: "%{survey_title} para %{company_name}"
+        title: "%{survey_title} para %{company_name}"
+        employee_ids: "Search by name, department, position... translate"
   buttons:
     employees:
       import_csv: "Upload arquivo csv"

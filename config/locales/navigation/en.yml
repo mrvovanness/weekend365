@@ -64,4 +64,4 @@ en:
       last: "Last"
       previous: "Prev"
       next: "Next"
-      truncate: "Truncate"
+      truncate: "..."

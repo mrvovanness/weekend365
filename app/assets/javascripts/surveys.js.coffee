@@ -27,10 +27,10 @@ jQuery ->
     return name + department + position
 
   # Search via ajax in 'send to' form field
-  $('#company_survey_employee_ids').select2
+  $('#employee_ids').select2
     tags: true
     closeOnSelect: false
-    placeholder: 'Search by name, department, position ...'
+    placeholder: $('#employee_ids').attr('placeholder')
     allowClear: true
     delay: 500
     ajax:
