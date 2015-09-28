@@ -9,6 +9,7 @@ html
     = javascript_include_tag '//www.google.com/jsapi', 'chartkick'
     = csrf_meta_tags
   body.inner
+    = render 'layouts/ga'
     = render 'layouts/messages'
     .wrapper-holder
       #wrapper
