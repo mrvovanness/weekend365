@@ -39,12 +39,14 @@ en:
       company_survey:
         number_of_repeats: "min 2, max 1000"
     labels:
+      defaults:
+        title: "Title"
       company:
         country: 'Country'
         description: 'Company Description'
         employees_number: 'Employees Number'
         employees_registered: 'Employees Registered'
-        field: 'Company Field'
+        company_field: 'Company Field'
         name: 'Company Name'
         office_address: 'Office Address'
         website: 'Website'

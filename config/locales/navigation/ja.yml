@@ -39,6 +39,7 @@ ja:
       sign_up: "サインアップ"
       undo: "取り消す"
       unlock_account: "アカウントをアンロック"
+      pulse_survey: "Pulse Survey"
     titles:
       edit: "編集"
       save: "保存"
@@ -57,3 +58,10 @@ ja:
       edit_company: "会社情報編集"
       log_out: "ログアウト"
     surveys: "サーベイ"
+  views:
+    pagination:
+      first: "First"
+      last: "Last"
+      previous: "Prev"
+      next: "Next"
+      truncate: "Truncate"

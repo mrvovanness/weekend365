@@ -39,12 +39,14 @@ ja:
       company_survey:
         number_of_repeats: "min 2, max 1000"
     labels:
+      defaults:
+        title: "Title"
       company:
         country: '国'
         description: '会社説明'
         employees_number: '社員数'
         employees_registered: '登録数'
-        field: '業務'
+        company_field: '業務'
         name: '会社名'
         office_address: 'オフィス住所'
         website: 'サイト'
@@ -59,6 +61,9 @@ ja:
         repeat_every: "リピート(週/日)"
         send_to: "宛先 (%{employees_count}):"
         start_at: "始まる (東京の時間)"
+        repeat_mode: "Repeat mode"
+        number_of_repeats: "Number of repeats"
+        finish_on: "Finish on"
     placeholders:
       signups:
         password: "文字の最小 8 桁"

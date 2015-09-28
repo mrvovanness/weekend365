@@ -39,6 +39,7 @@ pt:
       sign_up: "Cadastro"
       undo: "Voltar"
       unlock_account: "Desbloquear minha conta"
+      pulse_survey: "Pulse Survey"
     titles:
       edit: "Editar %{model}"
       save: "Salvar %{model}"
@@ -57,3 +58,10 @@ pt:
       edit_company: "Editar Empresa"
       log_out: "Logout"
     surveys: "PESQUISAS"
+  views:
+    pagination:
+      first: "First"
+      last: "Last"
+      previous: "Prev"
+      next: "Next"
+      truncate: "Truncate"

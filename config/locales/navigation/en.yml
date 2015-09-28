@@ -39,6 +39,7 @@ en:
       sign_up: "Sign up"
       undo: "Undo"
       unlock_account: "Unlock my account"
+      pulse_survey: "Pulse Survey"
     titles:
       edit: "Edit %{model}"
       save: "Save %{model}"
@@ -57,3 +58,10 @@ en:
       edit_company: "Edit company"
       log_out: "Log out"
     surveys: "SURVEYS"
+  views:
+    pagination:
+      first: "First"
+      last: "Last"
+      previous: "Prev"
+      next: "Next"
+      truncate: "Truncate"
