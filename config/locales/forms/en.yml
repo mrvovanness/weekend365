@@ -38,6 +38,7 @@ en:
         password_length: "%{chars_minimum} characters minimum"
       surveys:
         finish_on: "If you specify 'finish on' number of repeats will be<br>calculated automatically"
+        started: "already started"
     labels:
       defaults:
         title: "Title"
@@ -53,14 +54,12 @@ en:
       password:
         confirmation: "Confirm your new password"
         new_password: "New password"
-      survey:
-        title: "Title"
       surveys:
         employee_ids: "Send to"
         message: "Message to employee"
         once: "Once"
         repeat: "Repeat"
-        repeat_every: "Repeat every(weeks/days)"
+        repeat_every: "Repeat every (weeks/days)"
         send_to: "Send to (%{employees_count}):"
         start_at: "start at (Tokyo time)"
         repeat_mode: "Repeat mode"

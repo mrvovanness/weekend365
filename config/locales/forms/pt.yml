@@ -38,6 +38,7 @@ pt:
         password_length: " mínimo de %{chars_minimum} caracteres"
       surveys:
         finish_on: "Caso você especificar 'terminar em' o número de repetições<br>será calculado automaticamente"
+        started: "already started"
     labels:
       defaults:
         title: "Título"
