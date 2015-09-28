@@ -23,7 +23,7 @@ question3.update_attribute(:title, 'put translation here')
 
 I18n.locale = :pt
 
-survey.update_attribute(:title: 'Job Satisfaction')
+survey.update_attribute(:title, 'Job Satisfaction')
 question1.update_attribute(:title, 'Levando tudo em consideração, o quão satisfeito você está no trabalho?')
 question2.update_attribute(:title, 'put translation here')
 question3.update_attribute(:title, 'put translation here')
