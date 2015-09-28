@@ -27,11 +27,11 @@
       .block-frame
         = f.input :start_on, as: :string,
           label: t('simple_form.labels.surveys.start_at'),
-          label_html: { class: 'style01' }
+          label_html: { class: 'style01' },
           input_html: { class: 'schedule-setter',
                         class: survey.started? ? 'started' : 'survey_start_on',
                         value: survey.set_start_on },
-          hint: survey.started? ? t('simple_form.hints.syrveys.started') : nil,
+          hint: survey.started? ? 'already started' : nil,
           readonly: true
         = f.error :start_on
         br
@@ -72,12 +72,6 @@
           label_html: { class: 'style01' },
           readonly: true
         = f.error :number_of_repeats
-
-        = f.input :finish_on, as: :string,
-          label: t('simple_form.labels.surveys.finish_on'),
-          label_html: { class: 'style01' },
-          hint: t('simple_form.hints.surveys.finish_on').html_safe
-        = f.error :finish_on
         <br><br>
 
       = f.input :message,

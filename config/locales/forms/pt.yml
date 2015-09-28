@@ -36,9 +36,8 @@ pt:
         current_password: "precisamos da sua senha atual para confirmar as alterações."
         password: "deixe em branco se não deseja alterar"
         password_length: " mínimo de %{chars_minimum} caracteres"
-      surveys:
-        finish_on: "Caso você especificar 'terminar em' o número de repetições<br>será calculado automaticamente"
-        started: "already started"
+      company_survey:
+        number_of_repeats: "min 2, max 1000"
     labels:
       defaults:
         title: "Título"
