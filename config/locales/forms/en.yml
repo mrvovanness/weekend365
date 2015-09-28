@@ -62,7 +62,6 @@ en:
         send_to: "Send to (%{employees_count}):"
         start_at: "start at (Tokyo time)"
         number_of_repeats: 'Number of email sendings'
-        finish_on: 'Finish on'
     placeholders:
       signups:
         password: "8 characters minimum"
