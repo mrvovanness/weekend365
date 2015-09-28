@@ -66,9 +66,8 @@ en:
     placeholders:
       signups:
         password: "8 characters minimum"
-      surveys:
-        repeat_every: "max 365"
-        number_of_repeats: "max 1000"
+      company_survey:
+        number_of_repeats: "calculating..."
     surveys:
       title: "%{survey_title} for %{company_name}"
   buttons:
