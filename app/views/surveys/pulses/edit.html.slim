@@ -1,4 +1,6 @@
 #main
   .inform-panel.clearfix
     h1 = link_to t('surveys.edit.title'), '#'
-  = render 'form', survey: @survey, offered_questions: @offered_questions
+  = render 'form',
+    survey: @survey,
+    offered_questions: @offered_questions

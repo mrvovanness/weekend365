@@ -6,8 +6,7 @@
     .row
       = f.input_field :title,
         class: 'style05',
-        value: survey.title ? survey.title : t('simple_form.surveys.title',
-        survey_title: @offered_survey.title, company_name: @company.name),
+        value: survey.set_title(@offered_survey, survey.company),
         autofocus: true
       = f.error :title
 
@@ -27,12 +26,11 @@
         = f.label :repeat, t('simple_form.labels.surveys.repeat')
       .block-frame
         = f.input :start_on, as: :string,
-          label: t('simple_form.labels.surveys.start_at'),
           label_html: { class: 'style01' },
           input_html: { class: 'schedule-setter',
                         class: survey.started? ? 'started' : 'survey_start_on',
                         value: survey.set_start_on },
-          hint: survey.started? ? 'already started' : nil,
+          hint: survey.set_hint_for_start_on,
           readonly: true
         = f.error :start_on
         br
@@ -54,7 +52,7 @@
 
         = f.input :repeat_mode,
           collection: [[t('surveys.form.days'), 'd'],
-          [t('surveys.form.weeks'), 'w']],
+                       [t('surveys.form.weeks'), 'w']],
           label: false,
           input_html: { class: 'schedule-setter' },
           include_blank: false
@@ -76,7 +74,6 @@
         <br><br>
 
       = f.input :message,
-        label: t('simple_form.labels.surveys.message'),
         label_html: { class: 'style01' },
         wrapper_html: { class: 'row' },
         input_html: { class: 'style01' }
@@ -84,10 +81,10 @@
 
     = f.input :employee_ids,
       collection: survey.company.employees.order(:name),
-      label: t('simple_form.labels.surveys.employee_ids'),
       wrapper_html: { class: 'size01' },
       label_html: { class: 'style01' },
-      input_html: { multiple: true },
+      input_html: { multiple: true, id: 'employee_ids' },
+      placeholder: t('simple_form.placeholders.company_survey.employee_ids'),
       include_blank: false
     <br><br>
 
@@ -98,9 +95,10 @@
 
   .btns-holder.clearfix
     .btns
-      = link_to t('helpers.links.destroy'), surveys_pulse_path(survey),
+      = link_to t('helpers.links.destroy'),
+        surveys_pulse_path(survey),
         method: :delete,
         id: 'delete-survey',
         data: { confirm: t('helpers.links.confirm') }\
         unless survey.new_record?
-      = f.submit t('simple_form.buttons.surveys.form.submit'), class: 'btn-save'
+      = f.submit class: 'btn-save'

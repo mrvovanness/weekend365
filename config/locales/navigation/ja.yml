@@ -60,8 +60,8 @@ ja:
     surveys: "サーベイ"
   views:
     pagination:
-      first: "First"
+      first: "First -translate"
       last: "Last"
       previous: "Prev"
       next: "Next"
-      truncate: "Truncate"
+      truncate: "..."

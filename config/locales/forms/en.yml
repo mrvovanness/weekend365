@@ -1,4 +1,13 @@
 en:
+  helpers:
+    submit:
+      company_survey:
+        create: 'Save'
+        update: 'Change'
+      employee:
+        submit: "Save"
+      company:
+        update: "Save"
   simple_form:
     "yes": 'Yes'
     "no": 'No'
@@ -21,14 +30,10 @@ en:
       unlock:
         new:
           submit: "Resend unlock instructions"
-      employees:
-        submit: "Save"
       signups:
         new:
           submit: "Sign up"
       surveys:
-        form:
-          submit: "Save"
         preview:
           submit: "Update employees"
     hints:
@@ -38,6 +43,7 @@ en:
         password_length: "%{chars_minimum} characters minimum"
       company_survey:
         number_of_repeats: "min 2, max 1000"
+        start_on_opt: "Already started"
     labels:
       defaults:
         title: "Title"
@@ -53,22 +59,32 @@ en:
       password:
         confirmation: "Confirm your new password"
         new_password: "New password"
-      surveys:
-        employee_ids: "Send to"
+      company_survey:
+        start_on: "start on (Tokyo time)"
+        time: "Time"
+        repeat_every: "Repeat every"
+        finish_on: "Finish on"
+        number_of_repeats: "Number of repeats"
         message: "Message to employee"
+        employee_ids: "Send to"
         once: "Once"
         repeat: "Repeat"
-        repeat_every: "Repeat every"
         send_to: "Send to (%{employees_count}):"
-        start_at: "start at (Tokyo time)"
-        number_of_repeats: 'Number of email sendings'
+      employee:
+        name: "Name"
+        department: "Department"
+        position: "Position"
+        email: "Email"
+        gender: "Gender"
+        birthday: "Birthday"
+        country: "Country"
     placeholders:
       signups:
         password: "8 characters minimum"
       company_survey:
         number_of_repeats: "calculating..."
-    surveys:
-      title: "%{survey_title} for %{company_name}"
+        title: "%{survey_title} for %{company_name}"
+        employee_ids: "Search by name, department, position..."
   buttons:
     employees:
       import_csv: "Upload csv file"
