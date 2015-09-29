@@ -12,10 +12,10 @@ ja:
       confirm: "ご確認上で続きますか？"
       destroy: "削除"
       new: "新規"
-      show: "Show"
+      show: "見せる"
       edit: "編集"
-      about: "about"
-      add_company: "Add a New Company"
+      about: "詳しく"
+      add_company: "会社を新規作成"
       add_employee: "社員追加"
       add_survey: "サーベイ追加"
       back_to_dashboard: "ダッシュボードに戻る"
@@ -41,7 +41,7 @@ ja:
       sign_up: "サインアップ"
       undo: "取り消す"
       unlock_account: "アカウントをアンロック"
-      pulse_survey: "Pulse Survey"
+      pulse_survey: "パルスサーベイ"
     titles:
       edit: "編集"
       save: "保存"
@@ -49,7 +49,7 @@ ja:
       delete: "削除"
   upperbar:
     company: "会社"
-    companies: "COMPANIES"
+    companies: "会社"
     dashboard: "ダッシュボード"
     languages:
       en: "English"
@@ -63,8 +63,8 @@ ja:
     surveys: "サーベイ"
   views:
     pagination:
-      first: "First -translate"
-      last: "Last"
-      previous: "Prev"
-      next: "Next"
+      first: "最初"
+      last: "最後"
+      previous: "前"
+      next: "次"
       truncate: "..."

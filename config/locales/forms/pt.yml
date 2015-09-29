@@ -2,8 +2,8 @@ pt:
   helpers:
     submit:
       company_survey:
-        create: "Save"
-        update: "Change"
+        create: "Salvar"
+        update: "Alterar"
       employee:
         submit: "Salvar"
       company:
@@ -43,7 +43,7 @@ pt:
         password_length: " mínimo de %{chars_minimum} caracteres"
       company_survey:
         number_of_repeats: "min 2, max 1000"
-        start_on_opt: "Already started -translate"
+        start_on_opt: "Pesquisa em andamento."
     labels:
       defaults:
         title: "Título"
@@ -61,30 +61,30 @@ pt:
         new_password: "Nova Senha"
       company_survey:
         start_on: "Começar em (horário de Brasília)"
-        time: "Time-translate to Brazil"
+        time: "Hora"
         repeat_every: "Repetir toda"
-        finish_on: "Finish on-translate to Brazil"
-        number_of_repeats: "Number of repeats-translate to Brazil"
+        finish_on: "Terminar em"
+        number_of_repeats: "Número de repetições"
         message: "Mensagem para os Colaboradores"
         employee_ids: "Enviar para"
         once: "Uma Vez"
         repeat: "Repetir"
         send_to: "Enviar para (%{employees_count}):"
       employee:
-        name: "Name - translate"
-        department: "translate"
-        position: "translate"
-        email: "translate"
-        gender: "translate"
-        birthday: "translate"
-        country: "translate"
+        name: "Nome"
+        department: "Departamento"
+        position: "Posição"
+        email: "Email"
+        gender: "Gênero"
+        birthday: "Data de Nascimento"
+        country: "País"
     placeholders:
       signups:
         password: "mínimo de 8 caracteres"
       company_survey:
-        number_of_repeats: "calculating..."
+        number_of_repeats: "calculando..."
         title: "%{survey_title} para %{company_name}"
-        employee_ids: "Search by name, department, position... translate"
+        employee_ids: "Pesquisar por nome, departamento, posição..."
   buttons:
     employees:
       import_csv: "Upload arquivo csv"

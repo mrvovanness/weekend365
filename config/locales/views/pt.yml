@@ -3,9 +3,9 @@ pt:
     new:
       company_creation: "Por favor, adicione a sua Empresa"
     index:
-      title: "Companies"
-      name: "Name"
-      owner: "Owner"
+      title: "Empresas"
+      name: "Nome"
+      owner: "Proprietário"
   dashboard:
     index:
       title: "Dashboard"
@@ -45,7 +45,7 @@ pt:
       reset_password:
         greeting: "Olá"
         reset_password_message: "Alguém pediu um link para alterar a sua senha. Você pode alterar a sua senha no link abaixo."
-        ignore_message: "Se voçe não pediu por esse email, simplesmente ignore."
+        ignore_message: "Se voçê não pediu por esse email, simplesmente ignore."
         password_save_message: "Sua senha não será alterada até que você acesse o link acima e crie uma nova senha."
       unlock_account:
         greeting: "Olá"
@@ -82,7 +82,7 @@ pt:
       any_department: "Departmento (todos)"
       any_position: "Posição (todos)"
       delete_selected: "Deletar"
-      select_all: "Select all - translate"
+      select_all: "Todos(as)"
   pages:
     about:
       title: "Sobre nós"

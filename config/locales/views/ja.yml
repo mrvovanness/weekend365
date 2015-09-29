@@ -3,9 +3,9 @@ ja:
     new:
       company_creation: "会社の情報を入力してください"
     index:
-      title: "Companies"
-      name: "Name"
-      owner: "Owner"
+      title: "会社"
+      name: "名前"
+      owner: "オーナー"
   dashboard:
     index:
       title: "ダッシュボード"
@@ -74,7 +74,7 @@ ja:
     new:
       title: "社員を追加"
       import_description: '社員のリストをcsvファイルでアップロードができます'
-      choose_btn: 'choose button - translate'
+      choose_btn: '選択してください'
     edit:
       title: "社員を編集"
     index:
@@ -82,7 +82,7 @@ ja:
       any_department: "部署 「すべて」"
       any_position: "役職 「すべて」"
       delete_selected: "削除"
-      select_all: "Select all-translate"
+      select_all: "すべて"
   pages:
     about:
       title: "Weekendについて"
@@ -143,11 +143,11 @@ ja:
       question: "質問:"
   decorators:
     company_survey:
-      header: "Survey #%{id}: %{title}"
-      completed_status: "completed, sent %{counter} times"
-      uncompleted_status: "collecting, sent %{counter} times"
-      schedule: "Every %{repeat_every} %{repeat_period} at %{start_at} from %{start_from}"
-      day: "day"
-      week: "week"
-      daily_frequency: "every %{repeat_every} day(s) at %{start_at}"
-      weekly_frequency: "every %{repeat_every} week(s) on %{weekday} at %{daytime}"
+      header: "調査 #%{id}: %{title}"
+      completed_status: "終了、 %{counter} 回を送信されました"
+      uncompleted_status: "収集、 %{counter} 回を送信されました"
+      schedule: "毎　%{repeat_every} %{repeat_period}、 %{start_at}で %{start_from}から"
+      day: "日"
+      week: "週"
+      daily_frequency: "毎 %{repeat_every} 日、 %{start_at}"
+      weekly_frequency: "毎 %{repeat_every} 週、 %{weekday} 、 %{daytime}"
