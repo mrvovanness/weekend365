@@ -13,7 +13,7 @@ describe User do
   end
 
   it 'No access to admin panel' do
-    visit admin_root_path
+    visit companies_path
     expect(page).not_to have_content('Companies')
   end
 

@@ -2,6 +2,10 @@ en:
   companies:
     new:
       company_creation: "Please create your company"
+    index:
+      title: "Companies"
+      name: "Name"
+      owner: "Owner"
   dashboard:
     index:
       title: "Dashboard"

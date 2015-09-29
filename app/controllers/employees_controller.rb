@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :authenticate_user!, :set_company
+  before_action :authenticate_user!
   before_action :set_employee, only: [:edit, :update, :destroy]
   respond_to :json, only: :index
 
@@ -45,10 +45,6 @@ class EmployeesController < ApplicationController
 
   def redirect_to_company
     respond_with @employee, location: -> { company_path(@company) }
-  end
-
-  def set_company
-    @company = current_user.company
   end
 
   def set_employee

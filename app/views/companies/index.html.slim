@@ -1,0 +1,33 @@
+#main
+  .inform-panel.clearfix
+    h1.company-name = t('companies.index.title')
+  .filter-form
+    .panel.clearfix
+      = link_to t('helpers.links.add_company'),
+        new_signup_path,
+        class: 'link-add-new'
+    .filter-area
+      .sort-panel.clearfix
+        .col.col01
+          span = t('companies.index.name')
+        .col.col02
+          span = t('companies.index.owner')
+        .col.col03
+          span = t('helpers.actions')
+      - @companies.each do |company|
+        .row
+          .col.col01
+            span = company.name
+          .col.col02
+            span = company.user.name
+          .col.col03
+            span.actions
+              = link_to t('helpers.links.show'), company_path(company)
+              = link_to t('helpers.links.edit'), edit_company_path(company)
+              = link_to t('helpers.links.destroy'),
+                company_path(company),
+                method: :delete,
+                data: { confirm: t('helpers.links.confirm') }
+    .bottom-panel
+      = paginate @companies
+

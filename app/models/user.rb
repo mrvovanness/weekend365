@@ -4,4 +4,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   has_one :company
+
+  def is_admin?
+    has_role? :admin
+  end
 end

@@ -1239,10 +1239,8 @@ input[type="submit"].search,
 	//width:45px;
 }
 input[type="submit"].btn-save{
-	border:none;
-	height: 32px;
-	padding: 0 0 0 20px;
-	width: 108px;
+  border:none;
+  height: 32px;
   background: #f26522 image-url("sprite.png") no-repeat scroll 3px -503px;
 }
 a#delete-employee {
@@ -1991,3 +1989,6 @@ input[type="submit"].btn-save:hover{background: #ad3114 image-url("sprite.png") 
 :focus::-webkit-input-placeholder {color: transparent}
 :focus::-moz-placeholder{color: transparent}
 :focus:-moz-placeholder{color: transparent}
+.actions a {
+  margin-right: 10px;
+}
