@@ -32,11 +32,14 @@
         data: { type: :json, remote: true, method: :patch } do |f|
         = f.input :employee_ids,
           collection: @survey.company.employees.order(:name),
-          label: t('simple_form.labels.surveys.send_to',
+          label: t('simple_form.labels.company_survey.send_to',
                     employees_count: @survey.employees.count),
-          label_html: { class: 'style01' },
+          label_html: { class: 'style01',
+                        id: 'send_to-label' },
           wrapper_html: { class: 'row' },
-          input_html: { multiple: true, class: 'style01' },
+          input_html: { multiple: true,
+                        class: 'style01',
+                        id: 'employee_ids' },
           include_blank: false
         br
         = f.hidden_field :skip_callback, value: true

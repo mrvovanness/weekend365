@@ -20,7 +20,10 @@
       = survey.get_statistics.average_by_industry
   .graph-holder
     = line_chart [\
-      { name: t('dashboard.survey_result.you'), data: survey.get_charts.average },
-      { name: t('dashboard.survey_result.industry'), data: survey.get_charts.average_by_industry },
-      { name: t('dashboard.survey_result.country'), data: survey.get_charts.average_by_country }\
+      { name: t('dashboard.survey_result.country'),
+        data: survey.get_charts.average_by_country },
+      { name: t('dashboard.survey_result.industry'),
+        data: survey.get_charts.average_by_industry },
+      { name: t('dashboard.survey_result.you'),
+        data: survey.get_charts.average_by_company }\
     ], library: { legend: { position: 'top' }, curveType: 'function' }

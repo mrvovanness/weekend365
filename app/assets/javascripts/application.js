@@ -13,5 +13,5 @@ $(document).ready(function() {
     });
   }, 4000);
 
-  $('.checkable, .selectable').styler()
+  $('.checkable, .selectable').styler();
 })
