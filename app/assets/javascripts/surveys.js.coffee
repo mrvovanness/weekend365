@@ -1,23 +1,31 @@
 jQuery ->
 
-  # Dinamically add/remove email recepients and respond with number of recipients
+  # Dinamically add/remove email recepients and respond with number of recipients in label text
+  number = new RegExp(/\([0-9]\):/)
+  labelText = $('#send_to-label').text().replace(number, '')
+
   $('.edit_company_survey').on 'ajax:complete', (e, data, status, xhr) ->
     message = JSON.parse(data.responseText)
-    $('.control-label', this).html('Send to ' + '(' + message.employees_count + '):')
+    $('.control-label', this).html(
+      labelText + '(' + message.employees_count + '):'
+    )
 
   $('.survey_start_on').datetimepicker
     format: 'Y-m-d'
     timepicker: false
     minDate: '+1970/01/02'
+    lang: $('html').attr('lang')
 
   $('#company_survey_time').datetimepicker
     format: 'H:i'
     datepicker: false
+    lang: $('html').attr('lang')
 
   $('#company_survey_finish_on').datetimepicker
     format: 'Y-m-d'
     timepicker: false
     minDate: '+1970/01/03'
+    lang: $('html').attr('lang')
 
   # just helper for ajax response
   joinValues = (obj) ->

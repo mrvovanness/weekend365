@@ -19,3 +19,4 @@ jQuery ->
   $('#employee_birthday').datetimepicker
     timepicker: false
     format: 'Y-M-d'
+    lang: $('html').attr('lang')

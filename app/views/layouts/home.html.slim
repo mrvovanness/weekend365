@@ -1,5 +1,5 @@
 doctype html
-html
+html lang="#{I18n.locale}"
   head
     title = full_title(yield(:title))
 
@@ -8,6 +8,7 @@ html
     = javascript_include_tag 'application'
     = csrf_meta_tags
   body.home
+    = render 'layouts/ga'
     = render 'layouts/messages'
     .wrapper-holder
       #wrapper

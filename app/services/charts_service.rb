@@ -8,7 +8,7 @@ class ChartsService
       .group_by_day(:created_at).count
   end
 
-  def average
+  def average_by_company
     OfferedAnswer.joins(:answers)
       .where(answers: { result: @survey.results })
       .group_by_day('answers.created_at')
