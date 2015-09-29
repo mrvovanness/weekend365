@@ -13,7 +13,9 @@ pt:
       destroy: "Deletar"
       edit: "Editar"
       new: "Novo"
+      show: "Show"
       about: "sobre"
+      add_company: "Add a New Company"
       add_employee: "Adicionar um Novo Funcionário"
       add_survey: "Adicionar uma Nova Pesquisa"
       back_to_dashboard: "Voltar para o Dashboard"
@@ -47,6 +49,7 @@ pt:
       delete: "Deletar %{model}"
   upperbar:
     company: "EMPRESA"
+    companies: "COMPANIES"
     dashboard: "DASHBOARD"
     languages:
       en: "English"

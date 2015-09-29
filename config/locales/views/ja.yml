@@ -2,6 +2,10 @@ ja:
   companies:
     new:
       company_creation: "会社の情報を入力してください"
+    index:
+      title: "Companies"
+      name: "Name"
+      owner: "Owner"
   dashboard:
     index:
       title: "ダッシュボード"

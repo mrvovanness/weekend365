@@ -12,8 +12,10 @@ ja:
       confirm: "ご確認上で続きますか？"
       destroy: "削除"
       new: "新規"
+      show: "Show"
       edit: "編集"
       about: "about"
+      add_company: "Add a New Company"
       add_employee: "社員追加"
       add_survey: "サーベイ追加"
       back_to_dashboard: "ダッシュボードに戻る"
@@ -47,6 +49,7 @@ ja:
       delete: "削除"
   upperbar:
     company: "会社"
+    companies: "COMPANIES"
     dashboard: "ダッシュボード"
     languages:
       en: "English"

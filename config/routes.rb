@@ -2,12 +2,11 @@ Rails.application.routes.draw do
 
   get 'signup' => 'signups#new', as: :new_signup
   post 'signup' => 'signups#create', as: :signups
-  ActiveAdmin.routes(self)
   devise_for :users, skip: [:registrations]
 
   root 'home#index'
 
-  resources :companies, except: :index
+  resources :companies
 
   resources :employees do
     collection do

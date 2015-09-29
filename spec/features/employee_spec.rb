@@ -12,7 +12,7 @@ describe Employee do
     click_on employee.name
     fill_in 'Name', with: 'Boris'
     fill_in 'Email', with: 'exe@mail.com'
-    click_on 'Save'
+    click_on 'Update Employee'
     expect(page).to have_content('Employee was successfully updated')
   end
 
@@ -20,7 +20,7 @@ describe Employee do
     click_on employee.name
     fill_in 'Name', with: ''
     fill_in 'Email', with: ''
-    click_on 'Save'
+    click_on 'Update Employee'
     expect(page).to have_content('Employee could not be updated')
   end
 
@@ -28,15 +28,15 @@ describe Employee do
     click_on 'Add a New Employee'
     fill_in 'Name', with: 'Boris'
     fill_in 'Email', with: 'ex@mail.com'
-    click_on 'Save'
+    click_on 'Create Employee'
     expect(page).to have_content('Employee was successfully created')
   end
 
-  it 'Create success' do
+  it 'Create failure' do
     click_on 'Add a New Employee'
     fill_in 'Name', with: ''
     fill_in 'Email', with: ''
-    click_on 'Save'
+    click_on 'Create Employee'
     expect(page).to have_content('Employee could not be created')
   end
 end

@@ -1,5 +1,5 @@
 class Surveys::PulsesController < ApplicationController
-  before_action :authenticate_user!, :set_company
+  before_action :authenticate_user!
   before_action :set_survey, except: [:index, :new, :create]
   respond_to :json, only: :update_employees
 
@@ -52,10 +52,6 @@ class Surveys::PulsesController < ApplicationController
       :number_of_repeats, :repeat_every,
       :repeat_mode, :message, :skip_callback,
       :employee_ids => [], :offered_question_ids => [])
-  end
-
-  def set_company
-    @company = current_user.company
   end
 
   def set_survey
