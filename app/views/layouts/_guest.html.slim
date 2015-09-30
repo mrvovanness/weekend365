@@ -1,0 +1,15 @@
+#container
+  header#header.clearfix  
+    = link_to root_path do
+      = image_tag('logo03.png', alt: 'weekend', size: '106x19', class: 'logo')
+    ul.links
+    ul.links.alignright
+      li.lang
+        = link_to params.merge(locale: I18n.locale, only_path: true) do
+          = t("upperbar.languages.#{I18n.locale}")
+        .drop
+          ul
+            - I18n.available_locales.each do |locale|
+              - next if locale == I18n.locale
+              li = link_to params.merge(locale: locale, only_path: true) do
+                = t("upperbar.languages.#{locale}")
