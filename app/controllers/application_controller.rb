@@ -8,10 +8,13 @@ class ApplicationController < ActionController::Base
   respond_to :html
   protect_from_forgery with: :exception
 
-  # Don't access admin panel for usual user
-  def authenticate_admin_user!
-    redirect_to root_path unless user_signed_in? &&
-      current_user.has_role?(:admin)
+  def after_sign_in_path_for(resource)
+    if (current_user.updated_at - current_user.confirmed_at) <= 1
+      current_user.touch
+      edit_company_path(current_user.company)
+    else
+      dashboard_index_path
+    end
   end
 
   private
