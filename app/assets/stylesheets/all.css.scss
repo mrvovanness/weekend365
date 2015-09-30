@@ -106,7 +106,8 @@ p{margin:0 0 10px;}
 }
 .w4{
 	width:100%;
-  display:table-row;
+    height: 100%;
+    display:table-row;
 	background:image-url("signin-asian-bg.jpg") no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -1991,4 +1992,9 @@ input[type="submit"].btn-save:hover{background: #ad3114 image-url("sprite.png") 
 :focus:-moz-placeholder{color: transparent}
 .actions a {
   margin-right: 10px;
+}
+#container {
+  width: 904px;
+  margin: 0 auto;
+  padding-left: 18px;
 }
