@@ -6,6 +6,7 @@ pt:
       title: "Empresas"
       name: "Nome"
       owner: "Proprietário"
+      my_own: "(minha própria)"
   dashboard:
     index:
       title: "Dashboard"

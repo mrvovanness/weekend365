@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926151543) do
+ActiveRecord::Schema.define(version: 20150930075214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,17 @@ ActiveRecord::Schema.define(version: 20150926151543) do
 
   add_index "companies", ["company_field_id"], name: "index_companies_on_company_field_id", using: :btree
   add_index "companies", ["user_id"], name: "index_companies_on_user_id", using: :btree
+
+  create_table "company_field_translations", force: :cascade do |t|
+    t.integer  "company_field_id", null: false
+    t.string   "locale",           null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.string   "name"
+  end
+
+  add_index "company_field_translations", ["company_field_id"], name: "index_company_field_translations_on_company_field_id", using: :btree
+  add_index "company_field_translations", ["locale"], name: "index_company_field_translations_on_locale", using: :btree
 
   create_table "company_fields", force: :cascade do |t|
     t.string   "name"
@@ -141,6 +152,17 @@ ActiveRecord::Schema.define(version: 20150926151543) do
     t.datetime "updated_at", null: false
     t.string   "type"
   end
+
+  create_table "offered_survey_translations", force: :cascade do |t|
+    t.integer  "offered_survey_id", null: false
+    t.string   "locale",            null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.string   "title"
+  end
+
+  add_index "offered_survey_translations", ["locale"], name: "index_offered_survey_translations_on_locale", using: :btree
+  add_index "offered_survey_translations", ["offered_survey_id"], name: "index_offered_survey_translations_on_offered_survey_id", using: :btree
 
   create_table "offered_surveys", force: :cascade do |t|
     t.string   "title"

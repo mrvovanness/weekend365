@@ -3,7 +3,7 @@ header#header.clearfix
     = image_tag('logo03.png', alt: 'weekend', size: '106x19', class: 'logo')
   ul.links
     li.company
-      - if user_is_admin?
+      - if current_user.is_admin?
         = link_to t('upperbar.companies'), companies_path
       - else
         = link_to t('upperbar.company'), company_path(current_user.company)
@@ -23,11 +23,13 @@ header#header.clearfix
               = t("upperbar.languages.#{locale}")
 
     li.username
-      = link_to t('upperbar.menu.title'), '#'
+      = link_to truncate(current_user.name), '#'
       .drop
         ul
-          li = link_to t('upperbar.menu.edit_company'), edit_company_path(current_user.company) if current_user.company
-          li = link_to t('upperbar.menu.log_out'), destroy_user_session_path
-          - if current_user && user_is_admin?
-            li
-              = link_to t('upperbar.menu.admin'), companies_path
+          li = link_to t('upperbar.menu.edit_company'),
+               edit_company_path(current_user.company)
+          li = link_to t('upperbar.menu.log_out'),
+               destroy_user_session_path
+
+          - if current_user.is_admin?
+            li = link_to t('upperbar.menu.admin'), companies_path

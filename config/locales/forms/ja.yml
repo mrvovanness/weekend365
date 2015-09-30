@@ -62,7 +62,7 @@ ja:
       company_survey:
         start_on: "始まる (東京の時間)"
         time: "時間"
-        repeat_every: "リピート(週/日)"
+        repeat_every: "リピート"
         finish_on: "終了日"
         number_of_repeats: "リピート回数"
         message: "社員にメッセージ"
