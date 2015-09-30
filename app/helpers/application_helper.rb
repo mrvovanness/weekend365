@@ -22,8 +22,4 @@ module ApplicationHelper
       link_to link_text, link_path
     end
   end
-
-  def user_is_admin?
-    current_user.has_role? :admin
-  end
 end

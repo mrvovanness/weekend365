@@ -6,6 +6,7 @@ ja:
       title: "会社"
       name: "名前"
       owner: "オーナー"
+      my_own: "(自分)"
   dashboard:
     index:
       title: "ダッシュボード"

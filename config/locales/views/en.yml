@@ -6,6 +6,7 @@ en:
       title: "Companies"
       name: "Name"
       owner: "Owner"
+      my_own: "(my own)"
   dashboard:
     index:
       title: "Dashboard"

@@ -9,6 +9,7 @@
       .label-holder
         = f.label :company_field
       = f.association :company_field,
+        collection: CompanyField.includes(:translations),
         label: false,
         input_html: { class: 'selectable' }
     .row
