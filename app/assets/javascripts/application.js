@@ -11,7 +11,7 @@ $(document).ready(function() {
     $('#flash_wrapper').fadeOut('slow', function() {
       $(this).remove();
     });
-  }, 4000);
+  }, 6000);
 
   $('.checkable, .selectable').styler();
 })

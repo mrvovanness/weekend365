@@ -42,6 +42,8 @@ en:
       undo: "Undo"
       unlock_account: "Unlock my account"
       pulse_survey: "Pulse Survey"
+      privacy_policy: "Privacy Policy"
+      weekend_blog: "Weekend blog"
     titles:
       edit: "Edit %{model}"
       save: "Save %{model}"
