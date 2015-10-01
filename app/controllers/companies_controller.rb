@@ -6,8 +6,7 @@ class CompaniesController < ApplicationController
   before_action :reset_company, only: [:index]
 
   def index
-    @companies = Company.order(:name).includes(:user)
-                   .page(params[:page]).per(15)
+    @companies = Company.order(:name).page(params[:page]).per(15)
   end
 
   def show

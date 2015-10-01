@@ -23,10 +23,10 @@ class Signup
 
   def save
     return false unless valid?
-    delegate_attributes_for_user
     delegate_attibutes_for_company
+    delegate_attributes_for_user
 
-    delegate_errors_for_user unless @user.valid?
+    delegate_errors_for_user
 
     if !errors.any?
       persist!
@@ -39,7 +39,7 @@ class Signup
   private
 
   def delegate_attributes_for_user
-    @user = User.new do |user|
+    @user = @company.users.new do |user|
       user.name = name
       user.email = email
       user.password = password
@@ -47,7 +47,7 @@ class Signup
   end
 
   def delegate_attibutes_for_company
-    @company = @user.build_company do |company|
+    @company = Company.new do |company|
       company.name = company_name
       company.country = country
     end
@@ -58,7 +58,6 @@ class Signup
   end
 
   def persist!
-    @user.save!
     @company.save!
   end
 end
