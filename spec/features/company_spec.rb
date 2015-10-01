@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe Company do
-  # FactoryGirl creates user through company
   let!(:company) { create(:company) }
+  let!(:user) { create(:user, company: company) }
 
   before do
     login('ex@mail.com', 'bigsecret')

@@ -4,5 +4,6 @@ FactoryGirl.define do
     password 'bigsecret'
     password_confirmation { password }
     confirmed_at Time.zone.now
+    company
   end
 end
