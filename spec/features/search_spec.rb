@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe Company do
   let!(:company) { create(:company_with_employees) }
+  let!(:user) { create(:user, company: company) }
 
   before do
     login('ex@mail.com', 'bigsecret')

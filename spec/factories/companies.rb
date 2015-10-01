@@ -1,7 +1,6 @@
 FactoryGirl.define do
   factory :company do
     name FFaker::Company.name
-    user
     company_field
 
     factory :company_with_employees do

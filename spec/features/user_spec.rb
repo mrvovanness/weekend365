@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 describe User do
-  # FactoryGirl creates user through company
   let!(:company) { create(:company) }
+  let!(:user) { create(:user, company: company) }
 
   context 'Access to admin panel' do
     before(:each) do
@@ -19,13 +19,13 @@ describe User do
     end
 
     it 'Link for admin' do
-      company.user.add_role :admin
+      user.add_role :admin
       visit root_path
       expect(page).to have_link('Admin')
     end
 
     it 'Access for admin' do
-      company.user.add_role :admin
+      user.add_role :admin
       visit root_path
       click_link 'Admin'
       expect(page).to have_content('Companies')
@@ -34,14 +34,14 @@ describe User do
 
   context 'After sign in' do
     it 'redirects to edit company page in first time' do
-      company.user.confirmed_at = DateTime.current
-      company.user.save
+      user.confirmed_at = DateTime.current
+      user.save
       login('ex@mail.com', 'bigsecret')
       expect(page).to have_content('company details')
     end
 
     it 'redirects to dashboard in other case' do
-      company.user.touch :updated_at
+      user.touch :updated_at
       login('ex@mail.com', 'bigsecret')
       expect(page).to have_content('Dashboard')
     end

@@ -2,8 +2,9 @@ require 'rails_helper'
 
 describe User do
   let!(:company) { create(:company) }
-  let!(:second_user) {create(:user, email: 'test@example.com')}
-  let!(:other_company) { create(:company, user: second_user) }
+  let!(:user) { create(:user, company: company) }
+  let!(:other_company) { create(:company) }
+  let!(:second_user) {create(:user, email: 'test@example.com', company: other_company)}
 
   before(:each) do
     login('ex@mail.com', 'bigsecret')
@@ -11,7 +12,7 @@ describe User do
 
   context 'with admin role' do
     before(:each) do
-      company.user.add_role :admin
+      user.add_role :admin
       visit root_path
       click_link 'Admin'
     end
