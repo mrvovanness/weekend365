@@ -49,7 +49,7 @@ class Surveys::PulsesController < ApplicationController
   def survey_params
     params.require(:company_survey).permit(
       :title, :start_on, :time, :finish_on,
-      :number_of_repeats, :repeat_every,
+      :number_of_repeats, :repeat_every, :locale,
       :repeat_mode, :message, :skip_callback,
       :employee_ids => [], :offered_question_ids => [])
   end

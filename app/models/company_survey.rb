@@ -9,7 +9,10 @@ class CompanySurvey < ActiveRecord::Base
     only_integer: true, greater_than: 1, less_than: 1001 }
 
   before_save :write_start_at,
-    unless: :started? || :skip_callback
+    unless: :started?
+
+  before_save :write_start_at,
+    unless: :skip_callback?
 
   after_save :add_schedule,
     unless: :skip_callback?

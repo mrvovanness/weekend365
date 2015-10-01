@@ -15,6 +15,7 @@ jQuery ->
     timepicker: false
     minDate: '+1970/01/02'
     lang: $('html').attr('lang')
+    scrollInput: false
 
   $('#company_survey_time').datetimepicker
     format: 'H:i'
@@ -26,6 +27,7 @@ jQuery ->
     timepicker: false
     minDate: '+1970/01/03'
     lang: $('html').attr('lang')
+    scrollInput: false
 
   # just helper for ajax response
   joinValues = (obj) ->

@@ -17,14 +17,14 @@ question3 = ScaledQuestion.find_or_create_by(
 I18n.locale = :ja
 
 survey.update_attribute(:title, '仕事の満足度サーベイ')
-question1.update_attribute(:title, 'あなたは今の仕事を総合的にみて、<br>どの程度満足していますか？')
+question1.update_attribute(:title, 'あなたは今の仕事を総合的にみて、どの程度満足していますか？')
 question2.update_attribute(:title, 'put translation here')
 question3.update_attribute(:title, 'put translation here')
 
 I18n.locale = :pt
 
 survey.update_attribute(:title, 'Pesquisa de Satisfação no Trabalho')
-question1.update_attribute(:title, 'Levando tudo em consideração, o quão <br>satisfeito você está no trabalho?')
+question1.update_attribute(:title, 'Levando tudo em consideração, o quão satisfeito você está no trabalho?')
 question2.update_attribute(:title, 'put translation here')
 question3.update_attribute(:title, 'put translation here')
 

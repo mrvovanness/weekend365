@@ -2,6 +2,8 @@ en:
   companies:
     new:
       company_creation: "Please create your company"
+    edit:
+      details: 'Company Details'
     index:
       title: "Companies"
       name: "Name"

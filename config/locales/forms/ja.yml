@@ -8,6 +8,8 @@ ja:
         submit: "送信"
       company:
         update: "保存"
+      signup:
+        create: "サインアップ"
   simple_form:
     "yes": 'はい'
     "no": 'いいえ'
@@ -19,28 +21,15 @@ ja:
     buttons:
       password:
         submit: "パスワードの変更"
-      registration:
-        edit:
-          submit: "更新"
-        new:
-          submit: "サインアップ"
       session:
         new:
           submit: "ログイン"
       unlock:
         new:
           submit: "アンロック案内をもう一回送る。"
-      signups:
-        new:
-          submit: "サインアップ"
       surveys:
         preview:
           submit: "社員の更新"
-    hints:
-      registration:
-        current_password: "変更の確認のために現在のパスワードを書いてください。"
-        password: "更新したくないであれば空白のママ"
-        password_length: "%{chars_minimum} 文字の最小"
       company_survey:
         number_of_repeats: "最小 2, 最大 1000"
         start_on_opt: "すでに始まっています。"
@@ -48,7 +37,7 @@ ja:
       defaults:
         title: "タイトル"
       company:
-        country: '国'
+        country: "国"
         description: '会社説明'
         employees_number: '社員数'
         employees_registered: '登録数'
@@ -59,6 +48,16 @@ ja:
       password:
         confirmation: "新のパスワードをご確認ください。"
         new_password: "新のパスワード"
+      user:
+        email: "メール"
+        password: "パスワード"
+        remember_me: "今度からログインのまま"
+      signup:
+        email: "メール"
+        name: "名前"
+        password: "新のパスワード"
+        company_name: "会社名"
+        country: "国"
       company_survey:
         start_on: "始まる (東京の時間)"
         time: "時間"
@@ -79,7 +78,7 @@ ja:
         birthday: "誕生日"
         country: "国"
     placeholders:
-      signups:
+      signup:
         password: "文字の最小 8 桁"
       company_survey:
         number_of_repeats: "計算中..."

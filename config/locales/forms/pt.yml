@@ -8,6 +8,8 @@ pt:
         submit: "Salvar"
       company:
         update: "Salvar"
+      signup:
+        create: "Cadastre-se"
   simple_form:
     "yes": 'Sim'
     "no": 'Não'
@@ -19,28 +21,16 @@ pt:
     buttons:
       password:
         submit: "Alterar a minha senha"
-      registration:
-        edit:
-          submit: "Atualizar"
-        new:
-          submit: "Cadastre-se"
       session:
         new:
           submit: "Login"
       unlock:
         new:
           submit: "Re-envie instruções para desbloqueio"
-      signups:
-        new:
-          submit: "Cadastre-se"
       surveys:
         preview:
           submit: "Atualizar colaboradores"
     hints:
-      registration:
-        current_password: "precisamos da sua senha atual para confirmar as alterações."
-        password: "deixe em branco se não deseja alterar"
-        password_length: " mínimo de %{chars_minimum} caracteres"
       company_survey:
         number_of_repeats: "min 2, max 1000"
         start_on_opt: "Pesquisa em andamento."
@@ -59,6 +49,16 @@ pt:
       password:
         confirmation: "Confirme sua nova senha"
         new_password: "Nova Senha"
+      user:
+        email: "Email"
+        password: "Senha"
+        remember_me: "Lembrar Login"
+      signup:
+        email: "Email"
+        name: "Nome"
+        password: "Nova Senha"
+        company_name: "Nome da Empresa"
+        country: "Pais"
       company_survey:
         start_on: "Começar em (horário de Brasília)"
         time: "Hora"
@@ -79,7 +79,7 @@ pt:
         birthday: "Data de Nascimento"
         country: "País"
     placeholders:
-      signups:
+      signup:
         password: "mínimo de 8 caracteres"
       company_survey:
         number_of_repeats: "calculando..."

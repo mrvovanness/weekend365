@@ -7,6 +7,8 @@ ja:
       name: "名前"
       owner: "オーナー"
       my_own: "(自分)"
+    edit:
+      details: '会社の詳細'
   dashboard:
     index:
       title: "ダッシュボード"
@@ -99,7 +101,7 @@ ja:
       title: "サーベイの種類を選択"
       rules_message: "一つの質問、メールの上で回答、短い期間複数回"
       questionnaire_message: "複数質問でサーベイ専用なページで回答"
-      coming_soon: "(coming soon)"
+      coming_soon: "(近日公開)"
     edit:
       title: "サーベイ編集"
     form:

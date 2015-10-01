@@ -8,6 +8,8 @@ en:
         submit: "Save"
       company:
         update: "Save"
+      signup:
+        create: "Sign me up"
   simple_form:
     "yes": 'Yes'
     "no": 'No'
@@ -30,9 +32,6 @@ en:
       unlock:
         new:
           submit: "Resend unlock instructions"
-      signups:
-        new:
-          submit: "Sign up"
       surveys:
         preview:
           submit: "Update employees"
@@ -59,6 +58,17 @@ en:
       password:
         confirmation: "Confirm your new password"
         new_password: "New password"
+      user:
+        email: "Email"
+        password: "Password"
+        remember_me: "Remember me"
+      signup:
+        email: "Email"
+        name: "Name"
+        password: "New Password"
+        company_name: "Company Name"
+        country: "Country"
+
       company_survey:
         start_on: "start on (Tokyo time)"
         time: "Time"
@@ -79,7 +89,7 @@ en:
         birthday: "Birthday"
         country: "Country"
     placeholders:
-      signups:
+      signup:
         password: "8 characters minimum"
       company_survey:
         number_of_repeats: "calculating..."
