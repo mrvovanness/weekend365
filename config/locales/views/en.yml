@@ -144,6 +144,11 @@ en:
     send_survey:
       title: "Welcome to weekend"
       question: "Question:"
+      action: "Just click the number of your choice <br />and that’s it!"
+      mistake_message: "If this email is not addressed to you or you think you are receiving it by a mistake, please send an email to"
+      company_admin: "who administrates the service at your company"
+      check_out: "Check out the"
+      hint_message: "to get hints on how to improve your work satisfaction transforming your company into a better place."
   decorators:
     company_survey:
       header: "Survey #%{id}: %{title}"

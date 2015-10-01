@@ -110,7 +110,7 @@
 												</tr>
 												<tr>
 													<td align="center" style="font:20px Arial, Helvetica, sans-serif; line-height:41px;  color:#f6881f;  text-transform:uppercase;">
-														Just click the number of your choice <br />and that’s it!
+                                                      <%= t('survey_mailers.send_survey.action').html_safe %>
 													</td>
 												</tr>
 												<tr>
@@ -118,7 +118,7 @@
 												</tr>
 												<tr>
 													<td align="center" style="font:16px Arial, Helvetica, sans-serif; line-height:30px;  color:#000;">
-														<a href="#" style="color:#000;  text-decoration:underline;">Privacy Policy</a>
+                                                      <a href="#" style="color:#000;  text-decoration:underline;"><%= t('helpers.links.privacy_policy') %></a>
 													</td>
 												</tr>
 												<tr>
@@ -132,7 +132,7 @@
 												</tr>
 												<tr>
 													<td style="font:18px Arial, Helvetica, sans-serif; line-height:25px; margin:0 0 15px; color:#343838; ">
-														If this email is not addressed to you or you think you are receiving it by a mistake, please send an email to <span style="text-decoration:underline;">xxxxx@xxxxxx</span> who administrates the service at your company
+                                                      <%= t('survey_mailers.send_survey.mistake_message') %> <span style="text-decoration:underline;"><%= mail_to @survey.company.users.first.email %></span> <%= t('survey_mailers.send_survey.company_admin') %>
 													</td>
 												</tr>
 												<tr>
@@ -156,7 +156,7 @@
 									</tr>
 									<tr>
 										<td width="10"></td>
-										<td  style="font:18px Arial, Helvetica, sans-serif; line-height:25px; margin:0 0 15px; color:#fff; ">Check out the <a href="#" style="color:#ffffff; text-decoration:underline;">Weekend blog</a> to get hints on how to improve your work satisfaction transforming your company into a better place.</td>
+										<td  style="font:18px Arial, Helvetica, sans-serif; line-height:25px; margin:0 0 15px; color:#fff; "><%= t('survey_mailers.send_survey.check_out') %> <a href="#" style="color:#ffffff; text-decoration:underline;"><%= t('helpers.links.weekend_blog') %></a> <%= t('survey_mailers.send_survey.hint_message') %></td>
 										<td width="10"></td>
 									</tr>
 									<tr>

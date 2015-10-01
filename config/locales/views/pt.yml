@@ -144,6 +144,11 @@ pt:
     send_survey:
       title: "Bem Vindo à Weekend"
       question: "Pergunta:"
+      action: "Just click the number of your choice <br />and that’s it! - TRANSLATE IT"
+      mistake_message: "If this email is not addressed to you or you think you are receiving it by a mistake, please send an email to - TRANSLATE IT"
+      company_admin: "who administrates the service at your company - TRANSLATE IT"
+      check_out: "Check out the - TRANSLATE IT"
+      hint_message: "to get hints on how to improve your work satisfaction transforming your company into a better place. - TRANSLATE IT"
   decorators:
     company_survey:
       header: "Pesquisa #%{id}: %{title}"

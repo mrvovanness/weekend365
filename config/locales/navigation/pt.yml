@@ -42,6 +42,8 @@ pt:
       undo: "Voltar"
       unlock_account: "Desbloquear minha conta"
       pulse_survey: "Pesquisa Pulso"
+      privacy_policy: "Privacy Policy - TRANSLATE IT"
+      weekend_blog: "Weekend blog - TRANSLATE IT"
     titles:
       edit: "Editar %{model}"
       save: "Salvar %{model}"
