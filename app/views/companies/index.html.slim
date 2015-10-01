@@ -21,7 +21,7 @@
               = company.name
               =< t('companies.index.my_own') if current_user.company == company
           .col.col02
-            span = company.user.name
+            span = users_list(company)
           .col.col03
             span.actions
               = link_to t('helpers.links.show'), company_path(company)

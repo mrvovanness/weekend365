@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   rolify
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
-
-  has_one :company
+  validates :company, presence: true
+  belongs_to :company, inverse_of: :users
 
   def is_admin?
     has_role? :admin

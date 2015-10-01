@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150930075214) do
+ActiveRecord::Schema.define(version: 20151001031304) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,12 +51,10 @@ ActiveRecord::Schema.define(version: 20150930075214) do
     t.string   "website"
     t.integer  "employees_number"
     t.integer  "employees_registered"
-    t.integer  "user_id"
     t.integer  "company_field_id"
   end
 
   add_index "companies", ["company_field_id"], name: "index_companies_on_company_field_id", using: :btree
-  add_index "companies", ["user_id"], name: "index_companies_on_user_id", using: :btree
 
   create_table "company_field_translations", force: :cascade do |t|
     t.integer  "company_field_id", null: false
@@ -227,8 +225,10 @@ ActiveRecord::Schema.define(version: 20150930075214) do
     t.datetime "updated_at"
     t.string   "name"
     t.string   "locale",                 default: "en"
+    t.integer  "company_id"
   end
 
+  add_index "users", ["company_id"], name: "index_users_on_company_id", using: :btree
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
