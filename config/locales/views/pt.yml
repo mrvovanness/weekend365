@@ -27,6 +27,7 @@ pt:
     show:
       title: "Resultados da Pesquisa"
       params_header: "Frequencia, Dia e Hora"
+      participation_rate_score: "Participation rate score: - TRANSLATE IT"
       score: "Nota"
       chart_titles:
         num_of_responses: "Número de respostas diárias"

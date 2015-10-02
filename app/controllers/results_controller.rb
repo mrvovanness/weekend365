@@ -16,6 +16,9 @@ class ResultsController < ApplicationController
           offered_answer_id: params[:offered_answer_id]
         )
         token.update(expired: true)
+        survey = token.company_survey
+        survey.skip_callback = true
+        survey.increment!(:number_of_responses)
       end
     when params[:token].nil?
       redirect_to root_path

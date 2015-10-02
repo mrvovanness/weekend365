@@ -29,6 +29,9 @@
           .info-holder
             span.info = t('dashboard.show.score')
             = render 'phrase_choosing', survey: @survey
+        p
+          = t('dashboard.show.participation_rate_score')
+          =< number_to_percentage(@survey.get_statistics.rate, precision: 0)
       .graph-holder
         = line_chart @survey.get_charts.number_of_responses,
           library: { title: t('dashboard.show.chart_titles.num_of_responses') }

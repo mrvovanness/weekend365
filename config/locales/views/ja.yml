@@ -27,6 +27,7 @@ ja:
     show:
       title: "サーベイ結果"
       params_header: "回数、日付、時間"
+      participation_rate_score: "Participation rate score: - TRANSLATE IT"
       score: "スコア"
       chart_titles:
         num_of_responses: "回答の数　日"

@@ -109,6 +109,7 @@ ActiveRecord::Schema.define(version: 20151003060116) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "locale"
+    t.integer  "emails_counter",      default: 0
   end
 
   add_index "company_surveys", ["company_id"], name: "index_company_surveys_on_company_id", using: :btree
@@ -226,9 +227,12 @@ ActiveRecord::Schema.define(version: 20151003060116) do
   create_table "tokens", force: :cascade do |t|
     t.string   "name"
     t.boolean  "expired"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+    t.integer  "company_survey_id"
   end
+
+  add_index "tokens", ["company_survey_id"], name: "index_tokens_on_company_survey_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",   null: false
