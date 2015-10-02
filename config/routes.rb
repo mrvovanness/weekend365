@@ -36,6 +36,9 @@ Rails.application.routes.draw do
   # route for handling email links
   get 'results' => 'results#add_result'
 
+  get 'contact' => 'contacts#new', as: :new_contact
+  post 'contact' => 'contacts#create', as: :contacts
+
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: '/letter_opener'
   end

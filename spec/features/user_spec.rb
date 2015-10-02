@@ -37,7 +37,7 @@ describe User do
       user.confirmed_at = DateTime.current
       user.save
       login('ex@mail.com', 'bigsecret')
-      expect(page).to have_content('company details')
+      expect(page).to have_content('Company Details')
     end
 
     it 'redirects to dashboard in other case' do

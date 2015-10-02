@@ -12,6 +12,10 @@ pt:
         alert: '%{resource_name} não pode ser deletado.'
       close:
         notice: '%{resource_name} foi fechado com sucesso.'
+    contacts:
+      create:
+        notice: 'Thank you for your message. We will contact you soon! - TRANSLATE IT'
+        alert: 'Cannot send message. - TRANSLATE IT'
     employees:
       add_to_survey:
         notice: 'Os colaboradores foram adicionados a pesquisa com sucesso.'

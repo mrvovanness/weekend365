@@ -12,6 +12,10 @@ ja:
         alert: '%{resource_name} は削除できません。'
       close:
         notice: '%{resource_name} を閉鎖しました。'
+    contacts:
+      create:
+        notice: 'Thank you for your message. We will contact you soon! - TRANSLATE IT'
+        alert: 'Cannot send message. - TRANSLATE IT'
     employees:
       add_to_survey:
         notice: '新しい社員をサーベイに追加完了しました。'

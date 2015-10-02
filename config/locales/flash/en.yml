@@ -12,6 +12,10 @@ en:
         alert: '%{resource_name} could not be destroyed.'
       close:
         notice: '%{resource_name} was sucessfully closed.'
+    contacts:
+      create:
+        notice: 'Thank you for your message. We will contact you soon!'
+        alert: 'Cannot send message.'
     employees:
       add_to_survey:
         notice: 'Employees were successfully added to survey'

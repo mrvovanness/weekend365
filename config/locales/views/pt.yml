@@ -9,6 +9,9 @@ pt:
       my_own: "(minha própria)"
     edit:
       details: 'Detalhe da Empresa'
+  contacts:
+    new:
+      title: "Send a message to us - TRANSLATE IT"
   dashboard:
     index:
       title: "Dashboard"

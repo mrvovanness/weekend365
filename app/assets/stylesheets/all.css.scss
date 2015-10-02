@@ -1465,7 +1465,6 @@ input[type="submit"].btn-save:hover{background: #ad3114 image-url("sprite.png") 
   font:14px/16px  'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
 }
 .form-group label{
-	float:left;
 	margin:7px 5px 0 0;
 }
 .send-block .link-clear:hover{background:#ad3114;}
@@ -1997,4 +1996,14 @@ input[type="submit"].btn-save:hover{background: #ad3114 image-url("sprite.png") 
   width: 904px;
   margin: 0 auto;
   padding-left: 18px;
+}
+.form-group textarea {
+  margin: 0 0 20px;
+  padding: 6px 5px;
+  width: 100%;
+  height: 113px;
+  box-sizing: border-box;
+  border: 1px solid #c1c1c2;
+  border-radius: 8px;
+  font-size: 13px;
 }

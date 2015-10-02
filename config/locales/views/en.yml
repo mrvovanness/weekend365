@@ -9,6 +9,9 @@ en:
       name: "Name"
       owner: "Owner"
       my_own: "(my own)"
+  contacts:
+    new:
+      title: "Send a message to us"
   dashboard:
     index:
       title: "Dashboard"
