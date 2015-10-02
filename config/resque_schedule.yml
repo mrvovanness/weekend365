@@ -1,0 +1,4 @@
+SetTokensExpiredJob:
+  description: 'Mark all tokens older two weeks as expired'
+  queue: clear_old_tokens
+  cron: "0 1 * * *"

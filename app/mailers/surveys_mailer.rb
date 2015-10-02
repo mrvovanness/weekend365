@@ -4,7 +4,7 @@ class SurveysMailer < ActionMailer::Base
     token = Token.create(name: SecureRandom.hex(10), expired: false)
     @token = token.name
     @survey = survey
-    I18n.locale = @survey.locale.to_sym || :en
+    I18n.locale = (@survey.locale || 'en').to_sym
     @employee = employee
     mail(to: @employee.email, subject: @survey.title)
   end

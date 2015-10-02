@@ -15,6 +15,8 @@ namespace :resque do
   task :setup_schedule => :setup do
     require 'resque-scheduler'
     Resque::Scheduler.dynamic = true
+
+    Resque.schedule = YAML.load_file("#{Rails.root}/config/resque_schedule.yml")
   end
 
   task :scheduler => :setup_schedule
