@@ -2,7 +2,7 @@ class SurveysMailer < ActionMailer::Base
 
   def send_survey(survey, employee)
     I18n.locale = (@survey.locale || 'en').to_sym
-    token = Token.create(name: SecureRandom.hex(10), expired: false)
+    token = survey.tokens.create(name: SecureRandom.hex(10), expired: false)
     @survey = survey
     @answers = @survey.offered_questions.first.offered_answers
     @employee = employee

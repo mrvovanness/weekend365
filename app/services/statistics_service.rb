@@ -14,6 +14,14 @@ class StatisticsService
       .where(answers: { result: @survey.results }).count
   end
 
+  def rate
+    if @survey.emails_counter > 0
+      @survey.number_of_responses.to_f / @survey.emails_counter * 100
+    else
+      0
+    end
+  end
+
   def average_by_country
     OfferedAnswer.joins(:answers)
       .where(answers: { result: all_results_of_one_country })
