@@ -1,28 +1,28 @@
-Agriculture & Forestry Sector
-Arts, Entertainment & Recreation Sector
-Business Services Sector
-Construction Sector
+Agriculture & Forestry
+Arts, Entertainment & Recreation
+Business Services
+Construction
 Consumer Services
-Education Sector
+Education
 Electric Utilities
-Finance & Insurance Sector
+Finance & Insurance
 Government
-Health Care Sector
+Health Care
 Lodging
 Management of Companies & Enterprises
-Manufacturing Sector
+Manufacturing
 Media and Publishing
 Information Technology
 Membership Organizations
 Mining, Oil & Gas
 Nonprofit Institutions
 Private Households
-Professional Services Sector
+Professional Services
 Real Estate
 Religious Organizations
 Rental & Leasing
 Restaurants, Bars & Food Services
-Retail Sector
-Transportation Services Sector
+Retail
+Transportation Services
 Water & Sewer Utilities
-Wholesale Sector
+Wholesale
