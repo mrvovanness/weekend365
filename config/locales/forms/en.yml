@@ -21,6 +21,9 @@ en:
     error_notification:
       default_message: "Please review the problems below:"
     buttons:
+      confirmation:
+        show:
+          submit: "Activate"
       password:
         submit: "Change my password"
       registration:

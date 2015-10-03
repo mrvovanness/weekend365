@@ -1,0 +1,17 @@
+.btns
+  h2 = t('devise.confirmations.show.title')
+  = simple_form_for resource,
+    as: resource_name,
+    url: update_user_confirmation_path,
+    html: { method: :patch, class: 'login-form' } do |f|
+    = t('devise.confirmations.show.password_message')
+    fieldset
+      - if @requires_password 
+        = f.input :password
+        = f.error :password
+        = f.input :password_confirmation
+        = f.error :password_confirmation
+      = hidden_field_tag :confirmation_token, @confirmation_token
+
+      .login-holder
+        = f.submit t('simple_form.buttons.confirmation.show.submit'), class: 'btn btn-login'
