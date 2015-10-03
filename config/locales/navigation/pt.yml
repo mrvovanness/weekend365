@@ -45,6 +45,7 @@ pt:
       pulse_survey: "Pesquisa Pulso"
       privacy_policy: "Privacy Policy - TRANSLATE IT"
       weekend_blog: "Weekend blog - TRANSLATE IT"
+      articles: "Articles - Translate"
     titles:
       edit: "Editar %{model}"
       save: "Salvar %{model}"
