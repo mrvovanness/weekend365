@@ -96,6 +96,9 @@ ja:
     new:
       title: "サインアップ"
       account_message: "アカウントをもうすでに持っていますか?"
+  articles:
+    index:
+      title: 'Articles'
   surveys:
     dialog:
       title: "サーベイの種類を選択"

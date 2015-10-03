@@ -1,0 +1,15 @@
+= simple_form_for @article,
+  html: { class: 'info-form' },
+  url: admin_article_path(@article) do |f|
+  fieldset
+    .row
+      .label-holder
+        = f.label :title
+      = f.input_field :title,
+        disabled: true
+    .row
+      .label-holder
+        = f.label :body
+      = f.input_field :body
+    .row.btn-holder
+      = f.submit class: 'btn-save'

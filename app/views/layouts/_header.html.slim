@@ -23,9 +23,10 @@ header#header.clearfix
               = t("upperbar.languages.#{locale}")
 
     li.username
-      = link_to truncate(current_user.name), '#'
+      = link_to t('upperbar.menu.title'), '#'
       .drop
         ul
+          li: i logged in as #{ current_user.name.truncate(11) }
           li = link_to t('upperbar.menu.edit_company'),
                edit_company_path(current_user.company)
           li = link_to t('upperbar.menu.log_out'),

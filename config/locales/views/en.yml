@@ -96,6 +96,9 @@ en:
     new:
       title: "Sign up"
       account_message: "Have an account already?"
+  articles:
+    index:
+      title: 'Articles'
   surveys:
     dialog:
       title: "Choose type of Survey"

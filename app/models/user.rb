@@ -8,4 +8,8 @@ class User < ActiveRecord::Base
   def is_admin?
     has_role? :admin
   end
+
+  def is_usual?
+    !has_role? :admin
+  end
 end
