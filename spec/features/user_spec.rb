@@ -21,7 +21,7 @@ describe User do
     it 'Link for admin' do
       user.add_role :admin
       visit root_path
-      expect(page).to have_link('Admin')
+      expect(page).to have_content('Admin')
     end
 
     it 'Access for admin' do
