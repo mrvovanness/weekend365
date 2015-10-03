@@ -52,3 +52,5 @@ puts "surveys: #{OfferedSurvey.count}"
 puts "questions: #{OfferedQuestion.count}"
 puts "answers: #{OfferedAnswer.count}"
 puts "sqa assignments: #{SqaAssignment.count}"
+
+load "#{Rails.root}/db/seeds/articles.rb"

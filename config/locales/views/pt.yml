@@ -96,6 +96,9 @@ pt:
     new:
       title: "Cadastro"
       account_message: "Já possui uma conta?"
+  articles:
+    index:
+      title: 'Articles'
   surveys:
     dialog:
       title: "Escolha um tipo de pesquisa"

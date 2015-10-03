@@ -1,0 +1,20 @@
+#main
+  .inform-panel.clearfix
+    h1.company-name = t('articles.index.title')
+  .filter-form
+    .filter-area
+      .sort-panel.clearfix
+        .col.col01
+          span = t('articles.index.name')
+        .col.col02
+          span = t('helpers.actions')
+      - @articles.each do |article|
+        .row
+          .col.col01
+            span = article.title
+          .col.col02
+            span.actions
+              = link_to t('helpers.links.edit'),
+                edit_admin_article_path(article)
+          .col.col03
+            = article.body.html_safe

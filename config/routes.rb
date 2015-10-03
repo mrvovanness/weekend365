@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :companies
+  resources :dashboard, only: [:index, :show]
 
   resources :employees do
     collection do
@@ -25,7 +26,10 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :dashboard, only: [:index, :show]
+  namespace :admin do
+    resources :articles, only: [:index, :edit, :update]
+  end
+
   get 'about' => 'pages#about'
   mount Resque::Server, at: '/background'
 
