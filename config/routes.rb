@@ -2,7 +2,10 @@ Rails.application.routes.draw do
 
   get 'signup' => 'signups#new', as: :new_signup
   post 'signup' => 'signups#create', as: :signups
-  devise_for :users, skip: [:registrations]
+  as :user do
+    patch '/user/confirmation' => 'confirmations#update', :via => :patch, :as => :update_user_confirmation
+  end
+  devise_for :users, :controllers => { :confirmations => "confirmations" }, skip: [:registrations]
 
   root 'home#index'
 

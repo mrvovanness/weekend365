@@ -24,6 +24,7 @@ en:
       cancel_account: "Cancel my account"
       change_password: "Change my password"
       confirm_account: "Confirm my account"
+      contact_us: "Contact"
       create_survey: "Create new Survey"
       did_not_receive_confirmation: "Didn't receive confirmation instructions?"
       did_not_receive_unlock: "Didn't receive unlock instructions?"

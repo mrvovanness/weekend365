@@ -21,6 +21,9 @@ pt:
     error_notification:
       default_message: "Por favor, revise os problemas abaixo:"
     buttons:
+      confirmation:
+        show:
+          submit: "Activate - TRANSLATE IT"
       password:
         submit: "Alterar a minha senha"
       session:

@@ -9,12 +9,10 @@ class Signup
 
   attribute :name, String
   attribute :email, String
-  attribute :password, String
   attribute :company_name, String
   attribute :country, String
 
-  validates :email, :name, :company_name, :password, :country, presence: true
-  validates :password, length: { minimum: 8 }
+  validates :email, :name, :company_name, :country, presence: true
   validates :name, :company_name, length: { minimum: 2 }
 
   def persisted?
@@ -42,7 +40,6 @@ class Signup
     @user = @company.users.new do |user|
       user.name = name
       user.email = email
-      user.password = password
     end
   end
 

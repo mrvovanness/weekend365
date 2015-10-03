@@ -44,6 +44,10 @@ ja:
       industry: "業界"
       you: "あなた"
   devise:
+    confirmations:
+      show:
+        title: "Activate your account - TRANSLATE IT"
+        password_message: "Please, create the password for your account: - TRANSLATE IT"
     mailer:
       confirmation:
         welcome: "ようこそ"

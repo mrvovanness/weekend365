@@ -44,6 +44,10 @@ en:
       industry: "Industry"
       you: "You"
   devise:
+    confirmations:
+      show:
+        title: "Activate your account"
+        password_message: "Please, create the password for your account:"
     mailer:
       confirmation:
         welcome: "Welcome"

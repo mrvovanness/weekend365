@@ -21,6 +21,9 @@ ja:
     error_notification:
       default_message: "下のエラーをご確認ください:"
     buttons:
+      confirmation:
+        show:
+          submit: "Activate - TRANSLATE IT"
       password:
         submit: "パスワードの変更"
       session:
