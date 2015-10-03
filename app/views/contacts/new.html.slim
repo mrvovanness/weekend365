@@ -1,0 +1,19 @@
+.btns
+  h2 =t('contacts.new.title')
+  = simple_form_for @contact, html: { class: 'login-form' } do |f|
+    fieldset
+
+      = f.input :name
+      = f.error :name
+      = f.input :company_name
+      = f.error :company_name
+      = f.input :email
+      = f.error :email
+      = f.input :country,
+        input_html: { class: 'selectable' }
+      = f.error :country
+      br
+      = f.input :message, as: :text
+      = f.error :message
+      .login-holder
+        = f.submit class: 'btn btn-sign'

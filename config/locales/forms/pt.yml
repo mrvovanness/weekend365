@@ -1,13 +1,15 @@
 pt:
   helpers:
     submit:
+      company:
+        update: "Salvar"
       company_survey:
         create: "Salvar"
         update: "Alterar"
+      contact:
+        create: "Send - TRANSLATE IT"
       employee:
         submit: "Salvar"
-      company:
-        update: "Salvar"
       signup:
         create: "Cadastre-se"
   simple_form:
@@ -46,6 +48,12 @@ pt:
         name: 'Nome da Empresa'
         office_address: 'Endereço do escritório'
         website: 'Website'
+      contact:
+        name: 'Name - TRANSLATE IT'
+        company_name: 'Name of company - TRANSLATE IT'
+        email: 'Email - TRANSLATE IT'
+        country: 'Country - TRANSLATE IT'
+        message: 'Message - TRANSLATE IT'
       password:
         confirmation: "Confirme sua nova senha"
         new_password: "Nova Senha"

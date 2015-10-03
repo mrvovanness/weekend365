@@ -4,6 +4,8 @@ en:
       company_survey:
         create: 'Save'
         update: 'Change'
+      contact:
+        create: "Send"
       employee:
         submit: "Save"
       company:
@@ -55,6 +57,12 @@ en:
         name: 'Company Name'
         office_address: 'Office Address'
         website: 'Website'
+      contact:
+        name: 'Name'
+        company_name: 'Name of company'
+        email: 'Email'
+        country: 'Country'
+        message: 'Message'
       password:
         confirmation: "Confirm your new password"
         new_password: "New password"

@@ -4,6 +4,8 @@ ja:
       company_survey:
         create: "保存"
         update: "更新"
+      contact:
+        create: "Send - TRANSLATE IT"
       employee:
         submit: "送信"
       company:
@@ -45,6 +47,12 @@ ja:
         name: '会社名'
         office_address: 'オフィス住所'
         website: 'サイト'
+      contact:
+        name: 'Name - TRANSLATE IT'
+        company_name: 'Name of company - TRANSLATE IT'
+        email: 'Email - TRANSLATE IT'
+        country: 'Country - TRANSLATE IT'
+        message: 'Message - TRANSLATE IT'
       password:
         confirmation: "新のパスワードをご確認ください。"
         new_password: "新のパスワード"

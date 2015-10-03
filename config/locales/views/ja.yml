@@ -9,6 +9,9 @@ ja:
       my_own: "(自分)"
     edit:
       details: '会社の詳細'
+  contacts:
+    new:
+      title: "Send a message to us - TRANSLATE IT"
   dashboard:
     index:
       title: "ダッシュボード"
