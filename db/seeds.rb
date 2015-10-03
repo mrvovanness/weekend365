@@ -1,4 +1,5 @@
 #create default pulse survey with questions and offered answers
+load "#{Rails.root}/db/seeds/articles.rb"
 
 survey = PulseSurvey.find_or_create_by(title: 'Job Satisfaction')
 
@@ -53,4 +54,3 @@ puts "questions: #{OfferedQuestion.count}"
 puts "answers: #{OfferedAnswer.count}"
 puts "sqa assignments: #{SqaAssignment.count}"
 
-load "#{Rails.root}/db/seeds/articles.rb"
