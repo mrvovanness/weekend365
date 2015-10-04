@@ -7,7 +7,7 @@ pt:
         create: "Salvar"
         update: "Alterar"
       contact:
-        create: "Send - TRANSLATE IT"
+        create: "Enviar"
       employee:
         submit: "Salvar"
       signup:
@@ -23,7 +23,7 @@ pt:
     buttons:
       confirmation:
         show:
-          submit: "Activate - TRANSLATE IT"
+          submit: "Enviar"
       password:
         submit: "Alterar a minha senha"
       session:
@@ -52,11 +52,11 @@ pt:
         office_address: 'Endereço do escritório'
         website: 'Website'
       contact:
-        name: 'Name - TRANSLATE IT'
-        company_name: 'Name of company - TRANSLATE IT'
-        email: 'Email - TRANSLATE IT'
-        country: 'Country - TRANSLATE IT'
-        message: 'Message - TRANSLATE IT'
+        name: 'Nome'
+        company_name: 'Nome da Empresa'
+        email: 'Email'
+        country: 'País'
+        message: 'Mensagem'
       password:
         confirmation: "Confirme sua nova senha"
         new_password: "Nova Senha"

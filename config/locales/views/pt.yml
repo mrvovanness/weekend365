@@ -11,7 +11,7 @@ pt:
       details: 'Detalhe da Empresa'
   contacts:
     new:
-      title: "Send a message to us - TRANSLATE IT"
+      title: "Envie uma mensagem para a gente"
   dashboard:
     index:
       title: "Dashboard"
@@ -27,7 +27,7 @@ pt:
     show:
       title: "Resultados da Pesquisa"
       params_header: "Frequencia, Dia e Hora"
-      participation_rate_score: "Participation rate score: - TRANSLATE IT"
+      participation_rate_score: "Participação"
       score: "Nota"
       chart_titles:
         num_of_responses: "Número de respostas diárias"
@@ -47,8 +47,8 @@ pt:
   devise:
     confirmations:
       show:
-        title: "Activate your account - TRANSLATE IT"
-        password_message: "Please, create the password for your account: - TRANSLATE IT"
+        title: "Confirme a sua conta."
+        password_message: "Por favor, crie o password para a sua conta."
     mailer:
       confirmation:
         welcome: "Bem-Vindo!"
@@ -106,7 +106,7 @@ pt:
       account_message: "Já possui uma conta?"
   articles:
     index:
-      title: 'Articles'
+      title: 'Artigos'
   surveys:
     dialog:
       title: "Escolha um tipo de pesquisa"
@@ -155,11 +155,11 @@ pt:
     send_survey:
       title: "Bem Vindo à Weekend"
       question: "Pergunta:"
-      action: "Just click the number of your choice <br />and that’s it! - TRANSLATE IT"
-      mistake_message: "If this email is not addressed to you or you think you are receiving it by a mistake, please send an email to - TRANSLATE IT"
-      company_admin: "who administrates the service at your company - TRANSLATE IT"
-      check_out: "Check out the - TRANSLATE IT"
-      hint_message: "to get hints on how to improve your work satisfaction transforming your company into a better place. - TRANSLATE IT"
+      action: "Clique no número de sua preferência"
+      mistake_message: "Caso esse email não seja direcionado a você ou você acha que está recebendo esse email por engano, entre em contato com "
+      company_admin: "que administra o serviço pela sua empresa."
+      check_out: "Dê uma olhada"
+      hint_message: "para receber dicas de como melhorar o Engajamento do funcionário, transformando sua empresa em um lugar melhor para se trabalhar."
   decorators:
     company_survey:
       header: "Pesquisa #%{id}: %{title}"

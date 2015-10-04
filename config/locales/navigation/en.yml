@@ -45,7 +45,7 @@ en:
       unlock_account: "Unlock my account"
       pulse_survey: "Pulse Survey"
       privacy_policy: "Privacy Policy"
-      weekend_blog: "Weekend blog"
+      weekend_blog: "Weekend Blog"
       articles: "Articles"
     titles:
       edit: "Edit %{model}"
@@ -54,7 +54,7 @@ en:
       delete: "Delete %{model}"
   upperbar:
     company: "COMPANY"
-    companies: "COMPANIES"
+    companies: "COMPANY"
     dashboard: "DASHBOARD"
     languages:
       en: "English"

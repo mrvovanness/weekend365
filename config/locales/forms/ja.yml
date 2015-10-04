@@ -5,7 +5,7 @@ ja:
         create: "保存"
         update: "更新"
       contact:
-        create: "Send - TRANSLATE IT"
+        create: "送信"
       employee:
         submit: "送信"
       company:
@@ -23,7 +23,7 @@ ja:
     buttons:
       confirmation:
         show:
-          submit: "Activate - TRANSLATE IT"
+          submit: "送信"
       password:
         submit: "パスワードの変更"
       session:
@@ -51,11 +51,11 @@ ja:
         office_address: 'オフィス住所'
         website: 'サイト'
       contact:
-        name: 'Name - TRANSLATE IT'
-        company_name: 'Name of company - TRANSLATE IT'
-        email: 'Email - TRANSLATE IT'
-        country: 'Country - TRANSLATE IT'
-        message: 'Message - TRANSLATE IT'
+        name: '名前'
+        company_name: '企業名'
+        email: 'メール'
+        country: '国'
+        message: 'メッセージ'
       password:
         confirmation: "新のパスワードをご確認ください。"
         new_password: "新のパスワード"

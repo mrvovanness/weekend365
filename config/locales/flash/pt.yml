@@ -14,8 +14,8 @@ pt:
         notice: '%{resource_name} foi fechado com sucesso.'
     contacts:
       create:
-        notice: 'Thank you for your message. We will contact you soon! - TRANSLATE IT'
-        alert: 'Cannot send message. - TRANSLATE IT'
+        notice: 'Muito Obrigado pelo seu interesse. Hoje ou Amanhã, entraremos em contato.'
+        alert: 'Não conseguimos enviar a mensagem'
     employees:
       add_to_survey:
         notice: 'Os colaboradores foram adicionados a pesquisa com sucesso.'

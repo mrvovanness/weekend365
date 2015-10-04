@@ -11,7 +11,7 @@ ja:
       details: '会社の詳細'
   contacts:
     new:
-      title: "Send a message to us - TRANSLATE IT"
+      title: "Weekendにメッセージを送ってください。"
   dashboard:
     index:
       title: "ダッシュボード"
@@ -27,7 +27,7 @@ ja:
     show:
       title: "サーベイ結果"
       params_header: "回数、日付、時間"
-      participation_rate_score: "Participation rate score: - TRANSLATE IT"
+      participation_rate_score: "参加率"
       score: "スコア"
       chart_titles:
         num_of_responses: "回答の数　日"
@@ -47,8 +47,8 @@ ja:
   devise:
     confirmations:
       show:
-        title: "Activate your account - TRANSLATE IT"
-        password_message: "Please, create the password for your account: - TRANSLATE IT"
+        title: "アカウント作成"
+        password_message: "パスワード作成："
     mailer:
       confirmation:
         welcome: "ようこそ"
@@ -106,7 +106,7 @@ ja:
       account_message: "アカウントをもうすでに持っていますか?"
   articles:
     index:
-      title: 'Articles'
+      title: '記事'
   surveys:
     dialog:
       title: "サーベイの種類を選択"
@@ -155,11 +155,11 @@ ja:
     send_survey:
       title: "Weekendへよこそう"
       question: "質問:"
-      action: "Just click the number of your choice <br />and that’s it! - TRANSLATE IT"
-      mistake_message: "If this email is not addressed to you or you think you are receiving it by a mistake, please send an email to - TRANSLATE IT"
-      company_admin: "who administrates the service at your company - TRANSLATE IT"
-      check_out: "Check out the - TRANSLATE IT"
-      hint_message: "to get hints on how to improve your work satisfaction transforming your company into a better place. - TRANSLATE IT"
+      action: "数字をクリックするだけで、ログインはいらない。"
+      mistake_message: "このメールの宛先がまちがっていると思っているなら、このメールアドにメールください："
+      company_admin: "自分の会社のWeekendの管理者"
+      check_out: "見てください"
+      hint_message: "事業者の満足度ややりがいを上がる事でもっといい会社の環境を作りましょう。"
   decorators:
     company_survey:
       header: "調査 #%{id}: %{title}"
