@@ -14,8 +14,8 @@ en:
         notice: '%{resource_name} was sucessfully closed.'
     contacts:
       create:
-        notice: 'Thank you for your message. We will contact you soon!'
-        alert: 'Cannot send message.'
+        notice: 'Thank you for your interest in our services. Today or Tomorrow we will contact you.'
+        alert: 'Message could not be sent.'
     employees:
       add_to_survey:
         notice: 'Employees were successfully added to survey'

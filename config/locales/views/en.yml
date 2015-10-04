@@ -27,7 +27,7 @@ en:
     show:
       title: "Survey results"
       params_header: "Frequency, Date and Time"
-      participation_rate_score: "Participation rate score:"
+      participation_rate_score: "Participation Rate"
       score: "score"
       chart_titles:
         num_of_responses: "Number of responses daily"

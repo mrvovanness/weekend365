@@ -14,8 +14,8 @@ ja:
         notice: '%{resource_name} を閉鎖しました。'
     contacts:
       create:
-        notice: 'Thank you for your message. We will contact you soon! - TRANSLATE IT'
-        alert: 'Cannot send message. - TRANSLATE IT'
+        notice: '興味を持っていただいてありがとうございます。後日、担当よりご連絡をさせていただきます。'
+        alert: 'メッセージを送りませんでした。'
     employees:
       add_to_survey:
         notice: '新しい社員をサーベイに追加完了しました。'
