@@ -29,7 +29,9 @@ class ApplicationController < ActionController::Base
              end
 
     if locale && I18n.available_locales.include?(locale.to_sym)
-      current_user.update(locale: locale.to_sym) if current_user && params[:locale]
+      if current_user && params[:locale]
+        current_user.update_attribute(:locale, locale.to_sym)
+      end
       session[:locale] = I18n.locale = locale.to_sym
     end
   end
