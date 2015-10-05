@@ -39,6 +39,14 @@ class Surveys::PulsesController < ApplicationController
   def preview
   end
 
+  def preview_email
+    @token = Token.new(name: 'preview')
+    @answers = @survey.offered_questions.first.offered_answers
+    @employee = Employee.new(id: 1)
+    render 'surveys_mailer/send_survey',
+      layout: false
+  end
+
   def update_employees
     @survey.update_attributes!(survey_params)
     respond_with @survey.employees.count

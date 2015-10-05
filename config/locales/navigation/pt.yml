@@ -36,6 +36,7 @@ pt:
       notify: "notificar"
       onboard_survey: "Pesquisa à bordo"
       preview: "vizualizar"
+      preview_email: "preview email - translate"
       resend_confirmation: "Re-enviar as instruções de confirmação"
       results: "resultados"
       sign_in_with_provider: "Login com %{provider}"
@@ -53,7 +54,7 @@ pt:
       delete: "Deletar %{model}"
   upperbar:
     company: "EMPRESA"
-    companies: "EMPRESA"
+    companies: "EMPRESAS"
     dashboard: "DASHBOARD"
     languages:
       en: "English"

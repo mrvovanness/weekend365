@@ -130,7 +130,8 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
                         tr
                           td[height="26"]
                         tr
-                          td[valign="top" height="1" style="background:#454949; line-height:0;"]
+                          td[valign="top" height="1"
+                             style="background:#454949; line-height:0;"]
                         tr
                           td[height="7"]
                         tr
@@ -155,8 +156,12 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
                   tr
                     td[width="10"]
                     td[style="font:18px Arial, Helvetica, sans-serif;
-                      line-height:25px; margin:0 0 15px; color:#fff; "]
-                      = @promo.body.html_safe
+                      line-height:25px; margin:0 0 15px; color:#fff;"]
+                      = t('survey_mailers.send_survey.check_out')
+                      a[href="#" style="color:#F19926"]
+                        =< t('helpers.links.weekend_blog')
+                      =< t('survey_mailers.send_survey.hint_message')
+
                     td[width="10"]
                   tr
                     td[colspan="3" height="9"]

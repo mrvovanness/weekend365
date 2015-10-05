@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   resources :companies
   resources :dashboard, only: [:index, :show]
+  resources :pages, only: :show
 
   resources :employees do
     collection do
@@ -24,6 +25,7 @@ Rails.application.routes.draw do
     resources :pulses, except: :index do
       member do
         get 'preview'
+        get 'preview_email'
         patch 'update_employees'
       end
     end
@@ -33,7 +35,6 @@ Rails.application.routes.draw do
     resources :articles, only: [:index, :edit, :update]
   end
 
-  get 'about' => 'pages#about'
   mount Resque::Server, at: '/background'
 
   # route for handling email links

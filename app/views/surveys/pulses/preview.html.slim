@@ -45,6 +45,8 @@
         = f.hidden_field :skip_callback, value: true
         = f.submit t('simple_form.buttons.surveys.preview.submit'),
           class: 'link-clear'
+        = link_to t('helpers.links.preview_email'),
+          preview_email_surveys_pulse_path(@survey)
 
   .time-holder
     span.heading = t('surveys.preview.params_header')

@@ -1,11 +1,12 @@
-= link_to '#' do
-  = image_tag 'logo.png',
-    size: '460x118',
-    alt: 'weekend Work happy, manage happier',
-    class: 'logo'
-.btns
-  .holder
-    = render 'pages/shared'
-  = link_to t('helpers.links.about'),
-    about_path,
-    class: 'btn-about'
+#main
+  = link_to '#' do
+    = image_tag 'logo.png',
+      size: '460x118',
+      alt: 'weekend Work happy, manage happier',
+      class: 'logo'
+  .btns
+    .holder
+      = render 'pages/shared'
+    = link_to t('helpers.links.about'),
+      page_path(id: 'about'),
+      class: 'btn-about'
