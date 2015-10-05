@@ -2,16 +2,20 @@ class Admin::ArticlesController < ApplicationController
   before_action :authenticate_user!, :check_access
 
   def index
-    @articles = Article.order(updated_at: :desc)
+    @articles = Article.includes(:translations).order(updated_at: :desc)
+  end
+
+  def new
+    @article = Article.new
   end
 
   def edit
-    @article = Article.find(params[:id])
+    @article = Article.friendly.find(params[:id])
   end
 
   def update
-    @article = Article.find(params[:id])
-    @article.update(article_params)
+    @article = Article.friendly.find(params[:id])
+    @article.update!(article_params)
     respond_with :admin, @article
   end
 
@@ -24,6 +28,6 @@ class Admin::ArticlesController < ApplicationController
   end
 
   def article_params
-    params.require(:article).permit(:body)
+    params.require(:article).permit(:body_markdown)
   end
 end

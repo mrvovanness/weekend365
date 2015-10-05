@@ -1,4 +1,12 @@
 class Article < ActiveRecord::Base
-  validates :title, :body, presence: true
-  translates :body
+  include MarkdownToHTML
+  include FriendlyId
+
+  validates :title, :body_markdown, presence: true
+
+  translates :body_html, :body_markdown
+
+  formatted_fields body_html: :body_markdown
+
+  friendly_id :title, use: :slugged
 end

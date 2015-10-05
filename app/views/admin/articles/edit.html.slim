@@ -9,7 +9,10 @@
         disabled: true
     .row
       .label-holder
-        = f.label :body
-      = f.input_field :body
+        = f.label :body_markdown
+      #epiceditor
+      = f.input_field :body_markdown,
+        as: :hidden,
+        id: 'markdown-textarea'
     .row.btn-holder
       = f.submit class: 'btn-save'

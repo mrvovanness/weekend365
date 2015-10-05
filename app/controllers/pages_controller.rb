@@ -1,7 +1,8 @@
 class PagesController < ApplicationController
-  def about
-    @about_fake = FFaker::Lorem.paragraphs
-    render layout: 'devise'
+  layout 'home'
+
+  def show
+    @article = Article.friendly.find(params[:id])
   end
 
 end

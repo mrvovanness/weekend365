@@ -2,7 +2,16 @@
 
 puts "Creating default articles"
 
-article = Article.find_or_create_by(title: 'Email Promo') do |article|
-  article.body = "Check out the <a href='#'style='color:#F19926'>Weekend blog</a> to get hints"\
-    " on how to improve your work satisfaction transforming your company into a better place."
+about_us = Article.find_or_create_by(title: 'About') do |a|
+  a.body_markdown = '##coming soon'
 end
+
+agreement = Article.find_or_create_by(title: 'User Agreement') do |a|
+  a.body_markdown = '##coming soon'
+end
+
+privacy_policy = Article.find_or_create_by(title: 'Privacy Policy') do |a|
+  a.body_markdown = '##coming soon'
+end
+
+puts "Created: #{ Article.all.map(&:title).join(', ')}"

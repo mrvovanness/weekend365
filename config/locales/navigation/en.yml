@@ -27,7 +27,6 @@ en:
       contact_us: "Contact"
       create_survey: "Create new Survey"
       did_not_receive_confirmation: "Didn't receive confirmation instructions?"
-
       did_not_receive_unlock: "Didn't receive unlock instructions?"
       download_csv: "Download CSV File"
       download_data: "Download raw data"
@@ -37,6 +36,7 @@ en:
       notify: "notify"
       onboard_survey: "Onboard Survey"
       preview: "preview"
+      preview_email: "preview email"
       resend_confirmation: "Resend confirmation instructions"
       results: "results"
       sign_in_with_provider: "Sign in with %{provider}"
@@ -54,7 +54,7 @@ en:
       delete: "Delete %{model}"
   upperbar:
     company: "COMPANY"
-    companies: "COMPANY"
+    companies: "COMPANIES"
     dashboard: "DASHBOARD"
     languages:
       en: "English"

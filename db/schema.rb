@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151003060116) do
+ActiveRecord::Schema.define(version: 20151005132749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,11 +42,12 @@ ActiveRecord::Schema.define(version: 20151003060116) do
   add_index "answers", ["result_id"], name: "index_answers_on_result_id", using: :btree
 
   create_table "article_translations", force: :cascade do |t|
-    t.integer  "article_id", null: false
-    t.string   "locale",     null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.text     "body"
+    t.integer  "article_id",    null: false
+    t.string   "locale",        null: false
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.text     "body_html"
+    t.text     "body_markdown"
   end
 
   add_index "article_translations", ["article_id"], name: "index_article_translations_on_article_id", using: :btree
@@ -54,10 +55,14 @@ ActiveRecord::Schema.define(version: 20151003060116) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title"
-    t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.text     "body_html"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.text     "body_markdown"
+    t.string   "slug",          null: false
   end
+
+  add_index "articles", ["slug"], name: "index_articles_on_slug", using: :btree
 
   create_table "companies", force: :cascade do |t|
     t.string   "name"

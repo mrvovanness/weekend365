@@ -38,6 +38,10 @@ ja:
       company_survey:
         number_of_repeats: "最小 2, 最大 1000"
         start_on_opt: "すでに始まっています。"
+    hints:
+      company_survey:
+        number_of_repeats: "min 2, max 1000"
+        start_on_opt: "Pesquisa em andamento. - translate"
     labels:
       defaults:
         title: "タイトル"
