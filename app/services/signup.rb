@@ -9,10 +9,11 @@ class Signup
 
   attribute :name, String
   attribute :email, String
+  attribute :locale, String
   attribute :company_name, String
   attribute :country, String
 
-  validates :email, :name, :company_name, :country, presence: true
+  validates :email, :name, :locale, :company_name, :country, presence: true
   validates :name, :company_name, length: { minimum: 2 }
 
   def persisted?
@@ -40,6 +41,7 @@ class Signup
     @user = @company.users.new do |user|
       user.name = name
       user.email = email
+      user.locale = locale
     end
   end
 
@@ -55,6 +57,7 @@ class Signup
   end
 
   def persist!
+    I18n.locale = @user.locale
     @company.save!
   end
 end

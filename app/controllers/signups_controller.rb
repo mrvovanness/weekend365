@@ -10,6 +10,7 @@ class SignupsController < ApplicationController
   def create
     @signup = Signup.new(params[:signup])
     @signup.save
+    I18n.locale = session[:locale]
     if current_user && current_user.has_role?(:admin)
       respond_with @signup, location: -> { companies_path }
     else
