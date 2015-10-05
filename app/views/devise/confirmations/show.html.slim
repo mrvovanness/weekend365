@@ -11,6 +11,15 @@
         = f.error :password
         = f.input :password_confirmation
         = f.error :password_confirmation
+        - privacy_link = link_to 'Privacy policy',
+          page_path(id: 'privacy-policy'), target: '_blank'
+        - user_agreement_link = link_to 'User agreement',
+          page_path(id: 'user-agreement'), target: '_blank'
+        = f.input :terms_of_service,
+          label: t("labels.confirmations.terms_of_service",
+            privacy_policy: privacy_link,
+            user_agreement: user_agreement_link).html_safe,
+          as: :boolean
       = hidden_field_tag :confirmation_token, @confirmation_token
 
       .login-holder

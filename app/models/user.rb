@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
   validates :company, presence: true
   validates :password, length: { minimum: 8 }, on: :update
+  validates :terms_of_service, acceptance: true
   belongs_to :company, inverse_of: :users
 
   def is_admin?
