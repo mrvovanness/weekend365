@@ -19,4 +19,4 @@
               = link_to t('helpers.links.show'),
                 page_path(id: article.slug)
           .col.col03
-            = article.body_html.html_safe
+            = article.body_html.truncate(15)
