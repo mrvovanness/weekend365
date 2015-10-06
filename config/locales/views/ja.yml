@@ -99,7 +99,10 @@ ja:
       title: "Weekendについて"
   results:
     add_result:
-      title: "ご回答ありがとうございます!"
+      thanks: "ご回答ありがとうございます!"
+      title: "Please, add your comment: - TRANSLATE IT"
+    add_open_question:
+      title: "Thanks for your opinion! - TRANSLATE IT"
   signups:
     new:
       title: "サインアップ"

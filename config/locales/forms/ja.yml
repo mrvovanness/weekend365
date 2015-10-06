@@ -35,13 +35,10 @@ ja:
       surveys:
         preview:
           submit: "社員の更新"
+    hints:
       company_survey:
         number_of_repeats: "最小 2, 最大 1000"
         start_on_opt: "すでに始まっています。"
-    hints:
-      company_survey:
-        number_of_repeats: "min 2, max 1000"
-        start_on_opt: "Pesquisa em andamento. - translate"
     labels:
       defaults:
         title: "タイトル"
@@ -92,6 +89,9 @@ ja:
         gender: "男女"
         birthday: "誕生日"
         country: "国"
+      answer:
+        add_result:
+          submit: "Send"
     placeholders:
       signup:
         password: "文字の最小 8 桁"

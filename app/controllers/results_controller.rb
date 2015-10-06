@@ -12,7 +12,7 @@ class ResultsController < ApplicationController
           offered_question_id: params[:offered_question_id],
           company_survey_id: params[:company_survey_id]
         )
-        result.answers.create(
+        @answer = result.answers.create(
           offered_answer_id: params[:offered_answer_id]
         )
         token.update(expired: true)
@@ -21,6 +21,15 @@ class ResultsController < ApplicationController
         survey.increment!(:number_of_responses)
       end
     when params[:token].nil?
+      redirect_to root_path
+    end
+  end
+
+  def add_open_question
+    if params[:answer][:open_question].present?
+      answer = Answer.find(params[:id])
+      answer.update(open_question: params[:answer][:open_question])
+    else
       redirect_to root_path
     end
   end

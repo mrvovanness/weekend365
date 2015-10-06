@@ -40,6 +40,9 @@ en:
       surveys:
         preview:
           submit: "Update employees"
+      answer:
+        add_result:
+          submit: "Send"
     hints:
       registration:
         current_password: "we need your current password to confirm your changes"
@@ -79,7 +82,6 @@ en:
         password: "New Password"
         company_name: "Company Name"
         country: "Country"
-
       company_survey:
         start_on: "start on (Tokyo time)"
         time: "Time"
@@ -99,6 +101,8 @@ en:
         gender: "Gender"
         birthday: "Birthday"
         country: "Country"
+      answer:
+        open_question: "Please, add your comment:"
     placeholders:
       signup:
         password: "8 characters minimum"

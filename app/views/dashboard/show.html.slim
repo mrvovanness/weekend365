@@ -51,3 +51,10 @@
       .graph-holder
         = line_chart @survey.get_charts.average_by_industry,
           library: { title: t('dashboard.show.chart_titles.industry_average_score') }
+  /.columns
+    .block-info
+      .panel
+        span
+          | Comments (open questions)
+    - @survey.offered_questions.each do |offered_question|
+      = render 'comments', survey: @survey, question: offered_question

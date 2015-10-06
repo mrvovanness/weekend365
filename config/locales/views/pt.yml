@@ -99,7 +99,10 @@ pt:
       title: "Sobre nós"
   results:
     add_result:
-      title: "Muito Obrigado pela sua resposta!"
+      thanks: "Muito Obrigado pela sua resposta!"
+      title: "Please, add your comment: - TRANSLATE IT"
+    add_open_question:
+      title: "Thanks for your opinion! - TRANSLATE IT"
   signups:
     new:
       title: "Cadastro"
