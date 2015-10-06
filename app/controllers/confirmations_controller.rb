@@ -3,6 +3,7 @@ class ConfirmationsController < Devise::ConfirmationsController
 
   def update
     with_unconfirmed_confirmable do
+      @confirmable.terms_of_service = params[:user][:terms_of_service]
       if @confirmable.has_no_password?
         @confirmable.attempt_set_password(params[:user])
         if @confirmable.valid?
@@ -52,7 +53,7 @@ class ConfirmationsController < Devise::ConfirmationsController
   end
 
   def do_confirm
-    @confirmable.confirm!
+    @confirmable.confirm
     set_flash_message :notice, :confirmed
     sign_in(resource_name, @confirmable)
     redirect_to edit_company_path(@confirmable.company)
