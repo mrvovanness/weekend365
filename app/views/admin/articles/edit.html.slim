@@ -12,7 +12,7 @@
         = f.label :body_markdown
       #epiceditor
       = f.input_field :body_markdown,
-        as: :hidden,
-        id: 'markdown-textarea'
+        id: 'markdown-textarea',
+        style: 'display: none'
     .row.btn-holder
       = f.submit class: 'btn-save'
