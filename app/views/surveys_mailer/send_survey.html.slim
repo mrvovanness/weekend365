@@ -78,7 +78,7 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
                                   padding:0 20px; color:#ffffff;"]
                                   = @survey.offered_questions.first.title
                         tr
-                          td[height="35"]
+                          td[height="50"]
                         tr
                           td[align="center"]
                             table[cellpadding="0" cellspacing="0"
@@ -86,7 +86,7 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
                               tr
                                 - @answers.each do |answer|
                                   td[valign="top" background="bg01.png"
-                                    style="font:30px Arial, Helvetica, sans-serif;
+                                    style="font:1.8em Arial, Helvetica, sans-serif;
                                     line-height:60px; font-weight:bold;
                                     color:#343838; text-align:center;
                                     background:url(#{image_url('bg01.png')}) no-repeat;"]
@@ -111,7 +111,7 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
                               alt="image description"
                               border="0" style="vertical-align:top;"]
                         tr
-                          td[height="45"]
+                          td[height="90"]
                         tr
                           td[align="center"
                             style="font:14px Arial, Helvetica, sans-serif;
@@ -128,14 +128,14 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
                               text-decoration:underline;"]
                               = t('helpers.links.privacy_policy')
                         tr
-                          td[height="26"]
+                          td[height="90"]
                         tr
                           td[valign="top" height="1"
                              style="background:#454949; line-height:0;"]
                         tr
                           td[height="7"]
                         tr
-                          td[style="font:18px Arial, Helvetica, sans-serif;
+                          td[style="font:1em Arial, Helvetica, sans-serif;
                             line-height:25px; margin:0 0 15px; color:#343838;"]
                             = t('survey_mailers.send_survey.mistake_message')
                             span[style="text-decoration:underline;"]
