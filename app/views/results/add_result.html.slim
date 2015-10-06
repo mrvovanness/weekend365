@@ -1,1 +1,11 @@
-h1.center = t('results.add_result.title')
+div[style="margin-top:50px;"]
+h1.center.inner = t('results.add_result.thanks')
+.btns
+  = simple_form_for @answer,
+    url: open_question_path(@answer),
+    html: { method: :patch, class: 'login-form' } do |f|
+    fieldset
+      = f.input :open_question, as: :text
+      = f.error :open_question
+      .login-holder
+        = f.submit t('simple_form.buttons.answer.add_result.submit'), class: 'btn btn-sign'

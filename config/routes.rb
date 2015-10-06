@@ -39,6 +39,7 @@ Rails.application.routes.draw do
 
   # route for handling email links
   get 'results' => 'results#add_result'
+  patch 'open_question/:id' => 'results#add_open_question', as: :open_question
 
   get 'contact' => 'contacts#new', as: :new_contact
   post 'contact' => 'contacts#create', as: :contacts

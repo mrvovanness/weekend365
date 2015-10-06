@@ -24,6 +24,7 @@ class CompanySurvey < ActiveRecord::Base
   belongs_to :company
   has_many :results
   has_many :tokens
+  has_many :answers, through: :results
   has_and_belongs_to_many :employees
   has_and_belongs_to_many :offered_questions
 

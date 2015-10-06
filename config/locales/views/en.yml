@@ -99,7 +99,10 @@ en:
       title: "About us"
   results:
     add_result:
-      title: "Thanks for your answer!"
+      thanks: "Thanks for your answer!"
+      title: "Please, add your comment:"
+    add_open_question:
+      title: "Thanks for your opinion!"
   signups:
     new:
       title: "Sign up"

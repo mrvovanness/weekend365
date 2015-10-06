@@ -35,6 +35,9 @@ pt:
       surveys:
         preview:
           submit: "Atualizar colaboradores"
+      answer:
+        add_result:
+          submit: "Send"
     hints:
       company_survey:
         number_of_repeats: "min 2, max 1000"
@@ -89,6 +92,8 @@ pt:
         gender: "Gênero"
         birthday: "Data de Nascimento"
         country: "País"
+      answer:
+        open_question: "Please, add your comment: - TRANSLATE IT"
     placeholders:
       signup:
         password: "mínimo de 8 caracteres"
