@@ -31,14 +31,18 @@ en:
       download_csv: "Download CSV File"
       download_data: "Download raw data"
       employee_engagement: "Employee Engagement"
+      free_for_beta: "Free for beta, click here"
       forgot_password: "Forgot your password?"
       login: "Login"
       notify: "notify"
       onboard_survey: "Onboard Survey"
+      facebook: "Our page in Facebook"
+      twitter: "Follow us!"
       preview: "preview"
       preview_email: "preview email"
       resend_confirmation: "Resend confirmation instructions"
       results: "results"
+      sign_in: "Sign in"
       sign_in_with_provider: "Sign in with %{provider}"
       sign_up: "Sign up"
       undo: "Undo"
@@ -67,6 +71,8 @@ en:
       edit_company: "Edit company"
       log_out: "Log out"
     surveys: "SURVEYS"
+  footer:
+    copyright: "Copyright &copy; 2015 Weekend All Rights Reserved"
   views:
     pagination:
       first: "First"

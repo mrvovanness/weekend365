@@ -1,0 +1,195 @@
+body.home {
+  font:19px/23px 'sitka_heading', Meiryo UI, Meiryo, Osaka, sans-serif;
+}
+.block1 {
+  padding: 100px 25px 50px 25px;
+  width: 100%;
+  height: 537px;
+  display: table-row;
+  background: image-url("topbanner.png") no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  color: white;
+}
+
+.block2 {
+  width: 838px;
+  margin: 0 auto;
+  padding: 50px;
+  letter-spacing: 2px;
+}
+
+.block3 {
+  background-color: #0d8690;
+  color: white;
+  letter-spacing: 2px;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 25px;
+  -moz-column-count: 3;
+  -moz-column-gap: 25px;
+  column-count: 3;
+  column-gap: 25px;
+  padding: 45px 45px 45px 45px;
+  display: table;
+}
+.block4 {
+  min-height: 140px;
+  padding: 50px;
+  position: relative;
+  letter-spacing: 3px;
+}
+.home footer {
+  background-color: #373737;
+  min-height: 180px;
+  padding: 80px;
+  position: relative;
+}
+.block1 #head {
+  padding: 15px 11px 11px;
+  margin: 0 auto;
+}
+#head .logo{
+  float: left;
+  margin: 0 36px 0 0;
+}
+#head .links{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-transform: uppercase;
+  float: left;
+  letter-spacing: 2px;
+  font: 14px/18px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
+	//font:12px/18px 'meiryo_ui', Meiryo UI, Meiryo, Osaka, sans-serif;
+}
+#head .links.alignright{
+  float: right;
+  padding: 0 24px 0 0;
+}
+#head .links .lang a:after{
+  background: image-url("sprite.png") no-repeat -1px -126px;
+  width: 14px;
+  height: 14px;
+  left: 13px;
+  top: 20px;
+}
+#head .links > li:hover > a,
+#head .links > li > a:hover{
+  background-color: transparent;
+}
+.block1 #container {
+  padding-left: 0px;
+  width: 1085px;
+}
+.block1 h1 {
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 120px;
+  font: 75px/80px Meiryo UI, Meiryo, Osaka, sans-serif;
+  font-weight: bold;
+}
+.block1 center {
+  width: 850px;
+  margin: 0 auto;
+  font-size: 27px;
+  line-height: 1.2;
+  letter-spacing: 2px;
+}
+.block1 .lang a {
+  color: white;
+}
+.block1 .btn-signin {
+  color: white;
+  background-color: #2bb3be;
+  border-radius: 25px;
+  padding: 10px 25px 10px 25px;
+  margin-left: 35px;
+  font-weight: bold;
+}
+.block1 .btn-signin:hover {
+  color: white;
+}
+.block1 .btn-beta {
+  display: inline-block;
+  color: #ffffff;
+  background-color: #ef9825;
+  border-radius: 30px;
+  padding: 16px 20px 16px 20px;
+  margin-top: 20px;
+  font: 16px/18px Meiryo UI, Meiryo, Osaka, sans-serif;
+  font-weight: bolder;
+  text-transform: uppercase;
+  width: 320px;
+  text-align:center;
+}
+.block1 .btn-beta:hover {
+  text-decoration: none;
+}
+.block2 h3 {
+  text-align: center;
+  font-size: 36px;
+  margin-top: 0px;
+}
+.block2 p {
+  text-align: center;
+}
+.block3 h3 {
+  font-family: Meiryo UI, Meiryo, Osaka, sans-serif;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+.block3 section {
+  display: table-cell;
+  padding: 0 20px;
+  vertical-align: top;
+}
+.block4 h3 {
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: middle;
+}
+.block4 div {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.block4 .btn-contact{
+  display: inline-block;
+  vertical-align: baseline;
+  color: #333333;
+  border-radius: 30px;
+  border-style: solid;
+  border-width: thin;
+  padding: 16px 20px 16px 20px;
+  position: relative;
+  text-transform: uppercase;
+  margin-left: 10px;
+  width: 200px;
+  text-align:center;
+}
+.block4 .btn-contact:hover{
+  text-decoration: none;
+}
+.home footer #foot-wrapper {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.home footer div div {
+  margin: 18px 18px 18px 18px;
+  text-align: center;
+}
+.home footer div a {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+#copy {
+  color: #696969;
+  font-size: 16px;
+  margin-top: 80px;
+}

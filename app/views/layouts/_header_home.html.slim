@@ -1,5 +1,5 @@
 #container
-  header#header.clearfix  
+  header#head.clearfix  
     = link_to root_path do
       = image_tag('logo03.png', alt: 'weekend', size: '106x19', class: 'logo')
     ul.links.alignright
@@ -12,3 +12,4 @@
               - next if locale == I18n.locale
               li = link_to params.merge(locale: locale, only_path: true) do
                 = t("upperbar.languages.#{locale}")
+      = link_to t('helpers.links.sign_in'), new_user_session_path, class: 'btn-signin'

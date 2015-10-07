@@ -12,8 +12,5 @@ html lang="#{I18n.locale}"
     = render 'layouts/messages'
     .wrapper-holder
       #wrapper
-        .w1
-          = render 'layouts/guest'
-        .w4
-          = yield
-        = render 'layouts/footer'
+        = yield
+        = render 'layouts/new_footer'

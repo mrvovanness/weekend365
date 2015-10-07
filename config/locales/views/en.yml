@@ -104,6 +104,11 @@ en:
       any_gender: "Gender (any)"
       delete_selected: "Delete selected"
       select_all: "Select all"
+  home:
+    index:
+      free_for_beta: "Free while in beta, try it now"
+      title: "Analitycs for<br/>your company culture"
+      subtitle: "Surveys that will help you keep your Employees Engaged, Reduce Turnover and Grow Profits"
   pages:
     about:
       title: "About us"

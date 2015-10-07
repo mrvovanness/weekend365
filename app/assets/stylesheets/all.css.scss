@@ -42,6 +42,17 @@
 	font-weight: normal;
 	font-style: normal;
 }
+@font-face {
+    font-family: 'sitka_heading';
+    src: url('sitka_heading.eot');
+    src: url('sitka_heading.eot') format('embedded-opentype'),
+         url('sitka_heading.woff2') format('woff2'),
+         url('sitka_heading.woff') format('woff'),
+         url('sitka_heading.ttf') format('truetype'),
+         url('sitka_heading.svg#sitka_heading') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
 body{
 	margin:0;
 	color:#343838;
@@ -114,13 +125,13 @@ p{margin:0 0 10px;}
 	-o-background-size: cover;
 	background-size: cover;
 }
-.home .logo{
+.devise .logo{
 	display:block;
 	margin:0 auto 142px;
 }
-.home.inner .logo{margin-bottom:57px;}
-.home .logo img{display:block;}
-.home #main{
+.devise.inner .logo{margin-bottom:57px;}
+.devise .logo img{display:block;}
+.devise #main{
 	padding:234px 33px 9999px 33px;
 	width:838px;
 	margin:0 auto -9999px;
@@ -135,7 +146,7 @@ p{margin:0 0 10px;}
 	box-sizing: content-box;
 }
 .inner .main{background:none;}
-.home.inner #main{padding-top:66px;}
+.devise.inner #main{padding-top:66px;}
 .btns{text-align:center;}
 .btns .holder{margin:0 0 53px;}
 input[type="submit"].btn-login,

@@ -104,6 +104,11 @@ ja:
       any_gender: "Gender (any)"
       delete_selected: "削除"
       select_all: "すべて"
+  home:
+    index:
+      free_for_beta: "Free while in beta, try it now - TRANSLATE IT"
+      title: "Analitycs for<br/>your company culture - TRANSLATE IT"
+      subtitle: "Surveys that will help you keep your Employees Engaged, Reduce Turnover and Grow Profits - TRANSLATE IT"
   pages:
     about:
       title: "Weekendについて"
