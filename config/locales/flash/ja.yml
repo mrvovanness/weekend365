@@ -25,3 +25,5 @@ ja:
       create:
         notice: 'アカウントの作成が完了しました。登録したメールを確認してください。'
         alert: 'アカウントの作成できませんでした。'
+    token_expired: 'You already answered or time to respond is ended - TRANSLATE'
+    opinion_thanks: 'Thank you for your opinion - Translate'

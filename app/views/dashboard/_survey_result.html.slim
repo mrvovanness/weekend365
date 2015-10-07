@@ -25,5 +25,5 @@
       { name: t('dashboard.survey_result.industry'),
         data: survey.get_charts.average_by_industry },
       { name: t('dashboard.survey_result.you'),
-        data: survey.get_charts.average_by_company }\
+        data: survey.get_charts.average_by_company(survey.answers) }\
     ], library: { legend: { position: 'top' }, curveType: 'function' }

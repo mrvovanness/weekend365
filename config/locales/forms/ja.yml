@@ -12,6 +12,8 @@ ja:
         update: "保存"
       signup:
         create: "サインアップ"
+      answer:
+        update: "Send"
   simple_form:
     "yes": 'はい'
     "no": 'いいえ'
@@ -90,8 +92,7 @@ ja:
         birthday: "誕生日"
         country: "国"
       answer:
-        add_result:
-          submit: "Send"
+        comment: "Please, add your comment: - TRANSLATE"
     placeholders:
       signup:
         password: "文字の最小 8 桁"

@@ -25,6 +25,10 @@ en:
         preview: "Preview"
         results: "Results"
         participation_rate: "Participation rate"
+        finish_date: 'Finish Date'
+        next_delivery: "Next Emails Delivery"
+        emails_sent: "Emails sent last time"
+        responses_last: "Responses received last time"
     show:
       title: "Survey results"
       params_header: "Frequency, Date and Time"
@@ -101,9 +105,6 @@ en:
   results:
     add_result:
       thanks: "Thanks for your answer!"
-      title: "Please, add your comment:"
-    add_open_question:
-      title: "Thanks for your opinion!"
   signups:
     new:
       title: "Sign up"

@@ -1,0 +1,39 @@
+ul.statistics
+  li.start-date
+    = t('dashboard.index.heads.start_date')
+    b =< survey.start_at.strftime('%b.%dth/%Y')
+
+  li.finish-date
+    = t('dashboard.index.heads.finish_date')
+    b =< survey.finish_on.strftime('%b.%dth/%Y')
+
+  li.next-email-delivery
+    = t('dashboard.index.heads.next_delivery')
+    b =< survey.next_delivery_at.strftime('%b.%dth/%Y %H:%M')
+  <br>
+
+  li.status
+    = t('surveys.index.headers.status')
+    b =< survey.status
+
+  li.latest-reply
+    = t('dashboard.index.heads.latest_reply')
+    b =< survey.get_statistics.latest_reply
+
+  li.number-of-responses
+    = t('dashboard.index.heads.number_of_responses')
+    b =< survey.get_statistics.count
+  <br>
+
+  li.email-sent
+    = t('dashboard.index.heads.emails_sent')
+    b =< survey.emails_counter
+
+  li.responses
+    = t('dashboard.index.heads.responses_last')
+    b =< survey.number_of_responses
+
+  li.participation
+    = t('dashboard.show.participation_rate_score')
+    b =< number_to_percentage(survey.get_statistics.rate, precision: 0)
+

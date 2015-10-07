@@ -20,37 +20,17 @@
         class: 'btn-edit'
       = link_to t('helpers.links.download_data'), '#',
         class: 'btn-download'
-  .columns.clearfix
-    .column
-      .box.inner
-        .frame.clearfix
-          = render 'emoji_choosing', survey: @survey
-          span.value = @survey.get_statistics.average
-          .info-holder
-            span.info = t('dashboard.show.score')
-            = render 'phrase_choosing', survey: @survey
-        p
-          = t('dashboard.show.participation_rate_score')
-          =< number_to_percentage(@survey.get_statistics.rate, precision: 0)
-      .graph-holder
-        = line_chart @survey.get_charts.number_of_responses,
-          library: { title: t('dashboard.show.chart_titles.num_of_responses') }
-      .graph-holder
-        = pie_chart @survey.get_charts.distribution,
-          library: { title: t('dashboard.show.chart_titles.answers_distribution') }
-      .graph-holder
-        = column_chart @survey.get_charts.number_of_responses,
-          library: { title: t('dashboard.show.chart_titles.num_of_responses') }
-    .column
-      .graph-holder
-        = line_chart @survey.get_charts.average_by_company,
-          library: { title: t('dashboard.show.chart_titles.average_score') }
-      .graph-holder
-        = line_chart @survey.get_charts.average_by_country,
-          library: { title: t('dashboard.show.chart_titles.country_average_score') }
-      .graph-holder
-        = line_chart @survey.get_charts.average_by_industry,
-          library: { title: t('dashboard.show.chart_titles.industry_average_score') }
+  .panel-holder
+    .box.inner
+      .frame.clearfix
+        = render 'emoji_choosing', survey: @survey
+        span.value = @survey.get_statistics.average
+        .info-holder
+          span.info = t('dashboard.show.score')
+          = render 'phrase_choosing', survey: @survey
+
+      = render 'statistics', survey: @survey
+  = render "graphs", survey: @survey
   /.columns
     .block-info
       .panel

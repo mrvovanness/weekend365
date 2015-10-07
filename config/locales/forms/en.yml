@@ -12,6 +12,8 @@ en:
         update: "Save"
       signup:
         create: "Sign me up"
+      answer:
+        update: "Send"
   simple_form:
     "yes": 'Yes'
     "no": 'No'
@@ -40,9 +42,6 @@ en:
       surveys:
         preview:
           submit: "Update employees"
-      answer:
-        add_result:
-          submit: "Send"
     hints:
       registration:
         current_password: "we need your current password to confirm your changes"
@@ -102,7 +101,7 @@ en:
         birthday: "Birthday"
         country: "Country"
       answer:
-        open_question: "Please, add your comment:"
+        comment: "Please, add your comment:"
     placeholders:
       signup:
         password: "8 characters minimum"

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151006080437) do
+ActiveRecord::Schema.define(version: 20151007062859) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20151006080437) do
     t.integer  "offered_answer_id"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false
-    t.string   "open_question"
+    t.string   "comment"
   end
 
   add_index "answers", ["offered_answer_id"], name: "index_answers_on_offered_answer_id", using: :btree
