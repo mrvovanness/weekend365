@@ -24,6 +24,7 @@ ja:
         latest_reply: "最終の返事"
         preview: "プレビュー"
         results: "結果"
+        participation_rate: "Participation rate - TRANSLATE IT"
     show:
       title: "サーベイ結果"
       params_header: "回数、日付、時間"
@@ -134,6 +135,7 @@ ja:
         edit: "編集"
         preview: "プレビュー"
         results: "結果"
+        participation_rate: "Rate - TRANSLATE IT"
     new:
       title: "新規サーベイを作成"
     preview:

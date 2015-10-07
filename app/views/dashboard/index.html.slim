@@ -12,7 +12,7 @@
           table
             thead: tr
               th.col1 = t('dashboard.index.heads.title')
-              th = t('dashboard.index.heads.num_of_responses')
+              th = t('dashboard.index.heads.participation_rate')
               th = t('dashboard.index.heads.start_date')
               th = t('dashboard.index.heads.frequency')
               th = t('dashboard.index.heads.latest_reply')
@@ -22,7 +22,7 @@
               - @surveys.each do |survey|
                 tr
                   td.col1 = survey.title
-                  td = survey.get_statistics.count
+                  td = number_to_percentage(survey.get_statistics.rate, precision: 0)
                   td = survey.start_at.strftime('%b.%dth/%Y')
                   td = survey.frequency_overview
                   td = survey.get_statistics.latest_reply

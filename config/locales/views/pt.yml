@@ -24,6 +24,7 @@ pt:
         latest_reply: "Resposta Recente"
         preview: "Preview"
         results: "Resultados"
+        participation_rate: "Participation rate - TRANSLATE IT"
     show:
       title: "Resultados da Pesquisa"
       params_header: "Frequencia, Dia e Hora"
@@ -134,6 +135,7 @@ pt:
         edit: "Editar"
         preview: "Preview"
         results: "Resultados"
+        participation_rate: "Rate - TRANSLATE IT"
     new:
       title: "Criar nova pesquisa"
     preview:
