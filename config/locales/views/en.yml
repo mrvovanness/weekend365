@@ -24,6 +24,7 @@ en:
         latest_reply: "Latest Reply"
         preview: "Preview"
         results: "Results"
+        participation_rate: "Participation rate"
     show:
       title: "Survey results"
       params_header: "Frequency, Date and Time"
@@ -134,6 +135,7 @@ en:
         edit: "Edit"
         preview: "Preview"
         results: "Results"
+        participation_rate: "Rate"
     new:
       title: "create new survey"
     preview:
