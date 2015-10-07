@@ -25,6 +25,10 @@ pt:
         preview: "Preview"
         results: "Resultados"
         participation_rate: "Participation rate - TRANSLATE IT"
+        finish_date: 'Finish Date'
+        next_delivery: "Next Emails Delivery"
+        emails_sent: "Emails sent last time"
+        responses_last: "Responses received last time"
     show:
       title: "Resultados da Pesquisa"
       params_header: "Frequencia, Dia e Hora"
@@ -101,9 +105,6 @@ pt:
   results:
     add_result:
       thanks: "Muito Obrigado pela sua resposta!"
-      title: "Please, add your comment: - TRANSLATE IT"
-    add_open_question:
-      title: "Thanks for your opinion! - TRANSLATE IT"
   signups:
     new:
       title: "Cadastro"

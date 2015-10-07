@@ -25,3 +25,5 @@ en:
       create:
         notice: 'Your account was successfully created. Please, check your e-mail box for confirmation.'
         alert: 'Account could not be created.'
+    token_expired: 'You already answered or time to respond is ended'
+    opinion_thanks: 'Thank you for your opinion'

@@ -25,6 +25,10 @@ ja:
         preview: "プレビュー"
         results: "結果"
         participation_rate: "Participation rate - TRANSLATE IT"
+        finish_date: 'Finish Date'
+        next_delivery: "Next Emails Delivery"
+        emails_sent: "Emails sent last time"
+        responses_last: "Responses received last time"
     show:
       title: "サーベイ結果"
       params_header: "回数、日付、時間"
@@ -101,9 +105,6 @@ ja:
   results:
     add_result:
       thanks: "ご回答ありがとうございます!"
-      title: "Please, add your comment: - TRANSLATE IT"
-    add_open_question:
-      title: "Thanks for your opinion! - TRANSLATE IT"
   signups:
     new:
       title: "サインアップ"

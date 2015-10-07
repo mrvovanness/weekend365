@@ -5,6 +5,7 @@ class ResultsController < ApplicationController
     when params[:token].present?
       token = Token.find_by(name: params[:token])
       if token.nil? || token.expired
+        flash[:info] = t('flash.token_expired')
         redirect_to root_path
       else
         result = Result.create!(
@@ -15,7 +16,7 @@ class ResultsController < ApplicationController
         @answer = result.answers.create(
           offered_answer_id: params[:offered_answer_id]
         )
-        token.update(expired: true)
+        token.update(expired: true) unless Rails.env.development?
         survey = token.company_survey
         survey.skip_callback = true
         survey.increment!(:number_of_responses)
@@ -25,12 +26,12 @@ class ResultsController < ApplicationController
     end
   end
 
-  def add_open_question
-    if params[:answer][:open_question].present?
+  def add_comment
+    if params[:answer][:comment].present?
       answer = Answer.find(params[:id])
-      answer.update(open_question: params[:answer][:open_question])
-    else
-      redirect_to root_path
+      answer.update!(comment: params[:answer][:comment])
+      flash[:info] = t('flash.opinion_thanks')
     end
+    redirect_to root_path
   end
 end

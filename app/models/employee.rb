@@ -4,6 +4,7 @@ class Employee < ActiveRecord::Base
   validates :email, email: true
 
   has_many :results
+  has_many :answers, through: :results
   belongs_to :company
   has_and_belongs_to_many :company_surveys
 
