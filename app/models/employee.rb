@@ -1,4 +1,5 @@
 class Employee < ActiveRecord::Base
+  before_validation :normalize_email
   validates :name, :email, presence: true
   # Gem 'validate'
   validates :email, email: true
@@ -22,5 +23,15 @@ class Employee < ActiveRecord::Base
     CSV.foreach(file.path, headers: true) do |row|
       company.employees.find_or_create_by!(row.to_hash)
     end
+  end
+
+  private
+
+  def normalize_email
+    self.email = normalize(email)
+  end
+
+  def normalize(text)
+    text.mb_chars.downcase.strip.wrapped_string
   end
 end

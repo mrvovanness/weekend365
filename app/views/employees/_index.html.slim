@@ -42,7 +42,7 @@
           .col.col03
             span = employee.position
             = check_box_tag 'employee_ids[]', employee.id, false,
-              id: 'employee-#{employee.id}',
+              id: "employee-#{employee.id}",
               class: 'bulk_actors checkable'
   .bottom-panel
     = paginate employees

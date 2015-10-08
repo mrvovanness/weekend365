@@ -13,7 +13,7 @@ jQuery ->
   $('.survey_start_on').datetimepicker
     format: 'Y-m-d'
     timepicker: false
-    minDate: '+1970/01/02'
+    minDate: 0;
     lang: $('html').attr('lang')
     scrollInput: false
 

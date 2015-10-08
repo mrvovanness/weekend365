@@ -189,3 +189,10 @@ pt:
       week: "semana"
       daily_frequency: "todo %{repeat_every} dia(s) às %{start_at}"
       weekly_frequency: "toda %{repeat_every} semana às(aos) %{weekday} às %{daytime}"
+  activerecord:
+    errors:
+      models:
+        company_survey:
+          attributes:
+            start_on:
+              bad_survey_start: "Survey start date and time should be after current time - TRANSLATE IT"
