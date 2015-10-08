@@ -40,6 +40,10 @@ ja:
         average_score: "平均のスコア　日"
         country_average_score: "国の平均のスコア　日"
         industry_average_score: "業界の平均のスコア　日"
+      last_comments: "Last comments"
+    graphs:
+      global_tendencies: "Global tendencies for this survey among companies"
+      local_tendencies: "Tendencies inside your company"
     phrase:
       good: "とてもいい!"
       normal: "わるくないね!"
@@ -97,6 +101,7 @@ ja:
       by_name: "名前"
       any_department: "部署 「すべて」"
       any_position: "役職 「すべて」"
+      any_gender: "Gender (any)"
       delete_selected: "削除"
       select_all: "すべて"
   pages:
@@ -157,6 +162,9 @@ ja:
       read_our_blog: "ブログに入って"
       and_get: ""
       updates_on_the_new_trends: "社員のエンゲージについての最新のトレンドを読んでください"
+    comments:
+      title: "Comments - translate"
+      selected: "Selected:"
   survey_mailers:
     send_survey:
       title: "Weekendへよこそう"

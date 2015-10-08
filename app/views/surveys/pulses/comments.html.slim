@@ -1,0 +1,10 @@
+#main
+  .inform-panel.clearfix
+    h1 = t('surveys.comments.title')
+  - @answers.each do |answer|
+    - next if answer.comment.nil?
+    i
+      = t('surveys.comments.selected')
+      =< answer.offered_answer.value
+    li: b = answer.comment
+    p = answer.updated_at

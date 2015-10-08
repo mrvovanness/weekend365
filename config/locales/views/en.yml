@@ -40,6 +40,10 @@ en:
         average_score: "Your average score daily"
         country_average_score: "Average score in your country daily"
         industry_average_score: "Average score in your industry daily"
+      last_comments: "Last comments"
+    graphs:
+      global_tendencies: "Global tendencies for this survey among companies"
+      local_tendencies: "Tendencies inside your company"
     phrase:
       good: "very good!"
       normal: "not bad!"
@@ -97,6 +101,7 @@ en:
       by_name: "By name"
       any_department: "Department (any)"
       any_position: "Position (any)"
+      any_gender: "Gender (any)"
       delete_selected: "Delete selected"
       select_all: "Select all"
   pages:
@@ -157,6 +162,9 @@ en:
       read_our_blog: "read our blog"
       and_get: "and get"
       updates_on_the_new_trends: "updates on the new trends in Employee Engagement"
+    comments:
+      title: "Comments"
+      selected: "Selected:"
   survey_mailers:
     send_survey:
       title: "Welcome to weekend"

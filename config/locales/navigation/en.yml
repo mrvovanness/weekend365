@@ -47,6 +47,7 @@ en:
       privacy_policy: "Privacy Policy"
       weekend_blog: "Weekend Blog"
       articles: "Articles"
+      all_comments: "All comments"
     titles:
       edit: "Edit %{model}"
       save: "Save %{model}"

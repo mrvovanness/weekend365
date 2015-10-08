@@ -40,6 +40,10 @@ pt:
         average_score: "Sua nota média, dia"
         country_average_score: "Nota média no seu país, dia"
         industry_average_score: "Nota média na sua Indústria, dia"
+      last_comments: "Last comments"
+    graphs:
+      global_tendencies: "Global tendencies for this survey among companies"
+      local_tendencies: "Tendencies inside your company"
     phrase:
       good: "Muito Bom!"
       normal: "Ótimo!"
@@ -97,6 +101,7 @@ pt:
       by_name: "Nome"
       any_department: "Departmento (todos)"
       any_position: "Posição (todos)"
+      any_gender: "Gender (any)"
       delete_selected: "Deletar"
       select_all: "Todos(as)"
   pages:
@@ -157,6 +162,9 @@ pt:
       read_our_blog: "leia o nosso blog"
       and_get: "e fique atento"
       updates_on_the_new_trends: "aos novos trends em relação ao Engajamento do Colaborador"
+    comments:
+      title: "Comments - translate"
+      selected: "Selected:"
   survey_mailers:
     send_survey:
       title: "Bem Vindo à Weekend"

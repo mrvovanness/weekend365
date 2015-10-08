@@ -1,7 +1,0 @@
-- if question.offered_answers.joins(:answers).where(answers: { result: survey.results}).count > 0
-  span
-    b = question.title
-  - survey.answers.where(offered_answer: question.offered_answers).where("comment IS NOT NULL").includes(result: :employee).each do |answer|
-    div
-      span = answer.result.employee.name
-      p = answer.comment

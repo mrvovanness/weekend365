@@ -26,6 +26,7 @@ Rails.application.routes.draw do
       member do
         get 'preview'
         get 'preview_email'
+        get 'comments'
         patch 'update_employees'
       end
     end

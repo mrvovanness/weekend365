@@ -52,6 +52,10 @@ class Surveys::PulsesController < ApplicationController
     respond_with @survey.employees.count
   end
 
+  def comments
+    @answers = @survey.answers.includes(:offered_answer)
+  end
+
   private
 
   def survey_params
