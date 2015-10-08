@@ -1,0 +1,11 @@
+footer
+  #foot-wrapper
+    div
+      = link_to '#' do
+        = image_tag('facebookicon.png', alt: t('helpers.links.facebook'), size: '40x40')
+      = link_to '#' do
+        = image_tag('twittericon.png', alt: t('helpers.links.twitter'), size: '39x40')
+    div
+      = link_to root_path do
+        = image_tag('logo-footer.png', alt: 'weekend', size: '154x27')
+    #copy = t('footer.copyright').html_safe
