@@ -44,12 +44,12 @@
 }
 @font-face {
     font-family: 'sitka_heading';
-    src: url('sitka_heading.eot');
-    src: url('sitka_heading.eot') format('embedded-opentype'),
-         url('sitka_heading.woff2') format('woff2'),
-         url('sitka_heading.woff') format('woff'),
-         url('sitka_heading.ttf') format('truetype'),
-         url('sitka_heading.svg#sitka_heading') format('svg');
+    src: font-url('sitka_heading.eot');
+    src: font-url('sitka_heading.eot') format('embedded-opentype'),
+         font-url('sitka_heading.woff2') format('woff2'),
+         font-url('sitka_heading.woff') format('woff'),
+         font-url('sitka_heading.ttf') format('truetype'),
+         font-url('sitka_heading.svg#sitka_heading') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
