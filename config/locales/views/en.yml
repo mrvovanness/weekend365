@@ -189,3 +189,10 @@ en:
       week: "week"
       daily_frequency: "every %{repeat_every} day(s) at %{start_at}"
       weekly_frequency: "every %{repeat_every} week(s) on %{weekday} at %{daytime}"
+  activerecord:
+    errors:
+      models:
+        company_survey:
+          attributes:
+            start_on:
+              bad_survey_start: "Survey start date and time should be after current time"

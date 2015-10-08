@@ -70,7 +70,7 @@ class CompanySurveyDecorator < Draper::Decorator
     elsif start_at.present?
       start_at.strftime('%Y-%m-%d')
     else
-      date = Date.today + 1.day
+      date = Date.today
       date.strftime('%Y-%m-%d')
     end
   end

@@ -189,3 +189,10 @@ ja:
       week: "週"
       daily_frequency: "毎 %{repeat_every} 日、 %{start_at}"
       weekly_frequency: "毎 %{repeat_every} 週、 %{weekday} 、 %{daytime}"
+  activerecord:
+    errors:
+      models:
+        company_survey:
+          attributes:
+            start_on:
+              bad_survey_start: "Survey start date and time should be after current time - TRANSLATE IT"

@@ -8,10 +8,12 @@ class CompanySurvey < ActiveRecord::Base
   validates :number_of_repeats, numericality: {
     only_integer: true, greater_than: 1, less_than: 1001 }
 
-  before_save :write_start_at,
+  validate :check_survey_start, on: :create
+
+  before_validation :write_start_at,
     unless: :started?
 
-  before_save :write_start_at,
+  before_validation :write_start_at,
     unless: :skip_callback?
 
   after_save :add_schedule,
@@ -70,5 +72,11 @@ class CompanySurvey < ActiveRecord::Base
 
   def get_charts
     ChartsService.new(self)
+  end
+
+  private
+
+  def check_survey_start
+    errors.add(:start_on, :bad_survey_start) unless start_at >= DateTime.current
   end
 end
