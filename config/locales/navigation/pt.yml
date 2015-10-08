@@ -29,7 +29,7 @@ pt:
       did_not_receive_confirmation: "Não recebeu as instruções para a confirmacão?"
       did_not_receive_unlock: "Não recebeu as instuções para o desbloqueio?"
       download_csv: "Download do arquivo csv"
-      download_data: "Download raw data"
+      download_data: "Download raw data - tran.."
       employee_engagement: "Engajamento do Colaborador"
       forgot_password: "Esqueceu sua senha?"
       login: "Login"
@@ -47,6 +47,7 @@ pt:
       privacy_policy: "Termos de Privacidade"
       weekend_blog: "Weekend Blog"
       articles: "Artigos"
+      all_comments: "All comments"
     titles:
       edit: "Editar %{model}"
       save: "Salvar %{model}"

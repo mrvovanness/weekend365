@@ -1,8 +1,17 @@
+h2 = t('dashboard.graphs.global_tendencies')
+.graph-holder
+  = line_chart survey.get_charts.average_by_country,
+    library: { title: t('dashboard.show.chart_titles.country_average_score') }
+.graph-holder
+  = line_chart survey.get_charts.average_by_industry,
+    library: { title: t('dashboard.show.chart_titles.industry_average_score') }
+<br><br>
+h2 = t('dashboard.graphs.local_tendencies')
 .filter-form
   = search_form_for @search,
     url: dashboard_path(survey) do |f|
     .filter-area
-      .sort-panel.clearfix
+      .sort-panel.clearfix#sticky-panel
         .col.col01
           = f.select :department_eq,
             options_for_select(survey.company.employees.pluck(:department).uniq),
@@ -10,10 +19,16 @@
             { class: 'checkable sel04' }
         .col.col02
           = f.select :position_eq,
-             options_for_select(survey.company.employees.pluck(:position).uniq),
-             { include_blank: t('employees.index.any_position') },
-             { class: 'checkable sel04' }
+            options_for_select(survey.company.employees.pluck(:position).uniq),
+            { include_blank: t('employees.index.any_position') },
+            { class: 'checkable sel04' }
+        .col.col03
+          = f.select :gender_eq,
+            options_for_select(survey.company.employees.pluck(:gender).uniq),
+            { include_blank: t('employees.index.any_gender') },
+            { class: 'checkable sel04' }
           = f.submit class: 'search'
+
   .graph-holder
     = line_chart survey.get_charts.number_of_responses(@answers),
       library: { title: t('dashboard.show.chart_titles.num_of_responses') }
@@ -26,9 +41,3 @@
   .graph-holder
     = line_chart survey.get_charts.average_by_company(@answers),
       library: { title: t('dashboard.show.chart_titles.average_score') }
-  .graph-holder
-    = line_chart survey.get_charts.average_by_country,
-      library: { title: t('dashboard.show.chart_titles.country_average_score') }
-  .graph-holder
-    = line_chart survey.get_charts.average_by_industry,
-      library: { title: t('dashboard.show.chart_titles.industry_average_score') }
