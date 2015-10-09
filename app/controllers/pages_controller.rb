@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  layout 'home'
+  layout 'devise'
 
   def show
     @article = Article.friendly.find(params[:id])

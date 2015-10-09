@@ -1,5 +1,5 @@
 class ResultsController < ApplicationController
-  layout 'home'
+  layout 'devise'
   def add_result
     case
     when params[:token].present?
