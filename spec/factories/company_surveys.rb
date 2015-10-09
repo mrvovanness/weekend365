@@ -1,15 +1,13 @@
 FactoryGirl.define do
   factory :company_survey do
     title 'Your first survey'
-    start_at DateTime.now + 1.hour
-    next_delivery_at DateTime.now + 1.hour
     number_of_repeats 2
     repeat_mode 'd'
     repeat_every 3
     message 'Hello'
     counter 0
     start_on Date.today.strftime('%Y-%m-%d')
-    time Time.current.strftime('%H:%M')
+    time (Time.current + 1.hour).strftime('%H:%M')
 
     factory :survey_with_id
     id 1
@@ -29,6 +27,6 @@ FactoryGirl.define do
 
     factory :survey_with_results do
     end
-       
+
   end
 end

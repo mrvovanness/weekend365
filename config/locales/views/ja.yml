@@ -149,6 +149,7 @@ ja:
         participation_rate: "Rate - TRANSLATE IT"
     new:
       title: "新規サーベイを作成"
+      choose_type: "Choose type of Survey - TRANSLATE IT"
     preview:
       title: "サーベイ確認"
       at: "時間"

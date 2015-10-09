@@ -6,7 +6,7 @@
     span.info = t('surveys.preview.success_message')
     p
       '#{t('surveys.preview.take_your_time')}
-      '<a href='#'>#{t('surveys.preview.read_our_blog')}</a>
+      '<a href="http://blog.weekendcult.com">#{t('surveys.preview.read_our_blog')}</a>
       | #{t('surveys.preview.and_get')}<br>
       | #{t('surveys.preview.updates_on_the_new_trends')}
   .recommend-area
@@ -56,7 +56,7 @@
     = link_to t('helpers.links.back_to_dashboard'),
       dashboard_index_path,
       class: 'btn-dashboard'
-    = link_to t('helpers.links.blog'), '#', class: 'btn-blog'
+    = link_to t('helpers.links.blog'), 'http://blog.weekendcult.com',
+      class: 'btn-blog'
     = link_to t('helpers.links.create_survey'), '#',
       class: 'btn-create'
-    = render 'dialog'
