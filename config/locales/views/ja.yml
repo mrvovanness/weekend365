@@ -24,7 +24,7 @@ ja:
         latest_reply: "最終の返事"
         preview: "プレビュー"
         results: "結果"
-        participation_rate: "Participation rate - TRANSLATE IT"
+        participation_rate: "Participation rate"
         finish_date: 'Finish Date'
         next_delivery: "Next Emails Delivery"
         emails_sent: "Emails sent last time"
@@ -106,9 +106,9 @@ ja:
       select_all: "すべて"
   home:
     index:
-      free_for_beta: "Free while in beta, try it now - TRANSLATE IT"
-      title: "Analitycs for<br/>your company culture - TRANSLATE IT"
-      subtitle: "Surveys that will help you keep your Employees Engaged, Reduce Turnover and Grow Profits - TRANSLATE IT"
+      free_for_beta: "Free while in beta, try it now"
+      title: "Analitycs for<br/>your company culture"
+      subtitle: "Surveys that will help you keep your Employees Engaged, Reduce Turnover and Grow Profits"
   pages:
     about:
       title: "Weekendについて"
@@ -146,10 +146,10 @@ ja:
         edit: "編集"
         preview: "プレビュー"
         results: "結果"
-        participation_rate: "Rate - TRANSLATE IT"
+        participation_rate: "Rate"
     new:
       title: "新規サーベイを作成"
-      choose_type: "Choose type of Survey - TRANSLATE IT"
+      choose_type: "Choose type of Survey"
     preview:
       title: "サーベイ確認"
       at: "時間"
@@ -169,7 +169,7 @@ ja:
       and_get: ""
       updates_on_the_new_trends: "社員のエンゲージについての最新のトレンドを読んでください"
     comments:
-      title: "Comments - translate"
+      title: "Comments"
       selected: "Selected:"
   survey_mailers:
     send_survey:
@@ -196,4 +196,4 @@ ja:
         company_survey:
           attributes:
             start_on:
-              bad_survey_start: "Survey start date and time should be after current time - TRANSLATE IT"
+              bad_survey_start: "Survey start date and time should be after current time"

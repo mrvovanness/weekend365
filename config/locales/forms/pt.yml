@@ -92,7 +92,7 @@ pt:
         birthday: "Data de Nascimento"
         country: "País"
       answer:
-        comment: "Please, add your comment: - TRANSLATE IT"
+        comment: "Please, add your comment:"
     placeholders:
       signup:
         password: "mínimo de 8 caracteres"

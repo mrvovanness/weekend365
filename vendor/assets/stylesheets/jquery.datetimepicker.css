@@ -399,7 +399,7 @@
 .xdsoft_scrollbar >.xdsoft_scroller {
 	background: #ccc !important;
 	height: 20px;
-	border-radius: 3px;
+	border-radius: 2px;
 }
 .xdsoft_scrollbar {
 	position: absolute;

@@ -24,7 +24,7 @@ pt:
         latest_reply: "Resposta Recente"
         preview: "Preview"
         results: "Resultados"
-        participation_rate: "Participation rate - TRANSLATE IT"
+        participation_rate: "Participation rate"
         finish_date: 'Finish Date'
         next_delivery: "Next Emails Delivery"
         emails_sent: "Emails sent last time"
@@ -106,9 +106,9 @@ pt:
       select_all: "Todos(as)"
   home:
     index:
-      free_for_beta: "Free while in beta, try it now - TRANSLATE IT"
-      title: "Analitycs for<br/>your company culture - TRANSLATE IT"
-      subtitle: "Surveys that will help you keep your Employees Engaged, Reduce Turnover and Grow Profits - TRANSLATE IT"
+      free_for_beta: "Free while in beta, try it now"
+      title: "Analitycs for<br/>your company culture"
+      subtitle: "Surveys that will help you keep your Employees Engaged, Reduce Turnover and Grow Profits"
   pages:
     about:
       title: "Sobre nós"
@@ -146,10 +146,10 @@ pt:
         edit: "Editar"
         preview: "Preview"
         results: "Resultados"
-        participation_rate: "Rate - TRANSLATE IT"
+        participation_rate: "Rate"
     new:
       title: "Criar nova pesquisa"
-      choose_type: "Choose type of Survey - TRANSLATE IT"
+      choose_type: "Choose type of Survey"
     preview:
       title: "Confirmar pesquisa"
       at: "em"
@@ -169,7 +169,7 @@ pt:
       and_get: "e fique atento"
       updates_on_the_new_trends: "aos novos trends em relação ao Engajamento do Colaborador"
     comments:
-      title: "Comments - translate"
+      title: "Comments"
       selected: "Selected:"
   survey_mailers:
     send_survey:
@@ -196,4 +196,4 @@ pt:
         company_survey:
           attributes:
             start_on:
-              bad_survey_start: "Survey start date and time should be after current time - TRANSLATE IT"
+              bad_survey_start: "Survey start date and time should be after current time"
