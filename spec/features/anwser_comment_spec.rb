@@ -2,6 +2,9 @@ require 'rails_helper'
 
 describe User do
   let!(:token) { create(:token) }
+  before(:all) do
+    load "#{Rails.root}/db/seeds/articles.rb"
+  end
 
   context 'adding comment' do
     before do

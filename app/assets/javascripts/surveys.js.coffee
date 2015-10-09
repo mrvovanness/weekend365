@@ -61,10 +61,6 @@ jQuery ->
     resizable: false
     width: 500
 
-  $('#add-survey-btn, .btn-create').click (e) ->
-    e.preventDefault()
-    $('#dialog').dialog 'open'
-
   # Calculate number of repeats
   calculateRepeats = ->
     finishOn = new Date $('#company_survey_finish_on').val()

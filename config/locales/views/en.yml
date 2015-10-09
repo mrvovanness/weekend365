@@ -149,6 +149,7 @@ en:
         participation_rate: "Rate"
     new:
       title: "create new survey"
+      choose_type: "Choose type of Survey"
     preview:
       title: "survey confirmation"
       at: "at"

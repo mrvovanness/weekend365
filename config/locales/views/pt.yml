@@ -149,6 +149,7 @@ pt:
         participation_rate: "Rate - TRANSLATE IT"
     new:
       title: "Criar nova pesquisa"
+      choose_type: "Choose type of Survey - TRANSLATE IT"
     preview:
       title: "Confirmar pesquisa"
       at: "em"

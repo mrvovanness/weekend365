@@ -20,7 +20,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'surveys' => 'surveys/pulses#index'
+  get 'surveys' => 'surveys#index'
+  get 'surveys/new' => 'surveys#new', as: :new_survey
   namespace :surveys do
     resources :pulses, except: :index do
       member do
