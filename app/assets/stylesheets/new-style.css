@@ -1,6 +1,6 @@
 .info-table-holder{
 	border:1px solid #78797a;
-	border-radius:13px;
+	border-radius:2px;
 	padding:4px;
 	margin:0 0 50px;
 }
@@ -22,10 +22,10 @@
 	padding:22px 15px 20px;
 }
 .info-table tr th:first-child{
-	border-radius:8px 0 0 8px;
+	border-radius:2px 0 0 2px;
 }
 .info-table tr th:last-child{
-	border-radius:0 8px 8px 0;
+	border-radius:0 2px 2px 0;
 }
 .info-table .col01{width:338px;}
 .info-table .col02{width:116px;}
@@ -63,7 +63,7 @@
 	resize:none;
 	overflow:auto;
 	border:none;
-	border-radius:9px;
+	border-radius:2px;
 	margin:0 0 3px;
 	letter-spacing:1px;
 	font:15px/20px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
@@ -160,7 +160,7 @@
 	position:relative;
 	background:#f19926;
 	color:#fff;
-	border-radius:10px;
+	border-radius:2pxpx;
 	-moz-box-sizing: border-box;	box-sizing: border-box;
 	padding:10px 10px 8px 46px;
 	display:block;
@@ -205,7 +205,7 @@
 	resize:none;
 	 height: 68px;
 	margin: 0 0 12px;
-	border-radius:8px;
+	border-radius:2px;
 }
 input[type="submit"].submit{
 	display:block;
@@ -216,7 +216,7 @@ input[type="submit"].submit{
 	height:32px;
 	width:170px;
 	letter-spacing:2px;
-	border-radius:8px;
+	border-radius:2px;
 	font:15px/32px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
 }
 input[type="submit"].submit:hover{
@@ -225,7 +225,7 @@ input[type="submit"].submit:hover{
 .btn-info{
 	float:right;
 	background:#0d8690;
-	border-radius:10px;
+	border-radius:2pxpx;
 	letter-spacing:2px;
 	color:#fff;
 	width:50px;
@@ -264,7 +264,7 @@ input[type="submit"].submit:hover{
 }
 .servey-type-area{
 	border:1px solid #78797a;
-	border-radius:14px;
+	border-radius:2px;
 	padding:17px 31px;
 	width:570px;
 	margin:0 auto 50px;
@@ -280,7 +280,7 @@ input[type="submit"].submit:hover{
 	color:#fff;
 	background:#02848e;
 	padding:14px 16px 22px;
-	border-radius:10px;
+	border-radius:2pxpx;
 }
 .servey-type a:hover{
 	background:#01494e;
@@ -324,7 +324,7 @@ input[type="submit"].submit:hover{
 	-moz-box-sizing: border-box;	box-sizing: border-box;
 	border:1px solid #78797a;
 	padding:10px;
-	border-radius:13px;
+	border-radius:2px;
 	margin:0 0 20px;
 	height:94px;
 	resize:none;
@@ -363,7 +363,7 @@ input[type="submit"].submit:hover{
 	background:#ef9825;
 	padding:23px 10px;
 	display:block;
-	border-radius:8px;
+	border-radius:2px;
 	letter-spacing:2px;
 	text-align:center;
 	font:14px/17px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
