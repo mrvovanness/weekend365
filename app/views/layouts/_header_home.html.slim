@@ -2,8 +2,8 @@
   header#head.clearfix  
     = link_to root_path do
       = image_tag('logo03.png', alt: 'weekend', size: '106x19', class: 'logo')
-    /ul.links.alignright
-      li.lang
+    ul.links.alignright
+      /li.lang
         = link_to params.merge(locale: I18n.locale, only_path: true) do
           = t("upperbar.languages.#{I18n.locale}")
         .drop
