@@ -92,7 +92,7 @@ pt:
         birthday: "Data de Nascimento"
         country: "País"
       answer:
-        comment: "Please, add your comment:"
+        comment: "Por Favor, deixe seu comentário:"
     placeholders:
       signup:
         password: "mínimo de 8 caracteres"
@@ -105,4 +105,4 @@ pt:
       import_csv: "Upload arquivo csv"
   labels:
     confirmations:
-      terms_of_service: "I have read and agree to the %{privacy_policy} and %{user_agreement}"
+      terms_of_service: "Eu li e concordo com a %{privacy_policy} e o %{user_agreement}"

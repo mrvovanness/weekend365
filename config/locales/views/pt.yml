@@ -24,11 +24,11 @@ pt:
         latest_reply: "Resposta Recente"
         preview: "Preview"
         results: "Resultados"
-        participation_rate: "Participation rate"
-        finish_date: 'Finish Date'
-        next_delivery: "Next Emails Delivery"
-        emails_sent: "Emails sent last time"
-        responses_last: "Responses received last time"
+        participation_rate: "Participação"
+        finish_date: 'Data de Encerramento'
+        next_delivery: "Entrega do próximo email"
+        emails_sent: "Emails recentes"
+        responses_last: "Respostas recentes"
     show:
       title: "Resultados da Pesquisa"
       params_header: "Frequencia, Dia e Hora"
@@ -40,10 +40,10 @@ pt:
         average_score: "Sua nota média, dia"
         country_average_score: "Nota média no seu país, dia"
         industry_average_score: "Nota média na sua Indústria, dia"
-      last_comments: "Last comments"
+      last_comments: "Comentários Recentes"
     graphs:
-      global_tendencies: "Global tendencies for this survey among companies"
-      local_tendencies: "Tendencies inside your company"
+      global_tendencies: "Tendências para essa pesquisa entre outras empresas"
+      local_tendencies: "Tendências dentro da sua empresa"
     phrase:
       good: "Muito Bom!"
       normal: "Ótimo!"
@@ -101,14 +101,14 @@ pt:
       by_name: "Nome"
       any_department: "Departmento (todos)"
       any_position: "Posição (todos)"
-      any_gender: "Gender (any)"
+      any_gender: "Gênero (todos)"
       delete_selected: "Deletar"
       select_all: "Todos(as)"
   home:
     index:
-      free_for_beta: "Free while in beta, try it now"
-      title: "Analitycs for<br/>your company culture"
-      subtitle: "Surveys that will help you keep your Employees Engaged, Reduce Turnover and Grow Profits"
+      free_for_beta: "De graça enquanto em Beta, faça um teste"
+      title: "Analitycs para<br/>a cultura da sua empresa"
+      subtitle: "Pesquisas que vão ajudar você a manter seus Colaboradores Engajados, Reduzir a Rotatividade e Aumentar os Lucros"
   pages:
     about:
       title: "Sobre nós"
@@ -135,7 +135,7 @@ pt:
       survey_period: "Período:"
       weeks: "semanas"
     index:
-      title: "escolha da pesquisa"
+      title: "Escolha da pesquisa"
       headers:
         title: "Título"
         status: "Status"
@@ -169,8 +169,8 @@ pt:
       and_get: "e fique atento"
       updates_on_the_new_trends: "aos novos trends em relação ao Engajamento do Colaborador"
     comments:
-      title: "Comments"
-      selected: "Selected:"
+      title: "Comentários"
+      selected: "Selecionadas:"
   survey_mailers:
     send_survey:
       title: "Bem Vindo à Weekend"
@@ -196,4 +196,4 @@ pt:
         company_survey:
           attributes:
             start_on:
-              bad_survey_start: "Survey start date and time should be after current time"
+              bad_survey_start: "O horário de início da Pesquisa deve ser depois do horário atual. "

@@ -92,7 +92,7 @@ ja:
         birthday: "誕生日"
         country: "国"
       answer:
-        comment: "Please, add your comment:"
+        comment: "コメントください。"
     placeholders:
       signup:
         password: "文字の最小 8 桁"
@@ -105,4 +105,4 @@ ja:
       import_csv: "csvファイルインポート"
   labels:
     confirmations:
-      terms_of_service: "I have read and agree to the %{privacy_policy} and %{user_agreement}"
+      terms_of_service: "%{privacy_policy} と %{user_agreement}　を賛成した上で進みます。"
