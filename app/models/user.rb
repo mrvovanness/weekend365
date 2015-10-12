@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
   validates :company, presence: true
-  validates :password, length: { minimum: 8 }, on: :update
+  validates :password, length: { minimum: 6 }, on: :update
   validates :terms_of_service, acceptance: true
   belongs_to :company, inverse_of: :users
 
