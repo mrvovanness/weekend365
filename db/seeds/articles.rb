@@ -1,6 +1,6 @@
 # rake db:seed:articles
 
-puts "Creating default articles"
+puts "Creating default articles" if Rails.env.development?
 
 about_us = Article.find_or_create_by(title: 'About') do |a|
   a.body_markdown = '##coming soon'
@@ -30,4 +30,4 @@ privacy_policy = Article.find_or_create_by(title: 'We help you') do |a|
   a.body_markdown = IO.read('db/seeds/we-help-you.md')
 end
 
-puts "Created: #{ Article.all.map(&:title).join(', ')}"
+puts "Created: #{ Article.all.map(&:title).join(', ')}" if Rails.env.development?

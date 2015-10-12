@@ -10,6 +10,9 @@ class CompanySurvey < ActiveRecord::Base
 
   validate :check_survey_start, on: :create
 
+  validate :check_survey_start, on: :update,
+    unless: :started?
+
   before_validation :write_start_at,
     unless: :started?
 

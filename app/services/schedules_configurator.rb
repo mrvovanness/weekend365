@@ -42,7 +42,6 @@ class SchedulesConfigurator
                         time.hour, time.min, time.sec)
     else
       @survey.next_delivery_at = @survey.start_at
-      @survey.update_column(:counter, 0)
     end
 
     @survey.next_delivery_at

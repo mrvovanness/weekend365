@@ -3,12 +3,12 @@ class ChartsService
     @survey = survey
   end
 
-  def number_of_responses(filtered_answers)
+  def number_of_responses(filtered_answers=@survey.answers)
     filtered_answers.where(result: @survey.results)
-      .group_by_day(:created_at).count
+      .group_by_day('answers.created_at').count
   end
 
-  def average_by_company(filtered_answers)
+  def average_by_company(filtered_answers=@survey.answers)
     company_hash =
       OfferedAnswer.joins(:answers)
         .where(answers: { id: filtered_answers })
@@ -38,7 +38,7 @@ class ChartsService
     round_hash_values(industry_hash)
   end
 
-  def distribution(filtered_answers)
+  def distribution(filtered_answers=@survey.answers)
     OfferedAnswer.joins(:answers)
       .where(answers: { id: filtered_answers } )
       .group(:value).count
