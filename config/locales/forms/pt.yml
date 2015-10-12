@@ -27,7 +27,10 @@ pt:
         show:
           submit: "Enviar"
       password:
-        submit: "Alterar a minha senha"
+        new:
+          submit: "Send"
+        edit:
+          submit: "Alterar"
       session:
         new:
           submit: "Login"
