@@ -17,6 +17,8 @@ describe User do
     end
     it 'can see thanks message' do
       expect(page).to have_content(I18n.t('results.add_result.thanks'))
+      expect(Result.count).to eq 1
+      expect(token.company_survey.reload.number_of_responses).to eq 1
     end
 
     it 'can enter comment' do
