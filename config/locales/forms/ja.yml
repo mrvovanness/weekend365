@@ -27,7 +27,10 @@ ja:
         show:
           submit: "送信"
       password:
-        submit: "パスワードの変更"
+        new:
+          submit: "Send"
+        edit:
+          submit: "パスワードの変更"
       session:
         new:
           submit: "ログイン"

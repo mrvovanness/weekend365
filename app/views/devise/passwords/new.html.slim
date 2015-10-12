@@ -1,10 +1,13 @@
-= devise_error_messages!
+.btns
+  h2 = t('helpers.links.forgot_password')
+  = simple_form_for resource,
+    as: resource_name,
+    url: password_path(resource_name),
+    html: { method: :post, class: 'login-form' } do |f|
+    fieldset
+      = f.input :email, required: true, autofocus: true
 
-h2
-  | Forgot your password?
-= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
-
-  = f.input :email, required: true, autofocus: true
-
-  .form-actions
-    = f.button :submit, "Send me reset password instructions"
+      .login-holder
+        = f.button :submit,
+          t('simple_form.buttons.password.new.submit'),
+          class: 'btn btn-sign'

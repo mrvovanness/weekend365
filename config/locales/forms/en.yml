@@ -27,7 +27,10 @@ en:
         show:
           submit: "Activate"
       password:
-        submit: "Change my password"
+        new:
+          submit: "Send"
+        edit:
+          submit: "Change"
       registration:
         edit:
           submit: "Update"
