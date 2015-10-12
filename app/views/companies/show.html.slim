@@ -8,6 +8,13 @@
       fieldset
         = f.submit id: 'full-search-submit'
         = f.text_field :name_or_department_or_position_cont
+  .panel-clearfix
+    | Company administrator:
+    =< user_name_with_email(@company_admin).html_safe
+    - if current_user == @company_admin
+      =< link_to 'change', edit_company_path(@company), class: 'link-change'
+    br
+    br
 
   = render 'employees/index', employees: @employees,
     company: @company, search: @search

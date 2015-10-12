@@ -19,6 +19,10 @@
         class: 'selectable'
     .row
       .label-holder
+        = label_tag 'Company admin'
+      = admin_select(@company, @company_admin)
+    .row
+      .label-holder
         = f.label :office_address
       = f.input_field :office_address
     .row
