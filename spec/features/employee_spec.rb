@@ -40,4 +40,13 @@ describe Employee do
     click_on 'Create Employee'
     expect(page).to have_content('Employee could not be created')
   end
+
+  it 'Delete selected', js: true do
+    check 'select_all'
+    click_on 'Delete selected'
+    page.execute_script('window.confirm = function() { return true; }')
+    expect(page).to have_content I18n.t('flash.employees.destroy_selected.notice')
+    expect(Employee.count).to eq 0
+  end
+
 end

@@ -1,7 +1,8 @@
 jQuery ->
 
-  $('#select_all-styler').click ->
-    if $(this).hasClass 'checked'
+  $('#select_all').click ->
+
+    if $(this).prop 'checked'
       $('.bulk_actors').each ->
         $(this).addClass 'checked'
         $('input', this).prop 'checked', true
@@ -13,8 +14,9 @@ jQuery ->
   $('#destroy-selected-submit').click (e) ->
     e.preventDefault()
     if $('.bulk_actors:checked').length > 0
-      $('.link-add').click ->
-      $('#destroy-selected-form').submit()
+      if confirm $('#destroy-selected-submit').data('allow')
+        $('.link-add').click ->
+        $('#destroy-selected-form').submit()
 
   $('#employee_birthday').datetimepicker
     timepicker: false

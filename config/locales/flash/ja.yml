@@ -21,6 +21,8 @@ ja:
         notice: '新しい社員をサーベイに追加完了しました。'
       import:
         notice: '社員のインポートを完了しました。'
+      destroy_selected:
+        notice: 'Selected employees were successfully destroyed'
     signups:
       create:
         notice: 'アカウントの作成が完了しました。登録したメールを確認してください。'

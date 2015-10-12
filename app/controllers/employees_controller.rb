@@ -33,7 +33,7 @@ class EmployeesController < ApplicationController
 
   def destroy_selected
     Employee.destroy(params[:employee_ids])
-    redirect_to :back
+    redirect_to_company
   end
 
   def import

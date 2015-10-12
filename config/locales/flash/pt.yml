@@ -21,6 +21,8 @@ pt:
         notice: 'Os colaboradores foram adicionados a pesquisa com sucesso.'
       import:
         notice: 'Os colaboradores foram importados com sucesso.'
+      destroy_selected:
+        notice: 'Selected employees were successfully destroyed'
     signups:
       create:
         notice: 'Sua conta foi criada com sucesso. Confira sua caixa de email e siga as instruções para confirmar.'

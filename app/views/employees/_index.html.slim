@@ -8,10 +8,11 @@
       class: 'link-upload'
     = link_to t('employees.index.delete_selected').html_safe, '#',
       class: 'link-delete',
-      id: 'destroy-selected-submit'
+      id: 'destroy-selected-submit',
+      data: { allow: t('helpers.links.confirm') }
     .all-holder
       = label_tag 'select_all', t('employees.index.select_all')
-      = check_box_tag 'select_all', nil, false, class: 'checkable'
+      = check_box_tag 'select_all', nil, false
   .filter-area
     = search_form_for search, url: company_path(company) do |f|
       .sort-panel.clearfix
