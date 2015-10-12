@@ -59,5 +59,6 @@ class Signup
   def persist!
     I18n.locale = @user.locale
     @company.save!
+    user.add_role :company_admin, @company
   end
 end

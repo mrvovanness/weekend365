@@ -12,6 +12,7 @@ class CompaniesController < ApplicationController
   def show
     @search = @company.employees.ransack(params[:q])
     @employees = @search.result(distinct: true).page(params[:page]).per(15)
+    @company_admin = User.with_role(:company_admin, @company).first
 
     respond_to do |format|
       format.html
@@ -28,6 +29,7 @@ class CompaniesController < ApplicationController
 
   def edit
     @search = @company.employees.ransack(params[:q])
+    @company_admin = User.with_role(:company_admin, @company).first
   end
 
   def create
@@ -41,6 +43,7 @@ class CompaniesController < ApplicationController
   end
 
   def update
+    @company.change_admin(params[:admin].to_i) if params[:admin]
     @company.update(company_params)
     respond_with @company, location: -> { company_path(@company) }
   end
