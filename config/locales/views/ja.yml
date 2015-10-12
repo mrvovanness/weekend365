@@ -24,11 +24,11 @@ ja:
         latest_reply: "最終の返事"
         preview: "プレビュー"
         results: "結果"
-        participation_rate: "Participation rate"
-        finish_date: 'Finish Date'
-        next_delivery: "Next Emails Delivery"
-        emails_sent: "Emails sent last time"
-        responses_last: "Responses received last time"
+        participation_rate: "参加率"
+        finish_date: '終了期間'
+        next_delivery: "次のメールのデリバリー"
+        emails_sent: "前回送られたメール"
+        responses_last: "前回いただいたメール"
     show:
       title: "サーベイ結果"
       params_header: "回数、日付、時間"
@@ -40,10 +40,10 @@ ja:
         average_score: "平均のスコア　日"
         country_average_score: "国の平均のスコア　日"
         industry_average_score: "業界の平均のスコア　日"
-      last_comments: "Last comments"
+      last_comments: "最近のコメント"
     graphs:
-      global_tendencies: "Global tendencies for this survey among companies"
-      local_tendencies: "Tendencies inside your company"
+      global_tendencies: "企業のトレンド"
+      local_tendencies: "自社のトレンド"
     phrase:
       good: "とてもいい!"
       normal: "わるくないね!"
@@ -101,14 +101,14 @@ ja:
       by_name: "名前"
       any_department: "部署 「すべて」"
       any_position: "役職 「すべて」"
-      any_gender: "Gender (any)"
+      any_gender: "男女 「すべて」"
       delete_selected: "削除"
       select_all: "すべて"
   home:
     index:
-      free_for_beta: "Free while in beta, try it now"
-      title: "Analitycs for<br/>your company culture"
-      subtitle: "Surveys that will help you keep your Employees Engaged, Reduce Turnover and Grow Profits"
+      free_for_beta: "ベータ版は無料、試してください"
+      title: "会社の文化の<br/>アナリティクス"
+      subtitle: "社員のやりがい、退職率を下がって、売上を上がるための調査。"
   pages:
     about:
       title: "Weekendについて"
@@ -149,7 +149,7 @@ ja:
         participation_rate: "Rate"
     new:
       title: "新規サーベイを作成"
-      choose_type: "Choose type of Survey"
+      choose_type: "サーベイを選んでください。"
     preview:
       title: "サーベイ確認"
       at: "時間"
@@ -169,8 +169,8 @@ ja:
       and_get: ""
       updates_on_the_new_trends: "社員のエンゲージについての最新のトレンドを読んでください"
     comments:
-      title: "Comments"
-      selected: "Selected:"
+      title: "コメント"
+      selected: "選択されている："
   survey_mailers:
     send_survey:
       title: "Weekendへよこそう"
@@ -196,4 +196,4 @@ ja:
         company_survey:
           attributes:
             start_on:
-              bad_survey_start: "Survey start date and time should be after current time"
+              bad_survey_start: "現在時刻より、先の時間をお選びください。"
