@@ -37,7 +37,6 @@ body.home {
 .block4 {
   min-height: 140px;
   padding: 50px 0;
-  position: relative;
   letter-spacing: 3px;
 }
 .home footer {
@@ -62,7 +61,6 @@ body.home {
   float: left;
   letter-spacing: 2px;
   font: 14px/18px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
-	//font:12px/18px 'meiryo_ui', Meiryo UI, Meiryo, Osaka, sans-serif;
 }
 #head .links.alignright{
   float: right;
@@ -150,13 +148,6 @@ body.home {
   text-transform: uppercase;
   text-align: center;
   vertical-align: middle;
-}
-.block4 div {
-  position: absolute;
-  width: 100%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 .block4 .btn-contact{
   display: inline-block;

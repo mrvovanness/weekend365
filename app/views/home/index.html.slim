@@ -19,9 +19,8 @@
     - @article = Article.friendly.find('we-help-you')
     = render @article
 .block4
-  div
-    h3 
-      | &gt;&nbsp;&nbsp; #{t('home.index.free_for_beta')}
-      = link_to t('helpers.links.contact_us'),
-        new_contact_path,
-        class: 'btn-contact'
+  h3 
+    | &gt;&nbsp;&nbsp; #{t('home.index.free_for_beta')}
+    = link_to t('helpers.links.contact_us'),
+      new_contact_path,
+      class: 'btn-contact'
