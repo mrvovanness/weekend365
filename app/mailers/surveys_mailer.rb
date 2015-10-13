@@ -7,6 +7,7 @@ class SurveysMailer < ActionMailer::Base
     @answers = @survey.offered_questions.first.offered_answers
     @employee = employee
     @token = token.name
+    @company_admin = User.with_role(:company_admin, @survey.company).first
     mail(to: @employee.email, subject: @survey.title)
   end
 end

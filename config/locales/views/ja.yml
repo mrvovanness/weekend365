@@ -9,6 +9,8 @@ ja:
       my_own: "(自分)"
     edit:
       details: '会社の詳細'
+    show:
+      administrator: 'Company administrator:'
   contacts:
     new:
       title: "Weekendにメッセージを送ってください。"

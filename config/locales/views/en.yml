@@ -9,6 +9,8 @@ en:
       name: "Name"
       owner: "Owner"
       my_own: "(my own)"
+    show:
+      administrator: 'Company administrator:'
   contacts:
     new:
       title: "Send a message to us"

@@ -9,6 +9,8 @@ pt:
       my_own: "(minha própria)"
     edit:
       details: 'Detalhe da Empresa'
+    show:
+      administrator: 'Company administrator:'
   contacts:
     new:
       title: "Envie uma mensagem para a gente"

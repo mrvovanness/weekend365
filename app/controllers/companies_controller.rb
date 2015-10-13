@@ -4,6 +4,7 @@ class CompaniesController < ApplicationController
   before_action :define_company, except: [:index, :new, :create]
   before_action :check_access, only: [:index, :destroy]
   before_action :reset_company, only: [:index]
+  before_action :define_admin, only: [:show, :edit]
 
   def index
     @companies = Company.order(:name).page(params[:page]).per(15)
@@ -12,7 +13,6 @@ class CompaniesController < ApplicationController
   def show
     @search = @company.employees.ransack(params[:q])
     @employees = @search.result(distinct: true).page(params[:page]).per(15)
-    @company_admin = User.with_role(:company_admin, @company).first
 
     respond_to do |format|
       format.html
@@ -29,7 +29,6 @@ class CompaniesController < ApplicationController
 
   def edit
     @search = @company.employees.ransack(params[:q])
-    @company_admin = User.with_role(:company_admin, @company).first
   end
 
   def create
@@ -44,6 +43,7 @@ class CompaniesController < ApplicationController
 
   def update
     @company.change_admin(params[:admin].to_i) if params[:admin]
+    define_admin
     @company.update(company_params)
     respond_with @company, location: -> { company_path(@company) }
   end
@@ -70,6 +70,10 @@ class CompaniesController < ApplicationController
     else
       @company = current_user.company
     end
+  end
+
+  def define_admin
+    @company_admin = User.with_role(:company_admin, @company).first
   end
 
   def company_params

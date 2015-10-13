@@ -5,6 +5,9 @@ describe Company do
   let!(:user) { create(:user, company: company) }
 
   before do
+    if User.with_role(:company_admin, company).empty?
+      set_company_admin(company, user)
+    end
     login('ex@mail.com', 'bigsecret')
     visit company_path(company)
   end
