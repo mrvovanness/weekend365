@@ -9,6 +9,7 @@ pt:
     links:
       back: "Voltar"
       cancel: "Cancelar"
+      change: "change"
       confirm: "Você tem certeza?"
       destroy: "Deletar"
       edit: "Editar"

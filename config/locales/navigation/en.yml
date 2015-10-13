@@ -9,6 +9,7 @@ en:
     links:
       back: "Back"
       cancel: "Cancel"
+      change: "change"
       confirm: "Are you sure?"
       destroy: "Delete"
       edit: "Edit"

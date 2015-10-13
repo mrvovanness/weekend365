@@ -132,7 +132,7 @@
 												</tr>
 												<tr>
 													<td style="font:18px Arial, Helvetica, sans-serif; line-height:25px; margin:0 0 15px; color:#343838; ">
-                                                      <%= t('survey_mailers.send_survey.mistake_message') %> <span style="text-decoration:underline;"><%= mail_to @survey.company.users.first.email %></span> <%= t('survey_mailers.send_survey.company_admin') %>
+                                                      <%= t('survey_mailers.send_survey.mistake_message') %> <span style="text-decoration:underline;"><%= mail_to @company_admin.email %></span> <%= t('survey_mailers.send_survey.company_admin') %>
 													</td>
 												</tr>
 												<tr>
