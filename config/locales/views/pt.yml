@@ -108,9 +108,9 @@ pt:
       select_all: "Todos(as)"
   home:
     index:
-      free_for_beta: "De graça enquanto em Beta, faça um teste"
-      title: "Analitycs para<br/>a cultura da sua empresa"
-      subtitle: "Pesquisas que vão ajudar você a manter seus Colaboradores Engajados, Reduzir a Rotatividade e Aumentar os Lucros"
+      free_for_beta: "Free while in beta, try it now"
+      title: "Analitycs for<br/>your company culture"
+      subtitle: "Surveys that will help you keep your Employees Engaged, Reduce Turnover and Grow Profits"
   pages:
     about:
       title: "Sobre nós"

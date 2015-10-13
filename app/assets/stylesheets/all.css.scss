@@ -136,10 +136,11 @@ p{margin:0 0 10px;}
 	padding:234px 33px 9999px 33px;
 	width:838px;
 	margin:0 auto -9999px;
-	background:#f9fcfc;
+	background:rgba(249,252,252,0.6);
+
 }
 .main{
-	background: #f9fcfc !important;
+	background:rgba(249,252,252,0.6) !important;
 	padding:0 33px 9999px 33px;
 	width:838px;
 	margin:0 auto -9999px;
@@ -155,7 +156,7 @@ input[type="submit"].btn-login,
 	display:inline-block;
 	vertical-align:top;
 	color:#fff;
-	font:14px/20px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
+	font:0.8em 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
 	background:#f26522;
 	border-radius:2pxpx;
 	padding:6px 10px 6px 30px;
@@ -209,10 +210,10 @@ input[type="submit"].btn-sign,
 	background:#b6b6b6;
 	color:#fff;
 	text-transform:uppercase;
-	font:9px/17px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
+	font:0.8em 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
 	padding:0 8px 0 22px;
 	position:relative;
-	width:30px;
+	width:60px;
 	border-radius:2px;
 }
 .btn-about:after{
@@ -280,7 +281,7 @@ input[type="submit"].btn-sign,
 .btns .frame .btn-about{
 	display:inline-block;
 	vertical-align:top;
-	margin:15px 14px 0 0;
+	margin:10px 8px 0px 0px;
 }
 .w2{
 	height:1%;
@@ -338,9 +339,14 @@ input[type="submit"].btn-sign,
 .links > li > a:hover{
 	background:#526262;
 }
-.links .company a{
-	padding-left:16px;
-	margin-left:-16px;
+.links .company a:after{
+//	padding-left:16px;
+//	margin-left:-16px;
+	background:image-url("sprite.png") no-repeat -45px -71px;
+	width:12px;
+	height:12px;
+	left:14px;
+	top: 20px;
 }
 .links .dashboards a:after{
 	background:image-url("sprite.png") no-repeat 0 -71px;
@@ -2037,4 +2043,3 @@ input[type="submit"].btn-save:hover{background: #ad3114 image-url("sprite.png") 
   font: 16px/18px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
 }
 .panel-clearfix .link-change{color:#0d8690;}
-

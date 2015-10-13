@@ -108,9 +108,9 @@ ja:
       select_all: "すべて"
   home:
     index:
-      free_for_beta: "ベータ版は無料、試してください"
-      title: "会社の文化の<br/>アナリティクス"
-      subtitle: "社員のやりがい、退職率を下がって、売上を上がるための調査。"
+      free_for_beta: "Free while in beta, try it now"
+      title: "Analitycs for<br/>your company culture"
+      subtitle: "Surveys that will help you keep your Employees Engaged, Reduce Turnover and Grow Profits"
   pages:
     about:
       title: "Weekendについて"
