@@ -6,6 +6,9 @@ describe User do
 
   context 'Access to admin panel' do
     before(:each) do
+      if User.with_role(:company_admin, company).empty?
+        set_company_admin(company, user)
+      end
       login('ex@mail.com', 'bigsecret')
     end
 
@@ -34,6 +37,9 @@ describe User do
 
   context 'After sign in' do
     it 'redirects to edit company page in first time' do
+      if User.with_role(:company_admin, company).empty?
+        set_company_admin(company, user)
+      end
       user.confirmed_at = DateTime.current
       user.save
       login('ex@mail.com', 'bigsecret')

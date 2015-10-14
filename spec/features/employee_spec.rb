@@ -5,6 +5,9 @@ describe Employee do
   let!(:user) { create(:user, company: employee.company) }
 
   before do
+    if User.with_role(:company_admin, user.company).empty?
+      set_company_admin(user.company, user)
+    end
     login('ex@mail.com', 'bigsecret')
     visit company_path(employee.company)
   end
@@ -26,7 +29,7 @@ describe Employee do
   end
 
   it 'Create success' do
-    click_on 'Add a New Employee'
+    click_on 'New Employee(s)'
     fill_in 'Name', with: 'Boris'
     fill_in 'Email', with: 'ex@mail.com'
     click_on 'Create Employee'
@@ -34,7 +37,7 @@ describe Employee do
   end
 
   it 'Create failure' do
-    click_on 'Add a New Employee'
+    click_on 'New Employee(s)'
     fill_in 'Name', with: ''
     fill_in 'Email', with: ''
     click_on 'Create Employee'

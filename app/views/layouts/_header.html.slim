@@ -2,15 +2,17 @@ header#header.clearfix
   = link_to root_path do
     = image_tag('logo03.png', alt: 'weekend', size: '106x19', class: 'logo')
   ul.links
+    li.surveys
+      = link_to t('upperbar.surveys'), surveys_path
+    li.dashboards
+      = link_to t('upperbar.dashboard'), dashboard_index_path
     li.company
       - if current_user.is_admin?
         = link_to t('upperbar.companies'), companies_path
       - else
         = link_to t('upperbar.company'), company_path(current_user.company)
-    li.dashboards
-      = link_to t('upperbar.dashboard'), dashboard_index_path
-    li.surveys
-      = link_to t('upperbar.surveys'), surveys_path
+    
+    
   ul.links.alignright
     li.lang
       = link_to params.merge(locale: I18n.locale, only_path: true) do

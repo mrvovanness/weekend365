@@ -4,9 +4,15 @@ describe User do
   let!(:company) { create(:company) }
   let!(:user) { create(:user, company: company) }
   let!(:other_company) { create(:company) }
-  let!(:second_user) {create(:user, email: 'test@example.com', company: other_company)}
+  let!(:second_user) { create(:user, email: 'test@example.com', company: other_company) }
 
   before(:each) do
+    if User.with_role(:company_admin, company).empty?
+      set_company_admin(company, user)
+    end
+    if User.with_role(:company_admin, other_company).empty?
+      set_company_admin(other_company, second_user)
+    end
     login('ex@mail.com', 'bigsecret')
   end
 
@@ -30,7 +36,7 @@ describe User do
 
     it 'can add an employee to company' do
       find(:xpath, "//a[@href='/companies/#{other_company.id}'][1]").click
-      click_link 'Add a New Employee'
+      click_link 'New Employee(s)'
       fill_in 'Name', with: 'Jack London'
       fill_in 'Email', with: 'jack.london@mail.com'
       click_button 'Create Employee'
