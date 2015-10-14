@@ -36,7 +36,7 @@ describe User do
 
     it 'can add an employee to company' do
       find(:xpath, "//a[@href='/companies/#{other_company.id}'][1]").click
-      click_link 'Add a New Employee'
+      click_link 'New Employee(s)'
       fill_in 'Name', with: 'Jack London'
       fill_in 'Email', with: 'jack.london@mail.com'
       click_button 'Create Employee'
