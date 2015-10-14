@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   get 'signup' => 'signups#new', as: :new_signup
   post 'signup' => 'signups#create', as: :signups
   as :user do
@@ -35,6 +34,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :articles, only: [:index, :edit, :update]
+    resources :offered_questions
+    resources :offered_surveys
   end
 
   mount Resque::Server, at: '/background'

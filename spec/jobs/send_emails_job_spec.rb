@@ -38,4 +38,11 @@ describe SendEmailsJob do
   it 'reset email_counter' do
     expect(survey.reload.number_of_responses).to eq 0
   end
+
+  it 'skip validation of start_at' do
+    survey.update_column(:start_at, DateTime.current - 1.day)
+    survey.reload
+    SendEmailsJob.perform(survey.id)
+    expect(survey.reload.counter).to eq 2
+  end
 end

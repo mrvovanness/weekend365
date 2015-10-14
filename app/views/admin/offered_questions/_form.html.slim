@@ -1,0 +1,25 @@
+= simple_form_for [:admin, question],
+  html: { class: 'info-form' } do |f|
+  fieldset
+    .row
+      .label-holder
+        = f.label :title
+      = f.text_area :title
+    .row
+      .label-holder
+        = f.label :topic
+      = f.input_field :topic
+    .row
+      .label-holder
+        = f.label :subtopic
+      = f.input_field :subtopic
+    .row
+      .label-holder
+        = f.label :offered_answers
+      = f.association :offered_answers,
+        collection: OfferedAnswer.all,
+        label_method: :value,
+        value_method: :id,
+        input_html: { id: 'offered_answer_ids', multiple: true },
+        label: false
+      = f.submit class: 'btn-save'

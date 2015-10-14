@@ -71,7 +71,7 @@ class Surveys::PulsesController < ApplicationController
   end
 
   def load_offered_survey
-    @offered_survey = PulseSurvey.first
+    @offered_survey = OfferedSurvey.first
     @offered_questions = @offered_survey.offered_questions
       .includes(:offered_answers).uniq
   end

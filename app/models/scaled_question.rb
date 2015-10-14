@@ -1,2 +1,0 @@
-class ScaledQuestion < OfferedQuestion
-end

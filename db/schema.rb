@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151013080330) do
+ActiveRecord::Schema.define(version: 20151014090057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -157,7 +157,6 @@ ActiveRecord::Schema.define(version: 20151013080330) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "value"
-    t.string   "type"
   end
 
   create_table "offered_question_translations", force: :cascade do |t|
@@ -175,7 +174,8 @@ ActiveRecord::Schema.define(version: 20151013080330) do
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "type"
+    t.string   "topic"
+    t.string   "subtopic"
   end
 
   create_table "offered_survey_translations", force: :cascade do |t|
@@ -191,9 +191,9 @@ ActiveRecord::Schema.define(version: 20151013080330) do
 
   create_table "offered_surveys", force: :cascade do |t|
     t.string   "title"
-    t.string   "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
   end
 
   create_table "results", force: :cascade do |t|

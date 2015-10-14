@@ -26,8 +26,8 @@ module Sss
     config.generators do |g|
       g.orm :active_record
       g.template_engine :slim
-      g.test_framework :rspec, :fixture => true
-      g.fixture_replacement :factory_girl, :dir => "spec/factories"
+      g.test_framework false
+      g.fixture_replacement false
       g.view_specs false
       g.controller_specs false
       g.routing_specs false
@@ -35,6 +35,7 @@ module Sss
       g.request_specs false
       g.assets false
       g.helper false
+      g.routes false
     end
 
     config.autoload_paths += %W(#{config.root}/lib)
