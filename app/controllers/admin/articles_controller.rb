@@ -1,5 +1,4 @@
-class Admin::ArticlesController < ApplicationController
-  before_action :authenticate_user!, :check_access
+class Admin::ArticlesController < Admin::BaseController
 
   def index
     @articles = Article.includes(:translations).order(updated_at: :desc)
@@ -20,12 +19,6 @@ class Admin::ArticlesController < ApplicationController
   end
 
   private
-
-  def check_access
-    if current_user.is_usual?
-    redirect_to dashboard_index_path and return
-    end
-  end
 
   def article_params
     params.require(:article).permit(:body_markdown)

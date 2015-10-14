@@ -1,0 +1,31 @@
+#main
+  .inform-panel.clearfix
+    h1.company-name Offered Surveys
+  .filter-form
+    .panel.clearfix
+      = link_to 'Add survey',
+        new_admin_offered_survey_path,
+        class: 'link-add-new'
+    .filter-area
+      .sort-panel.clearfix
+        .col.col01
+          span Title
+        .col.col02
+          span Description
+        .col.col03
+          span = t('helpers.actions')
+      - @surveys.each do |survey|
+        .row
+          .col.col01
+            span = survey.title
+          .col.col02
+            span = survey.description
+          .col.col03
+            span.actions
+              = link_to t('helpers.links.show'), '#'
+              = link_to t('helpers.links.edit'),
+                edit_admin_offered_survey_path(survey)
+              = link_to t('helpers.links.destroy'),
+                admin_offered_survey_path(survey),
+                method: :delete,
+                data: { confirm: t('helpers.links.confirm') }

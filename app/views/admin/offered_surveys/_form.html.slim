@@ -1,0 +1,21 @@
+= simple_form_for [:admin, survey],
+  html: { class: 'info-form' } do |f|
+  fieldset
+    .row
+      .label-holder
+        = f.label :title
+      = f.input_field :title
+    .row
+      .label-holder
+        = f.label :description
+      = f.input_field :description
+    .row
+      .label-holder
+        = f.label :offered_questions
+      = f.association :offered_questions,
+        collection: OfferedQuestion.includes(:translations),
+        label_method: :title,
+        value_method: :id,
+        input_html: { id: 'offered_answer_ids', multiple: true },
+        label: false
+      = f.submit class: 'btn-save'

@@ -1,17 +1,17 @@
 #create default pulse survey with questions and offered answers
 load "#{Rails.root}/db/seeds/articles.rb"
 
-survey = PulseSurvey.find_or_create_by(title: 'Job Satisfaction')
+survey = OfferedSurvey.find_or_create_by(title: 'Job Satisfaction')
 
-question1 = ScaledQuestion.find_or_create_by(
+question1 = OfferedQuestion.find_or_create_by(
  title: 'Overall, how satisfied are you with your job?'
 )
 
-question2 = ScaledQuestion.find_or_create_by(
+question2 = OfferedQuestion.find_or_create_by(
  title: "How do you evaluate your department's management?"
 )
 
-question3 = ScaledQuestion.find_or_create_by(
+question3 = OfferedQuestion.find_or_create_by(
  title: 'Assess your mood right now'
 )
 
@@ -31,7 +31,7 @@ question3.update_attribute(:title, 'put translation here')
 
 
 (1..10).each do |n|
-  answer = ScaledAnswer.find_or_create_by(value: n)
+  answer = OfferedAnswer.find_or_create_by(value: n)
   SqaAssignment.find_or_create_by(
     offered_survey: survey,
     offered_question: question1,

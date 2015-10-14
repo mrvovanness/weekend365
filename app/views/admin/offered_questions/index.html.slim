@@ -1,0 +1,31 @@
+#main
+  .inform-panel.clearfix
+    h1.company-name OfferedQuestions
+  .filter-form
+    .panel.clearfix
+      = link_to 'Add question',
+        new_admin_offered_question_path,
+        class: 'link-add-new'
+    .filter-area
+      .sort-panel.clearfix
+        .col.col01
+          span Title
+        .col.col02
+          span Topic
+        .col.col03
+          span = t('helpers.actions')
+      - @questions.each do |question|
+        .row
+          .col.col01
+            span = question.title
+          .col.col02
+            span = question.type
+          .col.col03
+            span.actions
+              = link_to t('helpers.links.show'), '#'
+              = link_to t('helpers.links.edit'),
+                edit_admin_offered_question_path(question)
+              = link_to t('helpers.links.destroy'),
+                admin_offered_question_path(question),
+                method: :delete,
+                data: { confirm: t('helpers.links.confirm') }
