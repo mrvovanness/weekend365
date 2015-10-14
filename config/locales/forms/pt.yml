@@ -76,7 +76,7 @@ pt:
         company_name: "Nome da Empresa"
         country: "Pais"
       company_survey:
-        start_on: "Começar em (horário de Brasília)"
+        start_on: "Começar em (horário de %{timezone})"
         time: "Hora"
         repeat_every: "Repetir toda"
         finish_on: "Terminar em"

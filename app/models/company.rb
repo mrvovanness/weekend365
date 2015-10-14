@@ -15,4 +15,22 @@ class Company < ActiveRecord::Base
       new_admin.add_role(:company_admin, self)
     end
   end
+
+  def timezone
+    tz_id = read_attribute(:timezone)
+    as_name = ActiveSupport::TimeZone::MAPPING.select do |_,v|
+      v == tz_id
+    end.sort_by do |k,v|
+      v.ends_with?(k) ? 0 : 1
+    end.first.try(:first)
+    value = as_name || tz_id
+    time_zone = value && ActiveSupport::TimeZone[value]
+    time_zone.name
+  end
+
+  def timezone=(value)
+    tz_id = value.respond_to?(:tzinfo) && value.tzinfo.name || nil
+    tz_id ||= TZInfo::Timezone.get(ActiveSupport::TimeZone::MAPPING[value.to_s] || value.to_s).identifier
+    write_attribute(:timezone, tz_id)
+  end
 end

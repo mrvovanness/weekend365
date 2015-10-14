@@ -76,7 +76,7 @@ ja:
         company_name: "会社名"
         country: "国"
       company_survey:
-        start_on: "始まる (東京の時間)"
+        start_on: "始まる (%{timezone} time)"
         time: "時間"
         repeat_every: "リピート"
         finish_on: "終了日"

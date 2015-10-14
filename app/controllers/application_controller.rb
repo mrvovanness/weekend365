@@ -3,6 +3,7 @@ require 'application_responder'
 class ApplicationController < ActionController::Base
   before_action :set_locale
   before_action :set_company
+  around_action :set_time_zone
 
   self.responder = ApplicationResponder
   respond_to :html
@@ -43,6 +44,15 @@ class ApplicationController < ActionController::Base
       else
         @company = current_user.company
       end
+    end
+  end
+
+  def set_time_zone
+    if user_signed_in? && current_user.company.try(:timezone)
+      user_time_zone = ActiveSupport::TimeZone[current_user.company.timezone]
+      Time.use_zone(user_time_zone) { yield }
+    else
+      yield
     end
   end
 end

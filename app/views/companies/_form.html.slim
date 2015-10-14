@@ -19,6 +19,14 @@
         class: 'selectable'
     .row
       .label-holder
+        = f.label :timezone
+      = f.input_field :timezone,
+        as: :time_zone,
+        priority: [ActiveSupport::TimeZone['Tokyo']],
+        include_blank: false,
+        class: 'selectable'
+    .row
+      .label-holder
         = label_tag 'Company admin'
       = admin_select(@company, @company_admin)
     .row

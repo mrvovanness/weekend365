@@ -85,7 +85,7 @@ en:
         company_name: "Company Name"
         country: "Country"
       company_survey:
-        start_on: "start on (Tokyo time)"
+        start_on: "start on (%{timezone} time)"
         time: "Time"
         repeat_every: "Repeat every"
         finish_on: "Finish on"
