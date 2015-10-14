@@ -43,6 +43,7 @@ class Surveys::PulsesController < ApplicationController
     @token = Token.new(name: 'preview')
     @answers = @survey.offered_questions.first.offered_answers
     @employee = Employee.new(id: 1)
+    @company_admin = User.with_role(:company_admin, @survey.company).first
     render 'surveys_mailer/send_survey',
       layout: false
   end
