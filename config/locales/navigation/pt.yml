@@ -16,6 +16,8 @@ pt:
       new: "Novo"
       show: "Mostrar"
       about: "sobre"
+      back_to_surveys: "<< back to surveys list"
+      add_admin: "Add new Admin - TRANSLATE IT"
       add_company: "Nova Empresa"
       add_employee: "Novo Colaborador(es)"
       add_survey: "Nova Pesquisa"

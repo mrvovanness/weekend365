@@ -12,7 +12,11 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     if (current_user.updated_at - current_user.confirmed_at) <= 1
       current_user.touch
-      edit_company_path(current_user.company)
+      if current_user.is_admin_for?(current_user.company)
+        edit_company_path(current_user.company)
+      else
+        dashboard_index_path
+      end
     else
       dashboard_index_path
     end

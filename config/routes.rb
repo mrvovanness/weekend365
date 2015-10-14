@@ -19,6 +19,12 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :users do
+    collection do
+      patch 'destroy_selected'
+    end
+  end
+
   get 'surveys' => 'surveys#index'
   get 'surveys/new' => 'surveys#new', as: :new_survey
   namespace :surveys do

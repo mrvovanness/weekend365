@@ -27,6 +27,12 @@ pt:
       create:
         notice: 'Sua conta foi criada com sucesso. Confira sua caixa de email e siga as instruções para confirmar.'
         alert: 'Sua conta não pode ser criada.'
+    users:
+      create:
+        notice: 'Conifrmation letter was successfully delivered to specified e-mail address.'
+        alert: 'Account could not be created.'
+      destroy_selected:
+        notice: 'Selected accounts were successfully destroyed'
     token_expired: 'Você já respondeu ou o tempo para responder já acabou.'
     opinion_thanks: 'Muito Obrigado pelo seu comentário.'
     employees_list: 'Your employees list is empty. Please, add one or more employees.'

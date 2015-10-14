@@ -182,6 +182,17 @@ ja:
       company_admin: "自分の会社のWeekendの管理者"
       check_out: "見てください"
       hint_message: "事業者の満足度ややりがいを上がる事でもっといい会社の環境を作りましょう。"
+  users:
+    index:
+      title: "Admin list"
+      by_email: "By Email"
+      by_name: "By Name"
+      delete_selected: "Delete selected"
+      main_admin: "Main Admin"
+      select_all: "Select all"
+    new:
+      title: "Add new Admin"
+      back: "<< Back to Admin list"
   decorators:
     company_survey:
       header: "調査 #%{id}: %{title}"
@@ -199,3 +210,4 @@ ja:
           attributes:
             start_on:
               bad_survey_start: "現在時刻より、先の時間をお選びください。"
+  "yes": "Yes"

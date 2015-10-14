@@ -2,13 +2,17 @@ class User < ActiveRecord::Base
   rolify
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
-  validates :company, presence: true
+  validates :company, :name, :email, presence: true
   validates :password, length: { minimum: 6 }, on: :update
   validates :terms_of_service, acceptance: true
   belongs_to :company, inverse_of: :users
 
   def is_admin?
     has_role? :admin
+  end
+
+  def is_admin_for?(company)
+    has_role? :company_admin, company
   end
 
   def is_usual?

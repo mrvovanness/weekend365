@@ -14,6 +14,8 @@ ja:
         create: "サインアップ"
       answer:
         update: "Send"
+      user:
+        create: "送信"
   simple_form:
     "yes": 'はい'
     "no": 'いいえ'

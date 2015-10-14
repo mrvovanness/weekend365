@@ -9,6 +9,8 @@ describe User do
       if User.with_role(:company_admin, company).empty?
         set_company_admin(company, user)
       end
+      user.updated_at = user.confirmed_at + 2
+      user.save
       login('ex@mail.com', 'bigsecret')
     end
 

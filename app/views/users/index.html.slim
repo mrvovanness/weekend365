@@ -1,0 +1,42 @@
+#main
+  .inform-panel.clearfix
+    h1.company-name = t('users.index.title')
+
+.filter-form
+  .panel.clearfix
+    = link_to t('helpers.links.add_admin'),
+      new_user_path,
+      class: 'link-add-new'
+    = link_to t('users.index.delete_selected'), '#',
+      class: 'link-delete',
+      id: 'destroy-selected-submit',
+      data: { allow: t('helpers.links.confirm') }
+    .all-holder
+      = label_tag 'select_all', t('users.index.select_all')
+      = check_box_tag 'select_all', nil, false
+  .filter-area
+    .sort-panel.clearfix
+      .col.col01
+        = sort_link @search, :name, t('users.index.by_name')
+      .col.col02
+        = sort_link @search, :email, t('users.index.by_email')
+      .col.col03
+        span = t('users.index.main_admin')
+
+    = form_tag destroy_selected_users_path,
+      id: 'destroy-selected-form',
+      method: :patch do
+      - @users.each do |user|
+        .row
+          .col.col01
+            span.title = user.name
+          .col.col02
+            span = user.email
+          .col.col03
+            span = user.is_admin_for?(@company) ? t('yes') : ''
+            - unless user == current_user || user.is_admin_for?(@company)
+              = check_box_tag 'user_ids[]', user.id, false,
+                id: "user-#{user.id}",
+                class: 'bulk_actors checkable'
+  .bottom-panel
+    = paginate @users

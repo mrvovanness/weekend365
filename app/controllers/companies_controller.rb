@@ -73,7 +73,7 @@ class CompaniesController < ApplicationController
   end
 
   def define_admin
-    @company_admin = User.with_role(:company_admin, @company).first
+    @company_admin = @company.admin
   end
 
   def company_params
