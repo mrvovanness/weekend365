@@ -28,6 +28,7 @@
         = f.input :locale, as: :hidden,
           input_html: { value: I18n.locale.to_s }
         = f.input :start_on, as: :string,
+          label: t("simple_form.labels.company_survey.start_on", timezone: @company.timezone),
           label_html: { class: 'style01' },
           input_html: { class: survey.started? ? 'started' : 'survey_start_on schedule-setter',
                         value: survey.set_start_on },

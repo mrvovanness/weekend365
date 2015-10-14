@@ -254,7 +254,7 @@ ActiveRecord::Schema.define(version: 20151013080330) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
-    t.string   "locale",                 default: "ja"
+    t.string   "locale",                 default: "en"
     t.integer  "company_id"
   end
 
