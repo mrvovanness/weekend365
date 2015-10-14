@@ -177,7 +177,7 @@ pt:
     send_survey:
       title: "Bem Vindo à Weekend"
       question: "Pergunta:"
-      action: "Clique no número de sua preferência"
+      action: "A sua opinião é o primeiro passo<br />para uma empresa melhor!"
       mistake_message: "Caso esse email não seja direcionado a você ou você acha que está recebendo esse email por engano, entre em contato com "
       company_admin: "que administra o serviço pela sua empresa."
       check_out: "Dê uma olhada"

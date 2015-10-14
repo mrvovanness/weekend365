@@ -104,7 +104,7 @@ en:
         birthday: "Birthday"
         country: "Country"
       answer:
-        comment: "Please, add your comment:"
+        comment: "Please, explain why you chose that option:<br />(This is an ANONIMOUS answer.<br />The person in charge at your<br />company will read it.)"
     placeholders:
       signup:
         password: "8 characters minimum"

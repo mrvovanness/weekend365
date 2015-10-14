@@ -177,7 +177,7 @@ en:
     send_survey:
       title: "Welcome to weekend"
       question: "Question:"
-      action: "Just click the number of your choice <br />and that’s it!"
+      action: "Your opinion is the first step<br />for a better company!"
       mistake_message: "If this email is not addressed to you or you think you are receiving it by a mistake, please send an email to"
       company_admin: "who administrates the service at your company"
       check_out: "Check out the"

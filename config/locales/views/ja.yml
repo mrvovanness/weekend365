@@ -177,7 +177,7 @@ ja:
     send_survey:
       title: "Weekendへよこそう"
       question: "質問:"
-      action: "数字をクリックするだけで、ログインはいらない。"
+      action: "あなたの意見が、より過ごしやすい会社を作ります！"
       mistake_message: "このメールの宛先がまちがっていると思っているなら、このメールアドにメールください："
       company_admin: "自分の会社のWeekendの管理者"
       check_out: "見てください"

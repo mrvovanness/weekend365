@@ -1,7 +1,7 @@
 Rails.application.configure do
   config.action_controller.asset_host = 'http://weekendcult.com/'
   config.action_mailer.default_url_options = { host: 'http://weekendcult.com' }
-  config.action_mailer.default_options = { from: 'no-reply@weekendcult.com' }
+  config.action_mailer.default_options = { from: 'survey@weekendcult.com' }
   config.action_mailer.smtp_settings = {
     address: ENV['smtp_address'],
     port: ENV['smtp_port'],
