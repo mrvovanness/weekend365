@@ -25,5 +25,5 @@ Rails.application.configure do
   }
   config.action_mailer.asset_host = config.action_controller.asset_host
   config.action_mailer.default_url_options = { host: 'dev.weekendcult.com' }
-  config.action_mailer.default_options = { from: 'no-reply@weekendcult.com' }
+  config.action_mailer.default_options = { from: 'survey@weekendcult.com' }
 end
