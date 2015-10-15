@@ -3,6 +3,8 @@ require 'rails_helper'
 describe Employee do
   let!(:employee) { create(:employee) }
   let!(:user) { create(:user, company: employee.company) }
+  let!(:member) { create(:second_employee, position: 'Team member', department: 'Finance', company: employee.company) }
+  let!(:manager) { create(:third_employee, position: 'Manager', department: 'IT', company: employee.company) }
 
   before do
     if User.with_role(:company_admin, user.company).empty?
@@ -52,4 +54,15 @@ describe Employee do
     expect(Employee.count).to eq 0
   end
 
+  context 'Filters' do
+    it 'by position', js: true do
+      select 'Manager', from: 'q_position_eq'
+      expect(page).to_not have_content member.name
+    end
+
+    it 'by department', js: true do
+      select 'Finance', from: 'q_department_eq'
+      expect(page).to_not have_content manager.name
+    end
+  end
 end
