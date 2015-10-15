@@ -20,12 +20,12 @@
           = sort_link search, :name, t('employees.index.by_name')
         .col.col02
           = f.select :department_eq,
-            options_for_select(company.employees.pluck(:department).uniq),
+            options_for_select(company.employees.pluck(:department).uniq, @search.department_eq),
             { include_blank: t('employees.index.any_department') },
             { class: 'checkable sel04' }
         .col.col03
           = f.select :position_eq,
-            options_for_select(company.employees.pluck(:position).uniq),
+            options_for_select(company.employees.pluck(:position).uniq, @search.position_eq),
             { include_blank: t('employees.index.any_position') },
             { class: 'checkable sel04' }
           = f.submit id: 'combine-search-submit',
