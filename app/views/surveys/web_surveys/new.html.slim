@@ -1,0 +1,6 @@
+#main
+  .inform-panel.clearfix
+    h1 = link_to t('surveys.new.title'), '#'
+  = render 'form',
+    company_survey: @company_survey,
+    offered_survey: @offered_survey

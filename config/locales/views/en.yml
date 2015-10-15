@@ -209,7 +209,7 @@ en:
   activerecord:
     errors:
       models:
-        company_survey:
+        email_schedule:
           attributes:
             start_on:
               bad_survey_start: "Survey start date and time should be after current time"

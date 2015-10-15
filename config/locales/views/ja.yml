@@ -209,7 +209,7 @@ ja:
   activerecord:
     errors:
       models:
-        company_survey:
+        email_schedule:
           attributes:
             start_on:
               bad_survey_start: "現在時刻より、先の時間をお選びください。"

@@ -1,12 +1,7 @@
 FactoryGirl.define do
   factory :company_survey do
     title 'Your first survey'
-    number_of_repeats 2
-    repeat_mode 'd'
-    repeat_every 3
     message 'Hello'
-    start_on Date.today.strftime('%Y-%m-%d')
-    time (Time.current + 1.hour).strftime('%H:%M')
 
     factory :survey_with_finish_on do
       finish_on Date.today + 1.year
@@ -29,6 +24,13 @@ FactoryGirl.define do
 
       after(:create) do |survey, evaluator|
         create_list(:token, evaluator.tokens_count, company_survey: survey)
+        create(:email_schedule, company_survey: survey)
+      end
+    end
+
+    factory  :survey_with_schedule do
+      after(:build) do |survey|
+        build(:email_schedule, company_survey: survey)
       end
     end
 

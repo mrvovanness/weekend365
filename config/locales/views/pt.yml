@@ -209,7 +209,7 @@ pt:
   activerecord:
     errors:
       models:
-        company_survey:
+        email_schedule:
           attributes:
             start_on:
               bad_survey_start: "O horário de início da Pesquisa deve ser depois do horário atual. "

@@ -8,7 +8,7 @@ describe SendEmailsJob do
   end
 
   after do
-    Resque.remove_schedule("send_emails_for_survey_#{survey.id}")
+    Resque.remove_schedule("for_survey_#{survey.id}")
   end
 
   it 'increment counter' do
@@ -16,15 +16,15 @@ describe SendEmailsJob do
   end
 
   it 'shift delivery date in database' do
-    old_delivery_date = survey.next_delivery_at
-    expect(survey.reload.next_delivery_at)
-      .to eq(old_delivery_date + survey.repeat_every.days)
+    old_delivery_date = survey.email_schedule.next_delivery_at
+    expect(survey.email_schedule.reload.next_delivery_at)
+      .to eq(old_delivery_date + survey.email_schedule.repeat_every.days)
   end
 
   it 'shift next delivery date in Redis' do
     resque_hash = get_redis_data(survey.id)
     expect(resque_hash['every'][1]['first_at'].to_time)
-      .to eq(survey.reload.next_delivery_at)
+      .to eq(survey.email_schedule.reload.next_delivery_at)
   end
 
   it 'mark all existing tokens as expired' do
@@ -40,7 +40,7 @@ describe SendEmailsJob do
   end
 
   it 'skip validation of start_at' do
-    survey.update_column(:start_at, DateTime.current - 1.day)
+    survey.email_schedule.update_column(:start_at, DateTime.current - 1.day)
     survey.reload
     SendEmailsJob.perform(survey.id)
     expect(survey.reload.counter).to eq 2

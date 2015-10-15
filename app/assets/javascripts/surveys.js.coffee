@@ -17,12 +17,12 @@ jQuery ->
     lang: $('html').attr('lang')
     scrollInput: false
 
-  $('#company_survey_time').datetimepicker
+  $('.survey_time').datetimepicker
     format: 'H:i'
     datepicker: false
     lang: $('html').attr('lang')
 
-  $('#company_survey_finish_on').datetimepicker
+  $('.survey_finish_on').datetimepicker
     format: 'Y-m-d'
     timepicker: false
     minDate: '+1970/01/03'
@@ -63,16 +63,16 @@ jQuery ->
 
   # Calculate number of repeats
   calculateRepeats = ->
-    finishOn = new Date $('#company_survey_finish_on').val()
-    startOn = new Date $('#company_survey_start_on').val()
-    repeatEvery = $('#company_survey_repeat_every').val()
-    repeatMode = $('#company_survey_repeat_mode').val()
+    startOn = new Date $('#survey_start_on').val()
+    finishOn = new Date $('.survey_finish_on').val()
+    repeatEvery = $('.survey_repeat_every').val()
+    repeatMode = $('.survey_repeat_mode').val()
     daysInterval = if repeatMode == 'w' then repeatEvery * 7 else repeatEvery
 
     diff = (finishOn - startOn)/(1000*60*60*24)/daysInterval
     result = if diff < 2 then 2 else diff
     numberOfRepeats = Math.floor(result)
-    $('#company_survey_number_of_repeats').val(numberOfRepeats)
+    $('.survey_number_of_repeats').val(numberOfRepeats)
   
   $(document).ready calculateRepeats
   $('.schedule-setter').on 'change', calculateRepeats
