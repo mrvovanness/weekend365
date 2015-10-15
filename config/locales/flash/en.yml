@@ -27,6 +27,12 @@ en:
       create:
         notice: 'Your account was successfully created. Please, check your e-mail box for confirmation.'
         alert: 'Account could not be created.'
+    users:
+      create:
+        notice: 'Conifrmation letter was successfully delivered to specified e-mail address.'
+        alert: 'Account could not be created.'
+      destroy_selected:
+        notice: 'Selected accounts were successfully destroyed'
     token_expired: 'You already answered or time to respond is ended'
     opinion_thanks: 'Thank you for your opinion'
     employees_list: 'Your employees list is empty. Please, add one or more employees.'

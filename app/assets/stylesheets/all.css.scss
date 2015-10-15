@@ -535,6 +535,7 @@ input[type="submit"].search,
 	position:relative;
 	color:#fff;
 }
+.sort-panel .col span:after,
 .sort-panel .col a:after{
 	content:'';
 	position: absolute;
@@ -2043,3 +2044,16 @@ input[type="submit"].btn-save:hover{background: #ad3114 image-url("sprite.png") 
   font: 16px/18px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
 }
 .panel-clearfix .link-change{color:#0d8690;}
+
+.row .link {
+  letter-spacing: 2px;
+  margin-left: 10px;
+}
+a.backlink {
+  color: #0d8690;
+  text-transform: uppercase;
+
+}
+a.backlink:hover {
+  color: #285b5f;
+}

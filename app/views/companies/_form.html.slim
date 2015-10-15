@@ -7,6 +7,11 @@
       = f.input_field :name
     .row
       .label-holder
+        = label_tag 'Company admin'
+      = admin_select(@company, @company_admin)
+      span.link = link_to 'Admin list', users_path, class: 'backlink'
+    .row
+      .label-holder
         = f.label :company_field
       = f.association :company_field,
         collection: CompanyField.includes(:translations),
@@ -25,10 +30,6 @@
         priority: [ActiveSupport::TimeZone['Tokyo']],
         include_blank: false,
         class: 'selectable'
-    .row
-      .label-holder
-        = label_tag 'Company admin'
-      = admin_select(@company, @company_admin)
     .row
       .label-holder
         = f.label :office_address

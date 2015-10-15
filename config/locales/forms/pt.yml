@@ -14,6 +14,8 @@ pt:
         create: "Cadastre-se"
       answer:
         update: "Send"
+      user:
+        create: "Salvar"
   simple_form:
     "yes": 'Sim'
     "no": 'Não'

@@ -16,6 +16,7 @@ en:
       new: "New"
       show: "Show"
       about: "about"
+      add_admin: "Add new Admin"
       add_company: "New Company"
       add_employee: "New Employee(s)"
       add_survey: "New Survey"

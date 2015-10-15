@@ -56,6 +56,10 @@ class ConfirmationsController < Devise::ConfirmationsController
     @confirmable.confirm
     set_flash_message :notice, :confirmed
     sign_in(resource_name, @confirmable)
-    redirect_to edit_company_path(@confirmable.company)
+    if @confirmable.is_admin_for?(@confirmable.company)
+      redirect_to edit_company_path(@confirmable.company)
+    else
+      redirect_to dashboard_index_path
+    end
   end
 end

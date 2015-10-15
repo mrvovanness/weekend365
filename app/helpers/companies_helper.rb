@@ -10,7 +10,7 @@ module CompaniesHelper
   def admin_select(company, company_admin)
     select_tag :admin,
                options_for_select(@company.users.collect { |a| [a.name, a.id] }, company_admin.id),
-               disabled: !current_user.has_role?(:company_admin, @company),
+               disabled: !current_user.is_admin_for?(@company),
                class: 'selectable'
   end
 end

@@ -1,0 +1,6 @@
+#main
+  .inform-panel.clearfix
+    h1
+      = link_to t('users.new.title'), '#'
+  = link_to t('users.new.back'), users_path, class: 'backlink'
+= render 'form', user: @user

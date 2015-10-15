@@ -7,8 +7,12 @@ class Company < ActiveRecord::Base
   has_many :results, through: :employees
   has_many :users, inverse_of: :company, dependent: :destroy
 
+  def admin
+    User.with_role(:company_admin, self).first
+  end
+
   def change_admin(user_id)
-    company_admin = User.with_role(:company_admin, self).first
+    company_admin = admin
     if company_admin.id != user_id
       company_admin.remove_role(:company_admin, self)
       new_admin = User.find(user_id)

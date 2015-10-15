@@ -3,7 +3,7 @@ require 'rails_helper'
 describe Company do
   let!(:company) { create(:company) }
   let!(:user) { create(:user, company: company) }
-  let!(:second_user) { create(:user, email: 'test@example.com', company: company) }
+  let!(:secondary_user) { create(:user, email: 'test@example.com', company: company) }
 
   before(:each) do
     if User.with_role(:company_admin, company).empty?
@@ -40,6 +40,9 @@ describe Company do
       company.reload
       expect(company.timezone).to eq 'Berlin'
     end
+    it 'shows admin list link' do
+      expect(page).to have_link('Admin list')
+    end
   end
 
   context 'Company admin' do
@@ -52,11 +55,34 @@ describe Company do
       it 'shows admin name at company page' do
         expect(page).to have_content(user.name)
       end
+
       it 'shows admin email at company page' do
         expect(page).to have_content(user.email)
       end
+
       it 'shows change admin link' do
         expect(page).to have_content('change')
+      end
+
+      it 'can edit the company admin' do
+        click_on 'Edit company'
+        find(:select, 'admin').first(:option, secondary_user.name).select_option
+        click_on 'Save'
+        company.reload
+        expect(company.admin).to eq secondary_user
+      end
+
+      it 'can delete other company user', js: true do
+        visit users_path
+        check 'select_all'
+        click_on 'Delete selected'
+        page.execute_script('window.confirm = function() { return true; }')
+        expect(company.users.count).to eq 1
+      end
+
+      it 'can not delete himself' do
+        visit users_path
+        expect(page).to_not have_css("#user-#{user.id}")
       end
     end
 
@@ -69,8 +95,19 @@ describe Company do
       it 'shows admin name at company page' do
         expect(page).to have_content(user.name)
       end
+
       it 'does not show change admin link' do
         expect(page).to_not have_content('change')
+      end
+
+      it 'can not edit the company admin' do
+        click_on 'Edit company'
+        expect(page).to have_select('admin', disabled: true)
+      end
+
+      it 'can not delete the company admin' do
+        visit users_path
+        expect(page).to_not have_css("#user-#{user.id}")
       end
     end
   end
