@@ -115,6 +115,8 @@ ja:
     about:
       title: "Weekendについて"
   results:
+    thanks_for_comment:
+      thanks: "コメントありがとうございます!"
     add_result:
       thanks: "ご回答ありがとうございます!"
   signups:
