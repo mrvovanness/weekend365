@@ -30,8 +30,7 @@ class ResultsController < ApplicationController
     if params[:answer][:comment].present?
       answer = Answer.find(params[:id])
       answer.update!(comment: params[:answer][:comment])
-      flash[:info] = t('flash.opinion_thanks')
     end
-    redirect_to root_path
+    redirect_to thanks_for_comment_path
   end
 end

@@ -24,7 +24,7 @@ describe User do
     it 'can enter comment' do
       fill_in 'answer_comment', with: 'Test'
       click_on I18n.t('helpers.submit.answer.update')
-      expect(page).to have_content(I18n.t('flash.opinion_thanks'))
+      expect(page).to have_content(I18n.t('results.thanks_for_comment.thanks'))
       expect(Answer.first.comment).to eq('Test')
     end
   end

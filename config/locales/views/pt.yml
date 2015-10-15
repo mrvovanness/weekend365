@@ -115,6 +115,8 @@ pt:
     about:
       title: "Sobre nós"
   results:
+    thanks_for_comment:
+      thanks: "Muito Obrigado pelo seu comentário!"
     add_result:
       thanks: "Muito Obrigado pela sua resposta!"
   signups:

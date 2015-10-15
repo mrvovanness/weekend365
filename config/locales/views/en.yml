@@ -115,6 +115,8 @@ en:
     about:
       title: "About us"
   results:
+    thanks_for_comment:
+      thanks: "Thank you for your opinion"
     add_result:
       thanks: "Thanks for your answer!"
   signups:

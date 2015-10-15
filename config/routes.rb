@@ -49,6 +49,7 @@ Rails.application.routes.draw do
   # route for handling email links
   get 'results' => 'results#add_result'
   patch 'comment/:id' => 'results#add_comment', as: 'answer_comment'
+  get 'thanks_for_comment' => 'results#thanks_for_comment'
 
   get 'contact' => 'contacts#new', as: :new_contact
   post 'contact' => 'contacts#create', as: :contacts

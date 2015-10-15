@@ -34,5 +34,4 @@ pt:
       destroy_selected:
         notice: 'Selected accounts were successfully destroyed'
     token_expired: 'Você já respondeu ou o tempo para responder já acabou.'
-    opinion_thanks: 'Muito Obrigado pelo seu comentário.'
     employees_list: 'Your employees list is empty. Please, add one or more employees.'

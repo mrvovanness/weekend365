@@ -34,5 +34,4 @@ ja:
       destroy_selected:
         notice: 'Selected accounts were successfully destroyed'
     token_expired: 'もうすでに答えられていますか回答の期間がもう終了しました。'
-    opinion_thanks: 'コメントありがとうございます。'
     employees_list: 'Your employees list is empty. Please, add one or more employees.'
