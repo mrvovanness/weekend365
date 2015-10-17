@@ -5,6 +5,7 @@ describe Employee do
   let!(:user) { create(:user, company: employee.company) }
   let!(:member) { create(:second_employee, position: 'Team member', department: 'Finance', company: employee.company) }
   let!(:manager) { create(:third_employee, position: 'Manager', department: 'IT', company: employee.company) }
+  let!(:survey) { create(:company_survey, company: employee.company) }
 
   before do
     if User.with_role(:company_admin, user.company).empty?
@@ -63,6 +64,30 @@ describe Employee do
     it 'by department', js: true do
       select 'Finance', from: 'q_department_eq'
       expect(page).to_not have_content manager.name
+    end
+  end
+
+  context 'Add selected to survey' do
+    before(:each) do
+      survey.employee_ids = [employee.id]
+      survey.skip_callback = true
+      survey.save!
+      visit company_path(employee.company)
+    end
+
+    it 'can add selected employee to the survey', js: true do
+      check 'select_all'
+      click_link 'add-selected-to-survey'
+      click_link 'form-submit'
+      expect(page).to have_content('Employees were successfully added to survey')
+    end
+
+    it 'removes duplicated employees in survey employees list', js: true do
+      check 'select_all'
+      click_link 'add-selected-to-survey'
+      click_link 'form-submit'
+      survey.reload
+      expect(survey.employee_ids.count).to eq 3
     end
   end
 end

@@ -11,6 +11,7 @@ pt:
       details: 'Detalhe da Empresa'
     show:
       administrator: 'Company administrator:'
+      dialog_title: 'Add selected employees to survey - TRANSLATE IT'
   contacts:
     new:
       title: "Envie uma mensagem para a gente"

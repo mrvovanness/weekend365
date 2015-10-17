@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   resources :employees do
     collection do
       patch 'destroy_selected'
+      patch 'add_to_survey'
       post 'import'
     end
   end

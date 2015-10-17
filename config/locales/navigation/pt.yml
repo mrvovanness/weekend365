@@ -21,6 +21,7 @@ pt:
       add_company: "Nova Empresa"
       add_employee: "Novo Colaborador(es)"
       add_survey: "Nova Pesquisa"
+      add_to_survey: "Add selected to Survey - TRANSLATE IT"
       back_to_dashboard: "Voltar para o Dashboard"
       back_to_surveys: "<< voltar para a lista de pesquisa"
       blog: "Blog"

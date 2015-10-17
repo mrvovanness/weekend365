@@ -20,6 +20,7 @@ ja:
       add_company: "会社を新規作成"
       add_employee: "社員追加"
       add_survey: "サーベイ追加"
+      add_to_survey: "Add selected to Survey - TRANSLATE IT"
       back_to_dashboard: "ダッシュボードに戻る"
       back_to_surveys: "<< サーベイリストに戻る"
       blog: "ブログ"

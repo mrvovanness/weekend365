@@ -20,6 +20,7 @@ en:
       add_company: "New Company"
       add_employee: "New Employee(s)"
       add_survey: "New Survey"
+      add_to_survey: "Add selected to Survey"
       back_to_dashboard: "Back to Dashboard"
       back_to_surveys: "<< back to surveys list"
       blog: "Blog"

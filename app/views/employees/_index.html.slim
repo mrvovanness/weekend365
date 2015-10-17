@@ -47,3 +47,26 @@
               class: 'bulk_actors checkable'
   .bottom-panel
     = paginate employees
+  .panel.clearfix
+    = link_to t('helpers.links.add_to_survey'),
+      '#',
+      class: 'link-add-selected',
+      id: 'add-selected-to-survey'
+  #dialog title=t('companies.show.dialog_title')
+    .inform-panel
+      = form_tag add_to_survey_employees_path,
+        method: :patch,
+        id: 'dialog-form',
+        class: 'login-form' do |f|
+        fieldset#survey-form
+          .row
+            .label-holder
+              = label_tag t('labels.employees.choose_survey')
+            = select_tag :survey_id,
+              options_for_select(@company.company_surveys.collect { |a| [a.title, a.id]}),
+              class: 'text ui-widget-content ui-corner-all selectable'
+        .panel.clearfix
+          = link_to t('helpers.links.add_to_survey'),
+          '#',
+          class: 'link-add-selected',
+          id: 'form-submit'
