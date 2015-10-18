@@ -111,3 +111,5 @@ pt:
   labels:
     confirmations:
       terms_of_service: "Eu li e concordo com a %{privacy_policy} e o %{user_agreement}"
+    employees:
+      choose_survey: "Please, choose the survey: - TRANSLATE IT"

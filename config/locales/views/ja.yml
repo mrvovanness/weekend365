@@ -11,6 +11,7 @@ ja:
       details: '会社の詳細'
     show:
       administrator: 'Company administrator:'
+      dialog_title: 'Add selected employees to survey - TRANSLATE IT'
   contacts:
     new:
       title: "Weekendにメッセージを送ってください。"

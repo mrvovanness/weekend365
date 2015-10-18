@@ -111,3 +111,5 @@ ja:
   labels:
     confirmations:
       terms_of_service: "%{privacy_policy} と %{user_agreement}　を賛成した上で進みます。"
+    employees:
+      choose_survey: "Please, choose the survey: - TRANSLATE IT"

@@ -2057,3 +2057,29 @@ a.backlink {
 a.backlink:hover {
   color: #285b5f;
 }
+#dialog .panel a.link-add-selected,
+.filter-form .panel a.link-add-selected {
+  color: #fff;
+  font-size: 18px;
+  line-height: 13px;
+  font-family: 'freightsans_mediumscregular';
+  text-align: left;
+  background: #0d8690;
+  border-radius: 2px;
+  position: relative;
+  padding: 13px 10px 12px 49px;
+  margin-bottom: 15px;
+}
+#dialog .panel a.link-add-selected:after,
+.filter-form .panel a.link-add-selected:after {
+  content:'';
+  position: absolute;
+  width:33px;
+  height:29px;
+  background:image-url("sprite.png") no-repeat -28px -188px;
+  top:8px;
+  left:7px;
+}
+#survey-form {
+  margin-bottom: 15px;
+}

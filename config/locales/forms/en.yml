@@ -120,3 +120,5 @@ en:
   labels:
     confirmations:
       terms_of_service: "I have read and agree to the %{privacy_policy} and %{user_agreement}"
+    employees:
+      choose_survey: "Please, choose the survey:"
