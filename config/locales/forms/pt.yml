@@ -97,7 +97,7 @@ pt:
         birthday: "Data de Nascimento"
         country: "País"
       answer:
-        comment: "Por Favor, escreva o porquê da nota escolhida:<br />(Esse comentário é ANONIMO e será lido<br />pelo responsavel dentro da sua empresa)"
+        comment: "Por Favor, escreva o porquê da nota escolhida:<br />(Esse comentário é ANONIMO)"
     placeholders:
       signup:
         password: "mínimo de 8 caracteres"

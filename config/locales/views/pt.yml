@@ -187,15 +187,15 @@ pt:
       hint_message: "para receber dicas de como melhorar o Engajamento do funcionário, transformando sua empresa em um lugar melhor para se trabalhar."
   users:
     index:
-      title: "Admin list"
-      by_email: "By Email"
-      by_name: "By Name"
-      delete_selected: "Delete selected"
-      main_admin: "Main Admin"
-      select_all: "Select all"
+      title: "Lista de Admin"
+      by_email: "Por Email"
+      by_name: "Por Nome"
+      delete_selected: "Deletar"
+      main_admin: "Admin Principal"
+      select_all: "Todos"
     new:
-      title: "Add new Admin"
-      back: "<< Back to Admin list"
+      title: "Novo Admin"
+      back: "<< De Volta para Lista de Admin"
   decorators:
     company_survey:
       header: "Pesquisa #%{id}: %{title}"
