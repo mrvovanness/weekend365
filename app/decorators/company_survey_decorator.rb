@@ -60,7 +60,7 @@ class CompanySurveyDecorator < Draper::Decorator
     elsif start_at.present?
       start_at.strftime('%H:%M')
     else
-      (Time.current. + 2.hours).strftime('%H:00')
+      (Time.current. + 30.minutes).strftime('%H:%M')
     end
   end
 
@@ -70,7 +70,7 @@ class CompanySurveyDecorator < Draper::Decorator
     elsif email_schedule.start_at.present?
       email_schedule.start_at.strftime('%Y-%m-%d')
     else
-      date = Date.today
+      date = Date.current
       date.strftime('%Y-%m-%d')
     end
   end

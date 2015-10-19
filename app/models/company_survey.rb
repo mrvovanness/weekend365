@@ -48,4 +48,12 @@ class CompanySurvey < ActiveRecord::Base
   def number_of_repeats
     email_schedule.number_of_repeats
   end
+
+  def repeat_every
+    email_schedule.repeat_every
+  end
+
+  def finish_on
+    email_schedule.finish_on
+  end
 end

@@ -3,7 +3,7 @@ class DashboardController < ApplicationController
 
   def index
     @surveys = @company.company_surveys.includes(:email_schedule)
-      .order(start_at: :desc).decorate
+      .order(updated_at: :desc).decorate
     @top_survey = @surveys.first
   end
 
