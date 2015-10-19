@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151018045423) do
+ActiveRecord::Schema.define(version: 20151019110212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -102,21 +102,21 @@ ActiveRecord::Schema.define(version: 20151018045423) do
     t.integer  "company_id"
     t.string   "title"
     t.string   "state"
-    t.integer  "number_of_responses", default: 0
-    t.boolean  "alarm",               default: false
+    t.integer  "number_of_responses",   default: 0
+    t.boolean  "alarm",                 default: false
     t.boolean  "repeat"
-    t.date     "finish_on"
-    t.integer  "number_of_repeats"
-    t.datetime "next_delivery_at"
+    t.date     "finish_on_old"
+    t.integer  "number_of_repeats_old"
+    t.datetime "next_delivery_at_old"
     t.text     "message"
-    t.integer  "repeat_every"
-    t.string   "repeat_mode"
-    t.integer  "counter",             default: 0
-    t.datetime "start_at"
+    t.integer  "repeat_every_old"
+    t.string   "repeat_mode_old"
+    t.integer  "counter",               default: 0
+    t.datetime "start_at_old"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "locale"
-    t.integer  "emails_counter",      default: 0
+    t.integer  "emails_counter",        default: 0
   end
 
   add_index "company_surveys", ["company_id"], name: "index_company_surveys_on_company_id", using: :btree

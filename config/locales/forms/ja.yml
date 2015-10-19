@@ -44,8 +44,9 @@ ja:
           submit: "社員の更新"
     hints:
       company_survey:
-        number_of_repeats: "最小 2, 最大 1000"
         start_on_opt: "すでに始まっています。"
+      email_schedule:
+        number_of_repeats: "最小 2, 最大 1000"
     labels:
       defaults:
         title: "タイトル"
@@ -78,16 +79,17 @@ ja:
         company_name: "会社名"
         country: "国"
       company_survey:
-        start_on: "始まる (%{timezone} time)"
-        time: "時間"
-        repeat_every: "リピート"
-        finish_on: "終了日"
-        number_of_repeats: "リピート回数"
         message: "社員にメッセージ"
         employee_ids: "宛先"
         once: "１回"
         repeat: "複数回"
         send_to: "宛先 (%{employees_count}):"
+      email_schedule:
+        start_on: "始まる (%{timezone} time)"
+        time: "時間"
+        repeat_every: "リピート"
+        finish_on: "終了日"
+        number_of_repeats: "リピート回数"
       employee:
         name: "名前"
         department: "部署"

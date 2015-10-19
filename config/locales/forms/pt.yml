@@ -44,8 +44,9 @@ pt:
           submit: "Atualizar colaboradores"
     hints:
       company_survey:
-        number_of_repeats: "min 2, max 1000"
         start_on_opt: "Pesquisa em andamento."
+      email_schedule:
+        number_of_repeats: "min 2, max 1000"
     labels:
       defaults:
         title: "Título"
@@ -88,6 +89,12 @@ pt:
         once: "Uma Vez"
         repeat: "Repetir"
         send_to: "Enviar para (%{employees_count}):"
+      email_schedule:
+        start_on: "Começar em (horário de %{timezone})"
+        time: "Hora"
+        repeat_every: "Repetir toda"
+        finish_on: "Terminar em"
+        number_of_repeats: "Número de repetições"
       employee:
         name: "Nome"
         department: "Departamento"

@@ -9,10 +9,7 @@ class EmailSchedule < ActiveRecord::Base
   validates :number_of_repeats, numericality: {
     only_integer: true, greater_than: 1, less_than: 1001 }
 
-  validate :check_survey_start, on: :create
-
-  validate :check_survey_start, on: :update,
-    unless: :started?
+  validate :check_survey_start
 
   before_validation :write_start_at
 
@@ -41,7 +38,11 @@ class EmailSchedule < ActiveRecord::Base
   end
 
   def started?
-    company_survey.counter > 0
+    if company_survey.present?
+      company_survey.counter > 0
+    else
+      false
+    end
   end
 
   def daily?
@@ -55,6 +56,8 @@ class EmailSchedule < ActiveRecord::Base
   private
 
   def check_survey_start
-    errors.add(:start_on, :bad_survey_start) unless start_at >= DateTime.current
+   if start_at <= DateTime.current
+     errors.add(:start_on, :bad_survey_start) unless started?
+    end
   end
 end
