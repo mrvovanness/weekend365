@@ -10,7 +10,6 @@ CompanySurvey.find_each do |survey|
     next_delivery_at: survey.next_delivery_at_old
   )
   schedule.save!(validate: false)
-  binding.pry
 end
 
 puts "Number of company surveys: #{CompanySurvey.count}"

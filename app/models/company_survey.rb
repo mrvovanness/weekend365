@@ -56,4 +56,8 @@ class CompanySurvey < ActiveRecord::Base
   def finish_on
     email_schedule.finish_on
   end
+
+  def next_delivery_at
+    email_schedule.next_delivery_at
+  end
 end

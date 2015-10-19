@@ -1,7 +1,7 @@
 class EmailSchedule < ActiveRecord::Base
   belongs_to :company_survey
 
-  validates :start_on, :time, presence: true
+  before_validation :write_start_at
 
   validates :repeat_every, numericality: {
     only_integer: true, greater_than: 0, less_than: 366 }
@@ -10,8 +10,6 @@ class EmailSchedule < ActiveRecord::Base
     only_integer: true, greater_than: 1, less_than: 1001 }
 
   validate :check_survey_start
-
-  before_validation :write_start_at
 
   after_save :set_schedule
 
