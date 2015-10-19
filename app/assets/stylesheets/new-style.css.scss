@@ -140,7 +140,7 @@
 .btn-comments{
 	text-indent:-9999px;
 	overflow:hidden;
-	background:url(../images/sprite.png) no-repeat -192px -202px;
+	background:image-url("sprite.png") no-repeat -192px -202px;
 	width:43px;
 	height:44px;
 	display:block;
@@ -160,7 +160,7 @@
 	position:relative;
 	background:#f19926;
 	color:#fff;
-	border-radius:2pxpx;
+	border-radius:2px;
 	-moz-box-sizing: border-box;	box-sizing: border-box;
 	padding:10px 10px 8px 46px;
 	display:block;

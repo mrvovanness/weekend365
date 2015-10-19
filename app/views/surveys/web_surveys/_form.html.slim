@@ -1,0 +1,57 @@
+= simple_form_for [:surveys, company_survey],
+  html: { class: 'info-form inner' } do |f|
+  fieldset
+    = f.label :title, class: 'heading'
+    .row
+      = f.input_field :title,
+        class: 'style05',
+        value: company_survey.set_title(@offered_survey,
+                                        company_survey.company),
+        autofocus: true
+      = f.error :title
+
+  .btns-holder.clearfix
+    .btns
+      = link_to t('helpers.links.destroy'),
+        surveys_company_survey_path(company_survey),
+        method: :delete,
+        id: 'delete-survey',
+        data: { confirm: t('helpers.links.confirm') }\
+        unless company_survey.new_record?
+
+fieldset
+  .box
+    - offered_survey.ordered_by_topic_questions.each do |topic, questions|
+      ul.accordion
+        li.active
+          .opener-holder.clearfix
+            a.opener.clearfix href="#"
+              span.title = topic
+            a.btn-info href="#"
+              em Hide
+              span Show
+          .slide
+            table.info-table
+              tbody
+                - questions.each do |question|
+                  tr
+                    td: span.question = question.title
+                    td
+                      .agree-holder
+                        span.heading Agree
+                        .holder.clearfix
+                          a.minus -
+                          ul.agree
+                            - question.offered_answers.each do |answer|
+                              li class="color#{answer.value}"
+                                a color
+                          a.plus +
+                    td
+                      .comments-holder.popup-holder
+                        a.btn-comments.open href="#" comments
+                        .popup
+                          textarea cols="30" rows="10" add text here
+                          a.close href="#" close
+.btns-holder.clearfix
+  .btns
+    = submit_tag 'SAVE', class: 'btn-save'

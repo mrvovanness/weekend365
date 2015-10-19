@@ -11,6 +11,7 @@ class Surveys::PulsesController < ApplicationController
   def new
     load_offered_survey
     @survey = @company.company_surveys.build.decorate
+    @survey.email_schedule = EmailSchedule.new
   end
 
   def edit
@@ -60,11 +61,20 @@ class Surveys::PulsesController < ApplicationController
   private
 
   def survey_params
-    params.require(:company_survey).permit(
-      :title, :start_on, :time, :finish_on,
-      :number_of_repeats, :repeat_every, :locale,
-      :repeat_mode, :message, :skip_callback,
-      :employee_ids => [], :offered_question_ids => [])
+    params.require(:company_survey)
+      .permit(:title,
+              :message,
+              :locale,
+              :skip_callback,
+              employee_ids: [],
+              offered_question_ids: [],
+              email_schedule_attributes: [:start_on,
+                                          :id,
+                                          :time,
+                                          :finish_on,
+                                          :number_of_repeats,
+                                          :repeat_every,
+                                          :repeat_mode])
   end
 
   def set_survey

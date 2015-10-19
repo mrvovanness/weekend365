@@ -56,19 +56,19 @@ class CompanySurveyDecorator < Draper::Decorator
 
   def set_time
     if errors.present?
-      self.time
+      email_schedule.time
     elsif start_at.present?
       start_at.strftime('%H:%M')
     else
-      Time.current.strftime('%H:00')
+      (Time.current. + 2.hours).strftime('%H:00')
     end
   end
 
   def set_start_on
     if errors.present?
-      self.start_on
-    elsif start_at.present?
-      start_at.strftime('%Y-%m-%d')
+      email_schedule.start_on
+    elsif email_schedule.start_at.present?
+      email_schedule.start_at.strftime('%Y-%m-%d')
     else
       date = Date.today
       date.strftime('%Y-%m-%d')

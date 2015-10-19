@@ -1,56 +1,20 @@
 class CompanySurvey < ActiveRecord::Base
-  validates :title, :start_on, :time, :message, presence: true,
-    unless: :skip_callback?
+  validates :title, :message, presence: true
 
-  validates :repeat_every, numericality: {
-    only_integer: true, greater_than: 0, less_than: 366 }
-
-  validates :number_of_repeats, numericality: {
-    only_integer: true, greater_than: 1, less_than: 1001 }
-
-  validate :check_survey_start, on: :create
-
-  validate :check_survey_start, on: :update,
-    unless: :started?
-
-  before_validation :write_start_at,
-    unless: :started?
-
-  before_validation :write_start_at,
-    unless: :skip_callback?
-
-  after_save :add_schedule,
-    unless: :skip_callback?
-
-  after_destroy :delete_schedule
-
-  attr_accessor :skip_callback, :time, :start_on
+  attr_accessor :skip_callback
 
   belongs_to :company
+  has_one :email_schedule, dependent: :destroy
   has_many :results
   has_many :tokens
   has_many :answers, through: :results
   has_and_belongs_to_many :employees
   has_and_belongs_to_many :offered_questions
 
+  accepts_nested_attributes_for :email_schedule, allow_destroy: true
+
   def skip_callback?
     skip_callback
-  end
-
-  def write_start_at
-    date = Date.parse(self.start_on)
-    time = Time.parse(self.time)
-    self.start_at = Time.zone.local(date.year, date.month, date.day,
-                                    time.hour, time.min, time.sec)
-  end
-
-  def add_schedule
-    schedule = SchedulesConfigurator.new(self)
-    schedule.add_to_scheduler
-  end
-
-  def delete_schedule
-    Resque.remove_schedule("send_emails_for_survey_#{id}")
   end
 
   def started?
@@ -58,15 +22,15 @@ class CompanySurvey < ActiveRecord::Base
   end
 
   def completed?
-    number_of_repeats == counter
+    number_of_repeats < counter
   end
 
   def daily?
-    repeat_mode == 'd'
+    email_schedule.daily?
   end
 
   def weekly?
-    repeat_mode == 'w'
+    email_schedule.weekly?
   end
 
   def get_statistics
@@ -77,9 +41,11 @@ class CompanySurvey < ActiveRecord::Base
     ChartsService.new(self)
   end
 
-  private
+  def start_at
+    email_schedule.start_at
+  end
 
-  def check_survey_start
-    errors.add(:start_on, :bad_survey_start) unless start_at >= DateTime.current
+  def number_of_repeats
+    email_schedule.number_of_repeats
   end
 end

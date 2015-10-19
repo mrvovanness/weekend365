@@ -5,4 +5,8 @@ class OfferedSurvey < ActiveRecord::Base
   has_many :offered_answers, through: :sqa_assignments
 
   translates :title
+
+  def ordered_by_topic_questions
+    offered_questions.group_by { |question| question.topic }
+  end
 end

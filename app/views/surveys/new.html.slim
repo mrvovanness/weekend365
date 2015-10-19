@@ -3,19 +3,15 @@
     h1.company-name = t('surveys.new.choose_type')
   .filter_form
     .filter-area.style01
-      = link_to t('helpers.links.pulse_survey'), new_surveys_pulse_path
-      br
-      i = t('surveys.dialog.rules_message')
+      div
+        = link_to @email_survey.title, new_surveys_pulse_path
+      i = @email_survey.description
       <br><br>
-      = link_to t('helpers.links.employee_engagement'), '#',
-        style: 'color: gray; text-decoration: none'
-      = t('surveys.dialog.coming_soon')
-      br
-      i = t('surveys.dialog.questionnaire_message')
-      <br><br>
-      = link_to t('helpers.links.onboard_survey'), '#',
-        style: 'color: gray; text-decoration: none'
-      = t('surveys.dialog.coming_soon')
-      br
-      i = t('surveys.dialog.questionnaire_message')
-      <br><br>
+
+      - @offered_surveys.each do |survey|
+        - next if survey == @email_survey
+        = link_to survey.title,
+          new_surveys_company_survey_path(offered_survey_id: survey.id)
+        <br>
+        i = survey.description
+        <br>

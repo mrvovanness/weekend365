@@ -2,7 +2,8 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @surveys = @company.company_surveys.order(start_at: :desc).decorate
+    @surveys = @company.company_surveys.includes(:email_schedule)
+      .order(start_at: :desc).decorate
     @top_survey = @surveys.first
   end
 

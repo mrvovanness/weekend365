@@ -43,4 +43,21 @@ describe User do
       expect(page).to have_content('Jack London')
     end
   end
+
+  context 'admin add survey' do
+    before(:each) do
+      user.company.employees << create(:employee)
+      user.add_role :admin
+      visit new_admin_offered_survey_path
+      fill_in 'Title', with: 'Test'
+      fill_in 'Description', with: 'Test description'
+      click_on 'Create Offered survey'
+    end
+
+    it 'and see added survey on surveys choosing page' do
+      visit new_survey_path
+      expect(page).to have_link(OfferedSurvey.first.title)
+      expect(page).to have_content(OfferedSurvey.first.description)
+    end
+  end
 end
