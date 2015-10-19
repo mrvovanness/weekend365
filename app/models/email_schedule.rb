@@ -23,10 +23,12 @@ class EmailSchedule < ActiveRecord::Base
   attr_accessor :start_on, :time
 
   def write_start_at
-    date = Date.parse(self.start_on)
-    time = Time.parse(self.time)
-    self.start_at = Time.zone.local(date.year, date.month, date.day,
-                                    time.hour, time.min, time.sec)
+    if self.start_on.present? && self.time.present?
+      date = Date.parse(self.start_on)
+      time = Time.parse(self.time)
+      self.start_at = Time.zone.local(date.year, date.month, date.day,
+                                      time.hour, time.min, time.sec)
+    end
   end
 
   def set_schedule
