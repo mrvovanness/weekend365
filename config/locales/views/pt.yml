@@ -10,11 +10,11 @@ pt:
     edit:
       details: 'Detalhe da Empresa'
     show:
-      administrator: 'Company administrator:'
-      dialog_title: 'Add selected employees to survey - TRANSLATE IT'
+      administrator: 'Administrator da Conta:'
+      dialog_title: 'Adicionar Colaboradores nas pesquisa'
   contacts:
     new:
-      title: "Envie uma mensagem para a gente"
+      title: "Peça a sua conta gratuita da Weekend(beta)"
   dashboard:
     index:
       title: "Dashboard"

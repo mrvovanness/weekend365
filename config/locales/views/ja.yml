@@ -10,11 +10,11 @@ ja:
     edit:
       details: '会社の詳細'
     show:
-      administrator: 'Company administrator:'
-      dialog_title: 'Add selected employees to survey - TRANSLATE IT'
+      administrator: 'アカウント管理者:'
+      dialog_title: '社員をサーベイに追加'
   contacts:
     new:
-      title: "Weekendにメッセージを送ってください。"
+      title: "無料ベータ版をご利用いただけます。<br />お申し込みフォームはこちらへ"
   dashboard:
     index:
       title: "ダッシュボード"
@@ -151,7 +151,7 @@ ja:
         edit: "編集"
         preview: "プレビュー"
         results: "結果"
-        participation_rate: "Rate"
+        participation_rate: "参加率"
     new:
       title: "新規サーベイを作成"
       choose_type: "サーベイを選んでください。"
