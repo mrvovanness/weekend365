@@ -30,7 +30,7 @@
 
         = f.simple_fields_for :email_schedule do |es|
           = es.input :start_on, as: :string,
-            label: t("simple_form.labels.company_survey.start_on",
+            label: t("simple_form.labels.email_schedule.start_on",
                       timezone: @company.timezone),
             label_html: { class: 'style01' },
             input_html: { class: survey.started? ? 'started' : 'survey_start_on schedule-setter',

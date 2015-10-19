@@ -55,6 +55,8 @@ en:
       company_survey:
         number_of_repeats: "min 2, max 1000"
         start_on_opt: "Already started"
+      email_schedule:
+        number_of_repeats: "min 2, max 1000"
     labels:
       defaults:
         title: "Title"
@@ -87,16 +89,17 @@ en:
         company_name: "Company Name"
         country: "Country"
       company_survey:
-        start_on: "start on (%{timezone} time)"
-        time: "Time"
-        repeat_every: "Repeat every"
-        finish_on: "Finish on"
-        number_of_repeats: "Number of repeats"
         message: "Message to employee"
         employee_ids: "Send to"
         once: "Once"
         repeat: "Repeat"
         send_to: "Send to (%{employees_count}):"
+      email_schedule:
+        start_on: "start on (%{timezone} time)"
+        time: "Time"
+        repeat_every: "Repeat every"
+        finish_on: "Finish on"
+        number_of_repeats: "Number of repeats"
       employee:
         name: "Name"
         department: "Department"
