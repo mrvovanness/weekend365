@@ -8,6 +8,11 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
       | .tel, a[href = '*tel'],
       | a[href = 'tel*'] { color: #000; }
       | * { -webkit-text-size-adjust: 100%; -webkit-text-resize: 100%; text-resize: 100%; }
+    css:
+      .logo {
+        border: 0;
+        vertical-align: top;
+      }
   body[style="margin:0;padding:0;" bgcolor="#ffffff" link="#666666"]
     table[width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff"]
       tr
@@ -31,12 +36,7 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
                       bgcolor="#444747"]
                     td
                       = link_to root_url do
-                        img[width="106"
-                          height="19"
-                          alt="weekend365"
-                          border="0"
-                          src="#{image_url('logo-mail.png')}"
-                          style="vertical-align:top;"]
+                        = image_tag('logo-mail.png', size: '106x19', alt: 'weekend365', class: 'logo')
                     td[style="font:23px Arial, Helvetica, sans-serif;
                       line-height:25px; padding:0 20px 0 0;
                       color:#ffffff; text-align:right;"]
@@ -72,10 +72,7 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
                               bgcolor="#f19926" style="border-radius:2px;"]
                               tr
                                 td[style="padding:4px 0 4px 7px;"]
-                                  img[src="#{image_url('ico01.png')}"
-                                    width="27" height="28"
-                                    alt="image description"
-                                    border="0" style="vertical-align:top;"]
+                                  = image_tag('ico01.png', size: '27x28', alt: 'image description', class: 'logo')
                                 td[style="font:21px Arial, Helvetica, sans-serif;
                                   line-height:25px; margin:0 0 15px;
                                   padding:0 20px; color:#ffffff;"]
