@@ -26,16 +26,19 @@ Rails.application.routes.draw do
     end
   end
 
-  get 'surveys' => 'surveys#index'
-  get 'surveys/new' => 'surveys#new', as: :new_survey
+  resources :surveys, except: [:show, :edit, :create, :update] do
+    member do
+      patch 'update_employees'
+      get 'preview'
+    end
+  end
+
   namespace :surveys do
     resources :web_surveys, as: 'company_surveys', except: :index
-    resources :pulses, except: :index do
+    resources :email_surveys, except: [:index, :destroy] do
       member do
-        get 'preview'
         get 'preview_email'
         get 'comments'
-        patch 'update_employees'
       end
     end
   end

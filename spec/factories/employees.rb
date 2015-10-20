@@ -1,7 +1,7 @@
 FactoryGirl.define do
 
   factory :employee do
-    name FFaker::Name.name
+    sequence(:name, 10) { |n| [FFaker::Name.name, n.to_s].join('') }
     sequence(:email, 10) { |n| "ex_#{n}@mail.com" }
     department %w(IT Sales Security Finance).sample
     position ['Team member', 'Manager'].sample

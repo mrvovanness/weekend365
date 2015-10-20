@@ -1,5 +1,8 @@
 = simple_form_for [:surveys, company_survey],
-  html: { class: 'info-form inner' } do |f|
+  html: { class: 'info-form inner', id: 'survey-form' } do |f|
+  = f.input :repeat, as: :hidden, input_html: { value: 'false' }
+  = hidden_field_tag :offered_survey_id, offered_survey.id
+
   fieldset
     = f.label :title, class: 'heading'
     .row
@@ -35,6 +38,10 @@ fieldset
               tbody
                 - questions.each do |question|
                   tr
+                    = hidden_field_tag 'company_survey[offered_question_ids][]',
+                      question.id,
+                      form: 'survey-form'
+
                     td: span.question = question.title
                     td
                       .agree-holder
@@ -54,4 +61,4 @@ fieldset
                           a.close href="#" close
 .btns-holder.clearfix
   .btns
-    = submit_tag 'SAVE', class: 'btn-save'
+    = submit_tag 'SAVE', class: 'btn-save web-survey-save'

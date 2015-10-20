@@ -1,5 +1,5 @@
 class CompanySurvey < ActiveRecord::Base
-  validates :title, :message, presence: true
+  validates :title, presence: true
 
   attr_accessor :skip_callback
 
@@ -26,11 +26,11 @@ class CompanySurvey < ActiveRecord::Base
   end
 
   def daily?
-    email_schedule.daily?
+    email_schedule.daily? if email_schedule
   end
 
   def weekly?
-    email_schedule.weekly?
+    email_schedule.weekly? if email_schedule
   end
 
   def get_statistics
@@ -42,22 +42,22 @@ class CompanySurvey < ActiveRecord::Base
   end
 
   def start_at
-    email_schedule.start_at
+    email_schedule.start_at if email_schedule
   end
 
   def number_of_repeats
-    email_schedule.number_of_repeats
+    email_schedule.number_of_repeats if email_schedule
   end
 
   def repeat_every
-    email_schedule.repeat_every
+    email_schedule.repeat_every if email_schedule
   end
 
   def finish_on
-    email_schedule.finish_on
+    email_schedule.finish_on if email_schedule
   end
 
   def next_delivery_at
-    email_schedule.next_delivery_at
+    email_schedule.next_delivery_at if email_schedule
   end
 end

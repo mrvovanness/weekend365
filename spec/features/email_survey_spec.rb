@@ -42,7 +42,7 @@ describe User, js: true do
     end
 
     it 'successful update' do
-      visit edit_surveys_pulse_path(company.company_surveys.first)
+      visit edit_surveys_email_survey_path(company.company_surveys.first)
       select('weeks', from: 'company_survey_email_schedule_attributes_repeat_mode')
       click_on 'Change'
       expect(page).to have_content 'Company survey was successfully updated'
@@ -50,7 +50,7 @@ describe User, js: true do
     end
 
     it 'validations failure on update' do
-      visit edit_surveys_pulse_path(company.company_surveys.first)
+      visit edit_surveys_email_survey_path(company.company_surveys.first)
       page.execute_script("$('#survey_start_on').val('2015-10-10')")
       fill_in 'company_survey_message', with: 'Test message'
       click_on 'Change'
@@ -60,12 +60,12 @@ describe User, js: true do
     context 'started survey' do
       before do
         company.company_surveys.first.increment!(:counter)
-        visit edit_surveys_pulse_path(company.company_surveys.first)
+        visit edit_surveys_email_survey_path(company.company_surveys.first)
       end
 
       it 'can not update start_on of started survey' do
         company.company_surveys.first.increment!(:counter)
-        visit edit_surveys_pulse_path(company.company_surveys.first)
+        visit edit_surveys_email_survey_path(company.company_surveys.first)
         expect(page).to have_content 'Already started'
       end
 
@@ -76,7 +76,7 @@ describe User, js: true do
       end
 
       it 'no validation of start_at on update' do
-        visit edit_surveys_pulse_path(company.company_surveys.first)
+        visit edit_surveys_email_survey_path(company.company_surveys.first)
         page.execute_script("$('#survey_start_on').val('2015-10-10')")
         fill_in 'company_survey_message', with: 'Test message'
         click_on 'Change'

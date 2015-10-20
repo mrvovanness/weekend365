@@ -22,18 +22,18 @@ class CompanySurveyDecorator < Draper::Decorator
                I18n.t('decorators.company_survey.day')
              end
     I18n.t('decorators.company_survey.schedule', repeat_every: repeat_every,
-      repeat_period: period, start_at: start_at.strftime('%I:%M%P'),
+      repeat_period: period, start_at: start_at.try(:strftime, '%I:%M%P'),
       start_from: start_at.strftime('%b %dth %Y'))
   end
 
   def frequency_overview
     if daily?
       I18n.t('decorators.company_survey.daily_frequency',
-        repeat_every: repeat_every, start_at: start_at.strftime('%I:%M%P'))
+        repeat_every: repeat_every, start_at: start_at.try(:strftime, '%I:%M%P'))
     elsif weekly?
       I18n.t('decorators.company_survey.weekly_frequency',
-        repeat_every: repeat_every, weekday: start_at.strftime('%A'),
-        daytime: start_at.strftime('%I:%M%P'))
+        repeat_every: repeat_every, weekday: start_at.try(:strftime, '%A'),
+        daytime: start_at.try(:strftime, '%I:%M%P'))
     end
   end
 
@@ -58,9 +58,9 @@ class CompanySurveyDecorator < Draper::Decorator
     if errors.present?
       email_schedule.time
     elsif start_at.present?
-      start_at.strftime('%H:%M')
+      start_at.try(:strftime, '%H:%M')
     else
-      (Time.current. + 30.minutes).strftime('%H:%M')
+      (Time.current. + 30.minutes).try(:strftime, '%H:%M')
     end
   end
 
@@ -68,19 +68,19 @@ class CompanySurveyDecorator < Draper::Decorator
     if errors.present?
       email_schedule.start_on
     elsif email_schedule.start_at.present?
-      email_schedule.start_at.strftime('%Y-%m-%d')
+      email_schedule.start_at.try(:strftime, '%Y-%m-%d')
     else
       date = Date.current
-      date.strftime('%Y-%m-%d')
+      date.try(:strftime, '%Y-%m-%d')
     end
   end
 
   def set_finish_on
     if finish_on.present?
-      finish_on.strftime('%Y-%m-%d')
+      finish_on.try(:strftime, '%Y-%m-%d')
     else
       date = Date.today + 3.months
-      date.strftime('%Y-%m-%d')
+      date.try(:strftime, '%Y-%m-%d')
     end
   end
 
