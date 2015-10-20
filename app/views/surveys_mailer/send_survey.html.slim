@@ -8,6 +8,10 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
       | .tel, a[href = '*tel'],
       | a[href = 'tel*'] { color: #000; }
       | * { -webkit-text-size-adjust: 100%; -webkit-text-resize: 100%; text-resize: 100%; }
+    css:
+    .logo {
+      vertical-align: top;
+    }
   body[style="margin:0;padding:0;" bgcolor="#ffffff" link="#666666"]
     table[width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff"]
       tr
@@ -31,7 +35,7 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
                       bgcolor="#444747"]
                     td
                       = link_to root_url do
-                        = image_tag('logo-mail.png', size: "106x19", alt: 'weekend365', border: '0', style: "vertical-align:top;")
+                        = image_tag('email-weekend.png', size: "106x19", alt: 'weekend365', border: '0', class: 'logo')
                     td[style="font:23px Arial, Helvetica, sans-serif;
                       line-height:25px; padding:0 20px 0 0;
                       color:#ffffff; text-align:right;"]
