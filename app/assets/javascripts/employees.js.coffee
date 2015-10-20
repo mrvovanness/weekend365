@@ -20,7 +20,8 @@ jQuery ->
 
   $('#employee_birthday').datetimepicker
     timepicker: false
-    format: 'Y-M-d'
+    format: 'Y-m-d'
+    mask: true
     lang: $('html').attr('lang')
 
   $('#add-selected-to-survey').click (e) ->
