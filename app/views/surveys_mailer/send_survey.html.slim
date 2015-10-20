@@ -3,61 +3,12 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
   head
     title weekend
     meta[http-equiv="Content-Type" content="text/html; charset=utf-8"]
-    css:
-      .ExternalClass {
-        width: 100% !important;
-      }
-
-      .tel, a[href = '*tel'], a[href = 'tel*'] {
-        color: #000;
-      }
-      * {
-        -webkit-text-size-adjust: 100%;
-        -webkit-text-resize: 100%;
-        text-resize: 100%;
-      }
-      .logo {
-        border: 0;
-        vertical-align: top;
-      }
-      body {
-        margin: 0;
-        padding: 0;
-        background: #fff;
-      }
-      a:link {
-        color: #666666;
-      }
-      td.company {
-        font: 23px Arial, Helvetica, sans-serif;
-        line-height: 25px;
-        padding: 0 20px 0 0;
-        color: #ffffff;
-        text-align: right;
-      }
-      td.survey {
-        font: 22px Arial, Helvetica, sans-serif;
-        line-height: 28px;
-        color: #f6881f;
-        padding: 0 0 0 8px;
-        text-transform:uppercase;
-      }
-      td.message {
-        font: 14px Arial, Helvetica, sans-serif;
-        line-height: 25px;
-        margin: 0 0 15px;
-        padding: 0 20px;
-        color: #343838;
-        text-transform:uppercase;
-      }
-      td.question {
-        font: 21px Arial, Helvetica, sans-serif;
-        line-height: 25px;
-        margin: 0 0 15px;
-        padding: 0 20px;
-        color:#ffffff;
-      }
-  body
+    style[type="text/css"]
+      | .ExternalClass { width: 100% !important; }
+      | .tel, a[href = '*tel'],
+      | a[href = 'tel*'] { color: #000; }
+      | * { -webkit-text-size-adjust: 100%; -webkit-text-resize: 100%; text-resize: 100%; }
+  body[style="margin:0;padding:0;" bgcolor="#ffffff" link="#666666"]
     table[width="100%" cellspacing="0" cellpadding="0" bgcolor="#ffffff"]
       tr
         td
@@ -80,8 +31,12 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
                       bgcolor="#444747"]
                     td
                       = link_to root_url do
-                        = image_tag('logo-mail.png', size: '106x19', alt: 'weekend365', class: 'logo')
-                    td.company
+                        img[src="#{image_url('logo-footer.png')}"
+                          width="154" height="27" alt="weekend365"
+                          border="0" style="vertical-align:top;"]
+                    td[style="font:23px Arial, Helvetica, sans-serif;
+                      line-height:25px; padding:0 20px 0 0;
+                      color:#ffffff; text-align:right;"]
                       = @survey.company.name
                   tr
                     td[colspan="3" height="12"]
@@ -95,12 +50,16 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
                         tr
                           td[height="26"]
                         tr
-                          td.survey
+                          td[style="font:22px Arial, Helvetica, sans-serif;
+                            line-height:28px; color:#f6881f;
+                            padding:0 0 0 8px; text-transform:uppercase;"]
                             = @survey.title
                         tr
                           td[height="18"]
                         tr
-                          td.message
+                          td[style="font:14px Arial, Helvetica, sans-serif;
+                            line-height:25px; margin:0 0 15px; padding:0 20px;
+                            color:#343838; text-transform:uppercase;"]
                             = @survey.message
                         tr
                           td[height="31"]
@@ -110,8 +69,13 @@ html[xmlns="http://www.w3.org/1999/xhtml"]
                               bgcolor="#f19926" style="border-radius:2px;"]
                               tr
                                 td[style="padding:4px 0 4px 7px;"]
-                                  = image_tag('ico01.png', size: '27x28', alt: 'image description', class: 'logo')
-                                td.question
+                                  img[src="#{image_url('ico01.png')}"
+                                    width="27" height="28"
+                                    alt="image description"
+                                    border="0" style="vertical-align:top;"]
+                                td[style="font:21px Arial, Helvetica, sans-serif;
+                                  line-height:25px; margin:0 0 15px;
+                                  padding:0 20px; color:#ffffff;"]
                                   = @survey.offered_questions.first.title
                         tr
                           td[height="50"]
