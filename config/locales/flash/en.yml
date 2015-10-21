@@ -23,6 +23,10 @@ en:
         notice: 'Employees were successfully imported'
       destroy_selected:
         notice: 'Selected employees were successfully destroyed'
+    offered_questions:
+      import:
+        notice: 'Questions were successfully imported'
+        alert: 'These data could not be imported'
     signups:
       create:
         notice: 'Your account was successfully created. Please, check your e-mail box for confirmation.'

@@ -1,2 +1,14 @@
 h1 New Question
+= form_tag import_admin_offered_questions_path,
+  multipart: true do
+  .csv-uploader.btn
+    span.btn-choosing = t('offered_questions.new.choose_btn')
+    = file_field_tag :file, class: 'upload'
+    = submit_tag t('buttons.offered_questions.import_file'),
+      class: 'btn-import'
+  .csv-uploader
+    p
+      | Supported formats: Excel 2007-2013 (xlsx), LibreOffice/OpenOffice (ods), CSV
+    p
+      | Please, check the column headers (allowed names: title, topic, subtopic)
 = render 'form', question: @question

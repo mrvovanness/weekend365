@@ -42,6 +42,7 @@ gem 'mail_form'
 gem 'redcarpet'
 gem 'epic-editor-rails'
 gem 'friendly_id'
+gem 'roo', '~> 2.1.0'
 
 group :development do
   gem 'better_errors'

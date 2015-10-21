@@ -23,6 +23,10 @@ pt:
         notice: 'Os colaboradores foram importados com sucesso.'
       destroy_selected:
         notice: 'Selected employees were successfully destroyed'
+    offered_questions:
+      import:
+        notice: 'Questions were successfully imported'
+        alert: 'These data could not be imported'
     signups:
       create:
         notice: 'Sua conta foi criada com sucesso. Confira sua caixa de email e siga as instruções para confirmar.'

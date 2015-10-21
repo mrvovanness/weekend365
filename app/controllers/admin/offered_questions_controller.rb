@@ -31,6 +31,11 @@ module Admin
       respond_with :admin, @question
     end
 
+    def import
+      OfferedQuestion.import(params[:file])
+      redirect_to admin_offered_questions_path
+    end
+
     private
 
     def question_params

@@ -20,9 +20,8 @@ class Employee < ActiveRecord::Base
   end
 
   def self.import(file, company)
-    CSV.foreach(file.path, headers: true) do |row|
-      company.employees.find_or_create_by!(row.to_hash)
-    end
+    spreadsheet = Spreadsheet.new(file)
+    spreadsheet.import(self.model_name.name, company_id: company.id)
   end
 
   private

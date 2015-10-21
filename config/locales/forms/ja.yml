@@ -7,13 +7,13 @@ ja:
       contact:
         create: "送信"
       employee:
-        submit: "送信"
+        create: "送信"
       company:
         update: "保存"
       signup:
         create: "サインアップ"
       answer:
-        update: "Send"
+        update: "送信"
       user:
         create: "送信"
   simple_form:
@@ -110,6 +110,8 @@ ja:
   buttons:
     employees:
       import_csv: "csvファイルインポート"
+    offered_questions:
+      import_file: "Upload spreadsheet file"
   labels:
     confirmations:
       terms_of_service: "%{privacy_policy} と %{user_agreement}　を賛成した上で進みます。"

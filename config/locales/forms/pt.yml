@@ -9,7 +9,7 @@ pt:
       contact:
         create: "Enviar"
       employee:
-        submit: "Salvar"
+        create: "Salvar"
       signup:
         create: "Cadastre-se"
       answer:
@@ -115,6 +115,8 @@ pt:
   buttons:
     employees:
       import_csv: "Upload arquivo csv"
+    offered_questions:
+      import_file: "Upload spreadsheet file"
   labels:
     confirmations:
       terms_of_service: "Eu li e concordo com a %{privacy_policy} e o %{user_agreement}"
