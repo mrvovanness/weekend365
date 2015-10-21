@@ -1,15 +1,15 @@
 ul.statistics
   li.start-date
     = t('dashboard.index.heads.start_date')
-    b =< survey.start_at.strftime('%b.%dth/%Y')
+    b =< survey.start_at.try(:strftime, '%b.%dth/%Y')
 
   li.finish-date
     = t('dashboard.index.heads.finish_date')
-    b =< survey.finish_on.strftime('%b.%dth/%Y')
+    b =< survey.finish_on.try(:strftime, '%b.%dth/%Y')
 
   li.next-email-delivery
     = t('dashboard.index.heads.next_delivery')
-    b =< survey.next_delivery_at.strftime('%b.%dth/%Y %H:%M')
+    b =< survey.next_delivery_at.try(:strftime, '%b.%dth/%Y %H:%M')
   <br>
 
   li.status

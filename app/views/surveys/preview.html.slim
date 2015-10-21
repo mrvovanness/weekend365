@@ -11,24 +11,27 @@
       | #{t('surveys.preview.updates_on_the_new_trends')}
   .recommend-area
     .block-info.clearfix
-      .panel
-        span.heading = t('surveys.preview.question',
-                          question_title: @survey.offered_questions.first.title)
+      - @survey.offered_questions.each do |question|
+        .panel
+          span.heading
+            = t('surveys.preview.question',
+                 question_title: question.title)
+        <br><br>
 
       .btns
         = link_to t('helpers.links.edit'),
-          edit_surveys_pulse_path(@survey),
+          edit_surveys_email_survey_path(@survey),
           class: 'btn-edit'
 
         = link_to t('helpers.links.undo'),
-          surveys_pulse_path(@survey),
+          surveys_email_survey_path(@survey),
           method: :delete,
           data: { confirm: t('surveys.preview.delete_confirmation') },
           class: 'btn-undo'
 
     .send-block.clearfix
       = simple_form_for @survey,
-        url: update_employees_surveys_pulse_path(@survey),
+        url: update_employees_survey_path(@survey),
         data: { type: :json, remote: true, method: :patch } do |f|
         = f.input :employee_ids,
           collection: @survey.company.employees.order(:name),
@@ -42,11 +45,11 @@
                         id: 'employee_ids' },
           include_blank: false
         br
-        = f.hidden_field :skip_callback, value: true
         = f.submit t('simple_form.buttons.surveys.preview.submit'),
           class: 'link-clear'
         = link_to t('helpers.links.preview_email'),
-          preview_email_surveys_pulse_path(@survey)
+          preview_email_surveys_email_survey_path(@survey)\
+          if @survey.repeat
 
   .time-holder
     span.heading = t('surveys.preview.params_header')

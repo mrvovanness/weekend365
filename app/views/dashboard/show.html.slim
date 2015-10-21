@@ -16,7 +16,7 @@
         = @survey.schedule_overview
     .btns
       = link_to t('helpers.titles.edit', model: 'Survey'),
-        edit_surveys_pulse_path(@survey),
+        edit_surveys_email_survey_path(@survey),
         class: 'btn-edit'
       = link_to t('helpers.links.download_data'), '#',
         class: 'btn-download'
@@ -38,4 +38,4 @@
     - @comments.each do |comment|
       li = comment
     = link_to t('helpers.links.all_comments'),
-      comments_surveys_pulse_path(@survey)
+      comments_surveys_email_survey_path(@survey)

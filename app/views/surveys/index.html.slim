@@ -33,15 +33,15 @@
                   td.col1 = survey.title
                   td = survey.status
                   td = number_to_percentage(survey.get_statistics.rate, precision: 0)
-                  td = survey.start_at.strftime('%b.%dth/%Y')
+                  td = survey.start_at.try(:strftime,  '%b.%dth/%Y')
                   td = survey.frequency_overview
                   td
                     = link_to t('helpers.links.edit'),
-                      edit_surveys_pulse_path(survey),
+                      edit_surveys_email_survey_path(survey),
                       class: 'btn-edit'
                   td
                     = link_to t('helpers.links.notify'),
-                      preview_surveys_pulse_path(survey),
+                      preview_survey_path(survey),
                       class: 'btn-notify'
                   td
                     = link_to t('helpers.links.results'),

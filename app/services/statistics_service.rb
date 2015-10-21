@@ -60,7 +60,7 @@ class StatisticsService
     begin
       Answer.where(result: @survey.results)
         .order(created_at: :desc).first
-        .created_at.strftime('%b.%dth/%Y at %H:%M')
+        .created_at.try(:strftime, '%b.%dth/%Y at %H:%M')
     rescue
       'none'
     end

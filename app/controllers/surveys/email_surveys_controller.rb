@@ -1,7 +1,6 @@
-class Surveys::PulsesController < ApplicationController
+class Surveys::EmailSurveysController < ApplicationController
   before_action :authenticate_user!
   before_action :set_survey, except: [:index, :new, :create]
-  respond_to :json, only: :update_employees
 
   def index
     @search = @company.company_surveys.ransack(params[:q])
@@ -22,23 +21,16 @@ class Surveys::PulsesController < ApplicationController
     @survey = @company.company_surveys.create(survey_params).decorate
     load_offered_survey if @survey.errors.present?
     respond_with @survey,
-      location: -> { preview_surveys_pulse_path(@survey) }
+      location: -> { preview_survey_path(@survey) }
   end
 
   def update
     @survey.update(survey_params)
     load_offered_survey if @survey.errors.present?
     respond_with @survey,
-      location: -> { preview_surveys_pulse_path(@survey) }
+      location: -> { preview_survey_path(@survey) }
   end
 
-  def destroy
-    @survey.destroy
-    respond_with @survey, location: -> { surveys_path }
-  end
-
-  def preview
-  end
 
   def preview_email
     @token = Token.new(name: 'preview')
@@ -47,15 +39,6 @@ class Surveys::PulsesController < ApplicationController
     @company_admin = @survey.company.admin
     render 'surveys_mailer/send_survey',
       layout: false
-  end
-
-  def update_employees
-    @survey.update_attributes!(survey_params)
-    respond_with @survey.employees.count
-  end
-
-  def comments
-    @answers = @survey.answers.includes(:offered_answer)
   end
 
   private
