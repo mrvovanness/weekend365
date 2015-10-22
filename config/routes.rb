@@ -45,7 +45,11 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :articles, only: [:index, :edit, :update]
-    resources :offered_questions
+    resources :offered_questions do
+      collection do
+        post 'import'
+      end
+    end
     resources :offered_surveys
   end
 
