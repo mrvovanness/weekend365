@@ -37,6 +37,7 @@ module Admin
       params.require(:offered_survey)
         .permit(:title,
                 :description,
+                :answers_through,
                 offered_question_ids: [])
     end
 

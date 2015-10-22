@@ -11,6 +11,11 @@
       = f.input_field :description
     .row
       .label-holder
+        = f.label :answers_through
+      = f.input_field :answers_through,
+        collection: [:email, :web]
+    .row
+      .label-holder
         = f.label :offered_questions
       = f.association :offered_questions,
         collection: OfferedQuestion.includes(:translations),

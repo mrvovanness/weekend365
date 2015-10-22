@@ -36,9 +36,15 @@
                   td = survey.start_at.try(:strftime,  '%b.%dth/%Y')
                   td = survey.frequency_overview
                   td
-                    = link_to t('helpers.links.edit'),
-                      edit_surveys_email_survey_path(survey),
-                      class: 'btn-edit'
+                    - if survey.offered_survey.try(:answers_through) == 'web'
+                      = link_to t('helpers.links.edit'),
+                        edit_surveys_company_survey_path(survey,
+                        offered_survey_id: survey.offered_survey),
+                        class: 'btn-edit'
+                    - else
+                      = link_to t('helpers.links.edit'),
+                        edit_surveys_email_survey_path(survey),
+                        class: 'btn-edit'
                   td
                     = link_to t('helpers.links.notify'),
                       preview_survey_path(survey),

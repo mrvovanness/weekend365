@@ -79,7 +79,7 @@
 	content:'';	position: absolute;
 	width:8px;
 	height:8px;
-	background:url(../images/sprite.png) no-repeat -138px -322px;
+	background:image-url("sprite.png") no-repeat -138px -322px;
 	left:-15px;
 	top:5px;
 }
@@ -176,7 +176,7 @@
 	content:'';	position: absolute;
 	width:19px;
 	height:19px;
-	background:url(../images/sprite.png) no-repeat -138px -155px;
+	background:image-url("sprite.png") no-repeat -138px -155px;
 	top:10px;
 	left:11px;
 }
@@ -238,8 +238,8 @@ input[type="submit"].submit:hover{
 .btn-info span{display:none;}
 .accordion li.deleted  a.opener{background:#dcdbdb;}
 .accordion li.deleted .btn-info{background:#ef9825;}
-.accordion li.deleted .btn-info em{display:none;}
-.accordion li.deleted .btn-info span{display:block;}
+//.accordion li.deleted .btn-info em{display:none;}
+//.accordion li.deleted .btn-info span{display:block;}
 .icons.icons-small img{
 	width:25px;
 	height:25px;

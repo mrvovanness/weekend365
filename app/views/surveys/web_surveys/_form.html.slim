@@ -1,6 +1,8 @@
 = simple_form_for [:surveys, company_survey],
   html: { class: 'info-form inner', id: 'survey-form' } do |f|
-  = f.input :repeat, as: :hidden, input_html: { value: 'false' }
+  = f.input :offered_survey_id,
+    as: :hidden,
+    input_html: { value: @offered_survey.id }
   = hidden_field_tag :offered_survey_id, offered_survey.id
 
   fieldset
@@ -26,11 +28,11 @@ fieldset
   .box
     - offered_survey.ordered_by_topic_questions.each do |topic, questions|
       ul.accordion
-        li.active
+        li.topic-block.active
           .opener-holder.clearfix
             a.opener.clearfix href="#"
               span.title = topic
-            a.btn-info href="#"
+            a.btn-info.btn-toggle-topic href="#"
               em Hide
               span Show
           .slide
@@ -40,7 +42,8 @@ fieldset
                   tr
                     = hidden_field_tag 'company_survey[offered_question_ids][]',
                       question.id,
-                      form: 'survey-form'
+                      form: 'survey-form',
+                      class: 'hidden-question-input'
 
                     td: span.question = question.title
                     td
@@ -57,7 +60,7 @@ fieldset
                       .comments-holder.popup-holder
                         a.btn-comments.open href="#" comments
                         .popup
-                          textarea cols="30" rows="10" add text here
+                          textarea cols="30" rows="10"
                           a.close href="#" close
 .btns-holder.clearfix
   .btns
