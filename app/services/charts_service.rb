@@ -8,33 +8,51 @@ class ChartsService
       .group_by_day('answers.created_at').count
   end
 
-  def average_by_company(filtered_answers=@survey.answers)
-    company_hash =
-      OfferedAnswer.joins(:answers)
-        .where(answers: { id: filtered_answers })
-        .group_by_day('answers.created_at')
-        .average(:value)
+  def average_by_company(filtered_answers=@survey.answers, period='d')
+    answers = OfferedAnswer.joins(:answers)
+      .where(answers: { id: filtered_answers })
+    answers = case period
+              when 'm'
+                answers.group_by_month('answers.created_at')
+              when 'w'
+                answers.group_by_week('answers.created_at')
+              else
+                answers.group_by_day('answers.created_at')
+              end
+    company_hash = answers.average(:value)
 
     round_hash_values(company_hash)
   end
 
-  def average_by_country
-    country_hash =
-      OfferedAnswer.joins(:answers)
-        .where(answers: { result: get_results_of_one_country })
-        .group_by_day('answers.created_at')
-        .average(:value)
+def average_by_country(period='d')
+    answers = OfferedAnswer.joins(:answers)
+      .where(answers: { result: get_results_of_one_country })
+    answers = case period
+              when 'm'
+                answers.group_by_month('answers.created_at')
+              when 'w'
+                answers.group_by_week('answers.created_at')
+              else
+                answers.group_by_day('answers.created_at')
+              end
+    country_hash = answers.average(:value)
 
     round_hash_values(country_hash)
   end
 
-  def average_by_industry
-    industry_hash =
-      OfferedAnswer.joins(:answers)
-        .where(answers: { result: get_results_of_one_industry })
-        .group_by_day('answers.created_at')
-        .average(:value)
-
+def average_by_industry(period='d')
+    answers = OfferedAnswer.joins(:answers)
+      .where(answers: { result: get_results_of_one_industry })
+    answers = case period
+              when 'm'
+                answers.group_by_month('answers.created_at')
+              when 'w'
+                answers.group_by_week('answers.created_at')
+              else
+                answers.group_by_day('answers.created_at')
+              end
+    industry_hash = answers.average(:value)
+    
     round_hash_values(industry_hash)
   end
 

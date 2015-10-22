@@ -39,7 +39,7 @@ describe User do
       click_link 'New Employee(s)'
       fill_in 'Name', with: 'Jack London'
       fill_in 'Email', with: 'jack.london@mail.com'
-      click_button 'Create Employee'
+      click_button 'Save'
       expect(page).to have_content('Jack London')
     end
   end
