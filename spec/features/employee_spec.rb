@@ -35,7 +35,7 @@ describe Employee do
     click_on 'New Employee(s)'
     fill_in 'Name', with: 'Boris'
     fill_in 'Email', with: 'ex@mail.com'
-    click_on 'Create Employee'
+    click_on 'Save'
     expect(page).to have_content('Employee was successfully created')
   end
 
@@ -43,7 +43,7 @@ describe Employee do
     click_on 'New Employee(s)'
     fill_in 'Name', with: ''
     fill_in 'Email', with: ''
-    click_on 'Create Employee'
+    click_on 'Save'
     expect(page).to have_content('Employee could not be created')
   end
 

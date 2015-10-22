@@ -1,6 +1,8 @@
 class Spreadsheet
   def initialize(file)
-    @file = Roo::Spreadsheet.open(file)
+    if File.exist?(file)
+      @file = Roo::Spreadsheet.open(file)
+    end
   end
 
   def import(class_name, args={})

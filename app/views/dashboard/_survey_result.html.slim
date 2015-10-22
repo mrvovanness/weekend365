@@ -21,9 +21,19 @@
   .graph-holder
     = line_chart [\
       { name: t('dashboard.survey_result.country'),
-        data: survey.get_charts.average_by_country },
+        data: survey.get_charts.average_by_country(@period) },
       { name: t('dashboard.survey_result.industry'),
-        data: survey.get_charts.average_by_industry },
+        data: survey.get_charts.average_by_industry(@period) },
       { name: t('dashboard.survey_result.you'),
-        data: survey.get_charts.average_by_company(survey.answers) }\
+        data: survey.get_charts.average_by_company(survey.answers, @period) }\
     ], library: { legend: { position: 'top' }, curveType: 'function' }
+    center
+      = link_to 'daily',
+        params.merge(period: 'd', only_path: true),
+        class: 'chart'
+      = link_to 'weekly',
+        params.merge(period: 'w', only_path: true),
+        class: 'chart'
+      = link_to 'monthly',
+        params.merge(period: 'm', only_path: true),
+        class: 'chart'

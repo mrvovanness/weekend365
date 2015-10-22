@@ -5,6 +5,7 @@ class DashboardController < ApplicationController
     @surveys = @company.company_surveys.includes(:email_schedule)
       .order(updated_at: :desc).decorate
     @top_survey = @surveys.first
+    @period = params[:period] || 'd'
   end
 
   def show
@@ -12,5 +13,6 @@ class DashboardController < ApplicationController
     @search = Employee.ransack(params[:q])
     @answers = Answer.filter_by_employees(@search.result, @survey)
     @comments = @survey.answers.map(&:comment).compact.last(3)
+    @period = params[:period] || @survey.weekly? ? 'w' : 'd'
   end
 end
