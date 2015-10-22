@@ -4,6 +4,7 @@ class CompanySurvey < ActiveRecord::Base
   attr_accessor :skip_callback
 
   belongs_to :company
+  belongs_to :offered_survey
   has_one :email_schedule, dependent: :destroy
   has_many :results
   has_many :tokens
@@ -59,5 +60,16 @@ class CompanySurvey < ActiveRecord::Base
 
   def next_delivery_at
     email_schedule.next_delivery_at if email_schedule
+  end
+
+  def repeatable?
+    unless repeat
+      true
+    end
+  end
+
+  def ordered_by_topic_questions
+    offered_questions.group_by { |question| question.topic }
+      .delete_if { |topic| topic.empty? }
   end
 end

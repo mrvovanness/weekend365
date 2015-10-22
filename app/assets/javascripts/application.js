@@ -6,6 +6,7 @@
 //= require select2.full
 //= require jquery-ui/dialog
 //= require epiceditor
+//= require jquery.accordion.js
 //= require_tree .
 $(document).ready(function() {
   setTimeout(function() {

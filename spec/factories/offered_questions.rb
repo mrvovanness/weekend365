@@ -1,6 +1,7 @@
 FactoryGirl.define do
   factory :offered_question do
     title 'Test'
+    topic 'Test topic'
 
     factory :question_with_answers do
       after(:create) do |question|

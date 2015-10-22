@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151021075411) do
+ActiveRecord::Schema.define(version: 20151022110239) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -117,9 +117,11 @@ ActiveRecord::Schema.define(version: 20151021075411) do
     t.datetime "updated_at"
     t.string   "locale"
     t.integer  "emails_counter",        default: 0
+    t.integer  "offered_survey_id"
   end
 
   add_index "company_surveys", ["company_id"], name: "index_company_surveys_on_company_id", using: :btree
+  add_index "company_surveys", ["offered_survey_id"], name: "index_company_surveys_on_offered_survey_id", using: :btree
 
   create_table "company_surveys_employees", id: false, force: :cascade do |t|
     t.integer "employee_id"
@@ -207,9 +209,10 @@ ActiveRecord::Schema.define(version: 20151021075411) do
 
   create_table "offered_surveys", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "description"
+    t.string   "answers_through"
   end
 
   create_table "results", force: :cascade do |t|
