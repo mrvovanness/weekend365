@@ -19,7 +19,7 @@ class OfferedQuestion < ActiveRecord::Base
 
   def set_default_answers
     if self.offered_answers.empty?
-      self.offered_answers = OfferedAnswer.all
+      self.offered_answers = OfferedAnswer.first(5)
     end
   end
 end
