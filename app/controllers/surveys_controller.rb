@@ -15,7 +15,6 @@ class SurveysController < ApplicationController
       redirect_to company_path @company
     else
       @offered_surveys = OfferedSurvey.includes(:translations).order(created_at: :asc)
-      @email_survey = @offered_surveys.first
     end
   end
 

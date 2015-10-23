@@ -4,14 +4,13 @@
   .filter_form
     .filter-area.style01
       div
-        = link_to @email_survey.title, new_surveys_email_survey_path
-      i = @email_survey.description
-      <br><br>
-
-      - @offered_surveys.each do |survey|
-        - next if survey == @email_survey
-        = link_to survey.title,
-          new_surveys_web_survey_path(offered_survey_id: survey.id)
-        <br>
-        i = survey.description
-        <br>
+        - @offered_surveys.each do |survey|
+          - if survey.answers_through == 'web'
+            = link_to survey.title,
+              new_surveys_web_survey_path(offered_survey_id: survey.id)
+          - else
+            = link_to survey.title,
+              new_surveys_email_survey_path(offered_survey_id: survey.id)
+          <br>
+          i = survey.description
+          <br>

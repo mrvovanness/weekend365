@@ -5,6 +5,7 @@ module Surveys
 
     def new
       @company_survey = @company.company_surveys.build.decorate
+      @email_schedule = @company_survey.build_email_schedule
       load_offered_survey
     end
 
@@ -33,11 +34,23 @@ module Surveys
     private
 
     def company_survey_params
-      params.require(:company_survey)
-        .permit(:title,
-                :repeat,
-                :offered_survey_id,
-                offered_question_ids: [])
+      params.require(:company_survey).permit(
+        :title,
+        :message,
+        :repeat,
+        :offered_survey_id,
+        :locale,
+        offered_question_ids: [],
+        email_schedule_attributes: [
+          :start_on,
+          :id,
+          :time,
+          :finish_on,
+          :number_of_repeats,
+          :repeat_every,
+          :repeat_mode
+        ]
+      )
     end
 
     def set_company_survey

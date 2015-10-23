@@ -1,0 +1,51 @@
+= f.simple_fields_for :email_schedule do |es|
+  = es.input :start_on, as: :string,
+    label: t("simple_form.labels.email_schedule.start_on",
+              timezone: @company.timezone),
+    label_html: { class: 'style01' },
+    input_html: { class: survey.started? ? 'started' : 'survey_start_on schedule-setter',
+                  id: 'survey_start_on',
+                  value: survey.set_start_on },
+    hint: survey.set_hint_for_start_on,
+    readonly: true
+  = es.error :start_on
+  br
+
+  = es.input :time, as: :string,
+    label_html: { class: 'style01' },
+    input_html: { value: survey.set_time,
+                  class: 'survey_time' },
+    readonly: true
+  = es.error :time
+  br
+
+  #repeat-block style='display: none'
+    = es.input :repeat_every,
+      input_html: { class: 'selectable survey_repeat_every schedule-setter',
+                    min: 1, max: 365,
+                    value: es.object.repeat_every || 1 },
+      label_html: { class: 'style01' },
+      hint_html: { id: 'repeat-every-hinter' }
+
+    = es.input :repeat_mode,
+      collection: [[t('surveys.form.days'), 'd'],
+                   [t('surveys.form.weeks'), 'w']], selected: 'w',
+      label: false,
+      input_html: { class: 'survey_repeat_mode schedule-setter' },
+      include_blank: false
+    br
+
+    = es.input :finish_on, as: :string,
+      label_html: { class: 'style01' },
+      input_html: { class: 'survey_finish_on schedule-setter',
+                    value: survey.set_finish_on },
+      readonly: true
+    = es.error :finish_on
+    br
+
+    = es.input :number_of_repeats,
+      input_html: { class: 'survey_number_of_repeats selectable' },
+      label_html: { class: 'style01' },
+      readonly: true
+    = es.error :number_of_repeats
+    <br><br>

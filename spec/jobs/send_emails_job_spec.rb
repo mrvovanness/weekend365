@@ -45,4 +45,14 @@ describe SendEmailsJob do
     SendEmailsJob.perform(survey.id)
     expect(survey.reload.counter).to eq 2
   end
+
+  context 'unrepeatable survey' do
+    let!(:unrepeatable_survey) { create(:survey_with_tokens, repeat: 'false') }
+    
+    it 'remove schedule after first job' do
+      SendEmailsJob.perform(unrepeatable_survey.id)
+      expect(persisted_in_redis?(unrepeatable_survey.id)).to be false
+    end
+  end
+
 end

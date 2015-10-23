@@ -8,7 +8,7 @@ class SendEmailsJob
     survey.increment!(:counter)
 
     # Shift next delivery or remove schedule
-    if survey.counter > survey.number_of_repeats
+    if survey.counter > survey.number_of_repeats || survey.unrepeatable?
       Resque.remove_schedule("for_survey_#{survey.id}")
     else
       updated_schedule = SchedulesConfigurator.new(survey.email_schedule)

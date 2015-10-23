@@ -34,8 +34,9 @@ Rails.application.routes.draw do
   end
 
   namespace :surveys do
-    resources :web_surveys, except: :index
-    resources :email_surveys, except: [:index, :destroy] do
+    resources :web_surveys, only: [:new, :create, :edit, :update]
+
+    resources :email_surveys, only: [:new, :create, :edit, :update] do
       member do
         get 'preview_email'
         get 'comments'

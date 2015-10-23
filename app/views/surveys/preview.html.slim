@@ -16,12 +16,18 @@
           span.heading
             = t('surveys.preview.question',
                  question_title: question.title)
-        <br><br>
+        <br>
 
       .btns
-        = link_to t('helpers.links.edit'),
-          edit_surveys_email_survey_path(@survey),
-          class: 'btn-edit'
+        - if @survey.offered_survey.try(:answers_through) == 'web'
+          = link_to t('helpers.links.edit'),
+            edit_surveys_web_survey_path(@survey,
+            offered_survey_id: @survey.offered_survey.id),
+            class: 'btn-edit'
+        - else
+          = link_to t('helpers.links.edit'),
+            edit_surveys_email_survey_path(@survey),
+            class: 'btn-edit'
 
         = link_to t('helpers.links.undo'),
           surveys_email_survey_path(@survey),

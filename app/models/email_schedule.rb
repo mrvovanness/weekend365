@@ -3,11 +3,11 @@ class EmailSchedule < ActiveRecord::Base
 
   before_validation :write_start_at
 
-  validates :repeat_every, numericality: {
-    only_integer: true, greater_than: 0, less_than: 366 }
+  #validates :repeat_every, numericality: {
+  #  only_integer: true, greater_than: 0, less_than: 366 }
 
-  validates :number_of_repeats, numericality: {
-    only_integer: true, greater_than: 1, less_than: 1001 }
+  #validates :number_of_repeats, numericality: {
+  #  only_integer: true, greater_than: 1, less_than: 1001 }
 
   validate :check_survey_start
 

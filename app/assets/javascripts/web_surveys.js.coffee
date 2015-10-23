@@ -2,13 +2,37 @@ jQuery ->
   $('.web-survey-save').click ->
     $('#survey-form').submit()
 
+  # Disable some inputs if 'once' chosen
+  deactivaveInputs = ->
+    $('#repeat-block').fadeOut(500)
+    $('#repeat-block').find(':input').prop 'disabled', true
+  activaveInputs = ->
+      $('#repeat-block').fadeIn(500)
+      $('#repeat-block').find(':input').prop 'disabled', false
+
+  setRepeatingBlock = ->
+    if $('#company_survey_repeat_false').prop 'checked'
+      deactivaveInputs()
+    else
+      activaveInputs()
+
+  $('#company_survey_repeat_false').click ->
+    deactivaveInputs()
+
+  $('#company_survey_repeat_true').click ->
+    activaveInputs()
+
+  setRepeatingBlock()
+
   # Pop up comment to answer (show/hide)
   $('.popup-holder .open').click (e) ->
+    e.preventDefault()
     popupHolder = $(this).parents('.popup-holder')
     popupHolder.addClass('popup-active')
     popupHolder.find('.popup').fadeIn(300)
 
-  $('.popup .close').click ->
+  $('.popup .close').click (e) ->
+    e.preventDefault()
     $(this).parent().fadeOut(100)
     $(this).parents('.popup-holder').removeClass('popup-active')
 

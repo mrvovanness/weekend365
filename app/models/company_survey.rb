@@ -66,4 +66,12 @@ class CompanySurvey < ActiveRecord::Base
     offered_questions.group_by { |question| question.topic }
       .delete_if { |topic| topic.try(:empty?) }
   end
+
+  def unrepeatable?
+    unless repeat.nil?
+      !self.repeat
+    else
+      false
+    end
+  end
 end

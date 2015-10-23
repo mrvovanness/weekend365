@@ -4,9 +4,14 @@
   = simple_form_for [:surveys, @company_survey],
     url: surveys_web_surveys_path,
     html: { class: 'info-form inner', id: 'survey-form' } do |f|
-    = f.input :offered_survey_id,
-      as: :hidden,
+
+    = f.input :offered_survey_id, as: :hidden,
       input_html: { value: @offered_survey.id }
+
+    = f.input :locale, as: :hidden,
+      input_html: { value: I18n.locale.to_s }
+
+    / This field just for case when validations failed
     = hidden_field_tag :offered_survey_id, @offered_survey.id
 
     fieldset
@@ -15,9 +20,29 @@
         = f.input_field :title,
           class: 'style05',
           value: @company_survey.set_title(@offered_survey,
-                                          @company_survey.company),
+                                           @company_survey.company),
           autofocus: true
         = f.error :title
+
+      span.heading = t('surveys.form.survey_period')
+
+      .block
+        .row-holder.clearfix
+          = f.radio_button :repeat, false,
+            class: 'radio',
+            checked: true
+          = f.label :repeat, t('simple_form.labels.surveys.once')
+
+      .block
+        .row-holder.clearfix
+          = f.radio_button :repeat, true,
+            class: 'radio'
+          = f.label :repeat, t('simple_form.labels.surveys.repeat')
+        .block-frame
+
+          = render 'schedule_form',
+            survey: @company_survey,
+            f: f
 
   fieldset
     .box
