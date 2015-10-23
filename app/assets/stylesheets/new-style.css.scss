@@ -76,7 +76,8 @@
 	text-transform:capitalize;
 }
 .close:after{
-	content:'';	position: absolute;
+	content:'';
+  position: absolute;
 	width:8px;
 	height:8px;
 	background:image-url("sprite.png") no-repeat -138px -322px;
@@ -173,7 +174,8 @@
 .accordion > li > a:hover{text-decoration:none;}
 .accordion > li > .opener-holder > a:before,
 .accordion > li > a.opener:before{
-	content:'';	position: absolute;
+	content:'';
+  //position: absolute;
 	width:19px;
 	height:19px;
 	background:image-url("sprite.png") no-repeat -138px -155px;

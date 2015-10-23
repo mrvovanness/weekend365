@@ -62,14 +62,8 @@ class CompanySurvey < ActiveRecord::Base
     email_schedule.next_delivery_at if email_schedule
   end
 
-  def repeatable?
-    unless repeat
-      true
-    end
-  end
-
   def ordered_by_topic_questions
     offered_questions.group_by { |question| question.topic }
-      .delete_if { |topic| topic.empty? }
+      .delete_if { |topic| topic.try(:empty?) }
   end
 end

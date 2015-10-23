@@ -38,7 +38,7 @@
                   td
                     - if survey.offered_survey.try(:answers_through) == 'web'
                       = link_to t('helpers.links.edit'),
-                        edit_surveys_company_survey_path(survey,
+                        edit_surveys_web_survey_path(survey,
                         offered_survey_id: survey.offered_survey),
                         class: 'btn-edit'
                     - else

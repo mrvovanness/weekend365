@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   end
 
   namespace :surveys do
-    resources :web_surveys, as: 'company_surveys', except: :index
+    resources :web_surveys, except: :index
     resources :email_surveys, except: [:index, :destroy] do
       member do
         get 'preview_email'

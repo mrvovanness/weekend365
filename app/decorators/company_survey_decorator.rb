@@ -23,7 +23,7 @@ class CompanySurveyDecorator < Draper::Decorator
              end
     I18n.t('decorators.company_survey.schedule', repeat_every: repeat_every,
       repeat_period: period, start_at: start_at.try(:strftime, '%I:%M%P'),
-      start_from: start_at.strftime('%b %dth %Y'))
+      start_from: start_at.try(:strftime, '%b %dth %Y'))
   end
 
   def frequency_overview
