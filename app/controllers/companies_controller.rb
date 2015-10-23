@@ -80,6 +80,6 @@ class CompaniesController < ApplicationController
     params.require(:company).permit(
       :name, :company_field_id, :office_address,
       :country, :timezone, :description, :website,
-      :employees_number, :employees_registered)
+      :employees_number, :employees_registered, :subscribed)
   end
 end

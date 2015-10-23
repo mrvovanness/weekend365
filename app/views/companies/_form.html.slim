@@ -7,9 +7,9 @@
       = f.input_field :name
     .row
       .label-holder
-        = label_tag 'Company admin'
+        = label_tag t('simple_form.labels.company.admin')
       = admin_select(@company, @company_admin)
-      span.link = link_to 'Admin list', users_path, class: 'backlink'
+      span.link = link_to t('helpers.links.admin_list'), users_path, class: 'backlink'
     .row
       .label-holder
         = f.label :company_field
@@ -52,5 +52,7 @@
         = f.label :employees_registered
       = f.input_field :employees_registered,
         type: 'text'
+    .row
+      = f.input_field :subscribed, as: :boolean, inline_label: t('simple_form.labels.company.subscribed')
     .row.btn-holder
       = f.submit class: 'btn-save'

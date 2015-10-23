@@ -7,6 +7,8 @@ class Company < ActiveRecord::Base
   has_many :results, through: :employees
   has_many :users, inverse_of: :company, dependent: :destroy
 
+  after_update :check_subscription
+
   def admin
     User.with_role(:company_admin, self).first
   end
@@ -17,6 +19,10 @@ class Company < ActiveRecord::Base
       company_admin.remove_role(:company_admin, self)
       new_admin = User.find(user_id)
       new_admin.add_role(:company_admin, self)
+      if subscribed
+        UnsubscribeUserFromMailingListJob.perform(company_admin)
+        SubscribeUserToMailingListJob.perform(new_admin)
+      end
     end
   end
 
@@ -36,5 +42,15 @@ class Company < ActiveRecord::Base
     tz_id = value.respond_to?(:tzinfo) && value.tzinfo.name || nil
     tz_id ||= TZInfo::Timezone.get(ActiveSupport::TimeZone::MAPPING[value.to_s] || value.to_s).identifier
     write_attribute(:timezone, tz_id)
+  end
+
+  private
+
+  def check_subscription
+    if subscribed
+      SubscribeUserToMailingListJob.perform(admin)
+    else
+      UnsubscribeUserFromMailingListJob.perform(admin)
+    end
   end
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151022110239) do
+ActiveRecord::Schema.define(version: 20151023073416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(version: 20151022110239) do
     t.integer  "employees_registered"
     t.integer  "company_field_id"
     t.string   "timezone",             default: "Asia/Tokyo"
+    t.boolean  "subscribed",           default: true
   end
 
   add_index "companies", ["company_field_id"], name: "index_companies_on_company_field_id", using: :btree
