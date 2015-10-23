@@ -22,7 +22,10 @@ module Surveys
 
     def update
       @company_survey.update(company_survey_params)
-      load_offered_survey if @company_survey.errors.present?
+      if @company_survey.errors.present?
+        load_offered_survey
+        load_not_included_questions
+      end
       respond_with @company_survey, location: -> { surveys_path }
     end
 

@@ -1,6 +1,62 @@
 #main
   .inform-panel.clearfix
     h1 = link_to t('surveys.new.title'), '#'
-  = render 'form',
-    company_survey: @company_survey,
-    offered_survey: @offered_survey
+  = simple_form_for [:surveys, @company_survey],
+    url: surveys_web_surveys_path,
+    html: { class: 'info-form inner', id: 'survey-form' } do |f|
+    = f.input :offered_survey_id,
+      as: :hidden,
+      input_html: { value: @offered_survey.id }
+    = hidden_field_tag :offered_survey_id, @offered_survey.id
+
+    fieldset
+      = f.label :title, class: 'heading'
+      .row
+        = f.input_field :title,
+          class: 'style05',
+          value: @company_survey.set_title(@offered_survey,
+                                          @company_survey.company),
+          autofocus: true
+        = f.error :title
+
+  fieldset
+    .box
+      - @offered_survey.ordered_by_topic_questions.each do |topic, questions|
+        ul.accordion
+          li.topic-block.active
+            .opener-holder.clearfix
+              a.opener.clearfix href="#"
+                span.title = topic
+              a.btn-info.btn-toggle-topic href="#"
+                em Hide
+                span Show
+            .slide
+              table.info-table
+                tbody
+                  - questions.each do |question|
+                    tr
+                      = hidden_field_tag 'company_survey[offered_question_ids][]',
+                        question.id,
+                        form: 'survey-form',
+                        class: 'hidden-question-input'
+
+                      td: span.question = question.title
+                      td
+                        .agree-holder
+                          span.heading Agree
+                          .holder.clearfix
+                            a.minus -
+                            ul.agree
+                              - question.offered_answers.each do |answer|
+                                li class="color#{answer.value}"
+                                  a color
+                            a.plus +
+                      td
+                        .comments-holder.popup-holder
+                          a.btn-comments.open href="#" comments
+                          .popup
+                            textarea cols="30" rows="10"
+                            a.close href="#" close
+  .btns-holder.clearfix
+    .btns
+      = submit_tag 'SAVE', class: 'btn-save web-survey-save'

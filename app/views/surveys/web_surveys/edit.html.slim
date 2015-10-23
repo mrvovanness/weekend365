@@ -3,6 +3,7 @@
     h1 = link_to t('surveys.edit.title'), '#'
 
   = simple_form_for [:surveys, @company_survey],
+    url: surveys_web_survey_path(@company_survey),
     html: { class: 'info-form inner', id: 'survey-form' } do |f|
     = hidden_field_tag :offered_survey_id, @offered_survey.id
     = hidden_field_tag 'company_survey[offered_question_ids][]', ' '
@@ -101,8 +102,7 @@
       = submit_tag 'SAVE', class: 'btn-save web-survey-save'
       <br>
       = link_to t('helpers.links.destroy'),
-        surveys_company_survey_path(@company_survey),
+        survey_path(@company_survey),
         method: :delete,
         id: 'delete-survey',
-        data: { confirm: t('helpers.links.confirm') }\
-        unless @company_survey.new_record?
+        data: { confirm: t('helpers.links.confirm') }
