@@ -16,6 +16,7 @@ pt:
       new: "Novo"
       show: "Mostrar"
       about: "sobre"
+      admin_list: "Admin list"
       back_to_surveys: "<< voltar para a lista de pesquisa"
       add_admin: "Adicionar novo Administrador"
       add_company: "Nova Empresa"

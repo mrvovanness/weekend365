@@ -1,5 +1,7 @@
 DYNAMIC_SCHEDULE: 'true'
-QUEUE: 'send_emails'
+QUEUE: 'send_emails, subscribe'
+MAILCHIMP_API_KEY: '904ca50315abfb77a18db720781b14ce-us12'
+MAILCHIMP_LIST_ID: 'f75f926f98'
 
 development:
   REDIS_URL: 'redis://localhost:6379'

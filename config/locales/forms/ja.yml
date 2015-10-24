@@ -51,6 +51,7 @@ ja:
       defaults:
         title: "タイトル"
       company:
+        admin: 'Company admin'
         country: "国"
         description: '会社説明'
         employees_number: '社員数'
@@ -59,6 +60,7 @@ ja:
         name: '会社名'
         office_address: 'オフィス住所'
         website: 'サイト'
+        subscribed: 'Company admin is subscribed to Weekend newsletter'
       contact:
         name: '名前'
         company_name: '企業名'

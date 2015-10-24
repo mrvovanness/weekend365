@@ -51,6 +51,7 @@ pt:
       defaults:
         title: "Título"
       company:
+        admin: 'Company admin'
         country: 'Pais'
         description: 'Descrição da Empresa'
         employees_number: 'Número de Colaboradores'
@@ -59,6 +60,7 @@ pt:
         name: 'Nome da Empresa'
         office_address: 'Endereço do escritório'
         website: 'Website'
+        subscribed: 'Company admin is subscribed to Weekend newsletter'
       contact:
         name: 'Nome'
         company_name: 'Nome da Empresa'

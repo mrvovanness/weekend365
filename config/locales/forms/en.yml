@@ -61,6 +61,7 @@ en:
       defaults:
         title: "Title"
       company:
+        admin: 'Company admin'
         country: 'Country'
         description: 'Company Description'
         employees_number: 'Employees Number'
@@ -69,6 +70,7 @@ en:
         name: 'Company Name'
         office_address: 'Office Address'
         website: 'Website'
+        subscribed: 'Company admin is subscribed to Weekend newsletter'
       contact:
         name: 'Name'
         company_name: 'Name of company'

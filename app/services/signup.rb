@@ -60,5 +60,6 @@ class Signup
     I18n.locale = @user.locale
     @company.save!
     user.add_role :company_admin, @company
+    SubscribeUserToMailingListJob.perform(user)
   end
 end

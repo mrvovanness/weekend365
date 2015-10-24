@@ -21,6 +21,7 @@ ja:
       add_employee: "社員追加"
       add_survey: "サーベイ追加"
       add_to_survey: "サーベイに追加"
+      admin_list: "Admin list"
       back_to_dashboard: "ダッシュボードに戻る"
       back_to_surveys: "<< サーベイリストに戻る"
       blog: "ブログ"
