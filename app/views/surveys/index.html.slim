@@ -35,21 +35,33 @@
                   td = number_to_percentage(survey.get_statistics.rate, precision: 0)
                   td = survey.start_at.try(:strftime,  '%b.%dth/%Y')
                   td = survey.frequency_overview
-                  td
-                    - if survey.offered_survey.try(:answers_through) == 'web'
+
+                  - if survey.offered_survey.try(:answers_through) == 'web'
+
+                    td
                       = link_to t('helpers.links.edit'),
                         edit_surveys_web_survey_path(survey,
                         offered_survey_id: survey.offered_survey),
                         class: 'btn-edit'
-                    - else
+
+                    td
+                      = link_to t('helpers.links.notify'),
+                        preview_surveys_web_survey_path(survey),
+                        class: 'btn-notify'
+
+                  - else
+
+                    td
                       = link_to t('helpers.links.edit'),
                         edit_surveys_email_survey_path(survey),
                         class: 'btn-edit'
-                  td
-                    = link_to t('helpers.links.notify'),
-                      preview_survey_path(survey),
-                      class: 'btn-notify'
-                  td
-                    = link_to t('helpers.links.results'),
-                      dashboard_path(survey),
-                      class: 'btn-results'
+
+                    td
+                      = link_to t('helpers.links.notify'),
+                        preview_surveys_email_survey_path(survey),
+                        class: 'btn-notify'
+
+                    td
+                      = link_to t('helpers.links.results'),
+                        dashboard_path(survey),
+                        class: 'btn-results'

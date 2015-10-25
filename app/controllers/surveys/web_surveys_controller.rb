@@ -30,6 +30,8 @@ module Surveys
       respond_with @company_survey, location: -> { surveys_path }
     end
 
+    def preview
+    end
 
     private
 
@@ -41,6 +43,7 @@ module Surveys
         :offered_survey_id,
         :locale,
         offered_question_ids: [],
+        employee_ids: [],
         email_schedule_attributes: [
           :start_on,
           :id,
@@ -54,7 +57,9 @@ module Surveys
     end
 
     def set_company_survey
-      @company_survey = @company.company_surveys.find(params[:id]).decorate
+      @company_survey = @company.company_surveys.includes(
+        offered_questions: [:offered_answers, :translations]
+      ).find(params[:id]).decorate
     end
 
     def load_offered_survey

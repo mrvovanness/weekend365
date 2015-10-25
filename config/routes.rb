@@ -29,16 +29,20 @@ Rails.application.routes.draw do
   resources :surveys, except: [:show, :edit, :create, :update] do
     member do
       patch 'update_employees'
-      get 'preview'
+      get 'email_preview'
     end
   end
 
   namespace :surveys do
-    resources :web_surveys, only: [:new, :create, :edit, :update]
+    resources :web_surveys, only: [:new, :create, :edit, :update] do
+      member do
+        get 'preview'
+      end
+    end
 
     resources :email_surveys, only: [:new, :create, :edit, :update] do
       member do
-        get 'preview_email'
+        get 'preview'
         get 'comments'
       end
     end

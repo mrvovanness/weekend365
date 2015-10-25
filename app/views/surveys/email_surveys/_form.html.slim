@@ -12,18 +12,7 @@
 
     span.heading = t('surveys.form.survey_period')
 
-    /.block
-      .row-holder.clearfix
-        = f.radio_button :repeat, false,
-          class: 'radio checkable'
-        = f.label :repeat, t('simple_form.labels.surveys.once')
-
     .block
-      /.row-holder.clearfix
-        = f.radio_button :repeat, true,
-          class: 'radio checkable',
-          checked: true
-        = f.label :repeat, t('simple_form.labels.surveys.repeat')
       .block-frame
         = f.input :locale, as: :hidden,
           input_html: { value: I18n.locale.to_s }

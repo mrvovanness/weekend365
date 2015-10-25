@@ -18,6 +18,39 @@
           autofocus: true
         = f.error :title
 
+      span.heading = t('surveys.form.survey_period')
+
+      .block
+        .row-holder.clearfix
+          = f.radio_button :repeat, false,
+            class: 'radio',
+            checked: true
+          = f.label :repeat, t('simple_form.labels.surveys.once')
+
+      .block
+        .row-holder.clearfix
+          = f.radio_button :repeat, true,
+            class: 'radio'
+          = f.label :repeat, t('simple_form.labels.surveys.repeat')
+        .block-frame
+
+          = render 'schedule_form',
+            survey: @company_survey,
+            f: f
+
+      = f.input :message,
+        label_html: { class: 'style01' },
+        wrapper_html: { class: 'row' },
+        input_html: { class: 'style01' }
+      = f.error :message
+
+    = f.input :employee_ids,
+      collection: @company_survey.company.employees.order(:name),
+      wrapper_html: { class: 'size01' },
+      label_html: { class: 'style01' },
+      input_html: { multiple: true, id: 'employee_ids' },
+      placeholder: t('simple_form.placeholders.company_survey.employee_ids'),
+      include_blank: false
 
   fieldset
     .box

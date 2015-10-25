@@ -1,0 +1,63 @@
+tr
+  td[height="26"]
+tr
+  td[style="font:22px Arial, Helvetica, sans-serif;
+    line-height:28px; color:#f6881f;
+    padding:0 0 0 8px; text-transform:uppercase;"]
+    = @survey.title
+tr
+  td[height="18"]
+tr
+  td[style="font:14px Arial, Helvetica, sans-serif;
+    line-height:25px; margin:0 0 15px; padding:0 20px;
+    color:#343838; text-transform:uppercase;"]
+    = @survey.message
+tr
+  td[height="31"]
+tr
+  td
+    table[width="100%" cellpadding="0" cellspacing="0"
+      bgcolor="#f19926" style="border-radius:2px;"]
+      tr
+        td[style="padding:4px 0 4px 7px;"]
+          img[src="#{image_url('ico01.png')}"
+            width="27" height="28"
+            alt="image description"
+            border="0" style="vertical-align:top;"]
+        td[style="font:21px Arial, Helvetica, sans-serif;
+          line-height:25px; margin:0 0 15px;
+          padding:0 20px; color:#ffffff;"]
+          = @survey.offered_questions.first.title
+tr
+  td[height="50"]
+tr
+  td[align="center"]
+    table[cellpadding="0" cellspacing="0"
+      style="text-align:center;"]
+      tr
+        - @answers.each do |answer|
+          td[valign="top" background="bg01.png"
+            style="font:1.5em Arial, Helvetica, sans-serif;
+            line-height:60px; font-weight:bold;
+            color:#343838; text-align:center;
+            background:url(#{image_url('bg01.png')}) no-repeat;"]
+            a[href="#{results_url(token: @token,
+                employee_id: @employee.id,
+                company_survey_id: @survey.id,
+                offered_question_id: @survey.offered_questions.first.id,
+                offered_answer_id: answer.id)}"
+              style="background:url(#{image_url('bg01.png')}) no-repeat;
+                color:#343838; text-decoration:none;
+                width:60px; height:60px;
+                display:inline-block;
+                vertical-align:top;"]
+              = answer.value
+          td[width="11"]
+tr
+  td[height="12"]
+tr
+  td[align="center"]
+    img[src="#{image_url('img01.jpg')}"
+      width="90%" height="90%"
+      alt="image description"
+      border="0" style="vertical-align:top;"]

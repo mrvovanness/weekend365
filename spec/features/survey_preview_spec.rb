@@ -7,7 +7,7 @@ describe User, js: true do
 
   before do
     login('ex@mail.com', 'bigsecret')
-    visit preview_survey_path(survey)
+    visit preview_surveys_email_survey_path(survey)
   end
 
   it 'see the number of employees in survey' do

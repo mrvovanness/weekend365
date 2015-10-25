@@ -11,7 +11,6 @@ describe User, js: true do
   end
 
   it 'can create web survey' do
-    sleep 10
     click_on 'SAVE'
     expect(page).to have_content('Company survey was successfully created')
     expect(company.company_surveys.count).to eq 1
@@ -21,6 +20,29 @@ describe User, js: true do
   it 'save the offered_survey_id' do
     click_on 'SAVE'
     expect(company.company_surveys.first.offered_survey).to eq offered_survey
+  end
+
+  context 'Email schedule' do
+    it 'save the email_schedule with default attributes' do
+      click_on 'SAVE'
+      email_schedule = company.company_surveys.first.email_schedule
+      expect(email_schedule.start_at.nil?).to be false
+      expect(email_schedule.repeat_every.nil?).to be true
+      expect(email_schedule.repeat_mode.nil?).to be true
+      expect(email_schedule.finish_on.nil?).to be true
+      expect(email_schedule.number_of_repeats.nil?).to be true
+    end
+
+    it 'save the email_schedule with repeat attributes' do
+      choose 'company_survey_repeat_true'
+      click_on 'SAVE'
+      email_schedule = company.company_surveys.first.email_schedule
+      expect(email_schedule.start_at.nil?).to be false
+      expect(email_schedule.repeat_every.nil?).to be false
+      expect(email_schedule.repeat_mode.nil?).to be false
+      expect(email_schedule.finish_on.nil?).to be false
+      expect(email_schedule.number_of_repeats.nil?).to be false
+    end
   end
 
   context 'Hiding questions' do

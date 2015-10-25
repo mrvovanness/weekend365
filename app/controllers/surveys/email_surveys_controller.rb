@@ -21,43 +21,38 @@ class Surveys::EmailSurveysController < ApplicationController
     @survey = @company.company_surveys.create(survey_params).decorate
     load_offered_survey if @survey.errors.present?
     respond_with @survey,
-      location: -> { preview_survey_path(@survey) }
+      location: -> { preview_surveys_email_survey_path(@survey) }
   end
 
   def update
     @survey.update(survey_params)
     load_offered_survey if @survey.errors.present?
     respond_with @survey,
-      location: -> { preview_survey_path(@survey) }
+      location: -> { preview_surveys_email_survey_path(@survey) }
   end
 
-
-  def preview_email
-    @token = Token.new(name: 'preview')
-    @answers = @survey.offered_questions.first.offered_answers
-    @employee = Employee.new(id: 1)
-    @company_admin = @survey.company.admin
-    render 'surveys_mailer/send_survey',
-      layout: false
+  def preview
   end
 
   private
 
   def survey_params
-    params.require(:company_survey)
-      .permit(:title,
-              :message,
-              :locale,
-              :skip_callback,
-              employee_ids: [],
-              offered_question_ids: [],
-              email_schedule_attributes: [:start_on,
-                                          :id,
-                                          :time,
-                                          :finish_on,
-                                          :number_of_repeats,
-                                          :repeat_every,
-                                          :repeat_mode])
+    params.require(:company_survey).permit(
+      :title,
+      :message,
+      :locale,
+      employee_ids: [],
+      offered_question_ids: [],
+      email_schedule_attributes: [
+        :start_on,
+        :id,
+        :time,
+        :finish_on,
+        :number_of_repeats,
+        :repeat_every,
+        :repeat_mode
+      ]
+    )
   end
 
   def set_survey

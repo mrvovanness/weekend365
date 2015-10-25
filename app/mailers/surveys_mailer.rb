@@ -9,5 +9,11 @@ class SurveysMailer < ActionMailer::Base
     @token = token.name
     @company_admin = @survey.company.admin
     mail(to: @employee.email, subject: @survey.title)
+
+    if @survey.offered_survey.try(:answers_through) == 'web'
+      render 'web_survey_invitation'
+    else
+      render 'email_survey'
+    end
   end
 end

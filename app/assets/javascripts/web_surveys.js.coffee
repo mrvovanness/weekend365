@@ -3,24 +3,25 @@ jQuery ->
     $('#survey-form').submit()
 
   # Disable some inputs if 'once' chosen
-  deactivaveInputs = ->
+  deactivateInputs = ->
     $('#repeat-block').fadeOut(500)
     $('#repeat-block').find(':input').prop 'disabled', true
-  activaveInputs = ->
+
+  activateInputs = ->
       $('#repeat-block').fadeIn(500)
       $('#repeat-block').find(':input').prop 'disabled', false
 
   setRepeatingBlock = ->
     if $('#company_survey_repeat_false').prop 'checked'
-      deactivaveInputs()
+      deactivateInputs()
     else
-      activaveInputs()
+      activateInputs()
 
   $('#company_survey_repeat_false').click ->
-    deactivaveInputs()
+    deactivateInputs()
 
   $('#company_survey_repeat_true').click ->
-    activaveInputs()
+    activateInputs()
 
   setRepeatingBlock()
 

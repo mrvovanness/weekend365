@@ -20,10 +20,7 @@ class SurveysController < ApplicationController
 
   def destroy
     @survey.destroy
-    respond_with @survey
-  end
-
-  def preview
+    respond_with @survey, location: -> { surveys_path }
   end
 
   def update_employees
@@ -31,6 +28,21 @@ class SurveysController < ApplicationController
     @survey.update_attributes!(
       params.require(:company_survey).permit(employee_ids: [])
     )
+  end
+
+  def email_preview
+    @token = Token.new(name: 'preview')
+    @answers = @survey.offered_questions.first.offered_answers
+    @employee = Employee.new(id: 1)
+    @company_admin = @survey.company.admin
+
+    if @survey.offered_survey.try(:answers_through) == 'web'
+      render 'surveys_mailer/web_survey_invitation',
+        layout: 'surveys_mailer'
+    else
+      render 'surveys_mailer/email_survey',
+        layout: 'surveys_mailer'
+    end
   end
 
   private
