@@ -35,6 +35,7 @@ class SurveysController < ApplicationController
     @answers = @survey.offered_questions.first.offered_answers
     @employee = Employee.new(id: 1)
     @company_admin = @survey.company.admin
+    @web_survey_link = new_result_url(@survey, @token.name)
 
     if @survey.offered_survey.try(:answers_through) == 'web'
       render 'surveys_mailer/web_survey_invitation',

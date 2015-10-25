@@ -58,10 +58,11 @@ Rails.application.routes.draw do
     resources :offered_surveys
   end
 
-  mount Resque::Server, at: '/background'
-
-  # route for handling email links
+  # Page for answer web survey
+  get 'company_surveys/:company_survey_id/:token/take' => 'results#new', as: 'new_result'
+  # Page for answer email survey
   get 'results' => 'results#add_result'
+
   patch 'comment/:id' => 'results#add_comment', as: 'answer_comment'
   get 'thanks_for_comment' => 'results#thanks_for_comment'
 
@@ -71,4 +72,5 @@ Rails.application.routes.draw do
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: '/letter_opener'
   end
+  mount Resque::Server, at: '/background'
 end

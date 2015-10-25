@@ -23,10 +23,17 @@ class SendEmailsJob
     # reset participation rate counters
     survey.update_columns(number_of_responses: 0, emails_counter: 0)
 
-    # Send emails
-    survey.employees.find_each do |employee|
-      SurveysMailer.send_survey(survey, employee).deliver_now
-      survey.increment!(:emails_counter)
+    
+    if survey.offered_survey.try(:answers_through) == 'web'
+      survey.employees.find_each do |employee|
+        SurveysMailer.send_web_survey(survey, employee).deliver_now
+        survey.increment!(:emails_counter)
+      end
+    else
+      survey.employees.find_each do |employee|
+        SurveysMailer.send_email_survey(survey, employee).deliver_now
+        survey.increment!(:emails_counter)
+      end
     end
   end
 end

@@ -16,5 +16,4 @@ tr
   td[style="font:14px Arial, Helvetica, sans-serif;
     line-height:25px; margin:0 0 15px; padding:0 20px;
     color:#343838; text-transform:uppercase;"]
-    p To answer this survey please click this link:
-    a href="#" fake link
+    = link_to 'Answer this survey', new_result_url(@survey.id, @token)

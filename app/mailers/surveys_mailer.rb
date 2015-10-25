@@ -1,6 +1,6 @@
 class SurveysMailer < ActionMailer::Base
 
-  def send_survey(survey, employee)
+  def send_email_survey(survey, employee)
     @survey = survey
     I18n.locale = (@survey.locale || 'en').to_sym
     token = survey.tokens.create(name: SecureRandom.hex(10), expired: false)
@@ -9,11 +9,15 @@ class SurveysMailer < ActionMailer::Base
     @token = token.name
     @company_admin = @survey.company.admin
     mail(to: @employee.email, subject: @survey.title)
+  end
 
-    if @survey.offered_survey.try(:answers_through) == 'web'
-      render 'web_survey_invitation'
-    else
-      render 'email_survey'
-    end
+  def send_web_survey(survey, employee)
+    @survey = survey
+    I18n.locale = (@survey.locale || 'en').to_sym
+    token = survey.tokens.create(name: SecureRandom.hex(10), expired: false)
+    @employee = employee
+    @token = token.name
+    @company_admin = @survey.company.admin
+    mail(to: @employee.email, subject: @survey.title)
   end
 end

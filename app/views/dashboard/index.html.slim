@@ -32,10 +32,19 @@
                   td = survey.start_at.try(:strftime, '%b.%dth/%Y')
                   td = survey.frequency_overview
                   td = survey.get_statistics.latest_reply
-                  td
-                    = link_to t('helpers.links.preview'),
-                      preview_survey_path(survey),
-                      class: 'btn-notify'
-                  td
-                    = link_to t('helpers.links.results'), dashboard_path(survey),
-                      class: 'btn-results'
+                  - if survey.offered_survey.try(:answers_through) == 'web'
+
+                    td
+                      = link_to t('helpers.links.preview'),
+                        preview_surveys_web_survey_path(survey),
+                        class: 'btn-notify'
+
+                  - else
+
+                    td
+                      = link_to t('helpers.links.preview'),
+                        preview_surveys_email_survey_path(survey),
+                        class: 'btn-notify'
+                    td
+                      = link_to t('helpers.links.results'), dashboard_path(survey),
+                        class: 'btn-results'

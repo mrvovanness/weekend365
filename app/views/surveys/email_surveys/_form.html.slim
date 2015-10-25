@@ -91,7 +91,7 @@
   .btns-holder.clearfix
     .btns
       = link_to t('helpers.links.destroy'),
-        surveys_email_survey_path(survey),
+        survey_path(survey),
         method: :delete,
         id: 'delete-survey',
         data: { confirm: t('helpers.links.confirm') }\
