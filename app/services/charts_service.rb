@@ -11,14 +11,7 @@ class ChartsService
   def average_by_company(filtered_answers=@survey.answers, period='d')
     answers = OfferedAnswer.joins(:answers)
       .where(answers: { id: filtered_answers })
-    answers = case period
-              when 'm'
-                answers.group_by_month('answers.created_at')
-              when 'w'
-                answers.group_by_week('answers.created_at')
-              else
-                answers.group_by_day('answers.created_at')
-              end
+    answers = group_by_period(answers, period)
     company_hash = answers.average(:value)
 
     round_hash_values(company_hash)
@@ -27,14 +20,7 @@ class ChartsService
 def average_by_country(period='d')
     answers = OfferedAnswer.joins(:answers)
       .where(answers: { result: get_results_of_one_country })
-    answers = case period
-              when 'm'
-                answers.group_by_month('answers.created_at')
-              when 'w'
-                answers.group_by_week('answers.created_at')
-              else
-                answers.group_by_day('answers.created_at')
-              end
+    answers = group_by_period(answers, period)
     country_hash = answers.average(:value)
 
     round_hash_values(country_hash)
@@ -43,14 +29,7 @@ def average_by_country(period='d')
 def average_by_industry(period='d')
     answers = OfferedAnswer.joins(:answers)
       .where(answers: { result: get_results_of_one_industry })
-    answers = case period
-              when 'm'
-                answers.group_by_month('answers.created_at')
-              when 'w'
-                answers.group_by_week('answers.created_at')
-              else
-                answers.group_by_day('answers.created_at')
-              end
+    answers = group_by_period(answers, period)
     industry_hash = answers.average(:value)
     
     round_hash_values(industry_hash)
@@ -71,6 +50,17 @@ def average_by_industry(period='d')
   end
 
   private
+
+  def group_by_period(answers, period)
+    case period
+    when 'm'
+      answers.group_by_month('answers.created_at', format: "%b %Y")
+    when 'w'
+      answers.group_by_week('answers.created_at', format: "%b %d, %Y")
+    else
+      answers.group_by_day('answers.created_at', format: "%b %d, %Y")
+    end
+  end
 
   def round_hash_values(hash)
     hash.each do |key, value|
