@@ -34,6 +34,10 @@ class Surveys::EmailSurveysController < ApplicationController
   def preview
   end
 
+  def comments
+    @answers = @survey.answers
+  end
+
   private
 
   def survey_params

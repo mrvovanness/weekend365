@@ -13,6 +13,7 @@ class CompanySurvey < ActiveRecord::Base
   has_and_belongs_to_many :offered_questions
 
   accepts_nested_attributes_for :email_schedule, allow_destroy: true
+  accepts_nested_attributes_for :results, allow_destroy: true
 
   def skip_callback?
     skip_callback
