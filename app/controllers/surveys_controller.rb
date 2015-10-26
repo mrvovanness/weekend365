@@ -31,17 +31,17 @@ class SurveysController < ApplicationController
   end
 
   def email_preview
-    @token = Token.new(name: 'preview')
+    token = Token.new(name: 'preview')
+    @token = token.name
     @answers = @survey.offered_questions.first.offered_answers
     @employee = Employee.new(id: 1)
     @company_admin = @survey.company.admin
-    @web_survey_link = new_result_url(@survey, @token.name)
 
     if @survey.offered_survey.try(:answers_through) == 'web'
-      render 'surveys_mailer/web_survey_invitation',
+      render 'surveys_mailer/send_web_survey',
         layout: 'surveys_mailer'
     else
-      render 'surveys_mailer/email_survey',
+      render 'surveys_mailer/send_email_survey',
         layout: 'surveys_mailer'
     end
   end
