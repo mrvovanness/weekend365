@@ -58,19 +58,20 @@ Rails.application.routes.draw do
     resources :offered_surveys
   end
 
-  # Page for answer web survey
-  get 'company_surveys/:company_survey_id/:token/take' => 'results#new', as: 'new_result'
-  # Page for answer email survey
-  get 'results' => 'results#add_result'
+  # Pages for answer web survey
+  get 'company_surveys/:company_survey_id/:token/:employee_id/take' => 'results#new', as: 'new_result'
+  post 'results' => 'results#create'
 
+  # Pages for answer email survey
+  get 'results' => 'results#add_result'
   patch 'comment/:id' => 'results#add_comment', as: 'answer_comment'
   get 'thanks_for_comment' => 'results#thanks_for_comment'
-
   get 'contact' => 'contacts#new', as: :new_contact
   post 'contact' => 'contacts#create', as: :contacts
 
   if Rails.env.development?
     mount LetterOpenerWeb::Engine, at: '/letter_opener'
   end
+
   mount Resque::Server, at: '/background'
 end
