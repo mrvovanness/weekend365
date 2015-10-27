@@ -44,6 +44,17 @@ ja:
         country_average_score: "国の平均のスコア　日"
         industry_average_score: "業界の平均のスコア　日"
       last_comments: "最近のコメント"
+      filter:
+        title: "Filter"
+        position: "Position"
+        department: "Department"
+        gender: "Gender"
+        age_between: "Age between"
+        and: " and"
+        date: "Date"
+        from: "From:"
+        to: "To:"
+        reset: "Reset Filter"
     graphs:
       global_tendencies: "企業のトレンド"
       local_tendencies: "自社のトレンド"
