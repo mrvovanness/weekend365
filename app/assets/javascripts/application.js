@@ -7,6 +7,7 @@
 //= require jquery-ui/dialog
 //= require epiceditor
 //= require jquery.accordion.js
+//= require jquery.hc-sticky.js
 //= require_tree .
 $(document).ready(function() {
   setTimeout(function() {

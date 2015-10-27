@@ -10,7 +10,7 @@ class DashboardController < ApplicationController
 
   def show
     @survey = @company.company_surveys.find(params[:id]).decorate
-    @search = Employee.ransack(params[:q])
+    @search = @company.employees.ransack(params[:q])
     @answers = Answer.filter_by_employees(@search.result, @survey)
     @comments = @survey.answers.map(&:comment).compact.last(3)
     @period = params[:period] || @survey.weekly? ? 'w' : 'd'

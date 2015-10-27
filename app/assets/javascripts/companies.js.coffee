@@ -1,3 +1,3 @@
 jQuery ->
-  $('.checkable.sel04').change ->
+  $('.filter-area .checkable.sel04').change ->
     $('.employee_search').submit()
