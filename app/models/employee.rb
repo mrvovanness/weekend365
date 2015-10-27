@@ -9,6 +9,10 @@ class Employee < ActiveRecord::Base
   belongs_to :company
   has_and_belongs_to_many :company_surveys
 
+  ransacker :age, formatter: proc { |v| Date.today - v.to_i.year } do |parent|
+    parent.table[:birthday]
+  end
+
   def self.to_csv
     attributes = %w(name email department position)
     CSV.generate(headers: true) do |csv|

@@ -5,29 +5,46 @@ h2 = t('dashboard.graphs.global_tendencies')
 .graph-holder
   = line_chart survey.get_charts.average_by_industry(@period),
     library: { title: t('dashboard.show.chart_titles.industry_average_score') }
-<br><br>
-h2 = t('dashboard.graphs.local_tendencies')
-.filter-form
-  = search_form_for @search,
-    url: dashboard_path(survey) do |f|
-    .filter-area
-      .sort-panel.clearfix#sticky-panel
-        .col.col01
-          = f.select :department_eq,
-            options_for_select(survey.company.employees.pluck(:department).uniq),
-            { include_blank: t('employees.index.any_department') },
-            { class: 'checkable sel04' }
-        .col.col02
-          = f.select :position_eq,
-            options_for_select(survey.company.employees.pluck(:position).uniq),
-            { include_blank: t('employees.index.any_position') },
-            { class: 'checkable sel04' }
-        .col.col03
-          = f.select :gender_eq,
-            options_for_select(survey.company.employees.pluck(:gender).uniq),
-            { include_blank: t('employees.index.any_gender') },
-            { class: 'checkable sel04' }
-          = f.submit class: 'search'
+section#company
+  h2 = t('dashboard.graphs.local_tendencies')
+  .filter-form#float-filter-form
+    = search_form_for @search,
+      url: dashboard_path(survey) do |f|
+      /.filter-area
+      .float-filter-area
+        .sort-panel.clearfix#sticky-panel
+          .header
+            | Filter
+          .filter-section
+            span
+              | Position
+            = f.select :position_eq,
+              options_for_select(@survey.company.employees.pluck(:position).uniq.sort, @search.position_eq),
+              { include_blank: t('employees.index.any_position') },
+              { class: 'checkable sel04' }
+          .filter-section
+            span
+              | Department
+            = f.select :department_eq,
+              options_for_select(@survey.company.employees.pluck(:department).uniq.sort, @search.department_eq),
+              { include_blank: t('employees.index.any_department') },
+              { class: 'checkable sel04' }
+          .filter-section
+            span
+              | Gender
+            = f.select :gender_eq,
+              options_for_select(@survey.company.employees.pluck(:gender).uniq.sort, @search.gender_eq),
+              { include_blank: t('employees.index.any_gender') },
+              { class: 'checkable sel04' }
+          .filter-section
+            span
+              | Age between
+            =< f.text_field :age_lteq
+            span
+              |  and
+            =< f.text_field :age_gteq
+          .filter-submit
+            = f.submit 'Filter', class: 'search'
 
   .graph-holder
     = line_chart survey.get_charts.number_of_responses(@answers),
