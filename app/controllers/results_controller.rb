@@ -2,6 +2,13 @@ class ResultsController < ApplicationController
   layout 'devise'
 
   def new
+    @survey = CompanySurvey.find(params[:company_survey_id])
+    @result = @survey.results.build
+    @answer = @result.answers.build
+    @employee_id = params[:employee_id]
+  end
+
+  def create
   end
 
   def add_result

@@ -1,1 +1,52 @@
-h1 Hello
+= form_for @survey,
+  url: results_path do |f|
+
+  fieldset
+    .box
+    - @survey.ordered_by_topic_questions.each do |topic, questions|
+      ul.accordion
+        li.active.topic-header
+          a.opener.clearfix href='#'
+            span.title = topic
+            span.info #{ questions.count } unanswered questions
+          .slide style='display: block'
+            table.info-table
+              tbody
+                - questions.each do |question|
+
+                  = f.fields_for :results do |result_field|
+                    = result_field.hidden_field :company_survey_id,
+                      value: @survey.id
+                    = result_field.hidden_field :offered_question_id,
+                      value: question.id
+                    = result_field.hidden_field :employee_id,
+                      value: @employee_id
+
+                    tr.question-block
+                      td: span.question = question.title
+                      td
+                        .agree-holder
+                          span.heading agree
+                          .holder.clearfix
+                            a.minus -
+
+                            ul.agree
+                              = result_field.fields_for :answers do |a|
+                                = a.hidden_field :comment,
+                                  class: 'hidden-comment-field'
+
+                                - question.offered_answers.each do |answer|
+                                  li class="color#{ answer.value }"
+                                    a.level
+                                    = a.radio_button :offered_answer_id, answer.id,
+                                      class: "color#{ answer.value }"
+
+                            a.plus +
+                      td
+                        .comments-holder.popup-holder
+                          a.btn-comments.open href="#" comments
+                          .popup
+                            textarea.comment-input cols="30" rows="10"
+                            a.close href="#" close
+  = f.submit disabled: true, id: 'submit-survey'
+
