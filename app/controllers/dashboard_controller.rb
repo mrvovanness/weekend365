@@ -16,6 +16,12 @@ class DashboardController < ApplicationController
       .ransack(@date_filter).result
     @comments = @survey.answers.map(&:comment).compact.last(3)
     @period = params[:period] || @survey.weekly? ? 'w' : 'd'
+
+    respond_to do |format|
+      format.html
+      format.csv { send_data @answers.to_csv,
+        filename: "survey-#{ Date.today }.csv" }
+    end
   end
 
   private

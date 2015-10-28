@@ -18,7 +18,8 @@
       = link_to t('helpers.titles.edit', model: 'Survey'),
         edit_surveys_email_survey_path(@survey),
         class: 'btn-edit'
-      = link_to t('helpers.links.download_data'), '#',
+      = link_to t('helpers.links.download_data'),
+        current_url(format: :csv),
         class: 'btn-download'
   .panel-holder
     .box.inner
