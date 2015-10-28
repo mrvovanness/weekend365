@@ -22,4 +22,9 @@ module ApplicationHelper
       link_to link_text, link_path
     end
   end
+
+  # Return current url
+  def current_url(new_params)
+    url_for :params => params.merge(new_params)
+  end
 end
