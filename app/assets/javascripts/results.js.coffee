@@ -15,12 +15,12 @@ jQuery ->
     newText = unansweredInfo.replace(oldValue, newValue)
     topicHeader.find('.info').text(newText)
 
+    if $('input:checked').length == $('.question').length
+      $('#submit-survey').prop('disabled', false)
+      $('#submit-survey').val($('#submit-survey').data('submit'))
+
   $('.comment-input').focusout ->
 
     # Synchonize hidden field for answer comment with textarea for comment
     commentText = $(this).val()
     $(this).parents('.question-block').find('.hidden-comment-field').val(commentText)
-
-  $(document).click ->
-    if $('input:checked').length == $('.question').length
-      $('#submit-survey').prop('disabled', false)

@@ -1,5 +1,8 @@
 = form_for @survey,
-  url: results_path do |f|
+  url: results_path,
+  method: :post do |f|
+  = hidden_field_tag :company_survey_id, @survey.id
+  = hidden_field_tag :token, @token
 
   fieldset
     .box
@@ -14,7 +17,7 @@
               tbody
                 - questions.each do |question|
 
-                  = f.fields_for :results do |result_field|
+                  = f.fields_for :results, @result do |result_field|
                     = result_field.hidden_field :company_survey_id,
                       value: @survey.id
                     = result_field.hidden_field :offered_question_id,
@@ -39,7 +42,8 @@
                                   li class="color#{ answer.value }"
                                     a.level
                                     = a.radio_button :offered_answer_id, answer.id,
-                                      class: "color#{ answer.value }"
+                                      class: "color#{ answer.value }",
+                                      style: 'opacity: 0'
 
                             a.plus +
                       td
@@ -48,5 +52,14 @@
                           .popup
                             textarea.comment-input cols="30" rows="10"
                             a.close href="#" close
-  = f.submit disabled: true, id: 'submit-survey'
+  = f.submit 'Answer all questions!',
+    disabled: true,
+    data: { submit: 'Submit survey' },
+    id: 'submit-survey'\
+    unless @token == 'preview'
+
+  = link_to 'Back to surveys',
+    surveys_path,
+    style: 'color: black'\
+    if @token == 'preview'
 
