@@ -44,6 +44,17 @@ pt:
         country_average_score: "Nota média no seu país, dia"
         industry_average_score: "Nota média na sua Indústria, dia"
       last_comments: "Comentários Recentes"
+      filter:
+        title: "Filter"
+        position: "Position"
+        department: "Department"
+        gender: "Gender"
+        age_between: "Age between"
+        and: " and"
+        date: "Date"
+        from: "From:"
+        to: "To:"
+        reset: "Reset Filter"
     graphs:
       global_tendencies: "Tendências para essa pesquisa entre outras empresas"
       local_tendencies: "Tendências dentro da sua empresa"

@@ -44,6 +44,17 @@ en:
         country_average_score: "Average score in your country daily"
         industry_average_score: "Average score in your industry daily"
       last_comments: "Last comments"
+      filter:
+        title: "Filter"
+        position: "Position"
+        department: "Department"
+        gender: "Gender"
+        age_between: "Age between"
+        and: " and"
+        date: "Date"
+        from: "From:"
+        to: "To:"
+        reset: "Reset Filter"
     graphs:
       global_tendencies: "Global tendencies for this survey among companies"
       local_tendencies: "Tendencies inside your company"
