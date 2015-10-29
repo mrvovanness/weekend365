@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :company_survey do
     title 'Your first survey'
     message 'Hello'
+    company
 
     factory :survey_with_linkert_questions do
       after(:create) do |survey|
@@ -27,7 +28,6 @@ FactoryGirl.define do
     end
 
     factory :survey_with_results do
-      company
       transient do
         results_count 5
       end
