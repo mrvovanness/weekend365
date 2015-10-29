@@ -11,8 +11,11 @@ class SendEmailsJob
     if survey.counter > survey.number_of_repeats || survey.unrepeatable?
       Resque.remove_schedule("for_survey_#{survey.id}")
     else
-      updated_schedule = SchedulesConfigurator.new(survey.email_schedule)
-      updated_schedule.add_to_scheduler
+      timezone = ActiveSupport::TimeZone[survey.company.timezone]
+      Time.use_zone(timezone) do
+        updated_schedule = SchedulesConfigurator.new(survey.email_schedule)
+        updated_schedule.add_to_scheduler
+      end
     end
 
     # mark all existing tokens as expired
