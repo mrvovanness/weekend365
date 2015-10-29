@@ -3,7 +3,7 @@ require 'rails_helper'
 describe '' do
   let!(:company) { create(:company) }
   let!(:user) { create(:user, company: company) }
-  let!(:secondary_user) { create(:user, email: 'test@mail.com', company: company) }
+  let!(:secondary_user) { create(:user, email: 'test@mail.com', name: 'John Connor', company: company) }
 
   before(:each) do
     if User.with_role(:company_admin, company).empty?

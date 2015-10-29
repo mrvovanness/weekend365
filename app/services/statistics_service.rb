@@ -28,11 +28,18 @@ class StatisticsService
       .average('value').to_f.round(1)
   end
 
-  def all_results_of_one_country
-    Result.joins(:company_survey).where(
-      offered_question_id: @survey.offered_questions,
-      company_surveys: { company_id: all_companies_of_one_country }
-    )
+  def all_results_of_one_country(date_filter='')
+    if date_filter.present?
+      Result.joins(:company_survey).where(
+        offered_question_id: @survey.offered_questions,
+        company_surveys: { company_id: all_companies_of_one_country }
+        ).ransack(date_filter).result
+    else
+      Result.joins(:company_survey).where(
+        offered_question_id: @survey.offered_questions,
+        company_surveys: { company_id: all_companies_of_one_country }
+      )
+    end
   end
 
   def all_companies_of_one_country
@@ -45,11 +52,18 @@ class StatisticsService
       .average('value').to_f.round(1)
   end
 
-  def all_results_of_one_industry
-    Result.joins(:company_survey).where(
-      offered_question_id: @survey.offered_questions,
-      company_surveys: { company_id: all_companies_of_one_industry }
-    )
+  def all_results_of_one_industry(date_filter='')
+    if date_filter.present?
+      Result.joins(:company_survey).where(
+        offered_question_id: @survey.offered_questions,
+        company_surveys: { company_id: all_companies_of_one_industry }
+        ).ransack(date_filter).result
+    else
+      Result.joins(:company_survey).where(
+        offered_question_id: @survey.offered_questions,
+        company_surveys: { company_id: all_companies_of_one_industry }
+      )
+    end
   end
 
   def all_companies_of_one_industry

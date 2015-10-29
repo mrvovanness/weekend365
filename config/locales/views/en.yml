@@ -46,9 +46,11 @@ en:
       last_comments: "Last comments"
       filter:
         title: "Filter"
+        name: "Name"
         position: "Position"
         department: "Department"
         gender: "Gender"
+        country: "Country"
         age_between: "Age between"
         and: " and"
         date: "Date"
@@ -58,6 +60,7 @@ en:
     graphs:
       global_tendencies: "Global tendencies for this survey among companies"
       local_tendencies: "Tendencies inside your company"
+      period: "For the period from %{date_from} to %{date_to}"
     phrase:
       good: "very good!"
       normal: "not bad!"
@@ -113,6 +116,7 @@ en:
       title: "Edit Employee"
     index:
       by_name: "By name"
+      any_country: "Country (any)"
       any_department: "Department (any)"
       any_position: "Position (any)"
       any_gender: "Gender (any)"

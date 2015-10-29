@@ -46,9 +46,11 @@ ja:
       last_comments: "最近のコメント"
       filter:
         title: "Filter"
+        name: "Name"
         position: "Position"
         department: "Department"
         gender: "Gender"
+        country: "Country"
         age_between: "Age between"
         and: " and"
         date: "Date"
@@ -58,6 +60,7 @@ ja:
     graphs:
       global_tendencies: "企業のトレンド"
       local_tendencies: "自社のトレンド"
+      period: "For the period from %{date_from} to %{date_to}"
     phrase:
       good: "とてもいい!"
       normal: "わるくないね!"
@@ -113,6 +116,7 @@ ja:
       title: "社員を編集"
     index:
       by_name: "名前"
+      any_country: "Country (any)"
       any_department: "部署 「すべて」"
       any_position: "役職 「すべて」"
       any_gender: "男女 「すべて」"
