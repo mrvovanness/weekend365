@@ -31,7 +31,6 @@
           = render 'phrase_choosing', survey: @survey
 
       = render 'statistics', survey: @survey
-  = render 'graphs', survey: @survey
   .columns
     .block-info
       .panel
@@ -40,3 +39,4 @@
       li = comment
     = link_to t('helpers.links.all_comments'),
       comments_surveys_email_survey_path(@survey)
+  = render 'graphs', survey: @survey
