@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151023073416) do
+ActiveRecord::Schema.define(version: 20151029090018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,13 +143,13 @@ ActiveRecord::Schema.define(version: 20151023073416) do
   create_table "email_schedules", force: :cascade do |t|
     t.datetime "start_at"
     t.date     "finish_on"
-    t.integer  "number_of_repeats"
-    t.integer  "repeat_every"
-    t.string   "repeat_mode"
+    t.integer  "number_of_repeats", default: 1
+    t.integer  "repeat_every",      default: 1
+    t.string   "repeat_mode",       default: "w"
     t.datetime "next_delivery_at"
     t.integer  "company_survey_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
   end
 
   add_index "email_schedules", ["company_survey_id"], name: "index_email_schedules_on_company_survey_id", using: :btree
