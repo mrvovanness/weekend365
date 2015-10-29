@@ -57,6 +57,7 @@
       input_html: { multiple: true, id: 'employee_ids' },
       placeholder: t('simple_form.placeholders.company_survey.employee_ids'),
       include_blank: false
+    = link_to t('links.select_all'), '#', id: 'add_all_employees', class: 'select-all'
 
   h3 Questions for survey:
   fieldset

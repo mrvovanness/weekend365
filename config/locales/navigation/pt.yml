@@ -47,6 +47,7 @@ pt:
       preview_email: "Vizualizar email"
       resend_confirmation: "Re-enviar as instruções de confirmação"
       results: "resultados"
+      select_all: "Todos(as)"
       sign_in_with_provider: "Login com %{provider}"
       sign_up: "Cadastro"
       undo: "Voltar"

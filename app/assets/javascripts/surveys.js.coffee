@@ -53,6 +53,14 @@ jQuery ->
           results: $.map data.employees, (obj) ->
             return { id: obj.id, text: joinValues(obj) } }
 
+  # Add all employees
+  $('#add_all_employees').click (e) ->
+    e.preventDefault()
+    employees = $('#employee_ids option').map ->
+      $( this ).val()
+    .get()
+    $('#employee_ids').val(employees).trigger('change')
+
   # Modal window
   $('#dialog').dialog
     autoOpen: false

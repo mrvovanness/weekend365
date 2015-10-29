@@ -46,6 +46,7 @@ en:
       preview_email: "preview email"
       resend_confirmation: "Resend confirmation instructions"
       results: "results"
+      select_all: "Select all"
       sign_in: "Sign in"
       sign_in_with_provider: "Sign in with %{provider}"
       sign_up: "Sign up"
