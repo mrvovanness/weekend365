@@ -46,9 +46,11 @@ pt:
       last_comments: "Comentários Recentes"
       filter:
         title: "Filter"
+        name: "Name"
         position: "Position"
         department: "Department"
         gender: "Gender"
+        country: "Country"
         age_between: "Age between"
         and: " and"
         date: "Date"
@@ -58,6 +60,7 @@ pt:
     graphs:
       global_tendencies: "Tendências para essa pesquisa entre outras empresas"
       local_tendencies: "Tendências dentro da sua empresa"
+      period: "For the period from %{date_from} to %{date_to}"
     phrase:
       good: "Muito Bom!"
       normal: "Ótimo!"
@@ -113,6 +116,7 @@ pt:
       title: "Editar Colaborador"
     index:
       by_name: "Nome"
+      any_country: "País (todos)"
       any_department: "Departmento (todos)"
       any_position: "Posição (todos)"
       any_gender: "Gênero (todos)"

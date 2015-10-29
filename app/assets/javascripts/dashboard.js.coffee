@@ -1,6 +1,6 @@
 jQuery ->
   $('#float-filter-form').hcSticky({
-    top: $(window).height() - 430
+    top: $(window).height() - 530
     bottom: 10
     right: 0
   })

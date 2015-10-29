@@ -1,0 +1,53 @@
+.filter-form#float-filter-form
+  = search_form_for @search,
+    url: dashboard_path(survey) do |f|
+    .float-filter-area
+      .header
+        = t('dashboard.show.filter.title')
+        = link_to '&#9661;'.html_safe, '#', id: 'toggle-link'
+      .sort-panel.clearfix#sticky-panel
+        .filter-section
+          span = t('dashboard.show.filter.name')
+          = f.search_field :name_cont, class: 'long'
+        .filter-section
+          span = t('dashboard.show.filter.position')
+          = f.select :position_eq,
+            options_for_select(@survey.company.employees.pluck(:position).uniq.sort, @search.position_eq),
+            { include_blank: t('employees.index.any_position') },
+            { class: 'checkable sel04' }
+        .filter-section
+          span = t('dashboard.show.filter.department')
+          = f.select :department_eq,
+            options_for_select(@survey.company.employees.pluck(:department).uniq.sort, @search.department_eq),
+            { include_blank: t('employees.index.any_department') },
+            { class: 'checkable sel04' }
+        .filter-section
+          span = t('dashboard.show.filter.gender')
+          = f.select :gender_eq,
+            options_for_select(@survey.company.employees.pluck(:gender).uniq.sort, @search.gender_eq),
+            { include_blank: t('employees.index.any_gender') },
+            { class: 'checkable sel04' }
+        .filter-section
+          span = t('dashboard.show.filter.country')
+          = country_select 'q', 'country_eq',
+            { only: @survey.company.employees.pluck(:country).uniq.sort,
+              selected: @search.country_eq, 
+              include_blank: t('employees.index.any_country') },
+            { class: 'checkable sel04' }
+        .filter-section
+          span = t('dashboard.show.filter.age_between')
+          =< f.text_field :age_lteq
+          span = t('dashboard.show.filter.and')
+          =< f.text_field :age_gteq
+        .filter-section
+          span = t('dashboard.show.filter.date')
+          br
+          span = t('dashboard.show.filter.from')
+          = date_field_tag :created_at_gteq, @date_filter[:created_at_gteq], class: 'long'
+          span = t('dashboard.show.filter.to')
+          = date_field_tag :created_at_lteq, @date_filter[:created_at_lteq], class: 'long'
+        .filter-submit
+          = f.submit t('dashboard.show.filter.title'), class: 'search'
+        .filter-section
+          center
+            = link_to t('dashboard.show.filter.reset'), dashboard_path(survey)

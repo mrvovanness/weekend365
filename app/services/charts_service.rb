@@ -17,18 +17,18 @@ class ChartsService
     round_hash_values(company_hash)
   end
 
-def average_by_country(period='d')
+  def average_by_country(period='d', date_filter='')
     answers = OfferedAnswer.joins(:answers)
-      .where(answers: { result: get_results_of_one_country })
+      .where(answers: { result: get_results_of_one_country(date_filter) })
     answers = group_by_period(answers, period)
     country_hash = answers.average(:value)
 
     round_hash_values(country_hash)
   end
 
-def average_by_industry(period='d')
+  def average_by_industry(period='d', date_filter='')
     answers = OfferedAnswer.joins(:answers)
-      .where(answers: { result: get_results_of_one_industry })
+      .where(answers: { result: get_results_of_one_industry(date_filter) })
     answers = group_by_period(answers, period)
     industry_hash = answers.average(:value)
     
@@ -41,12 +41,12 @@ def average_by_industry(period='d')
       .group(:value).count
   end
 
-  def get_results_of_one_industry
-    StatisticsService.new(@survey).all_results_of_one_industry
+  def get_results_of_one_industry(date_filter)
+    StatisticsService.new(@survey).all_results_of_one_industry(date_filter)
   end
 
-  def get_results_of_one_country
-    StatisticsService.new(@survey).all_results_of_one_country
+  def get_results_of_one_country(date_filter)
+    StatisticsService.new(@survey).all_results_of_one_country(date_filter)
   end
 
   private
