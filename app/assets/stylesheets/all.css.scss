@@ -2052,11 +2052,14 @@ input[type="submit"].btn-save:hover{background: #ad3114 image-url("sprite.png") 
   letter-spacing: 2px;
   margin-left: 10px;
 }
+a.select-all,
 a.backlink {
   color: #0d8690;
-  text-transform: uppercase;
-
 }
+a.backlink {
+  text-transform: uppercase;
+}
+a.select-all:hover,
 a.backlink:hover {
   color: #285b5f;
 }
@@ -2088,4 +2091,8 @@ a.backlink:hover {
 }
 a.chart {
   margin: 10px 10px;
+}
+.select2-container--default .select2-selection--multiple {
+  overflow: auto;
+  height: 70px;
 }

@@ -46,6 +46,7 @@ ja:
       preview_email: "メールのプレビュー"
       resend_confirmation: "確認の案内をもう一回送る。"
       results: "結果"
+      select_all: "すべて"
       sign_in_with_provider: "%{provider}　でログイン"
       sign_up: "サインアップ"
       undo: "取り消す"
