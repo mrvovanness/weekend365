@@ -29,11 +29,11 @@
     ], library: { legend: { position: 'top' }, curveType: 'function' }, discrete: true
     center
       = link_to 'daily',
-        params.merge(period: 'd', only_path: true),
+        params.merge(period: 'day', only_path: true),
         class: 'chart'
       = link_to 'weekly',
-        params.merge(period: 'w', only_path: true),
+        params.merge(period: 'week', only_path: true),
         class: 'chart'
       = link_to 'monthly',
-        params.merge(period: 'm', only_path: true),
+        params.merge(period: 'month', only_path: true),
         class: 'chart'

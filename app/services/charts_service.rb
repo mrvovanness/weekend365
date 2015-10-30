@@ -8,34 +8,37 @@ class ChartsService
       .group_by_day('answers.created_at').count
   end
 
-  def average_by_company(filtered_answers=@survey.answers, period='d')
+  def average_by_company(filtered_answers=@survey.answers, period='day')
     old_locale = I18n.locale
     I18n.locale = :en
-    answers = OfferedAnswer.joins(:answers)
+    company_hash = OfferedAnswer.joins(:answers)
       .where(answers: { id: filtered_answers })
-    company_hash = average_for_period(answers, period)
+      .group_by_period(period, 'answers.created_at', permit: %w[day week month])
+      .average(:value)
     I18n.locale = old_locale
 
     round_hash_values(company_hash)
   end
 
-  def average_by_country(period='d', date_filter='')
+  def average_by_country(period='day', date_filter='')
     old_locale = I18n.locale
     I18n.locale = :en
-    answers = OfferedAnswer.joins(:answers)
+    country_hash = OfferedAnswer.joins(:answers)
       .where(answers: { result: get_results_of_one_country(date_filter) })
-    country_hash = average_for_period(answers, period)
+      .group_by_period(period, 'answers.created_at', permit: %w[day week month])
+      .average(:value)
     I18n.locale = old_locale
 
     round_hash_values(country_hash)
   end
 
-  def average_by_industry(period='d', date_filter='')
+  def average_by_industry(period='day', date_filter='')
     old_locale = I18n.locale
     I18n.locale = :en
-    answers = OfferedAnswer.joins(:answers)
+    industry_hash = OfferedAnswer.joins(:answers)
       .where(answers: { result: get_results_of_one_industry(date_filter) })
-    industry_hash = average_for_period(answers, period)
+      .group_by_period(period, 'answers.created_at', permit: %w[day week month])
+      .average(:value)
     I18n.locale = old_locale
     
     round_hash_values(industry_hash)
@@ -56,17 +59,6 @@ class ChartsService
   end
 
   private
-
-  def average_for_period(answers, period)
-    case period
-    when 'm'
-      answers.group_by_month('answers.created_at', format: "%b %Y").average(:value)
-    when 'w'
-      answers.group_by_week('answers.created_at', format: "%b %d, %Y").average(:value)
-    else
-      answers.group_by_day('answers.created_at', format: "%b %d, %Y").average(:value)
-    end
-  end
 
   def round_hash_values(hash)
     hash.each do |key, value|
