@@ -68,7 +68,7 @@ ja:
     languages:
       en: "English"
       ja: "日本語"
-      pt: "Português"
+      pt-BR: "Português"
     menu:
       title: "メニュー"
       admin: "管理者"
