@@ -231,4 +231,8 @@ ja:
           attributes:
             start_on:
               bad_survey_start: "現在時刻より、先の時間をお選びください。"
+        employee:
+          attributes:
+            email:
+              email: "Email should be present - TRANSLATE IT"
   "yes": "はい"

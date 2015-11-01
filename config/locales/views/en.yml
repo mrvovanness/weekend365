@@ -231,4 +231,8 @@ en:
           attributes:
             start_on:
               bad_survey_start: "Survey start date and time should be after current time"
+        employee:
+          attributes:
+            email:
+              email: "Email should be present"
   "yes": "Yes"
