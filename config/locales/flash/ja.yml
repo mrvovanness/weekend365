@@ -22,20 +22,20 @@ ja:
       import:
         notice: '社員のインポートを完了しました。'
       destroy_selected:
-        notice: 'Selected employees were successfully destroyed'
+        notice: '選択された社員の削除は完了しました。'
     offered_questions:
       import:
-        notice: 'Questions were successfully imported'
-        alert: 'These data could not be imported'
+        notice: '質問のインポートが完了しました'
+        alert: 'このデータがインポートできませんでした。'
     signups:
       create:
         notice: 'アカウントの作成が完了しました。登録したメールを確認してください。'
         alert: 'アカウントの作成できませんでした。'
     users:
       create:
-        notice: 'Conifrmation letter was successfully delivered to specified e-mail address.'
-        alert: 'Account could not be created.'
+        notice: '登録されたメールアドレスに確認メールが届きました。'
+        alert: 'アカウント作成ができませんでした。'
       destroy_selected:
-        notice: 'Selected accounts were successfully destroyed'
+        notice: '選択されたアカウントの削除が完了しました。'
     token_expired: 'もうすでに答えられていますか回答の期間がもう終了しました。'
-    employees_list: 'Your employees list is empty. Please, add one or more employees.'
+    employees_list: '社員のリストが空です。社員を追加してください。'

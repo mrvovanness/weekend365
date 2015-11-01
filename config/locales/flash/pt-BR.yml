@@ -22,20 +22,20 @@ pt-BR:
       import:
         notice: 'Os colaboradores foram importados com sucesso.'
       destroy_selected:
-        notice: 'Selected employees were successfully destroyed'
+        notice: 'Os colaboradores selecionados foram deletados com sucesso.'
     offered_questions:
       import:
-        notice: 'Questions were successfully imported'
-        alert: 'These data could not be imported'
+        notice: 'As Questões foram adicionadas com sucesso.'
+        alert: 'Não é possível adicionar esses dados.'
     signups:
       create:
         notice: 'Sua conta foi criada com sucesso. Confira sua caixa de email e siga as instruções para confirmar.'
         alert: 'Sua conta não pode ser criada.'
     users:
       create:
-        notice: 'Conifrmation letter was successfully delivered to specified e-mail address.'
-        alert: 'Account could not be created.'
+        notice: 'O email de confirmação foi enviado com sucesso para o seu email.'
+        alert: 'Sua conta não pode ser criada.'
       destroy_selected:
-        notice: 'Selected accounts were successfully destroyed'
+        notice: 'As contas selecionadas foram deletadas com sucesso.'
     token_expired: 'Você já respondeu ou o tempo para responder já acabou.'
-    employees_list: 'Your employees list is empty. Please, add one or more employees.'
+    employees_list: 'Sua lista de colaboradoes está vazia. Por favor, adicione um ou mais colaboradores.'
