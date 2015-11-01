@@ -18,7 +18,7 @@ file.each_with_index do |line, index|
   I18n.locale = :ja
   field.update_attribute(:name, find_japan_translation(index.to_i))
 
-  I18n.locale = :pt
+  I18n.locale = 'pt-BR'.to_sym
   field.update_attribute(:name, find_portuguese_translation(index.to_i))
 end
 

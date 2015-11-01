@@ -22,7 +22,7 @@ question1.update_attribute(:title, 'あなたは今の仕事を総合的にみ�
 question2.update_attribute(:title, 'put translation here')
 question3.update_attribute(:title, 'put translation here')
 
-I18n.locale = :pt
+I18n.locale = 'pt-BR'.to_sym
 
 survey.update_attribute(:title, 'Pesquisa de Satisfação no Trabalho')
 question1.update_attribute(:title, 'Levando tudo em consideração, o quão satisfeito você está no trabalho?')
