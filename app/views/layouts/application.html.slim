@@ -3,6 +3,8 @@ html lang="#{I18n.locale}"
   head
     title = full_title(yield(:title))
 
+    javascript:
+      var Chartkick = {"language": "#{I18n.locale}"};
     = favicon_link_tag 'favicon-16.png', type: 'image/png'
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'

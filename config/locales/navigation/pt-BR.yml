@@ -1,4 +1,4 @@
-pt:
+pt-BR:
   breadcrumbs:
     application:
       root: "Index"
@@ -69,7 +69,7 @@ pt:
     languages:
       en: "English"
       ja: "日本語"
-      pt: "Português"
+      pt-BR: "Português"
     menu:
       title: "MENU"
       admin: "Admin"
