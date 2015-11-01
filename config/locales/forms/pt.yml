@@ -51,7 +51,7 @@ pt:
       defaults:
         title: "Título"
       company:
-        admin: 'Company admin'
+        admin: 'Administrador'
         country: 'Pais'
         description: 'Descrição da Empresa'
         employees_number: 'Número de Colaboradores'
@@ -60,7 +60,7 @@ pt:
         name: 'Nome da Empresa'
         office_address: 'Endereço do escritório'
         website: 'Website'
-        subscribed: 'Company admin is subscribed to Weekend newsletter'
+        subscribed: 'Administrador está inscrito na lista de emails da Weekend'
       contact:
         name: 'Nome'
         company_name: 'Nome da Empresa'
@@ -118,9 +118,9 @@ pt:
     employees:
       import_csv: "Upload arquivo csv"
     offered_questions:
-      import_file: "Upload spreadsheet file"
+      import_file: "Upload do arquivo"
   labels:
     confirmations:
       terms_of_service: "Eu li e concordo com a %{privacy_policy} e o %{user_agreement}"
     employees:
-      choose_survey: "Please, choose the survey: - TRANSLATE IT"
+      choose_survey: "Por favor, escolha a sua pesquisa:"

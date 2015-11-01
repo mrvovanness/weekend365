@@ -51,7 +51,7 @@ ja:
       defaults:
         title: "タイトル"
       company:
-        admin: 'Company admin'
+        admin: '会社のアドミン'
         country: "国"
         description: '会社説明'
         employees_number: '社員数'
@@ -60,7 +60,7 @@ ja:
         name: '会社名'
         office_address: 'オフィス住所'
         website: 'サイト'
-        subscribed: 'Company admin is subscribed to Weekend newsletter'
+        subscribed: '会社のアドミンがWeekendのメールマガに登録する。'
       contact:
         name: '名前'
         company_name: '企業名'
@@ -113,9 +113,9 @@ ja:
     employees:
       import_csv: "csvファイルインポート"
     offered_questions:
-      import_file: "Upload spreadsheet file"
+      import_file: "csvファイルとアップロードする。"
   labels:
     confirmations:
       terms_of_service: "%{privacy_policy} と %{user_agreement}　を賛成した上で進みます。"
     employees:
-      choose_survey: "Please, choose the survey: - TRANSLATE IT"
+      choose_survey: "サーベイを選択してください。"

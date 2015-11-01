@@ -33,7 +33,7 @@ en:
         alert: 'Account could not be created.'
     users:
       create:
-        notice: 'Conifrmation letter was successfully delivered to specified e-mail address.'
+        notice: 'confirmation letter was successfully sent to specified e-mail address.'
         alert: 'Account could not be created.'
       destroy_selected:
         notice: 'Selected accounts were successfully destroyed'
