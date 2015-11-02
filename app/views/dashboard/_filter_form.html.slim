@@ -43,9 +43,9 @@
           span = t('dashboard.show.filter.date')
           br
           span = t('dashboard.show.filter.from')
-          = date_field_tag :created_at_gteq, @date_filter[:created_at_gteq], class: 'long'
+          = date_field_tag :created_at_gteq, @date_filter[:created_at_gteq].to_date, class: 'long'
           span = t('dashboard.show.filter.to')
-          = date_field_tag :created_at_lteq, @date_filter[:created_at_lteq], class: 'long'
+          = date_field_tag :created_at_lteq, @date_filter[:created_at_lteq].to_date, class: 'long'
         .filter-submit
           = f.submit t('dashboard.show.filter.title'), class: 'search'
         .filter-section

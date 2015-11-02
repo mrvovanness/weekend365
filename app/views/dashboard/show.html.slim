@@ -31,12 +31,15 @@
           = render 'phrase_choosing', survey: @survey
 
       = render 'statistics', survey: @survey
-  .columns
-    .block-info
-      .panel
-        b = t('dashboard.show.last_comments')
-    - @comments.each do |comment|
-      li = comment
-    = link_to t('helpers.links.all_comments'),
-      comments_surveys_email_survey_path(@survey)
-  = render 'graphs', survey: @survey
+  - if @survey.offered_survey.try(:answers_through) == 'web'
+    = render 'lists', survey: @survey, answers: @answers
+  - else
+    .columns
+      .block-info
+        .panel
+          b = t('dashboard.show.last_comments')
+      - @comments.each do |comment|
+        li = comment
+      = link_to t('helpers.links.all_comments'),
+        comments_surveys_email_survey_path(@survey)
+    = render 'graphs', survey: @survey

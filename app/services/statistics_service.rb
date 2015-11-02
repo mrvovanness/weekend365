@@ -79,4 +79,18 @@ class StatisticsService
       'none'
     end
   end
+
+  def answer_distribution(question, answers)
+    off_answers = question.offered_answers.order(:value)
+    distribution = off_answers.map do |off_answer|
+      [
+        off_answer.value,
+        answers.where(
+          offered_answer: off_answer,
+          result: @survey.results.where(offered_question: question)
+          ).count
+      ]
+    end
+    Hash[distribution]
+  end
 end

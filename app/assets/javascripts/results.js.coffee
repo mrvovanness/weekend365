@@ -8,14 +8,14 @@ jQuery ->
 
     any_number = new RegExp /[0-9]+/
     topicHeader = $(this).parents('.topic-header')
-    numberOfQuestions = topicHeader.find('.question').length
+    numberOfQuestions = topicHeader.find('span.question').length
     unansweredInfo = topicHeader.find('.info').text()
     oldValue = unansweredInfo.match(any_number)[0]
     newValue = numberOfQuestions - topicHeader.find('input:checked').length
     newText = unansweredInfo.replace(oldValue, newValue)
     topicHeader.find('.info').text(newText)
 
-    if $('input:checked').length == $('.question').length
+    if $('input:checked').length == $('span.question').length
       $('#submit-survey').prop('disabled', false)
       $('#submit-survey').val($('#submit-survey').data('submit'))
 
