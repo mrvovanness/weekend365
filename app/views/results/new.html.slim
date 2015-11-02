@@ -53,7 +53,6 @@
                             textarea.comment-input cols="30" rows="10"
                             a.close href="#" close
   = f.submit 'Answer all questions!',
-    disabled: true,
     data: { submit: 'Submit survey' },
     id: 'submit-survey'\
     unless @token == 'preview'

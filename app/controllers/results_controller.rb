@@ -1,5 +1,5 @@
 class ResultsController < ApplicationController
-  layout 'results'
+  layout 'devise'
 
   before_action :check_token, only: [:new, :add_result]
 
@@ -9,13 +9,14 @@ class ResultsController < ApplicationController
     @result.answers.build
     @token = params[:token]
     @employee_id = params[:employee_id]
+    render layout: 'results'
   end
 
   def create
     @survey = CompanySurvey.find(params[:company_survey_id])
     @survey.update(survey_params)
     token = Token.find_by(name: params[:token])
-    token.update!(expired: true)
+    token.update!(expired: true) unless Rails.env.development?
     redirect_to thanks_for_comment_path
   end
 

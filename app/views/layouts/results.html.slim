@@ -16,6 +16,13 @@ html lang="#{I18n.locale}"
           = render 'layouts/guest'
         .without-bg
           #main
-            h1 = @survey.title
+            - if @survey.present?
+              h1 = @survey.title
+            - else
+              = link_to root_path do
+                = image_tag 'logo02.png',
+                  size: '290x69',
+                  alt: 'Improve your Company through You',
+                  class: 'logo'
             = yield
         = render 'layouts/footer'
