@@ -16,9 +16,9 @@
               table.info-table
                 tbody
                   - questions.each do |question|
-                    tr
-                      td: span.question = question.title
-                      td
+                    tr.question-block
+                      td.question: span.question = question.title
+                      td.evaluation
                         .agree-holder
                           span.heading Agree
                           .holder.clearfix
@@ -28,7 +28,7 @@
                                 li class="color#{ answer.value }"
                                   a color
                             a.plus +
-                      td
+                      td.comments
                         .comments-holder.popup-holder
                           a.btn-comments.open href="#" comments
                           .popup

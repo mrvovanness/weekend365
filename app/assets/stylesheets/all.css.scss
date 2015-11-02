@@ -126,6 +126,12 @@ p{margin:0 0 10px;}
 	-o-background-size: cover;
 	background-size: cover;
 }
+.without-bg {
+  width:100%;
+  height: 100%;
+  display:table-row;
+  background-color: #fff;
+}
 .devise .logo{
 	display:block;
 	margin:0 auto 142px;
@@ -2097,4 +2103,15 @@ a.chart {
 .select2-container--default .select2-selection--multiple {
   overflow: auto;
   height: 140px;
+}
+.question-block {
+  .question {
+    width: 60%;
+  }
+  .evaluation {
+    width: 30%;
+  }
+  .comments {
+    width: 10%;
+  }
 }

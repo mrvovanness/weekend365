@@ -69,14 +69,14 @@
               table.info-table
                 tbody
                   - questions.each do |question|
-                    tr
+                    tr.question-block
                       = hidden_field_tag 'company_survey[offered_question_ids][]',
                         question.id,
                         form: 'survey-form',
                         class: 'hidden-question-input'
 
-                      td: span.question = question.title
-                      td
+                      td.question: span.question = question.title
+                      td.evaluation
                         .agree-holder
                           span.heading Agree
                           .holder.clearfix
@@ -86,7 +86,7 @@
                                 li class="color#{answer.value}"
                                   a color
                             a.plus +
-                      td
+                      td.comments
                         .comments-holder.popup-holder
                           a.btn-comments.open href="#" comments
                           .popup

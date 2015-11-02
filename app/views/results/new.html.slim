@@ -26,8 +26,8 @@
                       value: @employee_id
 
                     tr.question-block
-                      td: span.question = question.title
-                      td
+                      td.question: span.question = question.title
+                      td.evaluation
                         .agree-holder
                           span.heading agree
                           .holder.clearfix
@@ -46,7 +46,7 @@
                                       style: 'opacity: 0'
 
                             a.plus +
-                      td
+                      td.comments
                         .comments-holder.popup-holder
                           a.btn-comments.open href="#" comments
                           .popup
