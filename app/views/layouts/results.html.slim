@@ -1,0 +1,21 @@
+doctype html
+html lang="#{I18n.locale}"
+  head
+    title = full_title(yield(:title))
+
+    = favicon_link_tag 'favicon-16.png', type: 'image/png'
+    = stylesheet_link_tag    'application', media: 'all'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+  body.devise.inner
+    = render 'layouts/ga'
+    = render 'layouts/messages'
+    .wrapper-holder
+      #wrapper
+        .w1
+          = render 'layouts/guest'
+        .without-bg
+          #main
+            h1 = @survey.title
+            = yield
+        = render 'layouts/footer'

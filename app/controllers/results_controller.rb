@@ -1,5 +1,5 @@
 class ResultsController < ApplicationController
-  layout 'devise'
+  layout 'results'
 
   before_action :check_token, only: [:new, :add_result]
 
