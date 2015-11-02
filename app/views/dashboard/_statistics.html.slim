@@ -1,20 +1,23 @@
 ul.statistics
-  li.start-date
-    = t('dashboard.index.heads.start_date')
-    b =< survey.start_at.try(:strftime, '%b.%dth/%Y')
+  - if survey.try(:repeat)
+    li.start-date
+      = t('dashboard.index.heads.start_date')
+      b =< survey.start_at.try(:strftime, '%b.%dth/%Y')
 
-  li.finish-date
-    = t('dashboard.index.heads.finish_date')
-    b =< survey.finish_on.try(:strftime, '%b.%dth/%Y')
+    li.finish-date
+      = t('dashboard.index.heads.finish_date')
+      b =< survey.finish_on.try(:strftime, '%b.%dth/%Y')
 
-  li.next-email-delivery
-    = t('dashboard.index.heads.next_delivery')
-    b =< survey.next_delivery_at.try(:strftime, '%b.%dth/%Y %H:%M')
-  <br>
+    li.next-email-delivery
+      = t('dashboard.index.heads.next_delivery')
+      b =< survey.next_delivery_at.try(:strftime, '%b.%dth/%Y %H:%M')
+    <br>
 
   li.status
     = t('surveys.index.headers.status')
     b =< survey.status
+    - unless survey.try(:repeat)
+      b =< survey.start_at.try(:strftime, '%b.%dth/%Y')
 
   li.latest-reply
     = t('dashboard.index.heads.latest_reply')

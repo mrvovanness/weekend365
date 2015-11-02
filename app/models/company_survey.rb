@@ -64,7 +64,7 @@ class CompanySurvey < ActiveRecord::Base
   end
 
   def ordered_by_topic_questions
-    offered_questions.group_by { |question| question.topic }
+    offered_questions.includes(:translations, :offered_answers).group_by { |question| question.topic }
       .delete_if { |topic| topic.try(:empty?) }
   end
 

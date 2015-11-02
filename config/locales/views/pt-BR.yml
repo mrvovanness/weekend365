@@ -37,6 +37,8 @@ pt-BR:
       params_header: "Frequencia, Dia e Hora"
       participation_rate_score: "Participação"
       score: "Nota"
+      no_data: "No Data"
+      total: "Total:"
       chart_titles:
         num_of_responses: "Número de respostas diárias"
         answers_distribution: "Distribuição das Respostas"
@@ -236,3 +238,9 @@ pt-BR:
             email:
               email: "Email should be present - TRANSLATE IT"
   "yes": "Yes"
+  tooltips:
+    strongly_disagree: "Strongly Disagree"
+    disagree: "Disagree"
+    neither: "Neither"
+    agree: "Agree"
+    strongly_agree: "Strongly Agree"

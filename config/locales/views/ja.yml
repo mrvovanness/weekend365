@@ -37,6 +37,8 @@ ja:
       params_header: "回数、日付、時間"
       participation_rate_score: "参加率"
       score: "スコア"
+      no_data: "No Data"
+      total: "Total:"
       chart_titles:
         num_of_responses: "回答の数　日"
         answers_distribution: "回答の割合"
@@ -236,3 +238,9 @@ ja:
             email:
               email: "Email should be present - TRANSLATE IT"
   "yes": "はい"
+  tooltips:
+    strongly_disagree: "Strongly Disagree"
+    disagree: "Disagree"
+    neither: "Neither"
+    agree: "Agree"
+    strongly_agree: "Strongly Agree"

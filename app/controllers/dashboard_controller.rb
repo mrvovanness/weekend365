@@ -16,6 +16,9 @@ class DashboardController < ApplicationController
       .ransack(@date_filter).result
     @comments = @survey.answers.map(&:comment).compact.last(3)
     @period = params[:period] || @survey.weekly? ? 'week' : 'day'
+    if @survey.offered_survey.try(:answers_through) == 'web'
+      @stat = @survey.get_statistics
+    end
 
     respond_to do |format|
       format.html
@@ -28,8 +31,8 @@ class DashboardController < ApplicationController
 
   def define_date_filter
     @date_filter = {
-      created_at_gteq: Date.today - 1.month,
-      created_at_lteq: Date.today
+      created_at_gteq: DateTime.current - 1.month,
+      created_at_lteq: DateTime.current
     }
     [:created_at_gteq, :created_at_lteq].each do |key|
       if params[key].present?

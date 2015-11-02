@@ -37,6 +37,8 @@ en:
       params_header: "Frequency, Date and Time"
       participation_rate_score: "Participation Rate"
       score: "score"
+      no_data: "No Data"
+      total: "Total:"
       chart_titles:
         num_of_responses: "Number of responses daily"
         answers_distribution: "Answers distribution"
@@ -236,3 +238,9 @@ en:
             email:
               email: "Email should be present"
   "yes": "Yes"
+  tooltips:
+    strongly_disagree: "Strongly Disagree"
+    disagree: "Disagree"
+    neither: "Neither"
+    agree: "Agree"
+    strongly_agree: "Strongly Agree"
