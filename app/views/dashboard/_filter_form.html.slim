@@ -7,9 +7,6 @@
         = link_to '&#9661;'.html_safe, '#', id: 'toggle-link'
       .sort-panel.clearfix#sticky-panel
         .filter-section
-          span = t('dashboard.show.filter.name')
-          = f.search_field :name_cont, class: 'long'
-        .filter-section
           span = t('dashboard.show.filter.position')
           = f.select :position_eq,
             options_for_select(@survey.company.employees.pluck(:position).uniq.sort, @search.position_eq),

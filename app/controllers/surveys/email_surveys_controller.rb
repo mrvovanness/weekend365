@@ -4,7 +4,7 @@ class Surveys::EmailSurveysController < ApplicationController
 
   def index
     @search = @company.company_surveys.ransack(params[:q])
-    @surveys = @search.result(distinct: true).decorate
+    @surveys = @search.result(distinct: true).order('email_schedules.start_at DESC').decorate
   end
 
   def new

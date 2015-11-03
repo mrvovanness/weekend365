@@ -48,6 +48,10 @@
                       = link_to t('helpers.links.notify'),
                         preview_surveys_web_survey_path(survey),
                         class: 'btn-notify'
+                    td
+                      = link_to t('helpers.links.results'),
+                        dashboard_path(survey),
+                        class: 'btn-results'
 
                   - else
 
