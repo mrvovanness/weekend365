@@ -43,6 +43,7 @@ ja:
         num_of_responses: "回答の数　日"
         answers_distribution: "回答の割合"
         average_score: "平均のスコア　日"
+        daily_average_score: "平均のスコア　日"
         country_average_score: "国の平均のスコア　日"
         industry_average_score: "業界の平均のスコア　日"
       last_comments: "最近のコメント"
