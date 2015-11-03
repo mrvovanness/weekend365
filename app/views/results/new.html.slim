@@ -29,11 +29,11 @@
                       td.question: span.question = question.title
                       td.evaluation
                         .agree-holder
-                          span.heading agree
+                          /span.heading agree
                           .holder.clearfix
                             a.minus -
 
-                            ul.agree
+                            ul.agree.scale
                               = result_field.fields_for :answers do |a|
                                 = a.hidden_field :comment,
                                   class: 'hidden-comment-field'
@@ -44,6 +44,7 @@
                                     = a.radio_button :offered_answer_id, answer.id,
                                       class: "color#{ answer.value }",
                                       style: 'opacity: 0'
+                                    = add_tooltip(answer.value)
 
                             a.plus +
                       td.comments
@@ -52,11 +53,13 @@
                           .popup
                             textarea.comment-input cols="30" rows="10"
                             a.close href="#" close
-  = f.submit 'Answer all questions!',
-    disabled: true,
-    data: { submit: 'Submit survey' },
-    id: 'submit-survey'\
-    unless @token == 'preview'
+  .btns-right
+    = f.submit 'Answer all questions!',
+      disabled: true,
+      data: { submit: 'Submit survey' },
+      class: 'btn-answer',
+      id: 'submit-survey'\
+      unless @token == 'preview'
 
   = link_to 'Back to surveys',
     surveys_path,

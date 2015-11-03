@@ -54,4 +54,15 @@ module ApplicationHelper
       end
     end
   end
+
+  def add_tooltip(value)
+    tooltips = {
+      1 => t('tooltips.strongly_disagree'),
+      2 => t('tooltips.disagree'),
+      3 => t('tooltips.neither'),
+      4 => t('tooltips.agree'),
+      5 => t('tooltips.strongly_agree')
+    }
+    content_tag(:span, tooltips[value], class: 'tooltip')
+  end
 end

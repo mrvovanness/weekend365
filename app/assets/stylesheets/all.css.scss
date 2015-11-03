@@ -203,12 +203,28 @@ input[type="submit"].btn-sign,
 .btns .btn-sign{
   background: #f26522 image-url('sprite.png') no-repeat 3px -566px;
 }
-
-.btns .btn-login:after{
-	display: none;
+input[type="submit"].btn-answer {
+  display: inline-block;
+  vertical-align: top;
+  color: #fff;
+  font: 0.8em 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
+  background:#fcaf17 image-url('sprite.png') no-repeat 3px -456px;
+  border-radius: 2px;
+  padding: 6px 10px 6px 35px;
+  position: relative;
+  text-transform: uppercase;
+  margin: 0 6px;
+  letter-spacing: 1px;
+  text-align: center;
 }
-.btns .btn-sign:after{
-	display: none;
+.btns .btn-login:after {
+  display: none;
+}
+.btns .btn-sign:after {
+  display: none;
+}
+.btns .btn-answer:after {
+  display: none;
 }
 .btn-about{
 	display:block;
@@ -2105,22 +2121,25 @@ a.chart {
   height: 140px;
 }
 .question-block {
-  .question {
+  td.question {
     width: 60%;
   }
-  .question-short {
+  td.question-short {
     width: 40%;
   }
-  .evaluation {
+  td.evaluation {
     width: 30%;
   }
-  .comments {
+  td.comments {
     width: 10%;
   }
-  .scale {
+  td.scale {
     width: 40%;
   }
-  .diff {
+  td.diff {
     width: 20%;
   }
+}
+.btns-right {
+  text-align: right;
 }

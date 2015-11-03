@@ -385,24 +385,24 @@ input[type="submit"].submit:hover{
 .scale {
   color: white;
   text-align: center;
-  .color1 {
+  td.color1 {
     background: #811518;
   }
-  .color2 {
+  td.color2 {
     background: #c25529;
   }
-  .color3 {
+  td.color3 {
     background: #f6881f;
   }
-  .color4 {
+  td.color4 {
     background:#fcaf17;
   }
-  .color5 {
+  td.color5 {
     background:#ffcb29;
   }
-  .color1, .color2,
-  .color3, .color4,
-  .color5 {
+  td.color1, td.color2,
+  td.color3, td.color4,
+  td.color5 {
     padding: 0;
   }
   table {
@@ -435,4 +435,7 @@ input[type="submit"].submit:hover{
 }
 .black {
   color: #000;
+}
+#submit-survey {
+  margin-bottom: 15px;
 }
