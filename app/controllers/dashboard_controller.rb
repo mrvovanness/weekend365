@@ -15,7 +15,7 @@ class DashboardController < ApplicationController
     @answers = Answer.filter_by_employees(@search.result, @survey)
       .ransack(@date_filter).result
     @comments = @survey.answers.map(&:comment).compact.last(3)
-    @period = params[:period] || @survey.weekly? ? 'week' : 'day'
+    @period = params[:period] || (@survey.weekly? ? 'week' : 'day')
     if @survey.offered_survey.try(:answers_through) == 'web'
       @stat = @survey.get_statistics
     end

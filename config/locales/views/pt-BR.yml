@@ -43,6 +43,7 @@ pt-BR:
         num_of_responses: "Número de respostas diárias"
         answers_distribution: "Distribuição das Respostas"
         average_score: "Sua nota média, dia"
+        daily_average_score: "Sua nota média, dia"
         country_average_score: "Nota média no seu país, dia"
         industry_average_score: "Nota média na sua Indústria, dia"
       last_comments: "Comentários Recentes"

@@ -1,28 +1,38 @@
 section#company
   = render 'filter_form', survey: survey
+  h2 = t('dashboard.graphs.global_tendencies')
+  h4 = t('dashboard.graphs.period',
+    date_from: l(@date_filter[:created_at_gteq].to_date),
+    date_to: l(@date_filter[:created_at_lteq].to_date))
+  .graph-holder[style="width:100%;"]
+    center
+      = link_to 'daily',
+        params.merge(period: 'day', only_path: true),
+        class: 'chart'
+      = link_to 'weekly',
+        params.merge(period: 'week', only_path: true),
+        class: 'chart'
+      = link_to 'monthly',
+        params.merge(period: 'month', only_path: true),
+        class: 'chart'
+    = line_chart [\
+      { name: t('dashboard.survey_result.country'),
+        data: survey.get_charts.average_by_country(@period, @date_filter) },
+      { name: t('dashboard.survey_result.industry'),
+        data: survey.get_charts.average_by_industry(@period, @date_filter) },
+      { name: t('dashboard.survey_result.you'),
+        data: survey.get_charts.average_by_company(@answers, @period) }\
+    ], library: { legend: { position: 'top' }, curveType: 'function', title: t('dashboard.show.chart_titles.average_score') }, discrete: true
   h2 = t('dashboard.graphs.local_tendencies')
   h4 = t('dashboard.graphs.period',
     date_from: l(@date_filter[:created_at_gteq].to_date),
     date_to: l(@date_filter[:created_at_lteq].to_date))
   .graph-holder
-    = line_chart survey.get_charts.number_of_responses(@answers),
-      library: { title: t('dashboard.show.chart_titles.num_of_responses') }
-  .graph-holder
-    = pie_chart survey.get_charts.distribution(@answers),
-      library: { title: t('dashboard.show.chart_titles.answers_distribution') }
+    = line_chart survey.get_charts.average_by_company(@answers, 'day'),
+      library: { title: t('dashboard.show.chart_titles.daily_average_score') }
   .graph-holder
     = column_chart survey.get_charts.number_of_responses(@answers),
       library: { title: t('dashboard.show.chart_titles.num_of_responses') }
   .graph-holder
-    = line_chart survey.get_charts.average_by_company(@answers, @period),
-      library: { title: t('dashboard.show.chart_titles.average_score') }
-  h2 = t('dashboard.graphs.global_tendencies')
-  h4 = t('dashboard.graphs.period',
-    date_from: l(@date_filter[:created_at_gteq].to_date),
-    date_to: l(@date_filter[:created_at_lteq].to_date))
-  .graph-holder
-    = line_chart survey.get_charts.average_by_country(@period, @date_filter),
-      library: { title: t('dashboard.show.chart_titles.country_average_score') }
-  .graph-holder
-    = line_chart survey.get_charts.average_by_industry(@period, @date_filter),
-      library: { title: t('dashboard.show.chart_titles.industry_average_score') }
+    = pie_chart survey.get_charts.distribution(@answers),
+      library: { title: t('dashboard.show.chart_titles.answers_distribution') }

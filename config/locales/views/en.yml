@@ -42,7 +42,8 @@ en:
       chart_titles:
         num_of_responses: "Number of responses daily"
         answers_distribution: "Answers distribution"
-        average_score: "Your average score daily"
+        average_score: "Average score in your company, country and industry"
+        daily_average_score: "Your average score daily"
         country_average_score: "Average score in your country daily"
         industry_average_score: "Average score in your industry daily"
       last_comments: "Last comments"
