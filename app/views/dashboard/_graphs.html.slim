@@ -2,8 +2,8 @@ section#company
   = render 'filter_form', survey: survey
   h2 = t('dashboard.graphs.local_tendencies')
   h4 = t('dashboard.graphs.period',
-    date_from: l(@date_filter[:created_at_gteq]),
-    date_to: l(@date_filter[:created_at_lteq]))
+    date_from: l(@date_filter[:created_at_gteq].to_date),
+    date_to: l(@date_filter[:created_at_lteq].to_date))
   .graph-holder
     = line_chart survey.get_charts.number_of_responses(@answers),
       library: { title: t('dashboard.show.chart_titles.num_of_responses') }
@@ -18,8 +18,8 @@ section#company
       library: { title: t('dashboard.show.chart_titles.average_score') }
   h2 = t('dashboard.graphs.global_tendencies')
   h4 = t('dashboard.graphs.period',
-    date_from: l(@date_filter[:created_at_gteq]),
-    date_to: l(@date_filter[:created_at_lteq]))
+    date_from: l(@date_filter[:created_at_gteq].to_date),
+    date_to: l(@date_filter[:created_at_lteq].to_date))
   .graph-holder
     = line_chart survey.get_charts.average_by_country(@period, @date_filter),
       library: { title: t('dashboard.show.chart_titles.country_average_score') }
