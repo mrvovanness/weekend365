@@ -73,6 +73,9 @@ pt-BR:
       country: "País"
       industry: "Indústria"
       you: "Sua Empresa"
+    participation:
+      department: "Department"
+      rate: "Response Rate"
   devise:
     confirmations:
       show:

@@ -93,4 +93,25 @@ class StatisticsService
     end
     Hash[distribution]
   end
+
+  def topic_rate(topic, answers)
+    questions = OfferedQuestion.where(topic: topic)
+    t_answers = {}
+    questions.each do |question|
+      q_answers = answer_distribution(question, answers)
+      t_answers = t_answers.merge(q_answers) { |key, oldval, newval| oldval + newval }
+    end
+    rate = t_answers.values.sum > 0 ? (t_answers[4] + t_answers[5]).to_f / t_answers.values.sum * 100 : 0
+    return rate, t_answers.values.sum
+  end
+
+  def survey_rate
+    good_answer_ids = OfferedAnswer.where(value: [4, 5])
+    good_answers = @survey.answers.where(offered_answer_id: good_answer_ids).count
+    if @survey.answers.count > 0 
+      good_answers.to_f / @survey.answers.count * 100
+    else
+      0
+    end
+  end
 end

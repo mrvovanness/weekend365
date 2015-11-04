@@ -1,0 +1,21 @@
+.block-info
+  .panel
+    span.heading Participation
+.panel-holder
+  .badge
+    =< number_to_percentage(survey.get_statistics.rate, precision: 0)
+    span = "N=#{survey.employees.count}"
+  table.participation
+    tr
+      th = t('dashboard.participation.department')
+      th.blank
+      th = t('dashboard.participation.rate')
+    - survey.employees.group(:department).order(:department).count.each do |key, value|
+      tr
+        td = key
+        td.blank
+        - emp_ids = survey.employees.where(department: key).pluck(:id)
+        - dep_answers = survey.results.where(employee_id: emp_ids).pluck(:employee_id).uniq.count
+        td 
+          = number_to_percentage(dep_answers.to_f / value * 100, precision: 0)
+          =< "(#{dep_answers} of #{value})"

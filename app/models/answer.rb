@@ -5,6 +5,7 @@ class Answer < ActiveRecord::Base
   scope :filter_by_employees, -> (employees_selected, survey) {
     where(result: Result.where(employee: employees_selected, 
                                company_survey: survey)) }
+  scope :with_comments, -> { where("comment <> ''") }
 
   def self.to_csv
     attributes = %w(date value comment)
