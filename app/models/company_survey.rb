@@ -1,8 +1,6 @@
 class CompanySurvey < ActiveRecord::Base
   validates :title, presence: true
 
-  attr_accessor :skip_callback
-
   belongs_to :company
   belongs_to :offered_survey
   has_one :email_schedule, dependent: :destroy
@@ -15,9 +13,14 @@ class CompanySurvey < ActiveRecord::Base
   accepts_nested_attributes_for :email_schedule, allow_destroy: true
   accepts_nested_attributes_for :results, allow_destroy: true
 
-  def skip_callback?
-    skip_callback
-  end
+  delegate :start_at,
+    :number_of_repeats,
+    :repeat_every,
+    :finish_on,
+    :next_delivery_at,
+    :daily?,
+    :weekly?,
+    to: :email_schedule
 
   def started?
     counter > 0
@@ -25,14 +28,6 @@ class CompanySurvey < ActiveRecord::Base
 
   def completed?
     number_of_repeats < counter
-  end
-
-  def daily?
-    email_schedule.daily? if email_schedule
-  end
-
-  def weekly?
-    email_schedule.weekly? if email_schedule
   end
 
   def get_statistics
@@ -43,28 +38,8 @@ class CompanySurvey < ActiveRecord::Base
     ChartsService.new(self)
   end
 
-  def start_at
-    email_schedule.start_at if email_schedule
-  end
-
-  def number_of_repeats
-    email_schedule.number_of_repeats if email_schedule
-  end
-
-  def repeat_every
-    email_schedule.repeat_every if email_schedule
-  end
-
-  def finish_on
-    email_schedule.finish_on if email_schedule
-  end
-
-  def next_delivery_at
-    email_schedule.next_delivery_at if email_schedule
-  end
-
   def ordered_by_topic_questions
-    offered_questions.includes(:translations).group_by { |question| question.topic }
+    offered_questions.group_by { |question| question.topic }
       .delete_if { |topic| topic.try(:empty?) }
   end
 
@@ -74,5 +49,9 @@ class CompanySurvey < ActiveRecord::Base
     else
       false
     end
+  end
+
+  def answered_by_web_form?
+    offered_survey.try(:answers_through) == 'web'
   end
 end

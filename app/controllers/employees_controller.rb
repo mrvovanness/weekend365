@@ -39,7 +39,6 @@ class EmployeesController < ApplicationController
   def add_to_survey
     survey = @company.company_surveys.find(params[:survey_id])
     survey.employee_ids = (survey.employee_ids + params[:employee_ids]).uniq
-    survey.skip_callback = true
     survey.save
     redirect_to_company
   end

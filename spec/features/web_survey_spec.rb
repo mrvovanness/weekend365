@@ -27,10 +27,7 @@ describe User, js: true do
       click_on 'SAVE'
       email_schedule = company.company_surveys.first.email_schedule
       expect(email_schedule.start_at.nil?).to be false
-      expect(email_schedule.repeat_every.nil?).to be true
-      expect(email_schedule.repeat_mode.nil?).to be true
       expect(email_schedule.finish_on.nil?).to be true
-      expect(email_schedule.number_of_repeats.nil?).to be true
     end
 
     it 'save the email_schedule with repeat attributes' do
