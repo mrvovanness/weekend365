@@ -5,9 +5,12 @@
   .holder
     span.info = t('dashboard.survey_result.score')
     .frame
-      = render 'emoji_choosing', survey: survey
-      span.value
-        = survey.get_statistics.average
+      - if survey.offered_survey.try(:answers_through) == 'web'
+        = render 'web_emoji_choosing', survey: survey
+        span.value = number_to_percentage(survey.get_statistics.survey_rate, precision: 0)
+      - else
+        = render 'email_emoji_choosing', survey: survey
+        span.value = survey.get_statistics.average
     .icons.icons-small
       - (4..9).each do |n|
         li = image_tag("icon0#{n}.png", size: '29x29', alt: 'emoji')
