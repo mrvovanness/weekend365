@@ -24,15 +24,21 @@
   .panel-holder
     .box.inner
       .frame.clearfix
-        = render 'emoji_choosing', survey: @survey
-        span.value = @survey.get_statistics.average
+        - if @survey.offered_survey.try(:answers_through) == 'web'
+          = render 'web_emoji_choosing', survey: @survey
+          span.value = number_to_percentage(@survey.get_statistics.survey_rate, precision: 0)
+        - else
+          = render 'email_emoji_choosing', survey: @survey
+          span.value = @survey.get_statistics.average
         .info-holder
           span.info = t('dashboard.show.score')
           = render 'phrase_choosing', survey: @survey
 
       = render 'statistics', survey: @survey
   - if @survey.offered_survey.try(:answers_through) == 'web'
+    = render 'participation', survey: @survey
     = render 'lists', survey: @survey, answers: @answers
+    = render 'comments', survey: @survey
   - else
     .columns
       .block-info

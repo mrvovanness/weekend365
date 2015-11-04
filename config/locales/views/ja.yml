@@ -73,6 +73,9 @@ ja:
       country: "国"
       industry: "業界"
       you: "あなた"
+    participation:
+      department: "Department"
+      rate: "Response Rate"
   devise:
     confirmations:
       show:

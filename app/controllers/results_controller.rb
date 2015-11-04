@@ -13,10 +13,11 @@ class ResultsController < ApplicationController
   end
 
   def create
-    @survey = CompanySurvey.find(params[:company_survey_id])
-    @survey.update(survey_params)
+    survey = CompanySurvey.find(params[:company_survey_id])
+    survey.update(survey_params)
     token = Token.find_by(name: params[:token])
     token.update!(expired: true) unless Rails.env.development?
+    survey.increment!(:number_of_responses)
     redirect_to thanks_for_comment_path
   end
 

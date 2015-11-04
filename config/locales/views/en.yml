@@ -73,6 +73,9 @@ en:
       country: "Country"
       industry: "Industry"
       you: "You"
+    participation:
+      department: "Department"
+      rate: "Response Rate"
   devise:
     confirmations:
       show:

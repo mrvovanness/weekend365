@@ -1,0 +1,6 @@
+- if survey.get_statistics.survey_rate > 90
+  span.current-icon.good icon
+- elsif survey.get_statistics.survey_rate > 50
+  span.current-icon.normal icon
+- else
+  span.current-icon.bad icon

@@ -1,18 +1,28 @@
 section#company
   = render 'filter_form', survey: survey
-  fieldset[width='100%']
+  fieldset
     - survey.ordered_by_topic_questions.each do |topic, questions|
       ul.accordion
         li.active
           a.opener.clearfix href='#'
             span.title = topic
           .slide style='display: block'
+            .badge
+              - rate, answers_count = survey.get_statistics.topic_rate(topic, answers)
+              =< number_to_percentage(rate, precision: 0)
+              span = "N=#{answers_count}"
             table.info-table
               tbody
-                tr.question
+                tr.question-block
+                  td.subtopic: span.question Sub-Topic
+                  td.question-short: span.question Questions
+                  td.scale: span.question Score
+                  td.diff
                 - questions.each do |question|
                   tr.question-block
+                    td.subtopic: span.question = question.subtopic
                     td.question-short: span.question = question.title
                     td.scale
                       = distribution_to_scale(survey.get_statistics.answer_distribution(question, answers))
-                    td.diff: span.question = "#{t('dashboard.show.total')} #{@stat.answer_distribution(question, answers).values.sum}"
+                    td.comments
+                      a.btn-comments.to-comments href='#' id="question-#{question.id}" comments
