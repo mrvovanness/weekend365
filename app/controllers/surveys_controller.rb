@@ -37,7 +37,7 @@ class SurveysController < ApplicationController
     @employee = Employee.new(id: 1)
     @company_admin = @survey.company.admin
 
-    if @survey.offered_survey.try(:answers_through) == 'web'
+    if @survey.answered_by_web_form?
       render 'surveys_mailer/send_web_survey',
         layout: 'surveys_mailer'
     else

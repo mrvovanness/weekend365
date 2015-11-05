@@ -48,10 +48,10 @@ describe User do
       expect(page).to have_content('Company Details')
     end
 
-    it 'redirects to dashboard in other case' do
+    it 'redirects to surveys in other case' do
       user.touch :updated_at
       login('ex@mail.com', 'bigsecret')
-      expect(page).to have_content('Dashboard')
+      expect(page).to have_content('survey selection')
     end
   end
 end

@@ -15,10 +15,10 @@ class ApplicationController < ActionController::Base
       if current_user.is_admin_for?(current_user.company)
         edit_company_path(current_user.company)
       else
-        dashboard_index_path
+        surveys_path
       end
     else
-      dashboard_index_path
+      surveys_path
     end
   end
 

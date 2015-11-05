@@ -36,7 +36,7 @@
                   td = survey.start_at.try(:strftime,  '%b.%dth/%Y')
                   td = survey.frequency_overview
 
-                  - if survey.offered_survey.try(:answers_through) == 'web'
+                  - if survey.answered_by_web_form?
 
                     td
                       = link_to t('helpers.links.edit'),

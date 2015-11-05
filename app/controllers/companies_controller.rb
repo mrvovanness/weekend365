@@ -56,7 +56,7 @@ class CompaniesController < ApplicationController
   private
 
   def check_access
-    redirect_to dashboard_index_path and return unless current_user.is_admin?
+    redirect_to surveys_path and return unless current_user.is_admin?
   end
 
   def reset_company

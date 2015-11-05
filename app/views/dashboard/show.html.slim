@@ -15,18 +15,26 @@
       span.date
         = @survey.schedule_overview
     .btns
-      = link_to t('helpers.titles.edit', model: 'Survey'),
-        edit_surveys_email_survey_path(@survey),
-        class: 'btn-edit'
+      - if @survey.answered_by_web_form?
+        = link_to t('helpers.titles.edit', model: 'Survey'),
+          edit_surveys_web_survey_path(@survey),
+          class: 'btn-edit'
+      - else
+        = link_to t('helpers.titles.edit', model: 'Survey'),
+          edit_surveys_email_survey_path(@survey),
+          class: 'btn-edit'
       = link_to t('helpers.links.download_data'),
         current_url(format: :csv),
         class: 'btn-download'
+
   .panel-holder
     .box.inner
       .frame.clearfix
-        - if @survey.offered_survey.try(:answers_through) == 'web'
+        - if @survey.answered_by_web_form?
           = render 'web_emoji_choosing', survey: @survey
-          span.value = number_to_percentage(@survey.get_statistics.survey_rate, precision: 0)
+          span.value
+            = number_to_percentage(\
+              @survey.get_statistics.survey_rate, precision: 0)
         - else
           = render 'email_emoji_choosing', survey: @survey
           span.value = @survey.get_statistics.average
@@ -35,7 +43,7 @@
           = render 'phrase_choosing', survey: @survey
 
       = render 'statistics', survey: @survey
-  - if @survey.offered_survey.try(:answers_through) == 'web'
+  - if @survey.answered_by_web_form?
     = render 'participation', survey: @survey
     = render 'lists', survey: @survey, answers: @answers
     = render 'comments', survey: @survey
@@ -44,6 +52,7 @@
       .block-info
         .panel
           b = t('dashboard.show.last_comments')
+
       - @comments.each do |comment|
         li = comment
       = link_to t('helpers.links.all_comments'),

@@ -59,7 +59,7 @@ class ConfirmationsController < Devise::ConfirmationsController
     if @confirmable.is_admin_for?(@confirmable.company)
       redirect_to edit_company_path(@confirmable.company)
     else
-      redirect_to dashboard_index_path
+      redirect_to surveys_path
     end
   end
 end

@@ -4,7 +4,7 @@ section#company
   h4 = t('dashboard.graphs.period',
     date_from: l(@date_filter[:created_at_gteq].to_date),
     date_to: l(@date_filter[:created_at_lteq].to_date))
-  .graph-holder[style="width:100%;"]
+  .graph-holder style='width:100%'
     center
       = link_to 'daily',
         params.merge(period: 'day', only_path: true),
@@ -22,7 +22,11 @@ section#company
         data: survey.get_charts.average_by_industry(@period, @date_filter) },
       { name: t('dashboard.survey_result.you'),
         data: survey.get_charts.average_by_company(@answers, @period) }\
-    ], library: { legend: { position: 'top' }, curveType: 'function', title: t('dashboard.show.chart_titles.average_score') }, discrete: true
+    ], library: { legend: { position: 'top' },
+                  curveType: 'function',
+                  title: t('dashboard.show.chart_titles.average_score') },
+       discrete: true
+
   h2 = t('dashboard.graphs.local_tendencies')
   h4 = t('dashboard.graphs.period',
     date_from: l(@date_filter[:created_at_gteq].to_date),

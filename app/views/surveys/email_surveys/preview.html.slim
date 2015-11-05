@@ -19,7 +19,7 @@
         <br>
 
       .btns
-        - if @survey.offered_survey.try(:answers_through) == 'web'
+        - if @survey.answered_by_web_form?
           = link_to t('helpers.links.edit'),
             edit_surveys_web_survey_path(@survey,
             offered_survey_id: @survey.offered_survey.id),
@@ -61,8 +61,8 @@
     span.date = [@survey.frequency_overview, @survey.repeat_times].join(' ')
 
   .btns.style01
-    = link_to t('helpers.links.back_to_dashboard'),
-      dashboard_index_path,
+    = link_to t('helpers.links.surveys'),
+      surveys_path,
       class: 'btn-dashboard'
     = link_to t('helpers.links.blog'), 'http://blog.weekendcult.com',
       class: 'btn-blog'

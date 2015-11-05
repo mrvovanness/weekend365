@@ -16,7 +16,7 @@ class DashboardController < ApplicationController
       .ransack(@date_filter).result
     @comments = @survey.answers.map(&:comment).compact.last(3)
     @period = params[:period] || (@survey.weekly? ? 'week' : 'day')
-    if @survey.offered_survey.try(:answers_through) == 'web'
+    if @survey.answered_by_web_form?
       @stat = @survey.get_statistics
     end
 

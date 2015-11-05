@@ -6,7 +6,7 @@ class Admin::BaseController < ApplicationController
 
   def check_access
     if current_user.is_usual?
-      redirect_to dashboard_index_path and return
+      redirect_to surveys_path and return
     end
   end
 end

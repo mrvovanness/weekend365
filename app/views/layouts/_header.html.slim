@@ -4,15 +4,12 @@ header#header.clearfix
   ul.links
     li.surveys
       = link_to t('upperbar.surveys'), surveys_path
-    li.dashboards
-      = link_to t('upperbar.dashboard'), dashboard_index_path
     li.company
       - if current_user.is_admin?
         = link_to t('upperbar.companies'), companies_path
       - else
         = link_to t('upperbar.company'), company_path(current_user.company)
-    
-    
+
   ul.links.alignright
     li.lang
       = link_to params.merge(locale: I18n.locale, only_path: true) do

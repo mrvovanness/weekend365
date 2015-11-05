@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :companies
-  resources :dashboard, only: [:index, :show]
+  resources :dashboard, only: :show
   resources :pages, only: :show
 
   resources :employees do
