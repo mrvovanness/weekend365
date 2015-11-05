@@ -112,6 +112,7 @@ else
   su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:setup;"
   su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:seed:company_fields;"
   su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:seed:admin;"
+  su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:seed:company_admins;"
   su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:seed:employees;"
   su vagrant -c "echo +rails_app/db_setup >> /home/vagrant/.provisioning-progress"
   echo "--> +rails_app/db_setup finished."
