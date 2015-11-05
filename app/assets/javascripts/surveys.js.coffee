@@ -1,7 +1,7 @@
 jQuery ->
 
   # Dinamically add/remove email recepients and respond with number of recipients in label text
-  number = new RegExp /\([0-9]\):/
+  number = new RegExp /\([0-9]+\):/
   labelText = $('#send_to-label').text().replace(number, '')
 
   $('.edit_company_survey').on 'ajax:complete', (e, data, status, xhr) ->

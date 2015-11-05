@@ -16,6 +16,6 @@
         td.blank
         - emp_ids = survey.employees.where(department: key).pluck(:id)
         - dep_answers = survey.results.where(employee_id: emp_ids).pluck(:employee_id).uniq.count
-        td 
+        td
           = number_to_percentage(dep_answers.to_f / value * 100, precision: 0)
           =< "(#{dep_answers} of #{value})"

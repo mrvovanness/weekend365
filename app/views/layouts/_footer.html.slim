@@ -10,22 +10,27 @@ footer#footer
 
         .footer-info-link
           ul
-            li.first: a href="#" The Team
-            li: a href="#" Plans & Pricing
-            li: a href="#" Our Method
+            li.first = link_to t('footer.team'), page_path(id: 'about')
+            li: a href="#" = t('footer.pricing')
+            li: a href="#" = t('footer.method')
 
         .footer-sns-link
           ul
-            li.first: a href="https://www.facebook.com/Weekend-Culture-1510582572565762"
-              | Facebook Page
-            li: a href="https://www.facebook.com/Weekend-Culture-1510582572565762"
-              | Facebook Group
-            li: a href="https://twitter.com/Weekend_HR" Twitter
-            li: a href="http://blog.weekendcult.com" Blog
-        
+            li.first: a href="https://www.facebook.com/Weekend-Culture-1510582572565762" target="_blank"
+              = t('footer.facebook_page')
+            li: a href="https://www.facebook.com/Weekend-Culture-1510582572565762" target="_blank"
+              = t('footer.facebook_group')
+            li: a href="https://twitter.com/Weekend_HR" target="_blank"
+              = t('footer.twitter')
+            li: a href="http://blog.weekendcult.com" target="_blank"
+              = t('footer.blog')
+
         .footer-contact-link
           ul
-            li.first: a href="mailto:sales@weekendcult.com" Contact Sales
-            li: a href="mailto:support@weekendcult.com" Contact Support
+            li.first: a href="mailto:sales@weekendcult.com"
+              = t('footer.sales')
+            li: a href="mailto:support@weekendcult.com"
+              = t('footer.support')
             li: a href="tel:+818041227181" +81 80 4122 7181 (Japan)
-            li: a target="_blank" href="https://www.google.co.jp/search?q=kamakura&rct=j" Kamakura City
+            li: a target="_blank" href="https://www.google.co.jp/search?q=kamakura&rct=j"
+              = t('footer.kamakura')

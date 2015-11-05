@@ -2,13 +2,6 @@ class DashboardController < ApplicationController
   before_action :authenticate_user!
   before_action :define_date_filter, only: :show
 
-  def index
-    @surveys = @company.company_surveys.includes( :offered_survey, :email_schedule)
-      .order(updated_at: :desc).decorate
-    @top_survey = @surveys.first
-    @period = params[:period] || 'day'
-  end
-
   def show
     @survey = @company.company_surveys.find(params[:id]).decorate
     @search = @company.employees.ransack(params[:q])
@@ -16,6 +9,7 @@ class DashboardController < ApplicationController
       .ransack(@date_filter).result
     @comments = @survey.answers.map(&:comment).compact.last(3)
     @period = params[:period] || (@survey.weekly? ? 'week' : 'day')
+
     if @survey.answered_by_web_form?
       @stat = @survey.get_statistics
     end
