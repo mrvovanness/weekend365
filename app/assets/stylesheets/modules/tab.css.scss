@@ -1,0 +1,78 @@
+.ui-widget {
+  font: 19px/23px 'freightsans_mediumregular', Arial, Helvetica, sans-serif;
+  a.ui-tabs-anchor {
+    color: #285b5f;
+  }
+}
+
+.ui-widget-header {
+  background: none;
+  .ui-state-default {
+    border: 0;
+    background: none;
+    letter-spacing: 2px;
+    font-weight: lighter;
+  }
+}
+
+.ui-widget-content {
+  border-width: 0;
+  background: rgba(249,252,252,0.6) !important;
+  .comments a {
+    color: #fcb331;
+    text-decoration: none;
+  }
+}
+.ui-tabs {
+	position: relative;/* position: relative prevents IE scroll bug (element with position: relative inside container with overflow: auto appear as "fixed") */
+	padding: .2em;
+  .block-info {
+    width: 100%;
+  }
+  .panel-holder {
+    width: 100%;
+  }
+}
+.ui-tabs .ui-tabs-nav {
+	margin: 0;
+	padding: .2em .2em 0;
+}
+.ui-tabs .ui-tabs-nav li {
+  list-style: none;
+  float: left;
+  position: relative;
+  top: 0;
+  margin: 1px 0.5em 0 0.5em;
+  padding: 0;
+  white-space: nowrap;
+  font-weight: lighter;
+  border-bottom: 4px solid #ccc;
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+	float: left;
+	padding: .5em 0;
+	text-decoration: none;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  margin-bottom: -1px;
+  padding-bottom: 1px;
+  font-weight: bold;
+  border-bottom: 8px solid #285b5f;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
+	cursor: text;
+}
+.ui-state-focus {
+  border: 0;
+}
+.ui-tabs-collapsible .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor {
+	cursor: pointer;
+}
+.ui-tabs .ui-tabs-panel {
+	display: block;
+	border-width: 0;
+	padding: 1em 1.4em;
+	background: none;
+}

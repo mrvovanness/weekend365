@@ -74,8 +74,14 @@ ja:
       industry: "業界"
       you: "あなた"
     participation:
+      title: "Participation"
       department: "Department"
       rate: "Response Rate"
+    comments:
+      title: "Comments"
+      see_all: "See all (%{comments_count}) comments"
+    department_results:
+      title: "Results"
   devise:
     confirmations:
       show:

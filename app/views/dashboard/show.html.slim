@@ -44,9 +44,24 @@
 
       = render 'statistics', survey: @survey
   - if @survey.answered_by_web_form?
-    = render 'participation', survey: @survey
-    = render 'lists', survey: @survey, answers: @answers
-    = render 'comments', survey: @survey
+    = content_tag(:div, '', class: 'active_tab', data: { active: @active_tab })
+    #tabs
+      ul
+        li
+          a href='#overall'
+            | Overall
+        li
+          a href='#comments'
+            | Comments      
+      = render 'filter_form', survey: @survey
+      #overall
+        = render 'participation', survey: @survey
+        = render 'department_results', survey: @survey
+        /= render 'highest_questions', survey: @survey
+        /= render 'lowest_questions', survey: @survey
+        = render 'lists', survey: @survey, answers: @answers
+      #comments
+        = render 'comments', survey: @survey
   - else
     .columns
       .block-info

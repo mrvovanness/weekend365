@@ -1,10 +1,11 @@
 .block-info
   .panel
-    span.heading2 Comments
+    span.heading2 = t('dashboard.comments.title')
 .panel-holder
+  = question_select(survey, @answers)
   - survey.offered_questions.includes(:translations).order(:title).each do |question|
     - result_ids = survey.results.where(offered_question: question).pluck(:id)
-    - answers_with_comments = survey.answers.with_comments.where(result_id: result_ids).order(created_at: :desc)
+    - answers_with_comments = @answers.with_comments.where(result_id: result_ids).order(created_at: :desc)
     - if answers_with_comments.present?
       - last_answer = answers_with_comments.first
       .info-table id="question-#{question.id}"
@@ -14,7 +15,7 @@
             span = l(last_answer.created_at, format: :long)
             p = last_answer.comment
             - if answers_with_comments.size > 1
-              = link_to "See all (#{answers_with_comments.size}) answers", '#', id: 'see-all-comments'
+              = link_to t("dashboard.comments.see_all", comments_count: answers_with_comments.size), '#', id: 'see-all-comments'
               br
         ul.comments.hide
           - answers_with_comments.each do |answer|
