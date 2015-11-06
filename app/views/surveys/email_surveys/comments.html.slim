@@ -3,8 +3,14 @@
     h1 = t('surveys.comments.title')
   - @answers.each do |answer|
     - next if answer.comment.nil?
-    i
-      = t('surveys.comments.selected')
-      =< answer.offered_answer.value
-    li: b = answer.comment
-    p = answer.updated_at
+    div.commentUnit
+      h4 = t('surveys.comments.selected')
+      div.rating
+        - 10.times.each do |index|
+          span class="#{'selected' if index <= answer.offered_answer.value}"
+      span.posted_at
+        = answer.updated_at.strftime("%A, %B #{answer.updated_at.day.ordinalize}, %Y")
+        ' &nbsp; |
+        = answer.updated_at.strftime("%I:%M")
+      p = answer.comment.titleize
+

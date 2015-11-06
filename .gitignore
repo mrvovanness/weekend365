@@ -14,3 +14,4 @@ run_schedule_in_future.rb
 calculate_answers.rb
 calculate_charts.rb
 .vagrant
+.DS_Store
