@@ -5,6 +5,7 @@
 //= require jquery.formstyler.js
 //= require select2.full
 //= require jquery-ui/dialog
+//= require jquery-ui/tabs
 //= require epiceditor
 //= require jquery.accordion.js
 //= require jquery.hc-sticky.js

@@ -94,6 +94,13 @@ class StatisticsService
     Hash[distribution]
   end
 
+  def question_rate(question, answers)
+    questions = OfferedQuestion.where(topic: topic)
+    q_answers = answer_distribution(question, answers)
+    good_answers = q_answers[4] + q_answers[5]
+    { good: good_answers, total: q_answers.values.sum }
+  end
+
   def topic_rate(topic, answers)
     questions = OfferedQuestion.where(topic: topic)
     t_answers = {}
@@ -103,6 +110,15 @@ class StatisticsService
     end
     rate = t_answers.values.sum > 0 ? (t_answers[4] + t_answers[5]).to_f / t_answers.values.sum * 100 : 0
     return rate, t_answers.values.sum
+  end
+
+  def department_rate(department)
+    employees = @survey.company.employees.where(department: department)
+    good_answer_ids = OfferedAnswer.where(value: [4, 5])
+    dep_answers = Answer.filter_by_employees(employees, @survey).count
+    good_answers = Answer.filter_by_employees(employees, @survey)
+    .where(offered_answer_id: good_answer_ids).count
+    { good: good_answers, total: dep_answers }
   end
 
   def survey_rate

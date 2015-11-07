@@ -1,19 +1,18 @@
 .block-info
   .panel
-    span.heading = t('dashboard.participation.title')
+    span.heading = t('dashboard.department_results.title')
 .panel-holder
   .badge
     div
-      =< number_to_percentage(survey.get_statistics.rate, precision: 0)
+      =< number_to_percentage(survey.get_statistics.survey_rate, precision: 0)
     span = "N=#{survey.employees.count}"
   table.participation
     tr
       th = t('dashboard.participation.department')
       th.blank
-      th = t('dashboard.participation.rate')
+      th = t('dashboard.department_results.title')
     - survey.employees.group(:department).order(:department).count.each do |key, value|
       tr
         td = key
         td.blank
-        td
-          = department_participation(survey, key, value)
+        td = department_rate(key, survey)

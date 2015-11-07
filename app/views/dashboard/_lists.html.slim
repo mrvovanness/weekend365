@@ -1,5 +1,4 @@
 section#company
-  = render 'filter_form', survey: survey
   fieldset
     - survey.ordered_by_topic_questions.each do |topic, questions|
       ul.accordion
@@ -9,7 +8,8 @@ section#company
           .slide style='display: block'
             .badge
               - rate, answers_count = survey.get_statistics.topic_rate(topic, answers)
-              =< number_to_percentage(rate, precision: 0)
+              div
+                =< number_to_percentage(rate, precision: 0)
               span = "N=#{answers_count}"
             table.info-table
               tbody

@@ -9,6 +9,7 @@ class DashboardController < ApplicationController
       .ransack(@date_filter).result
     @comments = @survey.answers.map(&:comment).compact.last(3)
     @period = params[:period] || (@survey.weekly? ? 'week' : 'day')
+    @active_tab = params[:active_tab] || 0
 
     if @survey.answered_by_web_form?
       @stat = @survey.get_statistics
