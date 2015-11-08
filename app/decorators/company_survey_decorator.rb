@@ -60,7 +60,7 @@ class CompanySurveyDecorator < Draper::Decorator
     elsif start_at.present?
       start_at.try(:strftime, '%H:%M')
     else
-      (Time.current. + 30.minutes).try(:strftime, '%H:%M')
+      (Time.current. + 10.minutes).try(:strftime, '%H:%M')
     end
   end
 

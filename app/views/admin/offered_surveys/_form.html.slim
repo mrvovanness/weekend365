@@ -13,7 +13,8 @@
       .label-holder
         = f.label :answers_through
       = f.input_field :answers_through,
-        collection: [:email, :web]
+        collection: [:email, :web],
+        include_blank: false
     .row
       .label-holder
         = f.label :offered_questions

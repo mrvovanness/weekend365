@@ -13,13 +13,16 @@
       .label-holder
         = f.label :subtopic
       = f.input_field :subtopic
+
     .row
       .label-holder
-        = f.label :offered_answers
-      = f.association :offered_answers,
-        collection: OfferedAnswer.all,
-        label_method: :value,
-        value_method: :id,
-        input_html: { id: 'offered_answer_ids', multiple: true },
+        = f.label :form_of_answers
+      = f.input :form_of_answers,
+        collection: [\
+          [t('offered_questions.form.scale_1'), '1-5 scale'],
+          [t('offered_questions.form.scale_2'), '1-10 scale'],
+          [t('offered_questions.form.open'), 'open']],
+        include_blank: false,
         label: false
+    .row
       = f.submit class: 'btn-save'

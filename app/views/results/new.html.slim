@@ -11,7 +11,9 @@
         li.active.topic-header
           a.opener.clearfix href='#'
             span.title = topic
-            span.info #{ questions.count } unanswered questions
+            span.info
+              = t('web_surveys.form.unanswered_questions',
+                  questions_count: questions.count)
           .slide style='display: block'
             table.info-table
               tbody
@@ -26,43 +28,53 @@
                       value: @employee_id
 
                     tr.question-block
-                      td.question: span.question = question.title
+                      td.question
+                        span.question = question.title
                       td.evaluation
-                        .agree-holder
-                          /span.heading agree
-                          .holder.clearfix
-                            a.plus +
+                        - if question.open?
+                          .comments-area
+                            = result_field.fields_for :answers do |a|
+                              = a.hidden_field :comment,
+                                class: 'hidden-comment-field'
+                              = a.text_area :user_answer,
+                                class: 'user-answer'
 
-                            ul.agree.scale
-                              = result_field.fields_for :answers do |a|
-                                = a.hidden_field :comment,
-                                  class: 'hidden-comment-field'
+                        - else
+                          .agree-holder
+                            .holder.clearfix
+                              a.minus -
+                              ul.agree.scale
+                                = result_field.fields_for :answers do |a|
+                                  = a.hidden_field :comment,
+                                    class: 'hidden-comment-field'
+                                  = a.hidden_field :user_answer,
+                                    class: 'hidden-user_answer-field'
 
-                                - question.offered_answers.each do |answer|
-                                  li class="color#{ answer.value }"
-                                    a.level
-                                    = a.radio_button :offered_answer_id, answer.id,
-                                      class: "color#{ answer.value }",
-                                      style: 'opacity: 0'
-                                    = add_tooltip(answer.value)
+                                  - question.offered_answers.each do |answer|
+                                    li class="color#{ answer.value }"
+                                      a.level
+                                      = a.radio_button :offered_answer_id, answer.id,
+                                        class: "color#{ answer.value }",
+                                        style: 'opacity: 0'
+                                      = add_tooltip(answer.value)
 
-                            a.minus -
-                      td.comments
-                        .comments-holder.popup-holder
-                          a.btn-comments.open href="#" comments
-                          .popup
-                            textarea.comment-input cols="30" rows="10"
-                            a.close href="#" close
+                              a.plus +
+                        td.comments
+                          .comments-holder.popup-holder
+                            a.btn-comments.open href="#" comments
+                            .popup
+                              textarea.comment-input cols="30" rows="10"
+                              a.close href="#" close
   .btns-right
-    = f.submit 'Answer all questions!',
+    = f.submit t('web_surveys.form.answer_all_questions'),
       disabled: true,
-      data: { submit: 'Submit survey' },
+      data: { submit: t('web_surveys.form.submit_survey'),
+              not_submit: t('web_surveys.form.answer_all_questions') },
       class: 'btn-answer',
       id: 'submit-survey'\
       unless @token == 'preview'
 
-  = link_to 'Back to surveys',
+  = link_to t('web_surveys.form.back_to_surveys'),
     surveys_path,
     style: 'color: black'\
     if @token == 'preview'
-

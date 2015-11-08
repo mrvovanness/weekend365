@@ -11,31 +11,16 @@
           li.active
             a.opener.clearfix href='#'
               span.title = topic
-              span.info #{ questions.count } unanswered questions
+              span.info
+                = t('web_surveys.form.unanswered_questions',
+                    questions_count: questions.count)
             .slide style='display: block'
               table.info-table
                 tbody
                   - questions.each do |question|
                     tr.question-block
-                      td.question: span.question = question.title
-                      td.evaluation
-                        .agree-holder
-                          span.heading Agree
-                          .holder.clearfix
-                            a.minus -
-                            ul.agree
-                              - question.offered_answers.each do |answer|
-                                li class="color#{ answer.value }"
-                                  a color
-                            a.plus +
-                      td.comments
-                        .comments-holder.popup-holder
-                          a.btn-comments.open href="#" comments
-                          .popup
-                            textarea cols="30" rows="10"
-                            a.close href="#" close
+                      = render 'question_row', question: question
 
-    b start at: #{ @company_survey.start_at }
     <br><br>
     = link_to t('helpers.links.edit'),
       edit_surveys_web_survey_path(@company_survey,

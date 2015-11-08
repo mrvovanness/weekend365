@@ -6,7 +6,7 @@ class OfferedQuestion < ActiveRecord::Base
   has_many :offered_answers, through: :sqa_assignments
   has_many :offered_surveys, through: :sqa_assignments
 
-  after_create :set_default_answers
+  before_save :set_default_answers
 
   translates :title, :topic, :subtopic
 
@@ -15,11 +15,18 @@ class OfferedQuestion < ActiveRecord::Base
     spreadsheet.import(self.model_name.name)
   end
 
-  private
-
   def set_default_answers
-    if self.offered_answers.empty?
+    case form_of_answers
+    when '1-5 scale'
       self.offered_answers = OfferedAnswer.first(5)
+    when '1-10 scale'
+      self.offered_answers = OfferedAnswer.first(10)
+    when 'open'
+      self.offered_answers = []
     end
+  end
+
+  def open?
+    form_of_answers == 'open'
   end
 end
