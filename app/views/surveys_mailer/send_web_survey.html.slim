@@ -16,5 +16,5 @@ tr
   td[style="font:2em Arial, Helvetica, sans-serif;
     line-height:25px; margin:0 0 15px; padding:0 20px;
     color:#343838; text-transform:uppercase;"]
-    = link_to 'Answer this survey',
+    = link_to t('survey_mailers.send_survey.answer_this_survey'),
       new_result_url(@survey.id, @token, @employee.id)

@@ -142,6 +142,10 @@ en:
   offered_questions:
     new:
       choose_btn: 'Choose a file from your computer'
+    form:
+      scale_1: '1-5 scale'
+      scale_2: '1-10 scale'
+      open: 'open'
   pages:
     about:
       title: "About us"
@@ -206,6 +210,18 @@ en:
     comments:
       title: "Comments"
       selected: "Selected:"
+  web_surveys:
+    form:
+      questions_for_survey: 'Questions for survey'
+      included_questions: 'Included questions'
+      not_included_questions: 'Not included questions'
+      unanswered_questions: "%{questions_count} unanswered questions"
+      show: 'Show'
+      hide: 'Hide'
+      close: 'Close'
+      back_to_surveys: 'Back to surveys'
+      answer_all_questions: 'Answer all questions!'
+      submit_survey: 'Submit survey'
   survey_mailers:
     send_survey:
       title: "Welcome to weekend"
@@ -215,6 +231,7 @@ en:
       company_admin: "who administrates the service at your company"
       check_out: "Check out the"
       hint_message: "to get hints on how to improve your work satisfaction transforming your company into a better place."
+      answer_this_survey: "Answer this survey"
   users:
     index:
       title: "Admin list"

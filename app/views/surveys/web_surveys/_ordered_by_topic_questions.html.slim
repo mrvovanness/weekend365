@@ -1,0 +1,19 @@
+ul.accordion
+  li.topic-block.active
+    .opener-holder.clearfix
+      a.opener.clearfix href="#"
+        span.title = topic
+      a.btn-info.btn-toggle-topic href="#"
+        em = t('web_surveys.form.hide')
+        span = t('web_surveys.form.show')
+    .slide
+      table.info-table
+        tbody
+          - questions.each do |question|
+            tr.question-block
+              = hidden_field_tag 'company_survey[offered_question_ids][]',
+                question.id,
+                form: 'survey-form',
+                class: 'hidden-question-input'
+
+              = render 'question_row', question: question

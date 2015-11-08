@@ -22,7 +22,13 @@
             span = survey.description
           .col.col03
             span.actions
-              = link_to t('helpers.links.show'), '#'
+              - if survey.answers_through == 'web'
+                = link_to t('helpers.links.show'),
+                  new_surveys_web_survey_path(offered_survey_id: survey.id)
+              - else
+                = link_to t('helpers.links.show'),
+                  new_surveys_email_survey_path
+
               = link_to t('helpers.links.edit'),
                 edit_admin_offered_survey_path(survey)
               = link_to t('helpers.links.destroy'),

@@ -4,7 +4,9 @@ class ResultsController < ApplicationController
   before_action :check_token, only: [:new, :add_result]
 
   def new
-    @survey = CompanySurvey.find(params[:company_survey_id])
+    @survey = CompanySurvey.includes(
+      offered_questions: [:offered_answers, :translations]
+    ).find(params[:company_survey_id])
     @result = @survey.results.build
     @result.answers.build
     @token = params[:token]
@@ -67,6 +69,7 @@ class ResultsController < ApplicationController
         :employee_id,
         answers_attributes: [
           :comment,
+          :user_answer,
           :offered_answer_id
         ]
       ]

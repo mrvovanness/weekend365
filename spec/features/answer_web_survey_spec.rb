@@ -1,9 +1,9 @@
 require 'rails_helper'
 
 describe User, js: true do
-  let!(:survey) { create(:survey_with_linkert_questions) }
-  let!(:token) { create(:token) }
-  let!(:employee_id) { 1 }
+  let(:survey) { create(:survey_with_linkert_questions) }
+  let(:token) { create(:token) }
+  let(:employee_id) { 1 }
 
   before do
     visit new_result_path(survey.id, token.name, employee_id)
@@ -58,6 +58,14 @@ describe User, js: true do
     expect(survey.results.first.answers.first.offered_answer)
       .to eq survey.offered_questions.first.offered_answers.first
     expect(survey.results.first.answers.first.comment).to eq 'Test'
+  end
+
+  it 'save user answer in database' do
+    survey.offered_questions.first.update!(form_of_answers: 'open')
+    visit new_result_path(survey.id, token.name, employee_id)
+    find('.user-answer').set('Test user answer')
+    click_on 'Submit survey'
+    expect(survey.results.first.answers.first.user_answer).to eq 'Test user answer'
   end
 
   it 'remove token after submiting survey' do

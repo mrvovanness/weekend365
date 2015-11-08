@@ -1,0 +1,22 @@
+td.question
+  span.question = question.title
+  td.evaluation
+    - if question.open?
+      .comments-area
+        textarea#text-field01 cols='30' rows='10'
+    - else
+      .agree-holder
+        span.heading
+        .holder.clearfix
+          a.minus -
+          ul.agree
+            - question.offered_answers.each do |answer|
+              li class="color#{answer.value}"
+                a color
+          a.plus +
+    td.comments
+      .comments-holder.popup-holder
+        a.btn-comments.open href="#" comments
+        .popup
+          textarea cols="30" rows="10"
+          a.close href="#" = t('web_survey.form.close')

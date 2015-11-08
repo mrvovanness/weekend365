@@ -142,6 +142,10 @@ pt-BR:
   offered_questions:
     new:
       choose_btn: 'Escolha um arquivo no seu computador'
+    form:
+      scale_1: '1-5 scale'
+      scale_2: '1-10 scale'
+      open: 'open'
   pages:
     about:
       title: "Sobre nós"
@@ -206,6 +210,18 @@ pt-BR:
     comments:
       title: "Comentários"
       selected: "Selecionadas:"
+  web_surveys:
+    form:
+      questions_for_survey: 'Questions for survey'
+      included_questions: 'Included questions'
+      not_included_questions: 'Not included questions'
+      unanswered_questions: "%{questions_count} unanswered questions"
+      show: 'Show'
+      hide: 'Hide'
+      close: 'Close'
+      back_to_surveys: 'Back to surveys'
+      answer_all_questions: 'Answer all questions!'
+      submit_survey: 'Submit survey'
   survey_mailers:
     send_survey:
       title: "Bem Vindo à Weekend"
@@ -215,6 +231,7 @@ pt-BR:
       company_admin: "que administra o serviço pela sua empresa."
       check_out: "Dê uma olhada"
       hint_message: "para receber dicas de como melhorar o Engajamento do funcionário, transformando sua empresa em um lugar melhor para se trabalhar."
+      answer_this_survey: "Answer this survey"
   users:
     index:
       title: "Lista de Admin"

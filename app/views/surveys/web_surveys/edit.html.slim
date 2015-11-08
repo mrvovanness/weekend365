@@ -25,15 +25,17 @@
           = f.radio_button :repeat, false,
             class: 'radio',
             checked: true
-          = f.label :repeat, t('simple_form.labels.surveys.once')
+          = f.label :repeat,
+            t('simple_form.labels.surveys.once')
 
       .block
         .row-holder.clearfix
           = f.radio_button :repeat, true,
             class: 'radio'
-          = f.label :repeat, t('simple_form.labels.surveys.repeat')
-        .block-frame
+          = f.label :repeat,
+            t('simple_form.labels.surveys.repeat')
 
+        .block-frame
           = render 'schedule_form',
             survey: @company_survey,
             f: f
@@ -51,49 +53,17 @@
       input_html: { multiple: true, id: 'employee_ids' },
       placeholder: t('simple_form.placeholders.company_survey.employee_ids'),
       include_blank: false
-    = link_to t('helpers.links.select_all'), '#', id: 'add_all_employees', class: 'select-all'
+    = link_to t('helpers.links.select_all'), '#',
+      id: 'add_all_employees',
+      class: 'select-all'
 
   fieldset
     .box
-      h4 Included Questions
+      h4 = t('web_surveys.form.included_questions')
       - @company_survey.ordered_by_topic_questions.each do |topic, questions|
-        ul.accordion
-          li.topic-block.active
-            .opener-holder.clearfix
-              a.opener.clearfix href="#"
-                span.title = topic
-              a.btn-info.btn-toggle-topic href="#"
-                em Hide
-                span Show
-            .slide
-              table.info-table
-                tbody
-                  - questions.each do |question|
-                    tr.question-block
-                      = hidden_field_tag 'company_survey[offered_question_ids][]',
-                        question.id,
-                        form: 'survey-form',
-                        class: 'hidden-question-input'
+        = render 'ordered_by_topic_questions', topic: topic, questions: questions
 
-                      td.question: span.question = question.title
-                      td.evaluation
-                        .agree-holder
-                          span.heading Agree
-                          .holder.clearfix
-                            a.minus -
-                            ul.agree
-                              - question.offered_answers.each do |answer|
-                                li class="color#{answer.value}"
-                                  a color
-                            a.plus +
-                      td.comments
-                        .comments-holder.popup-holder
-                          a.btn-comments.open href="#" comments
-                          .popup
-                            textarea cols="30" rows="10"
-                            a.close href="#" close
-
-      h4 Not included Questions
+      h4 = t('web_surveys.form.not_included_questions')
       - @not_included_questions.each do |topic, questions|
         ul.accordion
           li.topic-block
@@ -114,23 +84,8 @@
                         class: 'hidden-question-input',
                         disabled: true
 
-                      td: span.question = question.title
-                      td
-                        .agree-holder
-                          span.heading Agree
-                          .holder.clearfix
-                            a.minus -
-                            ul.agree
-                              - question.offered_answers.each do |answer|
-                                li class="color#{answer.value}"
-                                  a color
-                            a.plus +
-                      td
-                        .comments-holder.popup-holder
-                          a.btn-comments.open href="#" comments
-                          .popup
-                            textarea cols="30" rows="10"
-                            a.close href="#" close
+                      = render 'question_row', question: question
+
   .btns-holder.clearfix
     .btns
       = submit_tag 'SAVE', class: 'btn-save web-survey-save'
