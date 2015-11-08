@@ -9,7 +9,7 @@ ja:
     links:
       back: "戻る"
       cancel: "キャンセル"
-      change: "change"
+      change: "編集"
       confirm: "ご確認上で続きますか？"
       destroy: "削除"
       new: "新規"
@@ -38,7 +38,7 @@ ja:
       facebook: "Facebook ページ"
       twitter: "フォロー"
       forgot_password: "パスワードを忘れました。"
-      free_for_beta: "Get a Free Account, click here"
+      free_for_beta: "無料ベータ版はこちらへ"
       login: "ログイン"
       notify: "通知"
       onboard_survey: "オンボードサーベイ"

@@ -14,7 +14,7 @@ ja:
       dialog_title: '社員をサーベイに追加'
   contacts:
     new:
-      title: "無料ベータ版をご利用いただけます。<br />お申し込みフォームはこちらへ"
+      title: "無料ベータ版をご利用いただけます。お申し込みフォームはこちらへ"
   dashboard:
     index:
       title: "ダッシュボード"
@@ -48,18 +48,18 @@ ja:
         industry_average_score: "業界の平均のスコア　日"
       last_comments: "最近のコメント"
       filter:
-        title: "Filter"
-        name: "Name"
-        position: "Position"
-        department: "Department"
-        gender: "Gender"
-        country: "Country"
-        age_between: "Age between"
-        and: " and"
-        date: "Date"
-        from: "From:"
-        to: "To:"
-        reset: "Reset Filter"
+        title: "フィルター"
+        name: "名前"
+        position: "職種"
+        department: "部署"
+        gender: "男女"
+        country: "国"
+        age_between: "年齢"
+        and: " と"
+        date: "日程"
+        from: "　"
+        to: "　"
+        reset: "フィルターリセット"
     graphs:
       global_tendencies: "企業のトレンド"
       local_tendencies: "自社のトレンド"
@@ -74,14 +74,14 @@ ja:
       industry: "業界"
       you: "あなた"
     participation:
-      title: "Participation"
-      department: "Department"
-      rate: "Response Rate"
+      title: "参加"
+      department: "部署"
+      rate: "参加率"
     comments:
-      title: "Comments"
-      see_all: "See all (%{comments_count}) comments"
+      title: "コメント"
+      see_all: "全てのコメントを見る (%{comments_count})"
     department_results:
-      title: "Results"
+      title: "結果"
   devise:
     confirmations:
       show:
@@ -128,7 +128,7 @@ ja:
       title: "社員を編集"
     index:
       by_name: "名前"
-      any_country: "Country (any)"
+      any_country: "国 「すべて」"
       any_department: "部署 「すべて」"
       any_position: "役職 「すべて」"
       any_gender: "男女 「すべて」"
@@ -136,9 +136,9 @@ ja:
       select_all: "すべて"
   home:
     index:
-      free_for_beta: "Free while in beta, try it now"
-      title: "Analitycs for<br/>your company culture"
-      subtitle: "Surveys that will help you keep your Employees Engaged, Reduce Turnover and Grow Profits"
+      free_for_beta: "無料ベータ版はこちらへ"
+      title: "従業員満足度調査サービス<br/>Weekend"
+      subtitle: "従業員の満足度を高め、成長を加速させます"
   offered_questions:
     new:
       choose_btn: '選択してください'
@@ -246,14 +246,14 @@ ja:
         employee:
           attributes:
             email:
-              email: "Email should be present - TRANSLATE IT"
+              email: "メールアドレスは必須"
   "yes": "はい"
   tooltips:
-    strongly_disagree: "Strongly Disagree"
-    disagree: "Disagree"
-    neither: "Neither"
-    agree: "Agree"
-    strongly_agree: "Strongly Agree"
+    strongly_disagree: "とても反対"
+    disagree: "反対"
+    neither: "どちらでもない"
+    agree: "賛成"
+    strongly_agree: "とても賛成"
   footer:
     team: "The Team"
     pricing: "Plans & Pricing"
