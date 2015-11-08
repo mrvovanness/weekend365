@@ -43,6 +43,7 @@ module Admin
         .permit(:title,
                 :topic,
                 :subtopic,
+                :form_of_answers,
                 offered_answer_ids: [])
     end
 
