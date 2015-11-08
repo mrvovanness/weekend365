@@ -9,10 +9,10 @@
     - if answers_with_comments.present?
       - last_answer = answers_with_comments.first
       .info-table id="question-#{question.id}"
-        p.title = question.title
+        /p.title = question.title
         ul.comments
           li.comment
-            span = l(last_answer.created_at, format: :long)
+            span = l(last_answer.created_at, format: :special)
             p = last_answer.comment
             - if answers_with_comments.size > 1
               = link_to t("dashboard.comments.see_all", comments_count: answers_with_comments.size), '#', id: 'see-all-comments'
@@ -21,5 +21,5 @@
           - answers_with_comments.each do |answer|
             - unless answer == last_answer
               li.comment
-                span = l(answer.created_at, format: :long)
+                span = l(answer.created_at, format: :special)
                 p = answer.comment

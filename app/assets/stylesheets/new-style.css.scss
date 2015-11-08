@@ -39,11 +39,21 @@
   p.title {
     margin: 10px;
   }
-  .comments .comment {
-    list-style: none;
-    font: 14px/15px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
-    p {
-      line-height: 1.5;
+  .comments {
+    -webkit-padding-start: 0;
+    -moz-padding-start: 0;
+    -o-padding-start: 0;
+    .comment {
+      list-style: none;
+      font: 14px/15px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
+      span {
+        display: block;
+        margin-bottom: 20px;
+      }
+      p, a {
+        line-height: 1.5;
+        padding-left: 35px;
+      }
     }
   }
   .hide {
@@ -436,10 +446,15 @@ input[type="submit"].submit:hover{
     z-index: 10;
     display: none;
     padding: 7px 10px;
-    margin-top: -30px;
-    margin-left: 14px;
     width: 100px;
     line-height: 16px;
+    margin-left: -75px;
+  }
+  td span.tooltip {
+    margin-top: -50px;
+  }
+  li span.tooltip {
+    margin-top: 10px;
   }
   .color1:hover span.tooltip,
   .color2:hover span.tooltip,
@@ -513,4 +528,24 @@ span.question {
 }
 section#company fieldset {
   width: 100%;
+}
+#comments {
+  .jq-selectbox {
+    width: 100%;
+    .jq-selectbox__select-text {
+      padding-left: 25px;
+    }
+    .jq-selectbox__trigger {
+      left: 0;
+      padding-left: 4px;
+    }
+  }
+  ul {
+    -webkit-padding-start: 0;
+    -moz-padding-start: 0;
+    -o-padding-start: 0;
+    li {
+      padding-left: 0;
+    }
+  }
 }
