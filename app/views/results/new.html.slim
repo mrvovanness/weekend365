@@ -31,7 +31,7 @@
                         .agree-holder
                           /span.heading agree
                           .holder.clearfix
-                            a.minus -
+                            a.plus +
 
                             ul.agree.scale
                               = result_field.fields_for :answers do |a|
@@ -46,7 +46,7 @@
                                       style: 'opacity: 0'
                                     = add_tooltip(answer.value)
 
-                            a.plus +
+                            a.minus -
                       td.comments
                         .comments-holder.popup-holder
                           a.btn-comments.open href="#" comments
