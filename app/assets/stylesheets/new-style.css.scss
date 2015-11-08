@@ -438,14 +438,13 @@ input[type="submit"].submit:hover{
     padding: 7px 10px;
     width: 100px;
     line-height: 16px;
+    margin-left: -75px;
   }
   td span.tooltip {
     margin-top: -50px;
-    margin-left: -75px;
   }
   li span.tooltip {
     margin-top: 10px;
-    margin-left: -70px;
   }
   .color1:hover span.tooltip,
   .color2:hover span.tooltip,

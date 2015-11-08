@@ -1,7 +1,13 @@
+#tabs {
+  padding: 0;
+}
 .ui-widget {
   font: 19px/23px 'freightsans_mediumregular', Arial, Helvetica, sans-serif;
   a.ui-tabs-anchor {
     color: #285b5f;
+  }
+  a.ui-tabs-anchor:focus {
+    outline: none;
   }
 }
 
@@ -73,6 +79,6 @@
 .ui-tabs .ui-tabs-panel {
 	display: block;
 	border-width: 0;
-	padding: 1em 1.4em;
+	padding: 1em 0;
 	background: none;
 }
