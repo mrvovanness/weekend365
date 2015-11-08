@@ -146,9 +146,9 @@ p{margin:0 0 10px;}
 
 }
 .main{
-	background:rgba(249,252,252,0.6) !important;
+	background:#fff;
 	padding:0 33px 9999px 33px;
-	width:100%;
+	width:838px;
 	margin:0 auto -9999px;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
@@ -208,9 +208,9 @@ input[type="submit"].btn-answer {
   vertical-align: top;
   color: #fff;
   font: 0.8em 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
-  background:#fcaf17 image-url('sprite.png') no-repeat 3px -456px;
-  border-radius: 2px;
-  padding: 6px 10px 6px 35px;
+  background:#fcaf17 image-url('sprite.png') no-repeat 3px -455px;
+  border: none;
+  padding: 7px 10px 7px 35px;
   position: relative;
   text-transform: uppercase;
   margin: 0 6px;
