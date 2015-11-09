@@ -83,6 +83,7 @@ q:before{content:''}
 q:after{content:''}
 input[type=tel],
 input[type=email],
+input[type=password],
 textarea,
 input[type=text]{outline:none}
 input[type=submit]:hover{cursor:pointer;}
@@ -668,6 +669,7 @@ input[type="submit"].search,
 }
 .info-form textarea,
 .info-form input[type=number],
+.info-form input[type=password],
 .info-form input[type=text]{
 	float:left;
 	background:#fff;

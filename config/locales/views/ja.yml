@@ -244,6 +244,8 @@ ja:
     new:
       title: "新規アドミン"
       back: "<< アドミンリストに戻る"
+    edit:
+      title: "Edit Profile"
   decorators:
     company_survey:
       header: "調査 #%{id}: %{title}"

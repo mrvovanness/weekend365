@@ -16,6 +16,7 @@ pt-BR:
         update: "Send"
       user:
         create: "Salvar"
+        update: "Salvar"
   simple_form:
     "yes": 'Sim'
     "no": 'Não'
@@ -73,6 +74,7 @@ pt-BR:
       user:
         email: "Email"
         password: "Senha"
+        password_confirmation: "Password confirmation"
         remember_me: "Lembrar Login"
       signup:
         email: "Email"

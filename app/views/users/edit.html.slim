@@ -1,0 +1,24 @@
+#main
+  .inform-panel.clearfix
+    h1
+      = link_to t('users.edit.title'), '#'
+  = simple_form_for @user,
+    html: { class: 'info-form' } do |f|
+    fieldset
+      .row
+        .label-holder
+          = f.label :name
+        = f.input_field :name
+        = f.error :name
+      .row
+        .label-holder
+          = f.label :password
+        = f.input_field :password
+        = f.error :password
+      .row
+        .label-holder
+          = f.label :password_confirmation
+        = f.input_field :password_confirmation
+        = f.error :password_confirmation
+      .row.btn-holder
+        = f.submit class: 'btn-save'

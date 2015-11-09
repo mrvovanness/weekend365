@@ -16,6 +16,7 @@ ja:
         update: "送信"
       user:
         create: "送信"
+        update: "保存"
   simple_form:
     "yes": 'はい'
     "no": 'いいえ'
@@ -73,6 +74,7 @@ ja:
       user:
         email: "メール"
         password: "パスワード"
+        password_confirmation: "Password confirmation"
         remember_me: "今度からログインのまま"
       signup:
         email: "メール"

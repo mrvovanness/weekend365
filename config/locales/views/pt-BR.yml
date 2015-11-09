@@ -244,6 +244,8 @@ pt-BR:
     new:
       title: "Novo Admin"
       back: "<< De Volta para Lista de Admin"
+    edit:
+      title: "Edit Profile"
   decorators:
     company_survey:
       header: "Pesquisa #%{id}: %{title}"
