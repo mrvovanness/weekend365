@@ -14,9 +14,10 @@ td.question
               li class="color#{answer.value}"
                 a color
           a.plus +
-    td.comments
-      .comments-holder.popup-holder
-        a.btn-comments.open href="#" comments
-        .popup
-          textarea cols="30" rows="10"
-          a.close href="#" = t('web_survey.form.close')
+    - unless question.open?
+      td.comments
+        .comments-holder.popup-holder
+          a.btn-comments.open href="#" comments
+          .popup
+            textarea cols="30" rows="10"
+            a.close href="#" = t('web_survey.form.close')

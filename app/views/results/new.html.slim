@@ -59,12 +59,14 @@
                                       = add_tooltip(answer.value)
 
                               a.plus +
-                        td.comments
-                          .comments-holder.popup-holder
-                            a.btn-comments.open href="#" comments
-                            .popup
-                              textarea.comment-input cols="30" rows="10"
-                              a.close href="#" close
+
+                        - unless question.open?
+                          td.comments
+                            .comments-holder.popup-holder
+                              a.btn-comments.open href="#" comments
+                              .popup
+                                textarea.comment-input cols="30" rows="10"
+                                a.close href="#" close
   .btns-right
     = f.submit t('web_surveys.form.answer_all_questions'),
       disabled: true,
