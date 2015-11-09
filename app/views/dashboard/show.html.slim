@@ -17,7 +17,8 @@
     .btns
       - if @survey.answered_by_web_form?
         = link_to t('helpers.titles.edit', model: 'Survey'),
-          edit_surveys_web_survey_path(@survey),
+          edit_surveys_web_survey_path(@survey,
+          offered_survey_id: @survey.offered_survey),
           class: 'btn-edit'
       - else
         = link_to t('helpers.titles.edit', model: 'Survey'),
