@@ -65,4 +65,15 @@ module ApplicationHelper
     }
     content_tag(:span, tooltips[value], class: 'tooltip')
   end
+
+  def value_to_row(value)
+    tooltips = [
+      t('tooltips.strongly_disagree'),
+      t('tooltips.disagree'),
+      t('tooltips.neither'),
+      t('tooltips.agree'),
+      t('tooltips.strongly_agree')
+    ]
+    tooltips[value-1]
+  end
 end

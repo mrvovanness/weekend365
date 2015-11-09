@@ -80,6 +80,7 @@ ja:
     comments:
       title: "コメント"
       see_all: "全てのコメントを見る (%{comments_count})"
+      selected: "Selected: %{selected_value}"
     department_results:
       title: "結果"
   devise:

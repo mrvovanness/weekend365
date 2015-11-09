@@ -80,6 +80,7 @@ pt-BR:
     comments:
       title: "Comments"
       see_all: "See all (%{comments_count}) comments"
+      selected: "Selected: %{selected_value}"
     department_results:
       title: "Results"
   devise:
