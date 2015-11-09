@@ -73,6 +73,7 @@ ja:
       title: "メニュー"
       admin: "管理者"
       edit_company: "会社情報編集"
+      edit_user: "Edit profile"
       log_out: "ログアウト"
     surveys: "サーベイ"
   views:

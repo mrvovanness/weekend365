@@ -74,6 +74,7 @@ pt-BR:
       title: "MENU"
       admin: "Admin"
       edit_company: "Editar Empresa"
+      edit_user: "Edit profile"
       log_out: "Logout"
     surveys: "PESQUISAS"
   views:

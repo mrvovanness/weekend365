@@ -74,6 +74,7 @@ en:
       title: "MENU"
       admin: "Admin"
       edit_company: "Edit company"
+      edit_user: "Edit profile"
       log_out: "Log out"
     surveys: "SURVEYS"
   footer:

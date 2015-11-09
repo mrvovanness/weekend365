@@ -244,6 +244,8 @@ en:
     new:
       title: "Add new Admin"
       back: "<< Back to Admin list"
+    edit:
+      title: "Edit Profile"
   decorators:
     company_survey:
       header: "Survey #%{id}: %{title}"

@@ -28,6 +28,8 @@ header#header.clearfix
           li: i logged in as #{ current_user.name.truncate(11) }
           li = link_to t('upperbar.menu.edit_company'),
                edit_company_path(current_user.company)
+          li = link_to t('upperbar.menu.edit_user'),
+               edit_user_path(current_user)
           li = link_to t('upperbar.menu.log_out'),
                destroy_user_session_path
 
