@@ -201,8 +201,14 @@ input[type="submit"].btn-login,
   background:#fcaf17 image-url('sprite.png') no-repeat 3px -619px;
 }
 input[type="submit"].btn-sign,
-.btns .btn-sign{
-  background: #f26522 image-url('sprite.png') no-repeat 3px -566px;
+.btns .btn-sign {
+  background: -moz-linear-gradient(top,#f26522 0%,#f26522 100%) no-repeat 50px top,
+              image-url('sprite.png') no-repeat --22px -92px,
+              -moz-linear-gradient(top,#f26522 0%,#f26522 100%); /* FF hack */
+
+  background: linear-gradient(to bottom,#f26522 0%,#f26522 100%) no-repeat 50px top,
+              image-url('sprite.png') no-repeat -22px -92px,
+              linear-gradient(to bottom,#f26522 0%,#f26522 100%); /* Standard way */
 }
 input[type="submit"].btn-answer {
   display: inline-block;
@@ -287,7 +293,13 @@ input[type="submit"].btn-answer {
   background:#bb5b07 image-url('sprite.png') no-repeat 3px -619px;
 }
 .btns .btn-sign:hover{
-  background: #ad3114 image-url('sprite.png') no-repeat 3px -566px;
+  background: -moz-linear-gradient(top,#ad3114 0%,#ad3114 100%) no-repeat 50px top,
+  image-url('sprite.png') no-repeat --22px -92px,
+  -moz-linear-gradient(top,#ad3114 0%,#ad3114 100%); /* FF hack */
+
+  background: linear-gradient(to bottom,#ad3114 0%,#ad3114 100%) no-repeat 50px top,
+  image-url('sprite.png') no-repeat -22px -92px,
+  linear-gradient(to bottom,#ad3114 0%,#ad3114 100%); /* Standard way */
 }
 .login-holder{
 	padding-top:6px;
