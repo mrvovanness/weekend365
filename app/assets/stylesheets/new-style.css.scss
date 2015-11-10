@@ -213,11 +213,11 @@
 .accordion > li > .opener-holder > a:before,
 .accordion > li > a.opener:before{
 	content:'';
-  //position: absolute;
+    position: absolute;
 	width:19px;
 	height:19px;
 	background:image-url("sprite.png") no-repeat -138px -155px;
-	top:10px;
+	//top:10px;
 	left:11px;
 }
 .accordion > li > a > .title{
