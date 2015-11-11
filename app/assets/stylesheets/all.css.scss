@@ -202,13 +202,7 @@ input[type="submit"].btn-login,
 }
 input[type="submit"].btn-sign,
 .btns .btn-sign {
-  background: -moz-linear-gradient(top,#f26522 0%,#f26522 100%) no-repeat 50px top,
-              image-url('sprite.png') no-repeat --22px -92px,
-              -moz-linear-gradient(top,#f26522 0%,#f26522 100%); /* FF hack */
-
-  background: linear-gradient(to bottom,#f26522 0%,#f26522 100%) no-repeat 50px top,
-              image-url('sprite.png') no-repeat -22px -92px,
-              linear-gradient(to bottom,#f26522 0%,#f26522 100%); /* Standard way */
+  background: #f26522 image-url('sprite.png') no-repeat 3px -566px;
 }
 input[type="submit"].btn-answer {
   display: inline-block;
