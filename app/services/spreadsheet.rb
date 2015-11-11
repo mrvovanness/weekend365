@@ -30,5 +30,8 @@ class Spreadsheet
         instance = obj.find_or_create_by(record)
       end
     end
+
+  rescue
+    return false
   end
 end

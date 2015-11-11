@@ -44,8 +44,14 @@ class EmployeesController < ApplicationController
   end
 
   def import
-    @company.employees.import(params[:file], @company)
-    redirect_to_company
+    if @company.employees.import(params[:file], @company)
+      flash[:info] = "Employees were successfully imported"
+      redirect_to company_path(@company)
+    else
+      flash[:info] = "Something went wrong, check your csv file"
+      @employee = @company.employees.build
+      render :new
+    end
   end
 
   private
