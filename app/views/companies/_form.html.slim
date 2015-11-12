@@ -47,12 +47,14 @@
         = f.label :employees_number
       = f.input_field :employees_number,
         type: 'text'
-    .row
+    /.row
       .label-holder
         = f.label :employees_registered
       = f.input_field :employees_registered,
         type: 'text'
     .row
-      = f.input_field :subscribed, as: :boolean, inline_label: t('simple_form.labels.company.subscribed')
+      = f.input_field :subscribed,
+        as: :boolean,
+        inline_label: t('simple_form.labels.company.subscribed')
     .row.btn-holder
       = f.submit class: 'btn-save'
