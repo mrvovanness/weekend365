@@ -1,6 +1,6 @@
 .block-info
   .panel
-    span.heading2 = t('dashboard.comments.title')
+    span.heading2 = t('report.comments.title')
 .panel-holder
   = question_select(survey, @answers)
   - survey.offered_questions.includes(:translations).order(:title).each do |question|
@@ -14,11 +14,11 @@
           li.comment
             span = l(last_answer.created_at, format: :special)
             p 
-              b = t('dashboard.comments.selected', selected_value: value_to_row(last_answer.offered_answer.value))
+              b = t('report.comments.selected', selected_value: value_to_row(last_answer.offered_answer.value))
               br
               = last_answer.comment
             - if answers_with_comments.size > 1
-              = link_to t("dashboard.comments.see_all", comments_count: answers_with_comments.size), '#', id: 'see-all-comments'
+              = link_to t("report.comments.see_all", comments_count: answers_with_comments.size), '#', id: 'see-all-comments'
               br
         ul.comments.hide
           - answers_with_comments.each do |answer|
@@ -26,6 +26,6 @@
               li.comment
                 span = l(answer.created_at, format: :special)
                 p 
-                  b = t('dashboard.comments.selected', selected_value: value_to_row(answer.offered_answer.value))
+                  b = t('report.comments.selected', selected_value: value_to_row(answer.offered_answer.value))
                   br
                   = answer.comment

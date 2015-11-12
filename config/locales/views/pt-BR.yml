@@ -15,9 +15,9 @@ pt-BR:
   contacts:
     new:
       title: "Peça a sua conta gratuita da Weekend(beta)"
-  dashboard:
+  report:
     index:
-      title: "Dashboard"
+      title: "Report"
       latest_surveys: "Pesquisas Recentes"
       heads:
         title: "Título"

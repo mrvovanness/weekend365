@@ -15,9 +15,9 @@ en:
   contacts:
     new:
       title: "Get a Weekend(beta) Free Account "
-  dashboard:
+  report:
     index:
-      title: "Dashboard"
+      title: "Report"
       latest_surveys: "Latest Surveys"
       heads:
         title: "Title"

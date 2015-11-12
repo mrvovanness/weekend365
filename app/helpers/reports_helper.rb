@@ -1,4 +1,4 @@
-module DashboardHelper
+module ReportsHelper
   def department_rate(department, survey)
     rate = survey.get_statistics.department_rate(department)
     good_answers = rate[:good]

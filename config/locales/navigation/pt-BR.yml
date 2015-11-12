@@ -24,6 +24,7 @@ pt-BR:
       add_survey: "Nova Pesquisa"
       add_to_survey: "Adicionar selecionados à Pesquisa"
       back_to_dashboard: "Voltar para o Dashboard"
+      back_to_report: "Voltar para o Report"
       back_to_surveys: "<< voltar para a lista de pesquisa"
       blog: "Blog"
       cancel_account: "Cancelar minha conta"
@@ -66,6 +67,7 @@ pt-BR:
     company: "EMPRESA"
     companies: "EMPRESAS"
     dashboard: "DASHBOARD"
+    report: "REPORT"
     languages:
       en: "English"
       ja: "日本語"

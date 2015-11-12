@@ -61,11 +61,11 @@
      span.heading = t('surveys.preview.params_header')
      span.date = [@survey.frequency_overview, @survey.repeat_times].join(' ')
 
-   .btns.style01
-     = link_to t('helpers.links.surveys'),
-       surveys_path,
-       class: 'btn-dashboard'
-     = link_to t('helpers.links.blog'), 'http://blog.weekendcult.com',
-       class: 'btn-blog'
-     = link_to t('helpers.links.create_survey'), '#',
-       class: 'btn-create'
+  .btns.style01
+    = link_to t('helpers.links.surveys'),
+      surveys_path,
+      class: 'btn-report'
+    = link_to t('helpers.links.blog'), 'http://blog.weekendcult.com',
+      class: 'btn-blog'
+    = link_to t('helpers.links.create_survey'), '#',
+      class: 'btn-create'

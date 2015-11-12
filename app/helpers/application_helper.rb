@@ -30,7 +30,7 @@ module ApplicationHelper
 
   def distribution_to_scale(distr_hash)
     if distr_hash.values.sum == 0
-      return content_tag(:span, t('dashboard.show.no_data'), class: 'black')
+      return content_tag(:span, t('report.show.no_data'), class: 'black')
     end
     tooltips = [
       t('tooltips.strongly_disagree'),

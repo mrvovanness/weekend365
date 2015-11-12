@@ -15,7 +15,7 @@ ja:
   contacts:
     new:
       title: "無料ベータ版をご利用いただけます。お申し込みフォームはこちらへ"
-  dashboard:
+  report:
     index:
       title: "ダッシュボード"
       latest_surveys: "最新のサーベイ"

@@ -23,6 +23,7 @@ ja:
       add_to_survey: "サーベイに追加"
       admin_list: "Admin list"
       back_to_dashboard: "ダッシュボードに戻る"
+      back_to_report: "REPORT"
       back_to_surveys: "<< サーベイリストに戻る"
       blog: "ブログ"
       cancel_account: "アカウント削除"
@@ -64,7 +65,7 @@ ja:
   upperbar:
     company: "会社"
     companies: "会社"
-    dashboard: "ダッシュボード"
+    report: "ダッシュボード"
     languages:
       en: "English"
       ja: "日本語"

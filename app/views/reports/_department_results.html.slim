@@ -1,6 +1,6 @@
 .block-info
   .panel
-    span.heading = t('dashboard.department_results.title')
+    span.heading = t('report.department_results.title')
 .panel-holder
   .badge
     div
@@ -8,9 +8,9 @@
     span = "N=#{survey.employees.count}"
   table.participation
     tr
-      th = t('dashboard.participation.department')
+      th = t('report.participation.department')
       th.blank
-      th = t('dashboard.department_results.title')
+      th = t('report.department_results.title')
     - survey.employees.group(:department).order(:department).count.each do |key, value|
       tr
         td = key

@@ -23,6 +23,7 @@ en:
       add_to_survey: "Add selected to Survey"
       admin_list: "Admin list"
       back_to_dashboard: "Back to Dashboard"
+      back_to_report: "Back to Report"
       back_to_surveys: "<< back to surveys list"
       blog: "Blog"
       cancel_account: "Cancel my account"
@@ -66,6 +67,7 @@ en:
     company: "COMPANY"
     companies: "COMPANIES"
     dashboard: "DASHBOARD"
+    report: "REPORT"
     languages:
       en: "English"
       ja: "日本語"

@@ -1,4 +1,4 @@
-class DashboardController < ApplicationController
+class ReportsController < ApplicationController
   before_action :authenticate_user!
   before_action :define_date_filter, only: :show
 
