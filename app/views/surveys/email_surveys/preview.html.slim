@@ -1,70 +1,71 @@
 #main
-  .inform-panel.style01.clearfix
-    h1 = link_to t('surveys.preview.title'), '#'
-  .info-box.color
-    span.heading = @survey.header
-    span.info = t('surveys.preview.success_message')
-    p
-      '#{t('surveys.preview.take_your_time')}
-      '<a href="http://blog.weekendcult.com">#{t('surveys.preview.read_our_blog')}</a>
-      | #{t('surveys.preview.and_get')}<br>
-      | #{t('surveys.preview.updates_on_the_new_trends')}
-  .recommend-area
-    .block-info.clearfix
-      - @survey.offered_questions.each do |question|
-        .panel
-          span.heading
-            = t('surveys.preview.question',
-                 question_title: question.title)
-        <br>
+  #middlebox
+   .inform-panel.style01.clearfix
+     h1 = link_to t('surveys.preview.title'), '#'
+   .info-box.color
+     span.heading = @survey.header
+     span.info = t('surveys.preview.success_message')
+     p
+       '#{t('surveys.preview.take_your_time')}
+       '<a href="http://blog.weekendcult.com">#{t('surveys.preview.read_our_blog')}</a>
+       | #{t('surveys.preview.and_get')}<br>
+       | #{t('surveys.preview.updates_on_the_new_trends')}
+   .recommend-area
+     .block-info.clearfix
+       - @survey.offered_questions.each do |question|
+         .panel
+           span.heading
+             = t('surveys.preview.question',
+                  question_title: question.title)
+         <br>
 
-      .btns
-        - if @survey.answered_by_web_form?
-          = link_to t('helpers.links.edit'),
-            edit_surveys_web_survey_path(@survey,
-            offered_survey_id: @survey.offered_survey.id),
-            class: 'btn-edit'
-        - else
-          = link_to t('helpers.links.edit'),
-            edit_surveys_email_survey_path(@survey),
-            class: 'btn-edit'
+       .btns
+         - if @survey.answered_by_web_form?
+           = link_to t('helpers.links.edit'),
+             edit_surveys_web_survey_path(@survey,
+             offered_survey_id: @survey.offered_survey.id),
+             class: 'btn-edit'
+         - else
+           = link_to t('helpers.links.edit'),
+             edit_surveys_email_survey_path(@survey),
+             class: 'btn-edit'
 
-        = link_to t('helpers.links.undo'),
-          surveys_email_survey_path(@survey),
-          method: :delete,
-          data: { confirm: t('surveys.preview.delete_confirmation') },
-          class: 'btn-undo'
+         = link_to t('helpers.links.undo'),
+           surveys_email_survey_path(@survey),
+           method: :delete,
+           data: { confirm: t('surveys.preview.delete_confirmation') },
+           class: 'btn-undo'
 
-    .send-block.clearfix
-      = simple_form_for @survey,
-        url: update_employees_survey_path(@survey),
-        data: { type: :json, remote: true, method: :patch } do |f|
-        = f.input :employee_ids,
-          collection: @survey.company.employees.order(:name),
-          label: t('simple_form.labels.company_survey.send_to',
-                    employees_count: @survey.employees.count),
-          label_html: { class: 'style01',
-                        id: 'send_to-label' },
-          wrapper_html: { class: 'row' },
-          input_html: { multiple: true,
-                        class: 'style01',
-                        id: 'employee_ids' },
-          include_blank: false
-        br
-        = f.submit t('simple_form.buttons.surveys.preview.submit'),
-          class: 'link-clear'
-        = link_to t('helpers.links.preview_email'),
-          email_preview_survey_path(@survey)
+     .send-block.clearfix
+       = simple_form_for @survey,
+         url: update_employees_survey_path(@survey),
+         data: { type: :json, remote: true, method: :patch } do |f|
+         = f.input :employee_ids,
+           collection: @survey.company.employees.order(:name),
+           label: t('simple_form.labels.company_survey.send_to',
+                     employees_count: @survey.employees.count),
+           label_html: { class: 'style01',
+                         id: 'send_to-label' },
+           wrapper_html: { class: 'row' },
+           input_html: { multiple: true,
+                         class: 'style01',
+                         id: 'employee_ids' },
+           include_blank: false
+         br
+         = f.submit t('simple_form.buttons.surveys.preview.submit'),
+           class: 'link-clear'
+         = link_to t('helpers.links.preview_email'),
+           email_preview_survey_path(@survey)
 
-  .time-holder
-    span.heading = t('surveys.preview.params_header')
-    span.date = [@survey.frequency_overview, @survey.repeat_times].join(' ')
+   .time-holder
+     span.heading = t('surveys.preview.params_header')
+     span.date = [@survey.frequency_overview, @survey.repeat_times].join(' ')
 
-  .btns.style01
-    = link_to t('helpers.links.surveys'),
-      surveys_path,
-      class: 'btn-dashboard'
-    = link_to t('helpers.links.blog'), 'http://blog.weekendcult.com',
-      class: 'btn-blog'
-    = link_to t('helpers.links.create_survey'), '#',
-      class: 'btn-create'
+   .btns.style01
+     = link_to t('helpers.links.surveys'),
+       surveys_path,
+       class: 'btn-dashboard'
+     = link_to t('helpers.links.blog'), 'http://blog.weekendcult.com',
+       class: 'btn-blog'
+     = link_to t('helpers.links.create_survey'), '#',
+       class: 'btn-create'

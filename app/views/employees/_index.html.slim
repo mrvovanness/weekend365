@@ -28,6 +28,7 @@
             options_for_select(company.employees.pluck(:position).uniq, @search.position_eq),
             { include_blank: t('employees.index.any_position') },
             { class: 'checkable sel04' }
+        .col.col06
           = f.submit id: 'combine-search-submit',
             class: 'search'
 
@@ -42,6 +43,7 @@
             span = employee.department
           .col.col03
             span = employee.position
+          .col.col06
             = check_box_tag 'employee_ids[]', employee.id, false,
               id: "employee-#{employee.id}",
               class: 'bulk_actors checkable'
