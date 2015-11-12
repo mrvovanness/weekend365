@@ -1,97 +1,98 @@
 #main
-  .inform-panel.clearfix
-    h1 = link_to t('surveys.edit.title'), '#'
+  #middlebox
+   .inform-panel.clearfix
+     h1 = link_to t('surveys.edit.title'), '#'
 
-  = simple_form_for [:surveys, @company_survey],
-    url: surveys_web_survey_path(@company_survey),
-    html: { class: 'info-form inner', id: 'survey-form' } do |f|
-    = hidden_field_tag :offered_survey_id, @offered_survey.id
-    = hidden_field_tag 'company_survey[offered_question_ids][]', ' '
+   = simple_form_for [:surveys, @company_survey],
+     url: surveys_web_survey_path(@company_survey),
+     html: { class: 'info-form inner', id: 'survey-form' } do |f|
+     = hidden_field_tag :offered_survey_id, @offered_survey.id
+     = hidden_field_tag 'company_survey[offered_question_ids][]', ' '
 
-    fieldset
-      = f.label :title, class: 'heading'
-      .row
-        = f.input_field :title,
-          class: 'style05',
-          value: @company_survey.set_title(@offered_survey,
-                                           @company_survey.company),
-          autofocus: true
-        = f.error :title
+     fieldset
+       = f.label :title, class: 'heading'
+       .row
+         = f.input_field :title,
+           class: 'style05',
+           value: @company_survey.set_title(@offered_survey,
+                                            @company_survey.company),
+           autofocus: true
+         = f.error :title
 
-      span.heading = t('surveys.form.survey_period')
+       span.heading = t('surveys.form.survey_period')
 
-      .block
-        .row-holder.clearfix
-          = f.radio_button :repeat, false,
-            class: 'radio',
-            checked: true
-          = f.label :repeat,
-            t('simple_form.labels.surveys.once')
+       .block
+         .row-holder.clearfix
+           = f.radio_button :repeat, false,
+             class: 'radio',
+             checked: true
+           = f.label :repeat,
+             t('simple_form.labels.surveys.once')
 
-      .block
-        .row-holder.clearfix
-          = f.radio_button :repeat, true,
-            class: 'radio'
-          = f.label :repeat,
-            t('simple_form.labels.surveys.repeat')
+       .block
+         .row-holder.clearfix
+           = f.radio_button :repeat, true,
+             class: 'radio'
+           = f.label :repeat,
+             t('simple_form.labels.surveys.repeat')
 
-        .block-frame
-          = render 'schedule_form',
-            survey: @company_survey,
-            f: f
+         .block-frame
+           = render 'schedule_form',
+             survey: @company_survey,
+             f: f
 
-      = f.input :message,
-        label_html: { class: 'style01' },
-        wrapper_html: { class: 'row' },
-        input_html: { class: 'style01' }
-      = f.error :message
+       = f.input :message,
+         label_html: { class: 'style01' },
+         wrapper_html: { class: 'row' },
+         input_html: { class: 'style01' }
+       = f.error :message
 
-    = f.input :employee_ids,
-      collection: @company_survey.company.employees.order(:name),
-      wrapper_html: { class: 'size01' },
-      label_html: { class: 'style01' },
-      input_html: { multiple: true, id: 'employee_ids' },
-      placeholder: t('simple_form.placeholders.company_survey.employee_ids'),
-      include_blank: false
-    = link_to t('helpers.links.select_all'), '#',
-      id: 'add_all_employees',
-      class: 'select-all'
+     = f.input :employee_ids,
+       collection: @company_survey.company.employees.order(:name),
+       wrapper_html: { class: 'size01' },
+       label_html: { class: 'style01' },
+       input_html: { multiple: true, id: 'employee_ids' },
+       placeholder: t('simple_form.placeholders.company_survey.employee_ids'),
+       include_blank: false
+     = link_to t('helpers.links.select_all'), '#',
+       id: 'add_all_employees',
+       class: 'select-all'
 
-  fieldset
-    .box
-      h4 = t('web_surveys.form.included_questions')
-      - @company_survey.ordered_by_topic_questions.each do |topic, questions|
-        = render 'ordered_by_topic_questions', topic: topic, questions: questions
+   fieldset
+     .box
+       h4 = t('web_surveys.form.included_questions')
+       - @company_survey.ordered_by_topic_questions.each do |topic, questions|
+         = render 'ordered_by_topic_questions', topic: topic, questions: questions
 
-      h4 = t('web_surveys.form.not_included_questions')
-      - @not_included_questions.each do |topic, questions|
-        ul.accordion
-          li.topic-block
-            .opener-holder.clearfix
-              a.opener.clearfix.deleted href="#" style='background-color: #dcdbdb'
-                span.title = topic
-              a.btn-info.btn-toggle-topic href="#" style='background-color: #ef9825'
-                em style='display: none' Hide
-                span style='display: block' Show
-            .slide
-              table.info-table
-                tbody
-                  - questions.each do |question|
-                    tr
-                      = hidden_field_tag 'company_survey[offered_question_ids][]',
-                        question.id,
-                        form: 'survey-form',
-                        class: 'hidden-question-input',
-                        disabled: true
+       h4 = t('web_surveys.form.not_included_questions')
+       - @not_included_questions.each do |topic, questions|
+         ul.accordion
+           li.topic-block
+             .opener-holder.clearfix
+               a.opener.clearfix.deleted href="#" style='background-color: #dcdbdb'
+                 span.title = topic
+               a.btn-info.btn-toggle-topic href="#" style='background-color: #ef9825'
+                 em style='display: none' Hide
+                 span style='display: block' Show
+             .slide
+               table.info-table
+                 tbody
+                   - questions.each do |question|
+                     tr
+                       = hidden_field_tag 'company_survey[offered_question_ids][]',
+                         question.id,
+                         form: 'survey-form',
+                         class: 'hidden-question-input',
+                         disabled: true
 
-                      = render 'question_row', question: question
+                       = render 'question_row', question: question
 
-  .btns-holder.clearfix
-    .btns
-      = submit_tag 'SAVE', class: 'btn-save web-survey-save'
-      <br><br><br>
-      = link_to t('helpers.links.destroy'),
-        survey_path(@company_survey),
-        method: :delete,
-        id: 'delete-survey',
-        data: { confirm: t('helpers.links.confirm') }
+   .btns-holder.clearfix
+     .btns
+       = submit_tag 'SAVE', class: 'btn-save web-survey-save'
+       <br><br><br>
+       = link_to t('helpers.links.destroy'),
+         survey_path(@company_survey),
+         method: :delete,
+         id: 'delete-survey',
+         data: { confirm: t('helpers.links.confirm') }

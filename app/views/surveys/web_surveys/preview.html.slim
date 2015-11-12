@@ -1,31 +1,32 @@
 #main
-  .inform-panel.clearfix
-    h1.company-name = @company_survey.title
-  <br>
-    b = @company_survey.message
+  #middlebox
+   .inform-panel.clearfix
+     h1.company-name = @company_survey.title
+   <br>
+     b = @company_survey.message
 
-    fieldset
-      .box
-      - @company_survey.ordered_by_topic_questions.each do |topic, questions|
-        ul.accordion
-          li.active
-            a.opener.clearfix href='#'
-              span.title = topic
-              span.info
-                = t('web_surveys.form.unanswered_questions',
-                    questions_count: questions.count)
-            .slide style='display: block'
-              table.info-table
-                tbody
-                  - questions.each do |question|
-                    tr.question-block
-                      = render 'question_row', question: question
+     fieldset
+       .box
+       - @company_survey.ordered_by_topic_questions.each do |topic, questions|
+         ul.accordion
+           li.active
+             a.opener.clearfix href='#'
+               span.title = topic
+               span.info
+                 = t('web_surveys.form.unanswered_questions',
+                     questions_count: questions.count)
+             .slide style='display: block'
+               table.info-table
+                 tbody
+                   - questions.each do |question|
+                     tr.question-block
+                       = render 'question_row', question: question
 
-    <br><br>
-    = link_to t('helpers.links.edit'),
-      edit_surveys_web_survey_path(@company_survey,
-      offered_survey_id: @company_survey.offered_survey.id),
-      class: 'btn-save'
-  <br><br><br>
-    = link_to t('helpers.links.preview_email'),
-      email_preview_survey_path(@company_survey)
+     <br><br>
+     = link_to t('helpers.links.edit'),
+       edit_surveys_web_survey_path(@company_survey,
+       offered_survey_id: @company_survey.offered_survey.id),
+       class: 'btn-save'
+   <br><br><br>
+     = link_to t('helpers.links.preview_email'),
+       email_preview_survey_path(@company_survey)

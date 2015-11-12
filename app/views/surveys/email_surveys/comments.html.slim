@@ -1,16 +1,16 @@
 #main
-  .inform-panel.clearfix
-    h1 = t('surveys.comments.title')
-  - @answers.each do |answer|
-    - next if answer.comment.nil?
-    div.commentUnit
-      h4 = t('surveys.comments.selected')
-      div.rating
-        - 10.times.each do |index|
-          span class="#{'selected' if index <= answer.offered_answer.value}"
-      span.posted_at
-        = answer.updated_at.strftime("%A, %B #{answer.updated_at.day.ordinalize}, %Y")
-        ' &nbsp; |
-        = answer.updated_at.strftime("%I:%M")
-      p = answer.comment.titleize
-
+  #middlebox
+   .inform-panel.clearfix
+     h1 = t('surveys.comments.title')
+   - @answers.each do |answer|
+     - next if answer.comment.nil?
+     div.commentUnit
+       h4 = t('surveys.comments.selected')
+       div.rating
+         - 10.times.each do |index|
+           span class="#{'selected' if index <= answer.offered_answer.value}"
+       span.posted_at
+         = answer.updated_at.strftime("%A, %B #{answer.updated_at.day.ordinalize}, %Y")
+         ' &nbsp; |
+         = answer.updated_at.strftime("%I:%M")
+       p = answer.comment.titleize

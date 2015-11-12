@@ -143,21 +143,24 @@ p{margin:0 0 10px;}
 .devise.inner .logo{margin-bottom:57px;}
 .devise .logo img{display:block;}
 .devise #main{
-	padding:234px 33px 9999px 33px;
-	width:838px;
-	margin:0 auto -9999px;
+	padding:0px 0px 0px 0px;
+	width:90%;
+	margin:auto;
 	background:rgba(255,255,255,0.6);
 
 }
+#middlebox{
+	margin:auto;
+	width: 832px;}
 .main{
 	background:#fff;
-	padding:0 33px 9999px 33px;
-	width:838px;
-	margin:0 auto -9999px;
+	padding:0px 0px 0px 0px;
+	width:90%;
+	margin:auto;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 }
-.inner .main{background:none;}
+.inner .main{background:#fff;}
 .devise.inner #main{padding-top:66px;}
 .btns{text-align:center;}
 .btns .holder{margin:0 0 53px;}
@@ -331,32 +334,37 @@ input[type="submit"].btn-answer {
 	margin:0 0 100px;
 }
 #header{
-	background:#343838;
+	background:rgba(255,255,255,0.6);
 	padding:15px 9999px 11px;
 	margin:0 -9999px;
 }
 #header .logo{
+	padding: 14px 25px 12px 25px;
 	float:left;
-	margin:0 36px 0 0;
+	position: absolute;
+	color: #fff;
+	margin:-22px 0px 0px 20px;
+	border-radius: 8px;
+  background-color:  #0d8690;
 }
 #header .links{
-	padding:0;
+//	padding:0 24px 0 0 ;
 	margin:0;
 	list-style:none;
 	text-transform:uppercase;
-	float:left;
+	float:right;
 	letter-spacing:2px;
 	font:14px/22px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
 }
 #header .links.alignright{
 	float:right;
-	padding:0 24px 0 0 ;
+	padding-left:50px;
 }
 /*.links.alignright li{margin:0 0 0 81px;}*/
 .links li{
 	position:relative;
 	float:left;
-	margin:0 0 0 60px;
+	margin:0 0 0 40px;
 }
 .links.alignright li:first-child,
 .links li:first-child{margin:0;}
@@ -375,7 +383,8 @@ input[type="submit"].btn-answer {
 }
 .links > li:hover > a,
 .links > li > a:hover{
-	background:#526262;
+	background:#0d8690;
+	color:#fff;
 }
 .links .company a:after{
 //	padding-left:16px;
@@ -526,7 +535,7 @@ input[type="submit"].search,
 }
 .col input[type="submit"].search{
   float:right;
-  margin:7px -31px 0 0;
+  margin:7px 0px 0 0;
 }
 .search-form input[type="text"]{
 	float:right;
@@ -595,6 +604,7 @@ input[type="submit"].search,
 	padding-right:13px;
 }
 .col.col05{padding:0;}
+.col.col06{float:right;}
 .btn-settings{
 	display:block;
 	text-indent:-9999px;

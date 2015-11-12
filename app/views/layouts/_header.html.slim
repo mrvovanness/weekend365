@@ -1,14 +1,6 @@
 header#header.clearfix
-  = link_to root_path do
-    = image_tag('logo03.png', alt: 'weekend', size: '106x19', class: 'logo')
-  ul.links
-    li.surveys
-      = link_to t('upperbar.surveys'), surveys_path
-    li.company
-      - if current_user.is_admin?
-        = link_to t('upperbar.companies'), companies_path
-      - else
-        = link_to t('upperbar.company'), company_path(current_user.company)
+  ul.header.logo
+    = current_user.company.name.truncate(11)
 
   ul.links.alignright
     li.lang
@@ -22,10 +14,9 @@ header#header.clearfix
               = t("upperbar.languages.#{locale}")
 
     li.username
-      = link_to t('upperbar.menu.title'), '#'
+      = link_to t("#{ current_user.name.truncate(11) }"), '#'
       .drop
         ul
-          li: i logged in as #{ current_user.name.truncate(11) }
           li = link_to t('upperbar.menu.edit_company'),
                edit_company_path(current_user.company)
           li = link_to t('upperbar.menu.edit_user'),
@@ -35,3 +26,12 @@ header#header.clearfix
 
           - if current_user.is_admin?
             li = link_to t('upperbar.menu.admin'), companies_path
+
+  ul.links
+    li.surveys
+      = link_to t('upperbar.surveys'), surveys_path
+    li.company
+      - if current_user.is_admin?
+        = link_to t('upperbar.companies'), companies_path
+      - else
+        = link_to t('upperbar.company'), company_path(current_user.company)
