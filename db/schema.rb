@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109085100) do
+ActiveRecord::Schema.define(version: 20151112114908) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,21 +104,15 @@ ActiveRecord::Schema.define(version: 20151109085100) do
     t.integer  "company_id"
     t.string   "title"
     t.string   "state"
-    t.integer  "number_of_responses",   default: 0
-    t.boolean  "alarm",                 default: false
+    t.integer  "number_of_responses", default: 0
+    t.boolean  "alarm",               default: false
     t.boolean  "repeat"
-    t.date     "finish_on_old"
-    t.integer  "number_of_repeats_old"
-    t.datetime "next_delivery_at_old"
     t.text     "message"
-    t.integer  "repeat_every_old"
-    t.string   "repeat_mode_old"
-    t.integer  "counter",               default: 0
-    t.datetime "start_at_old"
+    t.integer  "counter",             default: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "locale"
-    t.integer  "emails_counter",        default: 0
+    t.integer  "emails_counter",      default: 0
     t.integer  "offered_survey_id"
   end
 
