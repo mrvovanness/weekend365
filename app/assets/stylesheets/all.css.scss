@@ -99,6 +99,9 @@ h1{
 	color:#f26522;
 	margin:0 0 13px;
 }
+h3{
+  font-weight: normal;
+}
 p{margin:0 0 10px;}
 .wrapper-holder{
 	position:relative;
@@ -166,7 +169,7 @@ input[type="submit"].btn-login,
 	font:0.8em 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
 	background:#f26522;
 	border-radius:2pxpx;
-	padding:6px 10px 6px 30px;
+	padding: 8px 12px 8px 34px; //6px 10px 6px 30px;
 	position:relative;
 	text-transform:uppercase;
 	margin:0 6px;
@@ -202,7 +205,13 @@ input[type="submit"].btn-login,
 }
 input[type="submit"].btn-sign,
 .btns .btn-sign {
-  background: #f26522 image-url('sprite.png') no-repeat 3px -566px;
+  background: -moz-linear-gradient(top,#f26522 0%,#f26522 100%) no-repeat 50px top,
+              image-url('sprite.png') no-repeat 3px 3px,
+              -moz-linear-gradient(top,#f26522 0%,#f26522 100%); /* FF hack */
+
+  background: linear-gradient(to bottom,#f26522 0%,#f26522 100%) no-repeat 50px top,
+              image-url('sprite.png') no-repeat 3px 3px,
+              linear-gradient(to bottom,#f26522 0%,#f26522 100%); /* Standard way */
 }
 input[type="submit"].btn-answer {
   display: inline-block;
@@ -288,11 +297,11 @@ input[type="submit"].btn-answer {
 }
 .btns .btn-sign:hover{
   background: -moz-linear-gradient(top,#ad3114 0%,#ad3114 100%) no-repeat 50px top,
-  image-url('sprite.png') no-repeat --22px -92px,
+  image-url('sprite.png') no-repeat 3px 3px,
   -moz-linear-gradient(top,#ad3114 0%,#ad3114 100%); /* FF hack */
 
   background: linear-gradient(to bottom,#ad3114 0%,#ad3114 100%) no-repeat 50px top,
-  image-url('sprite.png') no-repeat -22px -92px,
+  image-url('sprite.png') no-repeat 3px 3px,
   linear-gradient(to bottom,#ad3114 0%,#ad3114 100%); /* Standard way */
 }
 .login-holder{
@@ -371,9 +380,9 @@ input[type="submit"].btn-answer {
 .links .company a:after{
 //	padding-left:16px;
 //	margin-left:-16px;
-	background:image-url("sprite.png") no-repeat -45px -71px;
-	width:12px;
-	height:12px;
+	background:image-url("sprite.png") no-repeat -45px -70px;
+	width:15px;
+	height:15px;
 	left:14px;
 	top: 20px;
 }
@@ -392,9 +401,9 @@ input[type="submit"].btn-answer {
 	top: 19px;
 }
 .links .username a:after{
-	background:image-url("sprite.png") no-repeat -45px -71px;
-	width:12px;
-	height:12px;
+	background:image-url("sprite.png") no-repeat -45px -70px;
+	width:15px;
+	height:15px;
 	left:14px;
 	top: 20px;
 }
@@ -2163,4 +2172,11 @@ a.chart {
 }
 .btns-right {
   text-align: right;
+}
+
+.icon-mail {
+  background: linear-gradient(to bottom, #f26522 0%, #f26522 100%) no-repeat 50px top, image-url('sprite.png') no-repeat -99px -245px, linear-gradient(to bottom, #f26522 0%, #f26522 100%) !important;
+  &:hover{
+    background: linear-gradient(to bottom, #ad3114 0%, #ad3114 100%) no-repeat 50px top, image-url('sprite.png') no-repeat -99px -245px, linear-gradient(to bottom, #ad3114 0%, #ad3114 100%) !important;
+  }
 }
