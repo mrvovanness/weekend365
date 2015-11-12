@@ -3,7 +3,9 @@ class DashboardController < ApplicationController
   before_action :define_date_filter, only: :show
 
   def show
-    @survey = @company.company_surveys.find(params[:id]).decorate
+    @survey = @company.company_surveys.includes(
+      offered_questions: :translations, answers: :offered_answer
+    ).find(params[:id]).decorate
     @search = @company.employees.ransack(params[:q])
     @answers = Answer.filter_by_employees(@search.result, @survey)
       .ransack(@date_filter).result

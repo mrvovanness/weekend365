@@ -4,7 +4,7 @@ class CompanySurvey < ActiveRecord::Base
   belongs_to :company
   belongs_to :offered_survey
   has_one :email_schedule, dependent: :destroy
-  has_many :results
+  has_many :results, dependent: :destroy
   has_many :tokens
   has_many :answers, through: :results
   has_and_belongs_to_many :employees
