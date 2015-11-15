@@ -1,4 +1,20 @@
-.block-info
-  .panel
-    span.heading2 Highest Scoring Questions
-.panel-holder
+ul.accordion
+  li.active
+    a.opener.clearfix href='#'
+      span.title Highest Scoring Questions
+    .slide style='display: block'
+      table.info-table
+        tbody
+          tr.question-block
+            td.subtopic: span.question Topic
+            td.question-short: span.question Questions
+            td.scale: span.question Score
+            td.diff
+          - questions.each do |question|
+            tr.question-block
+              td.subtopic: span.question = question.topic
+              td.question-short: span.question = question.title
+              td.scale
+                = distribution_to_scale(survey.get_statistics.answer_distribution(question, answers))
+              td.comments
+                a.btn-comments.to-comments href='#' id="question-#{question.id}" comments
