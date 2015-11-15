@@ -1,7 +1,8 @@
 #main
   #middlebox
    .inform-panel.clearfix
-     h1 = link_to t('surveys.edit.title'), '#'
+     .page_title
+       h1 = link_to t('surveys.edit.title'), '#'
    = render 'form',
      survey: @survey,
      offered_questions: @offered_questions

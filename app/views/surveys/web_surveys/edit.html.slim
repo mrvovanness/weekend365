@@ -1,7 +1,8 @@
 #main
   #middlebox
    .inform-panel.clearfix
-     h1 = link_to t('surveys.edit.title'), '#'
+     .page_title
+       h1 = t('surveys.edit.title')
 
    = simple_form_for [:surveys, @company_survey],
      url: surveys_web_survey_path(@company_survey),
