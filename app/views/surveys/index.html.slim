@@ -1,13 +1,14 @@
 #main
   .inform-panel.clearfix
-    h1.company-name = t('surveys.index.title')
+    .page_title
+     h1.company-name = t('surveys.index.title')
     = search_form_for @search,
-      url: surveys_path,
-      class: 'search-form',
-      method: :get do |f|
-      fieldset
-        = f.submit
-        = f.text_field :title_cont
+     url: surveys_path,
+     class: 'search-form',
+     method: :get do |f|
+     fieldset
+       = f.submit
+       = f.text_field :title_cont
   .filter-form
     fieldset
       .panel.clearfix

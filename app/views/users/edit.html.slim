@@ -1,7 +1,8 @@
 #main
   .inform-panel.clearfix
-    h1
-      = link_to t('users.edit.title'), '#'
+   .page_title  
+     h1
+       = link_to t('users.edit.title'), '#'
   = simple_form_for @user,
     html: { class: 'info-form' } do |f|
     fieldset

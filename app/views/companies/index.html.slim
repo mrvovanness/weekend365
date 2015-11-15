@@ -1,6 +1,7 @@
 #main
   .inform-panel.clearfix
-    h1.company-name = t('companies.index.title')
+    .page_title
+      h1.company-name = t('companies.index.title')
   .filter-form
     .panel.clearfix
       = link_to t('helpers.links.add_company'),
@@ -39,4 +40,3 @@
                 unless current_user.company == company
     .bottom-panel
       = paginate @companies
-
