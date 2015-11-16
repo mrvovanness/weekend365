@@ -59,8 +59,8 @@
         #overall
           = render 'participation', survey: @survey
           = render 'department_results', survey: @survey
-          /= render 'highest_questions', survey: @survey
-          /= render 'lowest_questions', survey: @survey
+          = render 'highest_questions', survey: @survey, questions: @top_q, answers: @answers
+          = render 'lowest_questions', survey: @survey, questions: @low_q, answers: @answers
           = render 'lists', survey: @survey, answers: @answers
         #comments
           = render 'comments', survey: @survey
