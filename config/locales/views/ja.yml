@@ -47,6 +47,13 @@ ja:
         country_average_score: "国の平均のスコア　日"
         industry_average_score: "業界の平均のスコア　日"
       last_comments: "最近のコメント"
+      score:
+        high_scoring_questions: "Highest Scoring Questions"
+        low_scoring_questions: "Lowest Scoring Questions"
+        topic: "Topic"
+        questions: "Questions"
+        score: "Score"
+        comments: comments
       filter:
         title: "フィルター"
         name: "名前"

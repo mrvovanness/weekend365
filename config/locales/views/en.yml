@@ -47,6 +47,13 @@ en:
         country_average_score: "Average score in your country daily"
         industry_average_score: "Average score in your industry daily"
       last_comments: "Last comments"
+      score:
+        high_scoring_questions: "Highest Scoring Questions"
+        low_scoring_questions: "Lowest Scoring Questions"
+        topic: "Topic"
+        questions: "Questions"
+        score: "Score"
+        comments: comments
       filter:
         title: "Filter"
         name: "Name"
@@ -83,6 +90,7 @@ en:
       selected: "Selected: %{selected_value}"
     department_results:
       title: "Results"
+
   devise:
     confirmations:
       show:

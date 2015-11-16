@@ -47,6 +47,13 @@ pt-BR:
         country_average_score: "Nota média no seu país, dia"
         industry_average_score: "Nota média na sua Indústria, dia"
       last_comments: "Comentários Recentes"
+      score:
+        high_scoring_questions: "Highest Scoring Questions"
+        low_scoring_questions: "Lowest Scoring Questions"
+        topic: "Topic"
+        questions: "Questions"
+        score: "Score"
+        comments: comments
       filter:
         title: "Filter"
         name: "Name"
