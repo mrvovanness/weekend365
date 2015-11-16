@@ -15,8 +15,10 @@ class ReportsController < ApplicationController
 
     if @survey.answered_by_web_form?
       @stat = @survey.get_statistics
-      @top_q = @stat.top_scoring_questions(@answers)
-      @low_q = @stat.low_scoring_questions(@answers)
+      if @answers.present? and @survey.results.present?
+        @top_q = @stat.top_scoring_questions(@answers)
+        @low_q = @stat.low_scoring_questions(@answers)
+      end
     end
 
     respond_to do |format|
