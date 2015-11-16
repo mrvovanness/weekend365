@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery-input-file-text
 //= require moment
 //= require jquery.datetimepicker.js
 //= require jquery.formstyler.js
