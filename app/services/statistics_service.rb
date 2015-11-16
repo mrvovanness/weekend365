@@ -98,7 +98,7 @@ class StatisticsService
     top_question_ids = Hash.new
     top_questions = Array.new
 
-    @survey.offered_questions.each do |question|
+    @survey.offered_questions.includes(:offered_answers).each do |question|
       answers_count = question_answers(question, answers)
       total_answers = answer_distribution(question, answers).values.sum
       answer_percentage = ((answers_count.to_f / total_answers) * 100).round(0)
@@ -126,7 +126,7 @@ class StatisticsService
     low_question_ids = Hash.new
     low_questions = Array.new
 
-    @survey.offered_questions.each do |question|
+    @survey.offered_questions.includes(:offered_answers).each do |question|
       answers_count = question_answers(question, answers)
       total_answers = answer_distribution(question, answers).values.sum
       answer_percentage = ((answers_count.to_f / total_answers) * 100).round(0)
@@ -154,7 +154,7 @@ class StatisticsService
     top_scale_value1 = question.offered_answers.collect(&:value).max(2).first
     top_scale_value2 = question.offered_answers.collect(&:value).max(2).last
     top_offer_answers = question.offered_answers.where("value = ? OR value = ?", top_scale_value1, top_scale_value2)
-    answers_count  = answers.where('(offered_answer_id IN (?) AND result_id IN (?)', top_offer_answers.collect(&:id),
+    answers_count  = answers.where('offered_answer_id IN (?) AND result_id IN (?)', top_offer_answers.collect(&:id),
                                    @survey.results.where(offered_question: question).collect(&:id)).count rescue 0
   end
 

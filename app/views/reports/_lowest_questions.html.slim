@@ -1,14 +1,14 @@
 ul.accordion
   li.active
     a.opener.clearfix href='#'
-      span.title Lowest Scoring Questions
+      span.title = t('report.show.score.low_scoring_questions')
     .slide style='display: block'
       table.info-table
         tbody
           tr.question-block
-            td.subtopic: span.question Topic
-            td.question-short: span.question Questions
-            td.scale: span.question Score
+            td.subtopic: span.question = t('report.show.score.topic')
+            td.question-short: span.question = t('report.show.score.questions')
+            td.scale: span.question = t('report.show.score.score')
             td.diff
           - questions.each do |question|
             tr.question-block
@@ -17,4 +17,4 @@ ul.accordion
               td.scale
                 = distribution_to_scale(survey.get_statistics.answer_distribution(question, answers))
               td.comments
-                a.btn-comments.to-comments href='#' id="question-#{question.id}" comments
+                a.btn-comments.to-comments href='#' id="question-#{question.id}" = t('report.show.score.comments')
