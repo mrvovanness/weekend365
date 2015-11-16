@@ -39,3 +39,5 @@ jQuery ->
     modal: true
     height: 300
     width: 500
+
+  $('#file.upload').inputFileText({ text: $('.csv-uploader .btn-choosing').text() })

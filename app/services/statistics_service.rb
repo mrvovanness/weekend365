@@ -155,7 +155,7 @@ class StatisticsService
     top_scale_value2 = question.offered_answers.collect(&:value).max(2).last
     top_offer_answers = question.offered_answers.where("value = ? OR value = ?", top_scale_value1, top_scale_value2)
     answers_count  = answers.where('(offered_answer_id IN (?) AND result_id IN (?)', top_offer_answers.collect(&:id),
-                                   @survey.results.where(offered_question: question).collect(&:id)).count
+                                   @survey.results.where(offered_question: question).collect(&:id)).count rescue 0
   end
 
   def question_rate(question, answers)
