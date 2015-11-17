@@ -1,4 +1,6 @@
 class ChartsService
+  include SharedMethods
+
   def initialize(survey)
     @survey = survey
   end
@@ -65,6 +67,26 @@ class ChartsService
 
   def get_results_of_one_country(date_filter)
     StatisticsService.new(@survey).all_results_of_one_country(date_filter)
+  end
+
+  def correlation
+    coordinates = []
+    answers = all_answers_by_question
+
+    # id of overall satisfaction question for correlation measure is 91
+    base_question_answers = answers.select { |q| q[:id] == 91 }.first[:answers]
+    answers.each do |qa_hash| # question-answers hash
+      coordinates << { x: find_correlation(qa_hash[:answers],
+                                           base_question_answers),
+                       y: find_average_of_answers(qa_hash[:answers]),
+                       id: qa_hash[:id],
+                       name: qa_hash[:title] }
+    end
+    coordinates
+  end
+
+  def avr_of_base_question
+    OfferedQuestion.find(91).get_answers_array(@survey)[:average]
   end
 
   private

@@ -37,7 +37,7 @@ module Surveys
     end
 
     def update
-      @company_survey.update(company_survey_params).decorate
+      @company_survey.update(company_survey_params)
       if @company_survey.errors.present?
         load_offered_survey
         load_not_included_questions
@@ -55,7 +55,9 @@ module Surveys
       @questions_cache << @question.id
       session[:questions_cache] = @questions_cache
       load_offered_survey
-      @offered_survey = (@offered_survey.offered_questions.to_a + OfferedQuestion.includes(:offered_answers, :translations).find(@questions_cache)).group_by {|q| q.topic}
+      @offered_survey = (@offered_survey.offered_questions.to_a + OfferedQuestion.includes(
+        :offered_answers, :translations
+      ).find(@questions_cache)).group_by {|q| q.topic}
     end
 
     private

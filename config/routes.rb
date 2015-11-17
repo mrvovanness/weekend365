@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   get 'signup' => 'signups#new', as: :new_signup
   post 'signup' => 'signups#create', as: :signups
   as :user do
