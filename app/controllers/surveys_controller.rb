@@ -4,9 +4,11 @@ class SurveysController < ApplicationController
   respond_to :json, only: :update_employees
 
   def index
-    @search = @company.company_surveys
-    .includes(:email_schedule, :offered_survey).ransack(params[:q])
-    @surveys = @search.result.order('email_schedules.start_at DESC').decorate
+    @search = @company.company_surveys.includes(:email_schedule, :offered_survey).completed.ransack(params[:q])
+    @completed_surveys = @search.result.order('email_schedules.start_at DESC').decorate
+
+    @search = @company.company_surveys.includes(:email_schedule, :offered_survey).current.ransack(params[:q])
+    @current_surveys = @search.result.order('email_schedules.start_at DESC').decorate
   end
 
   def new

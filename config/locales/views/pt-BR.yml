@@ -183,6 +183,8 @@ pt-BR:
       weeks: "semanas"
     index:
       title: "Escolha da pesquisa"
+      current_surveys: "Current Surveys"
+      completed_surveys: "Completed Surveys"
       headers:
         title: "Título"
         status: "Status"
@@ -218,6 +220,8 @@ pt-BR:
     comments:
       title: "Comentários"
       selected: "Selecionadas:"
+    listing:
+      no_surveys_present: "No surveys present"
   web_surveys:
     form:
       questions_for_survey: 'Questions for survey'

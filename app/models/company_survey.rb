@@ -13,6 +13,9 @@ class CompanySurvey < ActiveRecord::Base
   accepts_nested_attributes_for :email_schedule, allow_destroy: true
   accepts_nested_attributes_for :results, allow_destroy: true
 
+  scope :completed, -> { where('number_of_repeats < counter') }
+  scope :current, -> { where('number_of_repeats >= counter') }
+
   delegate :start_at,
     :number_of_repeats,
     :repeat_every,
