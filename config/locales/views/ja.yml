@@ -183,6 +183,8 @@ ja:
       weeks: "週"
     index:
       title: "サーベイリスト"
+      current_surveys: "Current Surveys"
+      completed_surveys: "Completed Surveys"
       headers:
         title: "タイトル"
         status: "ステータス"
@@ -218,6 +220,8 @@ ja:
     comments:
       title: "コメント"
       selected: "選択されている："
+    listing:
+      no_surveys_present: "No surveys present"
   web_surveys:
     form:
       questions_for_survey: 'Questions for survey'

@@ -1,0 +1,56 @@
+table
+  thead: tr
+    th.col1 = t('surveys.index.headers.title')
+    th = t('surveys.index.headers.status')
+    th = t('surveys.index.headers.participation_rate')
+    th = t('surveys.index.headers.start_date')
+    th = t('surveys.index.headers.frequency')
+    th = t('surveys.index.headers.edit')
+    th = t('surveys.index.headers.preview')
+    th = t('surveys.index.headers.results')
+  tbody
+    - surveys.each do |survey|
+      tr
+        td.col1 = survey.title
+        td = survey.status
+        td = number_to_percentage(survey.get_statistics.rate, precision: 0)
+        td = survey.start_at.try(:strftime, '%b.%dth/%Y')
+        td = survey.frequency_overview
+
+        - if survey.answered_by_web_form?
+
+          td
+            = link_to t('helpers.links.edit'),
+              edit_surveys_web_survey_path(survey,
+              offered_survey_id: survey.offered_survey),
+              class: 'btn-edit'
+
+          td
+            = link_to t('helpers.links.notify'),
+              preview_surveys_web_survey_path(survey),
+              class: 'btn-notify'
+          td
+            = link_to t('helpers.links.results'),
+              report_path(survey),
+              class: 'btn-results'
+
+        - else
+
+          td
+            = link_to t('helpers.links.edit'),
+              edit_surveys_email_survey_path(survey),
+              class: 'btn-edit'
+
+          td
+            = link_to t('helpers.links.notify'),
+              preview_surveys_email_survey_path(survey),
+              class: 'btn-notify'
+
+          td
+            = link_to t('helpers.links.results'),
+              report_path(survey),
+              class: 'btn-results'
+
+    - unless surveys.present?
+      tr
+        td colspan="8" = t('surveys.listing.no_surveys_present')

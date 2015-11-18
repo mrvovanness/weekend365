@@ -184,6 +184,8 @@ en:
       weeks: "weeks"
     index:
       title: "survey selection"
+      current_surveys: "Current Surveys"
+      completed_surveys: "Completed Surveys"
       headers:
         title: "Title"
         status: "Status"
@@ -219,6 +221,8 @@ en:
     comments:
       title: "Comments"
       selected: "Selected:"
+    listing:
+      no_surveys_present: "No surveys present"
   web_surveys:
     form:
       questions_for_survey: 'Questions for survey'
