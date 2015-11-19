@@ -8,6 +8,9 @@
     .csv-uploader.btn
       span.btn-choosing.hide = t('employees.new.choose_btn')
       = file_field_tag :file, class: 'upload'
+      => link_to t('employees.new.example_csv'),
+        'https://docs.google.com/spreadsheets/d/1ljQroxCWMq5EAvsGz4IfFV0yTegBLhEXBsoHgQqm7_4/edit?usp=sharing',
+        target: '_blank'
       = submit_tag t('buttons.employees.import_csv'),
         class: 'btn-import'
 = render 'form', employee: @employee

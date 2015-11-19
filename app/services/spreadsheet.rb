@@ -26,7 +26,7 @@ class Spreadsheet
         end
         instance.attributes = args
         instance.save if instance.valid?
-      else  
+      else
         instance = obj.find_or_create_by(record)
       end
     end
