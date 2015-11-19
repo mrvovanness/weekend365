@@ -12,12 +12,7 @@ class SurveysController < ApplicationController
   end
 
   def new
-    if @company.employees.empty?
-      flash[:info] = t('flash.employees_list')
-      redirect_to company_path @company
-    else
-      @offered_surveys = OfferedSurvey.includes(:translations).order(created_at: :asc)
-    end
+    @offered_surveys = OfferedSurvey.includes(:translations).order(created_at: :asc)
   end
 
   def destroy

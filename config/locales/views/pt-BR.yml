@@ -132,6 +132,9 @@ pt-BR:
       title: "Adicionar novo Colaborador"
       import_description: 'Você pode adicionar vários funcionários de uma vez através de um arquivo em csv.'
       choose_btn: 'Escolha um arquivo csv no seu computador'
+      example_csv: 'Example csv'
+      supported_formats: 'Supported formats: Excel 2007-2013 (xlsx), CSV'
+      supported_characters: 'Only UTF-8 characters are accepted'
     edit:
       title: "Editar Colaborador"
     index:

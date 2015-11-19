@@ -133,6 +133,9 @@ en:
       title: "Add new employee"
       import_description: 'You can import csv file with a list of employees'
       choose_btn: 'Choose a csv file from your computer'
+      example_csv: 'Example csv'
+      supported_formats: 'Supported formats: Excel 2007-2013 (xlsx), CSV'
+      supported_characters: 'Only UTF-8 characters are accepted'
     edit:
       title: "Edit Employee"
     index:

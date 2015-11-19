@@ -132,6 +132,9 @@ ja:
       title: "社員を追加"
       import_description: '社員のリストをcsvファイルでアップロードができます'
       choose_btn: '選択してください'
+      example_csv: 'Example csv'
+      supported_formats: 'Supported formats: Excel 2007-2013 (xlsx), CSV'
+      supported_characters: 'Only UTF-8 characters are accepted'
     edit:
       title: "社員を編集"
     index:

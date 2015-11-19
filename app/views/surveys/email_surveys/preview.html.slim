@@ -1,7 +1,8 @@
 #main
   #middlebox
    .inform-panel.style01.clearfix
-     h1 = link_to t('surveys.preview.title'), '#'
+     .page_title
+       h1 = t('surveys.preview.title')
    .info-box.color
      span.heading = @survey.header
      span.info = t('surveys.preview.success_message')
@@ -20,15 +21,9 @@
          <br>
 
        .btns
-         - if @survey.answered_by_web_form?
-           = link_to t('helpers.links.edit'),
-             edit_surveys_web_survey_path(@survey,
-             offered_survey_id: @survey.offered_survey.id),
-             class: 'btn-edit'
-         - else
-           = link_to t('helpers.links.edit'),
-             edit_surveys_email_survey_path(@survey),
-             class: 'btn-edit'
+         = link_to t('helpers.links.edit'),
+           edit_surveys_email_survey_path(@survey),
+           class: 'btn-edit'
 
          = link_to t('helpers.links.undo'),
            surveys_email_survey_path(@survey),

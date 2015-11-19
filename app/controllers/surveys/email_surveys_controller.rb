@@ -18,10 +18,16 @@ class Surveys::EmailSurveysController < ApplicationController
   end
 
   def create
-    @survey = @company.company_surveys.create(survey_params).decorate
-    load_offered_survey if @survey.errors.present?
-    respond_with @survey,
-      location: -> { preview_surveys_email_survey_path(@survey) }
+    # Don't allow create survey untill employees not present
+    if @company.employees.empty?
+      flash[:info] = t('flash.employees_list')
+      redirect_to company_path @company
+    else
+      @survey = @company.company_surveys.create(survey_params).decorate
+      load_offered_survey if @survey.errors.present?
+      respond_with @survey,
+        location: -> { preview_surveys_email_survey_path(@survey) }
+    end
   end
 
   def update

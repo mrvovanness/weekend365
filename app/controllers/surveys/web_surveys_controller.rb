@@ -10,10 +10,16 @@ module Surveys
     end
 
     def create
-      @company_survey = @company.company_surveys
-        .create(company_survey_params).decorate
-      load_offered_survey if @company_survey.errors.present?
-      respond_with @company_survey, location: -> { surveys_path }
+      # Don't allow create survey untill employees not present
+      if @company.employees.empty?
+        flash[:info] = t('flash.employees_list')
+        redirect_to company_path @company
+      else
+        @company_survey = @company.company_surveys
+          .create(company_survey_params).decorate
+        load_offered_survey if @company_survey.errors.present?
+        respond_with @company_survey, location: -> { surveys_path }
+      end
     end
 
     def edit
