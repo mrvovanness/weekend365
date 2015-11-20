@@ -9,26 +9,26 @@
         .filter-section
           span = t('report.show.filter.position')
           = f.select :position_eq,
-            options_for_select(@survey.company.employees.pluck(:position).uniq.sort, @search.position_eq),
+            options_for_select(@survey.company.employees.pluck(:position).uniq, @search.position_eq),
             { include_blank: t('employees.index.any_position') },
             { class: 'checkable sel04' }
         .filter-section
           span = t('report.show.filter.department')
           = f.select :department_eq,
-            options_for_select(@survey.company.employees.pluck(:department).uniq.sort, @search.department_eq),
+            options_for_select(@survey.company.employees.pluck(:department).uniq, @search.department_eq),
             { include_blank: t('employees.index.any_department') },
             { class: 'checkable sel04' }
         .filter-section
           span = t('report.show.filter.gender')
           = f.select :gender_eq,
-            options_for_select(@survey.company.employees.pluck(:gender).uniq.sort, @search.gender_eq),
+            options_for_select(@survey.company.employees.pluck(:gender).uniq, @search.gender_eq),
             { include_blank: t('employees.index.any_gender') },
             { class: 'checkable sel04' }
         .filter-section
           span = t('report.show.filter.country')
           = country_select 'q', 'country_eq',
-            { only: @survey.company.employees.pluck(:country).uniq.sort,
-              selected: @search.country_eq, 
+            { only: @survey.company.employees.pluck(:country).uniq,
+              selected: @search.country_eq,
               include_blank: t('employees.index.any_country') },
             { class: 'checkable sel04' }
         .filter-section

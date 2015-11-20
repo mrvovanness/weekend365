@@ -36,9 +36,11 @@ en:
       title: "Survey results"
       params_header: "Frequency, Date and Time"
       participation_rate_score: "Participation Rate"
-      score: "score"
+      phrase: "score"
       no_data: "No Data"
       total: "Total:"
+      overall: "Overall"
+      comments: "Comments"
       chart_titles:
         num_of_responses: "Number of responses daily"
         answers_distribution: "Answers distribution"
@@ -90,7 +92,6 @@ en:
       selected: "Selected: %{selected_value}"
     department_results:
       title: "Results"
-
   devise:
     confirmations:
       show:
