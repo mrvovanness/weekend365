@@ -48,12 +48,12 @@ ja:
         industry_average_score: "業界の平均のスコア　日"
       last_comments: "最近のコメント"
       score:
-        high_scoring_questions: "Highest Scoring Questions"
-        low_scoring_questions: "Lowest Scoring Questions"
-        topic: "Topic"
-        questions: "Questions"
-        score: "Score"
-        comments: comments
+        high_scoring_questions: "トップ点数"
+        low_scoring_questions: "最低点数"
+        topic: "テーマ"
+        questions: "質問"
+        score: "スコア"
+        comments: コメント
       filter:
         title: "フィルター"
         name: "名前"
@@ -70,7 +70,7 @@ ja:
     graphs:
       global_tendencies: "企業のトレンド"
       local_tendencies: "自社のトレンド"
-      period: "For the period from %{date_from} to %{date_to}"
+      period: "%{date_from}から %{date_to}まで"
     phrase:
       good: "とてもいい!"
       normal: "わるくないね!"
@@ -87,7 +87,7 @@ ja:
     comments:
       title: "コメント"
       see_all: "全てのコメントを見る (%{comments_count})"
-      selected: "Selected: %{selected_value}"
+      selected: "選択： %{selected_value}"
     department_results:
       title: "結果"
   devise:
@@ -132,9 +132,9 @@ ja:
       title: "社員を追加"
       import_description: '社員のリストをcsvファイルでアップロードができます'
       choose_btn: '選択してください'
-      example_csv: 'Example csv'
-      supported_formats: 'Supported formats: Excel 2007-2013 (xlsx), CSV'
-      supported_characters: 'Only UTF-8 characters are accepted'
+      example_csv: 'csvの例'
+      supported_formats: 'フォーマット: Excel 2007-2013 (xlsx), CSV'
+      supported_characters: 'UTF-8 キャラクターのみ'
     edit:
       title: "社員を編集"
     index:
@@ -156,7 +156,7 @@ ja:
     form:
       scale_1: '1-5 scale'
       scale_2: '1-10 scale'
-      open: 'open'
+      open: '自由回答'
   pages:
     about:
       title: "Weekendについて"
@@ -186,8 +186,8 @@ ja:
       weeks: "週"
     index:
       title: "サーベイリスト"
-      current_surveys: "Current Surveys"
-      completed_surveys: "Completed Surveys"
+      current_surveys: "回答中"
+      completed_surveys: "回答完了"
       headers:
         title: "タイトル"
         status: "ステータス"
@@ -224,19 +224,19 @@ ja:
       title: "コメント"
       selected: "選択されている："
     listing:
-      no_surveys_present: "No surveys present"
+      no_surveys_present: "サーベイがありません"
   web_surveys:
     form:
-      questions_for_survey: 'Questions for survey'
-      included_questions: 'Included questions'
-      not_included_questions: 'Not included questions'
-      unanswered_questions: "%{questions_count} unanswered questions"
-      show: 'Show'
-      hide: 'Hide'
-      close: 'Close'
-      back_to_surveys: 'Back to surveys'
-      answer_all_questions: 'Answer all questions!'
-      submit_survey: 'Submit survey'
+      questions_for_survey: 'サーベイの質問'
+      included_questions: '使う質問'
+      not_included_questions: '使わない質問'
+      unanswered_questions: "%{questions_count}　未回答"
+      show: '見せる'
+      hide: '隠す'
+      close: '閉める'
+      back_to_surveys: 'サーベイに戻る'
+      answer_all_questions: '質問を全て回答してください!'
+      submit_survey: 'サーベイ送信'
   survey_mailers:
     send_survey:
       title: "Weekendへよこそう"
@@ -246,7 +246,7 @@ ja:
       company_admin: "自分の会社のWeekendの管理者"
       check_out: "見てください"
       hint_message: "事業者の満足度ややりがいを上がる事でもっといい会社の環境を作りましょう。"
-      answer_this_survey: "Answer this survey"
+      answer_this_survey: "このサーベイを回答"
   users:
     index:
       title: "アドミンリスト"
@@ -259,7 +259,7 @@ ja:
       title: "新規アドミン"
       back: "<< アドミンリストに戻る"
     edit:
-      title: "Edit Profile"
+      title: "プロフィール編集"
   decorators:
     company_survey:
       header: "調査 #%{id}: %{title}"
