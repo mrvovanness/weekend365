@@ -36,9 +36,11 @@ pt-BR:
       title: "Resultados da Pesquisa"
       params_header: "Frequencia, Dia e Hora"
       participation_rate_score: "Participação"
-      score: "Nota"
+      phrase: "Nota"
       no_data: "No Data"
       total: "Total:"
+      overall: "Overall"
+      comments: "Comments"
       chart_titles:
         num_of_responses: "Número de respostas diárias"
         answers_distribution: "Distribuição das Respostas"

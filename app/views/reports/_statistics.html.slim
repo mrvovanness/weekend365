@@ -24,7 +24,7 @@ ul.statistics
     b =< survey.get_statistics.latest_reply
 
   li.number-of-responses
-    = t('report.index.heads.number_of_responses')
+    = t('report.index.heads.num_of_responses')
     b =< survey.get_statistics.count
   <br>
 
@@ -35,8 +35,3 @@ ul.statistics
   li.responses
     = t('report.index.heads.responses_last')
     b =< survey.number_of_responses
-
-  li.participation
-    = t('report.show.participation_rate_score')
-    b =< number_to_percentage(survey.get_statistics.rate, precision: 0)
-

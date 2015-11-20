@@ -1,6 +1,6 @@
 header#header.clearfix
   ul.header.logo
-    = current_user.company.name.truncate(15)
+    = @company.try(:name).to_s.truncate(15)
 
   ul.links.alignright
     li.lang

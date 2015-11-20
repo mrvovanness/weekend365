@@ -36,9 +36,11 @@ ja:
       title: "サーベイ結果"
       params_header: "回数、日付、時間"
       participation_rate_score: "参加率"
-      score: "スコア"
+      phrase: "スコア"
       no_data: "No Data"
       total: "Total:"
+      overall: "Overall"
+      comments: "Comments"
       chart_titles:
         num_of_responses: "回答の数　日"
         answers_distribution: "回答の割合"
