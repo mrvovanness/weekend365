@@ -1,5 +1,5 @@
 class OfferedQuestion < ActiveRecord::Base
-  validates :title, presence: true
+  validates :title, :topic, presence: true
 
   has_and_belongs_to_many :company_surveys
   has_many :sqa_assignments, dependent: :destroy

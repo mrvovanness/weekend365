@@ -38,6 +38,9 @@ Rails.application.routes.draw do
       member do
         get 'preview'
       end
+      collection do
+        post 'create_offered_question'
+      end
     end
 
     resources :email_surveys, only: [:new, :create, :edit, :update] do
