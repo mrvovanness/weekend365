@@ -1,11 +1,14 @@
 module Surveys
   class WebSurveysController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_company_survey, except: [:new, :create]
+    before_action :set_company_survey,
+      except: [:new, :create, :create_offered_question]
+    respond_to :js, only: :create_offered_questions
 
     def new
       @company_survey = @company.company_surveys.build.decorate
       @email_schedule = @company_survey.build_email_schedule
+      @offered_question = OfferedQuestion.new
       load_offered_survey
     end
 
@@ -14,10 +17,16 @@ module Surveys
       if @company.employees.empty?
         flash[:info] = t('flash.employees_list')
         redirect_to company_path @company
+
       else
         @company_survey = @company.company_surveys
           .create(company_survey_params).decorate
-        load_offered_survey if @company_survey.errors.present?
+        if @company_survey.errors.present?
+          load_offered_survey
+          @offered_question = OfferedQuestion.new
+        else
+          session[:questions_cache] = nil
+        end
         respond_with @company_survey, location: -> { surveys_path }
       end
     end
@@ -28,7 +37,7 @@ module Surveys
     end
 
     def update
-      @company_survey.update(company_survey_params)
+      @company_survey.update(company_survey_params).decorate
       if @company_survey.errors.present?
         load_offered_survey
         load_not_included_questions
@@ -37,6 +46,16 @@ module Surveys
     end
 
     def preview
+    end
+
+    def create_offered_question
+      @questions_cache = session[:questions_cache]
+      @questions_cache ||= []
+      @question = OfferedQuestion.create!(params[:offered_question].permit!)
+      @questions_cache << @question.id
+      session[:questions_cache] = @questions_cache
+      load_offered_survey
+      @offered_survey = (@offered_survey.offered_questions.to_a + OfferedQuestion.includes(:offered_answers, :translations).find(@questions_cache)).group_by {|q| q.topic}
     end
 
     private

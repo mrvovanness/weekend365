@@ -114,6 +114,9 @@ en:
         country: "Country"
       answer:
         comment: "Please, explain why you chose that option:<br />(This is an ANONIMOUS answer.)"
+      offered_question:
+        topic: 'Topic (questions with the same topic are put on the same group on the survey)'
+        subtopic: 'Sub-topic (useful for a better report after the survey)'
     placeholders:
       signup:
         password: "8 characters minimum"

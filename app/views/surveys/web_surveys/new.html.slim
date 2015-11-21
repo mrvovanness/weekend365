@@ -64,8 +64,37 @@
    h3 = t('web_surveys.form.questions_for_survey')
    fieldset
      .box
-       - @offered_survey.ordered_by_topic_questions.each do |topic, questions|
-         = render 'ordered_by_topic_questions', topic: topic, questions: questions
+       = render partial: 'topic',
+         collection: @offered_survey.ordered_by_topic_questions.to_a
+
+   /= link_to 'Add a New Question', '#',
+     class: 'user-question-start'
+
    .btns-holder.clearfix
      .btns
        = submit_tag 'SAVE', class: 'btn-save web-survey-save'
+
+/Modal window with new question form
+#new-question-form title='Add a New Question'
+  = simple_form_for @offered_question,
+    url: create_offered_question_surveys_web_surveys_path,
+    data: { remote: true, method: :post } do |f|
+      = hidden_field_tag :offered_survey_id, @offered_survey.id
+      = f.input :form_of_answers,
+        collection: [\
+          [t('offered_questions.form.scale_1'), '1-5 scale'],
+          [t('offered_questions.form.open'), 'open']],
+        include_blank: false,
+        label: false
+      <br>
+      .cleanable
+        = f.input :topic
+        <br>
+        = f.input :subtopic
+        <br>
+        = f.input :title, as: :text
+        <br>
+      = f.submit 'Save',
+        class: 'user-question-finish',
+        style: 'border-color: red',
+        disabled: true
