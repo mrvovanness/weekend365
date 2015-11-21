@@ -5,7 +5,7 @@ class EmployeesController < ApplicationController
 
   def index
     @search = @company.employees.ransack(params[:q])
-    @employees = @search.result(distinct: true).order(:name)
+    @employees = @search.result.order(:name)
     respond_with @employees
   end
 
