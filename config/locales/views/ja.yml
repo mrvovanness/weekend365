@@ -285,11 +285,11 @@ ja:
               email: "メールアドレスは必須"
   "yes": "はい"
   tooltips:
-    strongly_disagree: "とても反対"
-    disagree: "反対"
+    strongly_disagree: "非常にそう思うわない"
+    disagree: "そう思わない"
     neither: "どちらでもない"
-    agree: "賛成"
-    strongly_agree: "とても賛成"
+    agree: "そう思う"
+    strongly_agree: "非常にそう思う"
   footer:
     team: "The Team"
     pricing: "Plans & Pricing"

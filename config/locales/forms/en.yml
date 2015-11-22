@@ -101,7 +101,7 @@ en:
       email_schedule:
         start_on: "start on (%{timezone} time)"
         time: "Time"
-        repeat_every: "Repeat every"
+        repeat_every: "Repeat once every"
         finish_on: "Finish on"
         number_of_repeats: "Number of repeats"
       employee:

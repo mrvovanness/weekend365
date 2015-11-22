@@ -85,7 +85,7 @@ pt-BR:
       company_survey:
         start_on: "Começar em (horário de %{timezone})"
         time: "Hora"
-        repeat_every: "Repetir toda"
+        repeat_every: "Repetir uma vez a cada"
         finish_on: "Terminar em"
         number_of_repeats: "Número de repetições"
         message: "Mensagem para os Colaboradores"
@@ -96,7 +96,7 @@ pt-BR:
       email_schedule:
         start_on: "Começar em (horário de %{timezone})"
         time: "Hora"
-        repeat_every: "Repetir toda"
+        repeat_every: "Repetir uma vez a cada"
         finish_on: "Terminar em"
         number_of_repeats: "Número de repetições"
       employee:

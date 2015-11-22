@@ -14,10 +14,10 @@ pt-BR:
       dialog_title: 'Adicionar Colaboradores nas pesquisa'
   contacts:
     new:
-      title: "Peça a sua conta gratuita da Weekend(beta)"
+      title: "Receba a sua conta gratuita da Weekend(beta)"
   report:
     index:
-      title: "Report"
+      title: "Relatório"
       latest_surveys: "Pesquisas Recentes"
       heads:
         title: "Título"
@@ -34,13 +34,13 @@ pt-BR:
         responses_last: "Respostas recentes"
     show:
       title: "Resultados da Pesquisa"
-      params_header: "Frequencia, Dia e Hora"
+      params_header: "Frequência, Dia e Hora"
       participation_rate_score: "Participação"
       phrase: "Nota"
       no_data: "No Data"
       total: "Total:"
-      overall: "Overall"
-      comments: "Comments"
+      overall: "Geral"
+      comments: "Comentário"
       chart_titles:
         num_of_responses: "Número de respostas diárias"
         answers_distribution: "Distribuição das Respostas"
@@ -57,22 +57,22 @@ pt-BR:
         score: "Score"
         comments: comments
       filter:
-        title: "Filter"
-        name: "Name"
-        position: "Position"
-        department: "Department"
-        gender: "Gender"
-        country: "Country"
-        age_between: "Age between"
-        and: " and"
-        date: "Date"
-        from: "From:"
-        to: "To:"
-        reset: "Reset Filter"
+        title: "Filtro"
+        name: "Nome"
+        position: "Posição"
+        department: "Departmento"
+        gender: "Gênero"
+        country: "País"
+        age_between: "Idade entre"
+        and: " e"
+        date: "Data"
+        from: "De:"
+        to: "Até:"
+        reset: "Limpar Filtro"
     graphs:
       global_tendencies: "Tendências para essa pesquisa entre outras empresas"
       local_tendencies: "Tendências dentro da sua empresa"
-      period: "For the period from %{date_from} to %{date_to}"
+      period: "Para o período à partir de %{date_from} até %{date_to}"
     phrase:
       good: "Muito Bom!"
       normal: "Ótimo!"
@@ -83,15 +83,15 @@ pt-BR:
       industry: "Indústria"
       you: "Sua Empresa"
     participation:
-      title: "Participation"
-      department: "Department"
-      rate: "Response Rate"
+      title: "Participação"
+      department: "Departmento"
+      rate: "Resposta"
     comments:
-      title: "Comments"
-      see_all: "See all (%{comments_count}) comments"
-      selected: "Selected: %{selected_value}"
+      title: "Comentários"
+      see_all: "Ver todos (%{comments_count}) comentários"
+      selected: "Selecionados: %{selected_value}"
     department_results:
-      title: "Results"
+      title: "Resultados"
   devise:
     confirmations:
       show:
@@ -134,9 +134,9 @@ pt-BR:
       title: "Adicionar novo Colaborador"
       import_description: 'Você pode adicionar vários funcionários de uma vez através de um arquivo em csv.'
       choose_btn: 'Escolha um arquivo csv no seu computador'
-      example_csv: 'Example csv'
-      supported_formats: 'Supported formats: Excel 2007-2013 (xlsx), CSV'
-      supported_characters: 'Only UTF-8 characters are accepted'
+      example_csv: 'Exemplo de csv'
+      supported_formats: 'Formatos: Excel 2007-2013 (xlsx), CSV'
+      supported_characters: 'Apenas UTF-8 characteres são aceitos'
     edit:
       title: "Editar Colaborador"
     index:
@@ -149,7 +149,7 @@ pt-BR:
       select_all: "Todos(as)"
   home:
     index:
-      free_for_beta: "Free while in beta, try it now"
+      free_for_beta: "Teste de graça enquanto em beta, clique aqui"
       title: "Analytics for<br/>your company culture"
       subtitle: "Surveys that will help you keep your Employees Engaged, Reduce Turnover and Grow Profits"
   offered_questions:
@@ -188,8 +188,8 @@ pt-BR:
       weeks: "semanas"
     index:
       title: "Escolha da pesquisa"
-      current_surveys: "Current Surveys"
-      completed_surveys: "Completed Surveys"
+      current_surveys: "Em Andamento"
+      completed_surveys: "Completas"
       headers:
         title: "Título"
         status: "Status"
@@ -282,14 +282,14 @@ pt-BR:
         employee:
           attributes:
             email:
-              email: "Email should be present - TRANSLATE IT"
+              email: "O campo de email é obrigatório"
   "yes": "Yes"
   tooltips:
-    strongly_disagree: "Strongly Disagree"
-    disagree: "Disagree"
-    neither: "Neither"
-    agree: "Agree"
-    strongly_agree: "Strongly Agree"
+    strongly_disagree: "Discordo Plenamente"
+    disagree: "Discordo"
+    neither: "Não Concordo nem Discordo"
+    agree: "Concordo"
+    strongly_agree: "Concordo Plenamente"
   footer:
     team: "The Team"
     pricing: "Plans & Pricing"
