@@ -1,0 +1,28 @@
+= simple_form_for department, url: department.new_record? ? company_departments_path(company) : company_department_path(company, department),
+                  html: { class: 'info-form' } do |f|
+  fieldset
+    .row
+      .label-holder
+        = f.label :name
+      = f.input_field :name
+      = f.error :name
+    .row
+      .label-holder
+        = f.label :code
+      = f.input_field :code
+      = f.error :code
+    .row
+      .label-holder
+        = f.label :parent
+      = f.input_field :parent_id, label: false,
+          collection: company.departments - department.self_and_descendants, prompt: "Choose Parent Department (if any)",
+          class: 'selectable'
+    .row.btn-holder
+      = link_to t('helpers.links.destroy'),
+                company_department_path(company, department),
+                id: 'delete-department',
+                method: :delete,
+                data: { confirm: t('helpers.links.confirm') }\
+        unless department.new_record?
+
+      = f.submit class: 'btn-save', value:  t('departments.new.save_department')

@@ -46,6 +46,7 @@ gem 'gibbon'
 gem 'statsample'
 gem 'lazy_high_charts'
 gem 'chartkick'
+gem 'awesome_nested_set'
 
 group :development do
   gem 'better_errors'

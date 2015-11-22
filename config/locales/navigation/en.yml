@@ -18,6 +18,7 @@ en:
       about: "about"
       add_admin: "Add new Admin"
       add_company: "New Company"
+      add_department: "New Department(s)"
       add_employee: "New Employee(s)"
       add_survey: "New Survey"
       add_to_survey: "Add selected to Survey"

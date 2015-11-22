@@ -2,9 +2,10 @@ require 'rails_helper'
 
 describe Employee do
   let!(:employee) { create(:employee) }
+  let!(:department) { create(:department) }
   let!(:user) { create(:user, company: employee.company) }
-  let!(:member) { create(:second_employee, position: 'Team member', department: 'Finance', company: employee.company) }
-  let!(:manager) { create(:third_employee, position: 'Manager', department: 'IT', company: employee.company) }
+  let!(:member) { create(:second_employee, position: 'Team member', department: employee.department) }
+  let!(:manager) { create(:third_employee, position: 'Manager', department: employee.department) }
   let!(:survey) { create(:survey_with_schedule, company: employee.company) }
 
   before do
@@ -12,7 +13,7 @@ describe Employee do
       set_company_admin(user.company, user)
     end
     login('ex@mail.com', 'bigsecret')
-    visit company_path(employee.company)
+    visit company_department_path(employee.company, employee.department)
   end
 
   it 'Edit success' do
@@ -38,6 +39,7 @@ describe Employee do
     fill_in 'First name', with: 'Boris'
     fill_in 'Last name', with: 'Siebesma'
     fill_in 'Email', with: 'ex@mail.com'
+    select 'Finance', from: 'employee_department_id'
     click_on 'Save'
     expect(page).to have_content('Employee was successfully created')
   end
@@ -47,6 +49,7 @@ describe Employee do
     fill_in 'employee_first_name', with: ''
     fill_in 'employee_last_name', with: ''
     fill_in 'Email', with: ''
+    select 'Finance', from: 'employee_department_id'
     click_on 'Save'
     expect(page).to have_content('Employee could not be created')
   end
@@ -65,17 +68,18 @@ describe Employee do
       expect(page).to_not have_content member.name
     end
 
-    it 'by department' do
-      select 'Finance', from: 'q_department_eq'
-      expect(page).to_not have_content manager.name
-    end
+    # Not Needed now since now we only show the each department employees under itself.
+    # it 'by department' do
+    #   select 'Finance', from: 'q_department_eq'
+    #   expect(page).to_not have_content manager.name
+    # end
   end
 
   context 'Add selected to survey', js: true do
     before(:each) do
       survey.employee_ids = [employee.id]
       survey.save!
-      visit company_path(employee.company)
+      visit company_department_path(employee.company, employee.department)
     end
 
     it 'can add selected employee to the survey' do

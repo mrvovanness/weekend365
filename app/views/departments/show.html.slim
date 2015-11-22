@@ -1,0 +1,21 @@
+#main
+  .inform-panel.clearfix
+    .page_title
+      h1.company-name = @department.name
+  = search_form_for @search,
+    url: company_department_path(@company, @department),
+    class: 'search-form',
+    method: :get do |f|
+    fieldset
+      = f.submit id: 'full-search-submit'
+      = f.text_field :first_name_or_last_name_or_department_or_position_cont
+  .panel-clearfix
+    = t('departments.show.administrator')
+    =< user_name_with_email(@department_admin).html_safe
+    - if current_user == @department_head || current_user == @company_admin
+      =< link_to t('helpers.links.change'), edit_company_department_path(@company, @department), class: 'link-change'
+    br
+    br
+
+  = render 'employees/index', employees: @employees, department: @department,
+           company: @company, search: @search

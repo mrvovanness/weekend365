@@ -1,0 +1,38 @@
+.filter-form
+  .panel.clearfix
+    = link_to t('helpers.links.add_department'),
+              new_company_department_path(company),
+              class: 'link-add-new'
+    = link_to t('helpers.links.download_csv'),
+              company_path(company, format: :csv),
+              class: 'link-upload'
+  .filter-area
+    = search_form_for search, url: company_path(company) do |f|
+      .sort-panel.clearfix
+        .col.col01
+          = sort_link search, :name, t('departments.index.by_name')
+        .col.col02
+          = sort_link search, :code, t('departments.index.by_code')
+        .col.col03
+          span = t('departments.index.no_of_employees')
+        .col.col04
+          span = t('helpers.actions')
+
+    - departments.each do |department|
+      .row
+        .col.col01
+          span.title = link_to department.name, edit_company_department_path(company, department)
+        .col.col02
+          span = department.code
+        .col.col03
+          span = department.employees_count
+        .col.col04
+          span.actions
+            = link_to t('helpers.links.show'), company_department_path(company, department)
+            = link_to t('helpers.links.edit'), edit_company_department_path(company, department)
+            = link_to t('helpers.links.destroy'),
+                      company_department_path(company, department),
+                      method: :delete,
+                      data: {confirm: t('helpers.links.confirm')}
+  .bottom-panel
+    = paginate departments
