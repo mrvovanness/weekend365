@@ -30,7 +30,7 @@ else
   echo "--> Installing core libs (git, curl, nodejs etc)..."
   apt-get -y install build-essential curl git-core python-software-properties
   apt-get -y install nodejs # needed by Rails to have a Javascript runtime
-  apt-get -y install zlib1g-dev libssl-dev libreadline6-dev libyaml-dev libncurses5-dev libxml2-dev libxslt-dev
+  apt-get -y install zlib1g-dev libssl-dev libreadline6-dev libyaml-dev libncurses5-dev libxml2-dev libxslt-dev libfontconfig
   su vagrant -c "echo +core-libs >> /home/vagrant/.provisioning-progress"
   echo "--> Core libs (git, curl, nodejs etc) are now installed."
 fi
@@ -83,6 +83,17 @@ else
   echo "--> +postgresql is now installed."
 fi
 
+# Install redis
+if grep -q +redis .provisioning-progress; then
+  echo "--> redis is already installed"
+else
+  add-apt-repository -y ppa:chris-lea/redis-server
+  apt-get update -yq
+  apt-get install --no-install-suggests -yq redis-server
+  su vagrant -c "echo +redis >> /home/vagrant/.provisioning-progress"
+  echo "--> +redis intalling finished."
+fi
+
 # Run bundle install in the project
 echo "--> bundle install in the project"
 su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle"
@@ -120,17 +131,6 @@ else
   echo "--> +rails_app/db_setup finished."
 fi
 
-# Install redis
-if grep -q +redis .provisioning-progress; then
-  echo "--> redis is already installed"
-else
-  add-apt-repository -y ppa:chris-lea/redis-server
-  apt-get update -yq
-  apt-get install --no-install-suggests -yq redis-server
-  su vagrant -c "echo +redis >> /home/vagrant/.provisioning-progress"
-  echo "--> +redis intalling finished."
-fi
-
 # Run migrations
 su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:migrate;"
 
@@ -138,5 +138,5 @@ su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exe
 if [ -f /vagrant/tmp/pids/server.pid ]; then
   rm /vagrant/tmp/pids/server.pid
 fi
-su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec foreman start;"
+# su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec foreman start;"
 echo "Rails finished"

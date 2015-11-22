@@ -16,16 +16,18 @@ describe Employee do
   end
 
   it 'Edit success' do
-    click_on employee.name
-    fill_in 'Name', with: 'Boris'
+    click_on employee.name, match: :first
+    fill_in 'First name', with: 'Boris'
+    fill_in 'Last name', with: 'Siebe'
     fill_in 'Email', with: 'exe@mail.com'
     click_on 'Update Employee'
     expect(page).to have_content('Employee was successfully updated')
   end
 
   it 'Edit failure' do
-    click_on employee.name
-    fill_in 'Name', with: ''
+    click_on employee.name, match: :first
+    fill_in 'First name', with: ''
+    fill_in 'Last name', with: ''
     fill_in 'Email', with: ''
     click_on 'Update Employee'
     expect(page).to have_content('Employee could not be updated')
@@ -33,7 +35,8 @@ describe Employee do
 
   it 'Create success' do
     click_on 'New Employee(s)'
-    fill_in 'Name', with: 'Boris'
+    fill_in 'First name', with: 'Boris'
+    fill_in 'Last name', with: 'Siebesma'
     fill_in 'Email', with: 'ex@mail.com'
     click_on 'Save'
     expect(page).to have_content('Employee was successfully created')
@@ -41,7 +44,8 @@ describe Employee do
 
   it 'Create failure' do
     click_on 'New Employee(s)'
-    fill_in 'Name', with: ''
+    fill_in 'employee_first_name', with: ''
+    fill_in 'employee_last_name', with: ''
     fill_in 'Email', with: ''
     click_on 'Save'
     expect(page).to have_content('Employee could not be created')

@@ -32,9 +32,10 @@ describe Company do
   end
 
   it 'full search' do
-    fill_in 'q_name_or_department_or_position_cont',
-      with: company.employees.first.name.slice(0..4)
+    fill_in 'q_first_name_or_last_name_or_department_or_position_cont',
+      with: company.employees.first.first_name.slice(0..4)
     click_on 'full-search-submit'
-    expect(page).to have_content(company.employees.first.name)
+    sleep 10
+    expect(page).to have_content(company.employees.first.first_name)
   end
 end

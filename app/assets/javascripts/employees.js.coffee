@@ -24,6 +24,12 @@ jQuery ->
     mask: true
     lang: $('html').attr('lang')
 
+  $('#employee_joining_date').datetimepicker
+    timepicker: false
+    format: 'Y-m-d'
+    mask: true
+    lang: $('html').attr('lang')
+
   $('#add-selected-to-survey').click (e) ->
     e.preventDefault()
     $('#dialog').dialog('open')

@@ -161,6 +161,12 @@ ActiveRecord::Schema.define(version: 20151124082931) do
     t.date     "birthday"
     t.string   "gender"
     t.string   "country"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.date     "joining_date"
+    t.string   "department_code"
+    t.string   "ethnicity"
+    t.integer  "office_location_id"
   end
 
   add_index "employees", ["company_id"], name: "index_employees_on_company_id", using: :btree
@@ -169,6 +175,7 @@ ActiveRecord::Schema.define(version: 20151124082931) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "value"
+    t.string   "text"
   end
 
   create_table "offered_question_translations", force: :cascade do |t|
@@ -213,6 +220,15 @@ ActiveRecord::Schema.define(version: 20151124082931) do
     t.datetime "updated_at",      null: false
     t.string   "description"
     t.string   "answers_through"
+  end
+
+  create_table "office_locations", force: :cascade do |t|
+    t.string   "country"
+    t.string   "city"
+    t.text     "address"
+    t.integer  "company_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "results", force: :cascade do |t|
