@@ -8,7 +8,7 @@ html lang="#{I18n.locale}"
     = favicon_link_tag 'favicon-16.png', type: 'image/png'
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
-    = javascript_include_tag '//www.google.com/jsapi', 'chartkick'
+    = javascript_include_tag 'highcharts/highcharts', 'chartkick'
     = csrf_meta_tags
   body.inner
     = render 'layouts/ga'

@@ -1,7 +1,6 @@
 header#header.clearfix
   ul.header.logo
     = @company.try(:name).to_s.truncate(15)
-
   ul.links.alignright
     li.lang
       = link_to params.merge(locale: I18n.locale, only_path: true) do

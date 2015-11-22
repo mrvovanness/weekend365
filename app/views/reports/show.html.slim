@@ -53,16 +53,20 @@
             = t('report.show.overall')
           li: a href='#comments'
             = t('report.show.comments')
+          li: a href='#correlation'
+            = t('report.show.correlation.title')
         = render 'filter_form', survey: @survey
         #overall
           = render 'participation', survey: @survey
           = render 'department_results', survey: @survey
-          - if @answers.present? and @survey.results.present?
+          - if @answers.present? && @survey.results.present?
             = render 'highest_questions', survey: @survey, questions: @top_q, answers: @answers
             = render 'lowest_questions', survey: @survey, questions: @low_q, answers: @answers
           = render 'lists', survey: @survey, answers: @answers
         #comments
           = render 'comments', survey: @survey
+        #correlation
+          = render 'correlation', survey: @survey, answers: @answers
     - else
       .columns
         .block-info
@@ -72,5 +76,5 @@
         - @comments.each do |comment|
           li = comment
         = link_to t('helpers.links.all_comments'),
-         comments_surveys_email_survey_path(@survey)
+          comments_surveys_email_survey_path(@survey)
       = render 'graphs', survey: @survey

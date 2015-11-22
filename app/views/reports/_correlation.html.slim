@@ -1,0 +1,115 @@
+- correl_chart = scatter_obj(survey)
+fieldset
+  ul.accordion
+    li.active
+      a.opener.clearfix href='#'
+        span.title = t('report.show.correlation.strengths')
+      .slide style='display: block'
+        table.info-table
+          tbody
+            tr.question-block
+              td.subtopic: span.question = t('report.show.correlation.topic')
+              td.question-short: span.question = t('report.show.correlation.questions')
+              td.scale: span.question = t('report.show.correlation.score')
+              td.diff
+            - @strength_questions.each do |question|
+              tr.question-block
+                td.subtopic: span.question = question.topic
+                td.question-short: span.question = question.title
+                td.scale
+                  = distribution_to_scale(survey.get_statistics.answer_distribution(question, answers))
+                td.comments
+                  a.btn-comments.to-comments href='#' id="question-#{question.id}" = t('report.show.correlation.comments')
+
+  ul.accordion
+    li.active
+      a.opener.clearfix href='#'
+        span.title = t('report.show.correlation.weakness')
+      .slide style='display: block'
+        table.info-table
+          tbody
+            tr.question-block
+              td.subtopic: span.question = t('report.show.correlation.topic')
+              td.question-short: span.question = t('report.show.correlation.questions')
+              td.scale: span.question = t('report.show.correlation.score')
+              td.diff
+            - @weak_questions.each do |question|
+              tr.question-block
+                td.subtopic: span.question = question.topic
+                td.question-short: span.question = question.title
+                td.scale
+                  = distribution_to_scale(survey.get_statistics.answer_distribution(question, answers))
+                td.comments
+                  a.btn-comments.to-comments href='#' id="question-#{question.id}" = t('report.show.correlation.comments')
+
+
+  .block-info
+    .panel
+      span.heading = t('report.show.correlation.graph_block')
+  .panel-holder
+    .badge.correl-graph-badge
+      div
+        = t('report.show.correlation.questions')
+        | :&nbsp;
+        = survey.offered_questions.count
+      div
+        = t('report.show.correlation.participants')
+        | :&nbsp;
+        = survey.employees.count
+    = high_chart('my_id5', correl_chart)
+
+
+  .block-info
+    .panel
+      span.heading = t('report.show.correlation.methods_of_analysis.header')
+    .panel-holder
+      .analysis-text
+        p
+          | We will analyze the satisfaction and dissatisfaction factors that greatly affect the motivation and productivity of employees.&nbsp;
+          | Because of time and cost, it is almost impossible to take action in response to all items that affect dissatisfaction.
+        p
+          | Prioritization becomes really important. Prioritization, importance, will be calculated by the correlation coefficient of the overall evaluation
+          | of the question results.
+        p
+          | Satisfaction factors explains the strengths of the organization; Dissatisfaction factors emphasis on the "need to improve" items. For statistical
+          | reliability more than 20 responses is required.
+
+
+      .analysis-demo
+        .block.left
+          .content-block : span If the importance is low, but satisfaction is high, we should keep maintaining it.
+          .content-block : span Although satisfaction is low, it is not so important to employees, the priority of improvement is low.
+        .block.middle
+          .satisfaction-scale
+            span = t('report.show.correlation.methods_of_analysis.high')
+            = image_tag('arrow_up.png')
+            .outer.bold-text
+              .inner.rotate = t('report.show.correlation.methods_of_analysis.satisfaction')
+            = image_tag('arrow_up.png', class: 'after')
+            span = t('report.show.correlation.methods_of_analysis.low')
+          .analysis-section
+            .section
+              div : span = t('report.show.correlation.methods_of_analysis.maintenance')
+            .section
+              div : span
+                span.bold-text.aligner = t('report.show.correlation.methods_of_analysis.important')
+                | &nbsp;
+                = t('report.show.correlation.methods_of_analysis.maintenance')
+            .section
+              div : span.bold-text = t('report.show.correlation.methods_of_analysis.keep_watch')
+            .section.highlight
+              div : span
+                span.bold-text.aligner = t('report.show.correlation.methods_of_analysis.important')
+                | &nbsp;
+                = t('report.show.correlation.methods_of_analysis.improvement')
+          .importance-scale
+            span
+              = t('report.show.correlation.methods_of_analysis.low')
+              = image_tag('arrow_right.png')
+              span.bold-text = t('report.show.correlation.methods_of_analysis.importance')
+              = image_tag('arrow_right.png')
+              = t('report.show.correlation.methods_of_analysis.high')
+        .block.right
+          .content-block : span It's important to the employees and it is on high satisfaction. These are the strengths of the company, we should strive to maintain and strengthen it.
+          .content-block : span It's important to the employees but they are dissatisfied. Improvement of those items is Top priority.
+

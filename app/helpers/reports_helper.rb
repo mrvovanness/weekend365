@@ -29,4 +29,42 @@ module ReportsHelper
       class: 'selectable',
       id: 'question-select'
   end
+
+  def scatter_obj(company_survey)
+    qa_hashes = company_survey.get_charts.correlation
+    cor_array = qa_hashes.map { |hash| hash[:x] }
+    cc_sum = cor_array.inject { |sum, n| sum + n }
+    cc_average = (cc_sum/qa_hashes.size).round(2)
+    average_of_base_question = qa_hashes.select {|q| q[:id] == 91 }.first[:y]
+
+    strength_q_ids = qa_hashes.select do |hash|
+      hash[:x] > cc_average && hash[:y] > average_of_base_question
+    end.map { |hash| hash[:id] }
+
+    weak_q_ids = qa_hashes.select do |hash|
+      hash[:x] > cc_average && hash[:y] < average_of_base_question
+    end.map { |hash| hash[:id] }
+
+    @strength_questions = company_survey.offered_questions.find(strength_q_ids)
+    @weak_questions = company_survey.offered_questions.find(weak_q_ids)
+
+    LazyHighCharts::HighChart.new('graph', { :style => "height: 490px; width:760px; margin: 50px auto;" }) do |f|
+      f.series(type: 'scatter',
+               name: 'question',
+               data: qa_hashes)
+      f.options[:xAxis] = { title:
+                              { enabled: true, text: 'Importance' },
+                            plot_lines:
+                              [{ value: cc_average,
+                               width: 2, color: 'black' }] }
+      f.options[:yAxis] = { title:
+                              { enabled: true, text: 'Satisfaction'},
+                            plot_lines:
+                              [{ value: average_of_base_question,
+                                 width: 2, color: 'black' }] }
+      f.options[:tooltip] = { enabled: true,
+                              pointFormat:
+                                "{point.name}<br>Satisfaction: {point.y}<br>Importance: {point.x}"}
+    end
+  end
 end
