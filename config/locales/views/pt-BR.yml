@@ -172,8 +172,8 @@ pt-BR:
   home:
     index:
       free_for_beta: "Teste de graça enquanto em beta, clique aqui"
-      title: "Analytics for<br/>your company culture"
-      subtitle: "Surveys that will help you keep your Employees Engaged, Reduce Turnover and Grow Profits"
+      title: "A Cultura da sua Empresa<br/>em Dados"
+      subtitle: "Pesquisas que irão ajudar a manter seus Colaboradores Engajados, Reduzir Rotatividade e Aumentar os Lucros"
   offered_questions:
     new:
       choose_btn: 'Escolha um arquivo no seu computador'

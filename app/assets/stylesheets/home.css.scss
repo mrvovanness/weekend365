@@ -1,10 +1,11 @@
 body.home {
-  font:19px/23px 'sitka_heading', Meiryo UI, Meiryo, Osaka, sans-serif;
+  font:1em 'ms_pgothic', Helvetica, sans-serif;
+  line-height: 1.1em;
 }
 .block1 {
   padding: 100px 25px 50px 25px;
   width: 100%;
-  height: 537px;
+  height: 500px;
   display: table-row;
   background: image-url("topbanner.png") no-repeat center center;
   -webkit-background-size: cover;
@@ -15,9 +16,9 @@ body.home {
 }
 
 .block2 {
-  width: 838px;
+  width: 60%;
   margin: 0 auto;
-  padding: 50px;
+  padding: 40px;
   letter-spacing: 2px;
 }
 
@@ -57,10 +58,10 @@ body.home {
   padding: 0;
   margin: 0;
   list-style: none;
-  text-transform: uppercase;
+//  text-transform: uppercase;
   float: left;
   letter-spacing: 2px;
-  font: 14px/18px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
+  font-size: 1em;
 }
 #head .links.alignright{
   float: right;
@@ -79,21 +80,22 @@ body.home {
 }
 .block1 #container {
   padding-left: 0px;
-  width: 1085px;
+  width: 90%;
 }
 .block1 h1 {
   color: white;
-  text-transform: uppercase;
+//  text-transform: uppercase;
   text-align: center;
-  margin-top: 120px;
-  font: 75px/80px Meiryo UI, Meiryo, Osaka, sans-serif;
+  margin-top: 60px;
+  font-size: 4.38em;
+  line-height: 0.8em;
   font-weight: bold;
 }
 .block1 center {
-  width: 850px;
+  width: 50%;
   margin: 0 auto;
-  font-size: 27px;
-  line-height: 1.2;
+  font-size: 1.3em;
+  line-height: 1.2em;
   letter-spacing: 2px;
 }
 .block1 .lang a {
@@ -116,11 +118,11 @@ body.home {
   background-color: #ef9825;
   border-radius: 30px;
   padding: 16px 20px 16px 20px;
-  margin-top: 20px;
-  font: 16px/18px Meiryo UI, Meiryo, Osaka, sans-serif;
+  margin-top: 30px;
+  font-size: 0.7em;
   font-weight: bolder;
   text-transform: uppercase;
-  width: 320px;
+//  width: 320px;
   text-align:center;
 }
 .block1 .btn-beta:hover {
@@ -133,9 +135,11 @@ body.home {
 }
 .block2 p {
   text-align: center;
+  font-size: 1.1em;
+  line-height: 1.1em;
 }
 .block3 h3 {
-  font-family: Meiryo UI, Meiryo, Osaka, sans-serif;
+//  font-family: 'ms_pgothic', Helvetica, sans-serif;
   text-transform: uppercase;
   font-size: 24px;
 }
@@ -149,6 +153,11 @@ body.home {
   text-align: center;
   vertical-align: middle;
 }
+.block3 p {
+  text-align: left;
+  font-size: 1.1em;
+  line-height: 1.1em;
+}
 .block4 .btn-contact{
   display: inline-block;
   vertical-align: baseline;
@@ -159,7 +168,7 @@ body.home {
   padding: 16px 20px 16px 20px;
   position: relative;
   text-transform: uppercase;
-  margin-left: 10px;
+  margin-left: 40px;
   width: 200px;
   text-align:center;
 }
