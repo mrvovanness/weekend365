@@ -16,6 +16,13 @@
 .col-12 {width: 100%;}
 
 @font-face {
+  font-family: 'ms_pgothic';
+  src: font-url('ms_pgothic.eot');
+  src: font-url('ms_pgothic.eot?#iefix') format('embedded-opentype'),
+  font-url('ms_pgothic.woff') format('woff'),
+  font-url('ms_pgothic.ttf') format('truetype'),
+}
+@font-face {
 	font-family: 'freightsans_mediumscregular';
 	src: font-url('freightsans_mediumsc-webfont.eot');
 	src: font-url('freightsans_mediumsc-webfont.eot?#iefix') format('embedded-opentype'),
@@ -111,7 +118,7 @@ input[type=submit]:hover{cursor:pointer;}
 }
 body.inner{background:#fff;}
 h1{
-	text-transform:uppercase;
+//	text-transform:uppercase;
 	font:39px/40px 'freightsans_mediumscregular', Arial, Helvetica, sans-serif;
 	color:#f26522;
 	margin:0 0 13px;
@@ -512,7 +519,7 @@ input[type="submit"].btn-answer {
 }
 .inform-panel h1 a{
 	position:relative;
-	color:#f6881f;
+	color:#F26522;
 //	padding:0 0 0 40px;
 }
 .inform-panel h1 a:after{
@@ -533,7 +540,7 @@ input[type="submit"].btn-answer {
 h1.inner{
 	font-size:39px;
 	line-height:40px;
-	color:#f6881f;
+	color:#F26522;
 	padding:13px 0 0;
 }
 .inform-panel h1.inner{padding:0;}
@@ -2108,7 +2115,7 @@ input[type="submit"].btn-save:hover{background: #ad3114 image-url("sprite.png") 
   margin-right: 10px;
 }
 #container {
-  width: 904px;
+  width: 90%;
   margin: 0 auto;
   padding-left: 18px;
 }
