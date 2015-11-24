@@ -3,9 +3,10 @@ ul.accordion
     .opener-holder.clearfix
       a.opener.clearfix href="#"
         span.title = topic[0]
-      a.btn-info.btn-toggle-topic href="#"
-        em = t('web_surveys.form.hide')
-        span = t('web_surveys.form.show')
+      - unless topic[1].map(&:base_for_correlation).include?(true)
+        a.btn-info.btn-toggle-topic href="#"
+          em = t('web_surveys.form.hide')
+          span = t('web_surveys.form.show')
     .slide
       table.info-table
         tbody

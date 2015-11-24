@@ -44,6 +44,7 @@ module Admin
                 :topic,
                 :subtopic,
                 :form_of_answers,
+                :base_for_correlation,
                 offered_answer_ids: [])
     end
 

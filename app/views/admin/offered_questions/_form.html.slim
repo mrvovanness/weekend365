@@ -24,5 +24,9 @@
           [t('offered_questions.form.open'), 'open']],
         include_blank: false,
         label: false
+    <br>
+    .row
+      = f.input :base_for_correlation
+
     .row
       = f.submit class: 'btn-save'

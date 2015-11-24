@@ -51,7 +51,7 @@ class ChartsService
       .where(answers: { result: get_results_of_one_industry(date_filter) })
       .group_by_period(period, 'answers.created_at', group_options)
       .average(:value)
-    
+
     round_hash_values(industry_hash)
   end
 
@@ -73,8 +73,14 @@ class ChartsService
     coordinates = []
     answers = all_answers_by_question
 
-    # id of overall satisfaction question for correlation measure is 91
-    base_question_answers = answers.select { |q| q[:id] == 91 }.first[:answers]
+    base_question =
+      OfferedQuestion.find_by(
+        base_for_correlation: true
+      ).try(:id) || 91
+
+    base_question_answers =
+      answers.select { |q| q[:id] == base_question }.first[:answers]
+
     answers.each do |qa_hash| # question-answers hash
       coordinates << { x: find_correlation(qa_hash[:answers],
                                            base_question_answers),
@@ -83,10 +89,6 @@ class ChartsService
                        name: qa_hash[:title] }
     end
     coordinates
-  end
-
-  def avr_of_base_question
-    OfferedQuestion.find(91).get_answers_array(@survey)[:average]
   end
 
   private
