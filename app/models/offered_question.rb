@@ -6,7 +6,7 @@ class OfferedQuestion < ActiveRecord::Base
   has_many :offered_answers, through: :sqa_assignments
   has_many :offered_surveys, through: :sqa_assignments
 
-  before_save :set_default_answers
+  before_save :set_default_answers, :set_base_for_correlation
 
   translates :title, :topic, :subtopic
 
@@ -26,7 +26,15 @@ class OfferedQuestion < ActiveRecord::Base
     end
   end
 
+  def set_base_for_correlation
+    if self.base_for_correlation == true
+      old_base = OfferedQuestion.where(base_for_correlation: true)
+      old_base.each { |q| q.update_column(:base_for_correlation, false)}
+    end
+  end
+
   def open?
     form_of_answers == 'open'
   end
+
 end

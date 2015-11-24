@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe OfferedQuestion do
   let(:question) { create(:question_with_answers) }
+  let(:second_question) { create(:question_with_answers) }
 
   it 'assign answers' do
     expect(question.offered_answers.count).to eq 10
@@ -32,6 +33,19 @@ describe OfferedQuestion do
       linkert_question.form_of_answers = 'open'
       linkert_question.save
       expect(linkert_question.offered_answers.count).to eq 0
+    end
+  end
+
+  context 'base for correlation question' do
+    before do
+      question.base_for_correlation = true
+      question.save
+    end
+
+    it 'discard previous base question when set new base question' do
+      second_question.base_for_correlation = true
+      question.save
+      expect(question.reload.base_for_correlation).to eq false
     end
   end
 
