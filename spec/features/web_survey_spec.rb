@@ -42,7 +42,7 @@ describe User, js: true do
     end
   end
 
-  context 'Hiding questions' do
+  context 'Hiding questions', :excluded do
     before do
       first('.btn-toggle-topic').click
       click_on 'SAVE'
@@ -102,7 +102,7 @@ describe User, js: true do
     end
   end
 
-  it 'can attach some questions again' do
+  it 'can attach some questions again', :excluded do
     2.times { first('.btn-toggle-topic').click }
     click_on 'SAVE'
     expect(page).to have_content('Company survey was successfully created')

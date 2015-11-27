@@ -1,1 +1,3 @@
---color -r turnip/rspec
+--color
+# Exclude some examples with tag
+--tag ~excluded
