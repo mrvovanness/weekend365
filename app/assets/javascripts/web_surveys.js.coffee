@@ -37,6 +37,11 @@ jQuery ->
     $(this).parent().fadeOut(100)
     $(this).parents('.popup-holder').removeClass('popup-active')
 
+  $('.box').on 'click', '.popup-active .btn-comments.open', (e) ->
+    e.preventDefault()
+    $(this).next('.popup').fadeOut(100)
+    $(this).parents('.popup-holder').removeClass('popup-active')
+
   # Change appearence of topic when toggling show/hide
   $('.box').on 'click', '.btn-toggle-topic', (e) ->
     e.preventDefault()
