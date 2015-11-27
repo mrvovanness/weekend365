@@ -1,4 +1,4 @@
-# rake db:seed:employees_surveys
+# rake db:seed:employees
 # Default admin company
 company = Company.find_by(name: 'Brazilian Tunes')
 puts "Creating fake employees for #{ company.name } ..."
@@ -7,6 +7,9 @@ puts "Creating fake employees for #{ company.name } ..."
     name: FFaker::Name.name,
     email: FFaker::Internet.disposable_email,
     position: ['Team Member', 'Manager'].sample,
+    gender: ['male', 'female'].sample,
+    birthday: rand(40.years).seconds.ago,
+    country: ['JP', 'BR'].sample,
     department: ['Sales', 'HR', 'Security', 'IT', 'Finance'].sample)
 
   new_employee.save(validate: false)
