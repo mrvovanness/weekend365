@@ -215,15 +215,6 @@ ActiveRecord::Schema.define(version: 20151124082931) do
     t.string   "answers_through"
   end
 
-  create_table "office_locations", force: :cascade do |t|
-    t.string   "country"
-    t.string   "city"
-    t.text     "address"
-    t.integer  "company_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "results", force: :cascade do |t|
     t.integer  "employee_id"
     t.integer  "offered_question_id"

@@ -9,6 +9,7 @@ module SharedMethods
         {
           id: k.id,
           title: k.title,
+          base: k.base_for_correlation,
           answers: v.map { |a| a.offered_answer.value }
         }
       end

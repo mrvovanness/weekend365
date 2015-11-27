@@ -76,7 +76,7 @@ class ChartsService
     base_question =
       OfferedQuestion.find_by(
         base_for_correlation: true
-      ).try(:id) || 91
+      ).try(:id)
 
     base_question_answers =
       answers.select { |q| q[:id] == base_question }.first[:answers]
@@ -86,6 +86,7 @@ class ChartsService
                                            base_question_answers),
                        y: find_average_of_answers(qa_hash[:answers]),
                        id: qa_hash[:id],
+                       base: qa_hash[:base],
                        name: qa_hash[:title] }
     end
     coordinates

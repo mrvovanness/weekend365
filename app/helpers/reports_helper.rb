@@ -35,7 +35,7 @@ module ReportsHelper
     cor_array = qa_hashes.map { |hash| hash[:x] }
     cc_sum = cor_array.inject { |sum, n| sum + n }
     cc_average = (cc_sum/qa_hashes.size).round(2)
-    average_of_base_question = qa_hashes.select {|q| q[:id] == 91 }.first[:y]
+    average_of_base_question = qa_hashes.select {|q| q[:base] == true }.first[:y]
 
     strength_q_ids = qa_hashes.select do |hash|
       hash[:x] > cc_average && hash[:y] > average_of_base_question

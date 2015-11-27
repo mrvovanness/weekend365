@@ -1,17 +1,16 @@
-I18n.locale = :ja
-company = Company.find_by(name: 'ツクダ株式会社')
+puts 'Creating results for admin_company'
 
-puts "Creating results for company #{company.name}"
+company = Company.find_by(name: 'Brazilian Tunes')
 
 offered_surveys = OfferedSurvey.where({
-  title: ['ダイバーシティ', 'イノベーション']
+  title: ['Offered survey number 0', 'Offered survey number 1']
 })
 
 offered_surveys.each do |offered_survey|
   puts "Creating company survey with offered survey #{offered_survey.title}"
   next if company.company_surveys.map(&:offered_survey_id).include?(offered_survey.id)
-  company_survey = company.company_surveys.create!(
-    title: "#{offered_survey.title} #{company.name}",
+  company_survey = company.company_surveys.create(
+    title: "#{offered_survey.title} for #{company.name}",
     repeat: true,
     offered_survey: offered_survey,
     email_schedule_attributes: {
@@ -48,3 +47,5 @@ offered_surveys.each do |offered_survey|
     end
   end
 end
+
+puts "Created #{Answer.count} answers"

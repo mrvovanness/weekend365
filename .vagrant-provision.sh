@@ -104,9 +104,9 @@ fi
 
 # Create seed + sample data in database
 if grep -q +rails_app/db_setup .provisioning-progress; then
-  echo "--> database already setup and seeds present"
+  echo "--> database already setup and sample data present"
 else
-  echo "--> setup db + seed data"
+  echo "--> setup db + sample data"
   ln -svf /vagrant/config/database.sample.yml /vagrant/config/database.yml
   ln -svf /vagrant/.vagrant-skel/application.yml /vagrant/config/application.yml
   su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:setup;"
@@ -114,6 +114,8 @@ else
   su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:seed:admin;"
   su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:seed:company_admins;"
   su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:seed:employees;"
+  su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:seed:offered_surveys;"
+  su vagrant -c "export PATH=/home/vagrant/ruby/bin:$PATH; cd /vagrant; bundle exec rake db:seed:results;"
   su vagrant -c "echo +rails_app/db_setup >> /home/vagrant/.provisioning-progress"
   echo "--> +rails_app/db_setup finished."
 fi
