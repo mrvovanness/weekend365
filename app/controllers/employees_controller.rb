@@ -11,6 +11,7 @@ class EmployeesController < ApplicationController
 
   def new
     @employee = @company.employees.build
+    @employee.build_office_location
   end
 
   def edit
@@ -66,7 +67,7 @@ class EmployeesController < ApplicationController
 
   def employee_params
     params.require(:employee).permit(
-      :name, :department, :position,
-      :email, :gender, :birthday, :country)
+      :first_name, :last_name, :department, :department_code, :position,
+      :email, :gender, :joining_date, :ethnicity, :birthday, :country)
   end
 end

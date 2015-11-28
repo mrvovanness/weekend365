@@ -1,20 +1,27 @@
 class Employee < ActiveRecord::Base
   before_validation :normalize_email
-  validates :name, :email, presence: true
+  validates :first_name, :last_name, :email, presence: true
   # Gem 'validate'
   validates :email, email: true
 
   has_many :results
   has_many :answers, through: :results
   belongs_to :company
+  belongs_to :office_location
   has_and_belongs_to_many :company_surveys
+
+  #delegate :country, :address, :city, to: :office_location
 
   ransacker :age, formatter: proc { |v| Date.today - v.to_i.year } do |parent|
     parent.table[:birthday]
   end
 
+  def name
+    self[:name] || [first_name, last_name].join(' ')
+  end
+
   def self.to_csv
-    attributes = %w(name email department position)
+    attributes = %w(first_name last_name email department position)
     CSV.generate(headers: true) do |csv|
       csv << attributes
       all.each do |user|

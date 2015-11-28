@@ -6,8 +6,11 @@ class Company < ActiveRecord::Base
   has_many :company_surveys, dependent: :destroy
   has_many :results, through: :employees
   has_many :users, inverse_of: :company, dependent: :destroy
+  has_many :office_locations, dependent: :destroy
 
   after_update :check_subscription
+
+  #delegate :country, :address, :city, to: :office_locations
 
   def admin
     User.with_role(:company_admin, self).first

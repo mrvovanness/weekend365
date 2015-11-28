@@ -3,13 +3,27 @@
   fieldset
     .row
       .label-holder
-        = f.label :name
-      = f.input_field :name
-      = f.error :name
+        = f.label :first_name
+      = f.input_field :first_name
+      = f.error :first_name
+    .row
+      .label-holder
+        = f.label :last_name
+      = f.input_field :last_name
+      = f.error :last_name
     .row
       .label-holder
         = f.label :department
       = f.input_field :department
+    .row
+      .label-holder
+        = f.label :department_code
+      = f.input_field :department_code
+    .row
+      .label-holder
+        = f.label :joining_date
+      = f.input_field :joining_date, as: :string,
+        class: 'selectable'
     .row
       .label-holder
         = f.label :position
@@ -33,7 +47,13 @@
     .row
       .label-holder
         = f.label :country
-      = f.input_field :country, 
+      = f.input_field :country,
+        class: 'selectable'
+
+    .row
+      .label-holder
+        = f.label :ethnicity
+      = f.input_field :ethnicity, as: :country,
         class: 'selectable'
     .row.btn-holder
       = link_to t('helpers.links.destroy'),

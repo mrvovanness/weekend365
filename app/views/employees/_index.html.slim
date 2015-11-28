@@ -17,7 +17,7 @@
     = search_form_for search, url: company_path(company) do |f|
       .sort-panel.clearfix
         .col.col01
-          = sort_link search, :name, t('employees.index.by_name')
+          = sort_link search, [:first_name, :last_name].join(' '), t('employees.index.by_name')
         .col.col02
           = f.select :department_eq,
             options_for_select(company.employees.pluck(:department).uniq, @search.department_eq),
