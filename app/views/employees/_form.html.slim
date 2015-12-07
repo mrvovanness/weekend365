@@ -1,4 +1,4 @@
-= simple_form_for employee,
+= simple_form_for employee, url: employee.new_record? ? company_department_employees_path(@company, @department) : company_department_employee_path(@company, @department, employee),
   html: { class: 'info-form' } do |f|
   fieldset
     .row
@@ -14,11 +14,9 @@
     .row
       .label-holder
         = f.label :department
-      = f.input_field :department
-    .row
-      .label-holder
-        = f.label :department_code
-      = f.input_field :department_code
+      = f.input_field :department_id, label: false,
+        collection: @company.departments,
+        class: 'selectable'
     .row
       .label-holder
         = f.label :joining_date

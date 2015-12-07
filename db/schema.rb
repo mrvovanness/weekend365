@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124082931) do
+ActiveRecord::Schema.define(version: 20151126205049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -135,6 +135,23 @@ ActiveRecord::Schema.define(version: 20151124082931) do
   add_index "company_surveys_offered_questions", ["company_survey_id"], name: "index_company_surveys_offered_questions_on_company_survey_id", using: :btree
   add_index "company_surveys_offered_questions", ["offered_question_id"], name: "index_company_surveys_offered_questions_on_offered_question_id", using: :btree
 
+  create_table "departments", force: :cascade do |t|
+    t.string   "name"
+    t.string   "code"
+    t.integer  "parent_id"
+    t.integer  "lft",                        null: false
+    t.integer  "rgt",                        null: false
+    t.integer  "depth",          default: 0, null: false
+    t.integer  "children_count", default: 0, null: false
+    t.integer  "company_id"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "departments", ["lft"], name: "index_departments_on_lft", using: :btree
+  add_index "departments", ["parent_id"], name: "index_departments_on_parent_id", using: :btree
+  add_index "departments", ["rgt"], name: "index_departments_on_rgt", using: :btree
+
   create_table "email_schedules", force: :cascade do |t|
     t.datetime "start_at"
     t.date     "finish_on"
@@ -167,6 +184,7 @@ ActiveRecord::Schema.define(version: 20151124082931) do
     t.string   "department_code"
     t.string   "ethnicity"
     t.integer  "office_location_id"
+    t.integer  "department_id"
   end
 
   add_index "employees", ["company_id"], name: "index_employees_on_company_id", using: :btree
@@ -175,7 +193,6 @@ ActiveRecord::Schema.define(version: 20151124082931) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "value"
-    t.string   "text"
   end
 
   create_table "offered_question_translations", force: :cascade do |t|

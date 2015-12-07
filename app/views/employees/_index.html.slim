@@ -1,10 +1,10 @@
 .filter-form
   .panel.clearfix
     = link_to t('helpers.links.add_employee'),
-      new_employee_path,
+      new_company_department_employee_path(company, department),
       class: 'link-add-new'
     = link_to t('helpers.links.download_csv'),
-      company_path(company, format: :csv),
+      company_department_path(company, department, format: :csv),
       class: 'link-upload'
     = link_to t('employees.index.delete_selected').html_safe, '#',
       class: 'link-delete',
@@ -14,15 +14,12 @@
       = label_tag 'select_all', t('employees.index.select_all')
       = check_box_tag 'select_all', nil, false
   .filter-area
-    = search_form_for search, url: company_path(company) do |f|
+    = search_form_for search, url: company_department_path(company, department) do |f|
       .sort-panel.clearfix
         .col.col01
           = sort_link search, [:first_name, :last_name].join(' '), t('employees.index.by_name')
         .col.col02
-          = f.select :department_eq,
-            options_for_select(company.employees.pluck(:department).uniq, @search.department_eq),
-            { include_blank: t('employees.index.any_department') },
-            { class: 'checkable sel04' }
+          = sort_link search, :department, t('employees.index.any_department')
         .col.col03
           = f.select :position_eq,
             options_for_select(company.employees.pluck(:position).uniq, @search.position_eq),
@@ -32,15 +29,16 @@
           = f.submit id: 'combine-search-submit',
             class: 'search'
 
-    = form_tag destroy_selected_employees_path,
+    = form_tag destroy_selected_company_department_employees_path(company, department),
       id: 'destroy-selected-form',
       method: :patch do
       - employees.each do |employee|
         .row
           .col.col01
-            span.title = link_to employee.name, edit_employee_path(employee)
+            span.title = link_to employee.name, edit_company_department_employee_path(company, department, employee)
           .col.col02
-            span = employee.department
+            span
+              = employee.department.name
           .col.col03
             span = employee.position
           .col.col06
@@ -56,7 +54,7 @@
       id: 'add-selected-to-survey'
   #dialog title=t('companies.show.dialog_title')
     .inform-panel
-      = form_tag add_to_survey_employees_path,
+      = form_tag add_to_survey_company_department_employees_path(company, department),
         method: :patch,
         id: 'dialog-form',
         class: 'login-form' do |f|

@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 describe User do
-  let!(:company) { create(:company) }
+  #let!(:company) { create(:company) }
+  let!(:company) { create(:company_with_departments) }
   let!(:user) { create(:user, company: company) }
   let!(:other_company) { create(:company) }
   let!(:second_user) { create(:user, email: 'test@example.com', company: other_company) }
@@ -34,20 +35,20 @@ describe User do
       expect(page).to have_content('Company was successfully updated.')
     end
 
-    it 'can add an employee to company' do
+    it 'can add a department to company' do
       find(:xpath, "//a[@href='/companies/#{other_company.id}'][1]").click
-      click_link 'New Employee(s)'
-      fill_in 'First name', with: 'Jack'
-      fill_in 'Last name', with: 'London'
-      fill_in 'Email', with: 'jack.london@mail.com'
+      click_link 'New Department(s)'
+      fill_in 'Name', with: 'Finance'
+      fill_in 'Code', with: 'FC'
+      #fill_in 'Email', with: 'jack.london@mail.com'
       click_button 'Save'
-      expect(page).to have_content('Jack')
+      expect(page).to have_content('Finance')
     end
   end
 
   context 'admin add survey' do
     before(:each) do
-      user.company.employees << create(:employee)
+      user.company.departments.first.employees << create(:employee)
       user.add_role :admin
       visit new_admin_offered_survey_path
       fill_in 'Title', with: 'Test'

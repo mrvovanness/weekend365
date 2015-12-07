@@ -12,6 +12,32 @@ en:
     show:
       administrator: 'Company administrator:'
       dialog_title: 'Add selected employees to survey'
+  departments:
+    new:
+      department_creation: "Please create your new department"
+      save_department: "Save Department"
+      title: "Add new employee"
+      import_description: 'You can import csv file with a list of employees'
+      choose_btn: 'Choose a csv file from your computer'
+      example_csv: 'Example csv'
+      supported_formats: 'Supported formats: Excel 2007-2013 (xlsx), CSV'
+      supported_characters: 'Only UTF-8 characters are accepted'
+    edit:
+      details: 'Department Details'
+      title: "Edit Department"
+    index:
+      title: "Departments"
+      name: "Name"
+      code: "Code"
+      no_of_employees: "No. Of Employees"
+      my_own: "(my own)"
+      by_name: "By name"
+      by_code: "By code"
+      delete_selected: "Delete selected"
+      select_all: "Select all"
+    show:
+      administrator: 'Deparment Head:'
+      dialog_title: 'Add selected employees to department'
   contacts:
     new:
       title: "Get a Weekend(beta) Free Account "

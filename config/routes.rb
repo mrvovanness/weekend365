@@ -9,7 +9,17 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :companies
+  resources :companies do
+    resources :departments do
+      resources :employees do
+        collection do
+          patch 'destroy_selected'
+          patch 'add_to_survey'
+          post 'import'
+        end
+      end
+    end
+  end
   resources :reports, only: :show
   resources :pages, only: :show
 

@@ -11,13 +11,13 @@ class CompaniesController < ApplicationController
   end
 
   def show
-    @search = @company.employees.ransack(params[:q])
-    @employees = @search.result(distinct: true).page(params[:page]).per(15)
+    @search = @company.departments.ransack(params[:q])
+    @departments = @search.result(distinct: true).page(params[:page]).per(15)
 
     respond_to do |format|
       format.html
       format.csv { send_data @search.result.to_csv,
-        filename: "employees-#{ Date.today }.csv" }
+        filename: "departments-#{ Date.today }.csv" }
     end
   end
 

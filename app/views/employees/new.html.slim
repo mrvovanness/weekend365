@@ -3,7 +3,7 @@
     #middlebox
       h1 = t('employees.new.title')
       h3 = t('employees.new.import_description')
-      = form_tag import_employees_path,
+      = form_tag import_company_department_employees_path(@company, @department),
         multipart: true do
         .csv-uploader.btn
           span.btn-choosing.hide = t('employees.new.choose_btn')

@@ -1,7 +1,8 @@
 require 'rails_helper'
 
 describe User, js: true do
-  let!(:company) { create(:company_with_employees) }
+  let!(:company) { create(:company_with_department_with_employees) }
+  let!(:department) { create(:department_with_employees) }
   let!(:user) { create(:user, company: company) }
   let!(:offered_survey) { create(:offered_survey_with_offered_questions) }
 

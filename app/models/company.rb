@@ -2,7 +2,9 @@ class Company < ActiveRecord::Base
   resourcify
   validates :name, presence: true
   belongs_to :company_field
-  has_many :employees, dependent: :destroy
+  has_many :departments, dependent: :destroy, autosave: true
+  has_many :employees, through: :departments, dependent: :destroy
+  #has_many :employees, dependent: :destroy
   has_many :company_surveys, dependent: :destroy
   has_many :results, through: :employees
   has_many :users, inverse_of: :company, dependent: :destroy

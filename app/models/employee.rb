@@ -6,10 +6,11 @@ class Employee < ActiveRecord::Base
 
   has_many :results
   has_many :answers, through: :results
-  belongs_to :company
   belongs_to :office_location
+  belongs_to :department, autosave: true
   has_and_belongs_to_many :company_surveys
 
+  delegate :company, to: :department
   #delegate :country, :address, :city, to: :office_location
 
   ransacker :age, formatter: proc { |v| Date.today - v.to_i.year } do |parent|
@@ -21,11 +22,11 @@ class Employee < ActiveRecord::Base
   end
 
   def self.to_csv
-    attributes = %w(first_name last_name email department position)
+    attributes = %w(first_name last_name email position)
     CSV.generate(headers: true) do |csv|
-      csv << attributes
+      csv << [attributes, 'Dept. Name'].flatten
       all.each do |user|
-        csv << user.attributes.values_at(*attributes)
+        csv << user.attributes.values_at(*attributes).push(user.department.name)
       end
     end
   end
