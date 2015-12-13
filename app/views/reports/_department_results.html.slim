@@ -11,7 +11,7 @@
       th = t('report.participation.department')
       th.blank
       th = t('report.department_results.title')
-    - survey.employees.group(:department).order(:department).count.each do |key, value|
+    - survey.employees.group(:department_old).order(:department_old).count.each do |key, value|
       tr
         td = key
         td.blank

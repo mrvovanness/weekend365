@@ -8,7 +8,7 @@
     method: :get do |f|
     fieldset
       = f.submit id: 'full-search-submit'
-      = f.text_field :first_name_or_last_name_or_department_or_position_cont
+      = f.text_field :first_name_or_last_name_or_position_cont
   .panel-clearfix
     = t('departments.show.administrator')
     =< user_name_with_email(@department_admin).html_safe
