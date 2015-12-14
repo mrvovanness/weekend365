@@ -14,8 +14,8 @@
             { class: 'checkable sel04' }
         .filter-section
           span = t('report.show.filter.department')
-          = f.select :department_eq,
-            options_for_select(@survey.company.employees.pluck(:department).uniq, @search.department_eq),
+          = f.select :department_old_eq,
+            options_for_select(@survey.company.employees.pluck(:department_old).uniq, @search.department_old_eq),
             { include_blank: t('employees.index.any_department') },
             { class: 'checkable sel04' }
         .filter-section

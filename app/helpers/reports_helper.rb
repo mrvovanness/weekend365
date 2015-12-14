@@ -8,7 +8,7 @@ module ReportsHelper
   end
 
   def department_participation(survey, department, num_of_employees)
-    emp_ids = survey.employees.where(department: department).pluck(:id)
+    emp_ids = survey.employees.where(department_old: department).pluck(:id)
     dep_answers = survey.results.where(employee_id: emp_ids).pluck(:employee_id).uniq.count
     participation = number_to_percentage(dep_answers.to_f / num_of_employees * 100, precision: 0)
     "#{participation} (#{dep_answers} of #{num_of_employees})"
