@@ -70,7 +70,7 @@ class Surveys::EmailSurveysController < ApplicationController
   end
 
   def load_offered_survey
-    @offered_survey = OfferedSurvey.first
+    @offered_survey = OfferedSurvey.find(params[:offered_survey_id])
     @offered_questions = @offered_survey.offered_questions
       .includes(:offered_answers).uniq
   end

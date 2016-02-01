@@ -11,9 +11,9 @@ class EmailSchedule < ActiveRecord::Base
 
   validate :check_survey_start
 
-  after_save :set_schedule
+  # after_save :set_schedule
 
-  after_destroy :delete_schedule
+  #after_destroy :delete_schedule
 
   attr_accessor :start_on, :time
 

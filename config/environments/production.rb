@@ -1,5 +1,4 @@
 Rails.application.configure do
-  config.action_controller.asset_host = 'http://weekendcult.com/'
   config.action_mailer.default_url_options = { host: 'http://weekendcult.com' }
   config.action_mailer.default_options = { from: 'survey@weekendcult.com' }
   config.action_mailer.smtp_settings = {
@@ -13,7 +12,7 @@ Rails.application.configure do
   config.eager_load = true
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
-  config.serve_static_files = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  config.serve_static_files = true
   config.assets.js_compressor = :uglifier
   config.assets.compile = false
   config.assets.digest = true

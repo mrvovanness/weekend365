@@ -38,7 +38,8 @@ table
 
           td
             = link_to t('helpers.links.edit'),
-              edit_surveys_email_survey_path(survey),
+              edit_surveys_email_survey_path(survey,
+              offered_survey_id: survey.offered_survey),
               class: 'btn-edit'
 
           td

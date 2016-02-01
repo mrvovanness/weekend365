@@ -3,7 +3,9 @@ puts 'Creating results for admin_company'
 company = Company.find_by(name: 'Brazilian Tunes')
 
 offered_surveys = OfferedSurvey.where({
-  title: ['Offered survey number 0', 'Offered survey number 1']
+  title: ['Offered survey number 0',
+          'Offered survey number 1',
+          'Overall Satisfaction']
 })
 
 offered_surveys.each do |offered_survey|
@@ -35,15 +37,28 @@ offered_surveys.each do |offered_survey|
         offered_question: question
       )
 
-      answer = result.answers.create!(
-        offered_answer: OfferedAnswer.find([rand(1..3), 4, 5].sample ),
-        comment: ['', 'I agree', 'I disagree'].sample
-      )
-      puts "Created result from employee #{employee.name}"\
-           " on question #{question.title}"\
-           " for survey #{company_survey.title}."\
-           " Choose: #{answer.offered_answer.value},"\
-           " comment: #{answer.comment}"
+      if company_survey.answered_by_web_form?
+        answer = result.answers.create!(
+          offered_answer: OfferedAnswer.find([rand(1..3), 4, 5].sample ),
+          comment: ['', 'I agree', 'I disagree'].sample
+        )
+        puts "Created result from employee #{employee.name}"\
+             " on question #{question.title}"\
+             " for survey #{company_survey.title}."\
+             " Choose: #{answer.offered_answer.value},"\
+             " comment: #{answer.comment}"
+      else
+        answer = result.answers.create!(
+          offered_answer: OfferedAnswer.find([rand(1..8), 9, 10].sample),
+          created_at: rand(6.months).seconds.ago,
+          comment: ['', 'I agree', 'I disagree'].sample
+        )
+        puts "Created result from employee #{employee.name}"\
+             " on question #{question.title}"\
+             " for survey #{company_survey.title}."\
+             " Choose: #{answer.offered_answer.value},"\
+             " comment: #{answer.comment}"
+      end
     end
   end
 end
